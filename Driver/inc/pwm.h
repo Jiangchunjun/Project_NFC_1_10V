@@ -110,7 +110,7 @@
 #define OCP_OVP_SPEED_UP_PERIOD (1900)    /* 50ms */
 #else
 #if defined(OT_NFC_IP67_150W)
-#define OCP_OVP_HICCUP_PERIOD   (200)  /* 2s */  //200ms 200  Moon
+#define OCP_OVP_HICCUP_PERIOD   (200)  /* 2s */  //200ms 200  Moon 111
 #define OCP_OVP_SPEED_UP_PERIOD (190)    /* 50ms */
 #else
 #define OCP_OVP_HICCUP_PERIOD   (200)  /* 2s */  //200ms 200  Moon
