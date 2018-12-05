@@ -1,0 +1,6 @@
+1.update nvm_data in nfc_bank_ini
+2.update nfc_time_nvm_wirte
+3.2017.1.5 update nfc_tag write function. all data is from mem_bank_nfc (after crc check)
+  update nfc.c compare ram and tag all ram is in mem_bank_nfc 
+  update driver.c ini_write ram data is from mem_bank_nfc
+4. 2017.10.26 update pasw check and add eol handle

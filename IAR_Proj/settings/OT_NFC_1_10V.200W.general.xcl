@@ -1,0 +1,13 @@
+"C:\Program Files (x86)\IAR Systems\IAR ARM 7.8\arm\bin\armproc.dll" 
+
+"C:\Program Files (x86)\IAR Systems\IAR ARM 7.8\arm\bin\armjlink2.dll" 
+
+"C:\C Pan\work\NFC 1-10\Project_NFC_1_10V\IAR_Proj\output\200W\Exe\OT_NFC_IP67.out" 
+
+--plugin "C:\Program Files (x86)\IAR Systems\IAR ARM 7.8\arm\bin\armbat.dll" 
+
+--device_macro "C:\Program Files (x86)\IAR Systems\IAR ARM 7.8\arm\config\debugger\Infineon\XMC1x00.dmac" 
+
+
+
+

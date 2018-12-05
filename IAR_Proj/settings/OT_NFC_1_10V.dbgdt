@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Project>
+  <Desktop>
+    <Static>
+      <Debug-Log>
+        
+        
+      <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>1861</ColumnWidth1></Debug-Log>
+      <Build>
+        <ColumnWidth0>20</ColumnWidth0>
+        <ColumnWidth1>1395</ColumnWidth1>
+        <ColumnWidth2>372</ColumnWidth2>
+        <ColumnWidth3>93</ColumnWidth3>
+      </Build>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>160</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+      </Workspace>
+      <Disassembly>
+        <col-names>
+          
+          
+        <item>Disassembly</item><item>_I0</item></col-names>
+        <col-widths>
+          
+          
+        <item>500</item><item>20</item></col-widths>
+        <DisasmHistory/>
+        <PreferedWindows>
+          
+          
+          
+          
+        <Position>2</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows/></PreferedWindows>
+        
+        
+      <ShowCodeCoverage>1</ShowCodeCoverage><ShowInstrProfiling>1</ShowInstrProfiling></Disassembly>
+      <QuickWatch>
+        <PreferedWindows>
+          <Position>2</Position>
+          <ScreenPosX>0</ScreenPosX>
+          <ScreenPosY>0</ScreenPosY>
+          <Windows/>
+        </PreferedWindows>
+        <col-names>
+          <item>Expression</item>
+          <item>Location</item>
+          <item>Type</item>
+          <item>Value</item>
+        </col-names>
+        <col-widths>
+          <item>100</item>
+          <item>150</item>
+          <item>100</item>
+          <item>100</item>
+        </col-widths>
+        <QWatchHistory>
+          <item>g_one2ten_dimming_level</item>
+          <item>g_one2ten_avg_adc</item>
+        </QWatchHistory>
+      </QuickWatch>
+      <WATCH_1>
+        <expressions>
+          
+          
+          
+          
+        <item>g_one2ten_dimming_level</item><item>g_one2ten_avg_adc</item><item>target_current</item><item>adc</item><item>g_set_current</item><item>g_iout_real</item><item>read_type_flag</item><item>g_global_ticks</item><item>g_buffer_iout</item><item>g_pwm_duty</item><item>g_uout_real</item><item>g_buffer_uout</item><item>g_buffer_uout</item><item>g_buffer_dim</item><item>s_one_ten_update</item><item>target_current</item><item>sw_timer_tick</item><item>g_pwm_duty</item><item/></expressions>
+        <col-names>
+          
+          
+          
+          
+        <item>Expression</item><item>Location</item><item>Type</item><item>Value</item></col-names>
+        <col-widths>
+          
+          
+          
+          
+        <item>195</item><item>150</item><item>100</item><item>100</item></col-widths>
+      <PreferedWindows><Position>2</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows/></PreferedWindows></WATCH_1>
+    <Find-All-References><ColumnWidth0>470</ColumnWidth0><ColumnWidth1>67</ColumnWidth1><ColumnWidth2>806</ColumnWidth2></Find-All-References><StaticWatch><expressions><item>g_buffer_dim</item><item>mem_bank_nfc.mem_bank_inf</item><item>mem_bank_nfc.mem_bank_csm</item><item>pwm_duty</item><item>g_iout_real</item><item>read_type_flag</item><item>temp_mobile</item><item>target_current</item><item>g_buffer_iout</item><item/></expressions><col-names><item>Expression</item><item>Location</item><item>Type</item><item>Value</item></col-names><col-widths><item>250</item><item>150</item><item>100</item><item>206</item></col-widths><PreferedWindows><Position>2</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows/></PreferedWindows></StaticWatch><Find-in-Files><ColumnWidth0>403</ColumnWidth0><ColumnWidth1>67</ColumnWidth1><ColumnWidth2>604</ColumnWidth2><ColumnWidth3>268</ColumnWidth3></Find-in-Files><Select-Ambiguous-Definitions><ColumnWidth0>470</ColumnWidth0><ColumnWidth1>67</ColumnWidth1><ColumnWidth2>806</ColumnWidth2></Select-Ambiguous-Definitions></Static>
+    <Windows>
+      
+      
+      
+    <Wnd0>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-25903-16585</Identity>
+            <TabName>Debug Log</TabName>
+            <Factory>Debug-Log</Factory>
+            <Session/>
+          </Tab>
+          <Tab>
+            <Identity>TabID-25380-16594</Identity>
+            <TabName>Build</TabName>
+            <Factory>Build</Factory>
+            <Session/>
+          </Tab>
+        <Tab><Identity>TabID-21599-27007</Identity><TabName>References</TabName><Factory>Find-All-References</Factory><Session/></Tab><Tab><Identity>TabID-198-10803</Identity><TabName>Find in Files</TabName><Factory>Find-in-Files</Factory><Session/></Tab><Tab><Identity>TabID-24857-28131</Identity><TabName>Ambiguous Definitions</TabName><Factory>Select-Ambiguous-Definitions</Factory><Session/></Tab></Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd0><Wnd1>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-3884-16588</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>OT_NFC_1_10V</ExpandedNode><ExpandedNode>OT_NFC_1_10V/Application</ExpandedNode><ExpandedNode>OT_NFC_1_10V/Application/Header</ExpandedNode><ExpandedNode>OT_NFC_1_10V/Application/Source</ExpandedNode><ExpandedNode>OT_NFC_1_10V/Driver</ExpandedNode><ExpandedNode>OT_NFC_1_10V/Driver/Source</ExpandedNode><ExpandedNode>OT_NFC_1_10V/Import_NFC</ExpandedNode><ExpandedNode>OT_NFC_1_10V/Import_NFC/driver_ot</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd1><Wnd2><Tabs><Tab><Identity>TabID-15414-25711</Identity><TabName>Watch 1</TabName><Factory>WATCH_1</Factory></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd2><Wnd5><Tabs><Tab><Identity>TabID-24170-13271</Identity><TabName>Live Watch</TabName><Factory>StaticWatch</Factory></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd5></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Driver\src\eru.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>111</YPos2><SelStart2>4939</SelStart2><SelEnd2>4939</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\XMC_Peripheral_Library\XMCLib\inc\xmc_wdt.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>392</YPos2><SelStart2>16913</SelStart2><SelEnd2>16913</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\Program Files (x86)\IAR Systems\IAR ARM 7.8\arm\inc\c\DLib_Product_string.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>56</YPos2><SelStart2>1917</SelStart2><SelEnd2>1917</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Driver\src\acmp.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>212</YPos2><SelStart2>8589</SelStart2><SelEnd2>8589</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Application\src\comm_task.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>162</YPos2><SelStart2>6042</SelStart2><SelEnd2>6042</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Import\modules\NfcExt\M24LRxx\M24LRxx.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>921</YPos2><SelStart2>28611</SelStart2><SelEnd2>28611</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Import\modules\I2cExt\api\i2c.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>95</YPos2><SelStart2>3963</SelStart2><SelEnd2>3963</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\XMC_Peripheral_Library\XMCLib\src\xmc_uart.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>135</YPos2><SelStart2>6598</SelStart2><SelEnd2>6598</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Import\modules\NfcExt\api\nfc.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>1464</YPos2><SelStart2>52018</SelStart2><SelEnd2>52018</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\XMC_Peripheral_Library\XMCLib\inc\xmc_vadc.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>4374</YPos2><SelStart2>204686</SelStart2><SelEnd2>204686</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Application\src\mcu_config.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>295</YPos2><SelStart2>9632</SelStart2><SelEnd2>9632</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Driver\inc\sw_timer.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>948</SelStart2><SelEnd2>948</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Application\inc\mcu_config.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>128</YPos2><SelStart2>5671</SelStart2><SelEnd2>5671</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Application\src\nfc_task.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>29</YPos2><SelStart2>1519</SelStart2><SelEnd2>1531</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Import\modules\NfcExt\api\nfcDali.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>272</YPos2><SelStart2>4614</SelStart2><SelEnd2>4614</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Import\modules\I2cExt\api\i2c.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>0</SelStart2><SelEnd2>0</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Import\modules\NfcExt\M24LRxx\M24LRxx.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>30</YPos2><SelStart2>1617</SelStart2><SelEnd2>1632</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Driver\src\sw_timer.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>128</YPos2><SelStart2>4777</SelStart2><SelEnd2>4777</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Import\driver_ot\driver.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>336</YPos2><SelStart2>12669</SelStart2><SelEnd2>12669</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Import\driver_ot\driver.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>94</YPos2><SelStart2>4659</SelStart2><SelEnd2>4680</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Driver\inc\adc.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>59</YPos2><SelStart2>2996</SelStart2><SelEnd2>2996</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Driver\src\pwm.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>790</YPos2><SelStart2>27925</SelStart2><SelEnd2>27925</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Application\src\system.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>124</YPos2><SelStart2>4006</SelStart2><SelEnd2>4006</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Application\inc\system.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>96</YPos2><SelStart2>4995</SelStart2><SelEnd2>4995</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Driver\src\adc.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>308</YPos2><SelStart2>13642</SelStart2><SelEnd2>13642</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Application\inc\power_config_100w.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>139</YPos2><SelStart2>7453</SelStart2><SelEnd2>7453</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Application\src\power_task.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>408</YPos2><SelStart2>13578</SelStart2><SelEnd2>13591</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\XMC_Peripheral_Library\XMCLib\inc\xmc_usic.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>1101</YPos2><SelStart2>52153</SelStart2><SelEnd2>52153</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Driver\src\tick.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>53</YPos2><SelStart2>2780</SelStart2><SelEnd2>2794</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Application\inc\power_config_60w.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>123</YPos2><SelStart2>7401</SelStart2><SelEnd2>7401</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Application\inc\power_config_150w.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>44</YPos2><SelStart2>2406</SelStart2><SelEnd2>2406</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Application\inc\power_config_200w.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>160</YPos2><SelStart2>9490</SelStart2><SelEnd2>9490</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Application\inc\power_task.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>54</YPos2><SelStart2>2201</SelStart2><SelEnd2>2201</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Driver\inc\eru.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>18</YPos2><SelStart2>0</SelStart2><SelEnd2>0</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Driver\inc\pwm.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>97</YPos2><SelStart2>4204</SelStart2><SelEnd2>4204</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Application\src\main.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>30</YPos2><SelStart2>1511</SelStart2><SelEnd2>1511</SelEnd2></Tab><ActiveTab>35</ActiveTab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-00D58580><key>iaridepm.enu1</key></Toolbar-00D58580></Sizes></Row0><Row1><Sizes><Toolbar-1E996A80><key>debuggergui.enu1</key></Toolbar-1E996A80></Sizes></Row1><Row2><Sizes><Toolbar-244EEAD0><key>armjlink2.enu1</key></Toolbar-244EEAD0></Sizes></Row2></Top><Left><Row0><Sizes><Wnd1><Rect><Top>-2</Top><Left>-2</Left><Bottom>372</Bottom><Right>251</Right><x>-2</x><y>-2</y><xscreen>142</xscreen><yscreen>137</yscreen><sizeHorzCX>103953</sizeHorzCX><sizeHorzCY>199708</sizeHorzCY><sizeVertCX>185212</sizeVertCX><sizeVertCY>545190</sizeVertCY></Rect></Wnd1></Sizes></Row0></Left><Right><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>372</Bottom><Right>228</Right><x>-2</x><y>-2</y><xscreen>203</xscreen><yscreen>205</yscreen><sizeHorzCX>148609</sizeHorzCX><sizeHorzCY>298834</sizeHorzCY><sizeVertCX>168375</sizeVertCX><sizeVertCY>545190</sizeVertCY></Rect></Wnd2></Sizes></Row0><Row1><Sizes><Wnd5><Rect><Top>-2</Top><Left>226</Left><Bottom>372</Bottom><Right>371</Right><x>226</x><y>-2</y><xscreen>203</xscreen><yscreen>205</yscreen><sizeHorzCX>148609</sizeHorzCX><sizeHorzCY>298834</sizeHorzCY><sizeVertCX>106149</sizeVertCX><sizeVertCY>545190</sizeVertCY></Rect></Wnd5></Sizes></Row1></Right><Bottom><Row0><Sizes><Wnd0><Rect><Top>-2</Top><Left>-2</Left><Bottom>221</Bottom><Right>1368</Right><x>-2</x><y>-2</y><xscreen>1370</xscreen><yscreen>223</yscreen><sizeHorzCX>1002928</sizeHorzCX><sizeHorzCY>325073</sizeHorzCY><sizeVertCX>103953</sizeVertCX><sizeVertCY>199708</sizeVertCY></Rect></Wnd0></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Project>
+
+

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <project>
+    <path>$WS_DIR$\OT_NFC_1_10V.ewp</path>
+  </project>
+  <batchBuild>
+    <batchDefinition>
+      <name>Build_All_Device</name>
+      <member>
+        <project>OT_NFC_IP67</project>
+        <configuration>IP67_200W</configuration>
+      </member>
+      <member>
+        <project>OT_NFC_IP67</project>
+        <configuration>IP67_200W_WP</configuration>
+      </member>
+      <member>
+        <project>OT_NFC_IP67</project>
+        <configuration>IP67_150W</configuration>
+      </member>
+      <member>
+        <project>OT_NFC_IP67</project>
+        <configuration>IP67_150W_WP</configuration>
+      </member>
+      <member>
+        <project>OT_NFC_IP67</project>
+        <configuration>IP67_100W</configuration>
+      </member>
+      <member>
+        <project>OT_NFC_IP67</project>
+        <configuration>IP67_100W_WP</configuration>
+      </member>
+      <member>
+        <project>OT_NFC_IP67</project>
+        <configuration>IP67_60W</configuration>
+      </member>
+      <member>
+        <project>OT_NFC_IP67</project>
+        <configuration>IP67_60W_WP</configuration>
+      </member>
+    </batchDefinition>
+  </batchBuild>
+</workspace>
+
+
