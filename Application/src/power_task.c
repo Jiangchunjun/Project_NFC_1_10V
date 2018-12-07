@@ -413,7 +413,7 @@ void Power_SetCurrent(uint16_t target_current, uint8_t mode)
         /* Global max voltage limit*/
         if(g_max_voltage > UOUT_MAX)
         {
-            g_max_voltage = UOUT_MAX * POWER_UOUT_TOLERANCE;
+            g_max_voltage = (uint16_t)(UOUT_MAX * POWER_UOUT_TOLERANCE);
         }
      
         /*-------- Get New Target PWM Duty -----------------------------------*/
@@ -646,7 +646,7 @@ void Power_UpdateOne2TenDimming(uint16_t adc)
     
     /* Update dimming level with rank filter */
     //g_one2ten_dimming_level = Filter_Input(next_level);//moon update
-    g_one2ten_dimming_level=level;
+    g_one2ten_dimming_level=(uint16_t)level;
     //g_one2ten_dimming_level=next_level;
     //g_one2ten_dimming_level=1000; //10% testing using
     /* Stable flag update for speed up */
@@ -784,6 +784,7 @@ void Power_ControlLoopTask(void)
     static uint32_t i_out_roll=0;
     static uint16_t g_set_current=400,g_test_current=0;
     static uint8_t delay=0;
+    static uint32_t g_power_current=0,g_power_current_pre=0;
     int32_t test1;
 
     uint8_t  tx_buff[20]; 
@@ -868,6 +869,24 @@ void Power_ControlLoopTask(void)
     //target_current=1400;
     //target_current=g_set_current; //add test code moon
         /* Update control loop current adjustment speed threshold */
+    if(g_uout_real!=0)
+    {
+      g_power_current=(uint32_t)(OUTPUT_POWER*1.03/g_uout_real);// constant power control
+      
+      if(abs(g_power_current-g_power_current_pre)<50)
+        g_power_current=g_power_current_pre;
+    }
+    else
+    {
+      g_power_current=target_current;
+    }
+    g_power_current_pre=g_power_current;
+    
+    if(target_current>g_power_current)
+    {
+      target_current=g_power_current;
+    }
+    
     if(target_current < IOUT_DIVIDER_1_0)
     {
         g_iout_threshold_high = IOUT_THRESHOLD_HIGH_0;
@@ -935,9 +954,9 @@ void Power_ControlLoopTask(void)
     if(g_iout_real < target_current)
     {
         /* Output voltage not match the max output voltage */
-        if(g_uout_real < g_max_voltage)
+        if(g_uout_real < g_max_voltage+OVP_TRIGGER_EXCEED*3)//update FW OVP check point
         {
-            if(g_uout_real < (g_max_voltage -  (uint32_t)g_max_voltage * g_pwm_stable_uout / 1000))
+            if(g_uout_real < (g_max_voltage -  (uint32_t)g_max_voltage * g_pwm_stable_uout / 1000+OVP_TRIGGER_EXCEED*3))
             {
                 /* PWM duty will increase */
                 g_control_loop_state = POWER_STATE_INCREASE;
@@ -1029,6 +1048,7 @@ void Power_ControlLoopTask(void)
         USART_PrintInfo(tx_buff);
     }
  /*power off judge**/   
+#ifndef OT_NFC_IP67_100W 
     if(s_flag_off==0)
     {
       if(delay++>50)
@@ -1038,12 +1058,12 @@ void Power_ControlLoopTask(void)
         if(((g_iout_real+50)<target_current)&&(s_one_ten_update==0)&&(target_current<400))
         {
           s_flag_off=1;
-         // PWM_EnterProtection();
+          PWM_EnterProtection();
           delay=0;
         }
       }  
     }
-    
+#endif   
 //    uint8_t *pinfo; //add test
 //    sprintf((char*)tx_buff, "%d \n", PWM_GetDuty(PWM_ID_CH_CTRL));
 //    pinfo=tx_buff;
@@ -1375,7 +1395,7 @@ void Power_ControlLoopTask(void)
         /* Active OVP protection for hiccup */
         if(s_hiccup_counter >= OVP_HICCUP_COUNTER)
         {
-            PWM_EnterProtection();
+            //PWM_EnterProtection();
         }
     }
     else

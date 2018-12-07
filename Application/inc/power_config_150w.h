@@ -91,8 +91,8 @@
 
 /*----------- PWM Adjust Speed and Choose Condition define ---------*/
 /* PWM Adjustment Speed define */
-#define PWM_SPEED_HIGH          (20)//(12) 25        /* PWM High speed adjustment:   +/- 1.2%  */
-#define PWM_SPEED_MID           (7) //6  14       /* PWM Middle speed adjustment: +/- 0.6%  */
+#define PWM_SPEED_HIGH          (20)//(12) 20        /* PWM High speed adjustment:   +/- 1.2%  */
+#define PWM_SPEED_MID           (7) //6  7       /* PWM Middle speed adjustment: +/- 0.6%  */
 #define PWM_SPEED_LOW           (1)  //1       /* PWM Low speed adjustment:    +/- 0.1%  */
 #define PWM_SPEED_STEP          (0)         /* PWM step adjustment: call step function*/
 
@@ -173,15 +173,15 @@
 #define OCP_CURRENT_CONST           (4500)  /* Unit: mA */
 
 /* OVP Exceed Voltage define, OVP Voltage = Target Max Voltage + Exceed Voltage */
-#define OVP_TRIGGER_EXCEED          (45)    /* Unit: V */
+#define OVP_TRIGGER_EXCEED          (25)    /* Unit: V */
 #define OVP_AVERAGE_EXCEED          (10)    /* Unit: V */
 
 /* OCP & OVP trigger counter for avoid error trigger condition */
 #define OCP_OVP_TRIGGER_COUNTER     (3)     /* exceed such times will active OCP/OVP protection */
 
 
-#define ADC_STEP_DIFFER_I       (50)//50
-#define ADC_BUFFER_SIZE_IOUT    (120)
+#define ADC_STEP_DIFFER_I       (300)//50
+#define ADC_BUFFER_SIZE_IOUT    (60)
  /*ONE_TEN PARAMETERS SETTING*/
 #define ONE_TEN_LOW_VOLTAGE 205   //0.25V
 #define ONE_TEN_HIGH_VOLTAGE 3947// 4.6V
