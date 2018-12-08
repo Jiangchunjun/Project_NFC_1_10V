@@ -869,9 +869,9 @@ void Power_ControlLoopTask(void)
     //target_current=1400;
     //target_current=g_set_current; //add test code moon
         /* Update control loop current adjustment speed threshold */
-    if(g_uout_real!=0)
+    if(g_uout_real!=0&&g_iout_real>50)
     {
-      g_power_current=(uint32_t)(OUTPUT_POWER*1.03/g_uout_real);// constant power control
+      g_power_current=(uint32_t)(OUTPUT_POWER*1.02/g_uout_real);// constant power control
       
       if(abs(g_power_current-g_power_current_pre)<50)
         g_power_current=g_power_current_pre;
@@ -1058,7 +1058,7 @@ void Power_ControlLoopTask(void)
         if(((g_iout_real+50)<target_current)&&(s_one_ten_update==0)&&(target_current<400))
         {
           s_flag_off=1;
-          PWM_EnterProtection();
+          //PWM_EnterProtection();
           delay=0;
         }
       }  

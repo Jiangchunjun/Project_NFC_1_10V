@@ -139,7 +139,7 @@ void ERU0_0_IRQHandler(void)
 void ERU0_1_IRQHandler(void)
 {
 #ifdef ENABLE_OVP
-    PWM_EnterProtection();
+    //PWM_EnterProtection();
 #endif
     //USART_PrintInfo("OCP....\n");
 }

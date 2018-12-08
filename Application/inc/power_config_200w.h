@@ -75,12 +75,12 @@
 
 /*-------------- Power Level Init PWM Duty define -----------------*/
 /* Initial Control PWM duty define */
-#define INIT_CTRL_DUTY_DEFAULT  (400)        /* 3.0%  */
-#define INIT_CTRL_DUTY_0        (400)        /* 3.5%  */
-#define INIT_CTRL_DUTY_1        (400)        /* 8.0%  */
-#define INIT_CTRL_DUTY_2        (400)       /* 12.0% */
-#define INIT_CTRL_DUTY_3        (400)       /* 12.0% */
-#define INIT_CTRL_DUTY_4        (400)       /* 23.8% */
+#define INIT_CTRL_DUTY_DEFAULT  (30)        /* 3.0%  */
+#define INIT_CTRL_DUTY_0        (100)        /* 3.5%  */
+#define INIT_CTRL_DUTY_1        (100)        /* 8.0%  */
+#define INIT_CTRL_DUTY_2        (100)       /* 12.0% */
+#define INIT_CTRL_DUTY_3        (100)       /* 12.0% */
+#define INIT_CTRL_DUTY_4        (100)       /* 23.8% */
 #define INIT_CTRL_DUTY_5        (400)       /* 29.0% */
 #define INIT_CTRL_DUTY_6        (400)       /* 35.0% */
 #define INIT_CTRL_DUTY_7        (413)       /* 41.3% */

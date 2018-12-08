@@ -49,10 +49,14 @@
 #define SYS_ACMP_EN_DELAY           (12)    /* 5ms, delay for enable ACMP module */
 #define SYS_ERU_EN_DELAY            (36)    /* 15ms, delay for enable ERU module */
 #define SYS_NFC_INIT_DELYA          (120)//(480)   /* 200ms, delay for NFC task init and prepare OVP OCP reference */
-#define SYS_POWER_INIT_DELYA        (130)//(720)   /* 300ms, delay for set target current init pwm duty */
 #define SYS_ADC_INIT_DELYA          (140)//(732)   /* 305ms, delay for enable ADC moudle */
-#define SYS_CTRL_LOOP_START_DELAY   (260)//(744)   /* 310ms, delay for create power control loop task */ //744
-
+#if defined(OT_NFC_IP67_200W)
+#define SYS_CTRL_LOOP_START_DELAY   (744)//(744) 260   /* 310ms, delay for create power control loop task */ //744
+#define SYS_POWER_INIT_DELYA        (720)//(720) 130  /* 300ms, delay for set target current init pwm duty */
+#else
+#define SYS_CTRL_LOOP_START_DELAY   (260)//(744) 260   /* 310ms, delay for create power control loop task */ //744
+#define SYS_POWER_INIT_DELYA        (130)//(720) 130  /* 300ms, delay for set target current init pwm duty */
+#endif
 /* Data Type Define -----------------------------------------------------------------------------*/
 typedef enum
 { 

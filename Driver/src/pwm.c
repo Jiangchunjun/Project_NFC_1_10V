@@ -650,9 +650,15 @@ void PWM_EnterProtection(void)
     /* Start software timer for hiccup */
     if(s_flag_off==1)      
     {
+#if  defined(OT_NFC_IP67_200W)
+      SWT_StartTimer(SWT_ID_HICCUP, 2000);
+      /* Start software timer to release accelerate pin */
+      SWT_StartTimer(SWT_ID_SPEED_UP, 1800);
+#else
       SWT_StartTimer(SWT_ID_HICCUP, 1000);
       /* Start software timer to release accelerate pin */
       SWT_StartTimer(SWT_ID_SPEED_UP, 800);
+#endif
     }
     else
     {
@@ -813,7 +819,7 @@ uint16_t PWM_PeriodUpdate(void)
      }
      
      pre_period=g_s_period;
-     return 30000;
+     return 10000;
     
       
 }
