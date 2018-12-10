@@ -819,7 +819,10 @@ uint16_t PWM_PeriodUpdate(void)
      }
      
      pre_period=g_s_period;
+#if defined(OT_NFC_IP67_200W)
      return 10000;
+#else
+     return 30000;
     
-      
+#endif     
 }

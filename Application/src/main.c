@@ -47,8 +47,7 @@ int main(void)
         System_PowerOnTask();
         
         MCU_OVPLevelTriggerTask();
-        
-        Comm_Task();
+                Comm_Task();
         
         NFC_CommTask();
         

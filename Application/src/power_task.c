@@ -873,7 +873,7 @@ void Power_ControlLoopTask(void)
     {
       g_power_current=(uint32_t)(OUTPUT_POWER*1.02/g_uout_real);// constant power control
       
-      if(abs(g_power_current-g_power_current_pre)<50)
+      if(abs(g_power_current-g_power_current_pre)<10)
         g_power_current=g_power_current_pre;
     }
     else

@@ -47,7 +47,7 @@
 
 /* OVP Voltage to PWM Duty(0.1%) Covertion Coefficient define */
 #define OVP_TO_DUTY_E2          (0)
-#define OVP_TO_DUTY_E1          (2.38095239E+00)
+#define OVP_TO_DUTY_E1          (2.2442748E+00)
 #define OVP_TO_DUTY_E0          (5.50366064E-13)
 
 /*---------------- Output Power Limitation define ------------------*/
