@@ -36,9 +36,9 @@
 
 /* ADC to Output Voltage(V) Covertion Coefficient define */
 /* Two Order: Uout = B2x^2 + B1x + B0 = (B2x + B1)x + B0 */
-#define UOUT_PARAM_B2           (1.52125869E-09)
-#define UOUT_PARAM_B1           (7.09334347E-02)
-#define UOUT_PARAM_B0           (-2.30685654E-01)
+#define UOUT_PARAM_B2           (0)
+#define UOUT_PARAM_B1           (6.88705E-02)
+#define UOUT_PARAM_B0           (0)
 
 /* OCP Current to PWM Duty(0.1%) Covertion Coefficient define */
 #define OCP_TO_DUTY_D2          (-3.68547087E-06)
@@ -181,7 +181,7 @@
 
 
 #define ADC_STEP_DIFFER_I       (300)//50
-#define ADC_BUFFER_SIZE_IOUT    (60)
+#define ADC_BUFFER_SIZE_IOUT    (20)
 
 /*ONE_TEN PARAMETERS SETTING*/
 #define ONE_TEN_LOW_VOLTAGE 147 //180mV

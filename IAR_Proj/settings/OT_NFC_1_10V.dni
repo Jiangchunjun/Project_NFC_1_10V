@@ -120,7 +120,7 @@ TraceBufferSize=0x00000000
 TraceShowTime=0
 TraceShowTimeFreq=1000000
 [DebugChecksum]
-Checksum=-1304561984
+Checksum=926263750
 [CodeCoverage]
 Enabled=_ 0
 [Exceptions]
@@ -183,8 +183,10 @@ ShowTiming=1
 mode=0
 [Breakpoints2]
 Bp0=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\Driver\src}.346.9" 0 0 1 "" 0 "" 0
-Bp1=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Application\src\power_task.c}.861.5" 0 0 1 "" 0 "" 0
-Count=2
+Bp1=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Application\src\system.c}.121.13" 0 0 1 "" 0 "" 0
+Bp2=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Application\src\power_task.c}.896.5" 0 0 1 "" 0 "" 0
+Bp3=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Application\src\power_task.c}.864.5" 0 0 1 "" 0 "" 0
+Count=4
 [Aliases]
 A0=_ "C:\C pan\Douglas_Workspace\Project\OT_NFC_IP67\Project_NFC_1_10V\Application\src\main.c" ""
 A1=_ "C:\C pan\Douglas_Workspace\Project\OT_NFC_IP67\Project_NFC_1_10V\Import\modules\I2cExt\api\i2c.c" ""

@@ -782,6 +782,9 @@ void Power_ControlLoopTask(void)
     static int32_t temp1=0;
     static int32_t temp2=0;
     static uint32_t i_out_roll=0;
+    static int32_t temp3=0;
+    static int32_t temp4=0;
+    static uint32_t u_out_roll=0;
     static uint16_t g_set_current=400,g_test_current=0;
     static uint8_t delay=0;
     static uint32_t g_power_current=0,g_power_current_pre=0;
@@ -869,6 +872,14 @@ void Power_ControlLoopTask(void)
     //target_current=1400;
     //target_current=g_set_current; //add test code moon
         /* Update control loop current adjustment speed threshold */
+    
+    temp3=g_uout_real;
+    temp4 += (((temp3<<10)- temp4)>>4);
+    u_out_roll=temp4>>10;
+    if(abs(u_out_roll-g_uout_real)<10)
+    {
+      g_uout_real=u_out_roll;
+    }
     if(g_uout_real!=0&&g_iout_real>50)
     {
       g_power_current=(uint32_t)(OUTPUT_POWER*1.02/g_uout_real);// constant power control

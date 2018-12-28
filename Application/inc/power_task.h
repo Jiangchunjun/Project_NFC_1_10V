@@ -56,7 +56,7 @@
 #define IOUT_MIN_RATED          (700)       /* Min Rated Current = 0.7A = 700mA */
 
 /* Default output current setting */
-#define POWER_DEFALUT_CURRENT   (700)  /* Unit: mA, default output 400mA */
+#define POWER_DEFALUT_CURRENT   (1400)  /* Unit: mA, default output 400mA */
 
 /* Maximum output dimming percent 100% */
 #define POWER_MAX_DIMMING       (10000)     /* Unit: 0.01%, default output 100% */
