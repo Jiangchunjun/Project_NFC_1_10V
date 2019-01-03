@@ -65,7 +65,7 @@
 ///---------------------------------------------------------------------------------------------------------------------
 #define MPC_TDC_NUMBER                                                        31                                        // Memory Bank Number for TouchDIM / Corridor
 
-
+#define MPC_1_10_NUMBER                                                        31
 ///---------------------------------------------------------------------------------------------------------------------
 #ifndef NDEBUG
 #define DALI_CONFIG_MPC_DEBUG                                                255                                        // Memory bank number for Debug MPC -> always 255

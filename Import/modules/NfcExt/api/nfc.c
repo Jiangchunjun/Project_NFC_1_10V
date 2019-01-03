@@ -983,7 +983,7 @@ static nfc_cmp_state_t cmpRamNfcData(nfc_data_type_t aDataType)
     static uint32_t ramCrc;
     static uint32_t i;
 #ifdef ENASTRO   
-    static uint8_t s_arr[]={105,24,49,132,85,91,95,38,65,75,0,99,102,61,87,92};// this is for nfcData.item to mem_bank_nfc
+    static uint8_t s_arr[]={105,24,49,132,85,91,95,38,65,75,0,99,102,137,61,87,92};// this is for nfcData.item to mem_bank_nfc
 #else    
     static uint8_t s_arr[]={24,49,85,91,95,38,65,75,0,99,102,61,87,92};
 #endif    

@@ -180,6 +180,13 @@ typedef struct
     uint8_t Eol_time;
 }mem_bank_eol_t;
 /******************************************************************************/
+typedef struct
+{
+  uint8_t Enable_1_10;
+  uint8_t Level_h_1_10;
+  uint8_t Level_l_1_10;
+}mem_bank_1_10_t;
+/******************************************************************************/
 
 typedef struct
 {
@@ -231,6 +238,7 @@ typedef struct
     mem_bank_astro_t mem_bank_astro;      //05 27 12 /* num change to 27 and address change to 12 
 #endif
     mem_bank_eol_t mem_bank_eol;          //15 5 72
+    mem_bank_1_10_t mem_bank_1_10;
 }mem_bank_nfc_t;
 
 typedef struct

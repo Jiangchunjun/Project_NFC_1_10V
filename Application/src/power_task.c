@@ -592,75 +592,91 @@ void Power_SetEolDimmingLevel(uint16_t percent)
 void Power_UpdateOne2TenDimming(uint16_t adc)
 {
     float level = 0;
-    uint16_t next_level = 0;
-    uint16_t difference = 0;
+    uint16_t difference = 0,next_level=0;
+    uint32_t temp_data=0;
     static int32_t temp1=0;
     static int32_t temp2=0;
     static uint32_t dim_level_1_10=0;
+    static uint32_t s_min_level=0;
     /* Calculate 1-10V dimming level */
-    level = (float)ONE2TEN_PARAM_C1 * adc + (float)ONE2TEN_PARAM_C0;
-    /********Get level filter value******/
-    temp1 =(uint32_t)level;//
     
-    if(temp1>ONE2TEN_UPPER_LIMIT)
+    if(mem_bank_nfc.mem_bank_1_10.Enable_1_10==0)
+    {
+      g_one2ten_dimming_level= POWER_MAX_DIMMING;     
+    }
+    else
+    {
+      s_min_level=(mem_bank_nfc.mem_bank_1_10.Level_h_1_10<<8)+mem_bank_nfc.mem_bank_1_10.Level_l_1_10;
+      s_min_level*=10000;
+      s_min_level>>=15;
+      
+      temp_data=(POWER_MAX_DIMMING-s_min_level)*(adc-ONE_TEN_LOW_VOLTAGE);
+      level=temp_data;
+      level/=(ONE_TEN_HIGH_VOLTAGE-ONE_TEN_LOW_VOLTAGE);
+      level+=s_min_level;
+      //level = (float)ONE2TEN_PARAM_C1 * adc + (float)ONE2TEN_PARAM_C0;
+      /********Get level filter value******/
+      temp1 =(uint32_t)level;//
+      
+      if(temp1>ONE2TEN_UPPER_LIMIT)
         
         temp1=ONE2TEN_UPPER_LIMIT;
-    
-    if(temp1<ONE2TEN_LOWER_LIMIT)
+      
+      if(temp1<ONE2TEN_LOWER_LIMIT)
         
         temp1=ONE2TEN_LOWER_LIMIT;
-    
-    temp2 += (((temp1<<10)- temp2)>>4);
-    
-    dim_level_1_10=temp2>>10;
-    
-    if(abs(dim_level_1_10-(uint16_t)(level))<50)
-    {
+      
+      temp2 += (((temp1<<10)- temp2)>>4);
+      
+      dim_level_1_10=temp2>>10;
+      
+      if(abs(dim_level_1_10-(uint16_t)(level))<50)
+      {
         level=(float)dim_level_1_10;
-    }
-    /* Dimming level change difference */
-    if(level > g_one2ten_dimming_level)
-    {
+      }
+      /* Dimming level change difference */
+      if(level > g_one2ten_dimming_level)
+      {
         difference = (uint16_t)level - g_one2ten_dimming_level;
-    }
-    else
-    {
+      }
+      else
+      {
         difference = g_one2ten_dimming_level - (uint16_t)level;
-    }
-    
-    /* Validate dimming result */
-    if(level > ONE2TEN_UPPER_LIMIT)
-    {
+      }
+      
+      /* Validate dimming result */
+      if(level > ONE2TEN_UPPER_LIMIT)
+      {
         difference = ONE2TEN_UPPER_LIMIT - g_one2ten_dimming_level;        
         next_level = ONE2TEN_UPPER_LIMIT;
-    }
-    else if(level < ONE2TEN_LOWER_LIMIT)
-    {
+      }
+      else if(level < ONE2TEN_LOWER_LIMIT)
+      {
         difference = g_one2ten_dimming_level - ONE2TEN_LOWER_LIMIT;        
         next_level = ONE2TEN_LOWER_LIMIT;
-    }
-    else
-    {
+      }
+      else
+      {
         next_level = (uint16_t)level;
-    }
-    
-    /* Update dimming level with rank filter */
-    //g_one2ten_dimming_level = Filter_Input(next_level);//moon update
-    g_one2ten_dimming_level=(uint16_t)level;
-    //g_one2ten_dimming_level=next_level;
-    //g_one2ten_dimming_level=1000; //10% testing using
-    /* Stable flag update for speed up */
-    //g_one2ten_dimming_level=5000;
-    if(difference >= POWER_DIM_UNSTABLE_DUTY)
-    {
-      s_one_ten_update=1;
-    }
-    {
+      }
+      
+      /* Update dimming level with rank filter */
+      //g_one2ten_dimming_level = Filter_Input(next_level);//moon update
+      g_one2ten_dimming_level=(uint16_t)level;
+      //g_one2ten_dimming_level=next_level;
+      //g_one2ten_dimming_level=1000; //10% testing using
+      /* Stable flag update for speed up */
+      //g_one2ten_dimming_level=5000;
+      if(difference >= POWER_DIM_UNSTABLE_DUTY)
+      {
+        s_one_ten_update=1;
+      }
+      {
         g_current_stable_flag = OUTPUT_UNSTABLE; 
         g_max_duty_enable = 0;
         g_max_pwm_duty = PWM_DUTY_FULL;
+      }
     }
-    
 }
 
 /*******************************************************************************
@@ -872,7 +888,7 @@ void Power_ControlLoopTask(void)
     //target_current=1400;
     //target_current=g_set_current; //add test code moon
         /* Update control loop current adjustment speed threshold */
-    
+#endif    
     temp3=g_uout_real;
     temp4 += (((temp3<<10)- temp4)>>4);
     u_out_roll=temp4>>10;
@@ -922,7 +938,6 @@ void Power_ControlLoopTask(void)
         g_pwm_stable_uout = PWM_STABLE_UOUT_2;
         g_pwm_stable_iout = PWM_STABLE_IOUT_2;
     }
-#endif
     /*Add by moon ************************************/
 //    if(abs(g_iout_real-target_current)<20)
 //    {

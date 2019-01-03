@@ -169,6 +169,10 @@
 #define MEM_BANK_MPC_VER              0X01
 
 
+#define MEM_BANK_1_10_ENABLE         0X00
+#define MEM_BANK_1_10_LEVEL_H        0X0C
+#define MEM_BANK_1_10_LEVEL_L        0XCC
+
 
 #define		PHASE_DISABLE_VALUE_U8		255
 #define		PHASE_DISABLE_VALUE_U16		65535 		// 0xFFFF
@@ -200,6 +204,7 @@
 #define NFC_TIME_ADRRESS            0x740   //0X 7C0
 #define NFC_TIME_COUNT              0xC0   // C0 for 48 pcs data;// 0x40 only for 16 pcs saving
 #define NVM_TIME_SAVE_PERIOD (36000)//10h
+#define NFC_1_10_ENABLE             292
 
 typedef enum
 {

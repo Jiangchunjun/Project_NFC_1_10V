@@ -101,7 +101,7 @@ void nfc_bank_ini(void)
 { 
     uint8_t s_nf_resigter;
 #ifdef ENASTRO   
-    static uint8_t s_arr[]={105,24,49,132,85,91,95,38,65,75,0,99,102,61,87,92};
+    static uint8_t s_arr[]={105,24,49,132,85,91,95,38,65,75,0,99,102,137,61,87,92};
 #else    
     static uint8_t s_arr[]={24,49,85,91,95,38,65,75,0,99,102,61,87,92};
 #endif    
@@ -451,6 +451,9 @@ void nfc_bank_ini(void)
             mem_bank_nfc.mem_bank_astro.MPC_VER=MEM_BANK_MPC_VER;
             mem_bank_nfc.mem_bank_eol.MPC_ID=13;
             mem_bank_nfc.mem_bank_eol.MPC_VER=0;
+            mem_bank_nfc.mem_bank_1_10.Enable_1_10=MEM_BANK_1_10_ENABLE;
+            mem_bank_nfc.mem_bank_1_10.Level_h_1_10=MEM_BANK_1_10_LEVEL_H;
+            mem_bank_nfc.mem_bank_1_10.Level_l_1_10=MEM_BANK_1_10_LEVEL_L; 
             /*copy data to nfaData.item*/
             for(s_count=0;s_count<nfcData.totItemNum;s_count++)
             {
@@ -915,7 +918,7 @@ void nfc_bank_ini_write(void)
     uint8_t ramBuf[64];
     uint8_t nfcBuf[64];
     #ifdef ENASTRO   
-    static uint8_t s_arr[]={105,24,49,132,85,91,95,38,65,75,0,99,102,61,87,92};// this is for nfcData.item to mem_bank_nfc
+    static uint8_t s_arr[]={105,24,49,132,85,91,95,38,65,75,0,99,102,137,61,87,92};// this is for nfcData.item to mem_bank_nfc
 #else    
     static uint8_t s_arr[]={24,49,85,91,95,38,65,75,0,99,102,61,87,92};
 #endif    
@@ -1044,7 +1047,7 @@ void nfc_data_copy(void)
  //uint8_t i; 
 #ifdef ENASTRO  
     
-#define MEM_BANK_SIZE  137  // change from 132 to 133, astro add one byte back to 132. @2017 3.12
+#define MEM_BANK_SIZE  140  // change from 132 to 133, astro add one byte back to 132. @2017 3.12 update from 137 to 140 add 1-10 3 bytes
     
 #else
     
@@ -1068,7 +1071,7 @@ void nfc_psw_update(void)
     uint16_t s_psw_data;
     //static uint8_t update_flag=0;
 #ifdef ENASTRO   
-    static uint8_t s_arr[]={105,24,49,132,85,91,95,38,65,75,0,99,102,61,87,92};// this is for nfcData.item to mem_bank_nfc
+    static uint8_t s_arr[]={105,24,49,132,85,91,95,38,65,75,0,99,102,137,61,87,92};// this is for nfcData.item to mem_bank_nfc
 #else    
     static uint8_t s_arr[]={24,49,85,91,95,38,65,75,0,99,102,61,87,92};
 #endif    
@@ -1317,6 +1320,7 @@ uint8_t nfc_mpc_addr_abs(uint8_t mpc_num)
 #define MPC_INF_NUM   29 
 #define MPC_ASTRO_NUM 30
 #define MPC_EOL_NUMBER 15
+#define MPC_1_10_NUMBER 31
     switch(mpc_num)
     {
         
@@ -1362,6 +1366,9 @@ uint8_t nfc_mpc_addr_abs(uint8_t mpc_num)
     case MPC_EOL_NUMBER:
         return 132;
         break;
+        
+    case MPC_1_10_NUMBER:
+        return 137;
         
     default:
         return 100;
@@ -1912,7 +1919,7 @@ uint8_t nfc_crc_check(nfc_data_address nfc_address)
     uint8_t nfcBuf[64];
     
 #ifdef ENASTRO   
-    uint8_t s_arr[]={105,24,49,132,85,91,95,38,65,75,0,99,102,61,87,92};// this is for nfcData.item to mem_bank_nfc
+    uint8_t s_arr[]={105,24,49,132,85,91,95,38,65,75,0,99,102,137,61,87,92};// this is for nfcData.item to mem_bank_nfc
 #else    
     uint8_t s_arr[]={24,49,85,91,95,38,65,75,0,99,102,61,87,92};
 #endif   
@@ -1977,6 +1984,7 @@ uint8_t nfc_crc_check(nfc_data_address nfc_address)
                             /*upload crc for every byte in each qc item*/ 
                         }
                     }
+                    /******************/
                     M24LRxx_ReadBuffer(nfcData.typeCrcAddr[NFC_DATA_TYPE_QCONST], 4, (uint8_t *)&crc);
                     /*read qc crc*/
                     if(crc!=crcGet())
@@ -2049,6 +2057,7 @@ uint8_t nfc_crc_check(nfc_data_address nfc_address)
                             
                         }
                     }
+                    
                     M24LRxx_ReadBuffer(nfcData.typeCrcAddr[NFC_DATA_TYPE_QCONST]+NFC_SECOND_ADRESS, 4, (uint8_t *)&crc);
                     /*read qc crc*/
                     if(crc!=crcGet())

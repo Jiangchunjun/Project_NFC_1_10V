@@ -55,6 +55,7 @@
 #define TAG_ADDR_MB_ASTRO		    (12)//change from 384 to 12 2017.3.12  with 255 limit
 #define TAG_ADDR_MB_CSM			    (56)
 #define TAG_ADDR_MB_EOL		    (72)//new adding new
+#define TAG_ADDR_1_10                       292
 //#define TAG_ADDR_MB_MAINS		    (620)
 //#define TAG_ADDR_MB_PRESDETECT    (660)
 //#define TAG_ADDR_MB_STEP		    (700)

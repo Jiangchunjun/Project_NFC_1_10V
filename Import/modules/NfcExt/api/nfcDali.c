@@ -152,7 +152,9 @@ typedef enum
 #ifdef DALI_INTERFACE
 	INDEX_DALI_PARAMS,
 #endif
-
+#ifdef MPC_1_10_NUMBER
+       INDEX_1_10,
+#endif
 	INDEX_MB_MAX
 }
 mb_index_t;
@@ -434,7 +436,14 @@ void nfcDali_Init(void)
 	totMbBufSize += (mbSize*getChannelNum(INDEX_MB_STEP));
 	nfcDataInit(memBank[(uint8_t)INDEX_MB_STEP].ptr, mbSize*getChannelNum(INDEX_MB_STEP), TAG_ADDR_MB_STEP, NFC_DATA_TYPE_QCONST);
 #endif
-
+#ifdef MPC_1_10_NUMBER
+	mbSize = 3;
+	memBank[(uint8_t)INDEX_1_10].number = MPC_1_10_NUMBER;
+	memBank[(uint8_t)INDEX_1_10].sizeByte = mbSize;
+	memBank[(uint8_t)INDEX_1_10].ptr = &mbBuf[totMbBufSize];
+	totMbBufSize += (mbSize*getChannelNum(INDEX_1_10));
+	nfcDataInit(memBank[(uint8_t)INDEX_1_10].ptr, mbSize*getChannelNum(INDEX_1_10), TAG_ADDR_1_10, NFC_DATA_TYPE_QCONST);
+#endif
 #ifdef DALI_INTERFACE
 	mbSize = Mpc_GetLength(255);
 	memBank[(uint8_t)INDEX_DALI_PARAMS].number = 255;
