@@ -117,9 +117,9 @@ void MCU_GpioInit(void)
     /* PORT2 unused pins */
     P2_0_set_mode(OUTPUT_OD_GP);
     P2_0_reset();
-    P2_1_set_mode(OUTPUT_OD_GP);
+    P2_1_set_mode(OUTPUT_PP_GP);//update
     P2_1_reset();
-    P2_2_set_mode(OUTPUT_OD_GP);
+    P2_2_set_mode(OUTPUT_PP_GP);//update
     P2_2_reset();
     P2_3_set_mode(OUTPUT_OD_GP);
     P2_3_reset();
@@ -140,7 +140,7 @@ void MCU_PowerOnInit(void)
 {    
     /*------------ Hardware Module Initial -----------------------------------*/
     /* Enable control pwm accelerate pin to avoid shoot current */
-    PWM_CtrlAccelerateEnable();   
+    //PWM_CtrlAccelerateEnable();   
    
     /* MCU clock config initial */
     MCU_ClockInit();   
@@ -311,6 +311,8 @@ void MCU_OVPLevelTriggerTask(void)
     uint8_t ovp_level_state;
     
     /* Run task if application is not in protect mode */
+    
+         //DaliBallast_CyclicTask();
     if(PWM_GetProtectState() == PWM_STATE_PROTECT)
     {
         return;

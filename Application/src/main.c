@@ -14,7 +14,6 @@
 #include "mcu_config.h"
 #include "system.h"
 #include "power_task.h"
-#include "nfc_task.h"
 #include "comm_task.h"
 #include "wdt.h"
 
@@ -35,33 +34,42 @@
 /* Application entry point */
 
 int main(void)
-{       
+{      
+  extern uint8_t g_nfc_ini_flag;
+        static uint8_t save=0;
     /* MCU Power On Initial */
-    MCU_PowerOnInit();
-                
+    MCU_PowerOnInit();       
+             
     /*------------ Application Task Runtime Routine -------------------------*/
     while(1)
     {
+        
+        
         System_PeriodTaskManagement();
         
         System_PowerOnTask();
         
         MCU_OVPLevelTriggerTask();
-                Comm_Task();
         
-        NFC_CommTask();
+        //Comm_Task();
         
+      
         Power_ControlLoopTask();
-        
         System_SleepTask();
         
         System_WakeupTask();
-
         
+        if(g_nfc_ini_flag==1)
+        {
+        DaliBallast_CyclicTask();
+        }
+
+
+        //P2_1_toggle();
         /* Feed watchdog */
         WDT_Feeds();
         
-        __WFI();
+        //__WFI();
     }
 }
 

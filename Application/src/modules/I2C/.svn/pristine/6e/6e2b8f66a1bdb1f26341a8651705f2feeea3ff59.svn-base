@@ -1,0 +1,46 @@
+#ifndef __I2C_CONFIG_H__
+#define __I2C_CONFIG_H__
+
+/** ----------------------------------------------------------------------------
+// i2c_config.h
+// -----------------------------------------------------------------------------
+// (c) Osram GmbH
+// Development Electronics for SSL
+// Parkring 33
+// 85748 Garching
+//
+// The content of this file is intellectual property of OSRAM GmbH. It is
+// confidential and not intended for any public release. All rights reserved.
+//
+// Indent style: Replace tabs by spaces, 4 spaces per indentation level
+//
+// Initial version:
+//
+// $Author$
+// $Revision$
+// $Date$
+// $Id$
+// $URL$
+//
+// Header file required by the user to get access to the array used for NFC chip
+// Sectors protection
+
+* \addtogroup I2cModule
+* \{
+* \file
+* \brief User header file for i2c_config.c
+*\}
+*/
+
+
+//------------------------------------------------------------------------------
+// global variables
+//------------------------------------------------------------------------------
+/**
+ * I2C
+ * external defined to minimize ram size if I2C is part of a library
+ */
+extern uint8_t I2cSectorProtection[];
+
+
+#endif // __I2C_CONFIG_H__

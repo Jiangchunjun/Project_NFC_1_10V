@@ -1,0 +1,27 @@
+digraph G
+{
+   rankdir="UD"
+    node1
+    [
+        shape = none
+
+        label =<  <table  BORDER="0" CELLSPACING="2" >
+	<tr><td port="port0" border="0"   height="6"                       	>                </td></tr>
+                    	<tr><td port="port1" border="1" bgcolor="orange" height="25" 	>  d-page 0  </td></tr>
+	<tr><td port="port2" border="1" bgcolor="orange" height="25" 	>  d-page 1 </td></tr>
+
+                </table> > 
+    ]
+
+    node2
+    [
+        shape = none
+        label = <  <table title="test_title" border="0" cellspacing="0" >
+
+	<tr><td port="port0" border="0"                                  height="28"	>                </td></tr>
+                    	<tr><td port="port1" border="1" bgcolor="turquoise" height="58"   	> e-page 0 </td></tr>
+
+                </table>>
+    ]
+
+}

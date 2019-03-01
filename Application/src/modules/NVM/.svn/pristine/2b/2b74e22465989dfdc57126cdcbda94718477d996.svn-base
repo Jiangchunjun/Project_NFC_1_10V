@@ -1,0 +1,38 @@
+digraph G
+{
+   rankdir="LR"
+    node1
+    [
+        shape = none
+
+        label =<  <table  BORDER="0" CELLSPACING="1">
+
+	<tr><td port="title1" border="0"		      >     Flash    </td></tr>
+                    	<tr><td port="port0" border="1" bgcolor="orange"	      >  d-page 0  </td></tr>
+                    	<tr><td port="port1" border="1" bgcolor="orange"	      >  d-page 1  </td></tr>
+                    	<tr><td port="port2" border="2" bgcolor="turquoise"      	      >  d-page 2  </td></tr>
+                    	<tr><td port="port3" border="1" bgcolor="grey"          	      >  d-page 3  </td></tr>
+	<tr><td port="port4" border="1" bgcolor="orange"         	      >  d-page 4  </td></tr>
+	<tr><td port="port5" border="1" bgcolor="green" HEIGHT="100" >    code      </td></tr>
+
+                </table> > 
+    ]
+
+    node2
+    [
+        shape = none
+        label = <  <table title="test_title" border="0" cellspacing="0" TITLE= "test">
+
+	<tr><td port="title2" border="0"		>     RAM      </td></tr>
+                    	<tr><td port="port0" border="2" bgcolor="turquoise"	>page mirror</td></tr>
+
+                </table>>
+    ]
+
+
+	
+node1:port2 -> node2:port0 [label="Power-on"   color="green"]
+node2:port0 -> node1:port3 [label="Power-down" color="red"]
+node2:port0:s -> node2:port0:e [label="Run-time"   color="black" constraint="false"]
+
+}

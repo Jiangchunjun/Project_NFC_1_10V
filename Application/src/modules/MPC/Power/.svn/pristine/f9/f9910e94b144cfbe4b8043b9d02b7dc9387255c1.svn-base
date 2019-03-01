@@ -1,0 +1,29 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// MpcPower_Services.h
+// ---------------------------------------------------------------------------------------------------------------------
+// (c) Osram GmbH
+// Development Electronics for SSL
+// Parkring 33
+// 85748 Garching
+//
+// The content of this file is intellectual property of OSRAM GmbH. It is
+// confidential and not intended for any public release. All rights reserved.
+//
+// Indent style: Replace tabs by spaces, 2 spaces per indentation level
+//
+// Initial version: Jutta Avril, 2016-06-06
+//
+// $Author$
+// $Revision$
+// $Date$
+// $Id$
+// $URL$
+//
+// MpcPower_Service.h declares prototype functions for data exchange between the power info memory bank 
+// and user specific code 
+// Reference document: "Power Consumption Page Description", 2D1 2784481-000-02, MPC ID =3. 
+// To enable define:
+// #define MPC_POWER_NUMBER       [bank number]
+// ---------------------------------------------------------------------------------------------------------------------
+
+uint32_t MpcPowerServices_GetPowerConsumption( uint8_t channel );

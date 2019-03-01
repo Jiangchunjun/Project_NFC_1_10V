@@ -1,0 +1,70 @@
+/** ----------------------------------------------------------------------------
+// i2c_config.c
+// -----------------------------------------------------------------------------
+// (c) Osram GmbH
+// Development Electronics for SSL
+// Parkring 33
+// 85748 Garching
+//
+// The content of this file is intellectual property of OSRAM GmbH. It is
+// confidential and not intended for any public release. All rights reserved.
+//
+// Indent style: Replace tabs by spaces, 4 spaces per indentation level
+//
+// Initial version: ,
+//
+// $Author$
+// $Revision$
+// $Date$
+// $Id$
+// $URL$
+//
+// Contains the array used for NFC chip Sectors protection
+
+* \addtogroup I2cModule
+* \{
+*   \file
+*   \brief Contains the array used for NFC chip Sectors protection
+* \}
+*/
+
+
+#include <stdint.h>
+#include <stdbool.h>
+
+#include "Global.h"
+
+#include <assert.h>
+
+
+#include "i2c_driver.h"
+
+
+//-----------------------------------------------------------------------------
+// global variables
+//-----------------------------------------------------------------------------
+/**
+ * array of NFC chip sector security status bytes
+ * includes definition for password 1,2 or 3 control
+ */
+uint8_t I2cSectorProtection[M24LR_SECTOR_COUNT] =
+{
+  (M24LR_RF_ACCESS_RIGHT_1 | M24LR_RF_PASSWORD_1_CONTROL), // SECTOR 0 ACCESS RIGHT
+  (M24LR_RF_ACCESS_RIGHT_1 | M24LR_RF_PASSWORD_1_CONTROL), // SECTOR 1 ACCESS RIGHT
+  0, // SECTOR 2 ACCESS RIGHT
+  0, // SECTOR 3 ACCESS RIGHT
+  0, // SECTOR 4 ACCESS RIGHT
+  0, // SECTOR 5 ACCESS RIGHT
+  0, // SECTOR 6 ACCESS RIGHT
+  0, // SECTOR 7 ACCESS RIGHT
+  (M24LR_RF_ACCESS_RIGHT_3 | M24LR_RF_PASSWORD_2_CONTROL), // SECTOR 8 ACCESS RIGHT
+  0, // SECTOR 9 ACCESS RIGHT
+  0, // SECTOR 10 ACCESS RIGHT
+  0, // SECTOR 11 ACCESS RIGHT
+  0, // SECTOR 12 ACCESS RIGHT
+  0, // SECTOR 13 ACCESS RIGHT
+  0, // SECTOR 14 ACCESS RIGHT
+  0, // SECTOR 15 ACCESS RIGHT
+};
+
+

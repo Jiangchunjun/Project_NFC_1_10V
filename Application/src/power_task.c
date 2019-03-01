@@ -600,13 +600,13 @@ void Power_UpdateOne2TenDimming(uint16_t adc)
     static uint32_t s_min_level=0;
     /* Calculate 1-10V dimming level */
     
-    if(mem_bank_nfc.mem_bank_1_10.Enable_1_10==0)
+    //if(mem_bank_nfc.mem_bank_1_10.Enable_1_10==0) //TDL
     {
       g_one2ten_dimming_level= POWER_MAX_DIMMING;     
     }
-    else
+    //else                                          //TDL
     {
-      s_min_level=(mem_bank_nfc.mem_bank_1_10.Level_h_1_10<<8)+mem_bank_nfc.mem_bank_1_10.Level_l_1_10;
+      //s_min_level=(mem_bank_nfc.mem_bank_1_10.Level_h_1_10<<8)+mem_bank_nfc.mem_bank_1_10.Level_l_1_10; //TDL
       s_min_level*=10000;
       s_min_level>>=15;
       
@@ -813,7 +813,7 @@ void Power_ControlLoopTask(void)
     
 #ifdef DEBUG_PRINT
 #endif
-        
+         //DaliBallast_CyclicTask();    
     /* Check if task has beed created */
     if(System_CheckTask(SYS_TASK_LOOP) == SYS_TASK_DISABLE)
     {

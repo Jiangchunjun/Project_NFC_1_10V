@@ -67,7 +67,9 @@ uint16_t Tick_GetTickFreq(void)
 * @Return  
 *******************************************************************************/
 void SysTick_Handler(void)
-{       
+{      
+    extern uint8_t g_nfc_ini_flag;
+    static uint8_t count=0;
     /* Update global tick counter for software delay */
     g_global_ticks++;
     
@@ -76,8 +78,18 @@ void SysTick_Handler(void)
     
     /* Update software timer ticks */
     SWT_DecreaseTick();
-    
+     //P2_1_toggle();
+    if(g_nfc_ini_flag==1)
+    {
+        NfcCyclic();
+      
+        if(count++>0)
+        {
+        DaliBallast_CyclicTask();
+        count=0;
+        }
+    }
     /* Update nfc task software timer */
-    NFC_UpdateTimer();
+    
 }
 

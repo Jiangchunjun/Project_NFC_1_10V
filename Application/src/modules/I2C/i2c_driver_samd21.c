@@ -1,0 +1,731 @@
+/** ----------------------------------------------------------------------------
+// i2c_driver_samd21.c
+// -----------------------------------------------------------------------------
+// (c) Osram spa
+//     Via Castagnole 65/a
+//     31100 Treviso (I)
+//
+//
+// The content of this file is intellectual property of OSRAM spa. It is
+// confidential and not intended for any public release. All rights reserved.
+//
+//
+// Indent style: Replace tabs by spaces, 4 spaces per indentation level
+//
+// Initial version: 2014-12, g.marcolin@osram.it
+//
+// Change History:
+//
+// $Author: j.eisenberg $
+// $Revision: 13855 $
+// $Date: 2018-06-19 21:21:56 +0800 (Tue, 19 Jun 2018) $
+// $Id: i2c_driver_samd21.c 13855 2018-06-19 13:21:56Z j.eisenberg $
+// $URL: https://app-ehnsvn02.int.osram-light.com/svn/EC/Toolbox1.0/I2c/tags/v1.7/Src/i2c_driver_samd21.c $
+//
+// -----------------------------------------------------------------------------
+*/
+
+/** \addtogroup I2cDriverAPI
+ * \{
+ *   \file
+ *   \addtogroup I2cDriverSAMD21
+ *   \{
+ *      \file
+ *      \brief I2c driver using DMAC for Atmel SAM D21
+ *   \}
+ * \}
+ */
+
+#include <stdint.h>
+#include <stdbool.h>
+
+#include <samd21.h>
+#include <dmac.h>
+#include <sercom.h>
+#include <gclk.h>
+#include <system.h>
+#include <port.h>
+#define MODULE_I2C
+#include "Config.h"
+
+#include "ConfigDmacSamD21.h"
+#include "Dmac/DmacSamD21.h"
+
+#include "i2c_driver.h"
+#include "i2c_userinterface.h"
+#include "i2c_parameters_samd21.h"
+#include "i2c_local.h"
+
+//-----------------------------------------------------------------------------
+// local variables
+//-----------------------------------------------------------------------------
+static uint32_t i2c_read_addr_register;
+static bool     i2c_trigger_read_request;
+DmacDescriptor *transfer_descriptor_ch_write;
+DmacDescriptor *transfer_descriptor_ch_read;
+
+//-----------------------------------------------------------------------------
+// global variables
+//-----------------------------------------------------------------------------
+i2c_driver_feedback_struct_t i2c_driver_feedback_struct;
+
+extern i2c_local_state_t *i2c_local_struct;
+
+uint8_t i2_master_dma_tx_data_buffer[M24LRxx_MAX_WRITE_LENGTH + M24LRxx_DATA_ADDR_WIDTH];
+
+
+//-----------------------------------------------------------------------------
+// loacl functions
+//-----------------------------------------------------------------------------
+/**
+ * \brief SAMD21 DMAC transcriptors initialization
+ */
+void initialize_dmac_transcriptors(void)
+{
+    // get pointer to first transfer descriptor for channel write
+    transfer_descriptor_ch_write =
+            DmacGetFirstTransferDescriptor(SAMD21_DMAC_CH_I2C_TX);
+
+    // get pointer to first transfer descriptor for channel read
+    transfer_descriptor_ch_read =
+            DmacGetFirstTransferDescriptor(SAMD21_DMAC_CH_I2C_RX);
+
+    // First Transfer Descriptor Write Channel
+    // initialize DMAC write channel descriptor
+    transfer_descriptor_ch_write->BTCTRL.bit.BEATSIZE =
+                                      DMAC_BTCTRL_BEATSIZE_BYTE_Val;
+    transfer_descriptor_ch_write->BTCTRL.bit.SRCINC = true;
+    transfer_descriptor_ch_write->BTCTRL.bit.DSTINC = false;
+    transfer_descriptor_ch_write->BTCTRL.bit.VALID = true;
+    // set destination address
+    transfer_descriptor_ch_write->DSTADDR.reg =
+                                      (uint32_t) (&I2C_SERCOM->I2CM.DATA.reg);
+    // pointer to next descriptor set to 0 (no more descriptors in list)
+    transfer_descriptor_ch_write->DESCADDR.reg = 0;
+
+    // First Transfer Descriptor Read Channel
+    transfer_descriptor_ch_read->BTCTRL.bit.BEATSIZE =
+                                      DMAC_BTCTRL_BEATSIZE_BYTE_Val;
+    transfer_descriptor_ch_read->BTCTRL.bit.SRCINC = false;
+    transfer_descriptor_ch_read->BTCTRL.bit.DSTINC = true;
+    transfer_descriptor_ch_read->BTCTRL.bit.VALID = true;
+    // set source address
+    transfer_descriptor_ch_read->SRCADDR.reg =
+                                      (uint32_t) (&I2C_SERCOM->I2CM.DATA.reg);
+    // pointer to next descriptor set to 0 (no more descriptors in list)
+    transfer_descriptor_ch_read->DESCADDR.reg = 0;
+}
+
+//-----------------------------------------------------------------------------
+/**
+ * \brief I2C read/write/error irq manager
+ */
+void i2c_master_irq(void)
+{
+    uint32_t intflag_reg;
+    uint32_t status_reg;
+
+    // disable Error IRQ
+    I2C_SERCOM->I2CM.INTENCLR.reg = SERCOM_I2CM_INTENSET_ERROR;
+
+    // read IRQ flags
+    intflag_reg = I2C_SERCOM->I2CM.INTFLAG.reg;
+    // read status register
+    status_reg = I2C_SERCOM->I2CM.STATUS.reg;
+
+    // on Error
+    if (intflag_reg & SERCOM_I2CM_INTFLAG_ERROR)
+    {
+        // set I2C driver status
+        i2c_driver_feedback_struct.status = I2C_DRIVER_STATUS_ERROR;
+
+        // on DMA Transfer Length Error
+        if (status_reg & SERCOM_I2CM_STATUS_LENERR)
+        {
+            // set I2C driver status
+            i2c_driver_feedback_struct.status = I2C_DRIVER_STATUS_NACK;
+        }
+        // on NACK
+        else if (status_reg & SERCOM_I2CM_STATUS_RXNACK)
+        {
+            // set I2C driver status
+            i2c_driver_feedback_struct.status = I2C_DRIVER_STATUS_NACK;
+        }
+
+    }
+    // clear IRQ flag ERROR
+    I2C_SERCOM->I2CM.INTFLAG.reg = SERCOM_I2CM_INTENSET_ERROR;
+
+    // enable Error IRQ
+    I2C_SERCOM->I2CM.INTENSET.reg = SERCOM_I2CM_INTENSET_ERROR;
+}
+
+//------------------------------------------------------------------------------
+/**
+ * \brief SAMD21 Irq handler for the writings
+ * \param irq_pend_reg
+ */
+void i2c_master_irq_dmac_handler_ch_write(uint32_t irq_pend_reg)
+{
+    // handle DMAC Channel Transfer Complete IRQ
+     if (DMAC_INTPEND_TCMPL & irq_pend_reg)
+     {
+         if(true == i2c_trigger_read_request)
+         {
+             // set trigger read request flag to false
+             i2c_trigger_read_request = false;
+
+             // start I2C read operation
+             I2C_SERCOM->I2CM.ADDR.reg = i2c_read_addr_register;
+         }
+         else
+         {
+             // set I2C driver status
+             i2c_driver_feedback_struct.status = I2C_DRIVER_STATUS_DONE_TX;
+         }
+         // clear IRQ - Transfer Complete
+         DMAC->INTPEND.reg = (DMAC_INTPEND_TCMPL | SAMD21_DMAC_CH_I2C_TX);
+     }
+
+     // handle DMAC Channel Transfer Error IRQ
+     if (DMAC_INTPEND_TERR & irq_pend_reg)
+     {
+         // set I2C driver status
+         i2c_driver_feedback_struct.status = I2C_DRIVER_STATUS_ERROR;
+
+         // clear IRQ - Transfer Error
+         DMAC->INTPEND.reg = (DMAC_INTPEND_TERR | SAMD21_DMAC_CH_I2C_TX);
+     }
+}
+
+//------------------------------------------------------------------------------
+/**
+ * \brief SAMD21 Irq handler for the readings
+ * \param irq_pend_reg
+ */
+void i2c_master_irq_dmac_handler_ch_read(uint32_t irq_pend_reg)
+{
+    // handle DMAC Channel Transfer Complete IRQ
+    if (DMAC_INTPEND_TCMPL & irq_pend_reg)
+    {
+        // read-out CRC-16
+        i2c_driver_feedback_struct.crc_16 = (uint16_t)(DMAC->CRCCHKSUM.reg);
+
+        // restart CRC DMAC-CRC (enable and set start value)
+        DmacCrcRestart(I2C_CRC_START_VALUE);
+
+        // set I2C driver status
+        i2c_driver_feedback_struct.status = I2C_DRIVER_STATUS_DONE_RX;
+
+        // clear IRQ - Transfer Complete
+        DMAC->INTPEND.reg = (DMAC_INTPEND_TCMPL | SAMD21_DMAC_CH_I2C_RX);
+    }
+
+    // handle DMAC Channel Transfer Error IRQ
+    if (DMAC_INTPEND_TERR & irq_pend_reg)
+    {
+        // set I2C driver status
+        i2c_driver_feedback_struct.status = I2C_DRIVER_STATUS_ERROR;
+
+        // clear IRQ - Transfer Error
+        DMAC->INTPEND.reg = (DMAC_INTPEND_TERR | SAMD21_DMAC_CH_I2C_RX);
+    }
+}
+
+
+//-----------------------------------------------------------------------------
+// global functions
+//-----------------------------------------------------------------------------
+/**
+ * \brief I2C driver DMA channel initialization
+*/
+void I2cDrvMasterInitDma(void)
+{
+    // Initialize DMAC Channel I2C - Write
+
+    // perform reset of DMAC Channel I2C Write
+    DmacResetChannel(SAMD21_DMAC_CH_I2C_TX);
+
+    // select DMAC Channel I2C Write
+    DMAC->CHID.reg = SAMD21_DMAC_CH_I2C_TX;
+
+    // set trigger source and trigger action (1 trigger required for each beat)
+    // set channel priority level
+    DMAC->CHCTRLB.reg = (DMAC_CHCTRLB_TRIGSRC(I2C_DMAC_TX_TRIGGER)
+                      | DMAC_CHCTRLB_TRIGACT(DMAC_CHCTRLB_TRIGACT_BEAT_Val)
+                      | DMAC_CHCTRLB_LVL(SAMD21_DMAC_CH_I2C_LVL_PRIORITY));
+
+    // clear all IRQs for the selected DMAC channel
+    DMAC->CHINTFLAG.reg =
+            (DMAC_CHINTENSET_TERR | DMAC_CHINTENSET_TCMPL | DMAC_CHINTENSET_SUSP);
+
+    // enable Error and Transfer Complete IRQs for the selected DMAC channel
+    DMAC->CHINTENSET.reg = (DMAC_CHINTENSET_TERR | DMAC_CHINTENSET_TCMPL);
+
+    // configure DMAC IRQ handler for Channel I2C-Write
+    DmacInitChIrqHandler(SAMD21_DMAC_CH_I2C_TX, i2c_master_irq_dmac_handler_ch_write);
+
+
+    // Initialize DMAC Channel I2C - Read
+
+    // perform reset of DMAC Channel I2C Read
+    DmacResetChannel(SAMD21_DMAC_CH_I2C_RX);
+
+    // select DMAC Channel I2C Read
+    DMAC->CHID.reg = SAMD21_DMAC_CH_I2C_RX;
+
+    // set trigger source and trigger action (1 trigger required for each beat)
+    // set channel priority level
+    DMAC->CHCTRLB.reg = (DMAC_CHCTRLB_TRIGSRC(I2C_DMAC_RX_TRIGGER)
+                      | DMAC_CHCTRLB_TRIGACT(DMAC_CHCTRLB_TRIGACT_BEAT_Val)
+                      | DMAC_CHCTRLB_LVL(SAMD21_DMAC_CH_I2C_LVL_PRIORITY));
+
+    // enable CRC16 calculation for channel SAMD21_DMAC_CH_I2C_RX
+    DMAC->CRCCTRL.reg = (DMAC_CRCCTRL_CRCSRC(0x20 + SAMD21_DMAC_CH_I2C_RX)
+                      |  DMAC_CRCCTRL_CRCPOLY_CRC16 | DMAC_CRCCTRL_CRCBEATSIZE_BYTE);
+
+    // initialize CRCCHKSUM register to I2C_CRC_START_VALUE
+    // required to disable CRC first, because register CRCCHSUM is enable protected
+    DMAC->CTRL.reg &= ~DMAC_CTRL_CRCENABLE;
+    DMAC->CRCCHKSUM.reg = I2C_CRC_START_VALUE;
+
+    // clear all IRQs for the selected DMAC channel
+    DMAC->CHINTFLAG.reg =
+            (DMAC_CHINTENSET_TERR | DMAC_CHINTENSET_TCMPL | DMAC_CHINTENSET_SUSP);
+
+    // enable Error and Transfer Complete IRQs for the selected DMAC channel
+    DMAC->CHINTENSET.reg = (DMAC_CHINTENSET_TERR | DMAC_CHINTENSET_TCMPL);
+
+    // configure DMAC IRQ handler for Channel I2C-Read
+    DmacInitChIrqHandler(SAMD21_DMAC_CH_I2C_RX, i2c_master_irq_dmac_handler_ch_read);
+
+    // preinitialize all Transfer descriptors for I2C
+    initialize_dmac_transcriptors();
+
+    // enable I2C DMA priority level
+    DmacPriorityLevelEnable(SAMD21_DMAC_CH_I2C_LVL_PRIORITY);
+}
+
+//-----------------------------------------------------------------------------
+/**
+ * \brief I2C driver initialization
+*/
+void I2cDrvInit(void)
+{
+   uint8_t swrst_timeout = 0;
+   uint8_t syncbusy_timeout = 0;
+
+   // set I2C driver status
+   i2c_driver_feedback_struct.status = I2C_DRIVER_STATUS_IDLE;
+
+   // set trigger read request flag to false
+   i2c_trigger_read_request = false;
+
+   // Enable peripheral clock
+   I2C_CLOCK_MASK_REG |= I2C_CLOCK_ENABLE_BIT_MASK; // //    PM->APBCMASK.reg
+   // ToDo: why is the PORT Clock required for I2C ???
+   PM->APBBMASK.bit.PORT_ = 1;
+
+   // Set the clock channel
+   GCLK->CLKCTRL.reg = (1 << 14) | I2C_CLOCK_SELECTION_ID | (I2C_CLOCK_GENERATOR << 8);
+
+   // Reset the SERCOM peripheral
+   I2C_SERCOM->I2CM.CTRLA.reg = SERCOM_I2CS_CTRLA_SWRST;
+
+   // Wait until reset is completed
+   while ( (I2C_SERCOM->I2CM.CTRLA.reg & SERCOM_I2CS_CTRLA_SWRST == 1) && (swrst_timeout < 0xFF) )
+   {
+       swrst_timeout++;
+   }
+
+   // SPEED = 0 (100kHz - 400kHz)
+   // SDAHOLD = 2 (300ns-600ns hold time) -> NFCTAG - tCLQX tDH Data out hold time 100 -> already set
+   // RUNSTDBY = 1 (enable I2C module in all sleep modes)
+   // MODE = 5 (I2C master mode) --> OK
+   I2C_SERCOM->I2CM.CTRLA.reg =    SERCOM_I2CM_CTRLA_MODE_I2C_MASTER | SERCOM_I2CM_CTRLA_SPEED(I2C_SPEED) |
+                                   SERCOM_I2CM_CTRLA_SDAHOLD(2) | SERCOM_I2CM_CTRLA_RUNSTDBY;
+
+   // Enable SmartMode: Master sends ACK / NACK on read access DATA.DATA
+   I2C_SERCOM->I2CM.CTRLB.reg =    SERCOM_I2CM_CTRLB_SMEN;
+
+   I2C_SERCOM->I2CM.BAUD.reg =     SERCOM_I2CM_BAUD_BAUD(I2C_BAUD_REG) | SERCOM_I2CM_BAUD_BAUDLOW(0) |
+                                   SERCOM_I2CM_BAUD_HSBAUD(1) | SERCOM_I2CM_BAUD_HSBAUDLOW(0);
+
+   // Setup SDA
+   if ( I2C_SDA_PIN & 1 )
+   {
+       I2C_SDA_PORT.PMUX[I2C_SDA_PIN>>1].bit.PMUXO = I2C_SDA_AF;
+   }
+   else
+   {
+       I2C_SDA_PORT.PMUX[I2C_SDA_PIN>>1].bit.PMUXE = I2C_SDA_AF;
+   }
+
+
+//     PORT_PINCFG_INEN = 0 ?
+   I2C_SDA_PORT.PINCFG[I2C_SDA_PIN].reg = PORT_PINCFG_PMUXEN | PORT_PINCFG_INEN;
+
+
+   // Setup SCL
+   if ( I2C_SCL_PIN & 1 )
+   {
+       I2C_SCL_PORT.PMUX[I2C_SCL_PIN>>1].bit.PMUXO = I2C_SCL_AF;
+   }
+   else
+   {
+       I2C_SCL_PORT.PMUX[I2C_SCL_PIN>>1].bit.PMUXE = I2C_SCL_AF;
+   }
+
+   I2C_SCL_PORT.PINCFG[I2C_SCL_PIN].reg = PORT_PINCFG_PMUXEN | PORT_PINCFG_INEN;
+
+   // Interrupts setup
+   I2C_SERCOM->I2CM.INTENCLR.reg = 0xFFu;
+
+   //I2C_SERCOM->I2CM.INTENSET.reg = SERCOM_I2CM_INTENSET_MB | SERCOM_I2CM_INTENSET_SB | SERCOM_I2CM_INTENSET_ERROR;
+
+   // I2C IRQ enable
+   NVIC_SetPriority(I2C_IRQ_NVIC, I2C_NFC_INT_PRIORITY);
+   I2C_SERCOM->I2CM.INTFLAG.reg = SERCOM_I2CM_INTFLAG_MASK;
+	 NVIC_ClearPendingIRQ( I2C_IRQ_NVIC );
+	 I2C_SERCOM->I2CM.INTENSET.reg = SERCOM_I2CM_INTENSET_ERROR;
+   NVIC_EnableIRQ(I2C_IRQ_NVIC);
+
+   // Enable the I2C!
+   I2C_SERCOM->I2CM.CTRLA.reg |= SERCOM_I2CM_CTRLA_ENABLE;
+   while (((I2C_SERCOM->I2CM.SYNCBUSY.reg & SERCOM_I2CM_SYNCBUSY_ENABLE) != 0) && (syncbusy_timeout < 0xFF))
+   {
+       syncbusy_timeout++;
+   }
+
+   // set I2C bus from state 'unkown' to 'idle'
+   // BUSSTATE[1:0] writing 1 forces I2C state from Unknown -> Idle
+   //               required to poll SYNCBUSY.SYSOP
+   I2C_SERCOM->I2CM.STATUS.reg = SERCOM_I2CM_STATUS_BUSSTATE(1);
+
+   // configure and enable DMA for I2C
+   // i2c_drv_master_init_dma();
+}
+
+
+//-----------------------------------------------------------------------------
+/**
+* \brief Stops I2c HW driver
+* \param
+* \param
+*/
+void I2cDrvStop(void)
+{
+
+}
+
+
+//-----------------------------------------------------------------------------
+/**
+* \brief Starts an I2C frame
+* \param dev_select_code: device address selection code
+* \param length: the lenght of the frame which has to be transferred
+*/
+void I2cDrvStartTransfer(uint8_t dev_select_code, uint16_t length)
+{
+    // configure I2C for DMAC usage and send I2C start condition
+    I2C_SERCOM->I2CM.ADDR.reg = SERCOM_I2CM_ADDR_ADDR(dev_select_code)
+                              | SERCOM_I2CM_ADDR_LENEN
+                              | SERCOM_I2CM_ADDR_LEN((length));
+
+}
+
+//-----------------------------------------------------------------------------
+/**
+* \brief Dummy function not needed for the SAMD21 itself. It is used to mantain
+* the compatibility with XMC1300 driver
+* \retval Dummy always 0
+*/
+uint8_t I2cDrvReadByte(void)
+{
+  return 0;
+}
+
+
+//-----------------------------------------------------------------------------
+/**
+* \brief Transmits a stop
+*/
+void I2cDrvStopTransfer(void)
+{
+    // it should be NOT read modify write operation, set other bits as defines if they are constant !
+//    I2C_SERCOM->I2CM.CTRLB.reg |= SERCOM_I2CM_CTRLB_CMD(3);
+    // ToDo: add define for config value of SERCOM_I2CM_CTRLB_SMEN
+    I2C_SERCOM->I2CM.CTRLB.reg = (SERCOM_I2CM_CTRLB_CMD(3) | SERCOM_I2CM_CTRLB_SMEN);
+}
+
+//-----------------------------------------------------------------------------
+/**
+ * \brief Set ACK/NACK acknowledge
+*/
+void I2cDrvSetAcknowledge(i2c_ack_t acknowledge)
+{
+    if (I2C_ACK_YES == acknowledge)
+    {
+        I2C_SERCOM->I2CM.CTRLB.reg = SERCOM_I2CM_CTRLB_SMEN;
+    }
+    else
+    {
+        I2C_SERCOM->I2CM.CTRLB.reg = SERCOM_I2CS_CTRLB_ACKACT
+                | SERCOM_I2CM_CTRLB_SMEN;
+    }
+}
+
+//-----------------------------------------------------------------------------
+/**
+ * \brief Fill I2C TX write data into DMA buffer
+ * \param address: TAG start address
+ * \param data: pointer to data array
+ * \param length: number of bytes to write
+ */
+// ToDo add check for length <= 4
+// ToDo add check status should be NOT - BUSY
+void I2cDrvWriteDataDma(uint16_t address, uint8_t *data, uint8_t length)
+{
+    uint8_t i1;
+
+    // fill address into data TX DMA buffer
+    i2_master_dma_tx_data_buffer[0] = address >> 8;
+    i2_master_dma_tx_data_buffer[1] = (uint8_t) (0x00FF & address);
+
+    // fill data into TX DMA buffer
+    for (i1 = 0; i1 < length; i1++)
+    {
+        i2_master_dma_tx_data_buffer[i1 + 2] = data[i1];
+    }
+
+    // stop DMA channel before Transfer Descriptor can be modified
+    DmacStopChannel(SAMD21_DMAC_CH_I2C_TX);
+
+    // fill DMA structure
+    // set source address
+    transfer_descriptor_ch_write->SRCADDR.reg =
+            (uint32_t) (i2_master_dma_tx_data_buffer + (length + 2));
+    // set block length (+2 due to 16 bit I2C address)
+    transfer_descriptor_ch_write->BTCNT.reg = length + 2;
+
+    // set I2C driver status
+    i2c_driver_feedback_struct.status = I2C_DRIVER_STATUS_BUSY;
+
+    // start DMAC Write Channel after Transfer descriptors are modified
+    // after transfer complete the DMA channel is disabled and must be enabled
+    DmacStartChannel(SAMD21_DMAC_CH_I2C_TX);
+}
+
+//-----------------------------------------------------------------------------
+/**
+* \brief Wrapper function to write I2C data mantaining the compatibility with
+* XMC1300 driver
+* \param dev_sel_code: (0xA6) write request
+* \param address: TAG start address
+* \param data: pointer to data array
+* \param length: data length
+*/
+void I2cDrvWriteData (uint8_t dev_sel_code, uint16_t address, uint8_t *data,
+                      uint8_t length)
+{
+  // SAMD21: write DMAC w/o device select code
+  I2cDrvWriteDataDma( address, data, length);
+}
+
+//-----------------------------------------------------------------------------
+/**
+* \brief Fill I2C RX read data into DMA buffer
+* \param dev_sel_code: set to 0xA7 = read request
+* \param address: i2c address
+* \param data: pointer to data array
+* \param length: data length
+*/
+// ToDo add check status should be NOT - BUSY
+void I2cDrvReadDataDma(uint8_t dev_sel_code, uint16_t address,
+                                  uint8_t *data, uint8_t length)
+{
+    // fill address into data TX DMA buffer
+    i2_master_dma_tx_data_buffer[0] = address >> 8;
+    i2_master_dma_tx_data_buffer[1] = (uint8_t)(0x00FF & address);
+
+    // fill Transfer descriptor for sending address
+
+    // stop DMA channel before Transfer Descriptor can be modified
+    DmacStopChannel(SAMD21_DMAC_CH_I2C_TX);
+
+    // set source address
+    transfer_descriptor_ch_write->SRCADDR.reg =
+            (uint32_t) (i2_master_dma_tx_data_buffer + 2);
+    // set block length (2 bytes due to 16 bit I2C address)
+    transfer_descriptor_ch_write->BTCNT.reg = 2;
+
+    // set value for I2CM.ADDR.reg to trigger read operation
+    i2c_read_addr_register = SERCOM_I2CM_ADDR_ADDR(dev_sel_code | 0x01)
+                           | SERCOM_I2CM_ADDR_LENEN
+                           | SERCOM_I2CM_ADDR_LEN((length + 1));
+
+    // fill Transfer descriptor for reading
+
+    // stop DMA channel before Transfer Descriptor can be modified
+    DmacStopChannel(SAMD21_DMAC_CH_I2C_RX);
+
+    // set destination address
+    transfer_descriptor_ch_read->DSTADDR.reg =
+            (uint32_t)(data + length);
+    // set block length (+2 due to 16 bit I2C address)
+    transfer_descriptor_ch_read->BTCNT.reg = length;
+
+    // set I2C driver status
+    i2c_driver_feedback_struct.status = I2C_DRIVER_STATUS_BUSY;
+
+    // set trigger read request flag
+    i2c_trigger_read_request = true;
+
+    // start DMAC Read and Write Channel after Transfer descriptors are modified
+    // after transfer complete the DMA channel is disabled and must be enabled
+    DmacStartChannel(SAMD21_DMAC_CH_I2C_TX);
+    DmacStartChannel(SAMD21_DMAC_CH_I2C_RX);
+}
+
+//-----------------------------------------------------------------------------
+/**
+* \brief Wrapper function to read I2C data mantaining the compatibility with
+* XMC1300 driver
+* \param dev_sel_code: set to 0xA7 = read request
+* \param address: TAG address
+* \param data: pointer to data array
+* \param length: data length
+*/
+void I2cDrvReadData(uint8_t dev_sel_code, uint16_t address,
+                                  uint8_t *data, uint8_t length)
+{
+    I2cDrvReadDataDma(dev_sel_code, address, data, length);
+}
+
+//-----------------------------------------------------------------------------
+/**
+ * \brief Check the status of the RX channel of the driver
+ * \return true if the RX DMAC channel is active
+ */
+bool I2cDrvIsRxBusy(void)
+{
+    return DmacChannelIsActive(SAMD21_DMAC_CH_I2C_RX);
+}
+
+//-----------------------------------------------------------------------------
+/**
+ * \brief Check the status of the TX channel of the driver
+ * \return true if the TX DMAC channel is active
+ */
+bool I2cDrvIsTxBusy(void)
+{
+    return DmacChannelIsActive(SAMD21_DMAC_CH_I2C_TX);
+}
+
+//-----------------------------------------------------------------------------
+/**
+* \brief Dummy function not needed for the SAMD21 itself. It is used to mantain
+* the compatibility with XMC1300 driver
+*/
+void I2cDrvUpdateStatus(void)
+{
+    return;
+}
+
+//-----------------------------------------------------------------------------
+/**
+ * \brief Issue a new I2c transfer.
+ * \note Can be RX or TX, RX will always have the priority, even if a writing
+ * procedure is already in progress.
+ */
+void start_transfer(void)
+{
+    uint16_t dev_select_code;
+
+    if (i2c_transfer_direction_rx == i2c_local_struct->transfer_direction)
+    {
+
+        // read from tag register or memory area?
+        // bit 7 set: read from tag register
+        // bit 6 set: read from user memory area
+        dev_select_code =
+                (i2c_local_struct->rx_request.addr & 0xC000) ?
+                M24LRxx_ADDR_REGISTER : M24LRxx_ADDR_DATA;
+
+        // fill transfer data into DMA buffer and start transfer
+        // mask most significant bit of address
+
+        I2cDrvReadData (dev_select_code,
+                          (i2c_local_struct->rx_request.addr & 0x3FFF),
+                          i2c_local_struct->rx_request.data_ptr,
+                          i2c_local_struct->rx_request.length);
+
+        // start DMA transfer - Read
+        I2cDrvStartTransfer(dev_select_code, M24LRxx_DATA_ADDR_WIDTH);
+    }
+    else // i2c_transfer_direction_tx == i2c_local_state.transfer_direction
+    {
+        // read from tag register or memory area?
+        dev_select_code =
+                (i2c_local_struct->tx_request.addr & 0xC000) ?
+                M24LRxx_ADDR_REGISTER : M24LRxx_ADDR_DATA;
+
+        // fill transfer data into DMA buffer
+        // mask most significant bit of address
+        I2cDrvWriteData (dev_select_code,
+                           (i2c_local_struct->tx_request.addr & 0x3FFF),
+                           i2c_local_struct->tx_request.data,
+                           i2c_local_struct->tx_request.length);
+
+        // start DMA transfer - Write
+        // length = data_length + 2 = 2 bytes address + length of data
+        I2cDrvStartTransfer (dev_select_code,
+                             i2c_local_struct->tx_request.length + M24LRxx_DATA_ADDR_WIDTH);
+    }
+}
+
+//-----------------------------------------------------------------------------
+/**
+* \brief Dummy function not needed for the SAMD21 itself. It is used to mantain
+* the compatibility with XMC1300 driver
+ * \return always true
+ */
+bool is_rx_request_completed(void)
+{
+    return true;
+}
+
+//-----------------------------------------------------------------------------
+/**
+* \brief Dummy function not needed for the SAMD21 itself. It is used to mantain
+* the compatibility with XMC1300 driver
+*/
+void update_crc_calculation_on_rx(void)
+{
+    return;
+}
+
+//-----------------------------------------------------------------------------
+/**
+* \brief Dummy function not needed for the SAMD21 itself. It is used to mantain
+* the compatibility with XMC1300 driver
+*/
+void init_crc_calculation_on_rx(void)
+{
+    return;
+}
+
+//-----------------------------------------------------------------------------
+/**
+* \brief Check if the last reveived I2c frame had a crc error
+* \return true if there is no crc error
+*/
+bool is_crc_correct(void)
+{
+    return i2c_driver_feedback_struct.crc_16 == 0;
+}
+
+
+
+/** \} */ // I2cDriverSAMD21
+/** \} */ // I2cDriver

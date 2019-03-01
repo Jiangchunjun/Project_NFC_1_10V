@@ -1,0 +1,153 @@
+#ifndef __I2C_LOCAL_H__
+#define __I2C_LOCAL_H__
+
+/** ----------------------------------------------------------------------------
+// i2c_local.h
+// -----------------------------------------------------------------------------
+// (c) Osram GmbH
+// Development Electronics for SSL
+// Parkring 33
+// 85748 Garching
+//
+// The content of this file is intellectual property of OSRAM GmbH. It is
+// confidential and not intended for any public release. All rights reserved.
+//
+// Indent style: Replace tabs by spaces, 2 spaces per indentation level
+//
+// Initial version: Sammy el Baradie,  27/07/2016
+//
+// $Author$
+// $Revision$
+// $Date$
+// $Id$
+// $URL$
+//
+// Contains all the structures required by i2c_module.c
+
+* \addtogroup I2cModule
+* \{
+*   \file
+*   \brief Local header file for i2c_module.c
+* \}
+*/
+
+
+#include <stdint.h>
+#include <stdbool.h>
+
+//-----------------------------------------------------------------------------
+// parameters
+//-----------------------------------------------------------------------------
+
+
+/** number of TX FIFO entries */
+#ifdef UNIT_TESTING
+    #define I2C_TX_FIFO_LENGTH              64
+#else
+    #define I2C_TX_FIFO_LENGTH              128
+#endif
+
+/** Byte width of the CRC */
+#define I2C_CRC_BYTE_WIDTH                  2
+//-----------------------------------------------------------------------------
+// macros
+//-----------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------
+// enums
+//-----------------------------------------------------------------------------
+/** I2C FSM states */
+typedef enum
+{
+    i2c_fsm_idle,              //!< i2c_fsm_idle
+    i2c_fsm_wait_transfer_done,//!< i2c_fsm_wait_transfer_done
+    i2c_fsm_wait_timer,        //!< i2c_fsm_wait_timer
+    i2c_fsm_error              //!< i2c_fsm_error
+} i2c_fsm_states_t;
+
+//-----------------------------------------------------------------------------
+/** I2C transfer direction*/
+typedef enum
+{
+    i2c_transfer_direction_rx,
+    i2c_transfer_direction_tx
+} i2c_transfer_direction_t;
+
+//-----------------------------------------------------------------------------
+// structures
+//-----------------------------------------------------------------------------
+/** TX Request parameters */
+typedef struct
+{
+    uint16_t                    addr;
+    uint8_t                     data[M24LRxx_MAX_WRITE_LENGTH];
+    uint8_t                     length;
+} tx_request_t;
+
+//-----------------------------------------------------------------------------
+/** TX FIFO entry parameters */
+typedef struct
+{
+    uint16_t                    addr;
+    uint8_t                     data;
+} tx_fifo_entry_t;
+
+//-----------------------------------------------------------------------------
+/** TX FIFO parameters */
+typedef struct
+{
+    tx_fifo_entry_t             entries[I2C_TX_FIFO_LENGTH];
+    uint16_t                    entry_cnt;
+    uint16_t                    output_idx;
+    uint16_t                    input_idx;
+} tx_fifo_t;
+
+//-----------------------------------------------------------------------------
+/** i2c rx request parameters */
+typedef struct
+{
+    bool                        is_filled;
+    uint16_t                    addr;
+    uint8_t                     *data_ptr;
+    uint16_t                    length;
+    uint8_t                     length_portion;
+    uint16_t                    bytes_received_cnt;
+} rx_request_t;
+
+//-----------------------------------------------------------------------------
+/** structure of complete local I2C module states and variables */
+typedef struct
+{
+    i2c_fsm_states_t            fsm_state;
+    i2c_transfer_direction_t    transfer_direction;
+    rx_request_t                rx_request;
+    tx_request_t                tx_request;
+    tx_fifo_t                   tx_fifo;
+    uint32_t                    wait_cnt;
+    uint16_t                    wait_cnt_timeout;
+    uint16_t                    wait_for_transfer_done_cnt;
+    uint16_t                    writing_done_counter;
+    uint16_t                    status_tx_fifo_full_event_cnt;
+    uint16_t                    status_nack_event_cnt;
+    uint16_t                    status_error_event_cnt;
+    uint16_t                    status_no_response_event_cnt;
+} i2c_local_state_t;
+
+//-----------------------------------------------------------------------------
+// packed structures
+//-----------------------------------------------------------------------------
+// pack all following structures to at most 1 byte and push current alignment
+// on stack to restore later. Required to prevent byte gaps introduced by
+// the compiler to optimize performance.
+// Pack is valid to the end of the compilation unit.
+#pragma pack(push)
+#pragma pack(1)
+
+//-----------------------------------------------------------------------------
+// restore previous alignment from stack
+#pragma pack(pop)
+//-----------------------------------------------------------------------------
+// end of packed structures
+//-----------------------------------------------------------------------------
+
+#endif // __I2C_LOCAL_H__

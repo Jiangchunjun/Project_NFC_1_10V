@@ -4637,13 +4637,22 @@
         <name>$PROJ_DIR$\..\Application\inc\comm_task.h</name>
       </file>
       <file>
+        <name>$PROJ_DIR$\..\Application\inc\ConfigDali.h</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Application\inc\ConfigMpc.h</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Application\inc\ConfigNfc.h</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Application\inc\ConfigNvm.h</name>
+      </file>
+      <file>
         <name>$PROJ_DIR$\..\Application\inc\filter.h</name>
       </file>
       <file>
         <name>$PROJ_DIR$\..\Application\inc\mcu_config.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\Application\inc\nfc_task.h</name>
       </file>
       <file>
         <name>$PROJ_DIR$\..\Application\inc\power_config_100w.h</name>
@@ -4685,9 +4694,6 @@
         <name>$PROJ_DIR$\..\Application\src\mcu_config.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$\..\Application\src\nfc_task.c</name>
-      </file>
-      <file>
         <name>$PROJ_DIR$\..\Application\src\power_task.c</name>
       </file>
       <file>
@@ -4697,6 +4703,39 @@
         <name>$PROJ_DIR$\..\Application\src\tag.c</name>
       </file>
     </group>
+  </group>
+  <group>
+    <name>CRC16</name>
+    <file>
+      <name>$PROJ_DIR$\..\Application\src\modules\CRC16\crc16.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Application\src\modules\CRC16\crc16.h</name>
+    </file>
+  </group>
+  <group>
+    <name>Dalli</name>
+    <file>
+      <name>$PROJ_DIR$\..\Application\src\modules\Dali\DaliBin\Config_OUTD_1LP.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Application\src\modules\Dali\DaliBin\Config_T6_1LP_TDC.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Application\src\modules\Dali\DaliBin\DaliLib13709_T6_1LP_TDC.a</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Application\src\modules\Dali\DaliServices\DaliServices.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Application\src\modules\Dali\HW\DaliUart_XMC.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Application\src\modules\Dali\DaliBin\OutdoorLib_1LP.a</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Application\src\modules\Dali\DaliServices\ProductionTest.c</name>
+    </file>
   </group>
   <group>
     <name>Driver</name>
@@ -4768,85 +4807,40 @@
     </group>
   </group>
   <group>
-    <name>Import_NFC</name>
-    <group>
-      <name>config</name>
-      <group>
-        <name>devices</name>
-        <file>
-          <name>$PROJ_DIR$\..\Import\Config\devices\parameter_D0AB30663.h</name>
-        </file>
-      </group>
-      <file>
-        <name>$PROJ_DIR$\..\Import\Config\Config.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\Import\Config\ConfigI2c.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\Import\Config\ConfigM24LRxx.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\Import\Config\ConfigMpc.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\Import\Config\ConfigNfc.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\Import\Config\ConfigNfcDali.h</name>
-      </file>
-    </group>
-    <group>
-      <name>driver_ot</name>
-      <file>
-        <name>$PROJ_DIR$\..\Import\driver_ot\driver.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\Import\driver_ot\driver.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\Import\driver_ot\Password.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\Import\driver_ot\Password.o</name>
-      </file>
-    </group>
-    <group>
-      <name>module_crc</name>
-      <file>
-        <name>$PROJ_DIR$\..\Import\modules\CRC\api\crc.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\Import\modules\CRC\driver_sw\crc_driver_sw.c</name>
-      </file>
-    </group>
-    <group>
-      <name>module_nfc</name>
-      <file>
-        <name>$PROJ_DIR$\..\Import\modules\fileTank\ErrorHandler.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\Import\modules\I2cExt\api\i2c.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\Import\modules\I2cExt\driver_xmc1300\i2c_driver_xmc1300.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\Import\modules\NfcExt\M24LRxx\M24LRxx.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\Import\modules\NfcExt\api\nfc.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\Import\modules\NfcExt\api\nfcDali.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\Import\modules\fileTank\x86_utils.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\Import\modules\fileTank\xmc1300_utils.c</name>
-      </file>
-    </group>
+    <name>hwdrivers</name>
+    <file>
+      <name>$PROJ_DIR$\..\Application\src\hwdrivers\XMC1300\xmc1300_ports_hwdriver.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Application\src\hwdrivers\XMC1300\xmc1300_ports_hwdriver.h</name>
+    </file>
+  </group>
+  <group>
+    <name>I2C</name>
+    <file>
+      <name>$PROJ_DIR$\..\Application\src\modules\I2C\i2c_config.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Application\src\modules\I2C\i2c_config.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Application\src\modules\I2C\i2c_driver.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Application\src\modules\I2C\i2c_driver_xmc1300.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Application\src\modules\I2C\i2c_local.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Application\src\modules\I2C\i2c_module.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Application\src\modules\I2C\i2c_parameters_XMC1300.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Application\src\modules\I2C\i2c_userinterface.h</name>
+    </file>
   </group>
   <group>
     <name>Library</name>
@@ -4931,6 +4925,201 @@
         <name>$PROJ_DIR$\..\XMC_Peripheral_Library\XMCLib\src\xmc_wdt.c</name>
       </file>
     </group>
+  </group>
+  <group>
+    <name>module_crc</name>
+    <file>
+      <name>$PROJ_DIR$\..\Application\src\modules\CRC\api\crc.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Application\src\modules\CRC\driver_sw\crc_driver_sw.c</name>
+    </file>
+  </group>
+  <group>
+    <name>module_nvm</name>
+    <file>
+      <name>$PROJ_DIR$\..\Application\src\modules\NVM\driver_xmc1300\flash_driver_xmc1300.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Application\src\modules\NVM\api\nvm.c</name>
+    </file>
+  </group>
+  <group>
+    <name>module_supplymonitor</name>
+    <file>
+      <name>$PROJ_DIR$\..\Application\src\modules\supplymonitor\SupplyMonitor.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Application\src\modules\supplymonitor\SupplyMonitor.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Application\src\modules\supplymonitor\supplymonitor_local.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Application\src\modules\supplymonitor\supplymonitor_parameters.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Application\src\modules\supplymonitor\SupplyMonitor_userinterface.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Application\src\modules\supplymonitor\SupplyMonitorDefaults.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Application\src\modules\supplymonitor\SupplyMonitorStructsInit.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Application\src\modules\supplymonitor\SupplyMonitorStructsInit.h</name>
+    </file>
+  </group>
+  <group>
+    <name>MPC</name>
+    <group>
+      <name>Acl</name>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\Acl\Acl.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\Acl\Acl.h</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\Acl\AclDefaults.h</name>
+      </file>
+    </group>
+    <group>
+      <name>Alloc</name>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\Alloc\Mpc.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\Alloc\Mpc.h</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\Alloc\MpcAllocation.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\Alloc\MpcAllocation.h</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\Alloc\MpcDefaultConfiguration.h</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\Alloc\MpcDescriptors.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\Alloc\MpcDescriptors.h</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\Alloc\MpcIncludeAll.h</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\Alloc\MpcInternal.h</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\Alloc\MpcPerm4Legacy.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\Alloc\MpcPerm4Legacy.h</name>
+      </file>
+    </group>
+    <group>
+      <name>Alloc_Legacy</name>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\Alloc\Legacy\MemoryBanksGeneric.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\Alloc\Legacy\MemoryBanksGeneric.h</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\Alloc\Legacy\MpcDefs.h</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\Alloc\Legacy\MpcLegacy.h</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\Alloc\Legacy\MpcServices.h</name>
+      </file>
+    </group>
+    <group>
+      <name>AstroDim</name>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\AstroDim\MemoryBank_Astro.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\AstroDim\MemoryBank_Astro.h</name>
+      </file>
+    </group>
+    <group>
+      <name>CLM</name>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\Clm\MemoryBank_Clm.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\Clm\MemoryBank_Clm.h</name>
+      </file>
+    </group>
+    <group>
+      <name>CSM</name>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\Csm\MemoryBank_Csm.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\Csm\MemoryBank_Csm.h</name>
+      </file>
+    </group>
+    <group>
+      <name>Info</name>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\Info\MemoryBank_Info.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\Info\MemoryBank_Info.h</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\Info\MpcInfo_Services.h</name>
+      </file>
+    </group>
+    <group>
+      <name>MSK</name>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\MSK\MSK.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\MSK\MSK.h</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\MSK\MSK_internal.h</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\MSK\MSK_local.h</name>
+      </file>
+    </group>
+    <group>
+      <name>MSK_Encryption</name>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\MSKEncryption\MskEncryption-CortexM0-LittleEndian-IAR7.60.a</name>
+      </file>
+    </group>
+  </group>
+  <group>
+    <name>NFC</name>
+    <file>
+      <name>$PROJ_DIR$\..\Application\src\modules\NFC\Nfc.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Application\src\modules\NFC\nfc_config.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Application\src\modules\NFC\nfc_config.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Application\src\modules\NFC\nfc_local.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Application\src\modules\NFC\nfc_module.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Application\src\modules\NFC\nfc_parameters.h</name>
+    </file>
   </group>
   <file>
     <name>$PROJ_DIR$\..\Readme.txt</name>

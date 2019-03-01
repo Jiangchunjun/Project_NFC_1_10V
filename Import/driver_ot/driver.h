@@ -169,7 +169,7 @@
 #define MEM_BANK_MPC_VER              0X01
 
 
-#define MEM_BANK_1_10_ENABLE         0X00
+#define MEM_BANK_1_10_ENABLE         0X01
 #define MEM_BANK_1_10_LEVEL_H        0X0C
 #define MEM_BANK_1_10_LEVEL_L        0XCC
 

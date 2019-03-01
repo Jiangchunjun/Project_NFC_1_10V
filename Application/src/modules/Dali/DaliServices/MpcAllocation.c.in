@@ -1,0 +1,28 @@
+
+
+const mpc_keydata_t * MpcKeydata[] =
+{
+    &(MSK_Descriptor.keydata),                //  1
+    &(BIO_Descriptor.keydata),                //  2
+    &(MpcLegacyCsm.keydata),                  //  3
+    &(MpcLegacyClm.keydata),                  //  4
+    //&(MpcLegacyInfo.keydata),                 //  6
+    //&(MpcLegacyAstro.keydata),                 //  6
+    &(MpcLegacyDali0.keydata),                //  9
+    &(MpcLegacyDali1.keydata),                // 10
+};
+
+
+static const uint8_t dali_mpc_mapping[MPC_MAX_NUMBER + 1] = {
+    [MPC_MSK_NUMBER]              =  1,
+    [MPC_BIO_NUMBER]              =  2,
+    [MPC_CSM_NUMBER]              =  3,
+    [MPC_CLM_NUMBER]              =  5,
+    //[MPC_INFO_NUMBER]             =  5,
+    //[MPC_ASTRO_NUMBER]             =  6,
+    //[MPC_TDC_NUMBER]              =  6,
+    [0]                           =  5,
+    [1]                           = 6,
+    // No Dali mapping for the Dali-Pseudo-Mpc
+};
+

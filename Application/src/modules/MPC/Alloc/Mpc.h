@@ -1,0 +1,202 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// Microcontroller Toolbox - Firmware Framework for Full Digital SSL Ballasts
+// ---------------------------------------------------------------------------------------------------------------------
+// (c) Osram GmbH
+//     DS D EC - MCC
+//     Parkring 33
+//     85748 Garching
+//
+//
+// The content of this file is intellectual property of OSRAM GmbH. It is
+// confidential and not intended for any public release. All rights reserved.
+//
+//
+// Initial version: 2016-06, W.Limmer@osram.de
+//
+// Change History:
+//
+// $Author: j.eisenberg $
+// $Revision: 11815 $
+// $Date: 2018-02-05 23:45:33 +0800 (Mon, 05 Feb 2018) $
+// $Id: Mpc.h 11815 2018-02-05 15:45:33Z j.eisenberg $
+// $URL: https://app-ehnsvn02.int.osram-light.com/svn/EC/Mpc/Alloc/branches/RC_2018-02-20/Src/Mpc.h $
+//
+
+#ifndef __MPC_H
+#define __MPC_H
+
+/** \addtogroup MPC Multi Purpose Centers
+ * \{
+ *
+ * \file
+ * \brief Header file for MPC Generic Interface
+ */
+
+#include "MpcDefs.h"
+
+
+#define MPC_ATTRIB_NFC_UNPROTECTED  0x01
+// ---------------------------------------------------------------------------------------------------------------------
+/** \brief Defines a number of commands a Mpc has to serve.
+ */
+typedef enum {
+  /** \brief Initialize a page after program start.
+   *
+   * This command is supplied exactly once per boot process to every Mpc.
+   *
+   * Purpose is to initialize the bank, to fetch configuration data from nvm and such.
+   */
+  MPC_CMD_INIT = 0,
+
+  /** \brief DALI memory bank reset command.
+   *
+   * The DALI standard gives a great freedom to a manufacturer implementing this command. Mandatory is only
+   * to reset the DALI lock byte of a memory bank.
+   *
+   * In the end, this command normally should do nothing serious, the basic idea always is to simulate a
+   * kind power on/off cycle. And for sure not to erase data, which normally is stored permanently (as e.g.
+   * configuration data)
+   *
+   * For Master-Service-Password page MSK for example this command might be (beside the lock byte reset) to forget
+   * that a password already was provided to the device and therefore to lock the device again. But not to reset the
+   * stored password (needed to unlock the ballast) itself.
+   */
+  MPC_CMD_RESET,
+
+  /** \brief Factory reset command.
+   *
+   * Target of this command is to reset the device/a firmware module into a state as it was when it left the
+   * factory. This is, to reset all customer configurable settings, but to keep e.g. calibration or the
+   * serial number and other data \b intentionally applied in Osram end test.
+   *
+   * In the end, this command simulates a kind of a "red knob" of other devices someone has to press for
+   * some seconds to reset his "router" or similar into the state as found "out-of-the box".
+   *
+   * From implementation point of view, this command is to reset all variables stored in nvm memory to
+   * the defaults as defined during the compilation except those defined by the description above.
+   *
+   * For a "immediate", full reset, also a power-off and power-on cycle is needed to reset all ram
+   * variables too.
+   *
+   * Purpose of this function:
+   *  - Reset a device returning from the field to allow that it can be delivered again.
+   *  - Reset of a ballast in regression tests (to separate the test cases from each other)
+   *  - Provide this command as the last command in the Osram end test to erase \b spurious data
+   *    (e.g. accumulated in PMD/ValData during this end test) again.
+   */
+  MPC_CMD_FACTORY_RESET
+} mpc_cmd_t;
+
+
+/** \brief Port numbers for Mpc access.
+ */
+typedef enum {
+  MPC_PORT_ROOT = 0,        ///< Mpc root access, no permissions apply (e.g. for Virtual ECG monitor functions)
+  MPC_PORT_DALI,            ///< Mpc access port for DALI (single byte)
+  MPC_PORT_NFC,             ///< Mpc access port for NFC
+  MPC_PORT_TBD,             ///< Mpc access port for tbd reader/writer
+  MPC_PORTS_FIRST_UNUSED    ///< Not a port number, use to init array size
+} mpc_port_t;
+
+
+/** \brief Status code of a MpcRead() or MpcWrite() function.
+ *
+ * Used by:
+ *  - Generic MpcRead() to flag the result of a read operation
+ *  - Generic MpcWrite() to directly flag the result of a write operation
+ *  - The read() and write() functions of a real Mpc implementation.
+ *    In this case, this enum (negative values) is used as integer return value. Positive values are the byte
+ *    the position within multi-byte buffer.
+ */
+typedef enum {
+  MPC_OUT_OF_RANGE    = -3,   ///< Address is not provided (either out of range or mpc even not existent)
+  MPC_DENY            = -2,   ///< Mpc r/w operation was denied (write: blocked or read-only, read: not replied)
+  MPC_OK              = -1,   ///< Mpc \b write operation successfully and \b completely (multi-byte!) done.
+                              ///< Unused for \b read operation, where the mechanics are a bit different: With
+                              ///< read, all values >= 0 are "ok".
+} mpc_returncodes_enum;
+
+
+/** \brief Key data of a Mpc
+ */
+typedef struct {
+  uint8_t       id;           ///< Id of the Mpc
+  uint8_t       version;      ///< Version of the Mpc implementation
+  uint8_t       attributes;   ///< Other special attributes of the Mpc, see MPC_ATTRIB_* defines for details
+  uint8_t       payload_off;  ///< DALI payload offset (= how much addresses for DALI are generated from keydata)
+  uint32_t      permissions;  ///< Permissions for legacy use only,
+  uint8_t *     mult_perm4legacy;  ///< Permissions for legacy, where more than one permission is needed
+  uint8_t       length;       ///< Length of the Mpc for one channel (mainly used for "DALI membank last address")
+  uint8_t       instances;    ///< number of MPC instances in NFC  
+} mpc_keydata_t;
+
+
+// Special characteristics of a Mpc: Masks/flags for the attributes in \ref mpc_keydata_t
+#define MPC_ATTRIB_NFC_PROTECTED    0x02  ///< Mpc should be layed out in the Nfc protected area (NFC tag hardword pw)
+#define MPC_ATTRIB_NFC_READONLY     0x04  ///< Mpc should be layed out in the Nfc read only area
+#define MPC_ATTRIB_DALI_LOCKBYTE    0x20  ///< Complete Mpc should be protected by a DALI lock byte for writes
+#define MPC_ATTRIB_PASSWORD1_PROT   0x40  ///< Mpc is write protected by (legacy) password page #1 -> replace by ACL
+#define MPC_ATTRIB_PASSWORD2_PROT   0x80  ///< Mpc is write protected by (legacy) password page #2 -> replace by ACL
+
+
+void                   MpcInit              (void); // All Mpcs
+mpc_returncodes_enum   MpcCmd               (uint8_t mpc_nr, mpc_cmd_t cmd,  mpc_port_t port, uint8_t channel);
+const mpc_keydata_t  * MpcKeydataGet        (int16_t mpc_nr, mpc_port_t port);
+
+mpc_returncodes_enum   MpcReadDali          (uint8_t membank_nr, int16_t adr,    uint8_t    ch,   uint8_t *buffer);
+mpc_returncodes_enum   MpcRead              (uint8_t mpc_nr,     int16_t ch_adr, mpc_port_t port, uint8_t *buffer);
+
+// static inline int   MpcWriteLegacy       (const mpc_descriptor_t * mpcdesc, mpc_io_buffer_t * mpcIo, uint8_t val);
+// static inline int   MpcWriteTable        (const mpc_descriptor_t * mpcdesc, mpc_io_buffer_t * mpcIo, uint8_t * buffer);
+// static inline int   MpcWritePayload      (const mpc_descriptor_t * mpcdesc, mpc_io_buffer_t * mpcIo, uint8_t * buffer);
+mpc_returncodes_enum   MpcWriteDali         (uint8_t membank_nr, int16_t adr,     uint8_t ch,      uint8_t val);
+mpc_returncodes_enum   MpcOpen              (uint8_t mpc_nr,     uint8_t adr,     uint8_t channel, mpc_port_t port);
+void                   MpcClose             (mpc_port_t port);
+mpc_returncodes_enum   MpcWrite             (mpc_port_t port, uint8_t val);
+
+uint32_t               MpcGetChangeCounter  (void);
+void                   MpcIncChangeCounter  (void);
+
+// ---------------------------------------------------------------------------------------------------------------------
+/** \brief Default fallback value for Mpc read() when issues arise (out of range, permissions denied).
+ *
+ * This value applies when a Mpc doesn't care for another value by itself.
+ * Normally this is 0xFF for two and a half reasons:
+ * - DALI uses 0xFF nearly everywhere to indicate "don't care"
+ * - 0xFF is the -1, perfectly for counters normally starting at 0
+ * - 0xFF is the reset value of al flash and ee technologies
+ *
+ * Nevertheless a Mpc can set an different value for permission denied or out-of-range. In case of, the Mpc's
+ * definition applies.
+ */
+#define MPC_FALLBACK      0xFFFFFFFF  // value for a 4-byte data entity, use a typecast when a byte is needed
+
+#endif
+
+
+
+
+
+
+/*
+
+
+Currently:
+mpc_returncodes_enum MpcRead              (uint8_t mpc_nr, int16_t ch_adr, uint8_t port, uint8_t *buffer);
+mpc_returncodes_enum MpcReadDaliWrapper   (uint8_t mpc_nr, int16_t adr,    uint8_t ch,   uint8_t *buffer);
+uint32_t             MpcReadDirect32      (uint8_t mpc_nr, int16_t ch_adr);
+
+
+Later:
+
+Helpers:
+mpc_io_buffer_t * mpcIop MpcReadPayload (const mpc_descriptor_t * mpcDescP, int16_t ch_adr, uint8_t port, uint8_t bytepos);   // Payload address
+
+Api:
+const mpc_keydata_t      MpcGetKeydata  (const uint8_t             mpc_nr);
+mpc_returncodes_enum     MpcRead        (const uint8_t             mpc_nr,   int16_t ch_adr, uint8_t port, uint8_t *buffer);   // Payload address
+mpc_returncodes_enum     MpcReadDali    (const uint8_t             mpc_nr,   int16_t e_adr,  uint8_t ch,   uint8_t *buffer);   // eadr = payload address + DALI_OFFSET
+uint32_t                 MpcReadRoot    (const uint8_t             mpc_nr,   int16_t adr,    uint8_t ch);                      // Payload address
+*/
+
+/** \} */

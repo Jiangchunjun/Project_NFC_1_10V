@@ -17,7 +17,6 @@
 #include "xmc_scu.h"
 #include "adc.h"
 #include "sw_timer.h"
-#include "nfc_task.h"
 #include "power_task.h"
 
 /* Macro Defines ---------------------------------------------------------------------------------*/

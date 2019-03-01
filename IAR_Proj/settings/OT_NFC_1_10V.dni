@@ -10,7 +10,7 @@ LimitSize=0
 ByteLimit=50
 [JLinkDriver]
 CStepIntDis=_ 0
-LeaveTargetRunning=_ 0
+LeaveTargetRunning=_ 1
 ETM_Cookie=ID100_107000000000000000001
 ETM_Reg_GeneralControl=0x00022C08
 ETM_Reg_TriggerEvent=0x0000406F
@@ -120,7 +120,7 @@ TraceBufferSize=0x00000000
 TraceShowTime=0
 TraceShowTimeFreq=1000000
 [DebugChecksum]
-Checksum=-1512292847
+Checksum=-1355976260
 [CodeCoverage]
 Enabled=_ 0
 [Exceptions]
@@ -155,24 +155,29 @@ Stop=1
 Freq=10000000
 MultiCoreRunAll=1
 [struct_types]
-Fmt0=mem_bank_1_10_t-Enable_1_10	4	0
-Fmt1=mem_bank_1_10_t-Level_h_1_10	4	0
-Fmt2=mem_bank_1_10_t-Level_l_1_10	4	0
-Fmt3=mem_bank_csm_t-Norm_current_0	4	0
-Fmt4=mem_bank_csm_t-Norm_current_1	4	0
-Fmt5=mem_bank_t-ptr	4	0
+Fmt0=TypeMemoryBank_CSM-nom_cur_hi	4	0
+Fmt1=TypeMemoryBank_CSM-nom_cur_lo	4	0
+Fmt2=TypeMemoryBank_CSM-opMode	4	0
+Fmt3=TypeMemoryBank_CSM-protect_cur_hi	4	0
+Fmt4=TypeMemoryBank_CSM-protect_cur_lo	4	0
+Fmt5=mpcInfo_nvm_t-temperatureTimeIntegrator	4	0
+Fmt6=struct <Unnamed 75>-level_1	3	0
+Fmt7=struct <Unnamed 75>-level_2	3	0
+Fmt8=struct <Unnamed 75>-level_3	3	0
+Fmt9=struct <Unnamed 75>-switchOff_fade	3	0
 [array_types]
 Fmt0=uint8_t[20]	4	0
 Fmt1=uint8_t[64]	4	0
+[watch_formats]
+Fmt0={W}42:ueser_id	4	0
 [Trace1]
 Enabled=0
 ShowSource=1
 [Disassemble mode]
 mode=0
 [Breakpoints2]
-Bp0=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Import\driver_ot\driver.c}.346.9" 0 0 1 "" 0 "" 0
-Bp1=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Application\src\power_task.c}.613.7" 0 0 1 "" 0 "" 0
-Count=2
+Bp0=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Application\src\main.c}.41.5" 0 0 1 "" 0 "" 0
+Count=1
 [Log file]
 LoggingEnabled=_ 0
 LogFile=_ ""

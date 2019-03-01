@@ -1,0 +1,293 @@
+#ifndef __NFC_LOCAL_H__
+#define __NFC_LOCAL_H__
+
+/** ---------------------------------------------------------------------------------------------------------------------
+// nfc_local.h
+// ---------------------------------------------------------------------------------------------------------------------
+// (c) Osram GmbH
+// Development Electronics for SSL
+// Parkring 33
+// 85748 Garching
+//
+// The content of this file is intellectual property of OSRAM GmbH. It is
+// confidential and not intended for any public release. All rights reserved.
+//
+// Indent style: Replace tabs by spaces, 2 spaces per indentation level
+//
+// Initial version: Sammy el Baradie,  27/07/2016
+//
+// $Author: g.salvador $
+// $Revision: 16945 $
+// $Date: 2019-02-14 16:29:01 +0800 (Thu, 14 Feb 2019) $
+// $Id: nfc_local.h 16945 2019-02-14 08:29:01Z g.salvador $
+// $URL: https://app-ehnsvn02.int.osram-light.com/svn/EC/Toolbox1.0/Nfc/tags/v2.7/Src/nfc_local.h $
+//
+// nfc.h declares functions which are called by MemoryBanksGeneric.c and
+// which are defined in MemoryBank_ConfigTracing.c
+// Reference document: "ConfigTracing Consumption Page Description", 2D1 2784481-000-02, MPC ID =3.
+// To enable define:
+// #define MPC_CONFIGTRACING_NUMBER       [bank number]
+
+*   \file
+*   \brief Local header file for nfc_module.c
+*/
+#include <stdint.h>
+#include <stdbool.h>
+
+#include "nfc_parameters.h"
+
+//-----------------------------------------------------------------------------
+// defines
+//-----------------------------------------------------------------------------
+#if defined (DEVICE_UNDER_TEST)
+  // For debugging, have phony messages and don't care for flash size
+  #define NFC_ERROR_TAG_COPY_ADDR_CONVERSION        "NFC: ADRC"
+  #define NFC_ERROR_MB_INDEX_GREATER_THAN_MB_CNT    "NFC: IDX0"
+  #define NFC_ERROR_IDX1                            "NFC: IDX1"
+  #define NFC_ERROR_IDX2                            "NFC: IDX2"
+  #define NFC_ERROR_TOC                             "NFC: TOC"
+  #define NFC_ERROR_RO                              "NFC: RO"
+  #define NFC_ERROR_PROT                            "NFC: PROT"
+  #define NFC_ERROR_OEM                             "NFC: OEM"
+  #define NFC_ERROR_OOM                             "NFC: OOM"
+#else
+  // For real life, save flash size for this really rarely used feature. With
+  // this setup, IAR will create only one string in flash and use it may times.
+  // Together with the "load adr", in total we save 130 bytes (!)
+  #define NFC_ERROR_TAG_COPY_ADDR_CONVERSION        "NFC"
+  #define NFC_ERROR_MB_INDEX_GREATER_THAN_MB_CNT    "NFC"
+  #define NFC_ERROR_IDX1                            "NFC"
+  #define NFC_ERROR_IDX2                            "NFC"
+  #define NFC_ERROR_TOC                             "NFC"
+  #define NFC_ERROR_RO                              "NFC"
+  #define NFC_ERROR_PROT                            "NFC"
+  #define NFC_ERROR_OEM                             "NFC"
+  #define NFC_ERROR_OOM                             "NFC"
+#endif
+
+
+/** Sum of all TAG Device Identification register bytes without CRC16 */
+#define NFC_TAG_DEVICE_ID_REGISTER_BYTE_COUNT \
+                                 (sizeof(nfc_tag_identification_register_t) - 2)
+
+/** Sum of all TAG TOC register bytes without CRC16 */
+#define NFC_TAG_TOC_REGISTER_BYTE_COUNT (sizeof(nfc_toc_entry_t) * MPC_NFC_INST)
+
+/** Sum of all TAG Control register bytes without CRC16 */
+#define NFC_TAG_CONTROL_REGISTER_BYTE_COUNT \
+                                        (sizeof(nfc_tag_control_register_t) - 2)
+
+/** Sum of all TAG STATUS register bytes without CRC16 */
+#define NFC_TAG_STATUS_REGISTER_BYTE_COUNT \
+                                        (sizeof(nfc_tag_status_register_t) - 2)
+
+/** request vector value for all instances of all MPCs in NFC */
+#define NFC_INST_REQUEST_ALL                           ((1 << MPC_NFC_INST) - 1)
+
+
+/** number of crc errors allowed during mem lock **/
+#define MAX_CRC_ERROR_DURING_MEM_LOCK                       3
+
+//-----------------------------------------------------------------------------
+// macros
+//-----------------------------------------------------------------------------
+#define NFC_CLEAR_REQUESTS_BELOW_IDX(vec, idx) (vec &= (0xFFFFFFFF << idx))
+
+#define NFC_CLEAR_REQUESTS_ABOVE_IDX(vec, idx) (vec &= (~(0xFFFFFFFF << idx)))
+
+//-----------------------------------------------------------------------------
+// enums
+//-----------------------------------------------------------------------------
+typedef enum
+{
+    nfc_fsm_state_idle,
+    nfc_fsm_state_mb_read_from_tag,
+    nfc_fsm_state_mb_write_to_mcu,
+    nfc_fsm_state_mb_update_from_mcu_to_tag,
+    nfc_fsm_state_tag_control_register_read,
+    nfc_fsm_state_tag_control_register_write,
+    nfc_fsm_state_tag_status_register_write,
+    nfc_fsm_state_toc_register_read,
+    nfc_fsm_state_device_identification_register_read,
+    nfc_fsm_state_initialize_tag_device_identification,
+    nfc_fsm_state_initialize_tag_toc,
+    nfc_fsm_state_initialize_tag_access_rights,
+    nfc_fsm_state_reset_tag_access_rights,
+    nfc_fsm_state_suspended
+} nfc_fsm_states_t;
+
+//-----------------------------------------------------------------------------
+typedef enum
+{
+    nfc_fct_busy,
+    nfc_fct_done
+} nfc_fct_status_t;
+
+
+//-----------------------------------------------------------------------------
+// packed structures
+//-----------------------------------------------------------------------------
+// pack all following structures to at most 1 byte and push current alignment
+// on stack to restore later. Required to prevent byte gaps introduced by
+// the compiler to optimize performance.
+// Pack is valid to the end of the compilation unit.
+#pragma pack(push)
+#pragma pack(1)
+
+//-----------------------------------------------------------------------------
+typedef struct
+{
+    uint8_t  error  :4;
+    uint8_t  ecg_on :4;
+    uint8_t  reserved;
+    uint16_t crc16;
+} nfc_tag_status_register_t;
+
+//-----------------------------------------------------------------------------
+typedef struct
+{
+    uint32_t prr;
+    uint32_t urr;
+    uint8_t  mlr;
+    uint16_t crc16;
+} nfc_tag_control_register_t;
+
+//-----------------------------------------------------------------------------
+typedef struct
+{
+    uint8_t  manufacturer_code;
+    uint8_t  gtin[6];
+    uint8_t  fw_major_version;
+    uint8_t  fw_minor_version;
+    uint8_t  hw_major_version;
+    uint8_t  nfc_major_version;
+    uint8_t  toc_items;// mpc_count;
+    uint16_t status_register_start_addr;
+    uint16_t control_register_start_addr;
+    uint16_t protected_memory_start_addr;
+    uint16_t crc16;
+} nfc_tag_identification_register_t;
+
+//-----------------------------------------------------------------------------
+typedef struct
+{
+    uint8_t     mb_attribute;
+    uint8_t     mpc_id;
+    uint8_t     mpc_version;
+    uint8_t     mb_length;
+    uint16_t    mb_tag_base_addr;
+} nfc_toc_entry_t;
+
+
+
+//-----------------------------------------------------------------------------
+// restore previous alignment from stack
+#pragma pack(pop)
+//-----------------------------------------------------------------------------
+// end of packed structures
+//-----------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------
+// structures
+//-----------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------
+typedef struct
+{
+  /** \brief Start address of the first mpc
+   *
+   * The address dependent on the size of the TOC.
+   * Use case: Const area of tag (with metadata + TOC) which is not mirrored in ram.
+   */
+  const uint16_t first_mpc_start_addr;
+
+  /** \brief Status registers (at the end, but still in tag read-only section).
+   *
+   * Start address of read-write section;
+   * After the control registers the mpcs are layed out
+   * Align:
+   * Size:
+   */
+  const uint16_t status_register_start_addr;
+
+  /** \brief Control registers = start of tag read-write section.
+   *
+   * Align: 128 byte
+   */
+  const uint16_t control_register_start_addr;
+
+  /** \brief Protected area start address
+   *
+   * The protected area must be located at the start of a new section
+   * after the protected read/write section
+   *
+   * Align: 128 byte
+   * Size:
+   */
+  const uint16_t protected_memory_start_addr;
+
+} nfc_tag_addr_config_t;
+
+
+
+//-----------------------------------------------------------------------------
+/**
+ * structure of a MpcGeneric entity
+ */
+typedef struct
+{
+    uint8_t     addr;
+    uint8_t     length;
+    uint32_t    data;
+} nfc_mb_entity_t;
+
+//-----------------------------------------------------------------------------
+/**
+ * structure of complete local nfc module states
+ */
+typedef struct
+{
+    nfc_fsm_states_t            fsm_state;
+    nfc_mb_entity_t             mb_entity;
+    uint32_t                    tag_req_mb_read;
+    uint32_t                    tag_req_mb_write;
+    uint32_t                    tag_req_mb_update;
+    uint32_t                    slow_timer_cnt;
+    uint16_t                    fast_timer_cnt;
+    uint8_t                     mb_proc_idx;
+    uint8_t                     access_right_init_idx;
+    bool                        is_pending_i2c_access;
+    bool                        is_read_tag_deviceID_reg_requested;
+    bool                        is_read_tag_toc_reg_requested;
+    bool                        is_read_tag_control_reg_requested;
+    bool                        is_write_tag_control_reg_requested;
+    bool                        is_write_tag_status_reg_requested;
+    bool                        is_tag_mem_locked;
+    uint8_t                     mem_lock_crc_error_counter;
+    bool                        is_crc_error_read;
+    bool                        ignore_crc_error;
+    bool                        is_power_on_condition;
+    bool                        is_tag_initialization_requested;
+    bool                        is_tag_reset_access_rights_requested;
+    nfc_tag_control_register_t  *tag_ctrl_register;
+    nfc_tag_control_register_t  shadow_tag_ctrl_register;
+    bool                        is_ctrl_register_write_confirmed;
+    nfc_tag_status_register_t    tag_status_register;
+    uint32_t                    mpc_change_counter;
+    uint32_t                    mlr_counter;
+    bool                        mpc_change_counter_triggered;
+    bool                        slow_timer_expired;
+    bool                        is_wakeup_from_standby;
+    int8_t                      is_new_data_present_at_power_on;
+    uint8_t                     set_sleep_cnt;
+} nfc_local_state_t;
+
+
+
+//------------------------------------------------------------------------------
+// global variables
+//------------------------------------------------------------------------------
+extern const nfc_tag_addr_config_t nfc_tag_addr_config;
+
+
+#endif // __NFC_LOCAL_H__

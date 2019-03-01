@@ -1,0 +1,325 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// Microcontroller Toolbox - Firmware Framework for Full Digital SSL Ballasts
+// ---------------------------------------------------------------------------------------------------------------------
+// (c) Osram spa
+//     Via Castagnole 65/a
+//     31100 Treviso (I)
+//
+//
+// The content of this file is intellectual property of OSRAM spa. It is
+// confidential and not intended for any public release. All rights reserved.
+//
+//
+// Indent style: Replace tabs by spaces, 2 spaces per indentation level
+//
+// Initial version: 2014-12, g.marcolin@osram.it
+//
+// Change History:
+//
+// $Author: G.Marcolin $
+// $Revision: 1003 $
+// $Date: 2015-07-10 21:09:45 +0800 (Fri, 10 Jul 2015) $
+// $Id: flash_driver_xmc1300.c 1003 2015-07-10 13:09:45Z G.Marcolin $
+// $URL: https://app-ehnsvn02.int.osram-light.com/svn/EC/Toolbox1.0/Nvm/tags/v1.2/driver_xmc1300/flash_driver_xmc1300.c $
+//
+// ---------------------------------------------------------------------------------------------------------------------
+
+/** \addtogroup NvmDriver
+ * \{
+ * \defgroup NvmDriverXmc1300 Nvm driver Xmc1300
+ * \{
+ * \brief Flash driver for Xmc1300 
+ *
+ * \file
+ * \brief Nvm driver for Xmc1300
+ */
+
+#include <stdint.h>
+#include <XMC1300.h>
+
+#define MODULE_NVM
+#include "Config.h"
+
+#include "Global.h"
+#include "nvm_driver_mcu.h"
+#include "nvm_driver.h"
+
+/**********************************************************************************************************************/
+
+typedef enum FLASH003_NVMStatus
+{
+	/*the function succeeded*/
+	FLASH003_NVM_PASS               = (int32_t) 0x00010000,
+	/*generic error code*/
+	FLASH003_NVM_E_FAIL             = (int32_t) 0x80010001,
+	/*source data not in RAM*/
+	FLASH003_NVM_E_SRC_AREA_EXCCEED = (int32_t) 0x80010003,
+	/*source data is not 4 byte aligned*/
+	FLASH003_NVM_E_SRC_ALIGNMENT    = (int32_t) 0x80010004,
+	/*NVM module cannot be physically accessed*/
+	FLASH003_NVM_E_NVM_FAIL         = (int32_t) 0x80010005,
+	 /*verification of written page not successful*/
+	FLASH003_NVM_E_VERIFY           = (int32_t) 0x80010006,
+	/*destination data is not (completely) located in NVM*/
+	FLASH003_NVM_E_DST_AREA_EXCEED  = (int32_t) 0x80010009,
+	/*destination data is not properly aligned*/
+	FLASH003_NVM_E_DST_ALIGNMENT    = (int32_t) 0x80010010
+
+} FLASH003_NVM_STATUS;
+
+/**********************************************************************************************************************/
+
+#define FLASH003_ROM_FUNCTION_TABLE_START   (0x00000100U)   															// Start address of the ROM function table
+
+#define FLASH003_NvmErase            		(FLASH003_ROM_FUNCTION_TABLE_START + 0x00U) 								// Pointer to Erase Flash Page routine
+
+#define FLASH003_NvmErasePage        		(*((FLASH003_NVM_STATUS (**) (uint32_t * src_add)) FLASH003_NvmErase))		// Macro for Erase Flash Page routine
+
+#define FLASH003_RESET                      (0)
+
+#define FLASH003_ONESHOT_WRITE				(0x91)
+
+#define FLASH003_ECCVERRRST_IDLESET         (0x3000)																	// Macro to check ECC and Verification error
+
+/**********************************************************************************************************************/
+
+#define WPAGE_WORD_CNT						(NVM_WPAGE_SIZE_BYTE / 4)
+
+#if ( (4*WPAGE_WORD_CNT) != NVM_WPAGE_SIZE_BYTE)
+#error !!! NVM_WPAGE_SIZE_BYTE must be multiple of 4 !!!
+#endif
+
+/** ********************************************************************************************************************
+* \brief Initializes nv memory driver
+*
+***********************************************************************************************************************/
+
+void nvm_drv_init( void )
+{
+	NVM->NVMPROG = FLASH003_ECCVERRRST_IDLESET;					// Enabling flash Idle State
+
+	SET_BIT( NVM->NVMPROG, NVM_NVMPROG_RSTECC_Pos);				// Reset ECC2READ,ECC1READ in NVMSTATUS
+
+	SET_BIT( NVM->NVMPROG, NVM_NVMPROG_RSTVERR_Pos);			// Reset Write protocol error in NVMSTATUS
+}
+
+/** ********************************************************************************************************************
+* \brief Locks nv memory
+*
+***********************************************************************************************************************/
+
+void nvm_drv_lock(void)
+{
+
+}
+
+/** ********************************************************************************************************************
+* \brief Unlocks nv memory
+*
+***********************************************************************************************************************/
+
+void nvm_drv_unlock(void)
+{
+
+}
+
+/** ********************************************************************************************************************
+* \brief Erases an e-page
+*
+* \param epage_addr
+*        e-page address
+*
+* \retval NVM_ERR_NO_ERR if e-page erased successfully
+*
+***********************************************************************************************************************/
+
+nvm_err_t nvm_drv_erase_epage( uint32_t epage_addr )
+{
+    nvm_err_t err_code = NVM_ERR_NO_ERR;
+    uint32_t addr_check;
+
+    addr_check = (NVM_EPAGE_SIZE_BYTE*(epage_addr/NVM_EPAGE_SIZE_BYTE));        // Addr must be multiple of e-page size
+
+    if(addr_check != epage_addr)
+    {
+        err_code = NVM_ERR_ADDR;
+    }
+	else
+    {
+        if(FLASH003_NvmErasePage((uint32_t *)epage_addr) != FLASH003_NVM_PASS)
+        {
+            err_code = NVM_ERR_ERASE;
+        }
+    }
+
+    return err_code;
+}
+
+/** ********************************************************************************************************************
+* \brief Writes a w-page
+*
+* \param wpage_addr
+*        w-page address
+*
+* \param pdata
+*        pointer to data to write
+*
+* \warning pdata shall pointer to a memory area as big as a w-page
+*
+* \retval NVM_ERR_NO_ERR if w-page written successfully
+*
+***********************************************************************************************************************/
+
+nvm_err_t nvm_drv_write_wpage( uint32_t wpage_addr, const void *pdata )
+{
+    nvm_err_t err_code = NVM_ERR_NO_ERR;
+    uint32_t addr_check;
+	uint32_t word_cnt;
+	uint32_t *ptr;
+
+    addr_check = (NVM_WPAGE_SIZE_BYTE*(wpage_addr/NVM_WPAGE_SIZE_BYTE));        // Addr must be multiple of w-page size
+
+    if(addr_check != wpage_addr)
+    {
+        err_code = NVM_ERR_ADDR;
+    }
+	else
+    {
+	    WR_REG(NVM->NVMPROG, NVM_NVMPROG_ACTION_Msk, NVM_NVMPROG_ACTION_Pos, FLASH003_ONESHOT_WRITE);
+
+		ptr = (uint32_t *)pdata;
+
+		for(word_cnt = 0; word_cnt < WPAGE_WORD_CNT; word_cnt++)
+		{
+		  *((uint32_t *) (wpage_addr + (4 * word_cnt) )) = *ptr;
+		  ptr++;
+		}
+    }
+
+    return err_code;
+}
+
+/** ********************************************************************************************************************
+* \brief Reads a byte
+*
+* \param addr 
+*        byte address
+*
+* \param pdata 
+*        pointer to byte where data is copied
+*
+* \retval NVM_ERR_NO_ERR if byte read successfully
+*
+***********************************************************************************************************************/
+
+nvm_err_t nvm_drv_read_byte( uint32_t addr, uint8_t *pdata)
+{
+    nvm_err_t err_code = NVM_ERR_NO_ERR;
+	uint32_t rd1;
+    uint32_t rd2;
+    uint32_t rd3;
+
+    if((addr < NVM_BASE_ADDR) || (addr > ( NVM_BASE_ADDR + NVM_SIZE_BYTE - 1)))
+    {
+        err_code = NVM_ERR_ADDR;
+    }
+    else
+    {
+	    rd1 = RD_REG(NVM->NVMPROG, NVM_NVMPROG_ACTION_Msk, NVM_NVMPROG_ACTION_Pos);
+
+		rd2 = RD_REG(NVM->NVMSTATUS, NVM_NVMSTATUS_BUSY_Msk, NVM_NVMSTATUS_BUSY_Pos);
+
+		rd3 = RD_REG(NVM->NVMSTATUS, NVM_NVMSTATUS_SLEEP_Msk, NVM_NVMSTATUS_SLEEP_Pos);
+
+		if((rd1 == FLASH003_RESET) && (rd2 == FLASH003_RESET) && (rd3 == FLASH003_RESET))
+		{
+			*pdata = (*(volatile uint8_t *)(addr));
+
+			rd1 = RD_REG(NVM->NVMSTATUS, NVM_NVMSTATUS_ECC1READ_Msk, NVM_NVMSTATUS_ECC1READ_Pos);
+
+			rd2 = RD_REG(NVM->NVMSTATUS, NVM_NVMSTATUS_ECC2READ_Msk,NVM_NVMSTATUS_ECC2READ_Pos);
+
+			if((rd1 != FLASH003_RESET) || (rd2 != FLASH003_RESET))
+			{
+				err_code = NVM_ERR_READ;
+			}
+		}
+		else
+		{
+			err_code = NVM_ERR_READ;
+		}
+    }
+
+    return err_code;
+}
+
+/** ********************************************************************************************************************
+* \brief Reads a block of memory
+*
+* \param addr 
+*        starting address
+*
+* \param size 
+*        number of byte to read
+*
+* \param pdata 
+*        pointer to block of memory where data is copied
+*
+* \retval NVM_ERR_NO_ERR if byte read successfully
+*
+***********************************************************************************************************************/
+
+nvm_err_t nvm_drv_read_buffer( uint32_t addr, uint32_t size, void *pdata )
+{
+    uint32_t i;
+	uint32_t rd1;
+    uint32_t rd2;
+    uint32_t rd3;
+    uint8_t *p;
+    nvm_err_t err_code = NVM_ERR_NO_ERR;
+
+    if((addr < NVM_BASE_ADDR) || ((addr + size) > ( NVM_BASE_ADDR + NVM_SIZE_BYTE)))
+    {
+        err_code = NVM_ERR_ADDR;
+    }
+    else
+    {
+		rd1 = RD_REG(NVM->NVMPROG, NVM_NVMPROG_ACTION_Msk, NVM_NVMPROG_ACTION_Pos);
+
+		rd2 = RD_REG(NVM->NVMSTATUS, NVM_NVMSTATUS_BUSY_Msk, NVM_NVMSTATUS_BUSY_Pos);
+
+		rd3 = RD_REG(NVM->NVMSTATUS, NVM_NVMSTATUS_SLEEP_Msk, NVM_NVMSTATUS_SLEEP_Pos);
+
+		if((rd1 == FLASH003_RESET) && (rd2 == FLASH003_RESET) && (rd3 == FLASH003_RESET))
+		{
+			p = (uint8_t *)pdata;
+
+			for(i = 0; i < size; i++)
+			{
+				*p = (*(volatile uint8_t *)(addr + i));
+				p++;
+			}
+
+			rd1 = RD_REG(NVM->NVMSTATUS, NVM_NVMSTATUS_ECC1READ_Msk, NVM_NVMSTATUS_ECC1READ_Pos);
+
+			rd2 = RD_REG(NVM->NVMSTATUS, NVM_NVMSTATUS_ECC2READ_Msk,NVM_NVMSTATUS_ECC2READ_Pos);
+
+			if((rd1 != FLASH003_RESET) || (rd2 != FLASH003_RESET))
+			{
+				err_code = NVM_ERR_READ;
+			}
+		}
+		else
+		{
+			err_code = NVM_ERR_READ;
+		}
+    }
+
+    return err_code;
+}
+
+/**********************************************************************************************************************/
+
+/** \} */ // NvmDriverXmc1300
+/** \} */ // NvmDriver
+

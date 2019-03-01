@@ -1,0 +1,133 @@
+// -----------------------------------------------------------------------------
+// crc16.c
+// -----------------------------------------------------------------------------
+// (c) Osram GmbH
+// Development Electronics for SSL
+// Parkring 33
+// 85748 Garching
+//
+// The content of this file is intellectual property of OSRAM GmbH. It is
+// confidential and not intended for any public release. All rights reserved.
+//
+// Indent style: Replace tabs by spaces, 2 spaces per indentation level
+//
+// Initial version: Sammy el Baradie,  27/07/2016
+// $Author$
+// $Revision$
+// $Date$
+// $Id$
+// $URL$
+//
+// -----------------------------------------------------------------------------
+
+/** \addtogroup Crc16
+ * \{
+ * \file
+ * \brief Central functions for CRC 16 calculation
+ * Table based implementation to calculate CRC-16 - CCITT
+ * using the polynomial: 0x1021
+ * start value: 0
+ */
+
+#include <stdint.h>
+#include <stdbool.h>
+#include <stddef.h>
+
+#include "Global.h"
+
+#include "crc16.h"
+
+
+//-----------------------------------------------------------------------------
+// local constants
+//-----------------------------------------------------------------------------
+static const uint16_t crc16_table[] =
+{
+  0x0000, 0x1021, 0x2042, 0x3063, 0x4084, 0x50a5, 0x60c6, 0x70e7,
+  0x8108, 0x9129, 0xa14a, 0xb16b, 0xc18c, 0xd1ad, 0xe1ce, 0xf1ef
+};
+
+//-----------------------------------------------------------------------------
+// local variables
+//-----------------------------------------------------------------------------
+static uint16_t crc16_checksum;
+
+//------------------------------------------------------------------------------
+// global variables
+//------------------------------------------------------------------------------
+
+
+//-----------------------------------------------------------------------------
+// local functions
+//-----------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------
+// global functions
+//-----------------------------------------------------------------------------
+/**
+ * \brief Initialize CRC-16 Checksum with 0  to start new calculation
+ */
+void Crc16Init(uint16_t start_value)
+{
+    crc16_checksum = start_value;
+}
+
+//-----------------------------------------------------------------------------
+/**
+ * \brief Update CRC-16 checksum with data byte
+ * @param data_byte         data byte to update CRC-16 checksum
+ */
+void Crc16AppendByte(uint8_t data_byte)
+{
+    // byte - high nibble
+    crc16_checksum = crc16_table[(crc16_checksum >> 12) ^ (data_byte >> 4)]
+            ^ (crc16_checksum << 4);
+
+    // byte - low nibble
+    crc16_checksum = crc16_table[(crc16_checksum >> 12) ^ (data_byte & 0xF)]
+            ^ (crc16_checksum << 4);
+}
+
+//-----------------------------------------------------------------------------
+/**
+ \brief Update CRC-16 checksum with data byte array
+ * @param data      pointer to data byte array
+ * @param length    length of data byte array
+ */
+void Crc16AppendByteArray(uint8_t *data, uint8_t length)
+{
+    uint8_t i1;
+    uint8_t *data_ptr;
+
+    data_ptr = data;
+
+    for (i1 = 0; i1 < length; ++i1)
+    {
+        Crc16AppendByte(*(data_ptr++));
+    }
+}
+
+//-----------------------------------------------------------------------------
+/**
+ * Calculated CRC-16 checksum from all provided data bytes via the function
+ * Crc16AppendByte
+ * \note This function appends to the calculated checksum the byte 0x00, once
+ * @param endianness    can be set to crc16_big_endian or crc16_little_endian
+ * @return              calculated CRC-16 checksum
+ *
+ * \note the endianness is calculated using the macro REV_BYTE_ORDER16
+ * which is supported by the ARM assembler code for CORTEX M0
+ */
+uint16_t Crc16Checksum(crc16_endianness_t endianness)
+{
+    if(crc16_big_endian == endianness)
+    {
+        return REV_BYTE_ORDER16(crc16_checksum);
+    }
+
+    return crc16_checksum;
+}
+
+//-----------------------------------------------------------------------------
+
+/** \} */ // Crc16

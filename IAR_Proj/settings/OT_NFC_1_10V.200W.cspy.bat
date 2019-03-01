@@ -25,7 +25,7 @@ if not "%~1" == "" goto debugFile
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\IAR ARM 7.8\common\bin\cspybat" -f "C:\C Pan\work\NFC 1-10\Project_NFC_1_10V\IAR_Proj\settings\OT_NFC_1_10V.200W.general.xcl" --backend -f "C:\C Pan\work\NFC 1-10\Project_NFC_1_10V\IAR_Proj\settings\OT_NFC_1_10V.200W.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\IAR ARM 7.8\common\bin\cspybat" -f "C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\settings\OT_NFC_1_10V.200W.general.xcl" --backend -f "C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\settings\OT_NFC_1_10V.200W.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\IAR ARM 7.8\common\bin\cspybat" -f "C:\C Pan\work\NFC 1-10\Project_NFC_1_10V\IAR_Proj\settings\OT_NFC_1_10V.200W.general.xcl" "--debug_file=%~1" --backend -f "C:\C Pan\work\NFC 1-10\Project_NFC_1_10V\IAR_Proj\settings\OT_NFC_1_10V.200W.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\IAR ARM 7.8\common\bin\cspybat" -f "C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\settings\OT_NFC_1_10V.200W.general.xcl" "--debug_file=%~1" --backend -f "C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\settings\OT_NFC_1_10V.200W.driver.xcl" 
 
 @echo off 
 :end

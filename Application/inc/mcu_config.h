@@ -30,7 +30,6 @@
 #include "simu_i2c.h"
 #include "tag.h"
 #include "usart.h"
-#include "nfc_task.h"
 #include "xmc_flash.h"
 
 /* Macro Defines for Version Information---------------------------------------------------------*/

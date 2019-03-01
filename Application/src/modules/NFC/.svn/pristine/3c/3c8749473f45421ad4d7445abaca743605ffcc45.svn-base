@@ -1,0 +1,124 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// Microcontroller Toolbox - Firmware Framework for Full Digital SSL Ballasts
+// ---------------------------------------------------------------------------------------------------------------------
+// (c) Osram GmbH
+//     DS D EC - MCC
+//     Parkring 33
+//     85748 Garching
+//
+//
+// The content of this file is intellectual property of OSRAM GmbH. It is
+// confidential and not intended for any public release. All rights reserved.
+//
+//
+// Indent style: Replace tabs by spaces, 2 spaces per indentation level
+//
+// Change history, major milestones and credits:
+//   2016-08, S. el Baradie, J. Eisenberg
+//
+// $Author$
+// $Revision$
+// $Date$
+// $Id$
+// $URL$
+//
+
+/** \file
+ * \brief Header file for nfc_config.c exporting all parameterization for the NFC module, which is supposed
+ * (mid term again) to compile without including Config.h
+ *
+ * Not to be mixed up with ConfigNfc.h, where a project defines the parameter values.
+ */
+
+
+#ifndef __NFC_CONFIG_H__
+#define __NFC_CONFIG_H__
+
+//------------------------------------------------------------------------------
+// global definitions
+//------------------------------------------------------------------------------
+
+/**
+* \brief
+* - MPC_COUNT corresponds to the number of implemented MPCs and
+*   is defined in MpcDefaultConfiguration.h
+* - MPC_NFC_INST enumerates MPC_COUNT with all its instances
+* - For single channel devices, MPC_NFC_INST equals MPC_COUNT
+*/
+#ifdef MPC_COUNT
+  #ifndef MPC_NFC_INST
+      #define MPC_NFC_INST                                             MPC_COUNT
+      #pragma message("NFC: definition MPC_NFC_INST is set to MPC_COUNT.\n\
+                       This is valid for single channel devices only.\n")
+  #elif ((DEVICE_CHANNELS == 1) && (MPC_NFC_INST != MPC_COUNT))
+//        STATIC_ASSERT((MPC_NFC_INST == MPC_COUNT), "MPC_NFC_INST must be equal to MPC_COUNT");
+          #error ("MPC_NFC_INST must be equal to MPC_COUNT");
+  #endif
+
+#else
+  #error ( "Parameter MPC_COUNT is not defined. Please ensure that \n"
+                   " your project\n"
+                   " - either defines an appropriate platform, which comes"
+                   "   along with this parameter\n"
+                   " - or has a ConfigMpc.h (normally included by Config.h)\n"
+                   "   defining this parameter\n"
+                   " - or has this definition somewhere else.");
+#endif
+
+
+//------------------------------------------------------------------------------
+// global structs
+//------------------------------------------------------------------------------
+/**
+ * \brief struct element contains MpcKeydata pointer
+ * and indices for NFC and MPC mapping
+ */
+typedef struct
+{
+  const mpc_keydata_t * mpc_keydata;
+  uint8_t keydata_idx;
+  uint8_t ch;
+} toc_item_t;
+
+
+//------------------------------------------------------------------------------
+// global variables
+//------------------------------------------------------------------------------
+
+extern uint8_t nfc_tag_copy[];
+
+//------------------------------------------------------------------------------
+/**
+ * \brief pointer to NFC tag start address array, used in nfc_module.c
+ */
+extern uint16_t * NfcMpcTagStartAddr;
+
+//------------------------------------------------------------------------------
+/**
+ * \brief pointer to TOC items struct array, used in nfc_module.c
+ */
+extern toc_item_t * toc_items;
+
+//------------------------------------------------------------------------------
+/**
+ * \brief  pointer to NFC tag start address array, used with fixed define
+ *         in application and dynamic assignment in unit tests
+ */
+extern uint16_t nfc_p[];
+
+//------------------------------------------------------------------------------
+/**
+ * \brief  pointer to TOC struct array, used with fixed define
+ *         in application and dynamic assignment in unit tests
+ */
+extern toc_item_t toc_p[];
+
+
+//------------------------------------------------------------------------------
+// global functions
+//------------------------------------------------------------------------------
+extern uint16_t nfc_tag_copy_size (void);
+extern void nfc_init_arrays ( uint8_t length );
+extern void nfc_mpc_start_addr_create( mpc_keydata_t const * const * mpc_keydata_ptr, uint8_t mpc_count, uint8_t nfc_inst);
+
+#endif

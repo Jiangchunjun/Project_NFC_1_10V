@@ -1,0 +1,23 @@
+// -----------------------------------------------------------------------------
+// Microcontroller Toolbox - Firmware Framework for Full Digital SSL Ballasts
+// -----------------------------------------------------------------------------
+// (c) Osram GmbH
+//     DS D EC - MCC
+//     Parkring 33
+//     85748 Garching
+//
+//
+// The content of this file is intellectual property of OSRAM GmbH. It is
+// confidential and not intended for any public release. All rights reserved.
+
+
+This directory contains the public headers needed to use the DALI lib.
+
+The application project needs to import this directory structure as a Subversion
+external (PEG revision!) and to set all paths inside as include path(s) for the
+application project.
+
+
+PS: If you aren't familiar with Svn PEG revisons, please come back on the
+toolbox maintainers or the DALI+MPC Library Board to clarify. It's important,
+otherwise your projects (incl. releases) sooner or later will break.

@@ -126,6 +126,7 @@ void ERU0_0_IRQHandler(void)
 { 
 #ifdef ENABLE_OVP
     PWM_EnterProtection();
+    //DaliBallast_CyclicTask();
 #endif
     //USART_PrintInfo("OVP....\n");
 }

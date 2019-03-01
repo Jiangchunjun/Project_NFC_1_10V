@@ -21,8 +21,6 @@
 #include "adc.h"
 #include "pwm.h"
 #include "power_task.h"
-#include "nfc_task.h"
-#include "driver.h"
 
 /* OSRAM Communication Protocol -----------------------------------------------------------------*/
 /* Packet data size */
@@ -702,11 +700,11 @@ void Comm_GetRealValue(void)
     }
     else if(g_CommBuff[2] == COMM_CH_ED_TIME)
     {        
-         real_value = g_ed_time;
+         //real_value = g_ed_time;
     }
     else if(g_CommBuff[2] == COMM_CH_RUN_TIME)
     {
-        real_value = g_nfc_time;
+        //real_value = g_nfc_time;
     }
     else
     {

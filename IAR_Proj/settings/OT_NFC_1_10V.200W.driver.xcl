@@ -6,11 +6,11 @@
 
 "-p" 
 
-"C:\Program Files (x86)\IAR Systems\IAR ARM 7.8\arm\CONFIG\debugger\Infineon\XMC1302-T038x0200.ddf" 
+"C:\Program Files (x86)\IAR Systems\IAR ARM 7.8\arm\CONFIG\debugger\Infineon\XMC1302-T038x0064.ddf" 
 
 "--semihosting=none" 
 
-"--device=XMC1302-T038x0200" 
+"--device=XMC1302-T038x0064" 
 
 "--drv_communication=USB0" 
 

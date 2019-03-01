@@ -13,7 +13,9 @@
 
 /* Include Head Files ---------------------------------------------------------------------------*/
 #include "system.h"
-
+#include "Nfc.h"
+#include "Acl.h"
+#include "nvm.h"
 /* Macro Defines --------------------------------------------------------------------------------*/
 
 
@@ -23,7 +25,7 @@ volatile uint8_t   g_work_mode;
 
 
 /* Global Variable ------------------------------------------------------------------------------*/
-
+uint8_t g_nfc_ini_flag=0;
 
 /* Function Declaration -------------------------------------------------------------------------*/
 
@@ -97,11 +99,11 @@ void System_PowerOnTask(void)
     static uint32_t systick = 0;
     extern uint16_t g_one2ten_avg_adc;
     /* Check if task has been created */
+        
     if( System_CheckTask(SYS_TASK_POWER_ON) == SYS_TASK_DISABLE )
     {
         return;
     }
-    
     /* Get current system tick counter */
     systick = Tick_GetTicks();
     
@@ -132,8 +134,8 @@ void System_PowerOnTask(void)
         {       
 #ifdef ENABLE_OVP
             /* enable eru for trigger OVP protection */
-            ERU_EnableOVP();
-            ACMP_EnableLevelEvent_OVP();
+           ERU_EnableOVP();
+           ACMP_EnableLevelEvent_OVP();
 #endif
             
             /* enable eru for trigger OCP protection */
@@ -157,16 +159,14 @@ void System_PowerOnTask(void)
         if(systick >= SYS_NFC_INIT_DELYA)
         {            
             /* read target current and prepare reference */
-            Power_PrepareReference();
+            //Power_PrepareReference();
             
             /* Power on NFC tag */
             MCU_NfcPowerPinSet();
             
-            /* nfc task init */
-            NFC_TaskInit();
-            
+     
             /* Create nfc communication task */
-            System_CreateTask(SYS_TASK_NFC);  
+            //System_CreateTask(SYS_TASK_NFC);  
             
             /* swtich to next state */
             state++;            
@@ -186,7 +186,19 @@ void System_PowerOnTask(void)
         if(systick >= SYS_POWER_INIT_DELYA)
         {
             /* Power control loop task init */
-            Power_TaskInit();
+           Power_TaskInit();
+           
+                  /* nfc task init */
+            nvmInit();
+            
+            NfcInit();
+            
+            AclInit();
+            
+            
+            DaliBallast_Init(); 
+            
+            g_nfc_ini_flag=1;
             
             /* swtich to next state */
             state++;            
@@ -353,6 +365,7 @@ void System_WorkModeChangeTask(void)
 *******************************************************************************/
 void System_PeriodTaskManagement(void)
 {
+        //DaliBallast_CyclicTask();
     /* Power control loop task period */
     if(SWT_CheckTimer(SWT_ID_LOOP) == SWT_STATUS_UP)
     {        

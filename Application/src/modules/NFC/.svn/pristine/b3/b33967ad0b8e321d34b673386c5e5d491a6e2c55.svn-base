@@ -1,0 +1,81 @@
+/** ----------------------------------------------------------------------------
+// Nfc.h
+// -----------------------------------------------------------------------------
+// (c) Osram GmbH
+//     DS D EC - MCC
+//     Parkring 33
+//     85748 Garching
+//
+//
+// The content of this file is intellectual property of OSRAM GmbH. It is
+// confidential and not intended for any public release. All rights reserved.
+//
+//
+// Indent style: Replace tabs by spaces, 2 spaces per indentation level
+//
+// Change history, major milestones and credits:
+//   2016-08, S. el Barradie, J. Eisenberg
+//
+// $Author$
+// $Revision$
+// $Date$
+// $Id$
+// $URL$
+
+*   \file
+*   \brief User header file for the whole NFC Module
+*/
+
+#ifndef __NFC__H__
+#define __NFC__H__
+
+//------------------------------------------------------------------------------
+// defines
+//------------------------------------------------------------------------------
+#define NFC_VERSION_MAJOR   												   2
+/** NFC TAG Status Register ECG_ON value when ECG is switched on
+ * \note This value (4 bit) should be less than 16 */
+#define NFC_STATUS_REGISTER_ECG_ON_VALUE                                     0xA
+/** NFC TAG Status Register ECG_ON value when ECG is switched off
+ * \note This value (4 bit) should be less than 16 */
+#define NFC_STATUS_REGISTER_ECG_OFF_VALUE                                      0
+
+
+//------------------------------------------------------------------------------
+// enums
+//------------------------------------------------------------------------------
+typedef enum
+{
+    UNDEFINED   = 0,
+    IN_PROGRESS = 1,
+    FINISHED    = 2
+} nfc_init_status_t;
+
+
+
+//------------------------------------------------------------------------------
+// service functions
+//------------------------------------------------------------------------------
+void NfcPowerDownPrepare(void);
+void NfcPowerDownSleep(void);
+void NfcPowerDownResume(void);
+
+//------------------------------------------------------------------------------
+// global functions
+//------------------------------------------------------------------------------
+void   NfcInit(void);
+void   NfcRuntimeInit(void);
+void   NfcCyclic(void);
+void   NfcOnPowerDown(void);
+void   NfcSetSleep(void);
+void   NfcSetWakeup(void);
+void   NfcWatchdogResetRequest(void);
+void   NfcResetTagAccessRights(void);
+int8_t NfcIsNewDataPresentAtPowerOn(void);
+bool   NfcIsPowerOnTagDataAvailable(void);
+nfc_init_status_t NfcInitStatus(void);
+bool   NfcInitialPowerUp(void);
+void   NfcSwitchOff(void);
+void   NfcSwitchOn(void);
+uint8_t NfcServices_GetEcgOnValue(bool ecg_state);
+#endif // __NFC__H__

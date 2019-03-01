@@ -21,7 +21,6 @@
 #include "tick.h"
 #include "sw_timer.h"
 #include "power_task.h"
-#include "nfc_task.h"
 #include "mcu_config.h"
 
 /* System Task Macro Defines --------------------------------------------------------------------*/

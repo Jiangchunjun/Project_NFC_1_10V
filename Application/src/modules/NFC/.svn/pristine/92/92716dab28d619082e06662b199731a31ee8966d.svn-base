@@ -1,0 +1,159 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// Microcontroller Toolbox - Firmware Framework for Full Digital SSL Ballasts
+// ---------------------------------------------------------------------------------------------------------------------
+//  (c) Osram GmbH
+//      DS D EC - MCC
+//      Parkring 33
+//      85748 Garching
+//
+//
+//  The content of this file is intellectual property of OSRAM, BU DS. It is confidential and not
+//  intended for any public release. All rights reserved.
+//
+//  Within the company the policy of a strict "who needs to know?" applies: Store this only at locations,
+//  where EXCLUSIVELY people who really NEED it for their DAY-TO-DAY business can access.
+//
+//   - Convenience or to save it for occasion are no valid arguments. Get a fresh and updated copy when needed.
+//   - Neither "departments shares" nor other potential local practices normally fulfill this policy.
+//   - Please, especially be careful about backups, they often are forgotten and an usual origin of diffusion.
+//   - Also be careful with code coverage reporting tools: They normally include the full sources, but the
+//     results often are published widely.
+//
+// Indent style: Replace tabs by spaces, 2 spaces per indentation level
+//
+// Change history, major milestones and credits:
+//    2018-01, W.Limmer@osram.de: Initial version
+//
+//
+// $Author$
+// $Revision$
+// $Date$
+// $Id$
+// $URL$
+//
+
+
+/** \addtogroup NFC
+ * \{
+ * \defgroup NfcServices Nfc Service Functions
+ * \{
+ *
+ * \brief Declaration of functions needed to be implemented elsewhere in the project.
+ *
+ * \file
+ * \brief This C-file provides templates for mandatory service functions to make this module work.
+ *
+ * Please take it as a reference to implement own functions in the projects.
+ *  - Do not include this file in the project build process!
+ *  - Copy this file, remove the #error message and modify it to the project's need.
+ *
+ * Other purposes:
+ *  - Document the needed functions and their parameters.
+ *  - Possibly: Provide appropriate stubs to make ECG simulator compile, link and run.
+ *  - Possibly: Use them instead of fake functions for unit tests (if the add. features of e.g. fff aren't needed).
+ */
+
+#include "Global.h"
+#include "Nfc.h"
+
+
+
+#if (! defined(UNIT_TESTING)) & (! defined (ECG_SIMULATOR) & (! defined (NFC_USE_SERVICE_TEMPLATES) ) )
+  #error("This file is a template file only. Don't use it directly, but copy and modify it in the projects.")
+#endif
+
+
+
+// ---------------------------------------------------------------------------------------------------------------------
+/** \brief Service function called by NfcOnPowerDown() directly after it is entered.
+ *
+ * \deprecated As NfcOnPowerDown() only is called by the application, this function isn't needed any longer and
+ *             mid-term it will be deleted. Do the intended stuff directly before calling NfcOnPowerDown().
+ *
+ * \note \ref SERVICEFUNCTION \n As with all other service functions, this is only the declaration of the
+ *       function's interface. It is \b not \b delivered by this module, but has to \b implemented
+ *       \b elsewhere in the project <b> to serve the needs of this module</b>.
+ */
+DEPRECATED void NfcPowerDownPrepare( void ) {
+
+};
+
+// ---------------------------------------------------------------------------------------------------------------------
+/** \brief Service function called by NfcOnPowerDown() during its while(not-done)-loop.
+ *
+ * NfcOnPowerDown() is a function, which (among other things) writes MCU data, changed during runtime,
+ * in one (blocking) call to the NFC tag.
+ * This might take a while (>> 100ms) and could involve the risk to trigger the watchdog (if enabled) or
+ * could even be too long to interrupt other tasks.
+ *
+ * If needed, fill this function with tasks which should be interlaced with NFC tag write. This might be:
+ * - Watchdog reset
+ * - Data output (last gasp)
+ * - Watching bias power supply and interrupt NFC tag write to start a higher prioritized Nvm-write
+ * - It's even possible to enter hardware sleep modes to save energy during this phase. But:
+ *   \warning I2C has to be operative during NfcOnPowerDown(). Within this service function, don't switch off
+ *            the power supply or clocks of related serial hardware, DMA, CRC ... modules when involved
+ *
+ * .
+ *
+ * \note \ref SERVICEFUNCTION \n As with all other service functions, this is only the declaration of the
+ *       function's interface. It is \b not \b delivered by this module, but has to \b implemented
+ *       \b elsewhere in the project <b> to serve the needs of this module</b>.
+ */
+void NfcPowerDownSleep( void ) {
+
+};
+
+// ---------------------------------------------------------------------------------------------------------------------
+/** \brief Service function called by NfcOnPowerDown() directly before the function is left.
+ *
+ * \deprecated As NfcOnPowerDown() only is called by the application, this function isn't needed any longer and
+ *             mid-term it will be deleted. Do the intended stuff directly before calling NfcOnPowerDown().
+ *
+ * \note \ref SERVICEFUNCTION \n As with all other service functions, this is only the declaration of the
+ *       function's interface. It is \b not \b delivered by this module, but has to \b implemented
+ *       \b elsewhere in the project <b> to serve the needs of this module</b>.
+ */
+DEPRECATED void NfcPowerDownResume( void ) {
+
+};
+
+// ---------------------------------------------------------------------------------------------------------------------
+/** \brief Service function called within NfcOnPowerDown
+ *
+ * \note \ref SERVICEFUNCTION \n As with all other service functions, this is only the declaration of the
+ *       function's interface. It is \b not \b delivered by this module, but has to \b implemented
+ *       \b elsewhere in the project <b> to serve the needs of this module</b>.
+ */
+void NfcWatchdogResetRequest( void ) {
+
+};
+
+// ---------------------------------------------------------------------------------------------------------------------
+/** \brief	NFC service function to get the ECG power state value from the FW.
+ * 				  By default (and suitable for most applications), it returns fixed
+ * 				  preprocessor definitions at specific positions in the module.
+ * 				  However, there are platforms like the OTI COMPACT G2 which
+ * 				  require different return values at those specific code positions.
+ * 				  If you need a different implementation, please remove the code
+ * 				  inside the function and replace it by your own code.
+ * 	\retval	NFC_STATUS_REGISTER_ECG_ON_VALUE or NFC_STATUS_REGISTER_ECG_OFF_VALUE
+ */
+
+uint8_t NfcServices_GetEcgOnValue(bool ecg_state)
+{
+    if (true == ecg_state)
+    {
+        return NFC_STATUS_REGISTER_ECG_ON_VALUE;
+    }
+    return NFC_STATUS_REGISTER_ECG_OFF_VALUE;
+}
+
+
+/** \} */ // NfcServices
+/** \} */ // NFC
+
+
+
+
+

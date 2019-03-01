@@ -1,0 +1,48 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// MemoryBank_Power.h
+// ---------------------------------------------------------------------------------------------------------------------
+// (c) Osram GmbH
+// Development Electronics for SSL
+// Parkring 33
+// 85748 Garching
+//
+// The content of this file is intellectual property of OSRAM GmbH. It is
+// confidential and not intended for any public release. All rights reserved.
+//
+// Indent style: Replace tabs by spaces, 2 spaces per indentation level
+//
+// Initial version: Jutta Avril, 2015-07-13
+//
+// $Author$
+// $Revision$
+// $Date$
+// $Id$
+// $URL$
+//
+// MemoryBank_Power.h declares functions which are called by MemoryBanksGeneric.c and
+// which are defined in MemoryBank_Power.c
+// Reference document: "Power Consumption Page Description", 2D1 2784481-000-02, MPC ID =3. 
+// To enable define:
+// #define MPC_POWER_NUMBER       [bank number]
+// ---------------------------------------------------------------------------------------------------------------------
+
+#ifndef __MEMORY_BANK_POWER_H
+#define __MEMORY_BANK_POWER_H
+
+#define MPC_Power_ID              3
+#define MPC_Power_VERSION         1                                             /// \brief The version of the Power page definition.
+#define MPC_Power_LastADDRESS     8
+
+#include <stdint.h>
+
+void MemoryBank_Power_Init( void );
+void MemoryBank_Power_Reset( uint8_t channel );
+
+///<- brief Be aware that you might access longer variables byte-wise. Refer to ZDD 2702387 "Generic Memory Bank Description" for description of access in this case
+mpc_rw_enum MemoryBank_Power_GetValue( uint8_t address, uint8_t *value, uint8_t channel );
+mpc_rw_enum MemoryBank_Power_SetValue( uint8_t address, uint8_t value, uint8_t channel );
+
+mpc_rw_enum MemoryBank_Power_GetValue_Port( uint8_t address, uint8_t *value, uint8_t channel, uint8_t port );
+mpc_rw_enum MemoryBank_Power_SetValue_port( uint8_t address, uint8_t value, uint8_t channel, uint8_t port );
+
+#endif

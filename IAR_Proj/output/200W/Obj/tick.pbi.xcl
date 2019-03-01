@@ -1,70 +1,198 @@
-"C:\C Pan\work\NFC 1-10\Project_NFC_1_10V\Driver\src\tick.c"
+"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Driver\src\tick.c"
 -std=c99
 -ferror-limit=100
 -I
-C:\C Pan\work\NFC 1-10\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc
 -I
-C:\C Pan\work\NFC 1-10\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include
 -I
-C:\C Pan\work\NFC 1-10\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include
 -I
-C:\C Pan\work\NFC 1-10\Project_NFC_1_10V\IAR_Proj\..\Application\inc
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc
 -I
-C:\C Pan\work\NFC 1-10\Project_NFC_1_10V\IAR_Proj\..\Driver\inc
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc
 -I
-C:\C Pan\work\NFC 1-10\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices
 -I
-C:\C Pan\work\NFC 1-10\Project_NFC_1_10V\IAR_Proj\..\Import\Config
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config
 -I
-C:\C Pan\work\NFC 1-10\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot
 -I
-C:\C Pan\work\NFC 1-10\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api
 -I
-C:\C Pan\work\NFC 1-10\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api
 -I
-C:\C Pan\work\NFC 1-10\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank
 -I
-C:\C Pan\work\NFC 1-10\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api
 -I
-C:\C Pan\work\NFC 1-10\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api
 -I
-C:\C Pan\work\NFC 1-10\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api
 -I
-C:\C Pan\work\NFC 1-10\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM
+-I
+PROJ_DIR$\..\Application\src\modules\NVM\api
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor
 -I
 C:\Program Files (x86)\IAR Systems\IAR ARM 7.8\arm\inc
 -I
 C:\Program Files (x86)\IAR Systems\IAR ARM 7.8\arm\inc\c
 -I
-C:\C Pan\work\NFC 1-10\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\inc
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\inc
 -I
-C:\C Pan\work\NFC 1-10\Project_NFC_1_10V\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include
 -I
-C:\C Pan\work\NFC 1-10\Project_NFC_1_10V\XMC_Peripheral_Library\CMSIS\Include
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\CMSIS\Include
 -I
-C:\C Pan\work\NFC 1-10\Project_NFC_1_10V\Application\inc
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\inc
 -I
-C:\C Pan\work\NFC 1-10\Project_NFC_1_10V\Driver\inc
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Driver\inc
 -I
-C:\C Pan\work\NFC 1-10\Project_NFC_1_10V\Import\Config\devices
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Import\Config\devices
 -I
-C:\C Pan\work\NFC 1-10\Project_NFC_1_10V\Import\Config
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Import\Config
 -I
-C:\C Pan\work\NFC 1-10\Project_NFC_1_10V\Import\driver_ot
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Import\driver_ot
 -I
-C:\C Pan\work\NFC 1-10\Project_NFC_1_10V\Import\modules\CRC\api
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Import\modules\CRC\api
 -I
-C:\C Pan\work\NFC 1-10\Project_NFC_1_10V\Import\modules\CRC\driver_api
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Import\modules\CRC\driver_api
 -I
-C:\C Pan\work\NFC 1-10\Project_NFC_1_10V\Import\modules\fileTank
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Import\modules\fileTank
 -I
-C:\C Pan\work\NFC 1-10\Project_NFC_1_10V\Import\modules\I2cExt\api
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Import\modules\I2cExt\api
 -I
-C:\C Pan\work\NFC 1-10\Project_NFC_1_10V\Import\modules\I2cExt\driver_api
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Import\modules\I2cExt\driver_api
 -I
-C:\C Pan\work\NFC 1-10\Project_NFC_1_10V\Import\modules\NfcExt\api
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Import\modules\NfcExt\api
 -I
-C:\C Pan\work\NFC 1-10\Project_NFC_1_10V\Import\modules\NfcExt\M24LRxx
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Import\modules\NfcExt\M24LRxx
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\NVM
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\CRC\api\Application\src\modules\NVM\api
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\NVM\driver_api
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\NVM\driver_xmc1300
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\CRC\api
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\CRC\driver_api
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\currentset
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\supplymonitor
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\Dali\DaliServices
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\Dali\HW
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\Dali\iFace\Modules
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\Dali\iFace\Optional
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\Dali\iFace\Services
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\Acl
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\Alloc
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\Alloc\Legacy
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\Clm
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\Csm
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\Info
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\MSK
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\AstroDim
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\MSKEncryption
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\Power
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\NFC
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\I2C
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\XMCLib\XMCLib\inc
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\XMCLib\CMSIS\Include
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\CRC16
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\hwdrivers\XMC1300
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\NVM\api
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\supplymonitor
 -DXMC1301_T038x0064=1
 -DOT_NFC_IP67_200W=1
 -DNDEBUG=1
@@ -83,6 +211,10 @@ C:\C Pan\work\NFC 1-10\Project_NFC_1_10V\Import\modules\NfcExt\M24LRxx
 -DENABLE_OVP=1
 -DENABLE_MOBILE=1
 -DENABLE_ONE2TEN=1
+-DBYTEORDER_LITTLE_ENDIAN=1
+-DAVAILABLE_PORTS_NUMBER=3
+-DFW_HIGH=01
+-DFW_LOW=02
 -D__CHAR_BITS__=8
 -D__CHAR_MAX__=0xff
 -D__CHAR_MIN__=0
