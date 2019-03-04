@@ -51,14 +51,14 @@
 //------------------------------------------------------------------------------
 // local variables
 //------------------------------------------------------------------------------
-STATIC nfc_local_state_t nfc_local_state;
+nfc_local_state_t nfc_local_state;
 STATIC uint8_t nfc_tag_mem_tmp[sizeof(nfc_tag_identification_register_t)];
 
 //------------------------------------------------------------------------------
 // global variables
 //------------------------------------------------------------------------------
 nfc_init_status_t nfc_init_status;
-
+uint8_t g_nfc_start_flag=0;
 //-----------------------------------------------------------------------------
 // local functions
 //-----------------------------------------------------------------------------
@@ -1852,7 +1852,7 @@ void NfcInit(void)
     nfc_local_state.access_right_init_idx = 0;
 
     // nvm write cycles == 0 -> MCU has just been flashed
-    if (nvmGetWriteCycles() == 0)
+    if(0)//(nvmGetWriteCycles() == 0)
     {
 
         nfc_local_state.is_tag_initialization_requested = true;
@@ -2252,7 +2252,7 @@ bool NfcInitialPowerUp(void)
 {
   if((nvmGetWriteCycles() == 0) && (nfc_local_state.is_power_on_condition == 1))
   {
-    return true;
+    return false;
   }
   else
   {
@@ -2273,9 +2273,9 @@ void NfcCyclic(void)
     static uint8_t save=0;
     if(save)
     {
-          nvmWriteAll();
+      nvmWriteAll();
       save=0;
-      //if(I2cAreAllPendingTransfersDone()&&nfc_local_state.fsm_state==nfc_fsm_state_idle)
+      if(I2cAreAllPendingTransfersDone()&&nfc_local_state.fsm_state==nfc_fsm_state_idle)
       {
         NfcOnPowerDown(nfc_run_time);
       }
@@ -2436,7 +2436,7 @@ void NfcCyclic(void)
             if (nfc_fct_done == mb_read_requested())
             {
                 // only if NOT ignore CRC Error
-                if (false == nfc_local_state.ignore_crc_error)
+                if(false == nfc_local_state.ignore_crc_error)
                 {
                     // set TAG Register PRR - clear all request flags of MBs read
                     NFC_CLEAR_REQUESTS_BELOW_IDX(
@@ -2513,6 +2513,7 @@ void NfcCyclic(void)
  //                   nfc_local_state.is_power_on_condition = false;
                 }
 
+                g_nfc_start_flag=1; //add nfc ini flag
                 // always unlock TAG memory after write is done
                 unlock_tag_memory();
 

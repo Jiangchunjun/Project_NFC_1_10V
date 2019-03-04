@@ -374,10 +374,10 @@ void System_PeriodTaskManagement(void)
     }
     
     /* NFC communication task period */
-    if(SWT_CheckTimer(SWT_ID_NFC) == SWT_STATUS_UP)
+    if(SWT_CheckTimer(SWT_ID_NFC_HANDLE) == SWT_STATUS_UP)
     {        
         /* Create nfc communication task */
-        System_CreateTask(SYS_TASK_NFC);  
+        System_CreateTask(SYS_TASK_NFC_HANDLE);  
     }
     
     /* Hiccup period timer for OVP and OCP */

@@ -17,7 +17,8 @@
 #define GLOBAL_DEVICE_EAN                                   4052899957111
 #define GLOBAL_DMAT_NO                                      0x30010259UL
 #define GLOBAL_BASIC_CODE_STRING                            "AB47615 "
-
+#define NFC_TIME_ADRRESS
+#define FLASH_TIME_ADDRESS                                   0X10010010
 // DALI
 #define POWERon_DELAY_TIME_ms                                               (120)
 

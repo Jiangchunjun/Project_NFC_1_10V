@@ -120,7 +120,7 @@ TraceBufferSize=0x00000000
 TraceShowTime=0
 TraceShowTimeFreq=1000000
 [DebugChecksum]
-Checksum=-1355976260
+Checksum=-991090569
 [CodeCoverage]
 Enabled=_ 0
 [Exceptions]
@@ -155,29 +155,37 @@ Stop=1
 Freq=10000000
 MultiCoreRunAll=1
 [struct_types]
-Fmt0=TypeMemoryBank_CSM-nom_cur_hi	4	0
-Fmt1=TypeMemoryBank_CSM-nom_cur_lo	4	0
-Fmt2=TypeMemoryBank_CSM-opMode	4	0
-Fmt3=TypeMemoryBank_CSM-protect_cur_hi	4	0
-Fmt4=TypeMemoryBank_CSM-protect_cur_lo	4	0
-Fmt5=mpcInfo_nvm_t-temperatureTimeIntegrator	4	0
-Fmt6=struct <Unnamed 75>-level_1	3	0
-Fmt7=struct <Unnamed 75>-level_2	3	0
-Fmt8=struct <Unnamed 75>-level_3	3	0
-Fmt9=struct <Unnamed 75>-switchOff_fade	3	0
+Fmt0=TypeMemoryBank_CSM-lockByte	4	0
+Fmt1=TypeMemoryBank_CSM-nom_cur_hi	4	0
+Fmt2=TypeMemoryBank_CSM-nom_cur_lo	4	0
+Fmt3=TypeMemoryBank_CSM-opMode	4	0
+Fmt4=TypeMemoryBank_CSM-protect_cur_hi	4	0
+Fmt5=TypeMemoryBank_CSM-protect_cur_lo	4	0
+Fmt6=TypeMemoryBank_Eol-eol_time	4	0
+Fmt7=mpcInfo_nvm_t-temperatureTimeIntegrator	4	0
+Fmt8=struct <Unnamed 186>-ptr	4	0
+Fmt9=struct <Unnamed 77>-astro_fade	3	0
+Fmt10=struct <Unnamed 77>-level_1	3	0
+Fmt11=struct <Unnamed 77>-level_2	3	0
+Fmt12=struct <Unnamed 77>-level_3	3	0
+Fmt13=struct <Unnamed 77>-level_4	3	0
+Fmt14=struct <Unnamed 77>-switchOff_fade	3	0
+Fmt15=struct <Unnamed 78>-duration_1	3	0
 [array_types]
 Fmt0=uint8_t[20]	4	0
 Fmt1=uint8_t[64]	4	0
 [watch_formats]
 Fmt0={W}42:ueser_id	4	0
+Fmt1={W}42:wpage.addr	4	0
 [Trace1]
 Enabled=0
 ShowSource=1
 [Disassemble mode]
 mode=0
 [Breakpoints2]
-Bp0=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Application\src\main.c}.41.5" 0 0 1 "" 0 "" 0
-Count=1
+Bp0=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Application\src\modules\NFC\nfc_module.c}.2714.5" 0 0 1 "" 0 "" 0
+Bp1=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Application\src\main.c}.41.5" 0 0 1 "" 0 "" 0
+Count=2
 [Log file]
 LoggingEnabled=_ 0
 LogFile=_ ""

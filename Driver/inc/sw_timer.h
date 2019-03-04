@@ -23,7 +23,7 @@
 /* Software timer timer_id define */
 #define  SWT_ID_LOOP                    0       /* Delay is define by SWT_PERIOD_0 */
 #define  SWT_ID_HICCUP                  1       /* Delay is define by SWT_PERIOD_1 */
-#define  SWT_ID_NFC                     2       /* Delay is define by SWT_PERIOD_2 */
+#define  SWT_ID_NFC_HANDLE              2       /* Delay is define by SWT_PERIOD_2 */
 #define  SWT_ID_SPEED_UP                3       /* Delay is define by SWT_PERIOD_3 */
 #define  SWT_ID_COMM_RX                 4       /* Delay is define by SWT_PERIOD_4 */
 #define  SWT_ID_COMM_UNLOCK             5       /* Delay is define by SWT_PERIOD_5 */

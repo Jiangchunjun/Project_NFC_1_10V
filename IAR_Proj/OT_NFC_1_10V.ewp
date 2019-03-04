@@ -369,6 +369,7 @@
           <state>$PROJ_DIR$\..\Application\src\modules\MPC\AstroDim</state>
           <state>$PROJ_DIR$\..\Application\src\modules\MPC\MSKEncryption</state>
           <state>$PROJ_DIR$\..\Application\src\modules\MPC\Power</state>
+          <state>$PROJ_DIR$\..\Application\src\modules\MPC\EOL</state>
           <state>$PROJ_DIR$\..\Application\src\modules\NFC</state>
           <state>$PROJ_DIR$\..\Application\src\modules\I2C</state>
           <state>$PROJ_DIR$\..\Application\src\modules\XMCLib\XMCLib\inc</state>
@@ -4059,6 +4060,12 @@
         <name>$PROJ_DIR$\..\Application\src\comm_task.c</name>
       </file>
       <file>
+        <name>$PROJ_DIR$\..\Application\src\driver.c</name>
+        <excluded>
+          <configuration>200W</configuration>
+        </excluded>
+      </file>
+      <file>
         <name>$PROJ_DIR$\..\Application\src\filter.c</name>
       </file>
       <file>
@@ -4447,6 +4454,15 @@
       </file>
       <file>
         <name>$PROJ_DIR$\..\Application\src\modules\MPC\Csm\MemoryBank_Csm.h</name>
+      </file>
+    </group>
+    <group>
+      <name>EOL</name>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\EOL\MemoryBank_Eol.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\EOL\MemoryBank_Eol.h</name>
       </file>
     </group>
     <group>

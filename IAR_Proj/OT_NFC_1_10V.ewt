@@ -4685,6 +4685,9 @@
         <name>$PROJ_DIR$\..\Application\src\comm_task.c</name>
       </file>
       <file>
+        <name>$PROJ_DIR$\..\Application\src\driver.c</name>
+      </file>
+      <file>
         <name>$PROJ_DIR$\..\Application\src\filter.c</name>
       </file>
       <file>
@@ -5064,6 +5067,15 @@
       </file>
       <file>
         <name>$PROJ_DIR$\..\Application\src\modules\MPC\Csm\MemoryBank_Csm.h</name>
+      </file>
+    </group>
+    <group>
+      <name>EOL</name>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\EOL\MemoryBank_Eol.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\EOL\MemoryBank_Eol.h</name>
       </file>
     </group>
     <group>

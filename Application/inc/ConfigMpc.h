@@ -8,7 +8,7 @@
 #include "parameter.h"
 
 ///---------------------------------------------------------------------------------------------------------------------
-#define MPC_CLM_TABLE_ENTRIES                         8                         // number of table entries
+#define MPC_CLM_TABLE_ENTRIES                         4                         // number of table entries
 #define MPC_CLM_TABLE_MaxLEVEL                        100                       // max Constant lumen factor in [%]
 #define MPC_CLM_TABLE_MinLEVEL                        70                        // min Constant lumen factor in [%]
 //  #define MPC_CLM_TABLE_ENABLE                                                // if #define is enabled, CLM is enabled per default
@@ -62,8 +62,8 @@
 //#endif
 
 #define MPC_MAX_NUMBER                         50   // Highest membank number in the DALI address room
-#define MPC_COUNT                              8   // Number of Mpcs allocated
-#define MPC_NFC_INST                           8
+#define MPC_COUNT                              9   // Number of Mpcs allocated
+#define MPC_NFC_INST                           9
 
 #define MPCs_DALI   // Numbers fix, only to create and include the DALI membanks 0 and 1 and DALI parameter page(s)
 #define MPC_MSK_NUMBER                          2
@@ -71,8 +71,10 @@
 #define MPC_CLM_NUMBER                          4
 #define MPC_BIO_NUMBER                          6
 //#define MPC_EMERGENCY_NUMBER                   17
+#define MPC_EOL_NUMBER                         21   // read-only in 1DIM
 #define MPC_ASTRO_NUMBER                       28
 #define MPC_INFO_NUMBER                        29
+
 //#define MPC_POWER_NUMBER                       30
 //#define MPC_TDC_NUMBER                         31
 //#define MPC_DALI_T6_NUMBER                     40
@@ -91,6 +93,9 @@
 #define configMemoryBank_Astro_level2                                       50
 #define configMemoryBank_Astro_level3                                       50
 #define configMemoryBank_Astro_level4                                      100
+
+#define configMemoryBank_Eol_enable                                          1  // off
+#define configMemoryBank_Eol_eol_time                                       50
 
 
 #define DALI_CONFIG_MEMORY_BANK1_LastADDRESS    60

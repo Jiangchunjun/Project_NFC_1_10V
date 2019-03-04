@@ -1,4 +1,4 @@
-"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Driver\src\eru.c"
+"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\driver.c"
 -std=c99
 -ferror-limit=100
 -I

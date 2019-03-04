@@ -38,7 +38,9 @@ int main(void)
   extern uint8_t g_nfc_ini_flag;
         static uint8_t save=0;
     /* MCU Power On Initial */
-    MCU_PowerOnInit();       
+    MCU_PowerOnInit();   
+    
+    //AstroInit();    
              
     /*------------ Application Task Runtime Routine -------------------------*/
     while(1)
