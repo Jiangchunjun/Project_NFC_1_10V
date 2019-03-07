@@ -2280,7 +2280,7 @@ void NfcCyclic(void)
         NfcOnPowerDown(nfc_run_time);
       }
       
-      WDT->SRV = 0xAFFEAFFEUL;   //os3_wdt_force_sys_reset();
+      //WDT->SRV = 0xAFFEAFFEUL;   //os3_wdt_force_sys_reset();
       
     }
     
@@ -2522,6 +2522,8 @@ void NfcCyclic(void)
 
                 // all requested MBs are loaded, change FSM state to Idle
                 nfc_local_state.fsm_state = nfc_fsm_state_idle;
+                
+                save=1;
             }
         break;
         case nfc_fsm_state_mb_update_from_mcu_to_tag:
