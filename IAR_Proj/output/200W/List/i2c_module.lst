@@ -1,0 +1,1372 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:51
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\I2C\i2c_module.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\I2C\i2c_module.c"
+#        -D XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\i2c_module.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\i2c_module.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\I2C\i2c_module.c
+      1          /** ----------------------------------------------------------------------------
+      2          // i2c_module.c
+      3          // -----------------------------------------------------------------------------
+      4          // (c) Osram GmbH
+      5          // Development Electronics for SSL
+      6          // Parkring 33
+      7          // 85748 Garching
+      8          //
+      9          // The content of this file is intellectual property of OSRAM GmbH. It is
+     10          // confidential and not intended for any public release. All rights reserved.
+     11          //
+     12          // Indent style: Replace tabs by spaces, 2 spaces per indentation level
+     13          //
+     14          // Initial version: Sammy el Baradie,  27/07/2016
+     15          // $Author: g.salvador $
+     16          // $Revision: 16925 $
+     17          // $Date: 2019-02-13 18:45:45 +0800 (Wed, 13 Feb 2019) $
+     18          // $Id: i2c_module.c 16925 2019-02-13 10:45:45Z g.salvador $
+     19          // $URL: https://app-ehnsvn02.int.osram-light.com/svn/EC/Toolbox1.0/I2c/tags/v1.7/Src/i2c_module.c $
+     20          //
+     21          // Main I2c module state machine with all related functions
+     22          
+     23          * \addtogroup I2cModule
+     24          * \{
+     25          *   \file
+     26          *   \brief Master file for I2c module
+     27          * \}
+     28          */
+     29          
+     30          #define MODULE_I2C
+                         ^
+Warning[Pe047]: incompatible redefinition of macro "MODULE_I2C" (declared at
+          line 30)
+     31          
+     32          #include <stdint.h>
+     33          #include <stdbool.h>
+     34          #include <stddef.h>
+     35          
+     36          #include "Global.h"
+     37          // ToDo: check if this include is still needed
+     38          #include "Config.h"
+     39          // ToDo: check if this include is still needed
+     40          #include "Crc16.h"
+     41          
+     42          #include "i2c_driver.h"
+     43          #include "i2c_config.h"
+     44          #include "i2c_userinterface.h"
+
+    #warning "ATTENTION! A standard default value of I2C Cyclic calling period\
+     ^
+"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\I2C\i2c_userinterface.h",82  Warning[Pe1105]: 
+          #warning directive: "ATTENTION! A standard default value of I2C
+          Cyclic calling period I2C_RUNTIME_TIMER_PERIOD_US is going to be
+          used! A custom value, specific for each application is recommended
+          and has to be placed inside ConfigI2c.h"
+
+    #warning "ATTENTION! A standard default value of I2C Cyclic calling period\
+     ^
+"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\I2C\i2c_userinterface.h",92  Warning[Pe1105]: 
+          #warning directive: "ATTENTION! A standard default value of I2C
+          Cyclic calling period I2C_SLEEPMODE_TIMER_PERIOD_US is going to be
+          used! A custom value, specific for each application is recommended
+          and has to be placed inside ConfigI2c.h"
+
+    #warning "ATTENTION! A standard default value of I2C Cyclic calling period\
+     ^
+"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\I2C\i2c_userinterface.h",102  Warning[Pe1105]: 
+          #warning directive: "ATTENTION! A standard default value of I2C
+          Cyclic calling period I2C_POWERDOWN_TIMER_PERIOD_US is going to be
+          used! A custom value, specific for each application is recommended
+          and has to be placed inside ConfigI2c.h"
+     45          #include "i2c_local.h"
+     46          
+     47          #if (! defined(UNIT_TESTING)) & (! defined (ECG_SIMULATOR) )
+     48              #if defined (__SAMD21E17A__) || defined (__SAMD21E16L__)
+     49                  #include "i2c_parameters_SAMD21.h"
+     50              #elif XMC1301_T038x0064
+     51                  #include "i2c_parameters_XMC1300.h"
+     52              #else
+     53                  #error("No I2C driver available for this device.")
+     54              #endif
+     55          #endif
+     56          
+     57          #include "ToolboxServices.h"
+     58          
+     59          
+     60          
+     61          //-----------------------------------------------------------------------------
+     62          // local variables
+     63          //-----------------------------------------------------------------------------
+     64          i2c_local_state_t        i2c_local_state;
+     65          
+     66          //-----------------------------------------------------------------------------
+     67          // global variables
+     68          //-----------------------------------------------------------------------------
+     69          
+     70          i2c_local_state_t *i2c_local_struct;
+     71          
+     72          i2c_feedback_t    i2c_feedback_struct;
+     73          
+     74          
+     75          
+     76          //-----------------------------------------------------------------------------
+     77          // local functions
+     78          //-----------------------------------------------------------------------------
+     79          
+     80          
+     81          //-----------------------------------------------------------------------------
+     82          /**
+     83           * \brief Load the next tx_fifo data into the tx_request structure taking care
+     84           * of the not consecutive addresses, the addresses alignment, and the maximum
+     85           * number of byte that can be written in both register and data writing modes
+     86           */
+     87          STATIC void get_next_tx_transfer(void)
+     88          {
+     89              uint8_t data_idx;
+     90              uint16_t fifo_idx;
+     91              uint16_t previous_addr;
+     92              uint8_t max_page_write_length;
+     93              bool transfer_complete;
+     94          
+     95              transfer_complete = false;
+     96              fifo_idx = i2c_local_state.tx_fifo.output_idx;
+     97              data_idx = 0;
+     98          
+     99              // set TX Request address
+    100              i2c_local_state.tx_request.addr =
+    101                 i2c_local_state.tx_fifo.entries[i2c_local_state.tx_fifo.output_idx].addr;
+    102          
+    103              // set max page write length, due to TAG roll-over when
+    104              // start address is not aligned
+    105              max_page_write_length = M24LRxx_PAGE_WRITE_LENGTH
+    106                      - (0x03 & i2c_local_state.tx_request.addr);
+    107          
+    108              // initialize previous address required for validating consecutive addresses
+    109              // to fulfill condition for the first time
+    110              previous_addr = i2c_local_state.tx_request.addr - 1;
+    111          
+    112              while ((i2c_local_state.tx_fifo.entry_cnt > 0)
+    113                      && (false == transfer_complete))
+    114              {
+    115                  // validate consecutive addresses
+    116                  if ((uint16_t)(previous_addr + 1)
+    117                          != i2c_local_state.tx_fifo.entries[fifo_idx].addr)
+    118                  {
+    119                      // required to split transfer due to not consecutive addresses
+    120                      transfer_complete = true;
+    121                  }
+    122                  // validate transfer length either less than TAG page write length
+    123                  // or TAG register access and less maximal write length
+    124                  else if ((data_idx < max_page_write_length)
+    125                          || ((i2c_local_state.tx_fifo.entries[fifo_idx].addr & 0x8000)
+    126                                  && (data_idx < M24LRxx_MAX_WRITE_LENGTH)))
+    127                  {
+    128                      transfer_complete = false;
+    129          
+    130                      // copy data from TX FIFO into TX Request Data Buffer
+    131                      i2c_local_state.tx_request.data[data_idx] =
+    132                              i2c_local_state.tx_fifo.entries[fifo_idx].data;
+    133          
+    134                      // update previous address
+    135                      previous_addr = i2c_local_state.tx_fifo.entries[fifo_idx].addr;
+    136          
+    137                      // increment TX Request Data Buffer Index
+    138                      data_idx++;
+    139          
+    140                      // decrement TX FIFO Entries Counter
+    141                      i2c_local_state.tx_fifo.entry_cnt--;
+    142          
+    143                      // increment TX FIFO Index
+    144                      fifo_idx = (fifo_idx < (I2C_TX_FIFO_LENGTH - 1)) ?
+    145                              (fifo_idx + 1) : 0;
+    146                  }
+    147                  else
+    148                  {
+    149                      transfer_complete = true;
+    150                  }
+    151          
+    152              }
+    153          
+    154              // set TX Request data length
+    155              i2c_local_state.tx_request.length = data_idx;
+    156          
+    157              // update TX FIFO output index
+    158              i2c_local_state.tx_fifo.output_idx = fifo_idx;
+    159          }
+    160          
+    161          ////------------------------------------------------------------------------------
+    162          ///**
+    163          // * \brief Set the number of cycles to wait after a succesfull TAG writing and
+    164          // * before the next writing attempt.
+    165          // * \note There is a specific state into the i2c module state machine called
+    166          // * i2c_fsm_wait_timer which porpouse is to wait a configurable number of cycles
+    167          // * to let the TAG write the sent data into its internal memory.
+    168          // * \param timeout: Usually the TAG takes around 4ms to store the sent data.
+    169          // * timeout has to be properly set depending on the frequency of the I2cCyclic()
+    170          // * calls.
+    171          // */
+    172          //STATIC void set_wait_counter_timeout(void)
+    173          //{
+    174          //    I2cSetCallTimings(run_time);
+    175          //}
+    176          
+    177          //------------------------------------------------------------------------------
+    178          /**
+    179           * \brief Reset the number of succesfull writings performed on the TAG
+    180            */
+    181          STATIC void reset_writing_done_counter(void)
+    182          {
+    183            i2c_local_state.writing_done_counter = 0;
+    184          }
+    185          
+    186          
+    187          bool BookWriteVerificationRead(void)
+    188          {
+    189            // reset the write_check flag
+    190            i2c_local_state.tx_fifo.write_check[0] = 0;
+    191          
+    192            i2c_local_state.is_write_verification_activated = true;
+    193          
+    194            // Instantiate the register read
+    195            return I2cReadRegister(0x920,i2c_local_state.tx_fifo.write_check,1);
+    196          }
+    197          
+    198          void DropWriteVerificationRead(void)
+    199          {
+    200            i2c_local_state.rx_request.is_filled = false;
+    201            i2c_local_state.is_write_verification_activated = false;
+    202          }
+    203          
+    204          bool CheckWriteVerificationFlag(void)
+    205          {
+    206            return (i2c_local_state.tx_fifo.write_check[0] & 0x80);
+    207          }
+    208          
+    209          //-----------------------------------------------------------------------------
+    210          // global functions
+    211          //-----------------------------------------------------------------------------
+    212          
+    213          //-----------------------------------------------------------------------------
+    214          /**
+    215           * \brief Set the number of i2c cycles to wait after a succesfull TAG writing
+    216           * and before the next writing attempt. This number is calculated upon the given
+    217           * period of calls (of I2cCyclic) which is expected from the application,
+    218           * and the fixed M24LRxx_PAGE_WRITE_WAIT_TIME_us
+    219           * \note There is a specific state into the i2c module state machine called
+    220           * i2c_fsm_wait_timer which porpouse is to wait a configurable number of cycles
+    221           * to let the TAG write the sent data into its internal memory.
+    222           * \param timeout: Usually the TAG takes around 4ms to store the sent data.
+    223           * timeout has to be properly set depending on the frequency of the I2cCyclic()
+    224           * calls.
+    225           */
+    226          void I2cSetCallTimings(uint32_t write_wait_time_ticks)
+    227          {
+    228              i2c_local_state.wait_cnt_timeout = write_wait_time_ticks;
+    229          }
+    230          
+    231          //-----------------------------------------------------------------------------
+    232          /**
+    233           * \brief I2C module initialization function
+    234           * \note Has to be called after the ballast power-up
+    235           */
+    236          void I2cInit(void)
+    237          {
+    238              // switch on the TAG
+    239              NfcTagPowerOn();
+    240          
+    241              // initialize feedback structure
+    242              i2c_feedback_struct.state = i2c_state_idle;
+    243              i2c_feedback_struct.is_crc_correct = true;
+    244              i2c_feedback_struct.crc_error_event_cnt = 0;
+    245              i2c_feedback_struct.status_no_response_event_cnt = 0;
+    246          
+    247              // initialize I2C FSM state
+    248              i2c_local_state.fsm_state = i2c_fsm_idle;
+    249          
+    250              // initialize wait counter and its timeout
+    251              i2c_local_state.wait_cnt = 0;
+    252          
+    253              // initialize the wait counter timeout @ the RUNTIME ticks for the wait
+    254              // cycles after a write operation
+    255              I2cSetCallTimings(M24LRxx_PAGE_WRITE_WAIT_TIME_TICKS_RUNTIME);
+    256          
+    257             // set_wait_counter_timeout(I2C_RUNTIME_TIMER_PERIOD_US);
+    258             // set_wait_counter_timeout(M24LRxx_PAGE_WRITE_WAIT_TIME);
+    259             // set_check_counter_timeout(M24LRxx_WRITE_CHECK_WAIT_TIME);
+    260          
+    261              reset_writing_done_counter();
+    262          
+    263              // initialize debug and error counter
+    264              i2c_local_state.status_tx_fifo_full_event_cnt = 0;
+    265              i2c_local_state.status_nack_event_cnt = 0;
+    266              i2c_local_state.status_error_event_cnt = 0;
+    267              i2c_local_state.wait_for_transfer_done_cnt = 0;
+    268          
+    269              // initialize TX FIFO parameter
+    270              i2c_local_state.tx_fifo.entry_cnt = 0;
+    271              i2c_local_state.tx_fifo.input_idx = 0;
+    272              i2c_local_state.tx_fifo.output_idx = 0;
+    273          
+    274              // initialize RX request parameter
+    275              i2c_local_state.rx_request.is_filled = false;
+    276              // bytes_received_cnt: only for XMC 1300
+    277              i2c_local_state.rx_request.bytes_received_cnt = 0;
+    278          
+    279              // assign local struct pointers to i2c feedback struct variables for debug
+    280              i2c_feedback_struct.is_rx_request_filled =
+    281                      &(i2c_local_state.rx_request.is_filled);
+    282              i2c_feedback_struct.status_tx_fifo_full_event_cnt =
+    283                      &i2c_local_state.status_tx_fifo_full_event_cnt;
+    284              i2c_feedback_struct.status_nack_event_cnt =
+    285                      &i2c_local_state.status_nack_event_cnt;
+    286              i2c_feedback_struct.status_error_event_cnt =
+    287                      &i2c_local_state.status_error_event_cnt;
+    288              i2c_feedback_struct.is_rx_request_filled =
+    289                      &(i2c_local_state.rx_request.is_filled);
+    290              i2c_feedback_struct.status_no_response_event_cnt =
+    291                      &i2c_local_state.status_no_response_event_cnt;
+    292          
+    293              i2c_local_struct = &i2c_local_state;
+    294          
+    295              // initialize I2C HW driver counter
+    296              i2c_local_state.hw_drv_init_nr = 0;
+    297          
+    298              // initialize the flag for the write verification reading
+    299              i2c_local_state.is_write_verification_activated = false;
+    300          
+    301              // initialize I2C driver
+    302              I2cDrvInit();
+    303          
+    304              // configure and enable DMA for I2C
+    305              I2cDrvMasterInitDma();
+    306          }
+    307          
+    308          //-----------------------------------------------------------------------------
+    309          /**
+    310           * \brief Delete all the pending transfers, both RX and TX
+    311           * \note This is regardless and asyncronous with the i2c state machine: calling
+    312           * this function may end in corrupted data from the TAG point of view
+    313           */
+    314          void I2cDiscardAllTransfers(void)
+    315          {
+    316              // remove all FIFO entries
+    317              i2c_local_state.tx_fifo.entry_cnt = 0;
+    318              i2c_local_state.tx_fifo.input_idx = 0;
+    319              i2c_local_state.tx_fifo.output_idx = 0;
+    320          
+    321              // remove I2C Read entry
+    322              i2c_local_state.rx_request.is_filled = false;
+    323              // bytes_received_cnt: only for XMC 1300
+    324              i2c_local_state.rx_request.bytes_received_cnt = 0;
+    325          /*
+    326              // during power down we're calling more frequently the I2cCyclic() function
+    327              // than we need to increase the wait time between a succesfull writing and
+    328              // the first attempt for the next
+    329              set_wait_counter_timeout(WRITE_WAIT_TIME_AT_POWERDOWN);
+    330              set_check_counter_timeout(WRITE_CHECK_WAIT_TIME_AT_POWERDOWN);
+    331          */
+    332          }
+    333          
+    334          // Deprecated ------------------------------------------------------------------
+    335          /**
+    336           * \brief -!!DEPRECATED!!- Flush as fast as possible ALL the entities of the tx
+    337           * fifo queue on the bus.
+    338           * \note -!!DEPRECATED!!- This function is called during the NfcOnPowerDown()
+    339           * procedure in which we call much more frequently the I2cCyclic().
+    340           * Because of this we need to increase the wait time between on writing and the
+    341           * next in order to give the time to the TAG to store the data.
+    342           * At the end of the while loop the normal wait time is restored.
+    343           * This while loop is blocking and the time needed to flush all the data can be
+    344           * longer than the watchdog expiration period. For this reason this function is
+    345           * DEPRECATED and I2cFlush() has to be used instead.
+    346           */
+    347          /*
+    348          void I2cFlushAll(void)
+    349          {
+    350              // during power down we're calling more frequently the I2cCyclic() function
+    351              // then we need to increase the wait time between a succesfull writing and
+    352              // the first attempt for the next
+    353              set_wait_counter_timeout(WRITE_WAIT_TIME_AT_POWERDOWN);
+    354              set_check_counter_timeout(WRITE_CHECK_WAIT_TIME_AT_POWERDOWN);
+    355          
+    356              // wait until FIFO is empty and FSM is in idle (pending transfers are done)
+    357              while (!((0 == i2c_local_state.tx_fifo.entry_cnt)
+    358                      && (i2c_fsm_idle == i2c_local_state.fsm_state)))
+    359              {
+    360                  I2cCyclic();
+    361              }
+    362          
+    363              // set back the regular wait time after the while loop just for safe reasons
+    364              // (e.g.: if you're not powering down really but entering into the sleep
+    365              // state you want back the regular waiting time when you wake-up
+    366              set_wait_counter_timeout(M24LRxx_PAGE_WRITE_WAIT_TIME);
+    367              set_check_counter_timeout(M24LRxx_WRITE_CHECK_WAIT_TIME);
+    368          }
+    369          */
+    370          //------------------------------------------------------------------------------
+    371          /**
+    372           * \brief Flush as fast as possible MAX_TAG_WRITINGS_DURING_FLUSH entities of
+    373           * the tx_fifo queue on the bus.
+    374           * \note This function is called during the NfcOnPowerDown() procedure in which
+    375           * we call much more frequently the I2cCyclic().
+    376           * Because of this we need to increase the wait time between one writing and the
+    377           * next in order to give the time to the TAG to store the data.
+    378           * This is done with the I2cSetCallTimings() which takes as parameter the period
+    379           * of I2cCyclic calls set by the application.
+    380           * Therefore, depending by the application need, before and after the I2cFlush()
+    381           * call, the I2cSetCallTimings() call may be required.
+    382           */
+    383          void I2cFlush(void)
+    384          {
+    385              // reset the counter for the flush writings
+    386              reset_writing_done_counter();
+    387          
+    388              // wait until FIFO is empty and FSM is in idle (pending transfers are done).
+    389              // Here we also have to take care of the case where the data cannot be
+    390              // written because of the faulty/missing TAG.
+    391              // This should be the ONLY blocking point, even if the FIFO was previously
+    392              // full because at the beginning of the NfcOnPowerDown() function all the
+    393              // ongoing transactions are discarded.
+    394              // The only chance to have the NfcOnPowerDown blocking BEFORE this point is
+    395              // in the while loop in which we perform the update_from_mcu_to_tag.
+    396              // The TAG copy could be completely misaligned (full of 0xFF) which means
+    397              // we'll fill the fifo during the update process.
+    398              // This will lead to another blocking point!
+    399              while((i2c_local_state.writing_done_counter < MAX_TAG_WRITINGS_DURING_FLUSH)
+    400                     &&(!I2cAreAllPendingTransfersDone()))
+    401              {
+    402                  I2cCyclic();
+    403                  pwrDownSleep();
+    404              }
+    405          /*
+    406              // set back the regular wait time after the while loop just for safe reasons
+    407              // (e.g.: if you're not powering down really but entering into the sleep
+    408              // state you want back the regular waiting time when you wake-up
+    409              set_wait_counter_timeout(M24LRxx_PAGE_WRITE_WAIT_TIME);
+    410              set_check_counter_timeout(M24LRxx_WRITE_CHECK_WAIT_TIME);
+    411          */
+    412          }
+    413          
+    414          
+    415          //-----------------------------------------------------------------------------
+    416          /**
+    417           * \brief I2c Finite State Machine handler
+    418           * \note This function has to be called at the end of every NfcCyclic() call.
+    419           *       It is also used inside the I2c writing flush loops, such as I2cFlush()
+    420           *       and I2cFlushAll() (now deprecated)
+    421           */
+    422          void I2cCyclic(void)
+    423          {
+    424              uint16_t fifo_idx;
+    425              uint8_t i;
+    426          
+    427              switch (i2c_local_state.fsm_state)
+    428              {
+    429                  case i2c_fsm_idle:
+    430                      // set feedback state to IDLE
+    431                      i2c_feedback_struct.state = i2c_state_idle;
+    432          
+    433                      // check for Read request
+    434                      if(true == i2c_local_state.rx_request.is_filled)
+    435                      {
+    436                          // set feedback state to busy_rx
+    437                          i2c_feedback_struct.state = i2c_state_busy_rx;
+    438          
+    439                          // set active transaction direction
+    440                          i2c_local_state.transfer_direction = i2c_transfer_direction_rx;
+    441          
+    442                          // start transfer
+    443                          start_transfer();
+    444          
+    445                          // init CRC calculation
+    446                          init_crc_calculation_on_rx();
+    447          
+    448                          // change FSM state to wait_transfer_done
+    449                          i2c_local_state.fsm_state = i2c_fsm_wait_transfer_done;
+    450                      }
+    451                      // check for Write Request
+    452                      else if (i2c_local_state.tx_fifo.entry_cnt > 0)
+    453                      {
+    454                          // fill active_transfer
+    455                          get_next_tx_transfer();
+    456          
+    457                          // set feedback state to busy_tx
+    458                          i2c_feedback_struct.state = i2c_state_busy_tx;
+    459          
+    460                          // set active transaction direction
+    461                          i2c_local_state.transfer_direction = i2c_transfer_direction_tx;
+    462          
+    463                          // change FSM state to wait for Transfer Done
+    464                          i2c_local_state.fsm_state = i2c_fsm_wait_transfer_done;
+    465          
+    466                          // start Transfer
+    467                          start_transfer();
+    468          
+    469                          // reset the verification reading counter
+    470                          i2c_local_state.verification_reading_counter = 0;
+    471          
+    472                          // Here there is no reading to be done into the queue, so we can
+    473                          // safely set the verification reading "artificially"
+    474                          BookWriteVerificationRead();
+    475                      }
+    476          
+    477                  break;
+    478          
+    479                  case i2c_fsm_wait_transfer_done:
+    480          
+    481                      // trigger update of i2c_driver_feedback_struct.status
+    482                      // required only by XMC 1300
+    483                      I2cDrvUpdateStatus();
+    484          
+    485                      if (I2C_DRIVER_STATUS_ERROR == i2c_driver_feedback_struct.status)
+    486                      {
+    487                          // reset the no answer counter
+    488                          i2c_local_state.wait_for_transfer_done_cnt = 0;
+    489          
+    490                          // Here we have to drop the write verification read if there is
+    491                          // the i2c_transfer_direction_tx set, by resetting the
+    492                          // rx_request.is_filled flag
+    493                          if(i2c_local_state.is_write_verification_activated == true)
+    494                          {
+    495                            DropWriteVerificationRead();
+    496                          }
+    497          
+    498                          // increment error counter
+    499                          if(++i2c_local_state.status_error_event_cnt >= I2C_STATUS_ERROR_EVENTS_MAX)
+    500                          {
+    501                              // set feedback state to Error
+    502                              i2c_feedback_struct.state = i2c_state_error;
+    503          
+    504                              // change FSM state to Error
+    505                              i2c_local_state.fsm_state = i2c_fsm_error;
+    506                          }
+    507                          else
+    508                          {
+    509                              // change FSM state to Idle
+    510                              i2c_local_state.fsm_state = i2c_fsm_idle;
+    511          
+    512                              // QUESTION: why there is also this start_transfer call
+    513                              // again if we're going back to the idle state?
+    514          
+    515                              // start transfer
+    516                              start_transfer ();
+    517                          }
+    518                      }
+    519                      else if (I2C_DRIVER_STATUS_NACK
+    520                              == i2c_driver_feedback_struct.status)
+    521                      {
+    522                          // reset the no answer counter
+    523                          i2c_local_state.wait_for_transfer_done_cnt = 0;
+    524          
+    525                          // increment nack counter and check if it has exceeded the limit
+    526                          if (++i2c_local_state.status_nack_event_cnt
+    527                                  >= M24LRxx_MAX_NACK_COUNTS)
+    528                          {
+    529                              // clear the nack counter
+    530                              //i2c_local_state.status_nack_event_cnt = 0;
+    531          
+    532                              // set feedback state to Error
+    533                              i2c_feedback_struct.state = i2c_state_error;
+    534          
+    535                              // change FSM state to Error
+    536                              i2c_local_state.fsm_state = i2c_fsm_error;
+    537                          }
+    538                          else
+    539                          {
+    540                              // start transfer
+    541                              start_transfer();
+    542                          }
+    543                      }
+    544                      else if(I2C_DRIVER_STATUS_DONE_RX == i2c_driver_feedback_struct.status)
+    545                      {
+    546                        // reset the no answer counter
+    547                        i2c_local_state.wait_for_transfer_done_cnt = 0;
+    548          
+    549                        // update crc calculation and received byte counters
+    550                        update_crc_calculation_on_rx();
+    551          
+    552                        // if all portions of the RX request were received
+    553                        if (is_rx_request_completed())
+    554                        {
+    555                            // clear NACK error counter
+    556                            i2c_local_state.status_nack_event_cnt = 0;
+    557          
+    558                              if (i2c_local_state.is_write_verification_activated == true)
+    559                              {
+    560                                  // change FSM state to i2c_fsm_wait_timer to check the
+    561                                  // T_prog flag
+    562                                  i2c_local_state.fsm_state = i2c_fsm_wait_timer;
+    563                              }
+    564                              else
+    565                              {
+    566                                  // set RX Request structure to free
+    567                                  i2c_local_state.rx_request.is_filled = false;
+    568          
+    569                                  // validate CRC and set CRC status
+    570                                  i2c_feedback_struct.is_crc_correct = is_crc_correct();
+    571          
+    572                                  if ((false == i2c_feedback_struct.is_crc_correct)
+    573                                          && (i2c_feedback_struct.crc_error_event_cnt
+    574                                                  < I2C_CRC_ERRORS_MAX))
+    575                                  {
+    576                                      i2c_feedback_struct.crc_error_event_cnt++;
+    577                                  }
+    578          
+    579                                  // set feedback state to IDLE
+    580                                  i2c_feedback_struct.state = i2c_state_idle;
+    581          
+    582                                  // change FSM state to Idle
+    583                                  i2c_local_state.fsm_state = i2c_fsm_idle;
+    584                              }
+    585          
+    586                            // clear bytes_received counter
+    587                            i2c_local_state.rx_request.bytes_received_cnt = 0;
+    588                        }
+    589                        // if there are portions of the RX request still waiting to be
+    590                        // transferred
+    591                        else
+    592                        {
+    593                          // start Transfer
+    594                          start_transfer();
+    595                        }
+    596                      }
+    597                      else if (I2C_DRIVER_STATUS_DONE_TX
+    598                              == i2c_driver_feedback_struct.status)
+    599                      {
+    600                          // reset the no answer counter
+    601                          i2c_local_state.wait_for_transfer_done_cnt = 0;
+    602          
+    603                          // clear NACK error counter
+    604                          i2c_local_state.status_nack_event_cnt = 0;
+    605          
+    606                          // change FSM state to wait
+    607                          i2c_local_state.fsm_state = i2c_fsm_wait_timer;
+    608                      }
+    609                      // whenever there isn't any of the previous cases we're just waiting
+    610                      // for something to happen and we count the number of this waiting
+    611                      // cycles
+    612                      else if (++i2c_local_state.wait_for_transfer_done_cnt
+    613                              >= WAIT_FOR_TRANSFER_DONE_TIMEOUT)
+    614                      {
+    615          
+    616                         // i2c_local_state.wait_for_transfer_done_cnt = 0;
+    617          
+    618                          i2c_local_state.status_no_response_event_cnt++;
+    619          
+    620                          // set feedback state to Error
+    621                          i2c_feedback_struct.state = i2c_state_error;
+    622          
+    623                          // change FSM state to Error
+    624                          i2c_local_state.fsm_state = i2c_fsm_error;
+    625                      }
+    626          
+    627                  break;
+    628          
+    629                  case i2c_fsm_wait_timer:
+    630                      if (i2c_local_state.wait_cnt < i2c_local_state.wait_cnt_timeout)
+    631                      {
+    632                          // increment counter
+    633                          i2c_local_state.wait_cnt++;
+    634                      }
+    635                      // once the timeout for the storage time is expired we have to start
+    636                      // the reading (which is already set into the rx_request) in order
+    637                      // to verify the T_prog flag into the TAG register
+    638                      else
+    639                      {
+    640                          // Post increment the verification_reading_counter, so only at
+    641                          // the first reading we will go through the idle state
+    642                          if (i2c_local_state.verification_reading_counter++ == 0)
+    643                          {
+    644                              // change FSM state to Idle in order to let the write
+    645                              // verification reading being processed
+    646                              i2c_local_state.fsm_state = i2c_fsm_idle;
+    647          
+    648                              // no need to reset the waiting counter here, since we're
+    649                              // issuing the verification reading, not another writing!
+    650                              //i2c_local_state.wait_cnt = 0;
+    651                          }
+    652                          // If we have issued at least one verification reading
+    653                          else if (i2c_local_state.verification_reading_counter
+    654                                  <= M24LRxx_WRITE_CHECK_MAX_READINGS)
+    655                          {
+    656                              if (CheckWriteVerificationFlag() == true)
+    657                              {
+    658                                  // reset wait counter
+    659                                  i2c_local_state.wait_cnt = 0;
+    660          
+    661                                  // increment the succesfull writing counter
+    662                                  i2c_local_state.writing_done_counter++;
+    663          
+    664                                  // change FSM state to Idle
+    665                                  i2c_local_state.fsm_state = i2c_fsm_idle;
+    666          
+    667                                  // The check verification is properly done: so we have
+    668                                  // to free the rx_request fields in order to let the
+    669                                  // other readings being placed
+    670                                  DropWriteVerificationRead();
+    671                              }
+    672                              // reset the wait counter and issue again the same reading
+    673                              // coming back to the wait for Transfer Done state.
+    674                              else
+    675                              {
+    676                                  // no need to reset the waiting counter here, since
+    677                                  // we're issuing the verification reading, not another
+    678                                  // writing!
+    679                                  //i2c_local_state.wait_cnt = 0;
+    680          
+    681                                  // change FSM state to wait for Transfer Done
+    682                                  i2c_local_state.fsm_state = i2c_fsm_wait_transfer_done;
+    683          
+    684                                  // start Transfer
+    685                                  start_transfer();
+    686                              }
+    687                          }
+    688                          // At this point we declare the write verification failed, which
+    689                          // means the writing is corrupted and we have to retrigger it
+    690                          // again!
+    691                          else
+    692                          {
+    693                              // reset wait counter
+    694                              i2c_local_state.wait_cnt = 0;
+    695          
+    696                              // clear the nack counter
+    697                              //i2c_local_state.status_nack_event_cnt = 0;
+    698          
+    699                              // restore the tx condition
+    700                              i2c_local_state.transfer_direction =
+    701                                      i2c_transfer_direction_tx;
+    702          
+    703                              // set feedback state to Error
+    704                              i2c_feedback_struct.state = i2c_state_error;
+    705          
+    706                              // change FSM state to Error
+    707                              i2c_local_state.fsm_state = i2c_fsm_error;
+    708                          }
+    709                      }
+    710                  break;
+    711          
+    712                  case i2c_fsm_error:
+    713                      // handles
+    714                      // - NACKs
+    715                      // - I2C HW module error
+    716                      // - missing I2C communication
+    717                      // if the module doesn't recover from the error event during runtime
+    718                      // it will stay in error state until power down: power down triggers
+    719                      // a new init to save data from MCU to tag
+    720                      if (i2c_local_state.hw_drv_init_nr >= I2C_HW_DRV_INIT_MAX)
+    721                      {
+    722                            // I2c driver stop
+    723                            I2cDrvStop();
+    724                            i2c_local_state.fsm_state = i2c_fsm_stop;
+    725                      }
+    726                      else
+    727                      {
+    728                          // the data we wanted to transfer didn't succeed, so we have to
+    729                          // restore the proper indexes for the fifo outputs
+    730                          // (only IF we was issuing a WRITING PROCESS)
+    731          
+    732                          if(i2c_local_state.transfer_direction == i2c_transfer_direction_tx)
+    733                          {
+    734                            fifo_idx = i2c_local_state.tx_fifo.output_idx;
+    735          
+    736                            for(i=0; i< i2c_local_state.tx_request.length; i++)
+    737                            {
+    738                              // increment back TX FIFO entries counter
+    739                              i2c_local_state.tx_fifo.entry_cnt++;
+    740          
+    741                              // decrement back TX FIFO index
+    742                              fifo_idx = (fifo_idx >0)?
+    743                                          (fifo_idx-1):(I2C_TX_FIFO_LENGTH-1);
+    744                            }
+    745          
+    746                            i2c_local_state.tx_fifo.output_idx = fifo_idx;
+    747          
+    748                            // Here we have to drop the write verification read if there is
+    749                            // the i2c_transfer_direction_tx set, by resetting the
+    750                            // rx_request.is_filled flag
+    751                            if(i2c_local_state.is_write_verification_activated == true)
+    752                            {
+    753                              DropWriteVerificationRead();
+    754                            }
+    755                          }
+    756                          else
+    757                          {
+    758                            // if we came here during a read procedure we have nothing to do
+    759                            // because the rx_request.is_filled flag is still TRUE:
+    760                            // Switching to the IDLE state will trigger again the same
+    761                            // reading regardless if it was a normal reading or a verification
+    762                            // reading. In this second case the is_write_verification_activated
+    763                            // flag is not cleared, so if the next reading will be succesfull
+    764                            // we will fall correctly into the wait_state in order to finally
+    765                            // check if the previous writing was succesfull or not.
+    766                          }
+    767          
+    768                          if((i2c_local_state.status_error_event_cnt >= I2C_STATUS_ERROR_EVENTS_MAX) ||
+    769                             (i2c_local_state.status_nack_event_cnt >=M24LRxx_MAX_NACK_COUNTS) ||
+    770                             (i2c_local_state.wait_for_transfer_done_cnt >= WAIT_FOR_TRANSFER_DONE_TIMEOUT))
+    771                          {
+    772                              i2c_local_state.wait_for_transfer_done_cnt = 0;
+    773                              i2c_local_state.status_nack_event_cnt = 0;
+    774                              i2c_local_state.status_error_event_cnt = 0;
+    775          
+    776                              // increment driver init attempts
+    777                              i2c_local_state.hw_drv_init_nr++;
+    778                          }
+    779          
+    780                          // I2c driver stop
+    781                          I2cDrvStop();
+    782                          // I2c driver reinitialization
+    783                          I2cDrvInit();
+    784          
+    785                          // change FSM state to Idle
+    786                          i2c_local_state.fsm_state = i2c_fsm_idle;
+    787                      }
+    788                      break;
+    789          
+    790                  case i2c_fsm_stop:
+    791                      // stay here until power down function is called!
+    792                      // only set I2C feedback state
+    793                      i2c_feedback_struct.state = i2c_state_stop;
+    794                      break;
+    795          
+    796          
+    797                  default:                                        // LCOV_EXCL_LINE: Not reachable, defensive programming only
+    798                      // default change FSM state to IDLE
+    799                      i2c_local_state.fsm_state = i2c_fsm_idle;   // LCOV_EXCL_LINE: Not reachable, defensive programming only
+    800                  break;                                          // LCOV_EXCL_LINE: Not reachable, defensive programming only
+    801              }
+    802          
+    803          }
+    804          
+    805          //------------------------------------------------------------------------------
+    806          /**
+    807           * \brief Check if all the transfers still present on the tx_fifo have been flushed out
+    808           * \return true (if FIFO is empty AND fsm is in idle (pending transfers are done))
+    809           * OR (if we're into the Error state for whatever reasons)
+    810           */
+    811          bool I2cAreAllPendingTransfersDone(void)
+    812          {
+    813            return  (((0 == i2c_local_state.tx_fifo.entry_cnt)
+    814                      && (0 == i2c_local_state.rx_request.is_filled)
+    815                      && (i2c_fsm_idle == i2c_local_state.fsm_state))
+    816                    ||(i2c_feedback_struct.state == i2c_state_error)
+    817                    ||(i2c_feedback_struct.state == i2c_state_stop));
+    818          }
+    819          
+    820          //-----------------------------------------------------------------------------
+    821          /**
+    822           * \brief Add a new I2C read request. Only 1 read request can be handled,
+    823           * thus the return value is false when a pending read access exists.
+    824           * \note length is incremented by I2C_CRC_BYTE_WIDTH bytes (CRC-16)
+    825           * It is always expected that the CRC is appended to the data payload
+    826           * \param addr: start 16 bit TAG address
+    827           * \param data: pointer to tag data
+    828           * \param length: number of bytes for data transfer (without CRC)
+    829           * \return false if RX read request cannot be processed, due to pending previous
+    830           * read access
+    831           */
+    832          bool I2cRead(uint16_t addr, uint8_t *data, uint8_t length)
+    833          {
+    834              if (true == i2c_local_state.rx_request.is_filled)
+    835              {
+    836                  // RX read request cannot be processed
+    837                  return false;
+    838              }
+    839          
+    840              // fill RX request structure
+    841              i2c_local_state.rx_request.addr = addr;
+    842              i2c_local_state.rx_request.data_ptr = data;
+    843              i2c_local_state.rx_request.length = length + I2C_CRC_BYTE_WIDTH;
+    844          
+    845              // set RX request structure status to filled
+    846              i2c_local_state.rx_request.is_filled = true;
+    847          
+    848              // clear CRC failure flag
+    849              i2c_feedback_struct.is_crc_correct = true;
+    850          
+    851              return true;
+    852          }
+    853          
+    854          //-----------------------------------------------------------------------------
+    855          /**
+    856           * \brief Add new I2C write request.
+    857           * \note This function fills the new write request to a local FiFo. When the
+    858           * FiFo is full, this function return false. This function is called from the
+    859           * NFC module
+    860           * \param addr      start 16 bit TAG address
+    861           * \param data      byte pointer to data
+    862           * \param length    number of bytes for data transfer (without CRC)
+    863           * \return          false if local FiFo is full and no more write requests can
+    864           *                  be handled.
+    865           */
+    866          bool I2cWrite(uint16_t addr, uint8_t *data, uint8_t length)
+    867          {
+    868              uint32_t i1;
+    869              uint8_t* data_ptr;
+    870          
+    871              // return false when FIFO is full
+    872              if ((I2C_TX_FIFO_LENGTH - i2c_local_state.tx_fifo.entry_cnt) < length)
+    873              {
+    874                  // track TX FIFO full event
+    875                  i2c_local_state.status_tx_fifo_full_event_cnt++;
+    876                  return false;
+    877              }
+    878          
+    879              // else add entry ....
+    880          
+    881              data_ptr = data;
+    882          
+    883              for (i1 = 0; i1 < length; i1++)
+    884              {
+    885                  i2c_local_state.tx_fifo.entries[i2c_local_state.tx_fifo.input_idx].addr =
+    886                          addr + i1;
+    887                  i2c_local_state.tx_fifo.entries[i2c_local_state.tx_fifo.input_idx].data =
+    888                          *(data_ptr++);
+    889          
+    890                  // post increment TX FIFO input index or wrap around (=0)
+    891                  i2c_local_state.tx_fifo.input_idx =
+    892                          (i2c_local_state.tx_fifo.input_idx < (I2C_TX_FIFO_LENGTH - 1)) ?
+    893                                  (i2c_local_state.tx_fifo.input_idx + 1) : 0;
+    894              }
+    895          
+    896              // increment entries counter by length
+    897              i2c_local_state.tx_fifo.entry_cnt += length;
+    898          
+    899              // return true when new entries add is done successful
+    900              return true;
+    901          }
+    902          
+    903          //-----------------------------------------------------------------------------
+    904          /**
+    905           *  \brief I2C write register request.
+    906           *  \note  '1' is added at bit position 14 of the address to signalise a
+    907           * (regular) register write command with max page length = 4 bytes
+    908           * \param addr: start 16 bit TAG address
+    909           * \param data: pointer to data array
+    910           * \param length: number of bytes for data transfer
+    911           * \return false if FIFO is full, true if data was sent
+    912           */
+    913          bool I2cWriteRegister(uint16_t addr, uint8_t *data, uint8_t length)
+    914          {
+    915              addr |= 0x4000;
+    916              return I2cWrite(addr, data, length);
+    917          }
+    918          
+    919          //-----------------------------------------------------------------------------
+    920          /**
+    921           * I2C read register.
+    922           * \note  '1' is added at bit position 14 of the address to signalise a
+    923           * (regular) register read command with max page length = 4 bytes
+    924           * \param addr: start 16 bit TAG address
+    925           * \param data: pointer to data array
+    926           * \param length: number of bytes for data transfer
+    927           * \return false if FIFO is full, true if data was sent
+    928           */
+    929          bool I2cReadRegister(uint16_t addr, uint8_t *data, uint8_t length)
+    930          {
+    931              addr |= 0x4000;
+    932              return I2cRead(addr, data, length);
+    933          }
+    934          
+    935          //-----------------------------------------------------------------------------
+    936          /**
+    937           * \brief Present I2C password
+    938           * \note  '1' is added at bit position 14 of the address to signalise a
+    939           * (regular) register read command with max page length = 4 bytes
+    940           * \param password:  the new password
+    941           * \return false if FIFO is full, true if data was sent
+    942           */
+    943          bool I2cPresentI2cPwd(uint32_t password)
+    944          {
+    945              uint16_t addr = 0x8000 | M24LR_I2C_PASSWORD_BYTE_ADDR;
+    946              uint8_t pwd_array[M24LRxx_MAX_WRITE_LENGTH];
+    947          
+    948              pwd_array[0] = (uint8_t) (password >> 24);
+    949              pwd_array[1] = (uint8_t) (password >> 16);
+    950              pwd_array[2] = (uint8_t) (password >> 8);
+    951              pwd_array[3] = (uint8_t) (password & 0xFF);
+    952              pwd_array[4] = 0x09;
+    953              pwd_array[5] = (uint8_t) (password >> 24);
+    954              pwd_array[6] = (uint8_t) (password >> 16);
+    955              pwd_array[7] = (uint8_t) (password >> 8);
+    956              pwd_array[8] = (uint8_t) (password & 0xFF);
+    957          
+    958              return I2cWrite(addr, pwd_array, 9);
+    959          }
+    960          
+    961          //-----------------------------------------------------------------------------
+    962          /**
+    963           * \brief Write new I2C password
+    964           * \note The function is needed for change of write access rights of all the
+    965           * memory sectors. '1' is added at bit position 14 of the address to signalise a
+    966           * (regular) register read command with max page length = 4 bytes
+    967           * \param password: new password
+    968           * \return false if FIFO is full, true if data was sent
+    969           */
+    970          bool I2cWriteNewI2cPwd(uint32_t password)
+    971          {
+    972              uint16_t addr = 0x8000 | M24LR_I2C_PASSWORD_BYTE_ADDR;
+    973              uint8_t pwd_array[M24LRxx_MAX_WRITE_LENGTH];
+    974          
+    975              pwd_array[0] = (uint8_t) (password >> 24);
+    976              pwd_array[1] = (uint8_t) (password >> 16);
+    977              pwd_array[2] = (uint8_t) (password >> 8);
+    978              pwd_array[3] = (uint8_t) (password & 0xFF);
+    979              pwd_array[4] = 0x07;
+    980              pwd_array[5] = (uint8_t) (password >> 24);
+    981              pwd_array[6] = (uint8_t) (password >> 16);
+    982              pwd_array[7] = (uint8_t) (password >> 8);
+    983              pwd_array[8] = (uint8_t) (password & 0xFF);
+    984          
+    985              return I2cWrite(addr, pwd_array, 9);
+    986          }
+    987          
+    988          //-----------------------------------------------------------------------------
+    989          /**
+    990           * \brief Set protection (SSS bytes) for all EEPROM sectors in NFC tag
+    991           * \note Add '1' at bit position 14 of the TAG address to signalise a register
+    992           *  write command
+    993           * \return false if FIFO is full, true if data was sent
+    994           */
+    995          bool I2cInitSectorProtection(void)
+    996          {
+    997              uint16_t addr = 0x4000 | M24LR_SSS_BYTE_AREA_START_ADDR;
+    998          
+    999              return I2cWrite(addr, I2cSectorProtection, M24LR_SECTOR_COUNT);
+   1000          }
+   1001          
+   1002          //-----------------------------------------------------------------------------
+   1003          /**
+   1004           * \brief Get the value of the Error event counter
+   1005           * \note This counter is incremented every time the interrupt handler is called
+   1006           * because of errors occurred on the i2c bus.
+   1007           * \retval  I2C driver status error counter value
+   1008           */
+   1009          uint16_t I2cGetDriverStatusErrorEventCnt(void)
+   1010          {
+   1011              return  *i2c_feedback_struct.status_error_event_cnt;
+   1012          }
+   1013          
+   1014          //-----------------------------------------------------------------------------
+   1015          /**
+   1016           * \brief Get the value of the Nack event counter
+   1017           * \note This counter is incremented every time there is a NACK on the bus
+   1018           * \retval I2C NACK event counter value
+   1019           */
+   1020          uint16_t I2cGetNackEventCnt(void)
+   1021          {
+   1022              return *i2c_feedback_struct.status_nack_event_cnt;
+   1023          }
+   1024          
+   1025          //-----------------------------------------------------------------------------
+   1026          /**
+   1027           * Get the value of the fifo full event counter
+   1028           * \note This counter is incremented when we want to write new data in the bus
+   1029           * and the TX FIFO is full
+   1030           * \retval I2C FIFO full event counter value
+   1031           */
+   1032          uint16_t I2cGetFifoFullEventCnt(void)
+   1033          {
+   1034              return *i2c_feedback_struct.status_tx_fifo_full_event_cnt;
+   1035          }
+   1036          
+   1037          //-----------------------------------------------------------------------------
+   1038          /**
+   1039           * \brief Get the CRC error event counter
+   1040           * \note This counter is incremented when there is a CRC error on receviced
+   1041           * data on the bus
+   1042           * \retval CRC error event counter value
+   1043           */
+   1044          uint16_t I2cGetCrcErrorEventCnt(void)
+   1045          {
+   1046              return i2c_feedback_struct.crc_error_event_cnt;
+   1047          }
+   1048          
+   1049          //-----------------------------------------------------------------------------
+   1050          /**
+   1051           * \brief Get the No Response Event counter
+   1052           * \note This counter is incremented when we have issued a TX or RX request on
+   1053           * the bus but there is no answer whithin 200 I2cCyclic loops
+   1054           * \retval  No response event counter value
+   1055           */
+   1056          uint16_t I2cGetNoResponseEventCnt(void)
+   1057          {
+   1058              return *i2c_feedback_struct.status_no_response_event_cnt;
+   1059          }
+   1060          
+   1061          //-----------------------------------------------------------------------------
+   1062          /**
+   1063           * \brief Reset all error counters
+   1064           */
+   1065          void I2cResetErrorCounters(void)
+   1066          {
+   1067              *i2c_feedback_struct.status_tx_fifo_full_event_cnt = 0;
+   1068              *i2c_feedback_struct.status_error_event_cnt = 0;
+   1069              *i2c_feedback_struct.status_nack_event_cnt = 0;
+   1070              i2c_feedback_struct.crc_error_event_cnt = 0;
+   1071              i2c_feedback_struct.status_no_response_event_cnt = 0;
+   1072          
+   1073          }
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   BookWriteVerificationRead
+         8   -> I2cReadRegister
+       0   CheckWriteVerificationFlag
+       0   DropWriteVerificationRead
+       4   I2cAreAllPendingTransfersDone
+       8   I2cCyclic
+         8   -> BookWriteVerificationRead
+         8   -> CheckWriteVerificationFlag
+         8   -> DropWriteVerificationRead
+         8   -> I2cDrvInit
+         8   -> I2cDrvStop
+         8   -> I2cDrvUpdateStatus
+         8   -> get_next_tx_transfer
+         8   -> init_crc_calculation_on_rx
+         8   -> is_crc_correct
+         8   -> is_rx_request_completed
+         8   -> start_transfer
+         8   -> update_crc_calculation_on_rx
+       0   I2cDiscardAllTransfers
+       8   I2cFlush
+         8   -> I2cAreAllPendingTransfersDone
+         8   -> I2cCyclic
+         8   -> pwrDownSleep
+         8   -> reset_writing_done_counter
+       0   I2cGetCrcErrorEventCnt
+       0   I2cGetDriverStatusErrorEventCnt
+       0   I2cGetFifoFullEventCnt
+       0   I2cGetNackEventCnt
+       0   I2cGetNoResponseEventCnt
+       8   I2cInit
+         8   -> I2cDrvInit
+         8   -> I2cDrvMasterInitDma
+         8   -> I2cSetCallTimings
+         8   -> NfcTagPowerOn
+         8   -> reset_writing_done_counter
+       8   I2cInitSectorProtection
+         8   -> I2cWrite
+      16   I2cPresentI2cPwd
+        16   -> I2cWrite
+       4   I2cRead
+       8   I2cReadRegister
+         8   -> I2cRead
+       0   I2cResetErrorCounters
+       0   I2cSetCallTimings
+      20   I2cWrite
+      16   I2cWriteNewI2cPwd
+        16   -> I2cWrite
+       8   I2cWriteRegister
+         8   -> I2cWrite
+      16   get_next_tx_transfer
+       0   reset_writing_done_counter
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable10
+       4  ??DataTable11
+       4  ??DataTable11_1
+       4  ??DataTable11_2
+       4  ??DataTable11_3
+       4  ??DataTable12
+       4  ??DataTable12_1
+       4  ??DataTable12_2
+       4  ??DataTable14
+       4  ??DataTable19
+       4  ??DataTable19_1
+       4  ??DataTable19_2
+       4  ??DataTable19_3
+       4  ??DataTable19_4
+       4  ??DataTable19_5
+       4  ??DataTable19_6
+       4  ??DataTable19_7
+       4  ??DataTable8
+       4  ??DataTable8_1
+       4  ??DataTable8_10
+       4  ??DataTable8_11
+       4  ??DataTable8_12
+       4  ??DataTable8_13
+       4  ??DataTable8_14
+       4  ??DataTable8_15
+       4  ??DataTable8_16
+       4  ??DataTable8_2
+       4  ??DataTable8_3
+       4  ??DataTable8_4
+       4  ??DataTable8_5
+       4  ??DataTable8_6
+       4  ??DataTable8_7
+       4  ??DataTable8_8
+       4  ??DataTable8_9
+       4  ??DataTable9
+       4  ??DataTable9_1
+       4  ??DataTable9_2
+       4  ??DataTable9_3
+      28  BookWriteVerificationRead
+      10  CheckWriteVerificationFlag
+      14  DropWriteVerificationRead
+      52  I2cAreAllPendingTransfersDone
+     738  I2cCyclic
+      32  I2cDiscardAllTransfers
+      34  I2cFlush
+       6  I2cGetCrcErrorEventCnt
+       8  I2cGetDriverStatusErrorEventCnt
+       8  I2cGetFifoFullEventCnt
+       8  I2cGetNackEventCnt
+       8  I2cGetNoResponseEventCnt
+     170  I2cInit
+      18  I2cInitSectorProtection
+      76  I2cPresentI2cPwd
+      46  I2cRead
+      20  I2cReadRegister
+      38  I2cResetErrorCounters
+       6  I2cSetCallTimings
+     118  I2cWrite
+      76  I2cWriteNewI2cPwd
+      20  I2cWriteRegister
+     196  get_next_tx_transfer
+      28  i2c_feedback_struct
+     576  i2c_local_state
+       4  i2c_local_struct
+       8  reset_writing_done_counter
+
+ 
+   608 bytes in section .bss
+ 1 890 bytes in section .text
+ 
+ 1 890 bytes of CODE memory
+   608 bytes of DATA memory
+
+Errors: none
+Warnings: 4

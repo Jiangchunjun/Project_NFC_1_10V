@@ -1,0 +1,444 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:49
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Driver\src\acmp.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Driver\src\acmp.c" -D
+#        XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\acmp.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\acmp.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Driver\src\acmp.c
+      1          /*
+      2          ***************************************************************************************************
+      3          *                           Analog Compare Function Implementation
+      4          *
+      5          * File   : acmp.c
+      6          * Author : Douglas Xie
+      7          * Date   : 2016.06.16
+      8          ***************************************************************************************************
+      9          * Copyright (C) 2016 OSRAM Asia Pacific Management Company.  All rights reserved.
+     10          ***************************************************************************************************
+     11          */
+     12          
+     13          /* Include Head Files ----------------------------------------------------------------------------*/
+     14          #include "acmp.h"
+     15          
+     16          /* Macro Defines ---------------------------------------------------------------------------------*/
+     17          
+     18          /* Global Variable -------------------------------------------------------------------------------*/
+     19          uint8_t g_enable_trigger_ovp = 0;
+     20          
+     21          /* Private Variable ------------------------------------------------------------------------------*/
+     22          
+     23          /* Constant Variable -----------------------------------------------------------------------------*/
+     24          /* ACMP Slice configuration */
+     25          const XMC_ACMP_CONFIG_t mg_acmp_config =
+     26          {
+     27              .filter_disable = 1U,
+     28              .output_invert = 0U,
+     29              .hysteresis = XMC_ACMP_HYSTERESIS_OFF
+     30          };
+     31          
+     32          
+     33          /* Function Declaration --------------------------------------------------------------------------*/
+     34          
+     35          /* Function Implement ----------------------------------------------------------------------------*/
+     36          
+     37          /*******************************************************************************
+     38          * @Brief   Enable ACMP Module OCP Channel
+     39          * @Param   
+     40          * @Note    config GPIO, ACMP module OCP channel and start it
+     41          * @Return  
+     42          *******************************************************************************/
+     43          void ACMP_EnableOCP(void)
+     44          {
+     45              XMC_GPIO_CONFIG_t acmp_gpio_config;
+     46              
+     47              /*--------- GPIO Configuration --------------------------------------------*/
+     48              /* Input config */
+     49              acmp_gpio_config.mode = XMC_GPIO_MODE_INPUT_TRISTATE;
+     50              XMC_GPIO_Init(ACMP_OCP_INN_PIN, &acmp_gpio_config);
+     51              XMC_GPIO_Init(ACMP_OCP_INP_PIN, &acmp_gpio_config);
+     52              
+     53          //    /* Output config */
+     54          //    acmp_gpio_config.mode = XMC_GPIO_MODE_OUTPUT_PUSH_PULL_ALT6;
+     55          //    XMC_GPIO_Init(ACMP_OCP_OUT_PIN, &acmp_gpio_config);
+     56              
+     57              /*--------- ACMP Configuration --------------------------------------------*/
+     58              /* ACMP instance config */
+     59              XMC_ACMP_Init(XMC_ACMP0, ACMP_OCP_CHANNEL, &mg_acmp_config);
+     60              
+     61              /* Enable instance comparator */
+     62              XMC_ACMP_EnableComparator(XMC_ACMP0, ACMP_OCP_CHANNEL);
+     63          }
+     64          
+     65          
+     66          /*******************************************************************************
+     67          * @Brief   Enable ACMP Module OVP Channel
+     68          * @Param   
+     69          * @Note    config GPIO, ACMP module OVP channel and start it
+     70          * @Return  
+     71          *******************************************************************************/
+     72          void ACMP_EnableOVP(void)
+     73          {
+     74              XMC_GPIO_CONFIG_t acmp_gpio_config;
+     75              
+     76              /*--------- GPIO Configuration --------------------------------------------*/
+     77              /* Input config */
+     78              acmp_gpio_config.mode = XMC_GPIO_MODE_INPUT_TRISTATE;
+     79              XMC_GPIO_Init(ACMP_OVP_INN_PIN, &acmp_gpio_config);
+     80              XMC_GPIO_Init(ACMP_OVP_INP_PIN, &acmp_gpio_config);
+     81              
+     82          //    /* Output config */
+     83          //    acmp_gpio_config.mode = XMC_GPIO_MODE_OUTPUT_PUSH_PULL_ALT6;
+     84          //    XMC_GPIO_Init(ACMP_OVP_OUT_PIN, &acmp_gpio_config);
+     85              
+     86              /*--------- ACMP Configuration --------------------------------------------*/
+     87              /* ACMP instance config */
+     88              XMC_ACMP_Init(XMC_ACMP0, ACMP_OVP_CHANNEL, &mg_acmp_config);
+     89              
+     90              /* Enable instance comparator */
+     91              XMC_ACMP_EnableComparator(XMC_ACMP0, ACMP_OVP_CHANNEL);
+     92              
+     93              g_enable_trigger_ovp = 0;
+     94          }
+     95          
+     96          
+     97          /*******************************************************************************
+     98          * @Brief   Enable ACMP Module Power Supply Detect Channel
+     99          * @Param   
+    100          * @Note    config GPIO, ACMP module power supply detect channel and start it
+    101          * @Return  
+    102          *******************************************************************************/
+    103          void ACMP_EnableDetect(void)
+    104          {
+    105              XMC_GPIO_CONFIG_t acmp_gpio_config;
+    106              
+    107              /*--------- GPIO Configuration --------------------------------------------*/
+    108              /* Input config */
+    109              acmp_gpio_config.mode = XMC_GPIO_MODE_INPUT_TRISTATE;
+    110              XMC_GPIO_Init(ACMP_DETECT_INN_PIN, &acmp_gpio_config);
+    111              XMC_GPIO_Init(ACMP_DETECT_INP_PIN, &acmp_gpio_config);
+    112              
+    113          //    /* Output config */
+    114          //    acmp_gpio_config.mode = XMC_GPIO_MODE_OUTPUT_PUSH_PULL_ALT6;
+    115          //    XMC_GPIO_Init(ACMP_DETECT_OUT_PIN, &acmp_gpio_config);
+    116              
+    117              /*--------- ACMP Configuration --------------------------------------------*/
+    118              /* ACMP instance config */
+    119              XMC_ACMP_Init(XMC_ACMP0, ACMP_DETECT_CHANNEL, &mg_acmp_config);
+    120              
+    121              /* Enable instance comparator */
+    122              XMC_ACMP_EnableComparator(XMC_ACMP0, ACMP_DETECT_CHANNEL);
+    123          }
+    124          
+    125          
+    126          /*******************************************************************************
+    127          * @Brief   Disable ACMP Module OCP Channel
+    128          * @Param   
+    129          * @Note    config GPIO to input mode and stop ACMP module
+    130          * @Return  
+    131          *******************************************************************************/
+    132          void ACMP_DisableOCP(void)
+    133          {
+    134              XMC_GPIO_CONFIG_t acmp_gpio_config;
+    135              
+    136              /*--------- GPIO Configuration --------------------------------------------*/
+    137              /* Input config */
+    138              acmp_gpio_config.mode = XMC_GPIO_MODE_INPUT_TRISTATE;
+    139              XMC_GPIO_Init(ACMP_OCP_INN_PIN, &acmp_gpio_config);
+    140              XMC_GPIO_Init(ACMP_OCP_INP_PIN, &acmp_gpio_config);
+    141              
+    142          //    /* Output config */
+    143          //    XMC_GPIO_Init(ACMP_OCP_OUT_PIN, &acmp_gpio_config);
+    144              
+    145              /*--------- ACMP Configuration --------------------------------------------*/
+    146              /* Disable instance comparator */
+    147              XMC_ACMP_DisableComparator(XMC_ACMP0, ACMP_OCP_CHANNEL);
+    148          }
+    149          
+    150          
+    151          /*******************************************************************************
+    152          * @Brief   Disable ACMP Module OVP Channel
+    153          * @Param   
+    154          * @Note    config GPIO to input mode and stop ACMP module
+    155          * @Return  
+    156          *******************************************************************************/
+    157          void ACMP_DisableOVP(void)
+    158          {
+    159              XMC_GPIO_CONFIG_t acmp_gpio_config;
+    160              
+    161              /*--------- GPIO Configuration --------------------------------------------*/
+    162              /* Input config */
+    163              acmp_gpio_config.mode = XMC_GPIO_MODE_INPUT_TRISTATE;
+    164              XMC_GPIO_Init(ACMP_OVP_INN_PIN, &acmp_gpio_config);
+    165              XMC_GPIO_Init(ACMP_OVP_INP_PIN, &acmp_gpio_config);
+    166              
+    167          //    /* Output config */
+    168          //    XMC_GPIO_Init(ACMP_OVP_OUT_PIN, &acmp_gpio_config);
+    169              
+    170              /*--------- ACMP Configuration --------------------------------------------*/
+    171              /* Disable instance comparator */
+    172              XMC_ACMP_DisableComparator(XMC_ACMP0, ACMP_OVP_CHANNEL);
+    173              
+    174               g_enable_trigger_ovp = 0;
+    175          }
+    176          
+    177          
+    178          /*******************************************************************************
+    179          * @Brief   Disable ACMP Module Power Supply Detect Channel
+    180          * @Param   
+    181          * @Note    config GPIO to input mode and stop ACMP module
+    182          * @Return  
+    183          *******************************************************************************/
+    184          void ACMP_DisableDetect(void)
+    185          {
+    186              XMC_GPIO_CONFIG_t acmp_gpio_config;
+    187              
+    188              /*--------- GPIO Configuration --------------------------------------------*/
+    189              /* Input config */
+    190              acmp_gpio_config.mode = XMC_GPIO_MODE_INPUT_TRISTATE;
+    191              XMC_GPIO_Init(ACMP_DETECT_INN_PIN, &acmp_gpio_config);
+    192              XMC_GPIO_Init(ACMP_DETECT_INP_PIN, &acmp_gpio_config);
+    193              
+    194          //    /* Output config */
+    195          //    XMC_GPIO_Init(ACMP_DETECT_OUT_PIN, &acmp_gpio_config);
+    196              
+    197              /*--------- ACMP Configuration --------------------------------------------*/
+    198              /* Disable instance comparator */
+    199              XMC_ACMP_DisableComparator(XMC_ACMP0, ACMP_DETECT_CHANNEL);
+    200          }
+    201          
+    202          /*******************************************************************************
+    203          * @Brief   ACMP Enable OVP Level Event
+    204          * @Param   
+    205          * @Note    
+    206          * @Return  
+    207          *******************************************************************************/
+    208          void ACMP_EnableLevelEvent_OVP(void)
+    209          {
+    210              g_enable_trigger_ovp = 1;
+    211          }
+    212          
+    213          /*******************************************************************************
+    214          * @Brief   ACMP Detect OVP Level Event
+    215          * @Param   
+    216          * @Note    Check ACMP OVP result for level trigger
+    217          * @Return  result state ACMP_STATE_NORMAL/ACMP_STATE_TRIGGER
+    218          *******************************************************************************/
+    219          uint8_t ACMP_CheckLevelEvent_OVP(void)
+    220          {
+    221              uint8_t state = ACMP_STATE_NORMAL;
+    222              
+    223              /* Run if trigger event has enabled */
+    224              if(g_enable_trigger_ovp == 0)
+    225              {
+    226                  state = ACMP_STATE_NORMAL;
+    227              }
+    228              else
+    229              {
+    230                  if((ACMP_OVP_REGISTER & ACMP_VOP_RESULT_MASK) == 0)
+    231                  {
+    232                      /* Signal > Reference, Trigger OVP */
+    233                      state = ACMP_STATE_TRIGGER;
+    234                  }
+    235                  else
+    236                  {
+    237                      /* Signal < Reference, Normal Operation */
+    238                      state = ACMP_STATE_NORMAL;
+    239                  }
+    240              }
+    241              
+    242              return state;
+    243          }
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       4   ACMP_CheckLevelEvent_OVP
+      16   ACMP_DisableDetect
+        16   -> XMC_ACMP_DisableComparator
+        16   -> XMC_GPIO_Init
+      16   ACMP_DisableOCP
+        16   -> XMC_ACMP_DisableComparator
+        16   -> XMC_GPIO_Init
+      16   ACMP_DisableOVP
+        16   -> XMC_ACMP_DisableComparator
+        16   -> XMC_GPIO_Init
+      16   ACMP_EnableDetect
+        16   -> XMC_ACMP_EnableComparator
+        16   -> XMC_ACMP_Init
+        16   -> XMC_GPIO_Init
+       0   ACMP_EnableLevelEvent_OVP
+      16   ACMP_EnableOCP
+        16   -> XMC_ACMP_EnableComparator
+        16   -> XMC_ACMP_Init
+        16   -> XMC_GPIO_Init
+      16   ACMP_EnableOVP
+        16   -> XMC_ACMP_EnableComparator
+        16   -> XMC_ACMP_Init
+        16   -> XMC_GPIO_Init
+       0   XMC_ACMP_DisableComparator
+       0   XMC_ACMP_EnableComparator
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable9
+       4  ??DataTable9_1
+       4  ??DataTable9_2
+       4  ??DataTable9_3
+       4  ??DataTable9_4
+       4  ??DataTable9_5
+       4  ??DataTable9_6
+      34  ACMP_CheckLevelEvent_OVP
+      40  ACMP_DisableDetect
+      40  ACMP_DisableOCP
+      46  ACMP_DisableOVP
+      50  ACMP_EnableDetect
+       8  ACMP_EnableLevelEvent_OVP
+      50  ACMP_EnableOCP
+      56  ACMP_EnableOVP
+      26  XMC_ACMP_DisableComparator
+      26  XMC_ACMP_EnableComparator
+       1  g_enable_trigger_ovp
+       4  mg_acmp_config
+
+ 
+   1 byte  in section .bss
+   4 bytes in section .rodata
+ 404 bytes in section .text
+ 
+ 404 bytes of CODE  memory
+   4 bytes of CONST memory
+   1 byte  of DATA  memory
+
+Errors: none
+Warnings: none

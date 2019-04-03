@@ -1,0 +1,283 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:57
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc_prng.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc_prng.c"
+#        -D XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\xmc_prng.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\xmc_prng.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc_prng.c
+      1          
+      2          /**
+      3           * @file xmc_prng.c
+      4           * @date 2015-06-20
+      5           *
+      6           * @cond
+      7           *********************************************************************************************************************
+      8           * XMClib v2.1.6 - XMC Peripheral Driver Library 
+      9           *
+     10           * Copyright (c) 2015-2016, Infineon Technologies AG
+     11           * All rights reserved.                        
+     12           *                                             
+     13           * Redistribution and use in source and binary forms, with or without modification,are permitted provided that the 
+     14           * following conditions are met:   
+     15           *                                                                              
+     16           * Redistributions of source code must retain the above copyright notice, this list of conditions and the following 
+     17           * disclaimer.                        
+     18           * 
+     19           * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following 
+     20           * disclaimer in the documentation and/or other materials provided with the distribution.                       
+     21           * 
+     22           * Neither the name of the copyright holders nor the names of its contributors may be used to endorse or promote 
+     23           * products derived from this software without specific prior written permission.                                           
+     24           *                                                                              
+     25           * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, 
+     26           * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE  
+     27           * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+     28           * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR  
+     29           * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+     30           * WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+     31           * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                                                  
+     32           *                                                                              
+     33           * To improve the quality of the software, users are encouraged to share modifications, enhancements or bug fixes with 
+     34           * Infineon Technologies AG dave@infineon.com).                                                          
+     35           *********************************************************************************************************************
+     36           *
+     37           * Change History
+     38           * --------------
+     39           *
+     40           * 2015-02-20:
+     41           *     - Initial <br>
+     42           *     - Removed GetDriverVersion API <br>
+     43           *
+     44           * 2015-06-20
+     45           *     - Removed definition of GetDriverVersion API <br>
+     46           *
+     47           * @endcond
+     48           */
+     49           
+     50          #include "xmc_prng.h"
+     51          
+     52          #if defined (PRNG)
+     53          
+     54          /*********************************************************************************************************************
+     55           * API IMPLEMENTATION
+     56           *********************************************************************************************************************/
+     57           
+     58          /*
+     59           * Initializes the PRNG peripheral with the settings in the
+     60           * initialization structure XMC_PRNG_INIT_t
+     61           */
+     62          XMC_PRNG_INIT_STATUS_t XMC_PRNG_Init(const XMC_PRNG_INIT_t *prng)
+     63          {
+     64            volatile uint16_t read_warm_up;
+     65            uint16_t reg_val, iter;
+     66            XMC_PRNG_INIT_STATUS_t status = XMC_PRNG_INITIALIZED;
+     67            
+     68            XMC_ASSERT("XMC_PRNG_Init:Null Pointer", (prng != (XMC_PRNG_INIT_t *)NULL));
+     69          
+     70            /* Configure block size for key loading mode */
+     71            XMC_PRNG_SetRandomDataBlockSize(XMC_PRNG_RDBS_WORD);
+     72          
+     73            /* Enable key loading mode */
+     74            XMC_PRNG_EnableKeyLoadingMode();
+     75          
+     76            /* Load key words (80 bits) and wait till RDV is set */
+     77            for (iter = (uint16_t)0UL; iter < (uint16_t)5UL; iter++)
+     78            {
+     79              XMC_PRNG_LoadKeyWords(prng->key_words[iter]);
+     80              while (PRNG_CHK_RDV_Msk != XMC_PRNG_CheckValidStatus());
+     81            }
+     82            
+     83            XMC_PRNG_EnableStreamingMode();
+     84          
+     85            /* Warm up phase: Read and discard 64 bits */
+     86            read_warm_up = PRNG->WORD;
+     87            read_warm_up = PRNG->WORD;
+     88            read_warm_up = PRNG->WORD;
+     89            reg_val      = PRNG->WORD;
+     90            read_warm_up &= reg_val;
+     91          
+     92            /* Configure block size either byte (8 bit) or word (16 bit) */
+     93            XMC_PRNG_SetRandomDataBlockSize(prng->block_size);
+     94          
+     95            /*
+     96             * Checks for reset value for "random data block size". If reset,
+     97             * PRNG is not initialized
+     98             */
+     99            if ((uint16_t)XMC_PRNG_RDBS_RESET == (PRNG->CTRL & (uint16_t)PRNG_CTRL_RDBS_Msk))
+    100            {
+    101              status = XMC_PRNG_NOT_INITIALIZED;
+    102            }
+    103          
+    104            return status;
+    105          }
+    106          
+    107          #endif /* #if defined (PRNG) */
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   XMC_PRNG_CheckValidStatus
+       0   XMC_PRNG_EnableKeyLoadingMode
+       0   XMC_PRNG_EnableStreamingMode
+      24   XMC_PRNG_Init
+        24   -> XMC_PRNG_CheckValidStatus
+        24   -> XMC_PRNG_EnableKeyLoadingMode
+        24   -> XMC_PRNG_EnableStreamingMode
+        24   -> XMC_PRNG_LoadKeyWords
+        24   -> XMC_PRNG_SetRandomDataBlockSize
+       0   XMC_PRNG_LoadKeyWords
+       0   XMC_PRNG_SetRandomDataBlockSize
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable5
+       4  ??DataTable5_1
+       4  ??DataTable5_2
+       4  ??DataTable5_3
+       4  ??DataTable5_4
+      12  XMC_PRNG_CheckValidStatus
+      14  XMC_PRNG_EnableKeyLoadingMode
+      14  XMC_PRNG_EnableStreamingMode
+     116  XMC_PRNG_Init
+       6  XMC_PRNG_LoadKeyWords
+      20  XMC_PRNG_SetRandomDataBlockSize
+
+ 
+ 202 bytes in section .text
+ 
+ 202 bytes of CODE memory
+
+Errors: none
+Warnings: none

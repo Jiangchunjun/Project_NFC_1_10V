@@ -1,0 +1,704 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:38:03
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\mcu_config.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\mcu_config.c" -D
+#        XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\mcu_config.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\mcu_config.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\mcu_config.c
+      1          /*
+      2           ***************************************************************************************************
+      3           *                                     MCU Configuration
+      4           *
+      5           * File   : mcu_config.c
+      6           * Author : Douglas Xie
+      7           * Date   : 2016.03.18
+      8           ***************************************************************************************************
+      9           * Copyright (C) 2016 OSRAM Asia Pacific Management Company.  All rights reserved.
+     10           ***************************************************************************************************
+     11           */
+     12          
+     13          
+     14          /* Include Head Files ---------------------------------------------------------------------------*/
+     15          #include "mcu_config.h"
+
+  #warning ::::::::::::::::::::::::::: Using original LEDset resistor (wrong for MP) :::::::::::::::::::::::::::
+   ^
+"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\inc\power_config_200w.h",86  Warning[Pe1105]: 
+          #warning directive: ::::::::::::::::::::::::::: Using original LEDset
+          resistor (wrong for MP) :::::::::::::::::::::::::::
+
+  #warning ::::::::::::::::::::::::::: Using original LEDset resistor (wrong for MP) :::::::::::::::::::::::::::
+   ^
+"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\inc\power_config_200w.h",86  Warning[Pe1105]: 
+          #warning directive: ::::::::::::::::::::::::::: Using original LEDset
+          resistor (wrong for MP) :::::::::::::::::::::::::::
+     16          
+     17          /* Macro Defines --------------------------------------------------------------------------------*/
+     18          
+     19          /* Private Variable -----------------------------------------------------------------------------*/
+     20          
+     21          /* Global Variable ------------------------------------------------------------------------------*/
+     22          
+     23          /* Function Declaration -------------------------------------------------------------------------*/
+     24          
+     25          /* Function Implement ---------------------------------------------------------------------------*/
+     26          
+     27          /*******************************************************************************
+     28          * @Brief   MCU Clock Initial
+     29          * @Param   
+     30          * @Note    Config clock for MCU and peripherals
+     31          *          dco_dclk = 64MHz, idiv should > 0
+     32          *          MCLK = dco_dclk / (2*(idiv + fdiv/256))) = 32MHz
+     33          *          PCLK = dco_dclk / (idiv + fdiv/256)) = 64MHz
+     34          * @Return  
+     35          *******************************************************************************/
+     36          void MCU_ClockInit(void)
+     37          {
+     38              /* Initialization data of the SCU driver */
+     39              XMC_SCU_CLOCK_CONFIG_t clock_object =
+     40              {
+     41                  0U, /* fdiv = 0 */
+     42                  1U, /* idiv = 1, idiv should > 0 */
+     43                  XMC_SCU_CLOCK_PCLKSRC_DOUBLE_MCLK, 
+     44                  XMC_SCU_CLOCK_RTCCLKSRC_DCO2,
+     45              };
+     46              
+     47              /* Initialize clock */
+     48              XMC_SCU_CLOCK_Init(&clock_object);
+     49          }
+     50          
+     51          
+     52          /*******************************************************************************
+     53          * @Brief   MCU Clock Low Speed Config
+     54          * @Param   
+     55          * @Note    Config clock for MCU and peripherals
+     56          *          dco_dclk = 64MHz, idiv should > 0
+     57          *          MCLK = dco_dclk / (2*(idiv + fdiv/256))) = 4MHz
+     58          *          PCLK = dco_dclk / (idiv + fdiv/256)) = 8MHz
+     59          * @Return  
+     60          *******************************************************************************/
+     61          void MCU_ClockConfigLowSpeed(void)
+     62          {
+     63              /* Initialization data of the SCU driver */
+     64              XMC_SCU_CLOCK_CONFIG_t clock_object =
+     65              {
+     66                  0U, /* fdiv = 0 */
+     67                  8U, /* idiv = 1, idiv should > 0 */
+     68                  XMC_SCU_CLOCK_PCLKSRC_MCLK, //XMC_SCU_CLOCK_PCLKSRC_DOUBLE_MCLK,
+     69                  XMC_SCU_CLOCK_RTCCLKSRC_DCO2,
+     70              };
+     71              
+     72              /* Initialize clock */
+     73              XMC_SCU_CLOCK_Init(&clock_object);
+     74          }
+     75          
+     76          
+     77          /*******************************************************************************
+     78          * @Brief   MCU GPIO Initialization
+     79          * @Param   
+     80          * @Note    Set unused pin to output low level
+     81          * @Return  
+     82          *******************************************************************************/
+     83          void MCU_GpioInit(void)
+     84          {     
+     85              /* PORT0 unused pins */
+     86              P0_5_set_mode(OUTPUT_OD_GP);
+     87              P0_5_reset();
+     88              P0_6_set_mode(OUTPUT_OD_GP);
+     89              P0_6_reset();
+     90              P0_7_set_mode(OUTPUT_OD_GP);
+     91              P0_7_reset();
+     92              P0_8_set_mode(OUTPUT_OD_GP);
+     93              P0_8_reset();
+     94              P0_9_set_mode(OUTPUT_OD_GP);
+     95              P0_9_reset();
+     96              P0_10_set_mode(OUTPUT_OD_GP);
+     97              P0_10_reset();
+     98              P0_11_set_mode(OUTPUT_OD_GP);
+     99              P0_11_reset();
+    100              P0_12_set_mode(OUTPUT_OD_GP);
+    101              P0_12_reset();
+    102              P0_13_set_mode(OUTPUT_OD_GP);
+    103              P0_13_reset();
+    104          
+    105              /* Debug pins */
+    106              P0_14_set_mode(INPUT_PU);
+    107              P0_15_set_mode(INPUT_PU);
+    108              
+    109              /* PORT1 unused pins */
+    110              P1_0_set_mode(OUTPUT_OD_GP);
+    111              P1_0_reset();
+    112              P1_4_set_mode(OUTPUT_OD_GP);
+    113              P1_4_reset();
+    114              P1_5_set_mode(OUTPUT_OD_GP);
+    115              P1_5_reset();
+    116          
+    117              /* PORT2 unused pins */
+    118              P2_0_set_mode(OUTPUT_OD_GP);
+    119              P2_0_reset();
+    120              P2_1_set_mode(OUTPUT_PP_GP);//update
+    121              P2_1_reset();
+    122              P2_2_set_mode(OUTPUT_PP_GP);//update
+    123              P2_2_reset();
+    124              P2_3_set_mode(OUTPUT_OD_GP);
+    125              P2_3_reset();
+    126              P2_4_set_mode(OUTPUT_OD_GP);
+    127              P2_4_reset();
+    128              P2_5_set_mode(OUTPUT_OD_GP);
+    129              P2_5_reset();
+    130          }
+    131          
+    132          
+    133          /*******************************************************************************
+    134          * @Brief   MCU Power On Initialization
+    135          * @Param   
+    136          * @Note    Config core and peripherals, init the software task
+    137          * @Return  
+    138          *******************************************************************************/
+    139          void MCU_PowerOnInit(void)
+    140          {    
+    141              /*------------ Hardware Module Initial -----------------------------------*/
+    142              /* Enable control pwm accelerate pin to avoid shoot current */
+    143              //PWM_CtrlAccelerateEnable();   
+    144             
+    145              /* MCU clock config initial */
+    146              MCU_ClockInit();   
+    147              
+    148              /* MCU unused pins initial */
+    149              MCU_GpioInit(); 
+    150              
+    151              /* GPIO Initial */
+    152              MCU_NfcPowerPinInit();
+    153          
+    154              /* Enable PWM module and output init pwm duty */
+    155              PWM_Enable();
+    156              PWM_SetDuty(PWM_ID_CH_CTRL, INIT_CTRL_DUTY_DEFAULT, PWM_MODE_FULL);
+    157              PWM_SetDuty(PWM_ID_CH_OCP, OCP_TRIGGER_DUTY_DEFAULT, PWM_MODE_FULL);
+    158              PWM_SetDuty(PWM_ID_CH_OVP, OVP_TRIGGER_DUTY_DEFAULT, PWM_MODE_FULL);
+    159                          
+    160              /* enable acmp for detect OVP & OCP */
+    161              ACMP_EnableOVP();
+    162          //    ACMP_EnableOCP();
+    163                          
+    164              /* Disable ADC to set ADC GPIO to input state */
+    165              ADC_Disable();
+    166              
+    167              /* SysTick config, tick timer base */
+    168              Tick_SetFrequency(TICKS_FREQ_NORMAL); 
+    169              
+    170              /* Initial usart for print information when debug */
+    171              USART_Enable(); 
+    172              
+    173              /* Enable window watchdog for release version */
+    174              WDT_Enable();
+    175              
+    176              /*------------ Software Initial -----------------------------------------*/
+    177              /* System task controler init */
+    178              System_TaskInit();
+    179              
+    180              /* Software timer init */
+    181              SWT_Init();
+    182              
+    183              /* Simulate I2C init */
+    184              I2C_Initial();
+    185          
+    186              /* Create power on task first */
+    187              System_CreateTask(SYS_TASK_POWER_ON);
+    188          }
+    189          
+    190          
+    191          /*******************************************************************************
+    192          * @Brief   MCU System Tick Timer Disable
+    193          * @Param   
+    194          * @Note    Disable system tick timer and interrupt request
+    195          * @Return  
+    196          *******************************************************************************/
+    197          void MCU_SysTickDisable(void)
+    198          {
+    199            SysTick->CTRL  &= ~(SysTick_CTRL_CLKSOURCE_Msk |
+    200                                SysTick_CTRL_TICKINT_Msk   |
+    201                                SysTick_CTRL_ENABLE_Msk);         /* Disable SysTick IRQ and SysTick Timer */
+    202          }
+    203          
+    204          
+    205          /*******************************************************************************
+    206          * @Brief   MCU Power Dip Event
+    207          * @Param   
+    208          * @Note    Close peripherals and set clock to low speed for saving energy
+    209          * @Return  
+    210          *******************************************************************************/
+    211          void MCU_PowerDipEvent(void)
+    212          {
+    213              /* MCU clock low speed config*/
+    214              MCU_ClockConfigLowSpeed();   
+    215              
+    216              /* Disable system tick timer */
+    217              MCU_SysTickDisable();
+    218              
+    219              /* Disable PWM module */
+    220              PWM_Disable();
+    221          
+    222              /* Disable ACMP and ERU for detect OVP & OCP */
+    223              ACMP_DisableOVP();
+    224              ACMP_DisableOCP();
+    225              ERU_DisableOVP();
+    226              ERU_DisableOCP();
+    227              
+    228              /* Disable ADC */
+    229              ADC_Disable();
+    230                  
+    231              /* Disable USART */
+    232              USART_Disable(); 
+    233          
+    234              /* System task controler init */
+    235              System_TaskInit();
+    236              
+    237              /* Software timer init */
+    238              SWT_Init();
+    239              
+    240              /* Simulate I2C init */
+    241              I2C_Initial();
+    242              
+    243              /* Feed watchdog for refresh timer */
+    244              WDT_Feeds();
+    245          }
+    246          
+    247          
+    248          /*******************************************************************************
+    249          * @Brief   MCU Change BMI Mode
+    250          * @Param   [in]BMI - BMI value to be install
+    251          * @Note    If OK will trigger reset and does not return to calling routine.
+    252          * @Return  
+    253          *******************************************************************************/
+    254          void MCU_ChangeBMI(BMI_MODE_t bmi_mode)
+    255          {
+    256              uint16_t start_address = 0;
+    257              
+    258              switch (bmi_mode)
+    259              {
+    260              case BMI_PRODUCTIVE:
+    261                  start_address = 0xF8C1; //User Mode Productive
+    262                  break;
+    263              case BMI_SWD_0_USER:
+    264                  start_address = 0xF8C3; //SWD_0 User Mode
+    265                  break;
+    266              case BMI_SWD_1_USER:
+    267                  start_address = 0xFAC3; //SWD_1 User Mode
+    268                  break;
+    269              case BMI_SPD_0_USER:
+    270                  start_address = 0xF9C3; //SPD_0 User Mode
+    271                  break;
+    272              case BMI_SPD_1_USER:
+    273                  start_address = 0xFBC3; //SPD_1 User Mode
+    274                  break;
+    275              case BMI_SWD_0_HAR:
+    276                  start_address = 0xF8C7; //SWD_0 HAR Mode
+    277                  break;
+    278              case BMI_SWD_1_HAR:
+    279                  start_address = 0xFAC7; //SWD_1 HAR Mode
+    280                  break;
+    281              case BMI_SPD_0_HAR:
+    282                  start_address = 0xF9C7; //SPD_0 HAR Mode
+    283                  break;
+    284              case BMI_SPD_1_HAR:
+    285                  start_address = 0xFBC7; //SPD_1 HAR Mode
+    286                  break;
+    287              case BMI_ASC_BSL_TO:
+    288                  start_address = 0xFFD0; //ASC_BSL TO:5sec Mode
+    289                  break;
+    290              case BMI_ASC_BSL:
+    291              default:
+    292                  start_address = 0xFFC0;  //ASC_BSL
+    293                  break;
+    294              }
+    295              
+    296              /*the change BMI routine */
+    297          	MCU_BmiInstallationReq(start_address);;
+    298          }
+    299          
+    300          
+    301          /*******************************************************************************
+    302          * @Brief   MCU OVP Level Triggger Detect Task
+    303          * @Param   
+    304          * @Note    Detect OVP level trigger and enter protect mode if triggered
+    305          *          If application has been protected mode, this will not active again
+    306          * @Return  
+    307          *******************************************************************************/
+    308          void MCU_OVPLevelTriggerTask(void)
+    309          {
+    310          #ifdef ENABLE_OVP
+    311              uint8_t ovp_level_state;
+    312              
+    313              /* Run task if application is not in protect mode */
+    314              
+    315                   //DaliBallast_CyclicTask();
+    316              if(PWM_GetProtectState() == PWM_STATE_PROTECT)
+    317              {
+    318                  return;
+    319              }
+    320              
+    321              /* Get OVP level trigger state */
+    322              ovp_level_state = ACMP_CheckLevelEvent_OVP();
+    323              
+    324              if(ovp_level_state == ACMP_STATE_TRIGGER)
+    325              {
+    326                  PWM_EnterProtection();
+    327              }    
+    328          #endif
+    329          }
+    330          
+    331          
+    332          
+    333          /**************** (C) COPYRIGHT OSRAM Asia Pacific Management Company *********END OF FILE*********/
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   MCU_ChangeBMI
+         8   -- Indirect call
+      24   MCU_ClockConfigLowSpeed
+        24   -> XMC_SCU_CLOCK_Init
+      24   MCU_ClockInit
+        24   -> XMC_SCU_CLOCK_Init
+       8   MCU_GpioInit
+         8   -> P0_10_reset
+         8   -> P0_10_set_mode
+         8   -> P0_11_reset
+         8   -> P0_11_set_mode
+         8   -> P0_12_reset
+         8   -> P0_12_set_mode
+         8   -> P0_13_reset
+         8   -> P0_13_set_mode
+         8   -> P0_14_set_mode
+         8   -> P0_15_set_mode
+         8   -> P0_5_reset
+         8   -> P0_5_set_mode
+         8   -> P0_6_reset
+         8   -> P0_6_set_mode
+         8   -> P0_7_reset
+         8   -> P0_7_set_mode
+         8   -> P0_8_reset
+         8   -> P0_8_set_mode
+         8   -> P0_9_reset
+         8   -> P0_9_set_mode
+         8   -> P1_0_reset
+         8   -> P1_0_set_mode
+         8   -> P1_4_reset
+         8   -> P1_4_set_mode
+         8   -> P1_5_reset
+         8   -> P1_5_set_mode
+         8   -> P2_0_reset
+         8   -> P2_0_set_mode
+         8   -> P2_1_reset
+         8   -> P2_1_set_mode
+         8   -> P2_2_reset
+         8   -> P2_2_set_mode
+         8   -> P2_3_reset
+         8   -> P2_3_set_mode
+         8   -> P2_4_reset
+         8   -> P2_4_set_mode
+         8   -> P2_5_reset
+         8   -> P2_5_set_mode
+       8   MCU_OVPLevelTriggerTask
+         8   -> ACMP_CheckLevelEvent_OVP
+         8   -> PWM_EnterProtection
+         8   -> PWM_GetProtectState
+       8   MCU_PowerDipEvent
+         8   -> ACMP_DisableOCP
+         8   -> ACMP_DisableOVP
+         8   -> ADC_Disable
+         8   -> ERU_DisableOCP
+         8   -> ERU_DisableOVP
+         8   -> MCU_ClockConfigLowSpeed
+         8   -> MCU_SysTickDisable
+         8   -> P1_2_set_mode
+         8   -> P1_3_set_mode
+         8   -> PWM_Disable
+         8   -> SWT_Init
+         8   -> System_TaskInit
+         8   -> USART_Disable
+         8   -> WDT_Feeds
+       8   MCU_PowerOnInit
+         8   -> ACMP_EnableOVP
+         8   -> ADC_Disable
+         8   -> MCU_ClockInit
+         8   -> MCU_GpioInit
+         8   -> P0_4_set
+         8   -> P0_4_set_mode
+         8   -> P1_2_set_mode
+         8   -> P1_3_set_mode
+         8   -> PWM_Enable
+         8   -> PWM_SetDuty
+         8   -> SWT_Init
+         8   -> System_CreateTask
+         8   -> System_TaskInit
+         8   -> Tick_SetFrequency
+         8   -> USART_Enable
+         8   -> WDT_Enable
+       0   MCU_SysTickDisable
+       0   P0_10_reset
+       0   P0_10_set_mode
+       0   P0_11_reset
+       0   P0_11_set_mode
+       0   P0_12_reset
+       0   P0_12_set_mode
+       0   P0_13_reset
+       0   P0_13_set_mode
+       0   P0_14_set_mode
+       0   P0_15_set_mode
+       0   P0_4_set
+       0   P0_4_set_mode
+       0   P0_5_reset
+       0   P0_5_set_mode
+       0   P0_6_reset
+       0   P0_6_set_mode
+       0   P0_7_reset
+       0   P0_7_set_mode
+       0   P0_8_reset
+       0   P0_8_set_mode
+       0   P0_9_reset
+       0   P0_9_set_mode
+       0   P1_0_reset
+       0   P1_0_set_mode
+       0   P1_2_set_mode
+       0   P1_3_set_mode
+       0   P1_4_reset
+       0   P1_4_set_mode
+       0   P1_5_reset
+       0   P1_5_set_mode
+       0   P2_0_reset
+       0   P2_0_set_mode
+       0   P2_1_reset
+       0   P2_1_set_mode
+       0   P2_2_reset
+       0   P2_2_set_mode
+       0   P2_3_reset
+       0   P2_3_set_mode
+       0   P2_4_reset
+       0   P2_4_set_mode
+       0   P2_5_reset
+       0   P2_5_set_mode
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable41
+       4  ??DataTable42
+       4  ??DataTable42_1
+       4  ??DataTable43
+       4  ??DataTable43_1
+       4  ??DataTable43_2
+       4  ??DataTable45
+       4  ??DataTable45_1
+       4  ??DataTable45_2
+       4  ??DataTable46
+       4  ??DataTable46_1
+       4  ??DataTable46_10
+       4  ??DataTable46_11
+       4  ??DataTable46_12
+       4  ??DataTable46_13
+       4  ??DataTable46_14
+       4  ??DataTable46_15
+       4  ??DataTable46_16
+       4  ??DataTable46_17
+       4  ??DataTable46_2
+       4  ??DataTable46_3
+       4  ??DataTable46_4
+       4  ??DataTable46_5
+       4  ??DataTable46_6
+       4  ??DataTable46_7
+       4  ??DataTable46_8
+       4  ??DataTable46_9
+      12  ?_0
+      12  ?_1
+      98  MCU_ChangeBMI
+      24  MCU_ClockConfigLowSpeed
+      24  MCU_ClockInit
+     196  MCU_GpioInit
+      26  MCU_OVPLevelTriggerTask
+      64  MCU_PowerDipEvent
+     108  MCU_PowerOnInit
+      14  MCU_SysTickDisable
+      10  P0_10_reset
+      28  P0_10_set_mode
+      10  P0_11_reset
+      28  P0_11_set_mode
+      10  P0_12_reset
+      26  P0_12_set_mode
+      10  P0_13_reset
+      28  P0_13_set_mode
+      28  P0_14_set_mode
+      28  P0_15_set_mode
+       8  P0_4_set
+      26  P0_4_set_mode
+      10  P0_5_reset
+      28  P0_5_set_mode
+      10  P0_6_reset
+      28  P0_6_set_mode
+      10  P0_7_reset
+      28  P0_7_set_mode
+      10  P0_8_reset
+      26  P0_8_set_mode
+      10  P0_9_reset
+      28  P0_9_set_mode
+      10  P1_0_reset
+      26  P1_0_set_mode
+      28  P1_2_set_mode
+      28  P1_3_set_mode
+      10  P1_4_reset
+      26  P1_4_set_mode
+      10  P1_5_reset
+      28  P1_5_set_mode
+      10  P2_0_reset
+      26  P2_0_set_mode
+      10  P2_1_reset
+      28  P2_1_set_mode
+      10  P2_2_reset
+      28  P2_2_set_mode
+      10  P2_3_reset
+      28  P2_3_set_mode
+      10  P2_4_reset
+      26  P2_4_set_mode
+      10  P2_5_reset
+      28  P2_5_set_mode
+
+ 
+    24 bytes in section .rodata
+ 1 480 bytes in section .text
+ 
+ 1 480 bytes of CODE  memory
+    24 bytes of CONST memory
+
+Errors: none
+Warnings: 2

@@ -1,0 +1,865 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:52
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\Alloc\MpcDescriptors.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\Alloc\MpcDescriptors.c"
+#        -D XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\MpcDescriptors.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\MpcDescriptors.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\Alloc\MpcDescriptors.c
+      1          // ---------------------------------------------------------------------------------------------------------------------
+      2          // Microcontroller Toolbox - Firmware Framework for Full Digital SSL Ballasts
+      3          // ---------------------------------------------------------------------------------------------------------------------
+      4          // (c) Osram GmbH
+      5          //     DS D EC - MCC
+      6          //     Parkring 33
+      7          //     85748 Garching
+      8          //
+      9          //
+     10          // The content of this file is intellectual property of OSRAM GmbH. It is
+     11          // confidential and not intended for any public release. All rights reserved.
+     12          //
+     13          //
+     14          // Initial version: 2016-07 W.Limmer@osram.de
+     15          //
+     16          // Change History:
+     17          //
+     18          // $Author: j.avril $
+     19          // $Revision: 12120 $
+     20          // $Date: 2018-02-21 21:20:13 +0800 (Wed, 21 Feb 2018) $
+     21          // $Id: MpcDescriptors.c 12120 2018-02-21 13:20:13Z j.avril $
+     22          // $URL: https://app-ehnsvn02.int.osram-light.com/svn/EC/Mpc/Alloc/branches/RC_2018-02-20/Src/MpcDescriptors.c $
+     23          //
+     24          
+     25          
+     26          /** \addtogroup MPC
+     27           * \{
+     28           * \file
+     29           * \brief Supplement descriptors for legacy pages (which don't implemt them by theirselves)
+     30           */
+     31          
+     32          #define MODULE_DALI             // to include device type, important for some mem banks
+     33          #define MODULE_MPC
+     34          
+     35          #include "Global.h"
+     36          #include "Config.h"
+     37          
+     38          // New Struct
+     39          #include "Mpc.h"                // Generic application interface
+     40          #include "MpcInternal.h"        // Internal interface to the Mpc implementations
+     41          #include "MpcAllocation.h"      // Generic application interface
+     42          #include "MpcIncludeAll.h"
+     43          #include "Acl.h"
+     44          #include "MpcPerm4Legacy.h"     // include order is essential here !
+     45          
+     46          
+     47          
+     48          
+     49          #define MPC_STD_PAYLOAD_OFFSET  5
+     50          
+     51          // ---------------------------------------------------------------------------------------------------------------------
+     52          #ifdef MPCs_DALI
+     53          const mpc_descriptor_t MpcLegacyDali0 = {
+     54            .keydata          = {
+     55              .id             = 0,                // used only with NFC, via DALI MB1 doesn't deliver an ID/Version
+     56              .version        = MPC_Dali_VERSION, // used only with NFC, via DALI MB1 doesn't deliver an ID/Version
+     57              .attributes     = 0,                // Bank 0 has no lockbyte
+     58              .payload_off    = MPC_MEMBANK0_OFFSET,
+     59              .permissions    = ACL_PERM_OSRAM,
+     60              .length         = MEMORY_BANK0_LastADDRESS - (MPC_MEMBANK0_OFFSET - 1),
+     61            },
+     62            .tables_len       = -1,
+     63            .GetValue         = (mpc_legacy_read_fp)  &MemoryBank_Dali0_GetValue,
+     64            .SetValue         = (mpc_legacy_write_fp) &MemoryBank_Dali0_SetValue,
+     65            .Init             = NULL,  // init triggered by Dali
+     66            .Reset            = NULL,  // no reset needed
+     67          };
+     68          
+     69          const mpc_descriptor_t MpcLegacyDali1 = {
+     70            .keydata          = {
+     71              .id             = 1,                // used only with NFC, via DALI MB1 doesn't deliver an ID/Version
+     72              .version        = MPC_Dali_VERSION, // used only with NFC, via DALI MB1 doesn't deliver an ID/Version
+     73              .attributes     = MPC_ATTRIB_DALI_LOCKBYTE,
+     74              .payload_off    = MPC_MEMBANK1_OFFSET,
+     75              .length         = MEMORY_BANK1_LastADDRESS - (MPC_MEMBANK1_OFFSET - 1),
+     76            },
+     77            .tables_len       = -1,
+     78            .GetValue         = (mpc_legacy_read_fp)  &MemoryBank_Dali1_GetValue,
+     79            .SetValue         = (mpc_legacy_write_fp) &MemoryBank_Dali1_SetValue,
+     80            .Init             = NULL,  // init triggered by Dali
+     81            .Reset            = NULL,  // init triggered by Dali
+     82          };
+     83          
+     84          const mpc_descriptor_t MpcLegacyDali1_with_perm_master = {
+     85            .keydata          = {
+     86              .id             = 1,                // used only with NFC, via DALI MB1 doesn't deliver an ID/Version
+     87              .version        = MPC_Dali_VERSION, // used only with NFC, via DALI MB1 doesn't deliver an ID/Version
+     88              .attributes     = MPC_ATTRIB_DALI_LOCKBYTE,
+     89              .payload_off    = MPC_MEMBANK1_OFFSET,
+     90              .permissions    = ACL_PERM_MASTER,
+     91              .length         = MEMORY_BANK1_LastADDRESS - (MPC_MEMBANK1_OFFSET - 1),
+     92            },
+     93            .tables_len       = -1,
+     94            .GetValue         = (mpc_legacy_read_fp)  &MemoryBank_Dali1_GetValue,
+     95            .SetValue         = (mpc_legacy_write_fp) &MemoryBank_Dali1_SetValue,
+     96            .Init             = NULL,  // init triggered by Dali
+     97            .Reset            = NULL,  // init triggered by Dali
+     98          };
+     99          
+    100          const mpc_descriptor_t MpcLegacyDali_T6 = {
+    101            .keydata          = {
+    102              .id             = MPC_DaliT6_ID,
+    103              .version        = MPC_DaliT6_VERSION,
+    104              .attributes     = 0,
+    105              .payload_off    = MPC_DALI_PARAMS_OFFSET,
+    106              .length         = MPC_DALI_T6_LENGTH,
+    107            },
+    108            .tables_len       = -1,
+    109            .GetValue         = (mpc_legacy_read_fp)  &MemoryBank_DaliT6_GetValue,
+    110            .SetValue         = (mpc_legacy_write_fp) &MemoryBank_DaliT6_SetValue,
+    111            .Init             = NULL,  // init done by DaliLib
+    112            .Reset            = NULL,  // no reset from outside the DaliLib
+    113          };
+    114          #endif
+    115          
+    116          
+    117          #ifdef MPC_DEBUG_DESCRIPTOR_DEFAULT_V1
+    118          // To use the debug bank with default decriptor version 1, the *appplication* (not the library) has to provide
+    119          // DebugMpc.h/.c defining and implementing
+    120          //
+    121          // void        MemoryBank_Debug_Init     (void);
+    122          // void        MemoryBank_Debug_Reset    (uint8_t channel);
+    123          // mpc_rw_enum MemoryBank_Debug_GetValue (uint8_t address, uint8_t * pValue, uint8_t channel, uint8_t port);
+    124          // mpc_rw_enum MemoryBank_Debug_SetValue (uint8_t address, uint8_t    value, uint8_t channel, uint8_t port);
+    125          //
+    126          // The header file moreover has to define
+    127          // #define MPC_DEBUG_ID                     254  // ID, possibly only in the descriptor and in NFC, not in DALI
+    128          // #define MPC_DEBUG_VERSION                  1  // Version, possibly only in the descriptor and in NFC, not in DALI
+    129          // #define MPC_DEBUG_DALI_PAYLOAD_OFFSET      3  // Platform specific, here: Only the 3 bytes of the DALI standard
+    130          // #define MPC_DEBUG_DALI_LASTADDRESS       ...  // Platform specific; As before: The address of the last location in DALI
+    131          const mpc_descriptor_t MpcLegacyDebug = {
+    132            .keydata          = {
+    133              .id             = MPC_DEBUG_ID,       // 254
+    134              .version        = MPC_DEBUG_VERSION,  // 1
+    135              .attributes     = 0,
+    136              .payload_off    = MPC_DEBUG_DALI_PAYLOAD_OFFSET,
+    137              .permissions    = ACL_PERM_OSRAM,
+    138              .length         = MPC_DEBUG_DALI_LASTADDRESS - (MPC_DEBUG_DALI_PAYLOAD_OFFSET - 1),
+    139            },
+    140            .tables_len       = -1,
+    141            .GetValue         = &MemoryBank_Debug_GetValue,
+    142            .SetValue         = &MemoryBank_Debug_SetValue,
+    143            .Init             = &MemoryBank_Debug_Init,
+    144            .Reset            = &MemoryBank_Debug_Reset,
+    145          };
+    146          #endif
+    147          
+    148          
+    149          #ifdef MPC_INFO_NUMBER
+    150          const mpc_descriptor_t MpcLegacyInfo = {
+    151            .keydata          = {
+    152              .id             = MPC_Info_ID,
+    153              .version        = MPC_Info_VERSION,
+    154              .attributes     = MPC_ATTRIB_DALI_LOCKBYTE,
+    155              .payload_off    = 5,
+    156              .permissions    = ACL_PERM_LAMP_OPER_TIME,
+    157              .length         = MPC_Info_LastADDRESS - (MPC_STD_PAYLOAD_OFFSET - 1),
+    158            },
+    159            .tables_len       = -1,
+    160            .GetValue         = &MemoryBank_Info_GetValue_port,
+    161            .SetValue         = &MemoryBank_Info_SetValue_port,
+    162            .Init             = &MemoryBank_Info_Init,
+    163            .Reset            = &MemoryBank_Info_Reset,
+    164          };
+    165          #endif
+    166          
+    167          
+    168          #ifdef MPC_CSM_NUMBER
+    169          const mpc_descriptor_t MpcLegacyCsm_pw1 = {
+    170            .keydata          = {
+    171              .id             = MPC_CurrentSetting_ID,
+    172              .version        = MPC_CurrentSetting_VERSION,
+    173              .attributes     = MPC_ATTRIB_DALI_LOCKBYTE | MPC_ATTRIB_PASSWORD1_PROT,
+    174              .payload_off    = 5,
+    175              .permissions    = ACL_PERM_OPER_CURR,
+    176              .length         = CSM_PAYLOAD_LENGTH,
+    177            },
+    178            .tables_len       = -1,
+    179            .GetValue         = &MemoryBank_Csm_GetValue_port,
+    180            .SetValue         = &MemoryBank_Csm_SetValue_port,
+    181            .Init             = &MemoryBank_Csm_Init,
+    182            .Reset            = &MemoryBank_Csm_Reset,
+    183          };
+    184          
+    185          
+    186          const mpc_descriptor_t MpcLegacyCsm = {
+    187            .keydata          = {
+    188              .id             = MPC_CurrentSetting_ID,
+    189              .version        = MPC_CurrentSetting_VERSION,
+    190              .attributes     = MPC_ATTRIB_DALI_LOCKBYTE,
+    191              .payload_off    = 5,
+    192              .permissions    = ACL_PERM_OPER_CURR,
+    193              .length         = CSM_PAYLOAD_LENGTH,
+    194            },
+    195            .tables_len       = -1,
+    196            .GetValue         = &MemoryBank_Csm_GetValue_port,
+    197            .SetValue         = &MemoryBank_Csm_SetValue_port,
+    198            .Init             = &MemoryBank_Csm_Init,
+    199            .Reset            = &MemoryBank_Csm_Reset,
+    200          };
+    201          #endif
+    202          
+    203          
+    204          #ifdef MPC_TFM_NUMBER
+    205          const mpc_descriptor_t MpcLegacyTfm_pw1 = {
+    206            .keydata          = {
+    207              .id             = MPC_TuningFactor_ID,
+    208              .version        = MPC_TuningFactor_VERSION,
+    209              .attributes     = MPC_ATTRIB_DALI_LOCKBYTE | MPC_ATTRIB_PASSWORD1_PROT,
+    210              .payload_off    = 5,
+    211              .permissions    = 0,
+    212              .mult_perm4legacy = tfmpermissions,
+    213              .length         = MPC_TuningFactor_LastADDRESS - (MPC_STD_PAYLOAD_OFFSET - 1),
+    214            },
+    215            .tables_len       = -1,
+    216            .GetValue         = (mpc_legacy_read_fp)  &MemoryBank_Tfm_GetValue_Port,
+    217            .SetValue         = (mpc_legacy_write_fp) &MemoryBank_Tfm_SetValue_Port,
+    218            .Init             = &MemoryBank_Tfm_Init,
+    219            .Reset            = &MemoryBank_Tfm_Reset,
+    220          };
+    221          
+    222          const mpc_descriptor_t MpcLegacyTfm = {
+    223            .keydata          = {
+    224              .id             = MPC_TuningFactor_ID,
+    225              .version        = MPC_TuningFactor_VERSION,
+    226              .attributes     = MPC_ATTRIB_DALI_LOCKBYTE,
+    227              .payload_off    = 5,
+    228              .permissions    = 0,
+    229              .mult_perm4legacy = tfmpermissions,
+    230              .length         = MPC_TuningFactor_LastADDRESS - (MPC_STD_PAYLOAD_OFFSET - 1),
+    231            },
+    232            .tables_len       = -1,
+    233            .GetValue         = &MemoryBank_Tfm_GetValue_Port,
+    234            .SetValue         = &MemoryBank_Tfm_SetValue_Port,
+    235            .Init             = &MemoryBank_Tfm_Init,
+    236            .Reset            = &MemoryBank_Tfm_Reset,
+    237          };
+    238          
+    239          #endif
+    240          
+    241          
+    242          #ifdef MPC_CLM_NUMBER
+    243          const mpc_descriptor_t MpcLegacyClm_pw1 = {
+    244            .keydata          = {
+    245              .id             = MPC_ConstantLumen_ID,
+    246              .version        = MPC_ConstantLumen_VERSION,
+    247              .attributes     = MPC_ATTRIB_DALI_LOCKBYTE | MPC_ATTRIB_PASSWORD1_PROT,
+    248              .payload_off    = 5,
+    249              .permissions    = ACL_PERM_CONST_LUMEN,
+    250              .length         = CLM_PAYLOAD_LENGTH,
+    251            },
+    252            .tables_len       = -1,
+    253            .GetValue         = (mpc_legacy_read_fp)  &MemoryBank_Clm_GetValue,
+    254            .SetValue         = (mpc_legacy_write_fp) &MemoryBank_Clm_SetValue,
+    255            .Init             = NULL,  // ClmInit currently needs extra parameters and can't be called in a generic way -> Info_init()
+    256            .Reset            = &MemoryBank_Clm_Reset,
+    257          };
+    258          const mpc_descriptor_t MpcLegacyClm = {
+    259            .keydata          = {
+    260              .id             = MPC_ConstantLumen_ID,
+    261              .version        = MPC_ConstantLumen_VERSION,
+    262              .attributes     = MPC_ATTRIB_DALI_LOCKBYTE,
+    263              .payload_off    = 5,
+    264              .permissions    = ACL_PERM_CONST_LUMEN,
+    265              .length         = CLM_PAYLOAD_LENGTH,
+    266            },
+    267            .tables_len       = -1,
+    268            .GetValue         = (mpc_legacy_read_fp)  &MemoryBank_Clm_GetValue,
+    269            .SetValue         = (mpc_legacy_write_fp) &MemoryBank_Clm_SetValue,
+    270            .Init             = NULL,  // ClmInit currently needs extra parameters and can't be called in a generic way -> Info_init()
+    271            .Reset            = &MemoryBank_Clm_Reset,
+    272          };
+    273          #endif
+    274          
+    275          
+    276          #ifdef MPC_TPM_NUMBER
+    277          #pragma message ("TPM: No Port dependent Get- and SetValue Functions available")
+    278          const mpc_descriptor_t MpcLegacyTpm = {
+    279            .keydata          = {
+    280              .id             = MPC_TPM_ID,
+    281              .version        = MPC_TPM_VERSION,
+    282              .attributes     = MPC_ATTRIB_DALI_LOCKBYTE,
+    283              .payload_off    = 5,
+    284              .permissions    = ACL_PERM_THERM_PROT,
+    285              .length         = MPC_TPM_LAST_ADDRESS - (MPC_STD_PAYLOAD_OFFSET - 1),
+    286            },
+    287            .tables_len       = -1,
+    288            .GetValue         = (mpc_legacy_read_fp)  &MemoryBank_Tpm_GetValue,
+    289            .SetValue         = (mpc_legacy_write_fp) &MemoryBank_Tpm_SetValue,
+    290            .Init             = (mpc_init_fp)         &MemoryBank_Tpm_Init,
+    291            .Reset            = &MemoryBank_Tpm_Reset,
+    292          };
+    293          #endif
+    294          
+    295          
+    296          #ifdef MPC_EOL_NUMBER
+    297          const mpc_descriptor_t MpcLegacyEol = {
+    298            .keydata          = {
+    299              .id             = MPC_EOL_ID,
+    300              .version        = MPC_EOL_VERSION,
+    301              .attributes     = MPC_ATTRIB_DALI_LOCKBYTE,
+    302              .payload_off    = 5,
+    303              .permissions    = ACL_PERM_EOL,
+    304              .length         = MPC_EOL_LAST_ADDRESS - (MPC_STD_PAYLOAD_OFFSET - 1),
+    305            },
+    306            .tables_len       = -1,
+    307            .GetValue         = (mpc_legacy_read_fp)  &MemoryBank_Eol_GetValue,
+    308            .SetValue         = (mpc_legacy_write_fp) &MemoryBank_Eol_SetValue,
+    309            .Init             = (mpc_init_fp)         &MemoryBank_Eol_Init,
+    310            .Reset            = &MemoryBank_Eol_Reset,
+    311          };
+    312          
+    313          const mpc_descriptor_t MpcLegacyEol_read_only = {
+    314            .keydata          = {
+    315              .id             = MPC_EOL_ID,
+    316              .version        = MPC_EOL_VERSION,
+    317              .attributes     = MPC_ATTRIB_DALI_LOCKBYTE,
+    318              .payload_off    = 5,
+    319              .permissions    = ACL_PERM_NEVER,
+    320              .length         = MPC_EOL_LAST_ADDRESS - (MPC_STD_PAYLOAD_OFFSET - 1),
+    321            },
+    322            .tables_len       = -1,
+    323            .GetValue         = (mpc_legacy_read_fp)  &MemoryBank_Eol_GetValue,
+    324            .SetValue         = (mpc_legacy_write_fp) &MemoryBank_Eol_SetValue,
+    325            .Init             = (mpc_init_fp)         &MemoryBank_Eol_Init,
+    326            .Reset            = &MemoryBank_Eol_Reset,
+    327          };
+    328          #endif
+    329          
+    330          
+    331          #ifdef MPC_MAINS_NUMBER
+    332          const mpc_descriptor_t MpcLegacyMains = {
+    333            .keydata          = {
+    334              .id             = MPC_MAINS_ID,
+    335              .version        = MPC_MAINS_VERSION,
+    336              .attributes     = MPC_ATTRIB_DALI_LOCKBYTE,
+    337              .payload_off    = 5,
+    338              .permissions    = 0,
+    339              .mult_perm4legacy = mainspermissions,
+    340              .length         = MPC_MAINS_LAST_ADDRESS - (MPC_STD_PAYLOAD_OFFSET - 1),
+    341            },
+    342            .tables_len       = -1,
+    343            .GetValue         = (mpc_legacy_read_fp)  &MemoryBank_Mains_GetValue,
+    344            .SetValue         = (mpc_legacy_write_fp) &MemoryBank_Mains_SetValue,
+    345            .Init             = (mpc_init_fp)         &MemoryBank_Mains_Init,
+    346            .Reset            = &MemoryBank_Mains_Reset,
+    347          };
+    348          
+    349          const mpc_descriptor_t MpcLegacyMains_read_only = {
+    350            // Used for 1DIM to have the page with all connections, but write inhibited
+    351            .keydata          = {
+    352              .id             = MPC_MAINS_ID,
+    353              .version        = MPC_MAINS_VERSION,
+    354              .attributes     = MPC_ATTRIB_DALI_LOCKBYTE,
+    355              .payload_off    = 5,
+    356              .permissions    = ACL_PERM_NEVER,
+    357              .length         = MPC_MAINS_LAST_ADDRESS - (MPC_STD_PAYLOAD_OFFSET - 1),
+    358            },
+    359            .tables_len       = -1,
+    360            .GetValue         = (mpc_legacy_read_fp)  &MemoryBank_Mains_GetValue,
+    361            .SetValue         = (mpc_legacy_write_fp) &MemoryBank_Mains_SetValue,
+    362            .Init             = (mpc_init_fp)         &MemoryBank_Mains_Init,
+    363            .Reset            = &MemoryBank_Mains_Reset,
+    364          };
+    365          #endif
+    366          
+    367          
+    368          #ifdef MPC_PRESDETECT_NUMBER
+    369          const mpc_descriptor_t MpcLegacyPresDet = {
+    370            .keydata          = {
+    371              .id             = MPC_PRES_DET_ID,
+    372              .version        = MPC_PRES_DET_VERSION,
+    373              .attributes     = MPC_ATTRIB_DALI_LOCKBYTE,
+    374              .payload_off    = 5,
+    375              .permissions    = 0,
+    376              .mult_perm4legacy = presdetectpermissions,
+    377              .length         = MPC_PRES_DET_LAST_ADDRESS - (MPC_STD_PAYLOAD_OFFSET - 1),
+    378            },
+    379            .tables_len       = -1,
+    380            .GetValue         = (mpc_legacy_read_fp)  &MemoryBank_PresDet_GetValue,
+    381            .SetValue         = (mpc_legacy_write_fp) &MemoryBank_PresDet_SetValue,
+    382            .Init             = (mpc_init_fp)         &MemoryBank_PresDet_Init,
+    383            .Reset            = &MemoryBank_PresDet_Reset,
+    384          };
+    385          
+    386          const mpc_descriptor_t MpcLegacyPresDet_read_only = {
+    387            .keydata          = {
+    388              .id             = MPC_PRES_DET_ID,
+    389              .version        = MPC_PRES_DET_VERSION,
+    390              .attributes     = MPC_ATTRIB_DALI_LOCKBYTE,
+    391              .payload_off    = 5,
+    392              .permissions    = ACL_PERM_NEVER,
+    393              .length         = MPC_PRES_DET_LAST_ADDRESS - (MPC_STD_PAYLOAD_OFFSET - 1),
+    394            },
+    395            .tables_len       = -1,
+    396            .GetValue         = (mpc_legacy_read_fp)  &MemoryBank_PresDet_GetValue,
+    397            .SetValue         = (mpc_legacy_write_fp) &MemoryBank_PresDet_SetValue,
+    398            .Init             = (mpc_init_fp)         &MemoryBank_PresDet_Init,
+    399            .Reset            = &MemoryBank_PresDet_Reset,
+    400          };
+    401          #endif
+    402          
+    403          
+    404          #ifdef MPC_STEP_NUMBER
+    405          #pragma message ("STEP DIM: Port dependent Get- and SetValue Functions in-between available -> use them")
+    406          const mpc_descriptor_t MpcLegacyStep = {
+    407            .keydata          = {
+    408              .id             = MPC_STEP_ID,
+    409              .version        = MPC_STEP_VERSION,
+    410              .attributes     = MPC_ATTRIB_DALI_LOCKBYTE,
+    411              .payload_off    = 5,
+    412              .permissions    = 0,
+    413              .mult_perm4legacy = steppermissions,
+    414              .length         = MPC_STEP_LAST_ADDRESS - (MPC_STD_PAYLOAD_OFFSET - 1),
+    415            },
+    416            .tables_len       = -1,
+    417            .GetValue         = (mpc_legacy_read_fp)  &MemoryBank_Step_GetValue,
+    418            .SetValue         = (mpc_legacy_write_fp) &MemoryBank_Step_SetValue,
+    419            .Init             = (mpc_init_fp)         &MemoryBank_Step_Init,
+    420            .Reset            =                       &MemoryBank_Step_Reset,
+    421          };
+    422          
+    423          const mpc_descriptor_t MpcLegacyStep_read_only = {
+    424            // Used for 1DIM to have the page with all connections, but write inhibited
+    425            .keydata          = {
+    426              .id             = MPC_STEP_ID,
+    427              .version        = MPC_STEP_VERSION,
+    428              .attributes     = MPC_ATTRIB_DALI_LOCKBYTE,
+    429              .payload_off    = 5,
+    430              .permissions    = ACL_PERM_NEVER,
+    431              .length         = MPC_STEP_LAST_ADDRESS - (MPC_STD_PAYLOAD_OFFSET - 1),
+    432            },
+    433            .tables_len       = -1,
+    434            .GetValue         = (mpc_legacy_read_fp)  &MemoryBank_Step_GetValue,
+    435            .SetValue         = (mpc_legacy_write_fp) &MemoryBank_Step_SetValue,
+    436            .Init             = (mpc_init_fp)         &MemoryBank_Step_Init,
+    437            .Reset            =                       &MemoryBank_Step_Reset,
+    438          };
+    439          #endif
+    440          
+    441          
+    442          #ifdef MPC_PASSWORD1_NUMBER
+    443          const mpc_descriptor_t MpcLegacyPassword1 = {
+    444            .keydata          = {
+    445              .id             = MPC_Password_ID,
+    446              .version        = MPC_Password_VERSION,
+    447              .attributes     = 0,                                // Password 1 page, no lockbyte by definition
+    448              .payload_off    = 5,
+    449              .length         = MPC_Password_LastADDRESS - (MPC_STD_PAYLOAD_OFFSET - 1),
+    450            },
+    451            .tables_len       = -1,
+    452            .GetValue         = (mpc_legacy_read_fp)  &MemoryBank_Password_GetValue_PW1,
+    453            .SetValue         = (mpc_legacy_write_fp) &MemoryBank_Password_SetValue_PW1,
+    454            .Init             = &MemoryBank_Password_Init,
+    455            .Reset            = &MemoryBank_Password_Reset,
+    456            };
+    457          #endif
+    458          
+    459          
+    460          #ifdef MPC_PASSWORD2_NUMBER
+    461          #ifndef MPC_PASSWORD1_NUMBER
+    462            STATIC_ASSERT(0, "Password2 page can't be used without Password1 page")
+    463          #endif
+    464          const mpc_descriptor_t MpcLegacyPassword2 = {
+    465            .keydata          = {
+    466              .id             = MPC_Password_ID,
+    467              .version        = MPC_Password_VERSION,
+    468              .attributes     = 0,                                // Password 2 page, no lockbyte by definition
+    469              .payload_off    = 5,
+    470              .length         = MPC_Password_LastADDRESS - (MPC_STD_PAYLOAD_OFFSET - 1),
+    471            },
+    472            .tables_len       = -1,
+    473            .GetValue         = (mpc_legacy_read_fp)  &MemoryBank_Password_GetValue_PW2,
+    474            .SetValue         = (mpc_legacy_write_fp) &MemoryBank_Password_SetValue_PW2,
+    475            .Init             = &MemoryBank_Password_Init,
+    476            .Reset            = &MemoryBank_Password_Reset,
+    477            };
+    478          #endif
+    479          
+    480          
+    481          #ifdef MPC_EMERGENCY_NUMBER
+    482          const mpc_descriptor_t MpcLegacyEmergency = {
+    483            .keydata          = {
+    484              .id             = MPC_Emergency_ID,
+    485              .version        = MPC_Emergency_VERSION,
+    486              .attributes     = MPC_ATTRIB_DALI_LOCKBYTE,
+    487              .payload_off    = 5,
+    488              .permissions    = ACL_PERM_DC_EMERGENCY,
+    489              .length         = MPC_Emergency_LastADDRESS - (MPC_STD_PAYLOAD_OFFSET - 1),
+    490            },
+    491            .tables_len       = -1,
+    492            .GetValue         = (mpc_legacy_read_fp)  &MemoryBank_Emergency_GetValue,
+    493            .SetValue         = (mpc_legacy_write_fp) &MemoryBank_Emergency_SetValue,
+    494            .Init             = &MemoryBank_Emergency_Init,
+    495            .Reset            = &MemoryBank_Emergency_Reset,
+    496          };
+    497          
+    498          const mpc_descriptor_t MpcLegacyEmergency_pw2 = {
+    499            .keydata          = {
+    500              .id             = MPC_Emergency_ID,
+    501              .version        = MPC_Emergency_VERSION,
+    502              .attributes     = MPC_ATTRIB_DALI_LOCKBYTE | MPC_ATTRIB_PASSWORD2_PROT,
+    503              .payload_off    = 5,
+    504              .permissions    = ACL_PERM_DC_EMERGENCY,
+    505              .length         = MPC_Emergency_LastADDRESS - (MPC_STD_PAYLOAD_OFFSET - 1),
+    506            },
+    507            .tables_len       = -1,
+    508            .GetValue         = (mpc_legacy_read_fp)  &MemoryBank_Emergency_GetValue,
+    509            .SetValue         = (mpc_legacy_write_fp) &MemoryBank_Emergency_SetValue,
+    510            .Init             = &MemoryBank_Emergency_Init,
+    511            .Reset            = &MemoryBank_Emergency_Reset,
+    512          };
+    513          
+    514          const mpc_descriptor_t MpcLegacyEmergency_read_only = {
+    515            .keydata          = {
+    516              .id             = MPC_Emergency_ID,
+    517              .version        = MPC_Emergency_VERSION,
+    518              .attributes     = MPC_ATTRIB_DALI_LOCKBYTE,
+    519              .payload_off    = 5,
+    520              .permissions    = ACL_PERM_NEVER,
+    521              .length         = MPC_Emergency_LastADDRESS - (MPC_STD_PAYLOAD_OFFSET - 1),
+    522            },
+    523            .tables_len       = -1,
+    524            .GetValue         = (mpc_legacy_read_fp)  &MemoryBank_Emergency_GetValue,
+    525            .SetValue         = (mpc_legacy_write_fp) &MemoryBank_Emergency_SetValue,
+    526            .Init             = &MemoryBank_Emergency_Init,
+    527            .Reset            = &MemoryBank_Emergency_Reset,
+    528          };
+    529          #endif
+    530          
+    531          
+    532          #ifdef MPC_POWER_NUMBER
+    533          const mpc_descriptor_t MpcLegacyPower = {
+    534            .keydata          = {
+    535              .id             = MPC_Power_ID,
+    536              .version        = MPC_Power_VERSION,
+    537              .attributes     = MPC_ATTRIB_DALI_LOCKBYTE,
+    538              .payload_off    = 5,
+    539              .permissions    = 0,
+    540              .length         = MPC_Power_LastADDRESS - (MPC_STD_PAYLOAD_OFFSET - 1),
+    541            },
+    542            .tables_len       = -1,
+    543            .GetValue         = (mpc_legacy_read_fp)  &MemoryBank_Power_GetValue_Port,
+    544            .SetValue         = (mpc_legacy_write_fp) &MemoryBank_Power_SetValue_port,
+    545            .Init             = &MemoryBank_Power_Init,
+    546            .Reset            = &MemoryBank_Power_Reset,
+    547          };
+    548          #endif
+    549          
+    550          
+    551          #ifdef MPC_DIM2DARK_NUMBER
+    552          const mpc_descriptor_t MpcLegacyDim2Dark_pw1 = {
+    553            .keydata          = {
+    554              .id             = MPC_Dim2Dark_ID,
+    555              .version        = MPC_Dim2Dark_VERSION,
+    556              .attributes     = MPC_ATTRIB_DALI_LOCKBYTE | MPC_ATTRIB_PASSWORD1_PROT,
+    557              .payload_off    = 5,
+    558              .permissions    = ACL_PERM_DIM2DARK,
+    559              .length         = MPC_Dim2Dark_LastADDRESS - (MPC_STD_PAYLOAD_OFFSET - 1),
+    560            },
+    561            .tables_len       = -1,
+    562            .GetValue         = &MemoryBank_Dim2Dark_GetValue_Port,
+    563            .SetValue         = &MemoryBank_Dim2Dark_SetValue_port,
+    564            .Init             = &MemoryBank_Dim2Dark_Init,
+    565            .Reset            = &MemoryBank_Dim2Dark_Reset,
+    566          };
+    567          
+    568          const mpc_descriptor_t MpcLegacyDim2Dark = {
+    569            .keydata          = {
+    570              .id             = MPC_Dim2Dark_ID,
+    571              .version        = MPC_Dim2Dark_VERSION,
+    572              .attributes     = MPC_ATTRIB_DALI_LOCKBYTE,
+    573              .payload_off    = 5,
+    574              .permissions    = ACL_PERM_DIM2DARK,
+    575              .length         = MPC_Dim2Dark_LastADDRESS - (MPC_STD_PAYLOAD_OFFSET - 1),
+    576            },
+    577            .tables_len       = -1,
+    578            .GetValue         = &MemoryBank_Dim2Dark_GetValue_Port,
+    579            .SetValue         = &MemoryBank_Dim2Dark_SetValue_port,
+    580            .Init             = &MemoryBank_Dim2Dark_Init,
+    581            .Reset            = &MemoryBank_Dim2Dark_Reset,
+    582          };
+    583          #endif
+    584          
+    585          
+    586          #ifdef MPC_GENERALFEATURES_NUMBER
+    587          const mpc_descriptor_t MpcLegacyGeneralFeatures_pw1 = {
+    588            .keydata          = {
+    589              .id             = MPC_GeneralFeatures_ID,
+    590              .version        = MPC_GeneralFeatures_VERSION,
+    591              .attributes     = MPC_ATTRIB_PASSWORD1_PROT | MPC_ATTRIB_DALI_LOCKBYTE,
+    592              .payload_off    = 5,
+    593              .permissions    = ACL_PERM_GENERAL_FEATURES,
+    594              .length         = MPC_GeneralFeatures_LastADDRESS - (MPC_STD_PAYLOAD_OFFSET - 1),
+    595            },
+    596            .tables_len       = -1,
+    597            .GetValue         = &MemoryBank_GeneralFeatures_GetValue_Port,
+    598            .SetValue         = &MemoryBank_GeneralFeatures_SetValue_port,
+    599            .Init             = &MemoryBank_GeneralFeatures_Init,
+    600            .Reset            = &MemoryBank_GeneralFeatures_Reset,
+    601          };
+    602          
+    603          const mpc_descriptor_t MpcLegacyGeneralFeatures = {
+    604            .keydata          = {
+    605              .id             = MPC_GeneralFeatures_ID,
+    606              .version        = MPC_GeneralFeatures_VERSION,
+    607              .attributes     = MPC_ATTRIB_DALI_LOCKBYTE,        // General features page, lockbyte after alignment with W.Limmer, J.Ottensmeyer
+    608              .payload_off    = 5,
+    609              .permissions    = ACL_PERM_GENERAL_FEATURES,
+    610              .length         = MPC_GeneralFeatures_LastADDRESS - (MPC_STD_PAYLOAD_OFFSET - 1),
+    611            },
+    612            .tables_len       = -1,
+    613            .GetValue         = &MemoryBank_GeneralFeatures_GetValue_Port,
+    614            .SetValue         = &MemoryBank_GeneralFeatures_SetValue_port,
+    615            .Init             = &MemoryBank_GeneralFeatures_Init,
+    616            .Reset            = &MemoryBank_GeneralFeatures_Reset,
+    617          };
+    618          #endif
+    619          
+    620          
+    621          #ifdef MPC_TDC_NUMBER
+    622          const mpc_descriptor_t MpcLegacyTDC = {
+    623            .keydata          = {
+    624              .id             = MPC_TouchDim_ID,
+    625              .version        = MPC_TouchDim_VERSION,
+    626              .attributes     = MPC_ATTRIB_DALI_LOCKBYTE,
+    627              .payload_off    = 5,
+    628              .permissions    = 0,
+    629              .length         = MPC_TouchDim_LastADDRESS - (MPC_STD_PAYLOAD_OFFSET - 1),
+    630            },
+    631            .tables_len       = -1,
+    632            .GetValue         = (mpc_legacy_read_fp)  &TouchDimMPC_GetValue,
+    633            .SetValue         = (mpc_legacy_write_fp) &TouchDimMPC_SetValue,
+    634            .Init             = NULL,
+    635            .Reset            = (mpc_reset_fp)        &TouchDimMPC_Reset,
+    636          };
+    637          #endif
+    638          
+    639          
+    640          #ifdef MPC_ASTRO_NUMBER
+    641          #pragma message ("ASTRO DIM: No Port dependent Get- and SetValue Functions available")
+    642          const mpc_descriptor_t MpcLegacyAstro_pw1 = {
+    643            .keydata          = {
+    644              .id             = MemoryBank_Astro_ID,
+    645              .version        = MemoryBank_Astro_Version,
+    646              .attributes     = MPC_ATTRIB_DALI_LOCKBYTE | MPC_ATTRIB_PASSWORD1_PROT,
+    647              .payload_off    = 5,
+    648              .permissions    = 0,
+    649              .length         = MemoryBank_Astro_LastAddress - (MPC_STD_PAYLOAD_OFFSET - 1),
+    650            },
+    651            .tables_len       = -1, // indicator for legacy mpc
+    652            .GetValue         = (mpc_legacy_read_fp)  &MemoryBank_Astro_GetValue,
+    653            .SetValue         = (mpc_legacy_write_fp) &MemoryBank_Astro_SetValue,
+    654            .Init             = (mpc_init_fp)         &MemoryBank_Astro_Init,
+    655            .Reset            =                       &MemoryBank_Astro_Reset,
+    656          };
+    657          
+    658          const mpc_descriptor_t MpcLegacyAstro = {
+    659            .keydata          = {
+    660              .id             = MemoryBank_Astro_ID,
+    661              .version        = MemoryBank_Astro_Version,
+    662              .attributes     = MPC_ATTRIB_DALI_LOCKBYTE,
+    663              .payload_off    = 5,
+    664              .permissions    = 0,
+    665              .mult_perm4legacy = astropermissions,
+    666              .length         = MemoryBank_Astro_LastAddress - (MPC_STD_PAYLOAD_OFFSET - 1),
+    667            },
+    668            .tables_len       = -1, // indicator for legacy mpc
+    669            .GetValue         = (mpc_legacy_read_fp)  &MemoryBank_Astro_GetValue,
+    670            .SetValue         = (mpc_legacy_write_fp) &MemoryBank_Astro_SetValue,
+    671            .Init             = (mpc_init_fp)         &MemoryBank_Astro_Init,
+    672            .Reset            =                       &MemoryBank_Astro_Reset,
+    673          };
+    674          #endif
+    675          
+    676          
+    677          #ifdef MPC_DGUARD_NUMBER
+    678          const mpc_descriptor_t MpcLegacyDguard = {
+    679            .keydata          = {
+    680              .id             = MPC_DriverGuard_ID,
+    681              .version        = MPC_DriverGuard_VERSION,
+    682              .attributes     = MPC_ATTRIB_DALI_LOCKBYTE,
+    683              .payload_off    = 5,
+    684              .permissions    = ACL_PERM_DRV_GUARD,
+    685              .length         = MPC_DriverGuard_LastADDRESS - (MPC_STD_PAYLOAD_OFFSET - 1),
+    686            },
+    687            .tables_len       = -1, // indicator for legacy mpc
+    688            .GetValue         = (mpc_legacy_read_fp)  &MemoryBank_Dguard_GetValue_Port,
+    689            .SetValue         = (mpc_legacy_write_fp) &MemoryBank_Dguard_SetValue_Port,
+    690            .Init             = &MemoryBank_Dguard_Init,
+    691            .Reset            = &MemoryBank_Dguard_Reset,
+    692          };
+    693          #endif
+    694          
+    695          #ifdef MPC_O2T_NUMBER
+    696           //------------------------------------------------------------------------------
+    697          /// \brief Page Description
+    698          //------------------------------------------------------------------------------
+    699          
+    700          #endif
+    701          
+    702          
+    703          /** \} */
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      40  MpcLegacyAstro
+      40  MpcLegacyAstro_pw1
+      40  MpcLegacyClm
+      40  MpcLegacyClm_pw1
+      40  MpcLegacyCsm
+      40  MpcLegacyCsm_pw1
+      40  MpcLegacyDali0
+      40  MpcLegacyDali1
+      40  MpcLegacyDali1_with_perm_master
+      40  MpcLegacyDali_T6
+      40  MpcLegacyEol
+      40  MpcLegacyEol_read_only
+      40  MpcLegacyInfo
+
+ 
+ 520 bytes in section .rodata
+ 
+ 520 bytes of CONST memory
+
+Errors: none
+Warnings: none

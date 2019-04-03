@@ -1,0 +1,350 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:56
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc1_rtc.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc1_rtc.c"
+#        -D XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\xmc1_rtc.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\xmc1_rtc.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc1_rtc.c
+      1          /**
+      2           * @file xmc1_rtc.c
+      3           * @date 2016-03-09
+      4           *
+      5           * @cond
+      6           *********************************************************************************************************************
+      7           * XMClib v2.1.6 - XMC Peripheral Driver Library 
+      8           *
+      9           * Copyright (c) 2015-2016, Infineon Technologies AG
+     10           * All rights reserved.                        
+     11           *                                             
+     12           * Redistribution and use in source and binary forms, with or without modification,are permitted provided that the 
+     13           * following conditions are met:   
+     14           *                                                                              
+     15           * Redistributions of source code must retain the above copyright notice, this list of conditions and the following 
+     16           * disclaimer.                        
+     17           * 
+     18           * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following 
+     19           * disclaimer in the documentation and/or other materials provided with the distribution.                       
+     20           * 
+     21           * Neither the name of the copyright holders nor the names of its contributors may be used to endorse or promote 
+     22           * products derived from this software without specific prior written permission.                                           
+     23           *                                                                              
+     24           * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, 
+     25           * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE  
+     26           * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+     27           * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR  
+     28           * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+     29           * WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+     30           * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                                                  
+     31           *                                                                              
+     32           * To improve the quality of the software, users are encouraged to share modifications, enhancements or bug fixes with 
+     33           * Infineon Technologies AG dave@infineon.com).                                                          
+     34           *********************************************************************************************************************
+     35           *
+     36           * Change History
+     37           * --------------
+     38           *
+     39           * 2015-02-20:
+     40           *     - Initial <br>
+     41           *      
+     42           * 2015-05-20:
+     43           *     - XMC_RTC_Init() function is modified
+     44           *       by adding RTC running condition check
+     45           *
+     46           * 2016-03-09:
+     47           *     - Optimize write only registers
+     48           *
+     49           * @endcond 
+     50           *
+     51           */
+     52          
+     53          
+     54          /**
+     55           *
+     56           * @brief RTC driver for XMC microcontroller family.
+     57           *
+     58           */
+     59          
+     60          /*********************************************************************************************************************
+     61           * HEADER FILES
+     62           *********************************************************************************************************************/
+     63          #include <xmc_rtc.h>
+     64          
+     65          #if UC_FAMILY == XMC1
+     66          #include <xmc_scu.h>
+     67          
+     68          /*********************************************************************************************************************
+     69           * API IMPLEMENTATION
+     70           *********************************************************************************************************************/
+     71          /*
+     72           * Initialize the RTC peripheral
+     73           */
+     74          XMC_RTC_STATUS_t XMC_RTC_Init(const XMC_RTC_CONFIG_t *const config)
+     75          {
+     76            if (XMC_RTC_IsRunning() == false)
+     77            {
+     78              if (XMC_RTC_IsEnabled() == false)
+     79              {
+     80                XMC_RTC_Enable();
+     81          	}
+     82          	
+     83              XMC_RTC_SetPrescaler(config->prescaler);
+     84          
+     85          	while ((XMC_SCU_GetMirrorStatus() & (SCU_GENERAL_MIRRSTS_RTC_TIM0_Msk | SCU_GENERAL_MIRRSTS_RTC_TIM1_Msk)) != 0U)
+     86          	{
+     87                /* check SCU_MIRRSTS to ensure that no transfer over serial interface is pending */
+     88              }
+     89              RTC->TIM0 = config->time.raw0;
+     90              RTC->TIM1 = config->time.raw1;
+     91          	
+     92              while ((XMC_SCU_GetMirrorStatus() & (SCU_GENERAL_MIRRSTS_RTC_ATIM0_Msk | SCU_GENERAL_MIRRSTS_RTC_ATIM1_Msk)) != 0U)
+     93              {
+     94                /* check SCU_MIRRSTS to ensure that no transfer over serial interface is pending */
+     95              }
+     96              RTC->ATIM0 = config->alarm.raw0;	
+     97              RTC->ATIM1 = config->alarm.raw1;    
+     98            }
+     99            return XMC_RTC_STATUS_OK;
+    100          }
+    101          
+    102          /*
+    103           * Ungates a clock node for RTC
+    104           */ 
+    105          void XMC_RTC_Enable(void)
+    106          {
+    107            XMC_SCU_CLOCK_UngatePeripheralClock(XMC_SCU_PERIPHERAL_CLOCK_RTC);
+    108          }
+    109          
+    110          /*
+    111           * Gates a clock node for RTC
+    112           */ 
+    113          void XMC_RTC_Disable(void)
+    114          {
+    115            XMC_SCU_CLOCK_GatePeripheralClock(XMC_SCU_PERIPHERAL_CLOCK_RTC);
+    116          }
+    117          
+    118          /*
+    119           * Suspends RTC function during CPU HALT mode
+    120           */ 
+    121          void XMC_RTC_SetDebugMode(const XMC_RTC_DEBUG_MODE_t debug_mode)
+    122          {
+    123            uint32_t regval;
+    124            regval = (RTC->CTR & (uint32_t)~RTC_CTR_SUS_Msk);
+    125            RTC->CTR = (regval | (uint32_t)debug_mode);
+    126          }
+    127          
+    128          /*
+    129           * Enable RTC periodic and alarm event(s)
+    130           */ 
+    131          void XMC_RTC_EnableEvent(const uint32_t event)
+    132          {
+    133            RTC->MSKSR |= event;
+    134          }
+    135          
+    136          /*
+    137           * Disable RTC periodic and alarm event(s)
+    138           */
+    139          void XMC_RTC_DisableEvent(const uint32_t event)
+    140          {
+    141            RTC->MSKSR &= ~event;
+    142          }
+    143          
+    144          /*
+    145           * Clear RTC periodic and alarm event(s)
+    146           */
+    147          void XMC_RTC_ClearEvent(const uint32_t event)
+    148          {
+    149            RTC->CLRSR = event;
+    150          }
+    151          
+    152          /*
+    153           * Checks RTC peripheral is enabled for programming to its registers
+    154           */
+    155          bool XMC_RTC_IsEnabled(void)
+    156          {
+    157            return !XMC_SCU_CLOCK_IsPeripheralClockGated(XMC_SCU_PERIPHERAL_CLOCK_RTC);
+    158          }
+    159          
+    160          #endif /* UC_FAMILY == XMC1 */
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   XMC_RTC_ClearEvent
+       8   XMC_RTC_Disable
+         8   -> XMC_SCU_CLOCK_GatePeripheralClock
+       0   XMC_RTC_DisableEvent
+       8   XMC_RTC_Enable
+         8   -> XMC_SCU_CLOCK_UngatePeripheralClock
+       0   XMC_RTC_EnableEvent
+       8   XMC_RTC_Init
+         8   -> XMC_RTC_Enable
+         8   -> XMC_RTC_IsEnabled
+         8   -> XMC_RTC_IsRunning
+         8   -> XMC_RTC_SetPrescaler
+         8   -> XMC_SCU_GetMirrorStatus
+       8   XMC_RTC_IsEnabled
+         8   -> XMC_SCU_CLOCK_IsPeripheralClockGated
+       0   XMC_RTC_IsRunning
+       0   XMC_RTC_SetDebugMode
+       0   XMC_SCU_GetMirrorStatus
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable6
+       4  ??DataTable6_1
+       4  ??DataTable6_2
+       4  ??DataTable6_3
+       4  ??DataTable6_4
+       4  ??DataTable6_5
+       4  ??DataTable6_6
+       4  ??DataTable6_7
+       6  XMC_RTC_ClearEvent
+      12  XMC_RTC_Disable
+      12  XMC_RTC_DisableEvent
+      12  XMC_RTC_Enable
+      12  XMC_RTC_EnableEvent
+      82  XMC_RTC_Init
+      24  XMC_RTC_IsEnabled
+      12  XMC_RTC_IsRunning
+      18  XMC_RTC_SetDebugMode
+       6  XMC_SCU_GetMirrorStatus
+
+ 
+ 228 bytes in section .text
+ 
+ 228 bytes of CODE memory
+
+Errors: none
+Warnings: none

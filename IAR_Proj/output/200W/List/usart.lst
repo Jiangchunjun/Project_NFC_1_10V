@@ -1,0 +1,457 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:54
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Driver\src\usart.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Driver\src\usart.c" -D
+#        XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\usart.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\usart.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Driver\src\usart.c
+      1          /*
+      2          ***************************************************************************************************
+      3          *                               Usart Communication Function
+      4          *
+      5          * File   : usart.c
+      6          * Author : Douglas Xie
+      7          * Date   : 2016.04.26
+      8          ***************************************************************************************************
+      9          * Copyright (C) 2016 OSRAM Asia Pacific Management Company.  All rights reserved.
+     10          ***************************************************************************************************
+     11          */
+     12          
+     13          #ifdef ENABLE_USART
+     14          
+     15          /* Include Head Files ----------------------------------------------------------------------------*/
+     16          #include "usart.h"
+     17          
+     18          /* Macro Defines ---------------------------------------------------------------------------------*/
+     19          
+     20          /* Global Variable -------------------------------------------------------------------------------*/
+     21          uint8_t g_rx_buffer[USART_RX_BUFFER_SIZE + 2];
+     22          uint8_t g_rx_index = 0;
+     23          
+     24          /* Function Declaration --------------------------------------------------------------------------*/
+     25          
+     26          /* Function Implement ----------------------------------------------------------------------------*/
+     27          
+     28          /*******************************************************************************
+     29          * @Brief   Enable USART Module
+     30          * @Param   
+     31          * @Note    config usart module and start it
+     32          * @Return  
+     33          *******************************************************************************/
+     34          void USART_Enable(void)
+     35          {
+     36              /* Pins configuration */
+     37              XMC_GPIO_CONFIG_t usart_tx_config;
+     38              XMC_GPIO_CONFIG_t usart_rx_config; 
+     39              
+     40              /* USART configuration */
+     41              XMC_UART_CH_CONFIG_t usart_channel_config = 
+     42              {	
+     43                  .data_bits = 8U,
+     44                  .stop_bits = 1U,
+     45                  .baudrate = USART_BAUTRATE
+     46              };
+     47              
+     48              /* Configure USART channel */
+     49              XMC_UART_CH_Init(USART_CHANNEL, &usart_channel_config);
+     50              XMC_UART_CH_SetInputSource(USART_CHANNEL, XMC_UART_CH_INPUT_RXD, USART_RXD_SOURCE);
+     51              
+     52              /* Enable Receive Interrupt */
+     53              XMC_UART_CH_SetInterruptNodePointer(USART_CHANNEL, USART_IRQ_NODE);
+     54              XMC_UART_CH_SelectInterruptNodePointer(USART_CHANNEL, XMC_UART_CH_INTERRUPT_NODE_POINTER_RECEIVE, USART_IRQ_NODE);
+     55              XMC_UART_CH_EnableEvent(USART_CHANNEL, XMC_UART_CH_EVENT_STANDARD_RECEIVE);
+     56              NVIC_SetPriority(USART_IRQn, 11);
+     57              NVIC_EnableIRQ(USART_IRQn);
+     58              
+     59          	/* Start USART channel */
+     60              XMC_UART_CH_Start(USART_CHANNEL);
+     61              
+     62           	/* Pins mode */
+     63          	usart_tx_config.mode = USART_TXD_PIN_MODE;
+     64          	usart_rx_config.mode = XMC_GPIO_MODE_INPUT_PULL_UP;
+     65              
+     66              /* Configure pins */
+     67          	XMC_GPIO_Init(USART_TX_PIN, &usart_tx_config);
+     68              XMC_GPIO_Init(USART_RX_PIN, &usart_rx_config);
+     69          }
+     70          
+     71          
+     72          /*******************************************************************************
+     73          * @Brief   Disable USART Module
+     74          * @Param   
+     75          * @Note    stop usart channel and set TXD RXD to output low level
+     76          * @Return  
+     77          *******************************************************************************/
+     78          void USART_Disable(void)
+     79          {
+     80              /* Pins configuration */
+     81              XMC_GPIO_CONFIG_t usart_tx_config;
+     82              XMC_GPIO_CONFIG_t usart_rx_config;
+     83              
+     84          	/* Stop UART channel */
+     85              XMC_UART_CH_Stop(USART_CHANNEL);
+     86              
+     87              /* Pins mode, set to output low level when disable usart */
+     88          	usart_tx_config.mode = USART_DISEN_OUT_MODE;
+     89              usart_tx_config.output_level = USART_DISEN_OUT_LEVEL;
+     90          	usart_rx_config.mode = USART_DISEN_OUT_MODE;
+     91              usart_rx_config.output_level = USART_DISEN_OUT_LEVEL;
+     92              
+     93              /* Configure pins */
+     94          	XMC_GPIO_Init(USART_TX_PIN, &usart_tx_config);
+     95              XMC_GPIO_Init(USART_RX_PIN, &usart_rx_config);
+     96          }
+     97          
+     98          
+     99          /*******************************************************************************
+    100          * @Brief   USART Send Data
+    101          * @Param   [in]data  - pointer to the data buffer
+    102          *          [in]count - data lenghth in buffer
+    103          * @Note    send out a data buffer directly
+    104          * @Return  
+    105          *******************************************************************************/
+    106          void USART_SendData(uint8_t *data, uint8_t count)
+    107          {
+    108              uint8_t index;
+    109              uint16_t txdata;
+    110                  
+    111              /* disable global interrupt to improve active time */
+    112              //__disable_interrupt();
+    113              
+    114              /* send out data buffer one by one */
+    115              for (index = 0; index < count; index++)
+    116              {
+    117                  txdata = (uint16_t)(data[index]);
+    118                  XMC_UART_CH_Transmit(USART_CHANNEL, txdata);
+    119              }
+    120              
+    121              /* resume global interrupt */
+    122              //__enable_interrupt();
+    123          }
+    124          
+    125          
+    126          /*******************************************************************************
+    127          * @Brief   USART Get Receive Data
+    128          * @Param   [out]data  - pointer to the data buffer
+    129          * @Note    copy recieve buffer data to target
+    130          * @Return  
+    131          *******************************************************************************/
+    132          void USART_GetRxData(uint8_t *data)
+    133          {
+    134              uint8_t i;
+    135              
+    136              /* Copy rx buffer to target */
+    137              for (i = 0; i < USART_RX_BUFFER_SIZE; i++)
+    138              {
+    139                  /* Copy data */
+    140                  *data =  g_rx_buffer[i];
+    141                  
+    142                  /* Shift to next address */
+    143                  data++;
+    144              }
+    145          }
+    146          
+    147          
+    148          /*******************************************************************************
+    149          * @Brief   USART Get Receive Data Count
+    150          * @Param   
+    151          * @Note    output data count that save in receive buffer
+    152          * @Return  receive data count
+    153          *******************************************************************************/
+    154          uint8_t USART_GetRxCount(void)
+    155          {    
+    156              uint8_t count = 0;
+    157              
+    158              if(g_rx_index > USART_RX_BUFFER_SIZE)
+    159              {
+    160                  count = USART_RX_BUFFER_SIZE;
+    161              }
+    162              else
+    163              {
+    164                  count = g_rx_index;
+    165              }
+    166              
+    167              return count;
+    168          }
+    169          
+    170          
+    171          /*******************************************************************************
+    172          * @Brief   USART Reset Buffer
+    173          * @Param   
+    174          * @Note    Clear receiver data buffer and count
+    175          * @Return  
+    176          *******************************************************************************/
+    177          void USART_ResetBuffer(void)
+    178          {
+    179              uint8_t i;
+    180              
+    181              /* Read buffer again to clean buffer data */
+    182              XMC_USIC_CH_RXFIFO_Flush(USART_CHANNEL);
+    183              XMC_USIC_CH_TXFIFO_Flush(USART_CHANNEL);
+    184              XMC_UART_CH_GetReceivedData(USART_CHANNEL);
+    185              
+    186              /* Copy rx buffer to target */
+    187              for (i = 0; i < USART_RX_BUFFER_SIZE; i++)
+    188              {
+    189                  /* Copy data */
+    190                  g_rx_buffer[i] = 0;
+    191              }
+    192              
+    193              g_rx_index = 0;
+    194          }
+    195          
+    196          
+    197          /*******************************************************************************
+    198          * @Brief   USART Receive Interrupt Handler
+    199          * @Param   
+    200          * @Note    get rx byte form usart and save to g_rx_buffer
+    201          * @Return  
+    202          *******************************************************************************/
+    203          void USART_RXD_IRQ_Handler(void)
+    204          {
+    205              uint16_t receive = 0;
+    206          
+    207              /* Get one byte data from USART */
+    208              receive = XMC_UART_CH_GetReceivedData(USART_CHANNEL);
+    209              
+    210              /* Save data if buffer is not full */
+    211              if(g_rx_index < USART_RX_BUFFER_SIZE+2)
+    212              {
+    213                  /* Save to receive buffer */
+    214                  g_rx_buffer[g_rx_index++] = receive & 0xFF;
+    215              }
+    216          }
+    217          
+    218          /*******************************************************************************
+    219          * @Brief   USART Print Information
+    220          * @Param   [in]pinfo  - pointer to the print string infomation
+    221          * @Note    send print string to PC
+    222          * @Return  
+    223          *******************************************************************************/
+    224          void USART_PrintInfo(uint8_t *pinfo)
+    225          {    
+    226          #ifdef DEBUG_PRINT
+    227              /* send out string until the end */
+    228              while(*pinfo != '\0')
+    229              {
+    230                  XMC_UART_CH_Transmit(USART_CHANNEL, *pinfo);
+    231                  pinfo++;
+    232              }
+    233          #endif
+    234          }
+    235          
+    236          
+    237          #endif /* ENABLE_USART */
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   NVIC_EnableIRQ
+      20   NVIC_SetPriority
+      24   USART_Disable
+        24   -> XMC_GPIO_Init
+        24   -> XMC_UART_CH_Stop
+      40   USART_Enable
+        40   -> NVIC_EnableIRQ
+        40   -> NVIC_SetPriority
+        40   -> XMC_GPIO_Init
+        40   -> XMC_UART_CH_EnableEvent
+        40   -> XMC_UART_CH_Init
+        40   -> XMC_UART_CH_SelectInterruptNodePointer
+        40   -> XMC_UART_CH_SetInputSource
+        40   -> XMC_UART_CH_SetInterruptNodePointer
+        40   -> XMC_UART_CH_Start
+       4   USART_GetRxCount
+       4   USART_GetRxData
+       0   USART_PrintInfo
+       8   USART_ResetBuffer
+         8   -> XMC_UART_CH_GetReceivedData
+         8   -> XMC_USIC_CH_RXFIFO_Flush
+         8   -> XMC_USIC_CH_TXFIFO_Flush
+      16   USART_SendData
+        16   -> XMC_UART_CH_Transmit
+       8   USIC0_2_IRQHandler
+         8   -> XMC_UART_CH_GetReceivedData
+       8   XMC_UART_CH_SelectInterruptNodePointer
+         8   -> XMC_USIC_CH_SetInterruptNodePointer
+       8   XMC_UART_CH_SetInputSource
+         8   -> XMC_USIC_CH_SetInputSource
+       8   XMC_UART_CH_SetInterruptNodePointer
+         8   -> XMC_USIC_CH_SetInterruptNodePointer
+       0   XMC_UART_CH_Start
+       0   XMC_USIC_CH_RXFIFO_Flush
+       4   XMC_USIC_CH_SetInputSource
+       0   XMC_USIC_CH_TXFIFO_Flush
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable7
+       4  ??DataTable7_1
+       4  ??DataTable7_2
+       4  ??DataTable7_3
+       4  ??DataTable7_4
+       4  ??DataTable7_5
+       4  ??DataTable7_6
+      12  ?_0
+      14  NVIC_EnableIRQ
+     132  NVIC_SetPriority
+      60  USART_Disable
+     130  USART_Enable
+      24  USART_GetRxCount
+      26  USART_GetRxData
+       2  USART_PrintInfo
+      54  USART_ResetBuffer
+      40  USART_SendData
+      40  USIC0_2_IRQHandler
+      10  XMC_UART_CH_SelectInterruptNodePointer
+      36  XMC_UART_CH_SetInputSource
+      14  XMC_UART_CH_SetInterruptNodePointer
+      14  XMC_UART_CH_Start
+      12  XMC_USIC_CH_RXFIFO_Flush
+      34  XMC_USIC_CH_SetInputSource
+      12  XMC_USIC_CH_TXFIFO_Flush
+      16  g_rx_buffer
+       1  g_rx_index
+
+ 
+  17 bytes in section .bss
+  12 bytes in section .rodata
+ 682 bytes in section .text
+ 
+ 682 bytes of CODE  memory
+  12 bytes of CONST memory
+  17 bytes of DATA  memory
+
+Errors: none
+Warnings: none

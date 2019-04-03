@@ -1,0 +1,298 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:49
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\CRC\driver_sw\crc_driver_sw.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\CRC\driver_sw\crc_driver_sw.c"
+#        -D XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\crc_driver_sw.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\crc_driver_sw.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\CRC\driver_sw\crc_driver_sw.c
+      1          // ---------------------------------------------------------------------------------------------------------------------
+      2          // Microcontroller Toolbox - Firmware Framework for Full Digital SSL Ballasts
+      3          // ---------------------------------------------------------------------------------------------------------------------
+      4          // (c) Osram spa
+      5          //     Via Castagnole 65/a
+      6          //     31100 Treviso (I)
+      7          //
+      8          //
+      9          // The content of this file is intellectual property of OSRAM spa. It is
+     10          // confidential and not intended for any public release. All rights reserved.
+     11          //
+     12          //
+     13          // Indent style: Replace tabs by spaces, 2 spaces per indentation level
+     14          //
+     15          // Initial version: 2014-12, g.marcolin@osram.it
+     16          //
+     17          // Change History:
+     18          //
+     19          // $Author: G.Marcolin $
+     20          // $Revision: 111 $
+     21          // $Date: 2015-01-07 18:47:16 +0800 (Wed, 07 Jan 2015) $
+     22          // $Id: crc_driver_sw.c 111 2015-01-07 10:47:16Z G.Marcolin $
+     23          // $URL: https://app-ehnsvn02.int.osram-light.com/svn/EC/Toolbox1.0/Crc/tags/v1.3/driver_sw/crc_driver_sw.c $
+     24          //
+     25          // ---------------------------------------------------------------------------------------------------------------------
+     26          
+     27          /** \addtogroup CrcDriver
+     28           * \{
+     29           * \defgroup CrcDriverSw CRC driver - SW emulation
+     30           * \brief Software driver emulation for CRC peripheral 
+     31           * \{
+     32           *
+     33           * \file
+     34           * \brief Central functions for CRC peripheral emulation.
+     35           */
+     36          
+     37          #define MODULE_CRC
+     38          #include "Config.h"
+     39          
+     40          #include "Global.h"
+     41          #include "crc_driver.h"
+     42          
+     43          /** ********************************************************************************************************************
+     44          * \brief Table for CRC calculation
+     45          *
+     46          ***********************************************************************************************************************/
+     47          
+     48          const uint32_t CrcTable[] =		    // Nibble lookup table for 0x04C11DB7 polynomial
+     49          {
+     50          
+     51          	0x00000000,0x04C11DB7,0x09823B6E,0x0D4326D9,
+     52          	0x130476DC,0x17C56B6B,0x1A864DB2,0x1E475005,
+     53          	0x2608EDB8,0x22C9F00F,0x2F8AD6D6,0x2B4BCB61,
+     54          	0x350C9B64,0x31CD86D3,0x3C8EA00A,0x384FBDBD
+     55          
+     56          };
+     57          
+     58          /** ********************************************************************************************************************
+     59          * \brief CRC
+     60          *
+     61          ***********************************************************************************************************************/
+     62          
+     63          static uint32_t crc = 0xFFFFFFFF;
+     64          
+     65          /** ********************************************************************************************************************
+     66          * \brief CRC driver init - sw emulation
+     67          *
+     68          * \warning Reset CRC to 0xFFFFFFFF.
+     69          ***********************************************************************************************************************/
+     70          
+     71          void crc_drv_init( void )
+     72          {
+     73          	crc = 0xFFFFFFFF;
+     74          }
+     75          
+     76          /** ********************************************************************************************************************
+     77          * \brief Resets CRC to 0xFFFFFFFF
+     78          *
+     79          ***********************************************************************************************************************/
+     80          
+     81          void crc_drv_reset( void )
+     82          {
+     83          	crc = 0xFFFFFFFF;
+     84          }
+     85          
+     86          /** ********************************************************************************************************************
+     87          * \brief Computes the 32-bit CRC of a given data word.
+     88          *
+     89          * \param data
+     90          *        word to be added
+     91          *
+     92          * \retval CRC
+     93          ***********************************************************************************************************************/
+     94          
+     95          uint32_t crc_drv_calc(uint32_t data)
+     96          {
+     97          	crc = crc ^ data; // Apply all 32-bits
+     98          
+     99          	// Process 32-bits, 4 at a time, or 8 rounds
+    100          
+    101          	crc = (crc << 4) ^ CrcTable[crc >> 28]; // Assumes 32-bit reg, masking index to 4-bits
+    102          	crc = (crc << 4) ^ CrcTable[crc >> 28]; //  0x04C11DB7 Polynomial used in STM32
+    103          	crc = (crc << 4) ^ CrcTable[crc >> 28];
+    104          	crc = (crc << 4) ^ CrcTable[crc >> 28];
+    105          	crc = (crc << 4) ^ CrcTable[crc >> 28];
+    106          	crc = (crc << 4) ^ CrcTable[crc >> 28];
+    107          	crc = (crc << 4) ^ CrcTable[crc >> 28];
+    108          	crc = (crc << 4) ^ CrcTable[crc >> 28];
+    109          
+    110          	return(crc);
+    111          }
+    112          
+    113          /** ********************************************************************************************************************
+    114          * \brief Gets actual 32-bits CRC
+    115          *
+    116          * \retval CRC
+    117          ***********************************************************************************************************************/
+    118          
+    119          
+    120          uint32_t crc_drv_get(void)
+    121          {
+    122          	return crc;
+    123          }
+    124          
+    125          /**********************************************************************************************************************/
+    126          
+    127          /** \} */ // CrcDriverSw
+    128          /** \} */ // CrcDriver
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   crc_drv_calc
+       0   crc_drv_get
+       0   crc_drv_init
+       0   crc_drv_reset
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable3
+       4  ??DataTable3_1
+      64  CrcTable
+       4  crc
+     224  crc_drv_calc
+       6  crc_drv_get
+      10  crc_drv_init
+      10  crc_drv_reset
+
+ 
+   4 bytes in section .data
+  64 bytes in section .rodata
+ 258 bytes in section .text
+ 
+ 258 bytes of CODE  memory
+  64 bytes of CONST memory
+   4 bytes of DATA  memory
+
+Errors: none
+Warnings: none

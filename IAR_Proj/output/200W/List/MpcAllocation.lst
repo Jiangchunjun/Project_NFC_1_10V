@@ -1,0 +1,643 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:52
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\Alloc\MpcAllocation.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\Alloc\MpcAllocation.c"
+#        -D XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\MpcAllocation.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\MpcAllocation.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\Alloc\MpcAllocation.c
+      1          // ---------------------------------------------------------------------------------------------------------------------
+      2           // Microcontroller Toolbox - Firmware Framework for Full Digital SSL Ballasts
+      3          // ---------------------------------------------------------------------------------------------------------------------
+      4          // (c) Osram GmbH
+      5          //     DS D EC - MCC
+      6          //     Parkring 33
+      7          //     85748 Garching
+      8          //
+      9          //
+     10          // The content of this file is intellectual property of OSRAM GmbH. It is
+     11          // confidential and not intended for any public release. All rights reserved.
+     12          //
+     13          //
+     14          // Initial version: 2016-07 W.Limmer@osram.de
+     15          //
+     16          // Change History:
+     17          //
+     18          // $Author: w.limmer $
+     19          // $Revision: 11759 $
+     20          // $Date: 2018-02-02 01:27:53 +0800 (Fri, 02 Feb 2018) $
+     21          // $Id: MpcAllocation.c 11759 2018-02-01 17:27:53Z w.limmer $
+     22          // $URL: https://app-ehnsvn02.int.osram-light.com/svn/EC/Mpc/Alloc/branches/RC_2018-02-20/Src/MpcAllocation.c $
+     23          //
+     24          
+     25          
+     26          /** \addtogroup MPC Multi Purpose Centers
+     27           * \{
+     28           * \file
+     29           * \brief Allocation of all Mpcs
+     30           *
+     31           * Include all Mpc header files and allocate the relevant ones (according to the config) in an array
+     32           * array to their description tables and cmd and fallback read() and write() functions.
+     33           */
+     34          
+     35          #define MODULE_MPC
+     36          #include <Global.h>
+     37          #include "Config.h"
+     38          
+     39          #include "Mpc.h"
+     40          
+     41          #include "MpcInternal.h"
+     42          #include "MpcAllocation.h"
+     43          
+     44          #include "MpcDescriptors.h"
+     45          #include "MpcIncludeAll.h"
+     46          #include "AclDefaults.h"
+     47          
+     48          extern const mpc_descriptor_t O2T_Descriptor;
+     49          // change defined value to 1 to switch on debug print
+     50          // Always pass the debug code to the compiler, otherwise it will break sooner or later see
+     51          // http://stackoverflow.com/questions/1644868/c-define-macro-for-debug-printing incl. the reasons for "do ... while(0)"
+     52          #define DEBUGPRINT_MPC
+     53          #define DEBUGPRINT(...)     do { if (  DEBUGPRINT_MPC + 0 ) { printf(__VA_ARGS__); }; } while (0)
+     54          
+     55          
+     56          
+     57          // ---------------------------------------------------------------------------------------------------------------------
+     58          // ---------------------------------------------------------------------------------------------------------------------
+     59          // Platform "OTi Indoor NonSelv"
+     60          // Adjust these tables only in close cooperation with DS D EMEA Garching:
+     61          //  - Branchetti Filippo
+     62          //  - Gerber Maximilian
+     63          //  - Schwarzfischer Christof
+     64          //  - Limmer Walter
+     65          
+     66          
+     67          const mpc_keydata_t * MpcKeydata[] =
+     68          {
+     69              &(MSK_Descriptor.keydata),                //  1
+     70              &(BIO_Descriptor.keydata),                //  2
+     71              &(MpcLegacyCsm.keydata),                  //  3
+     72              &(MpcLegacyClm.keydata),                  //  4
+     73              &(MpcLegacyInfo.keydata),                 //  6
+     74              &(MpcLegacyAstro.keydata),                 //  6
+     75              &(MpcLegacyEol.keydata),
+     76              &(O2T_Descriptor.keydata),
+     77              &(MpcLegacyDali0.keydata),                //  9
+     78              &(MpcLegacyDali1.keydata),                // 10
+     79          };
+     80          
+     81          
+     82          static const uint8_t dali_mpc_mapping[MPC_MAX_NUMBER + 1] = {
+     83              [MPC_MSK_NUMBER]              =  1,
+     84              [MPC_BIO_NUMBER]              =  2,
+     85              [MPC_CSM_NUMBER]              =  3,
+     86              [MPC_CLM_NUMBER]              =  4,
+     87              [MPC_INFO_NUMBER]             =  5,
+     88              [MPC_ASTRO_NUMBER]            =  6,
+     89              [MPC_EOL_NUMBER]              =  7,
+     90              [MPC_O2T_NUMBER]              =  8,
+     91              //[MPC_TDC_NUMBER]              =  6,
+     92          
+     93              [0]                           =  9,
+     94              [1]                           =  10,
+     95              // No Dali mapping for the Dali-Pseudo-Mpc
+     96          };
+     97          
+     98          
+     99          #ifdef PLATFORM_EMEA_INDOOR_NONISOLATED
+    100          #pragma message ("Config PLATFORM_EMEA_INDOOR_NONISOLATED")
+    101          
+    102          const mpc_keydata_t * MpcKeydata[] =
+    103          {
+    104              &(MSK_Descriptor.keydata),                //  2
+    105              &(MpcLegacyCsm.keydata),                  //  3
+    106              &(MpcLegacyClm.keydata),                  //  4
+    107              &(MpcLegacyInfo.keydata),                 // 29
+    108              &(MpcLegacyTDC.keydata),                  // 31
+    109              &(MpcLegacyGeneralFeatures.keydata),      // 15
+    110              &(ValData_Description.keydata),           // 50
+    111              &(MpcLegacyDali0.keydata),                //  0
+    112              &(MpcLegacyDali1.keydata),                //  1
+    113              &(MpcLegacyDali_T6.keydata),              //  -
+    114          };
+    115          
+    116            static const uint8_t dali_mpc_mapping[MPC_MAX_NUMBER + 1] = {
+    117              [0]                           = 13,
+    118              [1]                           = 14,
+    119              // No Dali mapping for the Dali-Pseudo-Mpc
+    120              [MPC_MSK_NUMBER]              =  1,
+    121              [MPC_BIO_NUMBER]              =  2,
+    122              [MPC_CSM_NUMBER]              =  3,       // index of page in above table
+    123              [MPC_CLM_NUMBER]              =  4,       // sparse array with continuous numbers covering all
+    124              [MPC_EMERGENCY_NUMBER]        =  5,       // entries of the mpc_nr pointers array
+    125              [MPC_INFO_NUMBER]             =  6,       // ...
+    126              [MPC_POWER_NUMBER]            =  7,
+    127              [MPC_TDC_NUMBER]              =  8,
+    128              [MPC_DIM2DARK_NUMBER]         =  9,
+    129              [MPC_DGUARD_NUMBER]           = 10,
+    130              [MPC_GENERALFEATURES_NUMBER]  = 11,
+    131              [MPC_VALDATA_NUMBER]          = 12,
+    132            };
+    133          #endif
+    134          
+    135          
+    136          // ---------------------------------------------------------------------------------------------------------------------
+    137          // ---------------------------------------------------------------------------------------------------------------------
+    138          // Platform "OTi Indoor NonSelv Tunable White 2017/2018"
+    139          // Adjust these tables only in close cooperation with DS D EMEA Garching:
+    140          //  - Branchetti Filippo
+    141          //  - Limmer Walter
+    142          
+    143          #ifdef PLATFORM_EMEA_INDOOR_NONISOLATED_TW
+    144          #pragma message ("Config PLATFORM_EMEA_INDOOR_NONISOLATED_TW")
+    145          
+    146          const mpc_keydata_t * MpcKeydata[] =
+    147          {
+    148              &(MSK_Descriptor.keydata),                //  2
+    149              &(BIO_Descriptor.keydata),
+    150              &(MpcLegacyClm.keydata),                  //  4
+    151              &(MpcLegacyEmergency.keydata),            // 17
+    152              &(MpcLegacyInfo.keydata),                 // 29
+    153              &(MpcLegacyPower.keydata),                // 30
+    154              &(MpcLegacyTDC.keydata),                  // 31
+    155              &(MpcLegacyDguard.keydata),               // 18
+    156              &(ValData_Description.keydata),           // 50
+    157              &(MpcLegacyDali0.keydata),                //  0
+    158              &(MpcLegacyDali1.keydata),                //  1
+    159              &(MpcLegacyDali_T6.keydata),              //  -
+    160          };
+    161          
+    162            static const uint8_t dali_mpc_mapping[MPC_MAX_NUMBER + 1] = {
+    163              [0]                       =  10,
+    164              [1]                       =  11,
+    165              // No Dali mapping for the Dali-Pseudo-Mpc
+    166              [MPC_MSK_NUMBER]          =  1,
+    167              [MPC_CLM_NUMBER]          =  3,        // sparse array with continuous numbers covering all
+    168              [MPC_EMERGENCY_NUMBER]    =  4,        // entries of the mpc_nr pointers array
+    169              [MPC_INFO_NUMBER]         =  5,        // ...
+    170              [MPC_POWER_NUMBER]        =  6,
+    171              [MPC_TDC_NUMBER]          =  7,
+    172              [MPC_DGUARD_NUMBER]       =  8,
+    173              [MPC_VALDATA_NUMBER]      =  9,
+    174              [35]                      = 12,   // MNO dalimapping for Dali Params, for testpurposes, refactor asap
+    175            };
+    176          #endif
+    177          
+    178          
+    179          // ---------------------------------------------------------------------------------------------------------------------
+    180          // ---------------------------------------------------------------------------------------------------------------------
+    181          // Platform "OT Indoor Selv for Compact and Linear Designs Generation 2" (started in 2017)
+    182          // Adjust these tables only in close cooperation with DS D EMEA Garching:
+    183          //  - Max Schmidl
+    184          //  - Ralf Berchtold
+    185          //  - Joachim Eisenberg
+    186          //  - Walter Limmer
+    187          
+    188          #ifdef PLATFORM_EMEA_INDOOR_ISOLATED_G2
+    189            #pragma message ("Config PLATFORM_EMEA_INDOOR_ISOLATED_G2")
+    190            #define LEGACY_PERM_COUNT                                 1
+    191            const mpc_keydata_t * MpcKeydata[] = {
+    192              &(MSK_Descriptor.keydata),                //  1
+    193              &(BIO_Descriptor.keydata),                //  2
+    194              &(MpcLegacyCsm.keydata),                  //  3
+    195              &(MpcLegacyClm.keydata),                  //  4
+    196              &(MpcLegacyDim2Dark.keydata),             //  5
+    197              &(MpcLegacyGeneralFeatures.keydata),      //  6
+    198              &(MpcLegacyEmergency.keydata),            //  7
+    199              &(MpcLegacyDguard.keydata),               //  8
+    200              &(MpcLegacyTfm.keydata),                  //  9
+    201              &(MpcLegacyInfo.keydata),                 //  10
+    202              &(MpcLegacyPower.keydata),                //  11
+    203              &(MpcLegacyTDC.keydata),                  //  12
+    204              &(MpcLegacyDali0.keydata),                //  13
+    205              &(MpcLegacyDali1.keydata),                //  14
+    206              &(MpcLegacyDali_T6.keydata),              //  16
+    207          //    &(MpcLegacyDebug.keydata),              //  17
+    208            };
+    209          
+    210            const uint8_t dali_mpc_mapping[MPC_MAX_NUMBER + 1] = {
+    211              [MPC_MSK_NUMBER]              =  1,
+    212              [MPC_BIO_NUMBER]              =  2,
+    213              [MPC_CSM_NUMBER]              =  3,
+    214              [MPC_CLM_NUMBER]              =  4,
+    215              [MPC_DIM2DARK_NUMBER]         =  5,
+    216              [MPC_GENERALFEATURES_NUMBER]  =  6,
+    217              [MPC_EMERGENCY_NUMBER]        =  7,
+    218              [MPC_DGUARD_NUMBER]           =  8,
+    219              [MPC_TFM_NUMBER]              =  9,
+    220              [MPC_INFO_NUMBER]             = 10 ,
+    221              [MPC_POWER_NUMBER]            = 11,
+    222              [MPC_TDC_NUMBER]              = 12,
+    223              [0]                           = 13,
+    224              [1]                           = 14,
+    225              // No Dali mapping for page 15 (Dali-internal data pseudo-Mpc)
+    226          //    [MPC_DEBUG_NUMBER]          =  16
+    227            };
+    228          
+    229          /** ONLY left for reference - is done by nfc_mpc_start_addr_create now.
+    230            // refers to the MpcKeydata array - base adresses of the MPC data inside the tag
+    231            const uint16_t NfcMpcTagStartAddr[] = {
+    232              0x120,     // 288 - MSK_Description  /// bei 0x120 fängt der beschreibbare sektor an
+    233              0x140,     // 320 - MpcLegacyCsm
+    234              0x14C,     // 332 - MpcLegacyClm
+    235              0x160,     // 352 - MpcLegacyDim2Dark
+    236              0x164,     // 356 - MpcLegacyGeneralFeatures
+    237              0x168,     // 360 - MpcLegacyEmergency
+    238              0x170,     // 368 - MpcLegacyDguard
+    239              0x178,     // 376 - MpcLegacyTfm
+    240              0x184,     // 388 - MpcLegacyInfo
+    241              0x194,     // 404 - MpcLegacyPower
+    242              0x19C,     // 412 - MpcLegacyTDC
+    243              0x1B0,     // 432 - MpcLegacyDali0
+    244              0x1CC,     // 460 - MpcLegacyDali1
+    245              0x218,     // 536 - MpcLegacyDali_T6 /// länge der Membank +2 (CRC) - bei dezimal 768 muß schluss sein, da ist dann protected Area - siehe nfc_config.h
+    246                                                   /// siehe auch 2017_04_06_NFC2_Interface_T4T_v1.8
+    247            };
+    248          */
+    249          
+    250          #endif
+    251          
+    252          
+    253          // ---------------------------------------------------------------------------------------------------------------------
+    254          // ---------------------------------------------------------------------------------------------------------------------
+    255          // Platform "OT Flex Signage Constant Voltage" (started/converted to DALI Lib V4.x in 2018-01)
+    256          // Adjust these tables only in close cooperation with DS D EMEA Treviso and Garching:
+    257          //  - Enrico Bortot
+    258          //  - Joachim Eisenberg
+    259          //  - Walter Limmer
+    260          
+    261          #ifdef PLATFORM_EMEA_CONSTANT_VOLTAGE_FS // FS = FlexSignage
+    262            #pragma message ("Config PLATFORM_EMEA_CONSTANT_VOLTAGE_FS")
+    263          
+    264            const mpc_keydata_t * MpcKeydata[] = {
+    265              &(MpcLegacyAstro.keydata),                //   6
+    266              &(MpcLegacyInfo.keydata),                 //  10
+    267              &(MpcLegacyDali0.keydata),                //  13
+    268              &(MpcLegacyDali1.keydata),                //  14
+    269            };
+    270          
+    271            const uint8_t dali_mpc_mapping[MPC_MAX_NUMBER + 1] = {
+    272              [MPC_ASTRO_NUMBER]            =  1,
+    273              [MPC_INFO_NUMBER]             =  2,
+    274              [0]                           =  3,
+    275              [1]                           =  4,
+    276            };
+    277          
+    278          #endif
+    279          
+    280          
+    281          // ---------------------------------------------------------------------------------------------------------------------
+    282          // ---------------------------------------------------------------------------------------------------------------------
+    283          // Platform "OT Outdoor 4DIM Generation 2" (started in 2016)
+    284          //
+    285          // Adjust these tables only in close cooperation with
+    286          // 1. DS D EMEA HW Treviso, Diego Fighera
+    287          // 2. DS D EMEA SW Garching, Joachim Eisenberg or Walter Limmer
+    288          
+    289          #ifdef PLATFORM_OUTDOOR_4DIM_G2
+    290            #pragma message ("Config PLATFORM_OUTDOOR_4DIM_G2")
+    291          
+    292            const mpc_keydata_t * MpcKeydata[] = {
+    293              &(MSK_Descriptor.keydata),                // no  1          // no = index+1 as for DALI mapping array
+    294              &(BIO_Descriptor.keydata),                // no  2
+    295              &(MpcLegacyCsm.keydata),                  // no  3
+    296              &(MpcLegacyClm.keydata),                  // no  4
+    297              &(MpcLegacyTpm.keydata),                  // no  5
+    298              &(MpcLegacyAstro.keydata),                // no  6
+    299              &(MpcLegacyStep.keydata),                 // no  7
+    300              &(MpcLegacyPresDet.keydata),              // no  8
+    301              &(MpcLegacyMains.keydata),                // no  9
+    302              &(MpcLegacyEmergency.keydata),            // no 10
+    303              &(MpcLegacyDguard.keydata),               // no 11
+    304              &(MpcLegacyTfm_pw1.keydata),              // no 12
+    305              &(MpcLegacyEol.keydata),                  // no 13
+    306              &(MpcLegacyInfo.keydata),                 // no 14
+    307              &(MpcLegacyPower.keydata),                // no 15
+    308              &(MpcLegacyDali0.keydata),                // no 16
+    309              &(MpcLegacyDali1.keydata),                // no 17
+    310              &(MpcLegacyDali_T6.keydata),              // no 18
+    311              &(ValData_Description.keydata),           // no 19
+    312              &(MpcLegacyDebug.keydata)                 // no 20
+    313            };
+    314          
+    315            static const uint8_t dali_mpc_mapping[MPC_MAX_NUMBER + 1] = { // use "numbers" (not c indices startig from 0)
+    316              [MPC_MSK_NUMBER]          =   1,
+    317              // skip                       2,
+    318              [MPC_CSM_NUMBER]          =   3,
+    319              [MPC_CLM_NUMBER]          =   4,
+    320              [MPC_TPM_NUMBER]          =   5,
+    321              [MPC_ASTRO_NUMBER]        =   6,
+    322              [MPC_STEP_NUMBER]         =   7,
+    323              [MPC_PRESDETECT_NUMBER]   =   8,
+    324              [MPC_MAINS_NUMBER]        =   9,
+    325              [MPC_EMERGENCY_NUMBER]    =  10,
+    326              [MPC_DGUARD_NUMBER]       =  11,
+    327              [MPC_TFM_NUMBER]          =  12,
+    328              [MPC_EOL_NUMBER]          =  13,
+    329              [MPC_INFO_NUMBER]         =  14,
+    330              [MPC_POWER_NUMBER]        =  15,
+    331              [0]                       =  16,
+    332              [1]                       =  17,
+    333              // No Dali mapping for page  18,(Dali-internal data pseudo-Mpc)
+    334              [MPC_VALDATA_NUMBER]      =  19,
+    335              [MPC_DEBUG_NUMBER]        =  20
+    336            };
+    337          #endif
+    338          
+    339          
+    340          // ---------------------------------------------------------------------------------------------------------------------
+    341          // ---------------------------------------------------------------------------------------------------------------------
+    342          // Platform "OT Outdoor 1DIM Generation 1" (started in 2017)
+    343          // Nearly the same as PLATFORM_OUTDOOR_4DIM_G2, but some pages are replaced by copies
+    344          //  - with a general write protection
+    345          //  - without a DALI mapping (as long as the DALI hardware is present, this might be a good idea)
+    346          //
+    347          // Adjust these tables only in close cooperation with
+    348          // 1. DS D EMEA HW Treviso, Diego Fighera
+    349          // 2. DS D EMEA SW Garching, Joachim Eisenberg or Walter Limmer
+    350          
+    351          #ifdef PLATFORM_OUTDOOR_1DIM_G1
+    352            #pragma message ("Config PLATFORM_OUTDOOR_1DIM_G1")
+    353          
+    354            const mpc_keydata_t * MpcKeydata[] = {
+    355              &(MSK_Descriptor.keydata),                // no  1, length =  28
+    356              &(BIO_Descriptor.keydata),                // no  2, length =  20
+    357              &(MpcLegacyCsm.keydata),                  // no  3, length =   8
+    358              &(MpcLegacyClm.keydata),                  // no  4, length =  17
+    359              &(MpcLegacyTpm.keydata),                  // no  5, length =  23
+    360              &(MpcLegacyAstro.keydata),                // no  6, length =  26
+    361              &(MpcLegacyStep_read_only.keydata),       // no  7, length =   9
+    362              &(MpcLegacyPresDet_read_only.keydata),    // no  8, length =   6
+    363              &(MpcLegacyMains_read_only.keydata),      // no  9, length =   6
+    364              &(MpcLegacyEmergency_read_only.keydata),  // no 10, length =   3
+    365              &(MpcLegacyDguard.keydata),               // no 11, length =   6
+    366              &(MpcLegacyTfm_pw1.keydata),              // no 12, length =   7
+    367              &(MpcLegacyEol_read_only.keydata),        // no 13, length =   3
+    368              &(MpcLegacyInfo.keydata),                 // no 14, length =  12
+    369              &(MpcLegacyPower.keydata),                // no 15, length =   4
+    370              &(MpcLegacyDali0.keydata),                // no 16, length =  25
+    371              &(MpcLegacyDali1.keydata),                // no 17, length =  60
+    372              &(MpcLegacyDali_T6.keydata),              // no 18, length =  29
+    373              &(ValData_Description.keydata),           // no 19, length =  70
+    374              &(MpcLegacyDebug.keydata),                // no 20, length = 132
+    375            };
+    376          
+    377            static const uint8_t dali_mpc_mapping[MPC_MAX_NUMBER + 1] = {
+    378              [MPC_MSK_NUMBER]          =   1,
+    379              // skip                       -,
+    380              [MPC_CSM_NUMBER]          =   3,
+    381              [MPC_CLM_NUMBER]          =   4,
+    382              [MPC_TPM_NUMBER]          =   5,
+    383              [MPC_ASTRO_NUMBER]        =   6,
+    384              //[MPC_STEP_NUMBER]       =   7,
+    385              //[MPC_PRESDETECT_NUMBER] =   8,
+    386              //[MPC_MAINS_NUMBER]      =   9,
+    387              //[MPC_EMERGENCY_NUMBER]  =  10,
+    388              [MPC_DGUARD_NUMBER]       =  11,
+    389              [MPC_TFM_NUMBER]          =  12,
+    390              //[MPC_EOL_NUMBER]        =  13,
+    391              [MPC_INFO_NUMBER]         =  14,
+    392              [MPC_POWER_NUMBER]        =  15,
+    393              [0]                       =  16,
+    394              [1]                       =  17,
+    395              // No Dali mapping for page  18 (Dali-internal data pseudo-Mpc)
+    396              [MPC_VALDATA_NUMBER]      =  19,
+    397              [MPC_DEBUG_NUMBER]        =  20
+    398            };
+    399          #endif
+    400          
+    401          
+    402          // ---------------------------------------------------------------------------------------------------------------------
+    403          // ---------------------------------------------------------------------------------------------------------------------
+    404          #ifdef PLATFORM_NON_STANDARD
+    405            /**********************************************************************************************************************
+    406             *
+    407             * In case of, this C-file (!) is included here to have a low-barrier entry point for individual configurations
+    408             * in special setups as UNIT TESTS or during early development stages of a new platform.
+    409             *
+    410             * It is not intended to use this mechanism for production grade deliveries. Please adjust with the module
+    411             * maintainers of Mpc Alloc (Info.txt of the module) to integrate a real-life platform in the common
+    412             * code base to give the lib maintainers a little chance for an overview on what's going on.
+    413             *
+    414             *
+    415             * All generic includes already are present from the beginning of this file, just do:
+    416             * - define your specific descriptors (according includes might be needed) in the included file
+    417             * - insert there the arrays for keydata pointers and, in case of, the Dali and Nfc mapping.
+    418             * - MPC_*_NUMBERS, MPC_COUNT and MPC_MAX_NUMBER normally are defined by MpcDefaultConfiguration.h:
+    419             *   These defines have to be done in the individual config file instead.
+    420             *
+    421             * A sample MpcAllocation.c.in-file can be found in the directory ^/Test of the Mpc Alloc module.
+    422             *
+    423             *********************************************************************************************************************/
+    424          #include <MpcAllocation.c.in>
+    425          #endif
+    426          
+    427          
+    428          /** \brief Returns the mpc_nr (= index of the MPC in MpcKeydata[]).
+    429           *
+    430           * Evaluates port to decide whether item_nr is a mpc_nr (index in keydata array) or a Memorybank-number (DALI mapping).
+    431           * Always return a mpc_nr, but which might be out of range. Especially -1 flags an invalid DALI mapping
+    432           *
+    433           *  \param item_nr          MPC-Number or MemoryBank-Number according to port
+    434           *  \param port mpc_port_t  Port from where the request comes to decide on the type of item_nr ( MPC_PORT_DALI ! )
+    435           *
+    436           *  \retval -1: For port = MPC_PORT_DALI: no valid DALI mapping
+    437           *         >=0: mpc_nr (index to MpcKeydata-array) when item_nr is a valid DALI mapping
+    438           *
+    439           */
+    440          int MpcDissolveMapping(int item_nr, mpc_port_t port) {
+    441            int32_t mpc_nr = 0;
+    442            if (port == MPC_PORT_DALI) {
+    443              STATIC_ASSERT( MPC_MAX_NUMBER + 1 == (sizeof(dali_mpc_mapping)/sizeof(uint8_t)), "MPC_MAX_NUMBER issue");
+    444              if ( (item_nr >= 0) && (item_nr <= MPC_MAX_NUMBER)) {  // '<=' is ok, as the array size is MPC_MAX_NUMBER + 1
+    445                mpc_nr = dali_mpc_mapping[item_nr] - 1; // in the array, the indices have an offset of 1 (init values are 0)
+    446              } else {
+    447                mpc_nr = -1;
+    448              }
+    449            } else { // port is not DALI
+    450              mpc_nr = item_nr;
+    451            }
+    452            return mpc_nr;
+    453          }
+    454          
+    455          
+    456          // ---------------------------------------------------------------------------------------------------------------------
+    457          // ---------------------------------------------------------------------------------------------------------------------
+    458          /** \brief Check mpc_nr and, if valid, return a pointer to the Mpc description struct.
+    459           *
+    460           * \param mpc_nr  Mpc number to allocate; Checcked for the range [0; MPC_COUNT]
+    461           *
+    462           * \retval const mpc_descriptor_t * to the keydata struct, NULL when Mpc (no further Mpc) does exist.
+    463           */
+    464          const mpc_descriptor_t * MpcDescriptorGet(int mpc_nr) {
+    465            const mpc_descriptor_t * mpcDesc  = NULL; // Initialization with NULL part of algorithm
+    466            STATIC_ASSERT( MPC_COUNT == (sizeof(MpcKeydata) / sizeof(mpc_keydata_t *)),    "MPC_COUNT/Keydata array issue");
+    467            if ( (mpc_nr >= 0) && (mpc_nr < MPC_COUNT) ) { // can we safely access the array?
+    468              // Ensure that we won't be hit by this pointer hack! Keydata always has to be the first component of the descriptor
+    469              STATIC_ASSERT( offsetof(mpc_descriptor_t, keydata) == 0, "Major issue with mpc internal struct typedefs");
+    470              mpcDesc = (mpc_descriptor_t *) MpcKeydata[mpc_nr];
+    471            }
+    472            return mpcDesc;
+    473          };
+    474          
+    475          
+    476          
+    477          /** \} */
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       4   MpcDescriptorGet
+       4   MpcDissolveMapping
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable1
+       4  ??DataTable1_1
+      24  MpcDescriptorGet
+      38  MpcDissolveMapping
+      40  MpcKeydata
+      52  dali_mpc_mapping
+
+ 
+ 40 bytes in section .data
+ 52 bytes in section .rodata
+ 70 bytes in section .text
+ 
+ 70 bytes of CODE  memory
+ 52 bytes of CONST memory
+ 40 bytes of DATA  memory
+
+Errors: none
+Warnings: none

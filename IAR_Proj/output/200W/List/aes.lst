@@ -1,0 +1,997 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:49
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\aes.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\aes.c" -D
+#        XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\aes.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\aes.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\aes.c
+      1          /*
+      2          ***************************************************************************************************
+      3          *                               AES Encrypt Algorithm
+      4          *
+      5          * File   : aes.c
+      6          * Author : Douglas Xie
+      7          * Date   : 2016.10.19
+      8          ***************************************************************************************************
+      9          * Copyright (C) 2016 OSRAM Asia Pacific Management Company.  All rights reserved.
+     10          ***************************************************************************************************
+     11          */
+     12          
+     13          
+     14          /* Include Head Files ---------------------------------------------------------------------------*/
+     15          #include "aes.h"
+     16          
+     17          #if 1 //////////////////////////////////////////////////////////////////////////////////////////////
+     18          
+     19          /* Macro Defines ---------------------------------------------------------------------------------*/
+     20          
+     21          #define byte unsigned char 
+     22          
+     23          #define BPOLY           0x1b    //!< Lower 8 bits of (x^8+x^4+x^3+x+1), ie. (x^4+x^3+x+1).
+     24          #define BLOCKSIZE       16      //!< Block size in number of bytes.
+     25          
+     26          #define KEYBITS         128     //!< Use AES128.
+     27          #define ROUNDS          10      //!< Number of rounds.
+     28          #define KEYLENGTH       16      //!< Key length in number of bytes.
+     29          
+     30          #define ACTION_ENC      0
+     31          #define ACTION_DEC      1
+     32          
+     33          #define KEY_TABLE_SIZE  256
+     34              
+     35          unsigned char enc_key[16];
+     36          const unsigned char enc_key_table[KEY_TABLE_SIZE] = {
+     37              0x33,0x7c,0x79,0x7b,0xf2,0x6b,0x6f,0xc5,
+     38              0x40,0x01,0x67,0x20,0x5e,0xd0,0xab,0x76,
+     39              0x9a,0x82,0xc9,0x7d,0xfa,0x59,0x48,0x80,
+     40              0xad,0xd4,0xa2,0xaf,0x9c,0xa4,0x22,0x30,
+     41              0x17,0xfd,0x93,0x26,0x36,0x3f,0xf7,0x7c,
+     42              0x34,0xa5,0xe5,0xf1,0x71,0xd8,0x39,0x75,
+     43              0x14,0xc7,0x23,0xc3,0x18,0x96,0x00,0x9a,
+     44              0x27,0x12,0x80,0xe2,0xeb,0x27,0xb5,0x75,
+     45              0x09,0x83,0x2c,0x1a,0x1b,0x6e,0x5a,0x10,
+     46              0x56,0x3b,0xd6,0xb3,0x29,0xe3,0x2f,0x84,
+     47              0x52,0xd1,0x00,0xed,0x20,0xfc,0xb1,0x50,
+     48              0x6a,0xcb,0xbe,0x39,0x4a,0x4c,0x58,0xcf,
+     49              0xd3,0xef,0xaa,0xfb,0x43,0x4d,0x33,0x85,
+     50              0x45,0xf9,0x02,0x7f,0x50,0x3c,0x9f,0xa4,
+     51              0x5D,0xa3,0x40,0x8f,0x92,0x9d,0x38,0xf5,
+     52              0xbc,0xb6,0xda,0x21,0x10,0xff,0xf3,0x12,
+     53              0xcf,0x0c,0x13,0x38,0x5f,0x97,0x44,0x17,
+     54              0xc2,0xa7,0x7e,0x3d,0x64,0x5d,0x19,0x73,
+     55              0xc0,0x81,0x4f,0xd8,0x22,0x2a,0x90,0x78,
+     56              0x36,0xee,0xb8,0x14,0xde,0x5e,0x0b,0x1b,
+     57              0xe0,0x32,0x3a,0x0e,0x49,0x06,0x24,0x4c,
+     58              0xf2,0xd3,0xac,0x64,0x91,0x95,0xe4,0x79,
+     59              0xe7,0xc8,0x37,0x65,0x8d,0xd5,0x4e,0xa9,
+     60              0x9c,0x56,0xf4,0xe1,0x65,0x7a,0xae,0x08,
+     61              0xba,0x78,0x25,0x23,0x1c,0xa6,0xb4,0xc6,
+     62              0x34,0xdd,0x74,0x6f,0x4b,0xbd,0x8b,0x8a,
+     63              0x70,0x3e,0xb5,0x86,0x48,0x03,0xf6,0x4e,
+     64              0x61,0x35,0x57,0x49,0x86,0xc1,0x1d,0x5e,
+     65              0xe1,0xf8,0x28,0x61,0x69,0xd9,0x8e,0x52,
+     66              0x3b,0x1e,0x27,0x99,0xce,0x55,0x28,0xd3,
+     67              0x7c,0xa1,0x99,0x0d,0xbf,0xe6,0x42,0x78,
+     68              0x31,0x99,0x2d,0x0f,0xb0,0x54,0xbb,0x16,
+     69          };
+     70          
+     71          /* Global Variable -------------------------------------------------------------------------------*/
+     72          
+     73          byte block1[ 256 ]; //!< Workspace 1.
+     74          byte block2[ 256 ]; //!< Worksapce 2.
+     75          
+     76          
+     77          byte * powTbl; //!< Final location of exponentiation lookup table.
+     78          byte * logTbl; //!< Final location of logarithm lookup table.
+     79          byte * sBox; //!< Final location of s-box.
+     80          byte * sBoxInv; //!< Final location of inverse s-box.
+     81          byte * expandedKey; //!< Final location of expanded key.
+     82          
+     83          
+     84          /* Function Declaration --------------------------------------------------------------------------*/
+     85          
+     86          void aesInit( unsigned char * tempbuf );
+     87          void aesDecrypt( unsigned char * buffer, unsigned char * chainBlock );
+     88          void aesEncrypt( unsigned char * buffer, unsigned char * chainBlock );
+     89          
+     90          void aesBlockDecrypt(unsigned char Direct,unsigned char *ChiperDataBuf,unsigned int DataLen);
+     91          
+     92          
+     93          /* Function Implement ---------------------------------------------------------------------------*/
+     94          
+     95          void CalcPowLog( byte * powTbl, byte * logTbl )
+     96          {
+     97              byte i = 0;
+     98              byte t = 1;
+     99              
+    100              do {
+    101                  // Use 0x03 as root for exponentiation and logarithms.
+    102                  powTbl[i] = t;
+    103                  logTbl[t] = i;
+    104                  i++;
+    105                  
+    106                  // Muliply t by 3 in GF(2^8).
+    107                  t ^= (t << 1) ^ (t & 0x80 ? BPOLY : 0);
+    108              } while( t != 1 ); // Cyclic properties ensure that i < 255.
+    109              
+    110              powTbl[255] = powTbl[0]; // 255 = '-0', 254 = -1, etc.
+    111          }
+    112          
+    113          
+    114          void CalcSBox( byte * sBox )
+    115          {
+    116              byte i, rot;
+    117              byte temp;
+    118              byte result;
+    119              
+    120              // Fill all entries of sBox[].
+    121              i = 0;
+    122              do {
+    123                  // Inverse in GF(2^8).
+    124                  if( i > 0 ) {
+    125                      temp = powTbl[ 255 - logTbl[i] ];
+    126                  } else {
+    127                      temp = 0;
+    128                  }
+    129                  
+    130                  // Affine transformation in GF(2).
+    131                  result = temp ^ 0x63; // Start with adding a vector in GF(2).
+    132                  for( rot = 0; rot < 4; rot++ ) {
+    133                      // Rotate left.
+    134                      temp = (temp<<1) | (temp>>7);
+    135                      
+    136                      // Add rotated byte in GF(2).
+    137                      result ^= temp;
+    138                  }
+    139                  
+    140                  // Put result in table.
+    141                  sBox[i] = result;
+    142              } while( ++i != 0 );
+    143          } 
+    144          
+    145          
+    146          void CalcSBoxInv( byte * sBox, byte * sBoxInv )
+    147          {
+    148              byte i = 0;
+    149              byte j = 0;
+    150              
+    151              // Iterate through all elements in sBoxInv using  i.
+    152              do {
+    153                  // Search through sBox using j.
+    154                  //WDT_Feeds();
+    155                  do {
+    156                      // Check if current j is the inverse of current i.
+    157                      if( sBox[ j ] == i ) {
+    158                          // If so, set sBoxInc and indicate search finished.
+    159                          sBoxInv[ i ] = j;
+    160                          j = 255;
+    161                      }
+    162                  } while( ++j != 0 );
+    163              } while( ++i != 0 );
+    164          }
+    165          
+    166          
+    167          void CycleLeft( byte * row )
+    168          {
+    169              // Cycle 4 bytes in an array left once.
+    170              byte temp = row[0];
+    171              row[0] = row[1];
+    172              row[1] = row[2];
+    173              row[2] = row[3];
+    174              row[3] = temp;
+    175          }
+    176          
+    177          
+    178          void InvMixColumn( byte * column )
+    179          {
+    180              byte r0, r1, r2, r3;
+    181              
+    182              r0 = column[1] ^ column[2] ^ column[3];
+    183              r1 = column[0] ^ column[2] ^ column[3];
+    184              r2 = column[0] ^ column[1] ^ column[3];
+    185              r3 = column[0] ^ column[1] ^ column[2];
+    186              
+    187              column[0] = (column[0] << 1) ^ (column[0] & 0x80 ? BPOLY : 0);
+    188              column[1] = (column[1] << 1) ^ (column[1] & 0x80 ? BPOLY : 0);
+    189              column[2] = (column[2] << 1) ^ (column[2] & 0x80 ? BPOLY : 0);
+    190              column[3] = (column[3] << 1) ^ (column[3] & 0x80 ? BPOLY : 0);
+    191              
+    192              r0 ^= column[0] ^ column[1];
+    193              r1 ^= column[1] ^ column[2];
+    194              r2 ^= column[2] ^ column[3];
+    195              r3 ^= column[0] ^ column[3];
+    196              
+    197              column[0] = (column[0] << 1) ^ (column[0] & 0x80 ? BPOLY : 0);
+    198              column[1] = (column[1] << 1) ^ (column[1] & 0x80 ? BPOLY : 0);
+    199              column[2] = (column[2] << 1) ^ (column[2] & 0x80 ? BPOLY : 0);
+    200              column[3] = (column[3] << 1) ^ (column[3] & 0x80 ? BPOLY : 0);
+    201              
+    202              r0 ^= column[0] ^ column[2];
+    203              r1 ^= column[1] ^ column[3];
+    204              r2 ^= column[0] ^ column[2];
+    205              r3 ^= column[1] ^ column[3];
+    206              
+    207              column[0] = (column[0] << 1) ^ (column[0] & 0x80 ? BPOLY : 0);
+    208              column[1] = (column[1] << 1) ^ (column[1] & 0x80 ? BPOLY : 0);
+    209              column[2] = (column[2] << 1) ^ (column[2] & 0x80 ? BPOLY : 0);
+    210              column[3] = (column[3] << 1) ^ (column[3] & 0x80 ? BPOLY : 0);
+    211              
+    212              column[0] ^= column[1] ^ column[2] ^ column[3];
+    213              r0 ^= column[0];
+    214              r1 ^= column[0];
+    215              r2 ^= column[0];
+    216              r3 ^= column[0];
+    217              
+    218              column[0] = r0;
+    219              column[1] = r1;
+    220              column[2] = r2;
+    221              column[3] = r3;
+    222          }
+    223          
+    224          
+    225          byte Multiply( unsigned char num, unsigned char factor )
+    226          {
+    227              byte mask = 1;
+    228              byte result = 0;
+    229              
+    230              while( mask != 0 ) {
+    231                  // Check bit of factor given by mask.
+    232                  if( mask & factor ) {
+    233                      // Add current multiple of num in GF(2).
+    234                      result ^= num;
+    235                  }
+    236                  
+    237                  // Shift mask to indicate next bit.
+    238                  mask <<= 1;
+    239                  
+    240                  // Double num.
+    241                  num = (num << 1) ^ (num & 0x80 ? BPOLY : 0);
+    242              }
+    243              
+    244              return result;
+    245          }
+    246          
+    247          
+    248          byte DotProduct( unsigned char * vector1, unsigned char * vector2 )
+    249          {
+    250              byte result = 0;
+    251              
+    252              result ^= Multiply( *vector1++, *vector2++ );
+    253              result ^= Multiply( *vector1++, *vector2++ );
+    254              result ^= Multiply( *vector1++, *vector2++ );
+    255              result ^= Multiply( *vector1  , *vector2   );
+    256              
+    257              return result;
+    258          }
+    259          
+    260          void MixColumn( byte * column )
+    261          {
+    262              byte row[8] = {
+    263                  0x02, 0x03, 0x01, 0x01,
+    264                  0x02, 0x03, 0x01, 0x01
+    265              }; // Prepare first row of matrix twice, to eliminate need for cycling.
+    266              
+    267              byte result[4];
+    268              
+    269              // Take dot products of each matrix row and the column vector.
+    270              result[0] = DotProduct( row+0, column );
+    271              result[1] = DotProduct( row+3, column );
+    272              result[2] = DotProduct( row+2, column );
+    273              result[3] = DotProduct( row+1, column );
+    274              
+    275              // Copy temporary result to original column.
+    276              column[0] = result[0];
+    277              column[1] = result[1];
+    278              column[2] = result[2];
+    279              column[3] = result[3];
+    280          }
+    281          
+    282          
+    283          void SubBytes( byte * bytes, byte count )
+    284          {
+    285              do {
+    286                  *bytes = sBox[ *bytes ]; // Substitute every byte in state.
+    287                  bytes++;
+    288              } while( --count );
+    289          }
+    290          
+    291          
+    292          void InvSubBytesAndXOR( byte * bytes, byte * key, byte count )
+    293          {
+    294              do {
+    295                  //  *bytes = sBoxInv[ *bytes ] ^ *key; // Inverse substitute every byte in state and add key.
+    296                  *bytes = block2[ *bytes ] ^ *key; // Use block2 directly. Increases speed.
+    297                  bytes++;
+    298                  key++;
+    299              } while( --count );
+    300          }
+    301          
+    302          
+    303          void InvShiftRows( byte * state )
+    304          {
+    305              byte temp;
+    306              
+    307              // Note: State is arranged column by column.
+    308              
+    309              // Cycle second row right one time.
+    310              temp = state[ 1 + 3*4 ];
+    311              state[ 1 + 3*4 ] = state[ 1 + 2*4 ];
+    312              state[ 1 + 2*4 ] = state[ 1 + 1*4 ];
+    313              state[ 1 + 1*4 ] = state[ 1 + 0*4 ];
+    314              state[ 1 + 0*4 ] = temp;
+    315              
+    316              // Cycle third row right two times.
+    317              temp = state[ 2 + 0*4 ];
+    318              state[ 2 + 0*4 ] = state[ 2 + 2*4 ];
+    319              state[ 2 + 2*4 ] = temp;
+    320              temp = state[ 2 + 1*4 ];
+    321              state[ 2 + 1*4 ] = state[ 2 + 3*4 ];
+    322              state[ 2 + 3*4 ] = temp;
+    323              
+    324              // Cycle fourth row right three times, ie. left once.
+    325              temp = state[ 3 + 0*4 ];
+    326              state[ 3 + 0*4 ] = state[ 3 + 1*4 ];
+    327              state[ 3 + 1*4 ] = state[ 3 + 2*4 ];
+    328              state[ 3 + 2*4 ] = state[ 3 + 3*4 ];
+    329              state[ 3 + 3*4 ] = temp;
+    330          }
+    331          
+    332          
+    333          void ShiftRows( byte * state )
+    334          {
+    335              byte temp;
+    336              
+    337              // Note: State is arranged column by column.
+    338              
+    339              // Cycle second row left one time.
+    340              temp = state[ 1 + 0*4 ];
+    341              state[ 1 + 0*4 ] = state[ 1 + 1*4 ];
+    342              state[ 1 + 1*4 ] = state[ 1 + 2*4 ];
+    343              state[ 1 + 2*4 ] = state[ 1 + 3*4 ];
+    344              state[ 1 + 3*4 ] = temp;
+    345              
+    346              // Cycle third row left two times.
+    347              temp = state[ 2 + 0*4 ];
+    348              state[ 2 + 0*4 ] = state[ 2 + 2*4 ];
+    349              state[ 2 + 2*4 ] = temp;
+    350              temp = state[ 2 + 1*4 ];
+    351              state[ 2 + 1*4 ] = state[ 2 + 3*4 ];
+    352              state[ 2 + 3*4 ] = temp;
+    353              
+    354              // Cycle fourth row left three times, ie. right once.
+    355              temp = state[ 3 + 3*4 ];
+    356              state[ 3 + 3*4 ] = state[ 3 + 2*4 ];
+    357              state[ 3 + 2*4 ] = state[ 3 + 1*4 ];
+    358              state[ 3 + 1*4 ] = state[ 3 + 0*4 ];
+    359              state[ 3 + 0*4 ] = temp;
+    360          }
+    361          
+    362          
+    363          void InvMixColumns( byte * state )
+    364          {
+    365              InvMixColumn( state + 0*4 );
+    366              InvMixColumn( state + 1*4 );
+    367              InvMixColumn( state + 2*4 );
+    368              InvMixColumn( state + 3*4 );
+    369          }
+    370          
+    371          void MixColumns( byte * state )
+    372          {
+    373              MixColumn( state + 0*4 );
+    374              MixColumn( state + 1*4 );
+    375              MixColumn( state + 2*4 );
+    376              MixColumn( state + 3*4 );
+    377          }
+    378          
+    379          
+    380          void XORBytes( byte * bytes1, byte * bytes2, byte count )
+    381          {
+    382              do {
+    383                  *bytes1 ^= *bytes2; // Add in GF(2), ie. XOR.
+    384                  bytes1++;
+    385                  bytes2++;
+    386              } while( --count );
+    387          }
+    388          
+    389          
+    390          void CopyBytes( byte * to, byte * from, byte count )
+    391          {
+    392              do {
+    393                  *to = *from;
+    394                  to++;
+    395                  from++;
+    396              } while( --count );
+    397          }
+    398          
+    399          
+    400          void KeyExpansion( byte * expandedKey )
+    401          {
+    402              byte temp[4];
+    403              byte i;
+    404              byte Rcon[4] = { 0x01, 0x00, 0x00, 0x00 }; // Round constant.
+    405              
+    406              unsigned char *key;
+    407              key = enc_key;
+    408              //以下为加解密密码，共16字节。可以选择任意值
+    409              //key[0]=0x30;
+    410              //key[1]=0x30;
+    411              //key[2]=0x30;
+    412              //key[3]=0x30;
+    413              //key[4]=0x30;
+    414              //key[5]=0x30;
+    415              //key[6]=0x30;
+    416              //key[7]=0x30;
+    417              //key[8]=0x30;
+    418              //key[9]=0x30;
+    419              //key[10]=0x30;
+    420              //key[11]=0x30;
+    421              //key[12]=0x30;
+    422              //key[13]=0x30;
+    423              //key[14]=0x30;
+    424              //key[15]=0x30;
+    425              ////////////////////////////////////////////
+    426              
+    427              // Copy key to start of expanded key.
+    428              i = KEYLENGTH;
+    429              do {
+    430                  *expandedKey = *key;
+    431                  expandedKey++;
+    432                  key++;
+    433              } while( --i );
+    434              
+    435              // Prepare last 4 bytes of key in temp.
+    436              expandedKey -= 4;
+    437              temp[0] = *(expandedKey++);
+    438              temp[1] = *(expandedKey++);
+    439              temp[2] = *(expandedKey++);
+    440              temp[3] = *(expandedKey++);
+    441              
+    442              // Expand key.
+    443              i = KEYLENGTH;
+    444              while( i < BLOCKSIZE*(ROUNDS+1) ) {
+    445                  // Are we at the start of a multiple of the key size?
+    446                  if( (i % KEYLENGTH) == 0 ) {
+    447                      CycleLeft( temp ); // Cycle left once.
+    448                      SubBytes( temp, 4 ); // Substitute each byte.
+    449                      XORBytes( temp, Rcon, 4 ); // Add constant in GF(2).
+    450                      *Rcon = (*Rcon << 1) ^ (*Rcon & 0x80 ? BPOLY : 0);
+    451                  }
+    452                  
+    453                  // Keysize larger than 24 bytes, ie. larger that 192 bits?
+    454          #if KEYLENGTH > 24
+    455                  // Are we right past a block size?
+    456                  else if( (i % KEYLENGTH) == BLOCKSIZE ) {
+    457                      SubBytes( temp, 4 ); // Substitute each byte.
+    458                  }
+    459          #endif
+    460                  
+    461                  // Add bytes in GF(2) one KEYLENGTH away.
+    462                  XORBytes( temp, expandedKey - KEYLENGTH, 4 );
+    463                  
+    464                  // Copy result to current 4 bytes.
+    465                  *(expandedKey++) = temp[ 0 ];
+    466                  *(expandedKey++) = temp[ 1 ];
+    467                  *(expandedKey++) = temp[ 2 ];
+    468                  *(expandedKey++) = temp[ 3 ];
+    469                  
+    470                  i += 4; // Next 4 bytes.
+    471              } 
+    472          }
+    473          
+    474          
+    475          void InvCipher( byte * block, byte * expandedKey )
+    476          {
+    477              byte round = ROUNDS-1;
+    478              expandedKey += BLOCKSIZE * ROUNDS;
+    479              
+    480              XORBytes( block, expandedKey, 16 );
+    481              expandedKey -= BLOCKSIZE;
+    482              
+    483              do {
+    484                  InvShiftRows( block );
+    485                  InvSubBytesAndXOR( block, expandedKey, 16 );
+    486                  expandedKey -= BLOCKSIZE;
+    487                  InvMixColumns( block );
+    488              } while( --round );
+    489              
+    490              InvShiftRows( block );
+    491              InvSubBytesAndXOR( block, expandedKey, 16 );
+    492          }
+    493          
+    494          
+    495          void Cipher( byte * block, byte * expandedKey )    //完成一个块(16字节，128bit)的加密
+    496          {
+    497              byte round = ROUNDS-1;
+    498              
+    499              XORBytes( block, expandedKey, 16 );
+    500              expandedKey += BLOCKSIZE;
+    501              
+    502              do {
+    503                  SubBytes( block, 16 );
+    504                  ShiftRows( block );
+    505                  MixColumns( block );
+    506                  XORBytes( block, expandedKey, 16 );
+    507                  expandedKey += BLOCKSIZE;
+    508              } while( --round );
+    509              
+    510              SubBytes( block, 16 );
+    511              ShiftRows( block );
+    512              XORBytes( block, expandedKey, 16 );
+    513          }
+    514          
+    515          
+    516          void aesInit( unsigned char * tempbuf )
+    517          {
+    518              powTbl = block1;
+    519              logTbl = block2;
+    520              CalcPowLog( powTbl, logTbl );
+    521              
+    522              sBox = tempbuf;
+    523              CalcSBox( sBox );
+    524              
+    525              expandedKey = block1;  //至此block1用来存贮密码表
+    526              KeyExpansion( expandedKey );
+    527              
+    528              sBoxInv = block2; // Must be block2. block2至此开始只用来存贮SBOXINV
+    529              CalcSBoxInv( sBox, sBoxInv );
+    530          } 
+    531          
+    532          
+    533          //对一个16字节块解密,参数buffer是解密密缓存，chainBlock是要解密的块
+    534          void aesDecrypt( unsigned char * buffer, unsigned char * chainBlock )
+    535          {    
+    536              CopyBytes(buffer,chainBlock,BLOCKSIZE);
+    537              InvCipher( buffer, expandedKey );
+    538              CopyBytes( chainBlock, buffer, BLOCKSIZE );
+    539          }
+    540          
+    541          //对一个16字节块完成加密，参数buffer是加密缓存，chainBlock是要加密的块
+    542          void aesEncrypt( unsigned char * buffer, unsigned char * chainBlock )
+    543          {
+    544              CopyBytes( buffer, chainBlock, BLOCKSIZE );
+    545              Cipher( buffer, expandedKey );
+    546              CopyBytes( chainBlock, buffer, BLOCKSIZE );
+    547          }
+    548          
+    549          
+    550          //加解密函数，参数为加解密标志，要加解密的数据缓存起始指针，要加解密的数据长度（如果解密运算，必须是16的整数倍。）
+    551          void aesBlockDecrypt(unsigned char Direct,unsigned char *ChiperDataBuf,unsigned int DataLen)
+    552          {
+    553              unsigned int i;
+    554              unsigned int Blocks;
+    555              unsigned char sBoxbuf[256];
+    556              unsigned char tempbuf[16];
+    557              
+    558              aesInit(sBoxbuf);   //初始化
+    559              
+    560              if(Direct == ACTION_DEC)    //解密
+    561              {
+    562                  Blocks = DataLen / 16;
+    563                  for(i=0; i < Blocks; i++)
+    564                  {
+    565                      aesDecrypt(tempbuf, ChiperDataBuf + 16 * i);
+    566                  }
+    567              }
+    568              else                        //加密
+    569              {
+    570                  if(DataLen % 16 != 0)
+    571                  {  
+    572                      Blocks = DataLen / 16 + 1;
+    573                  }
+    574                  else
+    575                  {
+    576                      Blocks = DataLen / 16;
+    577                  }
+    578                  
+    579                  for(i = 0; i < Blocks; i++)
+    580                  {
+    581                      aesEncrypt(tempbuf, ChiperDataBuf + 16 * i);
+    582                  }
+    583              }
+    584          }
+    585          
+    586          
+    587          /* Get encrypt key according to key_version */
+    588          void GenerateKey(unsigned char key_version, unsigned char *key)
+    589          {
+    590          	int i = 0;
+    591          	int index = 0;
+    592              
+    593          	/* Get an 128bit encrypt key from key table */
+    594          	for(i = 0; i < 16; i++)
+    595          	{
+    596          		/* find key table index */
+    597          		index = key_version + i;
+    598                  
+    599          		if(index >= KEY_TABLE_SIZE)
+    600          		{
+    601          			index -= KEY_TABLE_SIZE;
+    602          		}
+    603                  
+    604          		/* copy key value */
+    605          		key[i] = enc_key_table[index];
+    606          	}
+    607          }
+    608          
+    609          /* OSRAM Encrypt Function, one block of 16 bytes, length should be 16n */
+    610          void OsramEncrypt(unsigned char *data, unsigned int length, unsigned char key_version)
+    611          {   
+    612          	/* Generate key */
+    613          	GenerateKey(key_version, enc_key);
+    614              
+    615          	/* Encrypt by AES 128bit */
+    616          	aesBlockDecrypt(ACTION_ENC, data, length);
+    617          }
+    618          
+    619          /* OSRAM Decrypt Function, one block of 16 bytes, length should be 16n*/
+    620          void OsramDecrypt(unsigned char *data, unsigned int length, unsigned char key_version)
+    621          {   
+    622          	/* Generate key */
+    623          	GenerateKey(key_version, enc_key);
+    624              
+    625          	/* Decrypt by AES 128bit */
+    626          	aesBlockDecrypt(ACTION_DEC, data, length);
+    627          }
+    628          
+    629          
+    630          #else //////////////////////////////////////////////////////////////////////////////////////////////
+    631          
+    632          /* Macro Defines ---------------------------------------------------------------------------------*/
+    633          #define KEY_TABLE_SIZE  256
+    634              
+    635          unsigned char enc_key[16];
+    636          const unsigned char enc_key_table[KEY_TABLE_SIZE] = {
+    637              0x33,0x7c,0x79,0x7b,0xf2,0x6b,0x6f,0xc5,
+    638              0x40,0x01,0x67,0x20,0x5e,0xd0,0xab,0x76,
+    639              0x9a,0x82,0xc9,0x7d,0xfa,0x59,0x48,0x80,
+    640              0xad,0xd4,0xa2,0xaf,0x9c,0xa4,0x22,0x30,
+    641              0x17,0xfd,0x93,0x26,0x36,0x3f,0xf7,0x7c,
+    642              0x34,0xa5,0xe5,0xf1,0x71,0xd8,0x39,0x75,
+    643              0x14,0xc7,0x23,0xc3,0x18,0x96,0x00,0x9a,
+    644              0x27,0x12,0x80,0xe2,0xeb,0x27,0xb5,0x75,
+    645              0x09,0x83,0x2c,0x1a,0x1b,0x6e,0x5a,0x10,
+    646              0x56,0x3b,0xd6,0xb3,0x29,0xe3,0x2f,0x84,
+    647              0x52,0xd1,0x00,0xed,0x20,0xfc,0xb1,0x50,
+    648              0x6a,0xcb,0xbe,0x39,0x4a,0x4c,0x58,0xcf,
+    649              0xd3,0xef,0xaa,0xfb,0x43,0x4d,0x33,0x85,
+    650              0x45,0xf9,0x02,0x7f,0x50,0x3c,0x9f,0xa4,
+    651              0x5D,0xa3,0x40,0x8f,0x92,0x9d,0x38,0xf5,
+    652              0xbc,0xb6,0xda,0x21,0x10,0xff,0xf3,0x12,
+    653              0xcf,0x0c,0x13,0x38,0x5f,0x97,0x44,0x17,
+    654              0xc2,0xa7,0x7e,0x3d,0x64,0x5d,0x19,0x73,
+    655              0xc0,0x81,0x4f,0xd8,0x22,0x2a,0x90,0x78,
+    656              0x36,0xee,0xb8,0x14,0xde,0x5e,0x0b,0x1b,
+    657              0xe0,0x32,0x3a,0x0e,0x49,0x06,0x24,0x4c,
+    658              0xf2,0xd3,0xac,0x64,0x91,0x95,0xe4,0x79,
+    659              0xe7,0xc8,0x37,0x65,0x8d,0xd5,0x4e,0xa9,
+    660              0x9c,0x56,0xf4,0xe1,0x65,0x7a,0xae,0x08,
+    661              0xba,0x78,0x25,0x23,0x1c,0xa6,0xb4,0xc6,
+    662              0x34,0xdd,0x74,0x6f,0x4b,0xbd,0x8b,0x8a,
+    663              0x70,0x3e,0xb5,0x86,0x48,0x03,0xf6,0x4e,
+    664              0x61,0x35,0x57,0x49,0x86,0xc1,0x1d,0x5e,
+    665              0xe1,0xf8,0x28,0x61,0x69,0xd9,0x8e,0x52,
+    666              0x3b,0x1e,0x27,0x99,0xce,0x55,0x28,0xd3,
+    667              0x7c,0xa1,0x99,0x0d,0xbf,0xe6,0x42,0x78,
+    668              0x31,0x99,0x2d,0x0f,0xb0,0x54,0xbb,0x16,
+    669          };
+    670          
+    671          /* Global Variable -------------------------------------------------------------------------------*/
+    672          
+    673          /* Function Declaration --------------------------------------------------------------------------*/
+    674          
+    675          /* Function Implement ---------------------------------------------------------------------------*/
+    676          
+    677          /* Get encrypt key according to key_version */
+    678          void GenerateKey(unsigned char key_version, unsigned char *key)
+    679          {
+    680          	int i = 0;
+    681          	int index = 0;
+    682              
+    683          	/* Get an 128bit encrypt key from key table */
+    684          	for(i = 0; i < 16; i++)
+    685          	{
+    686          		/* find key table index */
+    687          		index = key_version + i;
+    688                  
+    689          		if(index >= KEY_TABLE_SIZE)
+    690          		{
+    691          			index -= KEY_TABLE_SIZE;
+    692          		}
+    693                  
+    694          		/* copy key value */
+    695          		key[i] = enc_key_table[index];
+    696          	}
+    697          }
+    698          
+    699          void EncryptXOR(unsigned char *data, unsigned int length)
+    700          {
+    701              unsigned int i = 0;
+    702              	
+    703              /* Encrypt by XOR with enc_key array */
+    704          	for(i = 0; i < length; i++)
+    705              {
+    706                  data[i] = data[i] ^ enc_key[i%16];
+    707              }
+    708          }
+    709          
+    710          /* OSRAM Encrypt Function, one block of 16 bytes, length should be 16n */
+    711          void OsramEncrypt(unsigned char *data, unsigned int length, unsigned char key_version)
+    712          {   
+    713          
+    714          	/* Generate key */
+    715          	GenerateKey(key_version, enc_key);
+    716              
+    717              /* Encrypt data */
+    718              EncryptXOR(data, length);
+    719          }
+    720          
+    721          /* OSRAM Decrypt Function, one block of 16 bytes, length should be 16n*/
+    722          void OsramDecrypt(unsigned char *data, unsigned int length, unsigned char key_version)
+    723          {   
+    724          	/* Generate key */
+    725          	GenerateKey(key_version, enc_key);
+    726              
+    727              /* Encrypt data */
+    728              EncryptXOR(data, length);
+    729          }
+    730          #endif
+    731          
+    732          /**************** (C) COPYRIGHT OSRAM Asia Pacific Management Company *********END OF FILE*********/
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      12   CalcPowLog
+      12   CalcSBox
+      12   CalcSBoxInv
+      16   Cipher
+        16   -> MixColumns
+        16   -> ShiftRows
+        16   -> SubBytes
+        16   -> XORBytes
+       4   CopyBytes
+       0   CycleLeft
+      16   DotProduct
+        16   -> Multiply
+       8   GenerateKey
+      16   InvCipher
+        16   -> InvMixColumns
+        16   -> InvShiftRows
+        16   -> InvSubBytesAndXOR
+        16   -> XORBytes
+      20   InvMixColumn
+       8   InvMixColumns
+         8   -> InvMixColumn
+       0   InvShiftRows
+       8   InvSubBytesAndXOR
+      24   KeyExpansion
+        24   -> CycleLeft
+        24   -> SubBytes
+        24   -> XORBytes
+        24 __aeabi_idivmod
+      24   MixColumn
+        24   -> DotProduct
+       8   MixColumns
+         8   -> MixColumn
+      12   Multiply
+      16   OsramDecrypt
+        16   -> GenerateKey
+        16   -> aesBlockDecrypt
+      16   OsramEncrypt
+        16   -> GenerateKey
+        16   -> aesBlockDecrypt
+       0   ShiftRows
+       4   SubBytes
+       8   XORBytes
+     288   aesBlockDecrypt
+       288   -> aesDecrypt
+       288   -> aesEncrypt
+       288   -> aesInit
+      16   aesDecrypt
+        16   -> CopyBytes
+        16   -> InvCipher
+      16   aesEncrypt
+        16   -> Cipher
+        16   -> CopyBytes
+       8   aesInit
+         8   -> CalcPowLog
+         8   -> CalcSBox
+         8   -> CalcSBoxInv
+         8   -> KeyExpansion
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable10
+       4  ??DataTable10_1
+       4  ??DataTable10_2
+       4  ??DataTable10_3
+       4  ??DataTable10_4
+       4  ??DataTable10_5
+       4  ??DataTable10_6
+       4  ??DataTable10_7
+       4  ??DataTable3
+       4  ??DataTable3_1
+       4  ??DataTable7
+       4  ??DataTable7_1
+       4  ??DataTable7_2
+       8  ?_0
+       4  ?_1
+      48  CalcPowLog
+      74  CalcSBox
+      42  CalcSBoxInv
+      86  Cipher
+      20  CopyBytes
+      18  CycleLeft
+      86  DotProduct
+      38  GenerateKey
+      72  InvCipher
+     412  InvMixColumn
+      34  InvMixColumns
+      50  InvShiftRows
+      28  InvSubBytesAndXOR
+     190  KeyExpansion
+      98  MixColumn
+      34  MixColumns
+      48  Multiply
+      28  OsramDecrypt
+      28  OsramEncrypt
+      50  ShiftRows
+      24  SubBytes
+      24  XORBytes
+      88  aesBlockDecrypt
+      38  aesDecrypt
+      38  aesEncrypt
+      74  aesInit
+     256  block1
+     256  block2
+      16  enc_key
+     256  enc_key_table
+       4  expandedKey
+       4  logTbl
+       4  powTbl
+       4  sBox
+       4  sBoxInv
+
+ 
+   548 bytes in section .bss
+   268 bytes in section .rodata
+ 1 822 bytes in section .text
+ 
+ 1 822 bytes of CODE  memory
+   268 bytes of CONST memory
+   548 bytes of DATA  memory
+
+Errors: none
+Warnings: none

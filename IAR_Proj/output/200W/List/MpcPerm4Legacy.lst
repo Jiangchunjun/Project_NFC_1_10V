@@ -1,0 +1,285 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:52
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\Alloc\MpcPerm4Legacy.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\Alloc\MpcPerm4Legacy.c"
+#        -D XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\MpcPerm4Legacy.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\MpcPerm4Legacy.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\Alloc\MpcPerm4Legacy.c
+      1          // ---------------------------------------------------------------------------------------------------------------------
+      2           // Microcontroller Toolbox - Firmware Framework for Full Digital SSL Ballasts
+      3          // ---------------------------------------------------------------------------------------------------------------------
+      4          // (c) Osram GmbH
+      5          //     DS D EC - MCC
+      6          //     Parkring 33
+      7          //     85748 Garching
+      8          //
+      9          //
+     10          // The content of this file is intellectual property of OSRAM GmbH. It is
+     11          // confidential and not intended for any public release. All rights reserved.
+     12          //
+     13          //
+     14          // Initial version: 2016-07 W.Limmer@osram.de
+     15          //
+     16          // Change History:
+     17          //
+     18          // $Author: m.schmidl $
+     19          // $Revision: 10915 $
+     20          // $Date: 2017-11-23 21:26:27 +0800 (Thu, 23 Nov 2017) $
+     21          // $Id: MpcPerm4Legacy.c 10915 2017-11-23 13:26:27Z m.schmidl $
+     22          // $URL: https://app-ehnsvn02.int.osram-light.com/svn/EC/Mpc/Alloc/branches/RC_2018-02-20/Src/MpcPerm4Legacy.c $
+     23          //
+     24          
+     25          
+     26          /** \addtogroup MPC Multi Purpose Centers
+     27           * \{
+     28           * \file
+     29           * \brief Definition of all arrays needed to legacy membanks with more than one permission.
+     30           *
+     31           * Defined arrays give indirect access to permissions needed for address in Membank.
+     32           * Arrays are linked to descriptors. Index of Permission bit is Address in Membank + 1.
+     33           * First element contains length of array, to test whether queried address is in range.
+     34           * Content is number of bits to shift left for permission.
+     35           *
+     36           */
+     37          
+     38          #include <Global.h>
+     39          
+     40          #define MODULE_MPC
+     41          #include "Config.h"
+     42          
+     43          #include "AclDefaults.h"
+     44          #include "MpcPerm4Legacy.h"
+     45          #include "MpcDefaultConfiguration.h"
+     46          
+     47          #define DEBUGPRINT(...)
+     48          // #define DEBUGPRINT(...)         printf(__VA_ARGS__)
+     49          
+     50          #ifdef MPC_TFM_NUMBER
+     51          uint8_t tfmpermissions[6] = {
+     52              [0]  = 4,
+     53              [1]  = BIT_NUMBER(ACL_PERM_TUNING_LIMITS),  // adr 0x05
+     54              [2]  = BIT_NUMBER(ACL_PERM_TUNING_FACTOR),  //     0x06
+     55              [3]  = BIT_NUMBER(ACL_PERM_TUNING_LIMITS),  //     0x07
+     56              [4]  = BIT_NUMBER(ACL_PERM_TUNING_LIMITS),  //     0x08
+     57          };
+     58          #endif
+     59          
+     60          
+     61          
+     62          #ifdef MPC_STEP_NUMBER
+     63          uint8_t steppermissions[11] = {
+     64              [0]  = 9,      // last adr.
+     65              [1]  = BIT_NUMBER(ACL_PERM_NEVER),      //    0x05
+     66              [2]  = BIT_NUMBER(ACL_PERM_OPER_MODE),      // Adr 0x06
+     67              [3]  = BIT_NUMBER(ACL_PERM_DIMM_PARM),      //     0x07
+     68              [4]  = BIT_NUMBER(ACL_PERM_DIMM_PARM),      //     0x08
+     69              [5]  = BIT_NUMBER(ACL_PERM_DIMM_PARM),      //     0x09
+     70              [6]  = BIT_NUMBER(ACL_PERM_DIMM_PARM),      //     0x0A
+     71              [7]  = BIT_NUMBER(ACL_PERM_DIMM_PARM),      //     0x0B
+     72              [8]  = BIT_NUMBER(ACL_PERM_DIMM_PARM),      //     0x0C
+     73              [9] = BIT_NUMBER(ACL_PERM_DIMM_PARM)       //     0x0D
+     74          };
+     75          #endif
+     76          
+     77          #ifdef MPC_ASTRO_NUMBER
+     78          uint8_t astropermissions[28] = {
+     79              [0]  = 26,   // last adr.
+     80              [1]  = BIT_NUMBER(ACL_PERM_NEVER),    //    0x05
+     81              [2]  = BIT_NUMBER(ACL_PERM_OPER_MODE),      // Adr 0x06
+     82              [3]  = BIT_NUMBER(ACL_PERM_DIMM_PARM),      //     0x07
+     83              [4]  = BIT_NUMBER(ACL_PERM_DIMM_PARM),      //     0x08
+     84              [5]  = BIT_NUMBER(ACL_PERM_DIMM_PARM),      //     0x09
+     85              [6]  = BIT_NUMBER(ACL_PERM_DIMM_PARM),      //     0x0A
+     86              [7]  = BIT_NUMBER(ACL_PERM_DIMM_PARM),      //     0x0B
+     87              [8]  = BIT_NUMBER(ACL_PERM_DIMM_PARM),      //     0x0C
+     88              [9] = BIT_NUMBER(ACL_PERM_DIMM_PARM),      //     0x0D
+     89              [10] = BIT_NUMBER(ACL_PERM_DIMM_PARM),      //     0x0E
+     90              [11] = BIT_NUMBER(ACL_PERM_DIMM_PARM),      //     0x0F
+     91              [12] = BIT_NUMBER(ACL_PERM_DIMM_PARM),      //     0x10
+     92              [13] = BIT_NUMBER(ACL_PERM_DIMM_PARM),      //     0x11
+     93              [14] = BIT_NUMBER(ACL_PERM_DIMM_PARM),      //     0x12
+     94              [15] = BIT_NUMBER(ACL_PERM_DIMM_PARM),      //     0x13
+     95              [16] = BIT_NUMBER(ACL_PERM_DIMM_PARM),      //     0x14
+     96              [17] = BIT_NUMBER(ACL_PERM_DIMM_PARM),      //     0x15
+     97              [18] = BIT_NUMBER(ACL_PERM_DIMM_PARM),      //     0x16
+     98              [19] = BIT_NUMBER(ACL_PERM_DIMM_PARM),      //     0x17
+     99              [20] = BIT_NUMBER(ACL_PERM_DIMM_PARM),      //     0x18
+    100              [21] = BIT_NUMBER(ACL_PERM_DIMM_PARM),      //     0x19
+    101              [22] = BIT_NUMBER(ACL_PERM_DIMM_PARM),      //     0x1A
+    102              [23] = BIT_NUMBER(ACL_PERM_DIMM_PARM),      //     0x1B
+    103              [24] = BIT_NUMBER(ACL_PERM_DIMM_PARM),      //     0x1C
+    104              [25] = BIT_NUMBER(ACL_PERM_DIMM_PARM),      //     0x1D
+    105              [26] = BIT_NUMBER(ACL_PERM_DIMM_PARM),      //     0x1E
+    106          };
+    107          #endif
+    108          
+    109          #ifdef MPC_MAINS_NUMBER
+    110          uint8_t mainspermissions[8] = {
+    111              [0]  = 6,   // last adr.
+    112              [1]  = BIT_NUMBER(ACL_PERM_NEVER),    //    0x05
+    113              [2]  = BIT_NUMBER(ACL_PERM_OPER_MODE),      // Adr 0x06
+    114              [3]  = BIT_NUMBER(ACL_PERM_DIMM_PARM),      //     0x07
+    115              [4]  = BIT_NUMBER(ACL_PERM_DIMM_PARM),      //     0x08
+    116              [5]  = BIT_NUMBER(ACL_PERM_DIMM_PARM),      //     0x09
+    117              [6]  = BIT_NUMBER(ACL_PERM_DIMM_PARM),      //     0x0A
+    118          
+    119          };
+    120          #endif
+    121          
+    122          #ifdef MPC_PRESDETECT_NUMBER
+    123          uint8_t presdetectpermissions[8] = {
+    124              [0]  = 6,   // last adr.
+    125              [1]  = BIT_NUMBER(ACL_PERM_NEVER),    //    0x05
+    126              [2]  = BIT_NUMBER(ACL_PERM_OPER_MODE),      // Adr 0x06
+    127              [3]  = BIT_NUMBER(ACL_PERM_DIMM_PARM),      //     0x07
+    128              [4]  = BIT_NUMBER(ACL_PERM_DIMM_PARM),      //     0x08
+    129              [5]  = BIT_NUMBER(ACL_PERM_DIMM_PARM),      //     0x09
+    130              [6]  = BIT_NUMBER(ACL_PERM_DIMM_PARM),      //     0x0A
+    131          
+    132          };
+    133          #endif
+    134          
+    135          /** \} */
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      28  astropermissions
+
+ 
+ 28 bytes in section .data
+ 
+ 28 bytes of DATA memory
+
+Errors: none
+Warnings: none

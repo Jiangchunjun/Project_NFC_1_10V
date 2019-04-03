@@ -31,7 +31,7 @@
 #define SYS_TASK_SLEEP              ((uint32_t)1<<3)
 #define SYS_TASK_WAKEUP             ((uint32_t)1<<4)
 #define SYS_TASK_LOOP               ((uint32_t)1<<5)
-#define SYS_TASK_NFC_HANDLE                ((uint32_t)1<<6)
+#define SYS_TASK_NFC_HANDLE         ((uint32_t)1<<6)
 
 /*------------ TASK State Define -----------------------------------------*/
 #define SYS_TASK_ENABLE             (0x0F)

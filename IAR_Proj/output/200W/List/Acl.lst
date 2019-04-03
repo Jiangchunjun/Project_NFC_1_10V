@@ -1,0 +1,389 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:49
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\Acl\Acl.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\Acl\Acl.c"
+#        -D XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\Acl.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\Acl.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\Acl\Acl.c
+      1          // ---------------------------------------------------------------------------------------------------------------------
+      2          // Microcontroller Toolbox - Firmware Framework for Full Digital SSL Ballasts
+      3          // ---------------------------------------------------------------------------------------------------------------------
+      4          // (c) Osram GmbH
+      5          //     DS D EC - MCC
+      6          //     Parkring 33
+      7          //     85748 Garching
+      8          //
+      9          //
+     10          // The content of this file is intellectual property of OSRAM GmbH. It is
+     11          // confidential and not intended for any public release. All rights reserved.
+     12          //
+     13          //
+     14          // Initial version: 2016-09, W.Limmer@osram.de
+     15          //
+     16          // Change History:
+     17          //
+     18          // $Author: w.limmer $
+     19          // $Revision: 11592 $
+     20          // $Date: 2018-01-23 23:12:20 +0800 (Tue, 23 Jan 2018) $
+     21          // $Id: Acl.c 11592 2018-01-23 15:12:20Z w.limmer $
+     22          // $URL: https://app-ehnsvn02.int.osram-light.com/svn/EC/Toolbox1.0/Acl/releases/Rel.%201.0.0/Src/Acl.c $
+     23          //
+     24          
+     25          #include "Global.h"
+     26          #include "Acl.h"
+     27          
+     28          
+     29          
+     30          // ---------------------------------------------------------------------------------------------------------------------
+     31          /** \brief Cache for all \b credentials present at a given time.
+     32          *
+     33          * This variable stores all credentials as a bit in an integer variable. This is done, because all credentials
+     34          * are independent from each other and quite often different credentials result in the same permissions:
+     35          * Therefore it's necessary to know about this to rebuild the permissions after a credential is withdrawn.
+     36          *
+     37          * This cache significantly speeds-up this rebuild (an quite expensive operation nevertheless).
+     38          */
+     39          //STATIC uint32_t aclCredentailsCache = (1UL << ACL_CRED_SLOT_USER); // user only
+     40          STATIC uint32_t aclCredentialsCache;
+     41          
+     42          // ---------------------------------------------------------------------------------------------------------------------
+     43          /** \brief Cache for all \b permissions present at a given time.
+     44          *
+     45          * This variable stores all permissions as a bit in an integer variable. This is done to have all permissions
+     46          * available immediately when a permission should be checked, the vast majority of calls to ACL.
+     47          *
+     48          * Without this cache, every permissions check would have to ask all credentials for their specific permissions,
+     49          * which would be an quite expensive operation (for-loop).
+     50          *
+     51          * Set and cleared in \ref AclCredentialNotification(), queried in \ref AclCheckPermissions().
+     52          */
+     53          STATIC uint32_t aclPermissionsCache;
+     54          
+     55          // ---------------------------------------------------------------------------------------------------------------------
+     56          /** \brief Array to store the mask of permissions, which come with one credential
+     57           *
+     58           * For every slot (source of credentials), there is one word to store the associated permissions.
+     59           */
+     60          static uint32_t aclPerm[ACL_CRED_SLOT_FIRST_UNUSED];
+     61          
+     62          
+     63          // ---------------------------------------------------------------------------------------------------------------------
+     64          /** \brief Rebuild aclPermissionsCache (internal function).
+     65           *
+     66           * Logically OR all permissions in aclPerm[] of all given credentials to an internal cache varaible. This has
+     67           * to be done after a credential is given, withdrawn or when dynamic permissions are changed.
+     68           *
+     69           * Called by:
+     70           * - AclCredentialNotification or
+     71           * - AclDynamicPermissionsNotification
+     72           */
+     73          STATIC void rebuildPermissionCache(void) {
+     74            uint32_t new_perm = 0;
+     75          
+     76            for (int i = 0; i < ACL_CRED_SLOT_FIRST_UNUSED; i++) {
+     77              if (aclCredentialsCache & (1 << i)) {
+     78                new_perm |= aclPerm[i];
+     79              }
+     80            }
+     81            aclPermissionsCache = new_perm;
+     82          }
+     83          
+     84          
+     85          // ---------------------------------------------------------------------------------------------------------------------
+     86          /** \brief Init ACL module variables
+     87           *
+     88           * Called by the application once after uC ramp up
+     89           *
+     90           * Function:
+     91           * - sets init permissions for all slots
+     92           * - sets no credential available, except user credential
+     93           * - calculation of permission cache
+     94           */
+     95          void AclInit (void) {
+     96              aclPerm[ACL_CRED_SLOT_OSRAM_FACTORY_MODE] = ACL_PERM_INIT_OSRAM_FACTORY_MODE;
+     97              aclPerm[ACL_CRED_SLOT_MASTER_KEY] = ACL_PERM_INIT_MASTER_KEY;
+     98              aclPerm[ACL_CRED_SLOT_SERVICE_KEY] = ACL_PERM_INIT_SERVICE_KEY;
+     99              aclPerm[ACL_CRED_SLOT_USER] = ACL_PERM_INIT_USER;
+    100          
+    101              aclCredentialsCache = (1UL << ACL_CRED_SLOT_USER); // user only
+    102          
+    103              rebuildPermissionCache();
+    104          }
+    105          
+    106          
+    107          // ---------------------------------------------------------------------------------------------------------------------
+    108          /** \brief Receive notifications about credentials provided or withdrawn.
+    109           *
+    110           * Called by any MPC or other code which can provide a sort of authentication, e.g.
+    111           * - New user and tool authentication mpc
+    112           * - Legacy password pages
+    113           * - Tbd. MPCs for sellable features (cryptographic strong hashes)
+    114           * - ProductionTest (calibration mode)
+    115           * - What ever will come in the future when new decisions about balance safety vs. convenience are needed
+    116           *
+    117           * Function:
+    118           * - Set or clear a bit in \ref aclCredentailsCache upon the message
+    119           * - Rebuild \ref aclPermissionsCache
+    120           *
+    121           * \param cred            Number of the credential involved (acl_credential_enum)
+    122           * \param cred_new_state  True: Credential now is present; False: credential is withdrawn
+    123           */
+    124          void AclCredentialNotification(acl_cred_slot_t cred, bool cred_new_state) {
+    125          
+    126            uint32_t cred_mask = (1 << cred); // No overflow check needs to be done
+    127            if (cred_new_state) {
+    128              aclCredentialsCache |= cred_mask;
+    129            }
+    130            else {
+    131              aclCredentialsCache &= ~(cred_mask);
+    132            }
+    133            rebuildPermissionCache();
+    134          }
+    135          
+    136          
+    137          // ---------------------------------------------------------------------------------------------------------------------
+    138          /** \brief Store dynamically managed permissions in a defined slot.
+    139           *
+    140           * Called by any NEW Password MPC (11/2016 or later) !!
+    141           * - as soon as new dynamic perm_mask data was written to New Psswort MPC
+    142           * - this function has to be called to create "Permission Cache" based on
+    143           * - new perm_mask.
+    144           * - slot gives the name dynamic perm_mask e.g. Service, User
+    145           * - test comment to check SVN 2017 01 02
+    146           *
+    147           * \param slot
+    148           * \param perm_mask
+    149           */
+    150          void AclDynamicPermissionsNotification(acl_cred_slot_t slot, acl_perm_t perm_mask) {
+    151          
+    152            if ((slot >= ACL_CRED_SLOT_DYNAMIC_FIRST) && (slot < ACL_CRED_SLOT_FIRST_UNUSED)) {
+    153              perm_mask     &= ~0x000000FF;   // clear the fixed/non-dynamic input permissions
+    154              aclPerm[slot] &= ~0xFFFFFF00;   // clear the dynamic part of the available slot
+    155          
+    156              aclPerm[slot] |= perm_mask;
+    157          
+    158              // Better version with ACL_PERM_ALWAYS == 0 would be:
+    159              // aclPerm[slot] = (perm_mask & 0xFFFFFF00);
+    160              // printf("\tACL Permission Slot %d: 0x%08x\n", slot, aclPerm[slot]);
+    161            }
+    162            rebuildPermissionCache();
+    163          }
+    164          
+    165          // ---------------------------------------------------------------------------------------------------------------------
+    166          /** \brief Check whether all permissions required for an operation are present.
+    167           *
+    168           * Typically called by a MPC before a protected data entity is read or written. But also any other code
+    169           * can invoke this function to allow or to deny an operation depending on the permissions managed by the ACL.
+    170           *
+    171           * Port ROOT: Everything is allowed except ACL_PERM_NEVER (e.g. write access to constants).
+    172           * Port DALI: \todo -- to be reworded after code re-factoring--
+    173           *            Usually permission DALI_LOCKBYTE is given to everybody. But permission
+    174           *            is removed in case of port == DALI. This allows the calling MPC to
+    175           *            decide whether access is denied by setting the DALI_LOCKBYTE
+    176           *            permission within the required permission.
+    177           * Port DALI: Thus proceed as follows within MPC (pseudocode)":
+    178           *   if ((DALI_Lockbyte_required_by_entity) && (DALI_Lockbyte != 0x55)) {
+    179           *     perm_required |= ACL_PERM_DALI_LOCKBYTE;  // no access if port=DALI
+    180           *   }
+    181           *   else {
+    182           *     perm_required &= ~ACL_PERM_DALI_LOCKBYTE; //
+    183           *   }
+    184           *
+    185           * \param perm_required
+    186           * \param port
+    187           */
+    188          acl_check_t AclCheckPermissions(acl_perm_t perm_required, acl_port_t port) {
+    189            uint32_t aclPermissionsCacheTemp;
+    190            aclPermissionsCacheTemp = aclPermissionsCache;
+    191          
+    192            if (ACL_PORT_ROOT == port) {
+    193              aclPermissionsCacheTemp = 0xFFFFFFFF;
+    194              aclPermissionsCacheTemp &= ~ ACL_PERM_NEVER;
+    195            }
+    196          
+    197            /// \todo Re-factor this to check on != PORT_DALI
+    198            else if (port == ACL_PORT_USER) {
+    199              //aclPermissionsCacheTemp = aclPermissionsCache;
+    200              // add Lockbyte Permission to normal User thus
+    201              // MPCgen cannot block by requesting this permission
+    202              aclPermissionsCacheTemp |= ACL_PERM_DALI_LOCKBYTE;
+    203            }
+    204          
+    205            // Normal Access, e.g. USER or NFC
+    206            if ( (uint32_t)perm_required == ( aclPermissionsCacheTemp & (uint32_t)perm_required )) {
+    207              return ACL_GRANT;   // All required permissions are present
+    208            }
+    209            else {
+    210              return ACL_DENY;
+    211            }
+    212          }
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       4   AclCheckPermissions
+       8   AclCredentialNotification
+         8   -> rebuildPermissionCache
+       8   AclDynamicPermissionsNotification
+         8   -> rebuildPermissionCache
+       8   AclInit
+         8   -> rebuildPermissionCache
+       4   rebuildPermissionCache
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable4
+       4  ??DataTable4_1
+       4  ??DataTable4_2
+       4  ??DataTable4_3
+       4  ??DataTable4_4
+      50  AclCheckPermissions
+      40  AclCredentialNotification
+      66  AclDynamicPermissionsNotification
+      38  AclInit
+       4  aclCredentialsCache
+      16  aclPerm
+       4  aclPermissionsCache
+      42  rebuildPermissionCache
+
+ 
+  24 bytes in section .bss
+ 256 bytes in section .text
+ 
+ 256 bytes of CODE memory
+  24 bytes of DATA memory
+
+Errors: none
+Warnings: none

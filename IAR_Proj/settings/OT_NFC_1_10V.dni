@@ -120,7 +120,7 @@ TraceBufferSize=0x00000000
 TraceShowTime=0
 TraceShowTimeFreq=1000000
 [DebugChecksum]
-Checksum=1335901383
+Checksum=2055972848
 [CodeCoverage]
 Enabled=_ 0
 [Exceptions]
@@ -163,30 +163,42 @@ Fmt4=TypeMemoryBank_CSM-protect_cur_hi	4	0
 Fmt5=TypeMemoryBank_CSM-protect_cur_lo	4	0
 Fmt6=TypeMemoryBank_Eol-eol_time	4	0
 Fmt7=mpcInfo_nvm_t-temperatureTimeIntegrator	4	0
+Fmt8=mpcInfo_t-readTemperatureTimeIntegrator	4	0
+Fmt9=nfc_mb_entity_t-data	4	0
+Fmt10=wpage_t-addr	4	0
 [array_types]
-Fmt0=uint8_t[20]	4	0
-Fmt1=uint8_t[64]	4	0
+Fmt0=uint8_t[1000]	4	0
+Fmt1=uint8_t[192]	4	0
+Fmt2=uint8_t[20]	4	0
+Fmt3=uint8_t[24]	4	0
+Fmt4=uint8_t[32]	4	0
+Fmt5=uint8_t[4]	4	0
+Fmt6=uint8_t[64]	4	0
 [watch_formats]
-Fmt0={W}42:*(nvmData.item[1].ptr+3)	4	0
-Fmt1={W}42:*(nvmData.item[1].ptr+4)	4	0
-Fmt2={W}42:*(nvmData.item[1].ptr+8)	4	0
-Fmt3={W}42:*nvmData.item[1].ptr	4	0
-Fmt4={W}42:0x20000E34	4	0
-Fmt5={W}42:ueser_id	4	0
-Fmt6={W}42:wpage.addr	4	0
+Fmt0={W}1:prr	4	0
+Fmt1={W}1:startAddr	4	0
+Fmt2={W}1:wpage.addr	4	0
+Fmt3={W}42:*(nvmData.item[1].ptr+3)	4	0
+Fmt4={W}42:*(nvmData.item[1].ptr+4)	4	0
+Fmt5={W}42:*(nvmData.item[1].ptr+8)	4	0
+Fmt6={W}42:*nvmData.item[1].ptr	4	0
+Fmt7={W}42:0x20000E34	4	0
+Fmt8={W}42:NfcMpcTagStartAddr[0]	4	0
+Fmt9={W}42:NfcMpcTagStartAddr[1]	4	0
+Fmt10={W}42:NfcMpcTagStartAddr[2]	4	0
+Fmt11={W}42:g_nfc_time	3	0
+Fmt12={W}42:ueser_id	4	0
+Fmt13={W}42:wpage.addr	4	0
 [Trace1]
 Enabled=0
 ShowSource=1
 [Disassemble mode]
 mode=0
 [Breakpoints2]
-Bp0=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Application\src\modules\NFC\nfc_module.c}.2383.17" 0 0 1 "" 0 "" 0
-Bp1=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Application\src\modules\NFC\nfc_module.c}.2449.21" 0 0 1 "" 0 "" 0
-Bp2=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Application\src\modules\NFC\nfc_module.c}.693.9" 0 0 1 "" 0 "" 0
-Bp3=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Application\src\main.c}.41.5" 0 0 1 "" 0 "" 0
-Bp4=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Application\src\modules\NFC\nfc_module.c}.1175.17" 0 0 1 "" 0 "" 0
-Bp5=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Application\src\modules\NFC\nfc_module.c}.2475.29" 0 0 1 "" 0 "" 0
-Count=6
+Bp0=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Application\src\modules\I2C\i2c_module.c}.999.5" 0 0 1 "" 0 "" 0
+Bp1=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\Application\src\driver.c}.440.9" 0 0 1 "" 0 "" 0
+Bp2=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Application\src\main.c}.41.5" 0 0 1 "" 0 "" 0
+Count=3
 [Log file]
 LoggingEnabled=_ 0
 LogFile=_ ""

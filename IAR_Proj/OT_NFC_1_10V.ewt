@@ -5111,6 +5111,18 @@
         <name>$PROJ_DIR$\..\Application\src\modules\MPC\MSKEncryption\MskEncryption-CortexM0-LittleEndian-IAR7.60.a</name>
       </file>
     </group>
+    <group>
+      <name>O2T</name>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\O2T\O2T.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\O2T\O2T.h</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\O2T\O2T_private.h</name>
+      </file>
+    </group>
   </group>
   <group>
     <name>NFC</name>

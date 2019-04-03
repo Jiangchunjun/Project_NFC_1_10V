@@ -45,7 +45,7 @@
 #include "MpcIncludeAll.h"
 #include "AclDefaults.h"
 
-
+extern const mpc_descriptor_t O2T_Descriptor;
 // change defined value to 1 to switch on debug print
 // Always pass the debug code to the compiler, otherwise it will break sooner or later see
 // http://stackoverflow.com/questions/1644868/c-define-macro-for-debug-printing incl. the reasons for "do ... while(0)"
@@ -73,6 +73,7 @@ const mpc_keydata_t * MpcKeydata[] =
     &(MpcLegacyInfo.keydata),                 //  6
     &(MpcLegacyAstro.keydata),                 //  6
     &(MpcLegacyEol.keydata),
+    &(O2T_Descriptor.keydata),
     &(MpcLegacyDali0.keydata),                //  9
     &(MpcLegacyDali1.keydata),                // 10
 };
@@ -86,10 +87,11 @@ static const uint8_t dali_mpc_mapping[MPC_MAX_NUMBER + 1] = {
     [MPC_INFO_NUMBER]             =  5,
     [MPC_ASTRO_NUMBER]            =  6,
     [MPC_EOL_NUMBER]              =  7,
+    [MPC_O2T_NUMBER]              =  8,
     //[MPC_TDC_NUMBER]              =  6,
 
-    [0]                           =  8,
-    [1]                           =  9,
+    [0]                           =  9,
+    [1]                           =  10,
     // No Dali mapping for the Dali-Pseudo-Mpc
 };
 

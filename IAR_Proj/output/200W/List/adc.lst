@@ -1,0 +1,1005 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:49
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Driver\src\adc.c
+#    Command line =  
+#        "C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Driver\src\adc.c"
+#        -D XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\adc.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\adc.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Driver\src\adc.c
+      1          /*
+      2          ***************************************************************************************************
+      3          *                                ADC Interface Implementation
+      4          *
+      5          * File   : adc.c
+      6          * Author : Douglas Xie
+      7          * Date   : 2016.06.02
+      8          ***************************************************************************************************
+      9          * Copyright (C) 2016 OSRAM Asia Pacific Management Company.  All rights reserved.
+     10          ***************************************************************************************************
+     11          */
+     12          
+     13          /* Include Head Files ----------------------------------------------------------------------------*/
+     14          #include "adc.h"
+     15          #include "power_config_100w.h"
+     16          #include "power_config_150w.h"
+     17          #include "power_config_200w.h"
+
+  #warning ::::::::::::::::::::::::::: Using original LEDset resistor (wrong for MP) :::::::::::::::::::::::::::
+   ^
+"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\inc\power_config_200w.h",86  Warning[Pe1105]: 
+          #warning directive: ::::::::::::::::::::::::::: Using original LEDset
+          resistor (wrong for MP) :::::::::::::::::::::::::::
+     18          #include "power_config_60w.h"
+     19          /* Macro Defines ---------------------------------------------------------------------------------*/
+     20          
+     21          /* Global Variable -------------------------------------------------------------------------------*/
+     22          
+     23          /* Private Variable ------------------------------------------------------------------------------*/
+     24          /* Identifier of the hardware group */
+     25          static XMC_VADC_GROUP_t *g_group_identifier = ADC_GROUP_PTR;
+     26          
+     27          /* ADC Buffer */
+     28          static uint16_t g_buffer_iout[ADC_BUFFER_SIZE_IOUT];
+     29          static uint16_t g_buffer_uout[ADC_BUFFER_SIZE_UOUT];
+     30          #ifdef ENABLE_ADC_CH_DIM
+     31          static uint16_t g_buffer_dim[ADC_BUFFER_SIZE_DIM];
+     32          #endif /* ENABLE_ADC_CH_DIM */
+     33          
+     34          /* ADC Buffer Store Index */
+     35          static uint16_t g_buffer_index_iout = 0;
+     36          static uint16_t g_buffer_index_uout = 0;
+     37          #ifdef ENABLE_ADC_CH_DIM
+     38          static uint16_t g_buffer_index_dim  = 0;
+     39          #endif /* ENABLE_ADC_CH_DIM */
+     40          
+     41          /* ADC Buffer Data Counter */
+     42          static uint16_t g_buffer_count_iout = 0;
+     43          static uint16_t g_buffer_count_uout = 0;
+     44          #ifdef ENABLE_ADC_CH_DIM
+     45          static uint16_t g_buffer_count_dim  = 0;
+     46          #endif /* ENABLE_ADC_CH_DIM */
+     47          
+     48          /* ADC Buffer Data Average */
+     49          static uint16_t g_buffer_average_iout = 0;
+     50          static uint16_t g_buffer_average_uout = 0;
+     51          #ifdef ENABLE_ADC_CH_DIM
+     52          static uint16_t g_buffer_average_dim  = 0;
+     53          #endif /* ENABLE_ADC_CH_DIM */
+     54          
+     55          /* ADC Sample Value */
+     56          static uint16_t g_sample_iout = 0;
+     57          static uint16_t g_sample_uout = 0;
+     58          #ifdef ENABLE_ADC_CH_DIM
+     59          static uint16_t g_sample_dim  = 0;
+     60          #endif /* ENABLE_ADC_CH_DIM */
+     61          
+     62          /* ADC Enable Flag */
+     63          static uint8_t g_adc_enable_flag = ADC_SAMPLE_STOP;
+     64          
+     65          /* Constant Variable -----------------------------------------------------------------------------*/
+     66          /* Initialization data of VADC global resources */
+     67          const XMC_VADC_GLOBAL_CONFIG_t g_global_handle =
+     68          {
+     69              .disable_sleep_mode_control = 0,
+     70              .class0 = 
+     71              {
+     72                  .conversion_mode_standard     =  XMC_VADC_CONVMODE_12BIT,
+     73                  .sample_time_std_conv         = 3U,
+     74                  .conversion_mode_emux         =  XMC_VADC_CONVMODE_12BIT,
+     75                  .sampling_phase_emux_channel  = 0,
+     76              },
+     77              .class1 = 
+     78              {
+     79                  .conversion_mode_standard     =  XMC_VADC_CONVMODE_12BIT,
+     80                  .sample_time_std_conv         = 3U,
+     81                  .conversion_mode_emux         =  XMC_VADC_CONVMODE_12BIT,
+     82                  .sampling_phase_emux_channel  = 3U
+     83              },
+     84              .data_reduction_control = 0,
+     85              .wait_for_read_mode = false,
+     86              .event_gen_enable = false,
+     87              .boundary0 = 0,
+     88              .boundary1 = 0
+     89          };
+     90          
+     91          /* Initialization data of a VADC group */
+     92          const XMC_VADC_GROUP_CONFIG_t g_group_handle =
+     93          {
+     94              .class0 = 
+     95              {
+     96                  .conversion_mode_standard     =  XMC_VADC_CONVMODE_12BIT,
+     97                  .sample_time_std_conv         = 3U,
+     98                  .conversion_mode_emux         =  XMC_VADC_CONVMODE_12BIT,
+     99                  .sampling_phase_emux_channel  = 3U,
+    100              },
+    101              .class1 = 
+    102              {
+    103                  .conversion_mode_standard     =  XMC_VADC_CONVMODE_12BIT,
+    104                  .sample_time_std_conv         = 3U,
+    105                  .conversion_mode_emux         =  XMC_VADC_CONVMODE_12BIT,
+    106                  .sampling_phase_emux_channel  = 3U,
+    107              },
+    108              .arbitration_round_length = 0x0,
+    109              .arbiter_mode =  XMC_VADC_GROUP_ARBMODE_ALWAYS,
+    110              .boundary0 = 0, /* Boundary-0 */
+    111              .boundary1 = 0, /* Boundary-1 */
+    112              .emux_config = 
+    113              {
+    114                  .emux_mode = XMC_VADC_GROUP_EMUXMODE_SWCTRL,
+    115                  .stce_usage = 0,
+    116                  .emux_coding = XMC_VADC_GROUP_EMUXCODE_BINARY,
+    117                  .starting_external_channel = 0,
+    118                  .connected_channel = 0
+    119              }
+    120          };
+    121          
+    122          /* Channel configuration data for output voltage */
+    123          const XMC_VADC_CHANNEL_CONFIG_t  g_channel_handle_uout =
+    124          {
+    125              .channel_priority           = 1U,    /* true or false */
+    126              .input_class                = XMC_VADC_CHANNEL_CONV_GROUP_CLASS1,
+    127              .alias_channel              = XMC_VADC_CHANNEL_ALIAS_DISABLED,
+    128              .bfl                        = 0,
+    129              .event_gen_criteria         = XMC_VADC_CHANNEL_EVGEN_ALWAYS,
+    130              .alternate_reference        = XMC_VADC_CHANNEL_REF_INTREF,
+    131              .result_reg_number          = (uint8_t)ADC_RESULT_REG_UOUT,
+    132              .sync_conversion            = false, /* Sync Feature disabled*/
+    133              .result_alignment           = XMC_VADC_RESULT_ALIGN_RIGHT,
+    134              .use_global_result          = false,
+    135              .broken_wire_detect_channel = false,
+    136              .broken_wire_detect         = false
+    137          };
+    138          
+    139          /* Channel configuration data for output current */
+    140          const XMC_VADC_CHANNEL_CONFIG_t  g_channel_handle_iout =
+    141          {
+    142              .channel_priority           = 1U,    /* true or false */
+    143              .input_class                = XMC_VADC_CHANNEL_CONV_GROUP_CLASS1,
+    144              .alias_channel              = XMC_VADC_CHANNEL_ALIAS_DISABLED,
+    145              .bfl                        = 0,
+    146              .event_gen_criteria         = XMC_VADC_CHANNEL_EVGEN_ALWAYS,
+    147              .alternate_reference        = XMC_VADC_CHANNEL_REF_INTREF,
+    148              .result_reg_number          = (uint8_t)ADC_RESULT_REG_IOUT,
+    149              .sync_conversion            = false, /* Sync Feature disabled*/
+    150              .result_alignment           = XMC_VADC_RESULT_ALIGN_RIGHT,
+    151              .use_global_result          = false,
+    152              .broken_wire_detect_channel = false,
+    153              .broken_wire_detect         = false
+    154          };
+    155          
+    156          /* Channel configuration data for 1-10V dimming */
+    157          #ifdef ENABLE_ADC_CH_DIM
+    158          const XMC_VADC_CHANNEL_CONFIG_t  g_channel_handle_dim =
+    159          {
+    160              .channel_priority           = 1U,    /* true or false */
+    161              .input_class                = XMC_VADC_CHANNEL_CONV_GROUP_CLASS1,
+    162              .alias_channel              = XMC_VADC_CHANNEL_ALIAS_DISABLED,
+    163              .bfl                        = 0,
+    164              .event_gen_criteria         = XMC_VADC_CHANNEL_EVGEN_ALWAYS,
+    165              .alternate_reference        = XMC_VADC_CHANNEL_REF_INTREF,
+    166              .result_reg_number          = (uint8_t)ADC_RESULT_REG_DIM,
+    167              .sync_conversion            = false, /* Sync Feature disabled*/
+    168              .result_alignment           = XMC_VADC_RESULT_ALIGN_RIGHT,
+    169              .use_global_result          = false,
+    170              .broken_wire_detect_channel = false,
+    171              .broken_wire_detect         = false
+    172          };
+    173          #endif /* ENABLE_ADC_CH_DIM */
+    174          
+    175          /* Result configuration data for all channel */
+    176          const XMC_VADC_RESULT_CONFIG_t g_result_handle = 
+    177          {
+    178              .post_processing_mode   = XMC_VADC_DMM_REDUCTION_MODE,
+    179              .data_reduction_control = 0,
+    180              .part_of_fifo           = false,    /* No FIFO */
+    181              .wait_for_read_mode     = true,     /* WFS */
+    182              .event_gen_enable       = false     /* No result event */
+    183          };
+    184          
+    185          /* Queue hardware configuration data */
+    186          const XMC_VADC_QUEUE_CONFIG_t g_queue_handle =
+    187          {
+    188              .req_src_priority = (uint8_t)3, /* Highest Priority = 3, Lowest = 0 */
+    189              .conv_start_mode  = XMC_VADC_STARTMODE_WFS,
+    190              .external_trigger = (bool) false, /* No external trigger */
+    191              .trigger_signal   = XMC_VADC_REQ_TR_A, /* Irrelevant */
+    192              .trigger_edge     = XMC_VADC_TRIGGER_EDGE_NONE,
+    193              .gate_signal      = XMC_VADC_REQ_GT_A, /* Irrelevant */
+    194              .timer_mode       = (bool) false, /* No timer mode */
+    195          };
+    196          
+    197          /* Queue entry of output voltage */
+    198          const XMC_VADC_QUEUE_ENTRY_t g_queue_entry_uout =
+    199          {
+    200              .channel_num        = ADC_CHANNEL_UOUT,
+    201              .refill_needed      = true,     /* Refill is needed */
+    202              .generate_interrupt = false,    /* Interrupt generation is needed */
+    203              .external_trigger   = false     /* External trigger is required */
+    204          };
+    205          
+    206          /* Queue entry of output current */
+    207          const XMC_VADC_QUEUE_ENTRY_t g_queue_entry_iout =
+    208          {
+    209              .channel_num        = ADC_CHANNEL_IOUT,
+    210              .refill_needed      = true,     /* Refill is needed */
+    211              .generate_interrupt = false,    /* Interrupt generation is needed */
+    212              .external_trigger   = false     /* External trigger is required */
+    213          };
+    214          
+    215          /* Queue entry of 1-10V dimming */
+    216          #ifdef ENABLE_ADC_CH_DIM
+    217          const XMC_VADC_QUEUE_ENTRY_t g_queue_entry_dim =
+    218          {
+    219              .channel_num        = ADC_CHANNEL_DIM,
+    220              .refill_needed      = true,     /* Refill is needed */
+    221              .generate_interrupt = false,    /* Interrupt generation is needed */
+    222              .external_trigger   = false     /* External trigger is required */
+    223          };
+    224          #endif /* ENABLE_ADC_CH_DIM */
+    225          
+    226          
+    227          /* Function Declaration -------------------------------------------------------------------------*/
+    228          void ADC_SHS_Calibration(void);
+    229          
+    230          /* Function Implement ---------------------------------------------------------------------------*/
+    231          /*******************************************************************************
+    232          * @Brief   Enable ADC Module and Start
+    233          * @Param   
+    234          * @Note    config VADC module and start
+    235          * @Return  
+    236          *******************************************************************************/
+    237          void ADC_Enable(void)
+    238          {  
+    239              XMC_GPIO_CONFIG_t str_gpio_input;
+    240              
+    241              /*--------- GPIO Configuration --------------------------------------------*/
+    242              /* Set gpio mode to be input state */
+    243              str_gpio_input.mode = XMC_GPIO_MODE_INPUT_TRISTATE;
+    244              
+    245              /* Set GPIO to input */
+    246              XMC_GPIO_Init(ADC_GPIO_PORT_UOUT, ADC_GPIO_PIN_UOUT, &str_gpio_input);
+    247              XMC_GPIO_Init(ADC_GPIO_PORT_IOUT, ADC_GPIO_PIN_IOUT, &str_gpio_input);
+    248          #ifdef ENABLE_ADC_CH_DIM
+    249              XMC_GPIO_Init(ADC_GPIO_PORT_DIM, ADC_GPIO_PIN_DIM, &str_gpio_input);
+    250          #else
+    251              str_gpio_input.mode = XMC_GPIO_MODE_OUTPUT_OPEN_DRAIN;
+    252              str_gpio_input.output_level = XMC_GPIO_OUTPUT_LEVEL_LOW;
+    253              XMC_GPIO_Init(ADC_GPIO_PORT_DIM, ADC_GPIO_PIN_DIM, &str_gpio_input);
+    254          #endif /* ENABLE_ADC_CH_DIM */
+    255              
+    256              /*--------- Global Configuration ------------------------------------------*/
+    257              /* Initialize the VADC global registers */
+    258              XMC_VADC_GLOBAL_Init(VADC, &g_global_handle);
+    259              
+    260              /* Configure a conversion kernel */
+    261              XMC_VADC_GROUP_Init(g_group_identifier, &g_group_handle);
+    262              
+    263              /* Configure the queue request source of the aforesaid conversion kernel */
+    264              XMC_VADC_GROUP_QueueInit(g_group_identifier, &g_queue_handle);
+    265          
+    266              /*--------- ADC Calibration -----------------------------------------------*/            
+    267              /* Enable the analog converters */
+    268              XMC_VADC_GROUP_SetPowerMode(g_group_identifier, XMC_VADC_GROUP_POWERMODE_NORMAL);
+    269              
+    270              /* Perform calibration of the converter */
+    271              XMC_VADC_GLOBAL_StartupCalibration(VADC);
+    272              
+    273              ADC_SHS_Calibration();
+    274              
+    275              /*--------- Channel Configuration -----------------------------------------*/
+    276              /* Configure a channel belonging to the aforesaid conversion kernel */
+    277              XMC_VADC_GROUP_ChannelInit(g_group_identifier, ADC_CHANNEL_UOUT, &g_channel_handle_uout);
+    278              XMC_VADC_GROUP_ChannelInit(g_group_identifier, ADC_CHANNEL_IOUT, &g_channel_handle_iout);
+    279          #ifdef ENABLE_ADC_CH_DIM
+    280              XMC_VADC_GROUP_ChannelInit(g_group_identifier, ADC_CHANNEL_DIM, &g_channel_handle_dim);
+    281          #endif /* ENABLE_ADC_CH_DIM */
+    282              
+    283              /* Configure a result resource belonging to the aforesaid conversion kernel */
+    284              XMC_VADC_GROUP_ResultInit(g_group_identifier, ADC_RESULT_REG_UOUT, &g_result_handle);
+    285              XMC_VADC_GROUP_ResultInit(g_group_identifier, ADC_RESULT_REG_IOUT, &g_result_handle);
+    286          #ifdef ENABLE_ADC_CH_DIM
+    287              XMC_VADC_GROUP_ResultInit(g_group_identifier, ADC_RESULT_REG_DIM, &g_result_handle);
+    288          #endif /* ENABLE_ADC_CH_DIM */
+    289              
+    290              /* Add the channel to the queue */
+    291              XMC_VADC_GROUP_QueueInsertChannel(g_group_identifier, g_queue_entry_uout);
+    292              XMC_VADC_GROUP_QueueInsertChannel(g_group_identifier, g_queue_entry_iout);
+    293          #ifdef ENABLE_ADC_CH_DIM
+    294              XMC_VADC_GROUP_QueueInsertChannel(g_group_identifier, g_queue_entry_dim);
+    295          #endif /* ENABLE_ADC_CH_DIM */
+    296              
+    297              /* Set channel gain factor */
+    298              XMC_VADC_GLOBAL_SHS_Init(SHS0, NULL);
+    299              XMC_VADC_GLOBAL_SHS_EnableGainAndOffsetCalibrations(SHS0, ADC_GROUP_INDEX);
+    300              XMC_VADC_GLOBAL_SHS_SetGainFactor(SHS0, ADC_GAIN_UOUT, ADC_GROUP_INDEX, ADC_CHANNEL_UOUT);
+    301              XMC_VADC_GLOBAL_SHS_SetGainFactor(SHS0, ADC_GAIN_IOUT, ADC_GROUP_INDEX, ADC_CHANNEL_IOUT);
+    302          #ifdef ENABLE_ADC_CH_DIM
+    303              XMC_VADC_GLOBAL_SHS_SetGainFactor(SHS0, ADC_GAIN_DIIM, ADC_GROUP_INDEX, ADC_CHANNEL_DIM);
+    304          #endif /* ENABLE_ADC_CH_DIM */
+    305              
+    306              /* Enable the analog converters */
+    307              XMC_VADC_GROUP_SetPowerMode(g_group_identifier, XMC_VADC_GROUP_POWERMODE_NORMAL); 
+    308              
+    309              /*--------- Data Buffer Reset ---------------------------------------------*/
+    310              ADC_BufferReset();
+    311              g_adc_enable_flag = ADC_SAMPLE_START;  /* adc is enable, ready for sample */
+    312          }
+    313          
+    314          /*******************************************************************************
+    315          * @Brief   Disable ADC Module
+    316          * @Param   
+    317          * @Note    Disable VADC module and set gpio to normal input state
+    318          * @Return  
+    319          *******************************************************************************/
+    320          void ADC_Disable(void)
+    321          {     
+    322              XMC_GPIO_CONFIG_t str_gpio_input;
+    323              
+    324              /*--------- ADC Module Configuration --------------------------------------*/
+    325              XMC_VADC_GLOBAL_DisableModule();
+    326              
+    327              /*--------- GPIO Configuration --------------------------------------------*/
+    328              /* Set gpio to normal input state */
+    329              str_gpio_input.mode = XMC_GPIO_MODE_INPUT_TRISTATE;
+    330             
+    331              /* Set GPIO to input */
+    332              XMC_GPIO_Init(ADC_GPIO_PORT_UOUT, ADC_GPIO_PIN_UOUT, &str_gpio_input);
+    333              XMC_GPIO_Init(ADC_GPIO_PORT_IOUT, ADC_GPIO_PIN_IOUT, &str_gpio_input);
+    334              XMC_GPIO_Init(ADC_GPIO_PORT_DIM,  ADC_GPIO_PIN_DIM,  &str_gpio_input);
+    335              
+    336              /*--------- Data Buffer Reset ---------------------------------------------*/
+    337              ADC_BufferReset();
+    338              g_adc_enable_flag = ADC_SAMPLE_STOP;  /* adc has disabled */
+    339          }
+    340          
+    341          
+    342          /*******************************************************************************
+    343          * @Brief   Reset ADC Buffer
+    344          * @Param   
+    345          * @Note    Clear buffer and relative value
+    346          * @Return  
+    347          *******************************************************************************/
+    348          void ADC_BufferReset(void)
+    349          {
+    350              /* Reset output voltage buffer */
+    351              g_buffer_index_uout = 0;
+    352              g_buffer_count_uout = 0;
+    353              g_buffer_average_uout = 0;
+    354              memset(g_buffer_uout, 0, sizeof(g_buffer_uout[0])*ADC_BUFFER_SIZE_UOUT);
+    355              
+    356              /* Reset output current buffer */
+    357              g_buffer_index_iout = 0;
+    358              g_buffer_count_iout = 0;
+    359              g_buffer_average_iout = 0;
+    360              memset(g_buffer_iout, 0, sizeof(g_buffer_iout[0])*ADC_BUFFER_SIZE_IOUT);
+    361              
+    362              /* Reset 1-10V dimming buffer */
+    363          #ifdef ENABLE_ADC_CH_DIM
+    364              g_buffer_index_dim = 0;
+    365              g_buffer_count_dim = 0;
+    366              g_buffer_average_dim = 0;
+    367              memset(g_buffer_dim, 0, sizeof(g_buffer_dim[0])*ADC_BUFFER_SIZE_DIM);
+    368          #endif /* ENABLE_ADC_CH_DIM */
+    369          }
+    370          
+    371          
+    372          /*******************************************************************************
+    373          * @Brief   Read ADC Convert Result
+    374          * @Param   
+    375          * @Note    read out result to data buffer, calculation will be process in main.c
+    376          * @Return  
+    377          *******************************************************************************/
+    378          void ADC_ReadResult(void)
+    379          {
+    380              uint16_t        step_differ  = 0;
+    381              static uint8_t  s_step_count_i = 0;
+    382              static uint8_t  s_step_count_u = 0;
+    383              
+    384              /* Check adc enable flag */
+    385              if(g_adc_enable_flag == ADC_SAMPLE_STOP)
+    386              {
+    387                  /* return if adc is disabled */
+    388                  return;
+    389              }
+    390                  
+    391              /*----------- Output Current Iout ----------------------------------------*/
+    392              /* Read result from register */
+    393              g_sample_iout = XMC_VADC_GROUP_GetResult(g_group_identifier, ADC_RESULT_REG_IOUT);
+    394              g_buffer_iout[g_buffer_index_iout] = g_sample_iout;
+    395              
+    396              /* Update output current buffer index */    
+    397              g_buffer_index_iout++;
+    398              if(g_buffer_index_iout >= ADC_BUFFER_SIZE_IOUT)
+    399              {
+    400                  g_buffer_index_iout = 0;
+    401              }
+    402              
+    403              /* Update output current buffer counter */
+    404              if(g_buffer_count_iout < ADC_BUFFER_SIZE_IOUT)
+    405              {
+    406                  g_buffer_count_iout++;
+    407              }
+    408              
+    409              /* Get different between current adc and last average */
+    410              if(g_buffer_iout[g_buffer_index_iout-1] > g_buffer_average_iout)
+    411              {
+    412                  step_differ = g_buffer_iout[g_buffer_index_iout-1] - g_buffer_average_iout;
+    413              }
+    414              else
+    415              {
+    416                  step_differ = g_buffer_average_iout - g_buffer_iout[g_buffer_index_iout-1];
+    417              }
+    418              
+    419              /* Step respond process */
+    420              if(step_differ >= ADC_STEP_DIFFER_I)
+    421              {
+    422                  /* Respond active */
+    423                  if(s_step_count_i >= ADC_STEP_RESPOND_COUNT)
+    424                  {
+    425                      /* save lastest adc to step_differ */
+    426                      step_differ = g_buffer_iout[g_buffer_index_iout-1];
+    427                      
+    428                      /* Clear current buffer and use average value as the first data */
+    429                      memset(g_buffer_iout, 0, sizeof(g_buffer_iout[0])*ADC_BUFFER_SIZE_IOUT);
+    430                      g_buffer_iout[0] = step_differ;
+    431                      g_buffer_index_iout = 1;
+    432                      g_buffer_count_iout = 1;
+    433                      g_buffer_average_iout = g_buffer_iout[0];
+    434                  }
+    435                  else
+    436                  {
+    437                      /* Update step respond counter */
+    438                      s_step_count_i++;                
+    439                  }
+    440              }
+    441              else
+    442              {
+    443                  /* Reset step respond counter */
+    444                  s_step_count_i = 0; 
+    445              }
+    446              
+    447              /*----------- Output Voltage Uout ----------------------------------------*/
+    448              /* Read result from register */
+    449              g_sample_uout = XMC_VADC_GROUP_GetResult(g_group_identifier, ADC_RESULT_REG_UOUT);
+    450              g_buffer_uout[g_buffer_index_uout] = g_sample_uout;
+    451                  
+    452              /* Update output voltage buffer index */    
+    453          //    g_buffer_index_uout++;
+    454          //    if(g_buffer_index_uout >= ADC_BUFFER_SIZE_UOUT)
+    455          //    { 
+    456          //        g_buffer_index_uout = 0;
+    457          //    }
+    458              
+    459              /* Update output voltage buffer counter */    
+    460              if(g_buffer_count_uout < ADC_BUFFER_SIZE_UOUT)
+    461              {
+    462                  g_buffer_count_uout++;
+    463              }
+    464               
+    465              /* Get different between current adc and last average */
+    466              if(g_buffer_uout[g_buffer_index_uout] > g_buffer_average_uout)
+    467              {
+    468                  step_differ = g_buffer_uout[g_buffer_index_uout]- g_buffer_average_uout;
+    469              }
+    470              else
+    471              {
+    472                  step_differ = g_buffer_average_uout - g_buffer_uout[g_buffer_index_uout];
+    473              }
+    474              
+    475              /* Step respond process */
+    476              if(step_differ >= ADC_STEP_DIFFER_U)
+    477              {
+    478                  /* Respond active */
+    479                  if(s_step_count_u >= ADC_STEP_RESPOND_COUNT)
+    480                  {
+    481                      /* save lastest adc to step_differ */
+    482                      step_differ = g_buffer_uout[g_buffer_index_uout];
+    483                      
+    484                      /* Clear current buffer and use average value as the first data */
+    485                      memset(g_buffer_uout, 0, sizeof(g_buffer_uout[0])*ADC_BUFFER_SIZE_UOUT);
+    486                      g_buffer_uout[0] = step_differ;
+    487                      g_buffer_index_uout = 1;
+    488                      g_buffer_count_uout = 1;
+    489                      g_buffer_average_uout = g_buffer_uout[0];
+    490                  }
+    491                  else
+    492                  {
+    493                      /* Update step respond counter */
+    494                      s_step_count_u++;                
+    495                  }
+    496              }
+    497              else
+    498              {
+    499                  /* Reset step respond counter */
+    500                  s_step_count_u = 0; 
+    501              }
+    502              g_buffer_index_uout++;
+    503              if(g_buffer_index_uout >= ADC_BUFFER_SIZE_UOUT)
+    504              { 
+    505                g_buffer_index_uout = 0;
+    506              }
+    507              
+    508              
+    509          #ifdef ENABLE_ADC_CH_DIM
+    510              /*----------- 1-10V Dimming Input ----------------------------------------*/
+    511              /* Read result from register */
+    512              g_sample_dim = XMC_VADC_GROUP_GetResult(g_group_identifier, ADC_RESULT_REG_DIM); 
+    513              g_buffer_dim[g_buffer_index_dim] = g_sample_dim;
+    514          
+    515              /* Update 1-10V dimming buffer index */
+    516              g_buffer_index_dim++;
+    517              if(g_buffer_index_dim >= ADC_BUFFER_SIZE_DIM)
+    518              {
+    519                  g_buffer_index_dim = 0;
+    520              }
+    521              
+    522              /* Update 1-10V dimming buffer counter */
+    523              if(g_buffer_count_dim < ADC_BUFFER_SIZE_DIM)
+    524              {
+    525                  g_buffer_count_dim++;
+    526              }
+    527          #endif /* ENABLE_ADC_CH_DIM */
+    528          }
+    529          
+    530          
+    531          /*******************************************************************************
+    532          * @Brief   Calculate Average ADC
+    533          * @Param   
+    534          * @Note    read out result to data buffer, calculation will be process in main.c
+    535          * @Return  
+    536          *******************************************************************************/
+    537          void ADC_CalculateAverage(void)
+    538          {
+    539              uint16_t  i = 0;
+    540              uint32_t  sum = 0;    
+    541              
+    542              /*----------- Output Current Iout ----------------------------------------*/
+    543              /* Iout Average */
+    544              if(g_buffer_count_iout > 0)
+    545              {    
+    546                  sum = 0;
+    547                  for(i = 0; i < g_buffer_count_iout; i++)
+    548                  {
+    549                      sum += g_buffer_iout[i];
+    550                  }
+    551                  g_buffer_average_iout = sum / g_buffer_count_iout;
+    552              }
+    553              else
+    554              {
+    555                  g_buffer_average_iout = 0;
+    556              }
+    557              
+    558              /*----------- Output Voltage Uout ----------------------------------------*/
+    559              /* Uout Average */
+    560              if(g_buffer_count_uout > 0)
+    561              {
+    562                  sum = 0;
+    563                  for(i = 0; i < g_buffer_count_uout; i++)
+    564                  {
+    565                      sum += g_buffer_uout[i];
+    566                  }
+    567                  g_buffer_average_uout = sum / g_buffer_count_uout;
+    568              }
+    569              else
+    570              {
+    571                  g_buffer_average_uout = 0;
+    572              }   
+    573              
+    574          #ifdef ENABLE_ADC_CH_DIM
+    575              /*----------- 1-10V Dimming Input ----------------------------------------*/
+    576              /* Dimming Average */
+    577              if(g_buffer_count_dim > 0)
+    578              {
+    579                  sum = 0;
+    580                  for(i = 0; i < g_buffer_count_dim; i++)
+    581                  {
+    582                      sum += g_buffer_dim[i];
+    583                  }
+    584                  g_buffer_average_dim = sum / g_buffer_count_dim;
+    585              }
+    586              else
+    587              {
+    588                  g_buffer_average_dim = 0;
+    589              }  
+    590          #endif /* ENABLE_ADC_CH_DIM */
+    591          }
+    592          
+    593          /*******************************************************************************
+    594          * @Brief   Get Average ADC
+    595          * @Param   [in]channel: input ADC channel such as ADC_CHANNEL_IOUT
+    596          * @Note     
+    597          * @Return  channel average ADC result
+    598          *******************************************************************************/
+    599          uint16_t ADC_GetAverage(uint8_t channel)
+    600          {
+    601              uint16_t avg_result = 0;
+    602              
+    603              /* Set channel average result to variable */
+    604              switch(channel)
+    605              {
+    606              case ADC_CHANNEL_UOUT:
+    607                  avg_result = g_buffer_average_uout;
+    608                  break;
+    609                  
+    610              case ADC_CHANNEL_IOUT:
+    611                  avg_result = g_buffer_average_iout;
+    612                  break;
+    613                  
+    614          #ifdef ENABLE_ADC_CH_DIM
+    615              case ADC_CHANNEL_DIM:
+    616                  avg_result = g_buffer_average_dim;
+    617                  break;
+    618          #endif /* ENABLE_ADC_CH_DIM */
+    619                  
+    620              default:
+    621                  avg_result = 0;
+    622                  break;
+    623              }
+    624              
+    625              return avg_result;
+    626          }
+    627          
+    628          /*******************************************************************************
+    629          * @Brief   Get Sample ADC
+    630          * @Param   [in]channel: input ADC channel such as ADC_CHANNEL_IOUT
+    631          * @Note     
+    632          * @Return  channel sample ADC result
+    633          *******************************************************************************/
+    634          uint16_t ADC_GetSample(uint8_t channel)
+    635          {
+    636              uint16_t avg_result = 0;
+    637              
+    638              /* Set channel average result to variable */
+    639              switch(channel)
+    640              {
+    641              case ADC_CHANNEL_UOUT:
+    642                  avg_result = g_sample_uout;
+    643                  break;
+    644                  
+    645              case ADC_CHANNEL_IOUT:
+    646                  avg_result = g_sample_iout;
+    647                  break;
+    648                  
+    649          #ifdef ENABLE_ADC_CH_DIM
+    650              case ADC_CHANNEL_DIM:
+    651                  avg_result = g_sample_dim;
+    652                  break;
+    653          #endif /* ENABLE_ADC_CH_DIM */
+    654                  
+    655              default:
+    656                  avg_result = 0;
+    657                  break;
+    658              }
+    659              
+    660              return avg_result;
+    661          }
+    662          
+    663          /*******************************************************************************
+    664          * @Brief   Get ADC Start Flag
+    665          * @Param   
+    666          * @Note     
+    667          * @Return  start flag of g_adc_enable_flag
+    668          *******************************************************************************/
+    669          uint8_t ADC_GetStartFlag(void)
+    670          {
+    671              return g_adc_enable_flag;
+    672          }
+    673          
+    674          /*******************************************************************************
+    675          * @Brief   Calibration VADC
+    676          * @Param   
+    677          * @Note    get offset calibration value and set to register
+    678          *          but not sure if it is right
+    679          * @Return  
+    680          *******************************************************************************/
+    681          void ADC_SHS_Calibration(void)
+    682          {
+    683              uint8_t byOffset;
+    684              
+    685              /* Read calibration offset value from chip */
+    686              byOffset = XMC_VADC_GLOBAL_SHS_GetOffsetCalibrationValue(SHS0, XMC_VADC_GROUP_INDEX_1, XMC_VADC_SHS_GAIN_LEVEL_1);
+    687              
+    688              /* Set calibration offset value to register */
+    689              XMC_VADC_GLOBAL_SHS_SetOffsetCalibrationValue(SHS0, XMC_VADC_GROUP_INDEX_1, XMC_VADC_SHS_GAIN_LEVEL_1, byOffset);
+    690          }
+    691          
+    692          
+    693          #ifdef DEBUG_VERSION
+    694          void ADC_PrintBuffer(void)
+    695          {
+    696              uint16_t i = 0;
+    697              uint8_t buffer[8];
+    698              
+    699              /********************************************/
+    700              sprintf((char*)buffer, "Iout\n\n");
+    701              USART_PrintInfo(buffer);
+    702              for(i = 0; i < ADC_BUFFER_SIZE_IOUT; i++)
+    703              {
+    704                  sprintf((char*)buffer, "%4d\n", g_buffer_iout[i]);
+    705                  USART_PrintInfo(buffer);        
+    706              }
+    707              
+    708              /********************************************/
+    709              for(i = 0; i < 10; i++);
+    710              sprintf((char*)buffer, "\n\n\n\n");
+    711              USART_PrintInfo(buffer);
+    712              sprintf((char*)buffer, "Uout\n\n");
+    713              USART_PrintInfo(buffer);
+    714              for(i = 0; i < ADC_BUFFER_SIZE_UOUT; i++)
+    715              {
+    716                  sprintf((char*)buffer, "%4d\n", g_buffer_uout[i]);
+    717                  USART_PrintInfo(buffer);        
+    718              }
+    719          }
+    720          #endif /* DEBUG_VERSION */
+    721          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   ADC_BufferReset
+         8   -> __aeabi_memset
+       4   ADC_CalculateAverage
+         4 __aeabi_uidiv
+      16   ADC_Disable
+        16   -> ADC_BufferReset
+        16   -> XMC_GPIO_Init
+        16   -> XMC_VADC_GLOBAL_DisableModule
+      16   ADC_Enable
+        16   -> ADC_BufferReset
+        16   -> ADC_SHS_Calibration
+        16   -> XMC_GPIO_Init
+        16   -> XMC_VADC_GLOBAL_Init
+        16   -> XMC_VADC_GLOBAL_SHS_EnableGainAndOffsetCalibrations
+        16   -> XMC_VADC_GLOBAL_SHS_Init
+        16   -> XMC_VADC_GLOBAL_SHS_SetGainFactor
+        16   -> XMC_VADC_GLOBAL_StartupCalibration
+        16   -> XMC_VADC_GROUP_ChannelInit
+        16   -> XMC_VADC_GROUP_Init
+        16   -> XMC_VADC_GROUP_QueueInit
+        16   -> XMC_VADC_GROUP_QueueInsertChannel
+        16   -> XMC_VADC_GROUP_ResultInit
+        16   -> XMC_VADC_GROUP_SetPowerMode
+       4   ADC_GetAverage
+       4   ADC_GetSample
+       0   ADC_GetStartFlag
+      16   ADC_ReadResult
+        16   -> XMC_VADC_GROUP_GetResult
+        16   -> __aeabi_memset
+       8   ADC_SHS_Calibration
+         8   -> XMC_VADC_GLOBAL_SHS_GetOffsetCalibrationValue
+         8   -> XMC_VADC_GLOBAL_SHS_SetOffsetCalibrationValue
+       0   XMC_VADC_GROUP_GetResult
+       0   XMC_VADC_GROUP_QueueInsertChannel
+       0   XMC_VADC_GROUP_ResultInit
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable2
+       4  ??DataTable2_1
+       4  ??DataTable2_10
+       4  ??DataTable2_11
+       4  ??DataTable2_12
+       4  ??DataTable2_13
+       4  ??DataTable2_14
+       4  ??DataTable2_15
+       4  ??DataTable2_16
+       4  ??DataTable2_17
+       4  ??DataTable2_2
+       4  ??DataTable2_3
+       4  ??DataTable2_4
+       4  ??DataTable2_5
+       4  ??DataTable2_6
+       4  ??DataTable2_7
+       4  ??DataTable2_8
+       4  ??DataTable2_9
+       4  ??DataTable3
+       4  ??DataTable3_1
+       4  ??DataTable3_2
+       4  ??DataTable3_3
+       4  ??DataTable3_4
+       4  ??DataTable3_5
+       4  ??DataTable3_6
+       4  ??DataTable3_7
+       4  ??DataTable3_8
+       4  ??DataTable3_9
+       4  ??DataTable4
+       4  ??DataTable4_1
+       4  ??DataTable7
+       4  ??DataTable8
+       4  ??DataTable8_1
+       4  ??DataTable8_10
+       4  ??DataTable8_11
+       4  ??DataTable8_12
+       4  ??DataTable8_13
+       4  ??DataTable8_2
+       4  ??DataTable8_3
+       4  ??DataTable8_4
+       4  ??DataTable8_5
+       4  ??DataTable8_6
+       4  ??DataTable8_7
+       4  ??DataTable8_8
+       4  ??DataTable8_9
+      94  ADC_BufferReset
+     188  ADC_CalculateAverage
+      56  ADC_Disable
+     270  ADC_Enable
+      46  ADC_GetAverage
+      46  ADC_GetSample
+       6  ADC_GetStartFlag
+     532  ADC_ReadResult
+      28  ADC_SHS_Calibration
+      16  XMC_VADC_GROUP_GetResult
+       8  XMC_VADC_GROUP_QueueInsertChannel
+      16  XMC_VADC_GROUP_ResultInit
+       1  g_adc_enable_flag
+       2  g_buffer_average_dim
+       2  g_buffer_average_iout
+       2  g_buffer_average_uout
+       2  g_buffer_count_dim
+       2  g_buffer_count_iout
+       2  g_buffer_count_uout
+     240  g_buffer_dim
+       2  g_buffer_index_dim
+       2  g_buffer_index_iout
+       2  g_buffer_index_uout
+      40  g_buffer_iout
+     240  g_buffer_uout
+      16  g_channel_handle_dim
+      16  g_channel_handle_iout
+      16  g_channel_handle_uout
+      24  g_global_handle
+      20  g_group_handle
+       4  g_group_identifier
+       4  g_queue_entry_dim
+       4  g_queue_entry_iout
+       4  g_queue_entry_uout
+      12  g_queue_handle
+       4  g_result_handle
+       2  g_sample_dim
+       2  g_sample_iout
+       2  g_sample_uout
+       1  s_step_count_i
+       1  s_step_count_u
+
+ 
+   547 bytes in section .bss
+     4 bytes in section .data
+   120 bytes in section .rodata
+ 1 486 bytes in section .text
+ 
+ 1 486 bytes of CODE  memory
+   120 bytes of CONST memory
+   551 bytes of DATA  memory
+
+Errors: none
+Warnings: 1

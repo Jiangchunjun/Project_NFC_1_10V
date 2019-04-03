@@ -1,0 +1,607 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:57
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc_math.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc_math.c"
+#        -D XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\xmc_math.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\xmc_math.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc_math.c
+      1          
+      2          /**
+      3           * @file xmc_math.c
+      4           * @date 2015-10-08
+      5           *
+      6           * @cond
+      7           **********************************************************************************
+      8           * XMClib v2.1.6 - XMC Peripheral Driver Library 
+      9           *
+     10           * Copyright (c) 2015-2016, Infineon Technologies AG
+     11           * All rights reserved.                        
+     12           *                                             
+     13           * Redistribution and use in source and binary forms, with or without           
+     14           * modification,are permitted provided that the following conditions are met:   
+     15           *                                                                              
+     16           *   Redistributions of source code must retain the above copyright notice,      
+     17           *   this list of conditions and the following disclaimer.                        
+     18           * 
+     19           *   Redistributions in binary form must reproduce the above copyright notice,   
+     20           *   this list of conditions and the following disclaimer in the documentation    
+     21           *   and/or other materials provided with the distribution.                       
+     22           * 
+     23           *   Neither the name of the copyright holders nor the names of its contributors 
+     24           *   may be used to endorse or promote products derived from this software without
+     25           *   specific prior written permission.                                           
+     26           *                                                                              
+     27           * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"  
+     28           * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE    
+     29           * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE   
+     30           * ARE  DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE   
+     31           * LIABLE  FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR         
+     32           * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF         
+     33           * SUBSTITUTE GOODS OR  SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS    
+     34           * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN      
+     35           * CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)       
+     36           * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE   
+     37           * POSSIBILITY OF SUCH DAMAGE.                                                  
+     38           *                                                                              
+     39           * To improve the quality of the software, users are encouraged to share        
+     40           * modifications, enhancements or bug fixes with Infineon Technologies AG       
+     41           * dave@infineon.com).                                                          
+     42           **********************************************************************************
+     43           *
+     44           * Change History
+     45           * --------------
+     46           *
+     47           * 2015-06-20: 
+     48           *     - Removed version macros and declaration of GetDriverVersion API <br>
+     49           *     - Updated copyright and change history section.
+     50           *
+     51           * 2015-09-23: 
+     52           *     - Added SQRT functions
+     53           *
+     54           * 2015-10-08:
+     55           *     - Return values for sin(), cos(), sinh(), cosh(), arctan() are corrected.
+     56           *
+     57           * @endcond
+     58           *
+     59           */
+     60          
+     61          /**
+     62           *
+     63           * @brief MATH driver - API implementation for XMC13 family MATH libraries. <br>
+     64           * 
+     65           * <b>Detailed description of file</b> <br>
+     66           * APIs provided in this file cover the following functional blocks of MATH: <br>
+     67           *
+     68           */
+     69          
+     70          /*********************************************************************************************************************
+     71           * HEADER FILES
+     72           ********************************************************************************************************************/
+     73          #include <xmc_math.h>
+     74          
+     75          #if defined (MATH)
+     76          /*********************************************************************************************************************
+     77           * MACROS
+     78           ********************************************************************************************************************/
+     79          /* Reciprocal of Circular gain in XMC_MATH_Q0_23_t format ((2^23)/1.646760258121) */
+     80          #define XMC_MATH_RECIPROC_CIRCULAR_GAIN_IN_Q023       (0x4DBA76U)
+     81          /* Reciprocal of Hyperbolic gain in XMC_MATH_Q1_22_t format ((2^22)/0.828159360960) */
+     82          #define XMC_MATH_RECIPROC_HYPERBOLIC_GAIN_IN_Q1_22    (0x4D47A1U)
+     83          /* Signed division is selected */
+     84          #define XMC_MATH_SIGNED_DIVISION                      ((uint32_t) 0 << MATH_DIVCON_USIGN_Pos)
+     85          /* Unsigned division is selected */
+     86          #define XMC_MATH_UNSIGNED_DIVISION                    ((uint32_t) 1 << MATH_DIVCON_USIGN_Pos)
+     87          
+     88          /*********************************************************************************************************************
+     89           * ENUMS
+     90           ********************************************************************************************************************/
+     91          
+     92          /*********************************************************************************************************************
+     93           * GLOBAL DATA
+     94           ********************************************************************************************************************/
+     95          
+     96          /*********************************************************************************************************************
+     97           * DATA STRUCTURES
+     98           ********************************************************************************************************************/
+     99          
+    100          /*********************************************************************************************************************
+    101           * LOCAL ROUTINES
+    102           ********************************************************************************************************************/
+    103          
+    104          /*********************************************************************************************************************
+    105           * API IMPLEMENTATION - Utility functions
+    106           ********************************************************************************************************************/
+    107          
+    108          /* Utility function to check if the DIV unit is busy */
+    109          bool XMC_MATH_DIV_IsBusy(void)
+    110          {
+    111            bool status;
+    112            if (MATH->DIVST & MATH_DIVST_BSY_Msk)
+    113            {
+    114              status = true;  /* DIV unit is busy running a division operation */ 
+    115            }
+    116            else
+    117            {
+    118              status = false; /* DIV unit is idle */ 
+    119            }
+    120          
+    121            return (status);
+    122          }
+    123          
+    124          /* Utility function to check if the CORDIC unit is busy */
+    125          bool XMC_MATH_CORDIC_IsBusy(void)
+    126          {
+    127            bool status;
+    128            if (MATH->STATC & MATH_STATC_BSY_Msk)
+    129            {
+    130              status = true;  /* CORDIC unit is busy running an operation */  
+    131            }
+    132            else
+    133            {
+    134              status = false; /* CORDIC unit is idle */   
+    135            }
+    136          
+    137            return (status);
+    138          }
+    139          
+    140          /* This functions returns the status of a requested event */
+    141          bool XMC_MATH_GetEventStatus(const XMC_MATH_EVENT_t event)
+    142          {
+    143            bool status;
+    144            if (MATH->EVFR & (uint32_t) event)
+    145            {
+    146              status = true; /* Requested event has been detected */
+    147            }
+    148            else
+    149            {
+    150              status = false; /* Requested event has not been detected */
+    151            }
+    152            return (status);
+    153          }
+    154          
+    155          #ifndef XMC_MATH_DISABLE_DIV_ABI
+    156          /***********************************************************************************************************************
+    157           * API IMPLEMENTATION - aeabi routines
+    158           **********************************************************************************************************************/
+    159          /* This function performs unsigned integer division */
+    160          uint32_t __aeabi_uidiv(uint32_t dividend, uint32_t divisor)
+    161          {
+    162            MATH->DIVCON  = XMC_MATH_UNSIGNED_DIVISION;
+    163            MATH->DVD     = dividend;
+    164            MATH->DVS     = divisor;
+    165          
+    166            return ((uint32_t) MATH->QUOT);
+    167          }
+    168          
+    169          /* This function performs signed integer division */
+    170          int32_t __aeabi_idiv(int32_t dividend, int32_t divisor)
+    171          {
+    172            MATH->DIVCON  = XMC_MATH_SIGNED_DIVISION;
+    173            MATH->DVD     = dividend;
+    174            MATH->DVS     = divisor;
+    175          
+    176            return ((int32_t) MATH->QUOT);
+    177          }
+    178          
+    179          /* This function performs unsigned integer division modulo */
+    180          uint64_t __aeabi_uidivmod(uint32_t dividend, uint32_t divisor)
+    181          {
+    182            uint64_t remainder;
+    183          
+    184            MATH->DIVCON  = XMC_MATH_UNSIGNED_DIVISION;
+    185            MATH->DVD     = dividend;
+    186            MATH->DVS     = divisor;
+    187          
+    188            remainder = ((uint64_t) MATH->RMD) << 32U;
+    189            return (remainder | MATH->QUOT);
+    190          }
+    191          
+    192          /* This function performs signed integer division modulo */
+    193          int64_t __aeabi_idivmod(int32_t dividend, int32_t divisor)
+    194          {
+    195            uint64_t remainder;
+    196            uint64_t result;
+    197          
+    198            MATH->DIVCON  = XMC_MATH_SIGNED_DIVISION;
+    199            MATH->DVD     = dividend;
+    200            MATH->DVS     = divisor;
+    201          
+    202            remainder = ((uint64_t) MATH->RMD) << 32U;
+    203            result    = (remainder | MATH->QUOT);
+    204            return ((int64_t) result);
+    205          }
+    206          #endif
+    207          
+    208          /***********************************************************************************************************************
+    209           * API IMPLEMENTATION - Blocking functions
+    210           **********************************************************************************************************************/
+    211          /* This function computes the cosine of a given angle in radians */
+    212          XMC_MATH_Q0_23_t XMC_MATH_CORDIC_Cos(XMC_MATH_Q0_23_t angle_in_radians)
+    213          {
+    214            int32_t result;
+    215            MATH->STATC = 0U; /* Clear register */
+    216            MATH->CON   = (uint32_t) XMC_MATH_CORDIC_OPERATING_MODE_CIRCULAR + \
+    217                          (uint32_t) XMC_MATH_CORDIC_ROTVEC_MODE_ROTATION;
+    218            MATH->CORDZ = ((uint32_t) angle_in_radians) << MATH_CORDZ_DATA_Pos;
+    219            MATH->CORDY = 0U;  /* Clear register */
+    220            MATH->CORDX = XMC_MATH_RECIPROC_CIRCULAR_GAIN_IN_Q023 << MATH_CORDX_DATA_Pos;
+    221            result      = ((int32_t)MATH->CORRX) >> MATH_CORRX_RESULT_Pos;
+    222            return ((XMC_MATH_Q0_23_t) result);
+    223          }
+    224          
+    225          /* This function computes the sine of a given angle in radians */
+    226          XMC_MATH_Q0_23_t XMC_MATH_CORDIC_Sin(XMC_MATH_Q0_23_t angle_in_radians)
+    227          {
+    228            int32_t result;
+    229            MATH->STATC = 0U; /* Clear register */
+    230            MATH->CON   = (uint32_t) XMC_MATH_CORDIC_OPERATING_MODE_CIRCULAR + \
+    231                          (uint32_t) XMC_MATH_CORDIC_ROTVEC_MODE_ROTATION;
+    232            MATH->CORDZ = ((uint32_t)angle_in_radians) << MATH_CORDZ_DATA_Pos;
+    233            MATH->CORDY = 0U; /* Clear register */
+    234            MATH->CORDX = XMC_MATH_RECIPROC_CIRCULAR_GAIN_IN_Q023 << MATH_CORDX_DATA_Pos;
+    235            result      = ((int32_t)MATH->CORRY) >> MATH_CORRY_RESULT_Pos;
+    236            return ((XMC_MATH_Q0_23_t) result);
+    237          }
+    238          
+    239          /* This function computes the tangent of a given angle in radians */
+    240          XMC_MATH_Q0_11_t XMC_MATH_CORDIC_Tan(XMC_MATH_Q0_23_t angle_in_radians)
+    241          {
+    242            uint32_t result;
+    243            MATH->GLBCON = (uint32_t) XMC_MATH_DIV_DVDRC_CORRY_IS_SOURCE + \
+    244                           (uint32_t) XMC_MATH_DIV_DVSRC_CORRX_IS_SOURCE;      /* Chain the results of CORDIC operation to DIV unit */
+    245            MATH->DIVCON = (uint32_t) 11 << MATH_DIVCON_DVSSRC_Pos;            /* Right Shifts Divisor by 11 places prior to division */
+    246            MATH->STATC  = 0U; /* Clear register */
+    247            MATH->CON    = (uint32_t) XMC_MATH_CORDIC_OPERATING_MODE_CIRCULAR + \
+    248                           (uint32_t) XMC_MATH_CORDIC_ROTVEC_MODE_ROTATION;
+    249            MATH->CORDZ  = ((uint32_t)angle_in_radians) << MATH_CORDZ_DATA_Pos;
+    250            MATH->CORDY  = 0U; /* Clear register */
+    251            MATH->CORDX  = XMC_MATH_RECIPROC_CIRCULAR_GAIN_IN_Q023 << MATH_CORDX_DATA_Pos;
+    252            result       = MATH->QUOT;
+    253            return ((XMC_MATH_Q0_11_t) result);
+    254          }
+    255          
+    256          /* This function computes the arc tangent of a given angle in radians */
+    257          XMC_MATH_Q0_23_t XMC_MATH_CORDIC_ArcTan(XMC_MATH_Q8_15_t x, XMC_MATH_Q8_15_t y)
+    258          {
+    259            uint32_t result;
+    260            MATH->STATC = 0U; /* Clear register */
+    261            MATH->CON   = (uint32_t) XMC_MATH_CORDIC_OPERATING_MODE_CIRCULAR;
+    262            MATH->CORDZ = 0U; /* Clear register */
+    263            MATH->CORDY = ((uint32_t) y) << MATH_CORDY_DATA_Pos;
+    264            MATH->CORDX = ((uint32_t) x) << MATH_CORDX_DATA_Pos;
+    265            result      = ((int32_t)MATH->CORRZ) >> MATH_CORRZ_RESULT_Pos;
+    266            return ((XMC_MATH_Q0_23_t) result);
+    267          }
+    268          
+    269          /* This function computes the hyperbolic cosine of a given angle in radians */
+    270          XMC_MATH_Q1_22_t XMC_MATH_CORDIC_Cosh(XMC_MATH_Q0_23_t angle_in_radians)
+    271          {
+    272            int32_t result;
+    273            MATH->STATC = 0U; /* Clear register */
+    274            MATH->CON   = (uint32_t) XMC_MATH_CORDIC_OPERATING_MODE_HYPERBOLIC + \
+    275                          (uint32_t) XMC_MATH_CORDIC_ROTVEC_MODE_ROTATION;
+    276            MATH->CORDZ = ((uint32_t) angle_in_radians) << MATH_CORDZ_DATA_Pos;
+    277            MATH->CORDY = 0U; /* Clear register */
+    278            MATH->CORDX = XMC_MATH_RECIPROC_HYPERBOLIC_GAIN_IN_Q1_22 << MATH_CORDX_DATA_Pos;
+    279            result      = ((int32_t)MATH->CORRX) >> MATH_CORRX_RESULT_Pos;
+    280            return ((XMC_MATH_Q1_22_t) result);
+    281          }
+    282          
+    283          /* This function computes the hyperbolic sine of a given angle in radians */
+    284          XMC_MATH_Q1_22_t XMC_MATH_CORDIC_Sinh(XMC_MATH_Q0_23_t angle_in_radians)
+    285          {
+    286            int32_t result;
+    287            MATH->STATC = 0U; /* Clear register */
+    288            MATH->CON   = (uint32_t) XMC_MATH_CORDIC_OPERATING_MODE_HYPERBOLIC + \
+    289                          (uint32_t) XMC_MATH_CORDIC_ROTVEC_MODE_ROTATION;
+    290            MATH->CORDZ = ((uint32_t)angle_in_radians) << MATH_CORDZ_DATA_Pos;
+    291            MATH->CORDY = 0U; /* Clear register */
+    292            MATH->CORDX = XMC_MATH_RECIPROC_HYPERBOLIC_GAIN_IN_Q1_22 << MATH_CORDX_DATA_Pos;
+    293            result      = ((int32_t)MATH->CORRY) >> MATH_CORRY_RESULT_Pos;
+    294            return ((XMC_MATH_Q1_22_t) result);
+    295          }
+    296          
+    297          /* This function computes the hyperbolic tangent of a given angle in radians */
+    298          XMC_MATH_Q0_11_t XMC_MATH_CORDIC_Tanh(XMC_MATH_Q0_23_t angle_in_radians)
+    299          {
+    300            uint32_t result;
+    301            MATH->GLBCON = (uint32_t) XMC_MATH_DIV_DVDRC_CORRY_IS_SOURCE + \
+    302                           (uint32_t) XMC_MATH_DIV_DVSRC_CORRX_IS_SOURCE;      /* Chain the results of CORDIC operation to DIV unit */
+    303            MATH->DIVCON = (uint32_t) 11 << MATH_DIVCON_DVSSRC_Pos;            /* Right Shifts Divisor by 11 places prior to division */
+    304            MATH->STATC  = 0U; /* Clear register */
+    305            MATH->CON    = (uint32_t) XMC_MATH_CORDIC_OPERATING_MODE_HYPERBOLIC + \
+    306                           (uint32_t) XMC_MATH_CORDIC_ROTVEC_MODE_ROTATION;
+    307            MATH->CORDZ  = ((uint32_t) angle_in_radians) << MATH_CORDZ_DATA_Pos;
+    308            MATH->CORDY  = 0U; /* Clear register */
+    309            MATH->CORDX  = XMC_MATH_RECIPROC_HYPERBOLIC_GAIN_IN_Q1_22 << MATH_CORDX_DATA_Pos;
+    310            result       = MATH->QUOT;
+    311            return ((XMC_MATH_Q0_11_t) result);
+    312          }
+    313          
+    314          /***********************************************************************************************************************
+    315           * API IMPLEMENTATION - Non blocking functions
+    316           **********************************************************************************************************************/
+    317          /* This function computes the cosine of a given angle in radians */
+    318          void XMC_MATH_CORDIC_CosNB(XMC_MATH_Q0_23_t angle_in_radians)
+    319          {
+    320            MATH->STATC = 0U; /* Clear register */
+    321            MATH->CON   = (uint32_t) XMC_MATH_CORDIC_OPERATING_MODE_CIRCULAR + \
+    322                          (uint32_t) XMC_MATH_CORDIC_ROTVEC_MODE_ROTATION;
+    323            MATH->CORDZ = ((uint32_t) angle_in_radians) << MATH_CORDZ_DATA_Pos;
+    324            MATH->CORDY = 0U;  /* Clear register */
+    325            MATH->CORDX = XMC_MATH_RECIPROC_CIRCULAR_GAIN_IN_Q023 << MATH_CORDX_DATA_Pos;
+    326          }
+    327          
+    328          /* This function computes the sine of a given angle in radians */
+    329          void XMC_MATH_CORDIC_SinNB(XMC_MATH_Q0_23_t angle_in_radians)
+    330          {
+    331            MATH->STATC = 0U; /* Clear register */
+    332            MATH->CON   = (uint32_t) XMC_MATH_CORDIC_OPERATING_MODE_CIRCULAR + \
+    333                          (uint32_t) XMC_MATH_CORDIC_ROTVEC_MODE_ROTATION;
+    334            MATH->CORDZ = ((uint32_t)angle_in_radians) << MATH_CORDZ_DATA_Pos;
+    335            MATH->CORDY = 0U; /* Clear register */
+    336            MATH->CORDX = XMC_MATH_RECIPROC_CIRCULAR_GAIN_IN_Q023 << MATH_CORDX_DATA_Pos;
+    337          }
+    338          
+    339          /* This function computes the tangent of a given angle in radians */
+    340          void XMC_MATH_CORDIC_TanNB(XMC_MATH_Q0_23_t angle_in_radians)
+    341          {
+    342            MATH->GLBCON = (uint32_t) XMC_MATH_DIV_DVDRC_CORRY_IS_SOURCE + \
+    343                           (uint32_t) XMC_MATH_DIV_DVSRC_CORRX_IS_SOURCE;      /* Chain the results of CORDIC operation to DIV unit */
+    344            MATH->DIVCON = (uint32_t) 11 << MATH_DIVCON_DVSSRC_Pos;            /* Right Shifts Divisor by 11 places prior to division */
+    345          
+    346            MATH->STATC  = 0U; /* Clear register */
+    347            MATH->CON    = (uint32_t) XMC_MATH_CORDIC_OPERATING_MODE_CIRCULAR + \
+    348                           (uint32_t) XMC_MATH_CORDIC_ROTVEC_MODE_ROTATION;
+    349            MATH->CORDZ  = ((uint32_t)angle_in_radians) << MATH_CORDZ_DATA_Pos;
+    350            MATH->CORDY  = 0U; /* Clear register */
+    351            MATH->CORDX  = XMC_MATH_RECIPROC_CIRCULAR_GAIN_IN_Q023 << MATH_CORDX_DATA_Pos;
+    352          }
+    353          
+    354          /* This function computes the arc tangent of a given value */
+    355          void XMC_MATH_CORDIC_ArcTanNB(XMC_MATH_Q8_15_t x, XMC_MATH_Q8_15_t y)
+    356          {
+    357            MATH->STATC = 0U; /* Clear register */
+    358            MATH->CON   = (uint32_t) XMC_MATH_CORDIC_OPERATING_MODE_CIRCULAR;
+    359            MATH->CORDZ = 0U; /* Clear register */
+    360            MATH->CORDY = ((uint32_t) y) << MATH_CORDY_DATA_Pos;
+    361            MATH->CORDX = ((uint32_t) x) << MATH_CORDX_DATA_Pos;
+    362          }
+    363          
+    364          /* This function computes the hyperbolic cosine of a given angle in radians */
+    365          void XMC_MATH_CORDIC_CoshNB(XMC_MATH_Q0_23_t angle_in_radians)
+    366          {
+    367            MATH->STATC = 0U; /* Clear register */
+    368            MATH->CON   = (uint32_t) XMC_MATH_CORDIC_OPERATING_MODE_HYPERBOLIC + \
+    369                          (uint32_t) XMC_MATH_CORDIC_ROTVEC_MODE_ROTATION;
+    370            MATH->CORDZ = ((uint32_t)angle_in_radians) << MATH_CORDZ_DATA_Pos;
+    371            MATH->CORDY = 0U; /* Clear register */
+    372            MATH->CORDX = XMC_MATH_RECIPROC_HYPERBOLIC_GAIN_IN_Q1_22 << MATH_CORDX_DATA_Pos;
+    373          }
+    374          
+    375          /* This function computes the hyperbolic sine of a given angle in radians */
+    376          void XMC_MATH_CORDIC_SinhNB(XMC_MATH_Q0_23_t angle_in_radians)
+    377          {
+    378            MATH->STATC = 0U; /* Clear register */
+    379            MATH->CON   = (uint32_t) XMC_MATH_CORDIC_OPERATING_MODE_HYPERBOLIC + \
+    380                          (uint32_t) XMC_MATH_CORDIC_ROTVEC_MODE_ROTATION;
+    381            MATH->CORDZ = ((uint32_t)angle_in_radians) << MATH_CORDZ_DATA_Pos;
+    382            MATH->CORDY = 0U; /* Clear register */
+    383            MATH->CORDX = XMC_MATH_RECIPROC_HYPERBOLIC_GAIN_IN_Q1_22 << MATH_CORDX_DATA_Pos;
+    384          }
+    385          
+    386          /* This function computes the hyperbolic tangent of a given angle in radians */
+    387          void XMC_MATH_CORDIC_TanhNB(XMC_MATH_Q0_23_t angle_in_radians)
+    388          {
+    389            MATH->GLBCON = (uint32_t) XMC_MATH_DIV_DVDRC_CORRY_IS_SOURCE + \
+    390                           (uint32_t) XMC_MATH_DIV_DVSRC_CORRX_IS_SOURCE;      /* Chain the results of CORDIC operation to DIV unit */
+    391            MATH->DIVCON = (uint32_t) 11 << MATH_DIVCON_DVSSRC_Pos;            /* Right Shifts Divisor by 11 places prior to division */
+    392            MATH->STATC  = 0U; /* Clear register */
+    393            MATH->CON    = (uint32_t) XMC_MATH_CORDIC_OPERATING_MODE_HYPERBOLIC + \
+    394                           (uint32_t) XMC_MATH_CORDIC_ROTVEC_MODE_ROTATION;
+    395            MATH->CORDZ  = ((uint32_t) angle_in_radians) << MATH_CORDZ_DATA_Pos;
+    396            MATH->CORDY  = 0U; /* Clear register */
+    397            MATH->CORDX  = XMC_MATH_RECIPROC_HYPERBOLIC_GAIN_IN_Q1_22 << MATH_CORDX_DATA_Pos;
+    398          }
+    399          
+    400          /* This function performs division for given two unsigned arguments */
+    401          void XMC_MATH_DIV_UnsignedDivNB(uint32_t dividend, uint32_t divisor)
+    402          {
+    403            MATH->DIVCON = XMC_MATH_UNSIGNED_DIVISION;
+    404            MATH->DVD    = dividend;
+    405            MATH->DVS    = divisor;
+    406          }
+    407          
+    408          /* This function performs division for given two signed arguments */
+    409          void XMC_MATH_DIV_SignedDivNB(int32_t dividend, int32_t divisor)
+    410          {
+    411            MATH->DIVCON = XMC_MATH_SIGNED_DIVISION;
+    412            MATH->DVD    = dividend;
+    413            MATH->DVS    = divisor;
+    414          }
+    415          
+    416          /* This function performs modulo operation for given two unsigned arguments */
+    417          void XMC_MATH_DIV_UnsignedModNB(uint32_t dividend, uint32_t divisor)
+    418          {
+    419            MATH->DIVCON = XMC_MATH_UNSIGNED_DIVISION;
+    420            MATH->DVD    = dividend;
+    421            MATH->DVS    = divisor;
+    422          }
+    423          
+    424          /* This function performs modulo operation for given two signed arguments */
+    425          void XMC_MATH_DIV_SignedModNB(int32_t dividend, int32_t divisor)
+    426          {
+    427            MATH->DIVCON = XMC_MATH_SIGNED_DIVISION;
+    428            MATH->DVD    = dividend;
+    429            MATH->DVS    = divisor;
+    430          }
+    431          
+    432          int16_t XMC_MATH_CORDIC_Q15_Sqrt(int16_t x)
+    433          {
+    434            int32_t temp;
+    435            MATH->STATC = 0U; /* Clear register */
+    436          
+    437            MATH->CON   = (uint32_t)XMC_MATH_CORDIC_OPERATING_MODE_HYPERBOLIC |
+    438                          (uint32_t)XMC_MATH_CORDIC_ROTVEC_MODE_VECTORING;
+    439          
+    440            temp = (int32_t)x << 15; /* Q30 to handle numbers > 1.0 */
+    441          
+    442            MATH->CORDY = (temp - 0x10000000U); /* x - 0.25 */
+    443            MATH->CORDX = (temp + 0x10000000U); /* x + 0.25 */
+    444          
+    445            return (int16_t)(((MATH->CORRX >> 14) * 39568) >> 16); /* Q16 * Q15 */
+    446          }
+    447          
+    448          int32_t XMC_MATH_CORDIC_Q31_Sqrt(int32_t x)
+    449          {
+    450            MATH->STATC = 0U; /* Clear register */
+    451          
+    452            MATH->CON   = (uint32_t)XMC_MATH_CORDIC_OPERATING_MODE_HYPERBOLIC |
+    453                          (uint32_t)XMC_MATH_CORDIC_ROTVEC_MODE_VECTORING;
+    454          
+    455            x >>= 1;  /* Q30 to handle numbers > 1.0 */
+    456          
+    457            MATH->CORDY = (x - 0x10000000U); /* x - 0.25 */
+    458            MATH->CORDX = (x + 0x10000000U); /* x + 0.25 */
+    459          
+    460            return ((MATH->CORRX >> 14) * 39568); /* Q16 * Q15 */
+    461          }
+    462          
+    463          #endif /* end of #if defined (MATH) */
+
+
+ 
+
+ 
+
+
+Errors: none
+Warnings: none

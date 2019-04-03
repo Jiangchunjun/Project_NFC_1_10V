@@ -1,0 +1,396 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:56
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc_common.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc_common.c"
+#        -D XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\xmc_common.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\xmc_common.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc_common.c
+      1          /**
+      2           * @file xmc_common.c
+      3           * @date 2015-02-20
+      4           *
+      5           * @cond
+      6           *********************************************************************************************************************
+      7           * XMClib v2.1.6 - XMC Peripheral Driver Library 
+      8           *
+      9           * Copyright (c) 2015-2016, Infineon Technologies AG
+     10           * All rights reserved.                        
+     11           *                                             
+     12           * Redistribution and use in source and binary forms, with or without modification,are permitted provided that the 
+     13           * following conditions are met:   
+     14           *                                                                              
+     15           * Redistributions of source code must retain the above copyright notice, this list of conditions and the following 
+     16           * disclaimer.                        
+     17           * 
+     18           * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following 
+     19           * disclaimer in the documentation and/or other materials provided with the distribution.                       
+     20           * 
+     21           * Neither the name of the copyright holders nor the names of its contributors may be used to endorse or promote 
+     22           * products derived from this software without specific prior written permission.                                           
+     23           *                                                                              
+     24           * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, 
+     25           * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE  
+     26           * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+     27           * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR  
+     28           * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+     29           * WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+     30           * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                                                  
+     31           *                                                                              
+     32           * To improve the quality of the software, users are encouraged to share modifications, enhancements or bug fixes with 
+     33           * Infineon Technologies AG dave@infineon.com).                                                          
+     34           *********************************************************************************************************************
+     35           *
+     36           * Change History
+     37           * --------------
+     38           *
+     39           * 2015-02-20:
+     40           *     - Initial <br>
+     41           *      
+     42           * @endcond 
+     43           *
+     44           */
+     45          
+     46          #include "xmc_common.h"
+     47          
+     48          /*******************************************************************************
+     49           * DATA STRUCTURES
+     50           *******************************************************************************/
+     51          struct list
+     52          {
+     53            struct list *next;
+     54          };
+     55          
+     56          /*******************************************************************************
+     57           * API IMPLEMENTATION
+     58           *******************************************************************************/
+     59          #if defined(XMC_ASSERT_ENABLE) && !defined(XMC_USER_ASSERT_FUNCTION)
+     60          
+     61          __WEAK void XMC_AssertHandler(const char *const msg, const char *const file, uint32_t line)
+     62          {
+     63            while(1)
+     64            {
+     65              /* Endless loop */
+     66            }
+     67          }
+     68          
+     69          #endif
+     70          
+     71          void XMC_LIST_Init(XMC_LIST_t *list)
+     72          {
+     73            *list = NULL;
+     74          }
+     75          
+     76          void *XMC_LIST_GetHead(XMC_LIST_t *list)
+     77          {
+     78            return *list;
+     79          }
+     80          
+     81          void *XMC_LIST_GetTail(XMC_LIST_t *list)
+     82          {
+     83            struct list *tail;
+     84            
+     85            if (*list == NULL) 
+     86            {
+     87              tail = NULL;
+     88            }
+     89            else
+     90            {
+     91              for (tail = (struct list *)*list; tail->next != NULL; tail = tail->next)
+     92              {
+     93                /* Loop through the list */
+     94              }  
+     95            }
+     96            
+     97            return tail;    
+     98          }
+     99          
+    100          void XMC_LIST_Add(XMC_LIST_t *list, void *item)
+    101          {
+    102            struct list *tail;
+    103            
+    104            ((struct list *)item)->next = NULL;
+    105            tail = (struct list *)XMC_LIST_GetTail(list);
+    106            
+    107            if (tail == NULL) 
+    108            {
+    109              *list = item;
+    110            } 
+    111            else 
+    112            {
+    113              tail->next = (struct list *)item;
+    114            }
+    115          }
+    116          
+    117          void XMC_LIST_Remove(XMC_LIST_t *list, void *item)
+    118          {
+    119            struct list *right, *left;
+    120            
+    121            if (*list != NULL) 
+    122            {
+    123              left = NULL;
+    124              for(right = (struct list *)*list; right != NULL; right = right->next)
+    125              {
+    126                if(right == item) 
+    127                {
+    128                  if(left == NULL) 
+    129                  {
+    130                    /* First on list */
+    131                    *list = right->next;
+    132                  } 
+    133                  else 
+    134                  {
+    135                    /* Not first on list */
+    136                    left->next = right->next;
+    137                  }
+    138                  right->next = NULL;
+    139                  break;
+    140                }
+    141                left = right;
+    142              }
+    143            }
+    144          }
+    145          
+    146          void XMC_LIST_Insert(XMC_LIST_t *list, void *prev_item, void *new_item)
+    147          {
+    148            if (prev_item == NULL) 
+    149            {
+    150          	((struct list *)new_item)->next = (struct list *)*list;
+    151          	*list = new_item;
+    152            } 
+    153            else 
+    154            {
+    155              ((struct list *)new_item)->next = ((struct list *)prev_item)->next;
+    156              ((struct list *)prev_item)->next = (struct list *)new_item;
+    157            }
+    158          }
+    159          
+    160          void XMC_PRIOARRAY_Init(XMC_PRIOARRAY_t *prioarray)
+    161          {
+    162            XMC_ASSERT("XMC_PRIOARRAY_Init: NULL pointer", prioarray != NULL);
+    163          
+    164            /* Initialize head, next points to tail, previous to NULL and the priority is MININT */
+    165            prioarray->items[prioarray->size].next = prioarray->size + 1;
+    166            prioarray->items[prioarray->size].previous = -1;
+    167            prioarray->items[prioarray->size].priority = INT32_MAX;
+    168          
+    169            /* Initialize tail, next points to NULL, previous is the head and the priority is MAXINT */
+    170            prioarray->items[prioarray->size + 1].next = -1;
+    171            prioarray->items[prioarray->size + 1].previous = prioarray->size;
+    172            prioarray->items[prioarray->size + 1].priority = INT32_MIN;
+    173          
+    174          }
+    175          
+    176          void XMC_PRIOARRAY_Add(XMC_PRIOARRAY_t *prioarray, int32_t item, int32_t priority)
+    177          {
+    178            int32_t next;
+    179            int32_t previous;
+    180          
+    181            XMC_ASSERT("XMC_PRIOARRAY_Add: item out of range", (item >= 0) && (item < prioarray->size));
+    182            
+    183            next = XMC_PRIOARRAY_GetHead(prioarray);
+    184            while (XMC_PRIOARRAY_GetItemPriority(prioarray, next) > priority)
+    185            {
+    186              next = XMC_PRIOARRAY_GetItemNext(prioarray, next);
+    187            }
+    188          
+    189            previous = prioarray->items[next].previous;
+    190          
+    191            prioarray->items[item].next = next;
+    192            prioarray->items[item].previous = previous;
+    193            prioarray->items[item].priority = priority;
+    194          
+    195            prioarray->items[previous].next = item;
+    196            prioarray->items[next].previous = item;
+    197          }
+    198          
+    199          void XMC_PRIOARRAY_Remove(XMC_PRIOARRAY_t *prioarray, int32_t item)
+    200          {
+    201            int32_t next;
+    202            int32_t previous;
+    203          
+    204            XMC_ASSERT("XMC_PRIOARRAY_Add: item out of range", (item >= 0) && (item < prioarray->size));
+    205            
+    206            next = prioarray->items[item].next;
+    207            previous = prioarray->items[item].previous;
+    208          
+    209            prioarray->items[previous].next = next;
+    210            prioarray->items[next].previous = previous;
+    211          }
+    212          
+    213          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      16   XMC_LIST_Add
+        16   -> XMC_LIST_GetTail
+       0   XMC_LIST_GetHead
+       4   XMC_LIST_GetTail
+       0   XMC_LIST_Init
+       4   XMC_LIST_Insert
+       4   XMC_LIST_Remove
+      24   XMC_PRIOARRAY_Add
+        24   -> XMC_PRIOARRAY_GetHead
+        24   -> XMC_PRIOARRAY_GetItemNext
+        24   -> XMC_PRIOARRAY_GetItemPriority
+       0   XMC_PRIOARRAY_GetHead
+       0   XMC_PRIOARRAY_GetItemNext
+       0   XMC_PRIOARRAY_GetItemPriority
+       4   XMC_PRIOARRAY_Init
+       4   XMC_PRIOARRAY_Remove
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable0
+      28  XMC_LIST_Add
+       4  XMC_LIST_GetHead
+      26  XMC_LIST_GetTail
+       6  XMC_LIST_Init
+      22  XMC_LIST_Insert
+      46  XMC_LIST_Remove
+     100  XMC_PRIOARRAY_Add
+      14  XMC_PRIOARRAY_GetHead
+      12  XMC_PRIOARRAY_GetItemNext
+      10  XMC_PRIOARRAY_GetItemPriority
+      96  XMC_PRIOARRAY_Init
+      46  XMC_PRIOARRAY_Remove
+
+ 
+ 414 bytes in section .text
+ 
+ 414 bytes of CODE memory
+
+Errors: none
+Warnings: none

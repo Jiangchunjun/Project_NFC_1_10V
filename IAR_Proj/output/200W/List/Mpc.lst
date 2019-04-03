@@ -1,0 +1,1275 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:52
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\Alloc\Mpc.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\Alloc\Mpc.c"
+#        -D XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\Mpc.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\Mpc.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\Alloc\Mpc.c
+      1          // ---------------------------------------------------------------------------------------------------------------------
+      2          // Microcontroller Toolbox - Firmware Framework for Full Digital SSL Ballasts
+      3          // ---------------------------------------------------------------------------------------------------------------------
+      4          // (c) Osram GmbH
+      5          //     DS D EC - MCC
+      6          //     Parkring 33
+      7          //     85748 Garching
+      8          //
+      9          //
+     10          // The content of this file is intellectual property of OSRAM GmbH. It is
+     11          // confidential and not intended for any public release. All rights reserved.
+     12          //
+     13          //
+     14          // Initial version: 2016-06, W.Limmer@osram.de
+     15          //
+     16          // Change History:
+     17          //
+     18          // $Author: w.limmer $
+     19          // $Revision: 11321 $
+     20          // $Date: 2017-12-21 00:58:53 +0800 (Thu, 21 Dec 2017) $
+     21          // $Id: Mpc.c 11321 2017-12-20 16:58:53Z w.limmer $
+     22          // $URL: https://app-ehnsvn02.int.osram-light.com/svn/EC/Mpc/Alloc/branches/RC_2018-02-20/Src/Mpc.c $
+     23          //
+     24          
+     25          /** \defgroup MPC Multi Purpose Centers
+     26           * \{
+     27           * \file
+     28           * \brief MPC Generic Interface
+     29           *
+     30           * This file implements the generic interface to access all Mpc standard functions. The functions
+     31           * are intended to be called by the application.
+     32           *
+     33           */
+     34          
+     35          
+     36          #include <stdio.h>              // Debug prints
+     37          
+     38          #define MODULE_MPC
+     39          #include "Global.h"
+     40          #include "Config.h"
+     41          
+     42          #include "Acl.h"                // Access control layer
+     43          
+     44          #include "Mpc.h"                // Generic application interface
+     45          #include "MpcInternal.h"        // Internal interface to the Mpc implementations
+     46          #include "MpcAllocation.h"      // Generic application interface
+     47          
+     48          
+     49          // change defined value to 1 to switch on debug print
+     50          // Always pass the debug code to the compiler, otherwise it will break sooner or later see
+     51          // http://stackoverflow.com/questions/1644868/c-define-macro-for-debug-printing incl. arguments for "do ... while(0)"
+     52          #define DEBUGPRINT_MPC
+     53          // #define DEBUGPRINT(...)     do { if (  DEBUGPRINT_MPC + 0 ) { printf(__VA_ARGS__); fflush(stdout); }; } while (0)
+     54          #define DEBUGPRINT(...)     do { if (  DEBUGPRINT_MPC + 0 ) { printf(__VA_ARGS__); }; } while (0) // without fflush()
+     55          
+     56          
+     57          /** \brief Data buffer for atomic multi-byte access on Mpcs
+     58           */
+     59          static mpc_io_buffer_t   mpcIoBuffer[MPC_PORTS_FIRST_UNUSED];
+     60          
+     61          /** \brief Dummy data buffer for Mpc handling.
+     62           *
+     63           * Used as default (before asignment of the right one to avoid in any case at least pointer errors.
+     64           */
+     65          static mpc_io_buffer_t   mpcDummyIoBuffer;
+     66          
+     67          /** \brief Centralized DALI Lock bytes.
+     68           *
+     69           * One generically managed array of DALI lock bytes for every Mpc. Existent only for regular DALI membanks,
+     70           * but not for artificial or special ones (DALI internal state for NFC, debug Mpc, ...)
+     71           */
+     72          static uint8_t           mpcDaliLockbytes[MPC_MAX_NUMBER + 1];
+     73          
+     74          /** \brief Counter to detect changes by Write
+     75           *
+     76           * will be increased by MpcWrite().
+     77           */
+     78          static uint32_t changeCounter = 0;
+     79          
+     80          #if ((!defined(MPC_PASSWORD1_NUMBER) && !defined(MPC_PASSWORD2_NUMBER)) || defined(UNIT_TESTING))
+     81          static int pwd_retval = 0;
+     82          #endif
+     83          
+     84          // ---------------------------------------------------------------------------------------------------------------------
+     85          // Some legacy stuff
+     86          #if defined(MPC_PASSWORD1_NUMBER) || defined(MPC_PASSWORD2_NUMBER)
+     87            // -------------------------------------------------------------------------------------------------------------------
+     88            /** \brief Checks whether a Mpc is protected by a password page.
+     89            *
+     90            * Checks, whether a Mpc in total is protected by a password page and whether the password is set.
+     91            * Useful mainly for legacy reasons, the new concept supports a more fine-granular approach.
+     92            *
+     93            * \note Move to ACL sooner or later.
+     94            *
+     95            * \param mpcdesc   Pointer to the descriptor of the Mpc.
+     96            *
+     97            * \retval false when write access is allowed,
+     98            *         true when write is not allowed (= password protection for the page is active AND password is NOT given).
+     99            */
+    100            static inline int mpcIsPasswordProtected(const mpc_descriptor_t * mpcdesc) {
+    101              bool MemoryBank_Password_GetLock(uint8_t bankIndex);  // Brute force, no include; Don't create a legacy dependency
+    102              int passwordLocked = false;
+    103          
+    104              if (mpcdesc->keydata.attributes & MPC_ATTRIB_PASSWORD1_PROT) {
+    105                passwordLocked = MemoryBank_Password_GetLock(0);
+    106              }
+    107              else if (mpcdesc->keydata.attributes & MPC_ATTRIB_PASSWORD2_PROT) {
+    108                passwordLocked = MemoryBank_Password_GetLock(1);
+    109              }
+    110              return passwordLocked;
+    111              }
+    112          #else
+    113            // Empty fake function for platforms without legacy password pages
+    114            static inline int mpcIsPasswordProtected(const mpc_descriptor_t * mpcdesc) {
+    115              (void) mpcdesc;
+    116              return pwd_retval;
+    117            }
+    118          #endif
+    119          
+    120          // ---------------------------------------------------------------------------------------------------------------------
+    121           /** \brief Returns either permissions from \ref mpc_keydata_t "keydata.permissions", if present or from
+    122           *   \ref mpc_keydata_t "keydata.mult_perm4legacy", a permissions array, linked to the Descriptor.
+    123           *
+    124           *  \param  mpcdesc pointer to descriptor of MPC
+    125           *  \param  mpcIo   pointer to buffer of MPC
+    126           *  \retval permission or 0 if no permission available
+    127           *
+    128           */
+    129          static uint32_t mpcGetLegacyPermissions(const mpc_descriptor_t * mpcdesc, mpc_io_buffer_t * mpcIo) {
+    130          
+    131            if(mpcdesc->keydata.permissions != 0) {
+    132              mpcIo->perm = mpcdesc->keydata.permissions;
+    133            }
+    134            else {
+    135              if (mpcdesc->keydata.mult_perm4legacy != NULL) {
+    136                if (mpcIo->adr < mpcdesc->keydata.mult_perm4legacy[0])
+    137                {
+    138                  // inc adr by 1, due to lastadress at 0
+    139                  mpcIo->perm = (1L << (mpcdesc->keydata.mult_perm4legacy[mpcIo->adr+1]));
+    140                } else {
+    141                  mpcIo->perm = 0;
+    142                }
+    143              } else {
+    144                mpcIo->perm = 0;
+    145              }
+    146          
+    147            }
+    148            return mpcIo->perm;
+    149          }
+    150          
+    151          // ---------------------------------------------------------------------------------------------------------------------
+    152          /** \brief Forward a command to a Mpc.
+    153           *
+    154           * Provide a pure routing of commands, no extra logic is part of this function. Especially DALI specific things
+    155           * like to do reset command only when the lock byte is fine or to reset all Mpcs when bank 0 is addressed,
+    156           * are \b NOT implemented.
+    157           *  \param  mpc_nr Number of MPC or Membank, depending on port
+    158           *  \param  cmd Number of command to perform
+    159              \param port Port number of the port to allocate the Mpc
+    160              \param channel NUmber of Channel
+    161           *  \retval MPC_OK every thing ok
+    162           *  \retval MPC_DENY pointer to init, reset or cmd function is null
+    163           *  \retval MPC_OUT_OF_RANGE pointer to descriptor is null
+    164           *  \retval other returnvalue of command, if special
+    165           *  See also \ref mpc_returncodes_enum
+    166           */
+    167          mpc_returncodes_enum MpcCmd (uint8_t item_nr, mpc_cmd_t cmd, mpc_port_t port, uint8_t channel) {
+    168          
+    169            const mpc_descriptor_t * mpcDesc = MpcDescriptorGet(MpcDissolveMapping(item_nr, port));
+    170          
+    171            if (mpcDesc) {
+    172              if (mpcDesc->tables_len >= 0) {
+    173                if (mpcDesc->Cmd) {
+    174                  return mpcDesc->Cmd(cmd, channel, port);
+    175                }
+    176              }
+    177              else {
+    178                switch(cmd) {
+    179                case MPC_CMD_INIT:
+    180                  if (mpcDesc->Init) {
+    181                    mpcDesc->Init();
+    182                    return MPC_OK;
+    183                  }
+    184                  break; // for fallback when pointers aren't defined
+    185                case MPC_CMD_RESET:
+    186                  if (mpcDesc->Reset) {
+    187                    mpcDesc->Reset(channel);
+    188                    return MPC_OK;
+    189                  }
+    190                  break; // for fallback when pointers aren't defined
+    191                default:
+    192                  break; // just to avoid a compiler warning, not all possibilities are defined in legacy pages (LCOV_EXCL_LINE)
+    193                }
+    194              }
+    195              return MPC_DENY;
+    196            }
+    197            // Fallback, also done when a expected function pointer is not present
+    198            return MPC_OUT_OF_RANGE;
+    199          }
+    200          
+    201          
+    202          // ---------------------------------------------------------------------------------------------------------------------
+    203          /** \brief Init all Mpcs in the sequence of occurence in the table.
+    204           */
+    205          void MpcInit (void) {
+    206            // MNO MSK is already initialized. So get init. twice. Start at 1, or Start at 1, if MSK is defined?
+    207            for (int mpc_nr = 0; mpc_nr < MPC_COUNT; mpc_nr++) {
+    208              MpcCmd(mpc_nr, MPC_CMD_INIT, MPC_PORT_ROOT, 0);
+    209            }
+    210            for (int membank_nr = 0; membank_nr <= MPC_MAX_NUMBER; membank_nr++) {
+    211              mpcDaliLockbytes[membank_nr] = 255;
+    212            }
+    213          }
+    214          
+    215          
+    216          // ---------------------------------------------------------------------------------------------------------------------
+    217          /** \brief Return a pointer to the keydata of a Mpc.
+    218           *
+    219           * \param mpc_nr  Mpc number to allocate (Mpc number or DALI membank number dep. on port)
+    220           * \param port    Port number of the port to allocate the Mpc.
+    221           *
+    222           * \retval const mpc_keydata_t * to the keydata struct, NULL when Mpc (no further Mpc) does exist.
+    223           */
+    224          // Test Coverage Exception: due to usage in NFC only, VirtECG uses DALI only [29.05.17]
+    225          const mpc_keydata_t * MpcKeydataGet (int16_t item_nr, mpc_port_t port) {
+    226            STATIC_ASSERT(offsetof(mpc_descriptor_t, keydata) == 0, "Major issue with mpc internal struct typedefs");
+    227          
+    228            return (const mpc_keydata_t *) MpcDescriptorGet(MpcDissolveMapping(item_nr, port));
+    229          }
+    230          
+    231          // ---------------------------------------------------------------------------------------------------------------------
+    232          /** \brief The entry point for DALI library to the new Mpc interface for read access.
+    233           *
+    234           * Assembles Mpc keydata and Mpc payload to one linear address room as requested by DALI. Also integrate the new
+    235           * ACL (Access Control Layer) with the DALI lock byte (0x55 at address 2) in a generic way as expected by
+    236           * DALI and without the support from the individual Mpc implementations.
+    237           *
+    238           * \retval mpc_returncodes_enum according to \ref MpcRead() function
+    239           */
+    240          mpc_returncodes_enum MpcReadDali(uint8_t membank_nr, int16_t adr, uint8_t ch, uint8_t *buffer) {
+    241          
+    242            const mpc_descriptor_t * mpcDesc = MpcDescriptorGet(MpcDissolveMapping(membank_nr, MPC_PORT_DALI));
+    243          
+    244          
+    245            DEBUGPRINT ("\n MpcReadDali : nr=%d, adr=%d, ch=%d", membank_nr, adr, ch);
+    246            if (mpcDesc) {
+    247              // Password-Lock influences also the reading of the DALI lock byte:
+    248              // If a page is protected, DALI lock byte always reads as 0; if not, this routine falls back to normal reading
+    249              if (adr == 2) {
+    250                if (mpcIsPasswordProtected(mpcDesc)) {
+    251                  *buffer = 0;
+    252                  return (mpc_returncodes_enum) 1;    // one valid byte
+    253                }
+    254              }
+    255          
+    256              if (mpcDesc->tables_len < 0) {
+    257                // Legacy pages provide keydata by their own
+    258                // No differentiation indoor/outdoor (translation) needed with GetValue():
+    259                // MPC_RW_OUT_OF_RANGE  == 0 (for indoor) <=> false (for outdoor)
+    260                // MPC_RW_OK            == 1 (for indoor) <=> true  (for outdoor)
+    261                // MPC_RW_DENY          == 2 : Can't happen with read
+    262                return (mpc_returncodes_enum)(mpcDesc->GetValue)(adr, buffer, ch, MPC_PORT_DALI);
+    263              }
+    264              else {
+    265                if (adr < mpcDesc->keydata.payload_off) {
+    266                  int r = 0;
+    267                  switch (adr) {
+    268                  case 0:
+    269                    r =  mpcDesc->keydata.length + mpcDesc->keydata.payload_off - 1;
+    270                    break;
+    271                  case 1:
+    272                    r = 0;          // checksum is not supported in DaliEdition2, "indicator byte" is 0
+    273                    break;
+    274                  case 2:
+    275                    if (membank_nr <= MPC_MAX_NUMBER) {   // needed, if(mpcDesc){} hasn't done the full job due to the "pseudo" Mpcs
+    276                      r = mpcDaliLockbytes[membank_nr];
+    277                    }
+    278                    else {
+    279                      // nearly unreachable
+    280                      return MPC_OUT_OF_RANGE; // LCOV_EXCL_LINE
+    281                    }
+    282                    break;
+    283                  case 3:
+    284                    r = mpcDesc->keydata.id;
+    285                    break;
+    286                  case 4:
+    287                    r = mpcDesc->keydata.version;
+    288                    break;
+    289                  }
+    290                  *buffer = r;
+    291                  return (mpc_returncodes_enum) 1;    // one valid byte
+    292                }
+    293                else {
+    294                  return MpcRead(membank_nr, (ch << 8) + adr - mpcDesc->keydata.payload_off, MPC_PORT_DALI, buffer);
+    295                }
+    296              }
+    297            }
+    298            // fall-through
+    299            return MPC_OUT_OF_RANGE;
+    300          }
+    301          
+    302          
+    303          // ---------------------------------------------------------------------------------------------------------------------
+    304          /** \brief A wrapper for legacy MpcXxx_GetValue() function to map to the new interface.
+    305           *
+    306           * Called by MpcRead() when we have a legacy implementation without tables.
+    307           *
+    308           * \warning If a legacy Mpc needs multi-port access, this multi-port support has to be provided by the Mpc itself.
+    309           *          The old interface doesn't allow another solution, as no multi-byte information is passed out of the
+    310           *          legacy membanks.
+    311           */
+    312          static int MpcReadLegacy(const mpc_descriptor_t * mpcdesc, mpc_io_buffer_t * mpcIo, uint16_t adr, uint8_t channel) {
+    313            int               retval = MPC_RW_DENY;
+    314            uint8_t           tempbyte;
+    315            mpc_rw_enum       legacy_state;
+    316          
+    317            if (mpcdesc) {
+    318              DEBUGPRINT ("\n MpcReadLegacy : nr=%d, adr=%d", mpcIo->num, adr);
+    319          
+    320              mpcIo->length = 1;
+    321          
+    322              legacy_state  = (mpcdesc->GetValue)(adr + mpcdesc->keydata.payload_off, &tempbyte, channel, mpcIo->port);
+    323              // legacy_state  = (mpcdesc->GetValue)(adr, &tempbyte, channel, mpcIo->port);
+    324              mpcIo->uint32 = tempbyte; // mpcIo.buffer[] might be used directly, but this is more safe
+    325          
+    326              switch (legacy_state) {
+    327              case MPC_RW_OK:
+    328                retval = 0; // Single byte is at position 0
+    329                break;
+    330              case MPC_RW_OUT_OF_RANGE:
+    331                retval = MPC_OUT_OF_RANGE;
+    332                break;
+    333                case MPC_RW_DENY:
+    334              default:  // avoid 'possibly uninitialized' warning down in MpcRead()
+    335                retval = MPC_DENY;
+    336                break;
+    337              }
+    338          
+    339              DEBUGPRINT (" return byte %3d (byte pos/err code %d)", mpcIo->uint32, retval);
+    340            }
+    341            return retval;
+    342          };
+    343          
+    344          
+    345          // ---------------------------------------------------------------------------------------------------------------------
+    346          /** \brief Mpc table read function.
+    347           *
+    348           * This function evaluates the tables of a Mpc implementation and provides an atomic multi-byte and multi-channel
+    349           * access to the data entities (data points) decribed by the tables: It moreover supports a light-weight
+    350           * endianness translation by its return value.
+    351           *
+    352           * It operates on a mpc_io_buffer_t structure passed as argument to support also a multi-port operation.
+    353           *
+    354           * The concept relies on a <b> successive access of all bytes of a multi-byte data entity</b>.
+    355           * This is, that it is \b only possible to read a byte of a multi-byte structure, when the byte at the lowest
+    356           * address of the data entity (normally the MSB) is accessed first.
+    357           *
+    358           * This is, because all bytes of a multi-byte entity are read at once into a buffer when the first byte is accessed
+    359           * and successive accesses to the same data entity only read from that buffered value.
+    360           *
+    361           * This is the only reasonable way to create a multi-byte + multi-port interface for volatile data.
+    362           * The DALI standard supports this by the auto-increment of the address pointer to read a membank as well as by
+    363           * encouraging this buffering for multi-byte values in the membank descriptions (DALI 2.0)
+    364           *
+    365           * For more details and for a detailed interface description pls. refer to Mpc.h/.c.
+    366           *
+    367           * \param mpcdesc Pointer to the Mpc descriptor (tables and functions of the Mpc)
+    368           * \param mpcIo   Pointer to a mpc_io_buffer_t to work with
+    369           * \param adr     Byte address of the value to read
+    370           * \param channel Channel of the address to read
+    371           *
+    372           * \retval        Position of the valid byte within the buffer or MPC_OUT_OF_RANGE in case of.
+    373           */
+    374          int MpcReadTable(const mpc_descriptor_t * mpcdesc, mpc_io_buffer_t * mpcIo, uint16_t adr, uint8_t channel) {
+    375            const mpc_data_entity_t * ep = NULL;
+    376            const mpc_layout_t      * lp;
+    377            mpc_data_typ_enum         etype;
+    378            int   byteposition;
+    379          
+    380            DEBUGPRINT("\n MpcReadTable  : Tab len=%d, adr=%3d, ch=%3d", mpcdesc->keydata.length, adr, channel);
+    381          
+    382            if (adr < mpcdesc->tables_len) {
+    383              lp = &mpcdesc->layout[adr];
+    384              if (lp->entity != 255) { // if (lp && ...) is obsolete, as lp is a always available address in the layout array
+    385                ep = &mpcdesc->entities[lp->entity];
+    386              }
+    387            }
+    388          
+    389            if (ep == NULL) {
+    390              DEBUGPRINT("\n MpcReadTable  : Out of range");
+    391              return MPC_OUT_OF_RANGE;
+    392            }
+    393          
+    394            DEBUGPRINT("\n MpcReadTable  : Typ=0x%02x, val_ix=%3d (0x%08x), perm_ix=%d, fallback_ix=%d",
+    395                       ep->type, ep->data_ri, mpcdesc->constants[ep->data_ri], ep->perm_ri, ep->fb_idx);
+    396          
+    397            // Fetch (read) permissions if specified
+    398            if (ep->perm_ri) {
+    399              mpcIo->perm = mpcdesc->constants[ep->perm_ri];
+    400            }
+    401          
+    402            // Fetch fallback if specified
+    403            if (ep->fb_idx) {
+    404              mpcIo->fallback = mpcdesc->constants[ep->fb_idx];
+    405            }
+    406          
+    407            // Fill buffer length (always specified)
+    408            mpcIo->length = ep->len;
+    409            byteposition  = lp->pos;
+    410          
+    411            // Fetch value if first byte of a entity is read
+    412            if (lp->first) {
+    413              etype = ep->type;
+    414          
+    415              if (etype == MPC_TYP_CON) {
+    416                mpcIo->uint32 = mpcdesc->constants[ep->data_ri];
+    417              }
+    418              else {
+    419                void * p = (void*)mpcdesc->constants[ep->data_ri];
+    420                if (p == NULL) {
+    421                  return MPC_OUT_OF_RANGE;
+    422                }
+    423                else if (etype == MPC_TYP_VAR) {
+    424                  if (channel && ep->multch_i) { // Do this only for variables, function get the channel as a parameter anyway
+    425                    p = (void*) ((size_t)p + mpcdesc->constants[ep->multch_i]);
+    426                  }
+    427                  if (mpcIo->length == 1) {
+    428                    mpcIo->uint32 = *(uint8_t*)p;   // Needed to avoid un-aligned word access -> bus error on Cortex M0
+    429                  }
+    430                  else if (mpcIo->length == 2) {
+    431                    mpcIo->uint32 = *(uint16_t*)p;  // Needed to avoid un-aligned word access -> bus error on Cortex M0
+    432                  }
+    433                  else if (mpcIo->length >= 3) {
+    434                    mpcIo->uint32 = *(uint32_t*)p;
+    435                  };
+    436                }
+    437                else if (etype == MPC_TYP_FUN) {
+    438                  // Typecast p to a function pointer taking the same arguments as this function.
+    439                  // For little endian machines it's possible to have only one case (uint32_t) ...
+    440                  mpcIo->uint32 = ((uint32_t (*)(mpc_io_buffer_t *, uint16_t, uint8_t)) p) (mpcIo, adr, channel);
+    441                };
+    442              }
+    443            }
+    444          
+    445            DEBUGPRINT("\n MpcReadTable  : retval=%3d", byteposition);
+    446            return byteposition;
+    447          }
+    448          
+    449          
+    450          // ---------------------------------------------------------------------------------------------------------------------
+    451          /** \brief Generic Read() of Mpc payload data.
+    452           *
+    453           * A generic interface to read the \b payload of a Mpc. This payload is only the Mpc specific data and
+    454           * does \b not contain keydata or any port specific header bytes (e.g. length, ID and version for Osram Mpcs,
+    455           * checksum at adr 1 for DALI, ...).
+    456           *
+    457           * \note
+    458           *  - The exisitence and keydata of a Mpc (len, id and such, see above) can be retrieved by \ref MpcKeydataGet().
+    459           *  - For DALI, the function \ref MpcReadDali() provides also key data fields as needed and moreover
+    460           *    integrates to the new ACL (Access Control Layer) with legacy DALI lock byte (0x55 at address 3).
+    461           *
+    462           * To provide this generic read functionality, this function implements the routing to the single Mpc
+    463           * implementations by using the allocation tables provided by MpcAllocation.c/.h.
+    464           *
+    465           * ### Usage
+    466           *
+    467           * There are 2 possibilities to use this function:
+    468           *
+    469           * 1. <b>Single-byte access</b>
+    470           *
+    471           *    The traditional way to read the data. This mode is enabled when a
+    472           *    full and valid address (Mpc number, channel and byte address) is provided.
+    473           *
+    474           *    Even if this operation mode works byte-wise, it offers an <b> atomic access to volatile multi-byte </b>
+    475           *    data entities. Therefore the reader have \b not to care about (otherwise) possible issues with unmatched
+    476           *    low- and highbytes or such.
+    477           *
+    478           *    This atomic multi-<b>byte</b> access moreover is \"multi-<b>port</b> safe\": That is, that a read on the
+    479           *    NFC port won't disrupt any reads on other ports like DALI and vice versa.
+    480           *
+    481           *    This operation mode is also required to set-up the second (multi-byte iterator) operation mode.
+    482           *
+    483           * 2. <b>Iterator mode (multi-byte)</b>
+    484           *
+    485           *    This mode reads one possibly multi-byte data point (data entity) completely at a time.
+    486           *
+    487           *    This mode is enabled when the int16_t channel/address parameter is -1 and therefore does not specify a
+    488           *    specific address. Prior to this, the first, traditional operation mode is required to be used to set-up the
+    489           *    starting address and other meta-data for this iterator behavior.
+    490           *
+    491           *    When this was done, the next call to this function with a negative address will return the next data entity
+    492           *    in the buffer (with correct endianness) and will return the number of valid bytes in the buffer (as in all
+    493           *    other operation modes). Additionally it adjusts internal data in a way, that the next call will proceed
+    494           *    like before: Returning the next data entity.
+    495           *
+    496           *    When all data entities of a Mpc and one channel are processed, the return value is MPC_OUT_OF_RANGE
+    497           *    to indicate the loop outside, that the Mpc is done.
+    498           *
+    499           *    \warning For multi-byte opertion a data buffer of 32 bytes has to be provided for future expansion.
+    500           *             Currently max. 4 bytes are returned at one time.
+    501           *
+    502           * .
+    503           * \param mpc_nr  uint8_t: Number of the Mpc to be read
+    504           *
+    505           * \param ch_adr  .
+    506           *                - int16_t >= 0: combining the address (LSB) and the channel (MSB, for multi-output ballasts)
+    507           *                - -1: Specify iterator access
+    508           *
+    509           * \param port    mpc_port_t: Specifies the "reader" of the Mpc. Accesses on different ports don't disturb each
+    510           *                other
+    511           *
+    512           * \param buffer  uint8_t*: Pointer to the buffer for the read data (currently 4 bytes minimum, planned 32 bytes)
+    513           *
+    514           * \retval Either:
+    515           * [date: 2017-03-27]
+    516           *    - MPC_OUT_OF_RANGE: port unknown OR if address is out of range and OutOfRange Handler can't handle it.
+    517           *    - MPC_OK: if byte is read and put to  buffer, also in iterator mode
+    518           *    - MPC_DENY: if access is not granted. Fallback value is put to buffer.
+    519           */
+    520          mpc_returncodes_enum MpcRead (uint8_t item_nr, int16_t ch_adr, mpc_port_t port, uint8_t *buffer) {
+    521            const mpc_descriptor_t       * mpcDescP  = NULL;
+    522            mpc_io_buffer_t              * mpcIop    = &mpcDummyIoBuffer;
+    523            int retval                               = MPC_OUT_OF_RANGE;
+    524            int ch, adr, last_len;
+    525          
+    526            last_len = 0;
+    527          
+    528            DEBUGPRINT ("\n MpcRead       : read mpc=%d, ch=%d, adr=%3d", item_nr, ch_adr>>8, ch_adr& 0xff);
+    529          
+    530            if (port >= MPC_PORTS_FIRST_UNUSED) {
+    531              /// \todo Call ErrorWarnonly()
+    532              return MPC_OUT_OF_RANGE;
+    533            }
+    534          
+    535            mpcIop            = &mpcIoBuffer[port];
+    536            mpcIop->port      = port;
+    537            mpcIop->num       = item_nr;
+    538            mpcIop->fallback  = MPC_FALLBACK;
+    539            mpcIop->perm      = 0; // promised to the mpc implementations: permissions are preset to 'none' before calling read()
+    540          
+    541            if (ch_adr < 0) {
+    542              if (mpcIop->channel >= 0) {
+    543                // In iterator mode, first put the data read the last time - iterator init() or last iterator call() - to outside
+    544                DEBUGPRINT (" ITER len=%d buffer=0x%x", mpcIop->length, mpcIop->uint32);
+    545                for (int n = mpcIop->length - 1; n >= 0; n--) {
+    546                  *buffer++ = mpcIop->buffer[n];
+    547                }
+    548                last_len     = mpcIop->length;
+    549                mpcIop->adr += last_len;
+    550                ch  = mpcIop->channel;
+    551                adr = mpcIop->adr;
+    552              }
+    553              else {
+    554                return MPC_OUT_OF_RANGE;
+    555              }
+    556            }
+    557            else {
+    558              mpcIop->adr     = adr = ch_adr &  0xFF;
+    559              mpcIop->channel = ch  = ch_adr >> 8;
+    560            }
+    561          
+    562            mpcDescP = MpcDescriptorGet(MpcDissolveMapping(item_nr, port));
+    563            if (mpcDescP) {
+    564              DEBUGPRINT (", desc=%p, len=%3d", mpcDescP, mpcDescP->keydata.length);
+    565          
+    566              if (mpcDescP->tables_len >= 0) {  // normal, not a legacy entry
+    567                retval = MpcReadTable (mpcDescP, mpcIop, adr, ch);
+    568                if (retval == MPC_OUT_OF_RANGE && mpcDescP->ReadOoT) {
+    569                  retval = (mpcDescP->ReadOoT)(adr, ch, mpcIop);
+    570                }
+    571              }
+    572              else {
+    573                if (adr < mpcDescP->keydata.length) {
+    574                  retval = MpcReadLegacy(mpcDescP, mpcIop, adr, ch);
+    575                }
+    576                else {
+    577                  retval = MPC_OUT_OF_RANGE;
+    578                }
+    579              }
+    580            }
+    581          
+    582            if (retval >= 0) { // There is a valid answer, only permissions have to be checked now
+    583              DEBUGPRINT ("\n MpcRead       : read return value=%d, perm=%x, buf=0x%02x, fb=0x%x",
+    584                          retval, mpcIop->perm, mpcIop->uint32, mpcIop->fallback);
+    585              if (mpcIop->perm != 0) {
+    586                // MNO hier ganz dringend port anpassen: mix von zwei verschiedenen Port-defnitionen
+    587                if (AclCheckPermissions(mpcIop->perm, mpcIop->port) != ACL_GRANT) {
+                                                             ^
+Warning[Pe188]: enumerated type mixed with another type
+    588                  mpcIop->uint32 = mpcIop->fallback;
+    589                  DEBUGPRINT (" -> denied");
+    590                } else { DEBUGPRINT (" -> granted" ); }
+    591              } else { DEBUGPRINT (" -> no perm"); }
+    592            }
+    593            else {
+    594              mpcIop->channel = MPC_OUT_OF_RANGE;
+    595            }
+    596          
+    597            if (ch_adr < 0) {
+    598              return (mpc_returncodes_enum) last_len;
+    599            }
+    600            else if (retval >= 0) {
+    601              *buffer = mpcIop->buffer[retval];     // Endianness translation
+    602              retval = 1;
+    603            }
+    604          
+    605            return (mpc_returncodes_enum) retval;
+    606          }
+    607          
+    608          // ---------------------------------------------------------------------------------------------------------------------
+    609          // ---------------------------------------------------------------------------------------------------------------------
+    610          //   M P C   W R I T E   S E C T I O N
+    611          
+    612          // ---------------------------------------------------------------------------------------------------------------------
+    613          /** \brief A wrapper for legacy MpcXxx_SetValue() function to map to the new interface.
+    614           *
+    615           * Called by MpcWritePayload() when a legacy implementation without tables is in charge.
+    616           *
+    617           * Relies on that the DALI lock byte and Mpc global write permissions (password pages) already are successfully
+    618           * checked. No extra permissions are tested here (as it was usual with legacy Mpcs).
+    619           *
+    620           * \warning If a legacy Mpc needs multi-port access, this multi-port support has to be provided by the Mpc itself.
+    621           *          The old interface doesn't allow another solution, as no multi-byte information is passed out of the
+    622           *          legacy membanks.
+    623           *
+    624           * \param mpcdesc Pointer to the Mpc descriptor (tables and functions of the Mpc). MUST NOT be NULL.
+    625           * \param mpcIo   Pointer to a mpc_io_buffer_t with adr, channel and the data buffer to work with
+    626           * \param buffer  Pointer to the buffer where the data can be found
+    627           * \retval        True mpc_returncodes_enum (only negative numbers)
+    628           */
+    629          static inline mpc_returncodes_enum MpcWriteLegacy(const mpc_descriptor_t * mpcdesc, mpc_io_buffer_t * mpcIo, uint8_t * buffer) {
+    630            int         retval = MPC_RW_DENY;
+    631            mpc_rw_enum legacy_retval;
+    632          
+    633            DEBUGPRINT("\n MpcWriteLegacy: adr=%3d, ch=%3d", mpcIo->adr, mpcIo->channel);
+    634          
+    635            mpcIo->length = 1;
+    636          
+    637            legacy_retval = (mpcdesc->SetValue)(mpcdesc->keydata.payload_off + mpcIo->adr, *buffer, mpcIo->channel, mpcIo->port);
+    638          
+    639            switch (legacy_retval) {
+    640            case MPC_RW_OK:
+    641              retval = MPC_OK;
+    642              break;
+    643            case MPC_RW_OUT_OF_RANGE:
+    644              retval = MPC_OUT_OF_RANGE;
+    645              break;
+    646            case MPC_RW_DENY:
+    647            default:  // avoid 'possibly uninitialized' warning down in MpcRead()
+    648              retval = MPC_DENY;
+    649              break;
+    650            }
+    651          
+    652            return (mpc_returncodes_enum) retval;
+    653          };
+    654          
+    655          
+    656          // ---------------------------------------------------------------------------------------------------------------------
+    657          /** \brief Write data to a new, table based Mpc.
+    658           *
+    659           * This function evaluates the tables of a Mpc implementation and provides an atomic multi-byte and multi-channel
+    660           * access to the data entities (data points) decribed by the tables: It moreover supports a light-weight
+    661           * endianness translation.
+    662           *
+    663           * It operates on a mpc_io_buffer_t structure passed as argument to support also a multi-port operation as well as
+    664           * this struct provied the information about the address and channel to write.
+    665           *
+    666           * The concept relies on a <b> successive access of all bytes of a multi-byte data entity</b>.
+    667           * This is, that it is \b mandatory to write all bytes of a multi-byte structure starting with the byte at the lowest
+    668           * address of the data entity (normally the MSB).
+    669           *
+    670           * For more details and for a detailed interface description pls. refer to Mpc.h/.c.
+    671           *
+    672           * \param mpcdesc Pointer to the Mpc descriptor (tables and functions of the Mpc). MUST NOT be NULL.
+    673           * \param mpcIo   Pointer to a mpc_io_buffer_t with adr, channel and the data buffer to work with
+    674           * \param buffer  Pointer to the buffer where the data can be found
+    675           *
+    676           */
+    677          static inline int MpcWriteTable(const mpc_descriptor_t * mpcdesc, mpc_io_buffer_t * mpcIo, uint8_t * buffer) {
+    678            const mpc_data_entity_t * ep = NULL;
+    679            const mpc_layout_t      * lp;
+    680            mpc_data_typ_enum         etype;
+    681            int  result, entrylen, bytelocation;
+    682          
+    683            uint16_t adr     = mpcIo->adr;
+    684            uint8_t  channel = mpcIo->channel;
+    685          
+    686            result = 0;
+    687            DEBUGPRINT("\n MpcWriteTable : adr=%3d, ch=%3d", adr, channel);
+    688          
+    689            if (adr < mpcdesc->tables_len) {
+    690              lp = &mpcdesc->layout[adr];
+    691              if (lp->entity != 255) {  // if (lp && ...) is obsolete, as lp is a always available address in the layout array
+    692                ep = &mpcdesc->entities[lp->entity];
+    693              }
+    694            }
+    695          
+    696            if (ep == NULL) {
+    697              return MPC_OUT_OF_RANGE;
+    698            }
+    699          
+    700            DEBUGPRINT("\n MpcWriteTable : Table Typ=0x%02x, val_ix=%3d (0x%08x), perm_ix=%d",
+    701                       ep->type, ep->data_ri+1, mpcdesc->constants[ep->data_ri+1], ep->perm_wi);
+    702          
+    703            entrylen  = ep->len;
+    704          
+    705            if (ep->perm_wi) {                // Fetch permissions if specified and check; deny in case of
+    706              mpcIo->perm = mpcdesc->constants[ep->perm_wi];
+    707              if (AclCheckPermissions(mpcIo->perm, mpcIo->port) != ACL_GRANT) {
+                                                          ^
+Warning[Pe188]: enumerated type mixed with another type
+    708                return MPC_DENY;
+    709              }
+    710            }
+    711          
+    712            if (lp->first) {                  // Clear buffer when indicated, especially needed for MSB of a 24-bit mapping
+    713              mpcIo->uint32 = 0;
+    714            }
+    715          
+    716            bytelocation = lp->pos;           // Put the data byte in the buffer and write length data field
+    717            mpcIo->buffer[bytelocation] = *buffer;
+    718            mpcIo->length = ep->len;
+    719          
+    720          
+    721            //MNO  Hier auf Constant abfragen, dann deny return + test
+    722            if (lp->last) {
+    723              etype = ep->type;
+    724              if (etype == MPC_TYP_VAR) {
+    725                void * p = (void*)mpcdesc->constants[ep->data_ri];
+    726                if (entrylen == 1) {
+    727                  *(uint8_t*) p = mpcIo->uint32;
+    728                }
+    729                else if (entrylen == 2) {
+    730                  *(uint16_t*)p = mpcIo->uint32;
+    731                }
+    732                else {
+    733                  *(uint32_t*)p = mpcIo->uint32;
+    734                }
+    735                result = MPC_OK;
+    736              }
+    737              else if (etype == MPC_TYP_FUN) {
+    738                void * p = (void*)mpcdesc->constants[ep->data_ri + 1];
+    739                // Typecast p to a function pointer taking the same arguments as this function + the value.
+    740                result = ((int(*)(mpc_io_buffer_t *, uint16_t, uint8_t, uint32_t)) p) (mpcIo, adr, channel, mpcIo->uint32);
+    741              }
+    742            }
+    743            else {
+    744              result = bytelocation;
+    745            }
+    746            return result;
+    747          };
+    748          
+    749          
+    750          // ---------------------------------------------------------------------------------------------------------------------
+    751          /** \brief Generic Write() of Mpc payload data.
+    752           *
+    753           * A generic interface to write the \b payload of a Mpc. This payload is only the Mpc specific data and
+    754           * does \b not contain keydata or any port specific header bytes (e.g. length, ID and version for Osram Mpcs,
+    755           * checksum at adr 1 for DALI, ...)
+    756           *
+    757           * If a Mpc has Mpc-global permissions for write (mainly valid for legacy pages), these permissions are
+    758           * checked here. Beyond this, this function is mainly a wrapper around WriteLegacy() and WriteTable().
+    759           *
+    760           * \param mpcdesc Pointer to the Mpc descriptor (legacy type or a new one). MUST NOT be NULL.
+    761           * \param mpcIo   Pointer to a mpc_io_buffer_t with adr, channel and the data buffer to work with
+    762           * \param buffer  Pointer to th buffer where the data can be found
+    763           */
+    764          static inline int MpcWritePayload(const mpc_descriptor_t * mpcdesc, mpc_io_buffer_t * mpcIo, uint8_t * buffer) {
+    765          
+    766            DEBUGPRINT("\n MpcWritePayload:         adr %3d, ch %3d = val %d\n", mpcIo->adr, mpcIo->channel, *buffer);
+    767          
+    768            acl_perm_t perm = mpcGetLegacyPermissions(mpcdesc, mpcIo);
+    769            if ((perm == 0) || (AclCheckPermissions(perm, mpcIo->port) == ACL_GRANT)) {
+                                                                 ^
+Warning[Pe188]: enumerated type mixed with another type
+    770              if (mpcdesc->tables_len >= 0) {
+    771                return MpcWriteTable(mpcdesc, mpcIo, buffer);
+    772              }
+    773              else {
+    774                return MpcWriteLegacy(mpcdesc, mpcIo, buffer);
+    775              }
+    776            }
+    777            return MPC_DENY;
+    778          }
+    779          
+    780          
+    781          // ---------------------------------------------------------------------------------------------------------------------
+    782          /** \brief Open a Mpc for non-DALI iterator write access.
+    783           *
+    784           * Set the mpc_io_buffer of a specific port and initialize the attributes for a iterator write access via MpcWrite().
+    785           *
+    786           * Second: As long as legacy Mpcs are involved, this function also is needed to set the DALI lock byte to 0x55
+    787           * to enable the requested write.
+    788           *
+    789           * \param mpc_nr  Number of the Mpc
+    790           * \param adr     Address (payload address) of the first byte to be written by MpcWrite(); Normally zero.
+    791           * \param channel Channel number to be addressed.
+    792           * \param port    mpc_port_t: Specifies the writer of the Mpc. Accesses on different ports don't disturb each other.
+    793           *
+    794           * \retval        True mpc_returncodes_enum (only negative numbers)
+    795           *                - MPC_OK: Mpc is present; Does not guarantee that the following write will succeed,
+    796           *                          adr or channel might be out of range
+    797           *                - MPC_OUT_OF_RANGE: Mpc does not exist
+    798           */
+    799          mpc_returncodes_enum MpcOpen(uint8_t item_nr, uint8_t adr, uint8_t channel, mpc_port_t port) {
+    800            const mpc_descriptor_t * mpcdesc;
+    801            mpc_io_buffer_t        * mpcIo;
+    802          
+    803            DEBUGPRINT ("\n MpcOpen       : mpc=%2d, adr=%3d, ch=%d, port=%d", item_nr, adr, channel, port);
+    804          
+    805            mpcIo            = &mpcIoBuffer[port];
+    806            mpcIo->num       = item_nr;
+    807            mpcIo->adr       = adr;
+    808            mpcIo->channel   = channel;
+    809            mpcIo->port      = port;
+    810          
+    811            mpcdesc = MpcDescriptorGet(MpcDissolveMapping(item_nr, port));
+    812          
+    813            // Allow write access for legacy pages by setting the lock byte to 0x55
+    814            if(mpcdesc) {
+    815              if (mpcdesc->tables_len < 0) {  // Works also for DALI membank 0: Has no lock byte, but adr 2 will drop this (ro)
+    816                (mpcdesc->SetValue)(2, 0x55, mpcIo->channel, mpcIo->port);
+    817              }
+    818              return MPC_OK;
+    819            }
+    820            return MPC_OUT_OF_RANGE;
+    821          }
+    822          
+    823          
+    824          // ---------------------------------------------------------------------------------------------------------------------
+    825          /** \brief Close a Mpc after a non-DALI write operation.
+    826           *
+    827           * As long as legacy Mpcs are involved, this function is needed to set the DALI lock byte (which was set by
+    828           * MpcOpen() to 0x55) to 0xFF (again) after a write operation. Nothing else.
+    829           *
+    830           * \note    By design decission, DALI (if it ever has unlocked the Mpc) again has to unlock a \b legacy Mpc
+    831           *          after a Nfc \b write access.
+    832           *
+    833           * \warning Call this function only after a preceding open(). Nearly no checks were executed, this function
+    834           *          relies on a valid mpc_io_buffer (containing e.g. the mpc_nr) for the given port.
+    835           *
+    836           * \param  port Port numbner for which the operation is to be done. See above warning for limitations.
+    837           */
+    838          void MpcClose(mpc_port_t port) {
+    839            const mpc_descriptor_t * mpcdesc;
+    840            const mpc_io_buffer_t  * mpcIo;
+    841          
+    842            DEBUGPRINT ("\n MpcClose      : port=%d", port);
+    843          
+    844            mpcIo = &mpcIoBuffer[port];
+    845            mpcdesc = MpcDescriptorGet(MpcDissolveMapping(mpcIo->num, port));
+    846            if(mpcdesc) {
+    847              if (mpcdesc->tables_len < 0) {
+    848                (mpcdesc->SetValue)(2, 0xFF, mpcIo->channel, port);
+    849              }
+    850            }
+    851          }
+    852          
+    853          
+    854          // ---------------------------------------------------------------------------------------------------------------------
+    855          /** \brief Generic Write() of a Mpc payload data.
+    856           *
+    857           * A generic interface to write the \b payload of a Mpc. This payload is only the Mpc specific data and
+    858           * does \b not contain keydata or any port specific header bytes (e.g. length, ID and version for Osram Mpcs,
+    859           * checksum at adr 1 for DALI, ...).
+    860           * \param port Port to use, see \ref mpc_port_t
+    861           * \param val Value to write
+    862           */
+    863          mpc_returncodes_enum MpcWrite(mpc_port_t port, uint8_t val) {
+    864            const mpc_descriptor_t * mpcdesc;
+    865            mpc_io_buffer_t * mpcIo;
+    866            int retval;
+    867          
+    868            mpcIo = &mpcDummyIoBuffer;
+    869            retval = MPC_OUT_OF_RANGE;
+    870          
+    871            DEBUGPRINT("\n MpcWrite      : mpc=%d, ch=%d, adr=%3d", mpcIo->num, mpcIo->channel, mpcIo->adr);
+    872          
+    873            if(port >= MPC_PORTS_FIRST_UNUSED) {
+    874              /// \todo Call ErrorWarnonly()
+    875              return (mpc_returncodes_enum) retval;
+    876            }
+    877          
+    878            mpcIo = &mpcIoBuffer[port];
+    879            mpcdesc =  MpcDescriptorGet(MpcDissolveMapping(mpcIo->num, port));
+    880          
+    881            if(mpcdesc) {
+    882              if(mpcIo->adr < (mpcdesc->keydata.length)) {
+    883          
+    884                retval = MpcWritePayload(mpcdesc, mpcIo, &val);
+    885                mpcIo->adr++;
+    886                // Align all legacy return values (a colorful mixture) to new types:
+    887                // a) ok or deny within address range
+    888                // b) out of range when above length of the address area
+    889                if(retval == MPC_OK) {
+    890                  return MPC_OK;
+    891                }
+    892                else {
+    893                  return MPC_DENY;
+    894                }
+    895              }
+    896            }
+    897            return MPC_OUT_OF_RANGE;
+    898          }
+    899          
+    900          
+    901          // ---------------------------------------------------------------------------------------------------------------------
+    902          
+    903          /** \brief The entry point for DALI library to the new Mpc interface for write access.
+    904           *
+    905           * This function, called by MemoryBankGeneric_SetValue:
+    906           *   * checks the passwort protection
+    907           *   * changes the internal lockbyte ( and calls legacy code for membanks own setting)
+    908           *   * checks Lockbyte
+    909           *   * calls MpcWritePayload to do the actual writting
+    910           *   * increases changeCounter if writting ok
+    911           *
+    912           *  Port will be set to Dali
+    913           *
+    914           * \param membank_nr  Number of Membank in Layout
+    915           * \param adr         Adress of byte to write
+    916           * \param ch          channel
+    917           * \param val         byte to write
+    918           *
+    919           * \return  MPC_OK            : writing of lockbyte or val succeeded
+    920           *          MPC_DENY          : attempt to write to Keydata (except lockbyte),
+    921           *                              Passwort protected,
+    922           *                              writing not permitted,
+    923           *          MPC_OUT_OF_RANGE  : Mpc Decriptor not existent,
+    924           *                              adr not valid
+    925           */
+    926          mpc_returncodes_enum MpcWriteDali(uint8_t membank_nr, int16_t adr, uint8_t ch, uint8_t val) {
+    927            mpc_io_buffer_t        * mpcIo;
+    928            const mpc_descriptor_t * mpcdesc;
+    929            int retval;
+    930          
+    931            DEBUGPRINT("\n MpcWriteDali   : mb %3d, adr %3d, ch %3d = val %d\n", membank_nr, adr, ch, val);
+    932          
+    933            mpcdesc = MpcDescriptorGet(MpcDissolveMapping(membank_nr, MPC_PORT_DALI));
+    934            if (mpcdesc) {
+    935              if (mpcIsPasswordProtected(mpcdesc)) {
+    936                 return MPC_DENY;
+    937              }
+    938              if (adr < mpcdesc->keydata.payload_off) {
+    939                if (adr == 2) {
+    940                  mpcDaliLockbytes[membank_nr] = val; // boundary check already done in MpcDescriptorGet()
+    941                  if (mpcdesc->tables_len < 0) {
+    942                    // For legacy pages, also write lock byte to the membank itself
+    943                    (mpcdesc->SetValue)(2, val, ch, MPC_PORT_DALI);
+    944                  }
+    945                  return MPC_OK;
+    946                }
+    947                else {
+    948                  return MPC_DENY;  // No write access to other "keydata" than DALI lock byte
+    949                }
+    950              }
+    951              else {
+    952                // Payload area
+    953                mpcIo           = &mpcIoBuffer[MPC_PORT_DALI];
+    954                mpcIo->adr      = adr - mpcdesc->keydata.payload_off;
+    955                // mpcIo->num   = 0; /// \todo For the time being; intention is to contain mpc_nr != membank_nr
+    956                mpcIo->num      = membank_nr;
+    957                mpcIo->port     = MPC_PORT_DALI;
+    958                mpcIo->channel  = ch;
+    959          
+    960                // DALI lock byte: Check this for all pages which indicate to use it
+    961                if (mpcdesc->keydata.attributes & MPC_ATTRIB_DALI_LOCKBYTE) {
+    962                  if (mpcDaliLockbytes[membank_nr] != 0x55) {
+    963                    return MPC_DENY;
+    964                  }
+    965                }
+    966                retval = MpcWritePayload(mpcdesc, mpcIo, &val);
+    967                return (mpc_returncodes_enum) retval;
+    968              }
+    969            }
+    970            // fall-through
+    971            return MPC_OUT_OF_RANGE;
+    972          }
+    973          
+    974          
+    975          // ---------------------------------------------------------------------------------------------------------------------
+    976          /** \brief Query changeCounter (to trigger tag updates in the NFC module)
+    977           *
+    978           *  \return changeCounter
+    979           */
+    980          uint32_t MpcGetChangeCounter(void) {
+    981            return changeCounter;
+    982          }
+    983          
+    984          // ---------------------------------------------------------------------------------------------------------------------
+    985          /** \brief Function to increment the changeCounter.
+    986           *
+    987           * Used to trigger NFC tag updates.
+    988           */
+    989          void MpcIncChangeCounter(void) {
+    990            changeCounter++;
+    991          }
+    992          
+    993          
+    994          // ---------------------------------------------------------------------------------------------------------------------
+    995          // ---------------------------------------------------------------------------------------------------------------------
+    996          #ifdef UNIT_TESTING
+    997          // The base functions might be static inline and hasn't a settled interface yet -> Wrapper to export it
+    998          int MpcReadTable_TDD(mpc_io_buffer_t * mpcIo, uint16_t adr, uint8_t channel, const mpc_descriptor_t * mpcdesc) {
+    999            return MpcReadTable(mpcdesc, mpcIo, adr, channel);
+   1000          }
+   1001          
+   1002          int MpcWriteTable_TDD(const mpc_descriptor_t * mpcdesc, mpc_io_buffer_t * mpcIo, uint8_t * val) {
+   1003            return MpcWriteTable(mpcdesc, mpcIo, val);
+   1004          }
+   1005          
+   1006          uint32_t getLegacyPermissions_TDD(const mpc_descriptor_t * mpcdesc, mpc_io_buffer_t * mpcIo)
+   1007          {
+   1008            return mpcGetLegacyPermissions(mpcdesc,mpcIo);
+   1009          }
+   1010          
+   1011          void set_pwdretval_TDD(int value)
+   1012          {
+   1013            pwd_retval = value;
+   1014          }
+   1015          
+   1016          uint32_t MpcGetChangeCounter_TDD(void){
+   1017            return MpcGetChangeCounter();
+   1018          }
+   1019          
+   1020          #endif
+   1021          
+   1022          
+   1023          /** \} */
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      16   MpcClose
+        16   -- Indirect call
+        16   -> MpcDescriptorGet
+        16   -> MpcDissolveMapping
+      16   MpcCmd
+        16   -- Indirect call
+        16   -> MpcDescriptorGet
+        16   -> MpcDissolveMapping
+       0   MpcGetChangeCounter
+       0   MpcIncChangeCounter
+       8   MpcInit
+         8   -> MpcCmd
+       8   MpcKeydataGet
+         8   -> MpcDescriptorGet
+         8   -> MpcDissolveMapping
+      16   MpcOpen
+        16   -- Indirect call
+        16   -> MpcDescriptorGet
+        16   -> MpcDissolveMapping
+      40   MpcRead
+        40   -- Indirect call
+        40   -> AclCheckPermissions
+        40   -> MpcDescriptorGet
+        40   -> MpcDissolveMapping
+        40   -> MpcReadLegacy
+        40   -> MpcReadTable
+      24   MpcReadDali
+        24   -- Indirect call
+        24   -> MpcDescriptorGet
+        24   -> MpcDissolveMapping
+        24   -> MpcRead
+        24   -> mpcIsPasswordProtected
+      24   MpcReadLegacy
+        24   -- Indirect call
+      24   MpcReadTable
+        24   -- Indirect call
+      16   MpcWrite
+        16   -> MpcDescriptorGet
+        16   -> MpcDissolveMapping
+        16   -> MpcWritePayload
+      24   MpcWriteDali
+        24   -- Indirect call
+        24   -> MpcDescriptorGet
+        24   -> MpcDissolveMapping
+        24   -> MpcWritePayload
+        24   -> mpcIsPasswordProtected
+      16   MpcWriteLegacy
+        16   -- Indirect call
+      16   MpcWritePayload
+        16   -> AclCheckPermissions
+        16   -> MpcWriteLegacy
+        16   -> MpcWriteTable
+        16   -> mpcGetLegacyPermissions
+      40   MpcWriteTable
+        40   -- Indirect call
+        40   -> AclCheckPermissions
+       4   mpcGetLegacyPermissions
+       0   mpcIsPasswordProtected
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable2
+       4  ??DataTable2_1
+       4  ??DataTable3
+       4  ??DataTable3_1
+       4  ??DataTable9
+       4  ??DataTable9_1
+       4  ??DataTable9_2
+       4  ??DataTable9_3
+       4  ??DataTable9_4
+      62  MpcClose
+     124  MpcCmd
+       6  MpcGetChangeCounter
+      12  MpcIncChangeCounter
+      44  MpcInit
+      16  MpcKeydataGet
+      76  MpcOpen
+     342  MpcRead
+     196  MpcReadDali
+      70  MpcReadLegacy
+     340  MpcReadTable
+      94  MpcWrite
+     164  MpcWriteDali
+      66  MpcWriteLegacy
+      68  MpcWritePayload
+     340  MpcWriteTable
+       4  changeCounter
+      52  mpcDaliLockbytes
+      20  mpcDummyIoBuffer
+      60  mpcGetLegacyPermissions
+      80  mpcIoBuffer
+       6  mpcIsPasswordProtected
+       4  pwd_retval
+
+ 
+   160 bytes in section .bss
+ 2 122 bytes in section .text
+ 
+ 2 122 bytes of CODE memory
+   160 bytes of DATA memory
+
+Errors: none
+Warnings: 3

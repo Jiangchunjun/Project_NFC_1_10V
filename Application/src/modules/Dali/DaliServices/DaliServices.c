@@ -304,8 +304,8 @@ void DaliServices_Restart( uint8_t channels )                                   
 //----------------------------------------------------------------------------------------------------------------------
 void DaliServices_ResetDevice(void)                                                                                     // Forces Watchdog-Timer. If not already done in DaliServices_WriteStepNvm(): Store non-volatile memory
 {
-    nvmWriteAll();
-    NfcOnPowerDown(nfc_power_down);
+    //nvmWriteAll();
+    //NfcOnPowerDown(nfc_power_down);
     //P1_1_set();
     // Fix for NFC. Maybe not required in the future anymore
     for ( int i = 0; i < 525000; i++ )

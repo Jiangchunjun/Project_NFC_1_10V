@@ -1,0 +1,588 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:51
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\Clm\MemoryBank_Clm.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\Clm\MemoryBank_Clm.c"
+#        -D XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\MemoryBank_Clm.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\MemoryBank_Clm.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\Clm\MemoryBank_Clm.c
+      1          //----------------------------------------------------------------------------------------------------------------------
+      2          ///   \file   MemoryBank_Clm.c
+      3          ///   \since  2012-11-12
+      4          ///   \brief  MultiPurposeCenter ContantLumenOutput (CLM). MPC-ID = 6. Specified by 2D1 2786696-01
+      5          ///
+      6          /// DISCLAIMER:
+      7          ///   The content of this file is intellectual property of the Osram GmbH. It is confidential and not intended for public release.
+      8          ///   All rights reserved. Copyright © Osram GmbH
+      9          //----------------------------------------------------------------------------------------------------------------------
+     10          
+     11          
+     12          #define MODULE_MPC
+     13          #define MODULE_CLM
+     14          
+     15          #include "Global.h"
+     16          #include "MpcDefs.h"
+     17          #include "Config.h"                                                             // may define device-specific #defines for clm-table ..
+     18          #include "MemoryBank_Clm.h"                                                     // .. otherwise the default-#defines for clm-table are used, which are included here
+     19          #include "nvm.h"
+     20          
+     21          
+     22          //---   A d j u s t   s e t t i n g s   --------------------------------------------------------------------------------
+     23          #define MPC_CLM_ENABLE_FLAG           0x01
+     24          #define MPC_CLM_RELOAD_FACTORY_FLAG   0x80
+     25          
+     26          #define MPC_CLM_TABLE_MaxFACTOR       (uint16_t)((MPC_CLM_100PERCENT_FACTOR * MPC_CLM_TABLE_MaxLEVEL)/100.0)
+     27          #define MPC_CLM_TABLE_MinFACTOR       (uint16_t)((MPC_CLM_100PERCENT_FACTOR * MPC_CLM_TABLE_MinLEVEL)/100.0)
+     28          
+     29          #ifndef MPC_CLM_TABLE_ENABLE
+     30            #define MPC_CLM_ENABLE              0                                         // default = disabled
+     31          #else
+     32            #define MPC_CLM_ENABLE              MPC_CLM_ENABLE_FLAG
+     33          #endif
+     34          
+     35          //---   C h e c k   o f   s e t t i n g s   ----------------------------------------------------------------------------
+     36          STATIC_ASSERT( (MPC_CLM_TABLE_ENTRIES == 4) || (MPC_CLM_TABLE_ENTRIES == 8), "MPC_CLM_TABLE_ENTRIES must be 4 or 8");
+     37          STATIC_ASSERT( MPC_CLM_TABLE_MinLEVEL <= MPC_CLM_TABLE_MaxLEVEL, "MPC_CLM_TABLE_MaxLEVEL less than MPC_CLM_TABLE_MinLEVEL");
+     38          STATIC_ASSERT( MPC_CLM_TABLE_MaxLEVEL <= 150, "MPC_CLM_TABLE_MaxLEVEL to big");
+     39          STATIC_ASSERT( MPC_CLM_TABLE_MinLEVEL >= 50, "MPC_CLM_TABLE_MinLEVEL to small");
+     40          STATIC_ASSERT( MPC_ConstantLumen_VERSION == 3, "Wrong version number in header");
+     41          
+     42          //---   D a t a   s t r u c t u r e   ----------------------------------------------------------------------------------
+     43          typedef struct {
+     44            uint8_t khours;
+     45            uint8_t adjustFactor;
+     46          } TypeClmTable;
+     47          
+     48          typedef struct {
+     49            uint8_t enableClm;
+     50            TypeClmTable table[MPC_CLM_TABLE_ENTRIES];
+     51          } TypeClmMpcNvm;
+     52          
+     53          typedef struct {
+     54            TypeClmMpcNvm nvm;
+     55            uint8_t lockByte;                                                             ///< \brief The lock byte of the memory bank is stored in RAM
+     56            uint32_t actTime_mins;
+     57            uint16_t actAdjustFactor;
+     58          } TypeMemoryBank_Clm;
+     59          
+     60          TypeMemoryBank_Clm memoryBank_Clm[DEVICE_CHANNELS];
+     61          uint16_t  ClmCalcAdjustlevel (uint32_t runTime_mins, TypeClmTable *pClmTable);
+     62          
+     63          
+     64          //----------------------------------------------------------------------------------------------------------------------
+     65          /// \brief Factory reset values (const array in flash memory) for a CLM memory bank
+     66          const TypeClmMpcNvm clmMpcNvmDefault = {
+     67            .enableClm = MPC_CLM_ENABLE,
+     68            .table[0].khours = MPC_CLM_TABLE_0_kHOURS,
+     69            .table[0].adjustFactor = MPC_CLM_TABLE_0_FACTOR,
+     70            .table[1].khours = MPC_CLM_TABLE_1_kHOURS,
+     71            .table[1].adjustFactor = MPC_CLM_TABLE_1_FACTOR,
+     72            .table[2].khours = MPC_CLM_TABLE_2_kHOURS,
+     73            .table[2].adjustFactor = MPC_CLM_TABLE_2_FACTOR,
+     74            .table[3].khours = MPC_CLM_TABLE_3_kHOURS,
+     75            .table[3].adjustFactor = MPC_CLM_TABLE_3_FACTOR,
+     76            #if MPC_CLM_TABLE_ENTRIES == 8
+     77             .table[4].khours = MPC_CLM_TABLE_4_kHOURS,
+     78             .table[4].adjustFactor = MPC_CLM_TABLE_4_FACTOR,
+     79             .table[5].khours = MPC_CLM_TABLE_5_kHOURS,
+     80             .table[5].adjustFactor = MPC_CLM_TABLE_5_FACTOR,
+     81             .table[6].khours = MPC_CLM_TABLE_6_kHOURS,
+     82             .table[6].adjustFactor = MPC_CLM_TABLE_6_FACTOR,
+     83             .table[7].khours = MPC_CLM_TABLE_7_kHOURS,
+     84             .table[7].adjustFactor = MPC_CLM_TABLE_7_FACTOR,
+     85            #endif
+     86          };
+     87          
+     88          
+     89          //----------------------------------------------------------------------------------------------------------------------
+     90          /// \brief    Initialise and reset (in case of MPC_CLM_RELOAD_FACTORY_FLAG is set) the memory Bank and the clm-factor.
+     91          /// \param    runTime_mins    time to calculate the clm-factor
+     92          /// \param    channel         The device channel.
+     93          /// \retval   none
+     94          //----------------------------------------------------------------------------------------------------------------------
+     95          void MemoryBank_Clm_Init( uint32_t runTime_mins, uint8_t channel )
+     96          {
+     97            TypeMemoryBank_Clm *pClmMPC = &memoryBank_Clm[channel];
+     98            nvm_init_t nvm_init_state =  nvmDataInit ( (void *)(&(pClmMPC->nvm)), sizeof(TypeClmMpcNvm), NVM_MEM_CLASS_0);
+     99            if ( ( nvm_init_state != NVM_INIT_OK) || ((pClmMPC->nvm.enableClm & MPC_CLM_RELOAD_FACTORY_FLAG) !=0 ) ) {
+    100              pClmMPC->nvm = clmMpcNvmDefault;
+    101            }
+    102          
+    103            memoryBank_Clm[channel].lockByte = 255;                                       // init RAM-value
+    104            pClmMPC->actTime_mins = runTime_mins;                                         // store time from InfoMPC to enable update upon parameter change
+    105            if ( (pClmMPC->nvm.enableClm & MPC_CLM_ENABLE_FLAG) != 0 ) {
+    106              pClmMPC->actAdjustFactor = ClmCalcAdjustlevel(runTime_mins, pClmMPC->nvm.table);
+    107            }
+    108            else {
+    109              pClmMPC->actAdjustFactor = MPC_CLM_100PERCENT_FACTOR;                      // set to 100 % = 2^14
+    110            }
+    111          }
+    112          
+    113          
+    114          //----------------------------------------------------------------------------------------------------------------------
+    115          /// \brief Initialise the memory Bank.
+    116          ///
+    117          /// \todo Clarify relation of this function to MemoryBank_Clm_FactoryReset()
+    118          ///
+    119          /// \param channel    The device channel.
+    120          /// \retval      none
+    121          //----------------------------------------------------------------------------------------------------------------------
+    122          void MemoryBank_Clm_Reset( uint8_t channel )                                       // reset only MPC variables
+    123          {
+    124            // no variables of MPC have to be reset
+    125          }
+    126          
+    127          
+    128          //----------------------------------------------------------------------------------------------------------------------
+    129          /// \brief Factory reset (all channels) of CLM memory bank(s)
+    130          ///
+    131          /// Resets all variables stored in nvm memory to the defaults as defined during the compilation. For a
+    132          /// full reset, also a power-off and power-on cycle is needed to reset the ram variables too.
+    133          ///
+    134          /// Purpose of this function:
+    135          /// - Reset a ballasts returning from the field to allow that it can be sold again
+    136          /// - Full reset of a ballast in regression tests (separate test cases from each other)
+    137          ///
+    138          /// \todo Clarify relation of this function to MemoryBank_Clm_Reset(ch)
+    139          //----------------------------------------------------------------------------------------------------------------------
+    140          void MemoryBank_Clm_FactoryReset( void )
+    141          {
+    142            for (int i = 0; i < DEVICE_CHANNELS; i++) {
+    143              memoryBank_Clm[i].nvm = clmMpcNvmDefault;
+    144            }
+    145          }
+    146          
+    147          
+    148          //----------------------------------------------------------------------------------------------------------------------
+    149          /// \brief Reads a value from the memory bank "CLM Page".
+    150          ///
+    151          /// The data will be collected from the real device.
+    152          /// The checksum will be handle in MemoryBank.c
+    153          ///
+    154          /// \param address    The address in the selected memory bank.
+    155          /// \param value    Pointer to a memory address to save the result.
+    156          /// \param channel    The device channel.
+    157          ///
+    158          /// \retval      True if successful and value valid.
+    159          //----------------------------------------------------------------------------------------------------------------------
+    160          mpc_rw_enum MemoryBank_Clm_GetValue( uint8_t address, uint8_t *value, uint8_t channel )
+    161          {
+    162            switch( address ) {
+    163            case 0:                                                                       // last addressable memory bank location
+    164              *value = MPC_ConstantLumen_LastADDRESS;
+    165              return MPC_RW_OK;
+    166            case 1:                                                                       // return indicator byte
+    167              *value = 0;
+    168              return MPC_RW_OK;
+    169            case 2:                                                                       // lock byte
+    170              *value = memoryBank_Clm[channel].lockByte;
+    171              return MPC_RW_OK;
+    172            case 3:                                                                       // identification number of the multipurpose center
+    173              *value = MPC_ConstantLumen_ID;
+    174              return MPC_RW_OK;
+    175            case 4:                                                                       // version of the multipurpose center implementation
+    176              *value = MPC_ConstantLumen_VERSION;
+    177              return MPC_RW_OK;
+    178            case 5:                                                                       //version of the multipurpose center implementation
+    179              *value = memoryBank_Clm[channel].nvm.enableClm;
+    180              return MPC_RW_OK;
+    181          
+    182            case 6:
+    183            case 8:
+    184            case 0x0A:
+    185            case 0x0C:
+    186          #if MPC_CLM_TABLE_ENTRIES == 8
+    187            case 0x0E:
+    188            case 0x10:
+    189            case 0x12:
+    190            case 0x14:
+    191          #endif
+    192              *value = memoryBank_Clm[channel].nvm.table[(address-6)>>1].khours;
+    193              return MPC_RW_OK;
+    194          
+    195            case 7:
+    196            case 9:
+    197            case 0x0B:
+    198            case 0x0D:
+    199          #if MPC_CLM_TABLE_ENTRIES == 8
+    200            case 0x0F:
+    201            case 0x11:
+    202            case 0x13:
+    203            case 0x15:
+    204          #endif
+    205              *value = memoryBank_Clm[channel].nvm.table[(address-6)>>1].adjustFactor;
+    206              return MPC_RW_OK;
+    207            default:
+    208              return MPC_RW_OUT_OF_RANGE;                                                 // ignore all others
+    209            }
+    210          }
+    211          
+    212          
+    213          
+    214          //----------------------------------------------------------------------------------------------------------------------
+    215          /// \brief Writes a value in a the memory bank "CLM Page".
+    216          ///
+    217          /// The bank number in pDaliDevice->dtr1, address in pDaliDevice->dtr and channel in pDaliDevice->channel.
+    218          ///
+    219          /// \param address    The address in the selected memory bank.
+    220          /// \param value    The value to write.
+    221          /// \param channel    The device channel.
+    222          ///
+    223          /// \retval      True if value was written.
+    224          //----------------------------------------------------------------------------------------------------------------------
+    225          mpc_rw_enum MemoryBank_Clm_SetValue( uint8_t address, uint8_t value, uint8_t channel )
+    226          {
+    227            TypeMemoryBank_Clm* pClmMPC = &memoryBank_Clm[channel];
+    228            if (address == 2) {                                                           // no check of lock byte for 1 parameter
+    229              pClmMPC->lockByte = value;                                                  // write RAM-value
+    230              return MPC_RW_OK;                                                           // leave after update
+    231            }
+    232            else {
+    233              if( pClmMPC->lockByte != MPC_UNLOCK ) {                                     // if mpc is locked ..
+    234                return MPC_RW_DENY;                                                       // .. leave without change
+    235              }
+    236              else {                                                                      // else (i.e. if mpc is un-locked): change value
+    237                switch( address ) {
+    238                case 5:
+    239                  pClmMPC->nvm.enableClm = value & (MPC_CLM_ENABLE_FLAG|MPC_CLM_RELOAD_FACTORY_FLAG);
+    240                  break;                                                                  // continue with update of actAdjustFactor at any change after switch
+    241                case 6:
+    242                case 8:
+    243                case 0x0A:
+    244                case 0x0C:
+    245          #if MPC_CLM_TABLE_ENTRIES == 8
+    246                case 0x0E:
+    247                case 0x10:
+    248                case 0x12:
+    249                case 0x14:
+    250          #endif
+    251                  pClmMPC->nvm.table[(address-6)>>1].khours = value;                       // time value at even addresses
+    252                  break;                                                                  // continue
+    253          
+    254                case 7:
+    255                case 9:
+    256                case 0x0B:
+    257                case 0x0D:
+    258          #if MPC_CLM_TABLE_ENTRIES == 8
+    259                case 0x0F:
+    260                case 0x11:
+    261                case 0x13:
+    262                case 0x15:
+    263          #endif
+    264                  pClmMPC->nvm.table[(address-6)>>1].adjustFactor = value;                 // adjustFactors at odd addresses
+    265                  break;                                                                  // continue
+    266                default:
+    267                  return MPC_RW_OUT_OF_RANGE;                                             // leave without change
+    268                }
+    269                if ( (pClmMPC->nvm.enableClm & MPC_CLM_ENABLE_FLAG) != 0 ) {
+    270                  pClmMPC->actAdjustFactor = ClmCalcAdjustlevel(pClmMPC->actTime_mins, pClmMPC->nvm.table);
+    271                }
+    272                else {
+    273                  pClmMPC->actAdjustFactor = MPC_CLM_100PERCENT_FACTOR;
+    274                }
+    275                return MPC_RW_OK;                                                         // leave after update
+    276              }
+    277            }
+    278          }
+    279          
+    280          
+    281          void MemoryBank_Clm_UpdateAdjustFactor (uint32_t runTime_mins, uint8_t channel) {
+    282            memoryBank_Clm[channel].actTime_mins = runTime_mins;                          // store to RAM, needed if update of CLM-table
+    283            if ( (memoryBank_Clm[channel].nvm.enableClm & MPC_CLM_ENABLE_FLAG) != 0 ) {
+    284              memoryBank_Clm[channel].actAdjustFactor = ClmCalcAdjustlevel(runTime_mins, memoryBank_Clm[channel].nvm.table);
+    285            } // no else: actAdjustFactor is ignored in ConstantLumen_GetFactor, if CLM is disabled
+    286          }
+    287          
+    288          //----------------------------------------------------------------------------------------------------------------------
+    289          /// \brief    Returns the pre-calculated CLM-factor, if CLM is enabled. Else return 100 %
+    290          /// \param    channel    The device channel.
+    291          ///
+    292          /// \retval   factor in resolution 100 % = 2^14
+    293          //----------------------------------------------------------------------------------------------------------------------
+    294          uint16_t ConstantLumen_GetFactor (uint8_t channel) {
+    295            if ( memoryBank_Clm[channel].nvm.enableClm & MPC_CLM_ENABLE_FLAG ) {
+    296              return memoryBank_Clm[channel].actAdjustFactor;                             // return pre-calulated factor ..
+    297            }
+    298            else {
+    299              return MPC_CLM_100PERCENT_FACTOR;                                           // .. or 100 %
+    300            }
+    301          }
+    302          
+    303          //------------- " Private functions
+    304          //----------------------------------------------------------------------------------------------------------------------
+    305          /// \brief get an adjustment level for given operation hours from the "CLM Page".
+    306          //
+    307          //----------------------------------------------------------------------------------------------------------------------
+    308          //
+    309          uint16_t ClmCalcAdjustlevel(uint32_t runTime_mins, TypeClmTable *pClmTable){
+    310            uint16_t returnFactor = MPC_CLM_100PERCENT_FACTOR;                            // default: set to 100% (= return value, if disabled by table(!) values)
+    311            uint8_t adjustFactorLeft, adjustFactorRight;
+    312            uint32_t timeLeft_mins, timeRight_mins;
+    313            const uint16_t scaleLevel = (uint16_t)164;                                    // scale 100 % to 2^14 (correct value 163.84, leads to deviation of < +1/1000
+    314          
+    315            if ( runTime_mins >= 0xFFFFFF) { return returnFactor; }                       // lampOn counter not active: set factor = 100 %
+    316          
+    317            adjustFactorRight = pClmTable[0].adjustFactor;
+    318            if ( (pClmTable[0].khours != 0xFF) && (adjustFactorRight != 0xFF) )   {       // calculate adjustFactor, if ContantLumenMPC is NOT disabled by table(!) values
+    319              timeRight_mins = (uint32_t)pClmTable[0].khours * (uint32_t)60000;               // start value for timeRight_mins
+    320              if (runTime_mins < timeRight_mins) {                                        // if time at first entry != 0 ..
+    321                returnFactor = (uint16_t)adjustFactorRight * scaleLevel;                  // .. [returnFactor]16bit = [adjustFactor]8bit * [scaleLevel]8bit. Limitation done before return!
+    322              }
+    323              else {
+    324                uint8_t index = 0;
+    325                uint8_t khours;
+    326                bool endOfTable = false;
+    327                uint32_t diffActTime;
+    328          
+    329                do {
+    330                  khours = pClmTable[++index].khours;                                     // check next entry
+    331                  adjustFactorLeft = adjustFactorRight;
+    332                  adjustFactorRight = pClmTable[index].adjustFactor;
+    333                  if ((khours == 255) || (adjustFactorRight == 255)
+    334                      || (khours <= pClmTable[index-1].khours) || (index >= MPC_CLM_TABLE_ENTRIES)
+    335                      || (adjustFactorLeft > adjustFactorRight) ) {                       // According to spec. (interpolation is tested for "adjustFactorLeft > adjustFactorRight" too)
+    336                    endOfTable = true;
+    337                  }
+    338                  else {
+    339                    timeLeft_mins = timeRight_mins;
+    340                    timeRight_mins = (uint32_t)khours * (uint32_t)60000;
+    341                  }
+    342                }
+    343                while ( (runTime_mins > timeRight_mins) && (endOfTable == false) );
+    344          
+    345                if (endOfTable) {                                                         // use last entry as constant factor for the rest of live-time
+    346                  returnFactor = ((uint16_t)(adjustFactorLeft) * scaleLevel);
+    347                }
+    348                else {
+    349                  uint32_t diffTableTime;
+    350                  uint8_t i;
+    351          
+    352                  uint8_t tempFactor;
+    353                  uint32_t dividend, divisor, result =0, factor32;
+    354                  int32_t diff;
+    355          
+    356                  diffActTime = runTime_mins - timeLeft_mins;
+    357                  if (adjustFactorLeft > MPC_CLM_TABLE_MaxLEVEL) {adjustFactorLeft = MPC_CLM_TABLE_MaxLEVEL;}
+    358                  if (adjustFactorRight > MPC_CLM_TABLE_MaxLEVEL) {adjustFactorRight = MPC_CLM_TABLE_MaxLEVEL;}
+    359                  if (adjustFactorLeft < MPC_CLM_TABLE_MinLEVEL) {adjustFactorLeft = MPC_CLM_TABLE_MinLEVEL;}
+    360                  if (adjustFactorRight < MPC_CLM_TABLE_MinLEVEL) {adjustFactorRight = MPC_CLM_TABLE_MinLEVEL;}
+    361                  if (adjustFactorRight >= adjustFactorLeft) {                            // factor is increasing? (stay positive)
+    362                    tempFactor = adjustFactorRight - adjustFactorLeft;
+    363                  }
+    364                  else {
+    365                    tempFactor = adjustFactorLeft - adjustFactorRight;                    // could never be reached: endOfTable = true in this case
+    366                  }
+    367                  dividend = diffActTime * tempFactor;                                    // [dividend]32bit = diffActTime]24bit * [tempFactor]8bit
+    368                  if (dividend == 0) {
+    369                    returnFactor = ((uint16_t)(adjustFactorLeft) * scaleLevel);
+    370                  }
+    371                  else {
+    372                    diffTableTime = timeRight_mins - timeLeft_mins;
+    373                    divisor = diffTableTime <<8;                                          // [divisor]32bit = [diffTableTime]24bit <<8. Never zero (guarantied in while-loop)
+    374                    for (i=14; i>0; i--) {                                                // accuracy of 11 bit is sufficient
+    375                      divisor >>= 1;                                                      // always: divisor > dividend, make 1st shift first
+    376                      result <<= 1;
+    377                      diff = dividend - divisor;
+    378                      if (diff >= 0) {
+    379                        dividend = diff;
+    380                        result++;
+    381                      }
+    382                    }
+    383                    result <<=2;
+    384                    factor32 = (uint32_t)(adjustFactorLeft) <<8;
+    385                    if (adjustFactorRight > adjustFactorLeft) {                           //
+    386                      factor32 += result;
+    387                    }
+    388                    else {
+    389                      factor32 -= result;
+    390                    }
+    391                    factor32 *= scaleLevel;                                               // [factor32]24bit = [factor32]16bit * [scaleLevel]8
+    392                    returnFactor = (uint16_t)(factor32 >>8);
+    393                  } // else to if (dividend == 0)
+    394                } // else to if: ((endOfTable = false) || (actDiffTime <= 0))
+    395              } // not before 1st entry
+    396              if (returnFactor > MPC_CLM_TABLE_MaxFACTOR) {returnFactor = MPC_CLM_TABLE_MaxFACTOR;}
+    397              if (returnFactor < MPC_CLM_TABLE_MinFACTOR) {returnFactor = MPC_CLM_TABLE_MinFACTOR;}
+    398            } // no else: return default
+    399            return returnFactor;
+    400          }
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      32   ClmCalcAdjustlevel
+       4   ConstantLumen_GetFactor
+       8   MemoryBank_Clm_FactoryReset
+         8   -> __aeabi_memcpy
+       8   MemoryBank_Clm_GetValue
+      16   MemoryBank_Clm_Init
+        16   -> ClmCalcAdjustlevel
+        16   -> __aeabi_memcpy
+        16   -> nvmDataInit
+       0   MemoryBank_Clm_Reset
+       8   MemoryBank_Clm_SetValue
+         8   -> ClmCalcAdjustlevel
+       8   MemoryBank_Clm_UpdateAdjustFactor
+         8   -> ClmCalcAdjustlevel
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable5
+       4  ??DataTable5_1
+       4  ??DataTable6
+       4  ??DataTable6_1
+       4  ??DataTable6_2
+       4  ??DataTable6_3
+     360  ClmCalcAdjustlevel
+      36  ConstantLumen_GetFactor
+      30  MemoryBank_Clm_FactoryReset
+     180  MemoryBank_Clm_GetValue
+      90  MemoryBank_Clm_Init
+       2  MemoryBank_Clm_Reset
+     138  MemoryBank_Clm_SetValue
+      60  MemoryBank_Clm_UpdateAdjustFactor
+      12  clmMpcNvmDefault
+      20  memoryBank_Clm
+
+ 
+  20 bytes in section .bss
+  12 bytes in section .rodata
+ 920 bytes in section .text
+ 
+ 920 bytes of CODE  memory
+  12 bytes of CONST memory
+  20 bytes of DATA  memory
+
+Errors: none
+Warnings: none

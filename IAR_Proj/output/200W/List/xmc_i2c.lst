@@ -1,0 +1,617 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:57
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc_i2c.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc_i2c.c"
+#        -D XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\xmc_i2c.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\xmc_i2c.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc_i2c.c
+      1          /**
+      2           * @file xmc_i2c.c
+      3           * @date 2015-10-02
+      4           *
+      5           * @cond
+      6           *********************************************************************************************************************
+      7           * XMClib v2.1.6 - XMC Peripheral Driver Library 
+      8           *
+      9           * Copyright (c) 2015-2016, Infineon Technologies AG
+     10           * All rights reserved.                        
+     11           *                                             
+     12           * Redistribution and use in source and binary forms, with or without modification,are permitted provided that the 
+     13           * following conditions are met:   
+     14           *                                                                              
+     15           * Redistributions of source code must retain the above copyright notice, this list of conditions and the following 
+     16           * disclaimer.                        
+     17           * 
+     18           * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following 
+     19           * disclaimer in the documentation and/or other materials provided with the distribution.                       
+     20           * 
+     21           * Neither the name of the copyright holders nor the names of its contributors may be used to endorse or promote 
+     22           * products derived from this software without specific prior written permission.                                           
+     23           *                                                                              
+     24           * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, 
+     25           * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE  
+     26           * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+     27           * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR  
+     28           * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+     29           * WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+     30           * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                                                  
+     31           *                                                                              
+     32           * To improve the quality of the software, users are encouraged to share modifications, enhancements or bug fixes with 
+     33           * Infineon Technologies AG dave@infineon.com).                                                          
+     34           *********************************************************************************************************************
+     35           *
+     36           * Change History
+     37           * --------------
+     38           *
+     39           * 2015-02-20:
+     40           *     - Initial <br>
+     41           *      
+     42           * 2015-05-20:
+     43                 - Modified XMC_I2C_CH_Stop() API for not setting to IDLE the channel if it is busy <br>
+     44           *
+     45           * 2015-06-20:
+     46           *     - Removed GetDriverVersion API <br>
+     47           *
+     48           * 2015-08-14:
+     49           *     - updated the XMC_I2C_CH_SetBaudrate API to support dynamic change from 400K to low frequencies <br>
+     50           *
+     51           * 2015-09-01:
+     52           *     - Modified XMC_I2C_CH_EnableEvent() and XMC_I2C_CH_DisableEvent() for supporting multiple events configuration <br>
+     53           *
+     54           * 2015-10-02:
+     55           *     - Fixed 10bit addressing
+     56           *
+     57           * @endcond 
+     58           *
+     59           */
+     60          
+     61          /*********************************************************************************************************************
+     62           * HEADER FILES
+     63           *********************************************************************************************************************/
+     64          #include <xmc_i2c.h>
+     65          
+     66          /*********************************************************************************************************************
+     67           * MACROS
+     68           *********************************************************************************************************************/
+     69          #define XMC_I2C_7BIT_ADDR_Pos   (8U)		/**< 7-bit address position */
+     70          #define TRANSMISSION_MODE       (3U)		/**< The shift control signal is considered active
+     71                                                           without referring to the actual signal level. Data
+     72                                                           frame transfer is possible after each edge of the signal.*/
+     73          #define WORDLENGTH              (7U)        /**< Word length */
+     74          #define SET_TDV                 (1U)		/**< Transmission data valid */
+     75          #define XMC_I2C_10BIT_ADDR_MASK (0x7C00U)   /**< Address mask for 10-bit mode */
+     76          
+     77          /*********************************************************************************************************************
+     78           * ENUMS
+     79           *********************************************************************************************************************/
+     80          
+     81          typedef enum XMC_I2C_CH_TDF
+     82          {
+     83            XMC_I2C_CH_TDF_MASTER_SEND =         0U,
+     84            XMC_I2C_CH_TDF_SLAVE_SEND =          (uint32_t)1U << 8U,
+     85            XMC_I2C_CH_TDF_MASTER_RECEIVE_ACK =  (uint32_t)2U << 8U,
+     86            XMC_I2C_CH_TDF_MASTER_RECEIVE_NACK = (uint32_t)3U << 8U,
+     87            XMC_I2C_CH_TDF_MASTER_START =        (uint32_t)4U << 8U,
+     88            XMC_I2C_CH_TDF_MASTER_RESTART =      (uint32_t)5U << 8U,
+     89            XMC_I2C_CH_TDF_MASTER_STOP =         (uint32_t)6U << 8U
+     90          } XMC_I2C_CH_TDF_t;
+     91          
+     92          typedef enum XMC_I2C_CH_MAX_SPEED
+     93          {
+     94            XMC_I2C_CH_MAX_SPEED_STANDARD = 100000U,
+     95            XMC_I2C_CH_MAX_SPEED_FAST = 400000U
+     96          } XMC_I2C_CH_MAX_SPEED_t;
+     97          
+     98          typedef enum XMC_I2C_CH_CLOCK_OVERSAMPLING
+     99          {
+    100            XMC_I2C_CH_CLOCK_OVERSAMPLING_STANDARD = 10U,
+    101            XMC_I2C_CH_CLOCK_OVERSAMPLING_FAST     = 25U
+    102          } XMC_I2C_CH_CLOCK_OVERSAMPLINGS_t;
+    103          
+    104          /*********************************************************************************************************************
+    105           * API IMPLEMENTATION
+    106           *********************************************************************************************************************/
+    107          /* Initializes the USIC channel by setting the data format, slave address, baudrate, transfer buffer */
+    108          void XMC_I2C_CH_Init(XMC_USIC_CH_t *const channel, const XMC_I2C_CH_CONFIG_t *const config)
+    109          {
+    110            XMC_USIC_CH_Enable(channel);
+    111            
+    112            /* Data format configuration */
+    113            channel->SCTR = ((uint32_t)TRANSMISSION_MODE << (uint32_t)USIC_CH_SCTR_TRM_Pos) | /* Transmision mode */
+    114                            ((uint32_t)WORDLENGTH << (uint32_t)USIC_CH_SCTR_WLE_Pos) | /* 8 data bits */
+    115                            USIC_CH_SCTR_FLE_Msk |           /* unlimited data flow */
+    116                            USIC_CH_SCTR_SDIR_Msk |          /* MSB shifted first */
+    117                            USIC_CH_SCTR_PDL_Msk;            /* Passive Data Level */
+    118          
+    119            XMC_I2C_CH_SetSlaveAddress(channel, config->address);
+    120            (void)XMC_I2C_CH_SetBaudrate(channel, config->baudrate);
+    121              
+    122            /* Enable transfer buffer */
+    123            channel->TCSR = ((uint32_t)SET_TDV << (uint32_t)USIC_CH_TCSR_TDEN_Pos) | USIC_CH_TCSR_TDSSM_Msk;
+    124          
+    125            /* Clear status flags */
+    126            channel->PSCR = 0xFFFFFFFFU;
+    127          
+    128            /* Disable parity generation */
+    129            channel->CCR = 0x0U;
+    130          }
+    131          /* Sets the slave address */
+    132          void XMC_I2C_CH_SetSlaveAddress(XMC_USIC_CH_t *const channel, const uint16_t address)
+    133          {
+    134            if ((address & XMC_I2C_10BIT_ADDR_MASK) == XMC_I2C_10BIT_ADDR_GROUP)
+    135            {
+    136              channel->PCR_IICMode = (address & 0xffU) | ((address << 1) & 0xfe00U);
+    137            }
+    138            else
+    139            {
+    140              channel->PCR_IICMode = ((uint32_t)address) << XMC_I2C_7BIT_ADDR_Pos;
+    141            }
+    142          }
+    143          /* Read the slave address */
+    144          uint16_t XMC_I2C_CH_GetSlaveAddress(const XMC_USIC_CH_t *const channel)
+    145          {
+    146            uint32_t address = channel->PCR_IICMode & (uint32_t)USIC_CH_PCR_IICMode_SLAD_Msk;
+    147            
+    148            if ((address & 0xffU) == 0U)
+    149            {
+    150              address = address >> XMC_I2C_7BIT_ADDR_Pos;
+    151            }
+    152            else
+    153            {
+    154              address = (address & 0xffU) | ((address >> 1) & 0x0300U);
+    155            }
+    156            
+    157            return (uint16_t)address;
+    158          }
+    159          /* Sets the baudrate and oversampling based on standard speed or fast speed */
+    160          XMC_I2C_CH_STATUS_t XMC_I2C_CH_SetBaudrate(XMC_USIC_CH_t *const channel, uint32_t rate)
+    161          {
+    162            XMC_I2C_CH_STATUS_t status;
+    163            
+    164            status = XMC_I2C_CH_STATUS_ERROR;
+    165            
+    166            if (rate <= (uint32_t)XMC_I2C_CH_MAX_SPEED_STANDARD)
+    167            {
+    168          		channel->PCR_IICMode &= (uint32_t)~USIC_CH_PCR_IICMode_STIM_Msk;
+    169              if (XMC_USIC_CH_SetBaudrate(channel, rate, (uint32_t)XMC_I2C_CH_CLOCK_OVERSAMPLING_STANDARD) == XMC_USIC_CH_STATUS_OK)
+    170              {
+    171                status = XMC_I2C_CH_STATUS_OK;
+    172              }
+    173            }
+    174            else if (rate <= (uint32_t)XMC_I2C_CH_MAX_SPEED_FAST)
+    175            {
+    176              channel->PCR_IICMode |= (uint32_t)USIC_CH_PCR_IICMode_STIM_Msk;
+    177              if (XMC_USIC_CH_SetBaudrate(channel, rate, (uint32_t)XMC_I2C_CH_CLOCK_OVERSAMPLING_FAST) == XMC_USIC_CH_STATUS_OK)
+    178              {
+    179                status = XMC_I2C_CH_STATUS_OK;
+    180              }
+    181            }
+    182            else 
+    183            {
+    184              status = XMC_I2C_CH_STATUS_ERROR;
+    185            }
+    186            
+    187            return status;
+    188          }
+    189          /* Sends master start condition along with read/write command to IN/TBUF register based on FIFO/non-FIFO modes. */
+    190          void XMC_I2C_CH_MasterStart(XMC_USIC_CH_t *const channel, const uint16_t addr, const XMC_I2C_CH_CMD_t command)
+    191          {
+    192            uint32_t temp;
+    193            
+    194            temp = addr | (uint32_t)XMC_I2C_CH_TDF_MASTER_START;
+    195            if (command == XMC_I2C_CH_CMD_READ)
+    196            {
+    197              temp |= 0x1U;
+    198            }
+    199          
+    200            /* Check FIFO size */
+    201            if ((channel->TBCTR & USIC_CH_TBCTR_SIZE_Msk) == 0U)
+    202            {
+    203              while (XMC_USIC_CH_GetTransmitBufferStatus(channel) == XMC_USIC_CH_TBUF_STATUS_BUSY)
+    204          	{
+    205                /* check TDV, wait until TBUF is ready */
+    206              }
+    207          
+    208              /* clear PSR_TBIF */
+    209              XMC_I2C_CH_ClearStatusFlag(channel, (uint32_t)XMC_I2C_CH_STATUS_FLAG_TRANSMIT_BUFFER_INDICATION);
+    210          
+    211              channel->TBUF[0] = temp;
+    212            }
+    213            else
+    214            {
+    215              channel->IN[0U] = temp;
+    216            }
+    217          }
+    218          /* Sends master repeated start condition along with read/write command to IN/TBUF register based on FIFO/non-FIFO modes. */
+    219          void XMC_I2C_CH_MasterRepeatedStart(XMC_USIC_CH_t *const channel, const uint16_t addr, const XMC_I2C_CH_CMD_t command)
+    220          {
+    221            uint32_t tmp;
+    222            tmp = addr | (uint32_t)XMC_I2C_CH_TDF_MASTER_RESTART;
+    223            if (command == XMC_I2C_CH_CMD_READ)
+    224            {
+    225              tmp |= 0x1U;
+    226            }
+    227          
+    228            /* Check FIFO size */
+    229            if ((channel->TBCTR & USIC_CH_TBCTR_SIZE_Msk) == 0U)
+    230            {  
+    231              while (XMC_USIC_CH_GetTransmitBufferStatus(channel) == XMC_USIC_CH_TBUF_STATUS_BUSY)
+    232          	{
+    233                /* check TDV, wait until TBUF is ready */
+    234              }
+    235          
+    236              /* clear PSR_TBIF */
+    237              XMC_I2C_CH_ClearStatusFlag(channel, (uint32_t)XMC_I2C_CH_STATUS_FLAG_TRANSMIT_BUFFER_INDICATION);
+    238          
+    239              channel->TBUF[0] = tmp;
+    240            }
+    241            else
+    242            {
+    243              channel->IN[0U] = tmp;
+    244            }
+    245          }
+    246          
+    247          /* Sends master stop command to IN/TBUF register based on FIFO/non-FIFO modes. */
+    248          void XMC_I2C_CH_MasterStop(XMC_USIC_CH_t *const channel)
+    249          {
+    250            /* Check FIFO size */
+    251            if ((channel->TBCTR & USIC_CH_TBCTR_SIZE_Msk) == 0U)
+    252            {
+    253              while (XMC_USIC_CH_GetTransmitBufferStatus(channel) == XMC_USIC_CH_TBUF_STATUS_BUSY)
+    254              {
+    255                /* check TDV, wait until TBUF is ready */
+    256              }
+    257          
+    258              /* clear PSR_TBIF */
+    259              XMC_I2C_CH_ClearStatusFlag(channel, (uint32_t)XMC_I2C_CH_STATUS_FLAG_TRANSMIT_BUFFER_INDICATION);
+    260          
+    261              channel->TBUF[0] = (uint32_t)XMC_I2C_CH_TDF_MASTER_STOP;
+    262            }
+    263            else
+    264            {
+    265              channel->IN[0U] = (uint32_t)XMC_I2C_CH_TDF_MASTER_STOP;
+    266            }
+    267          }
+    268          
+    269          /* Sends master send command along with data to IN/TBUF register based on FIFO/non-FIFO modes. */
+    270          void XMC_I2C_CH_MasterTransmit(XMC_USIC_CH_t *const channel, const uint8_t data)
+    271          {
+    272            /* Check FIFO size */
+    273            if ((channel->TBCTR & USIC_CH_TBCTR_SIZE_Msk) == 0U)
+    274            {    
+    275              while (XMC_USIC_CH_GetTransmitBufferStatus(channel) == XMC_USIC_CH_TBUF_STATUS_BUSY)
+    276          	{
+    277                /* check TDV, wait until TBUF is ready */
+    278              }
+    279          
+    280              /* clear PSR_TBIF */
+    281              XMC_I2C_CH_ClearStatusFlag(channel, (uint32_t)XMC_I2C_CH_STATUS_FLAG_TRANSMIT_BUFFER_INDICATION);
+    282          
+    283              channel->TBUF[0] = (uint32_t)XMC_I2C_CH_TDF_MASTER_SEND | data;
+    284            }
+    285            else
+    286            {
+    287              channel->IN[0] = (uint32_t)XMC_I2C_CH_TDF_MASTER_SEND | data;
+    288            }
+    289          }
+    290          
+    291          /* Sends slave send command along with data to IN/TBUF register based on FIFO/non-FIFO modes. */
+    292          void XMC_I2C_CH_SlaveTransmit(XMC_USIC_CH_t *const channel, const uint8_t data)
+    293          {
+    294            /* Check FIFO size */
+    295            if ((channel->TBCTR & USIC_CH_TBCTR_SIZE_Msk) == 0U)
+    296            {    
+    297              while(XMC_USIC_CH_GetTransmitBufferStatus(channel) == XMC_USIC_CH_TBUF_STATUS_BUSY)
+    298          	{
+    299                /* check TDV, wait until TBUF is ready */
+    300              }    
+    301          
+    302              /* clear PSR_TBIF */
+    303              XMC_I2C_CH_ClearStatusFlag(channel, (uint32_t)XMC_I2C_CH_STATUS_FLAG_TRANSMIT_BUFFER_INDICATION);
+    304          
+    305              channel->TBUF[0] = (uint32_t)XMC_I2C_CH_TDF_SLAVE_SEND | data;
+    306            }
+    307            else
+    308            {
+    309              channel->IN[0] = (uint32_t)XMC_I2C_CH_TDF_SLAVE_SEND | data;
+    310            }
+    311          }
+    312          
+    313          /* Sends master receive ack command to IN/TBUF register based on FIFO/non-FIFO modes. */
+    314          void XMC_I2C_CH_MasterReceiveAck(XMC_USIC_CH_t *const channel)
+    315          {
+    316          /* Check FIFO size */
+    317            if ((channel->TBCTR & USIC_CH_TBCTR_SIZE_Msk) == 0U)
+    318            {    
+    319              while(XMC_USIC_CH_GetTransmitBufferStatus(channel) == XMC_USIC_CH_TBUF_STATUS_BUSY)
+    320          	{
+    321                /* check TDV, wait until TBUF is ready */
+    322              }
+    323          
+    324              /* clear PSR_TBIF */
+    325              XMC_I2C_CH_ClearStatusFlag(channel, (uint32_t)XMC_I2C_CH_STATUS_FLAG_TRANSMIT_BUFFER_INDICATION);
+    326          
+    327              channel->TBUF[0] = (uint32_t)XMC_I2C_CH_TDF_MASTER_RECEIVE_ACK;
+    328            }
+    329            else
+    330            {
+    331              channel->IN[0] = (uint32_t)XMC_I2C_CH_TDF_MASTER_RECEIVE_ACK;
+    332            }
+    333          }
+    334          
+    335          /* Sends master receive nack command to IN/TBUF register based on FIFO/non-FIFO modes. */
+    336          void XMC_I2C_CH_MasterReceiveNack(XMC_USIC_CH_t *const channel)
+    337          {
+    338            /* Check FIFO size */
+    339            if ((channel->TBCTR & USIC_CH_TBCTR_SIZE_Msk) == 0U)
+    340            {    
+    341              while(XMC_USIC_CH_GetTransmitBufferStatus(channel) == XMC_USIC_CH_TBUF_STATUS_BUSY)
+    342          	{
+    343                /* check TDV, wait until TBUF is ready */
+    344              }
+    345          
+    346              /* clear PSR_TBIF */
+    347              XMC_I2C_CH_ClearStatusFlag(channel, (uint32_t)XMC_I2C_CH_STATUS_FLAG_TRANSMIT_BUFFER_INDICATION);
+    348          
+    349              channel->TBUF[0] = (uint32_t)XMC_I2C_CH_TDF_MASTER_RECEIVE_NACK;
+    350            }
+    351            else 
+    352            {
+    353              channel->IN[0] = (uint32_t)XMC_I2C_CH_TDF_MASTER_RECEIVE_NACK;
+    354            }
+    355          }
+    356          
+    357          /* Reads the data from RBUF if FIFO size is 0 otherwise from OUTR. */
+    358          uint8_t XMC_I2C_CH_GetReceivedData(const XMC_USIC_CH_t *const channel)
+    359          {
+    360            uint8_t retval;
+    361          
+    362            /* Check FIFO size */
+    363            if ((channel->RBCTR & USIC_CH_RBCTR_SIZE_Msk) == 0U)
+    364            {
+    365              retval = (uint8_t)channel->RBUF;
+    366            }
+    367            else
+    368            {
+    369              retval = (uint8_t)channel->OUTR;
+    370            }
+    371          
+    372            return retval;
+    373          }
+    374          
+    375          /* Sets the operating mode of USIC to IDLE */
+    376          XMC_I2C_CH_STATUS_t XMC_I2C_CH_Stop(XMC_USIC_CH_t *const channel)
+    377          {
+    378            XMC_I2C_CH_STATUS_t status = XMC_I2C_CH_STATUS_OK;
+    379          
+    380            if (((uint32_t)XMC_USIC_CH_GetTransmitBufferStatus(channel) & (uint32_t)XMC_USIC_CH_TBUF_STATUS_BUSY) != 0U)
+    381            {
+    382              status = XMC_I2C_CH_STATUS_BUSY;
+    383            }
+    384            else
+    385            {
+    386              /* USIC channel in IDLE mode */
+    387              XMC_USIC_CH_SetMode(channel, XMC_USIC_CH_OPERATING_MODE_IDLE);
+    388            }
+    389            return status;
+    390          }
+    391          
+    392          void XMC_I2C_CH_EnableEvent(XMC_USIC_CH_t *const channel, const uint32_t event)
+    393          {
+    394            channel->CCR |= (event&0x1fc00U);
+    395            channel->PCR_IICMode |= ((event) & 0x41fc0000U);
+    396          }
+    397          
+    398          void XMC_I2C_CH_DisableEvent(XMC_USIC_CH_t *const channel, const uint32_t event)
+    399          {
+    400            channel->CCR &= (uint32_t)~(event&0x1fc00U);
+    401            channel->PCR_IICMode &= (uint32_t)~((event) & 0x41fc0000U);
+    402          }
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   XMC_I2C_CH_ClearStatusFlag
+       0   XMC_I2C_CH_DisableEvent
+       0   XMC_I2C_CH_EnableEvent
+       4   XMC_I2C_CH_GetReceivedData
+       4   XMC_I2C_CH_GetSlaveAddress
+      16   XMC_I2C_CH_Init
+        16   -> XMC_I2C_CH_SetBaudrate
+        16   -> XMC_I2C_CH_SetSlaveAddress
+        16   -> XMC_USIC_CH_Enable
+       8   XMC_I2C_CH_MasterReceiveAck
+         8   -> XMC_I2C_CH_ClearStatusFlag
+         8   -> XMC_USIC_CH_GetTransmitBufferStatus
+       8   XMC_I2C_CH_MasterReceiveNack
+         8   -> XMC_I2C_CH_ClearStatusFlag
+         8   -> XMC_USIC_CH_GetTransmitBufferStatus
+      16   XMC_I2C_CH_MasterRepeatedStart
+        16   -> XMC_I2C_CH_ClearStatusFlag
+        16   -> XMC_USIC_CH_GetTransmitBufferStatus
+      16   XMC_I2C_CH_MasterStart
+        16   -> XMC_I2C_CH_ClearStatusFlag
+        16   -> XMC_USIC_CH_GetTransmitBufferStatus
+       8   XMC_I2C_CH_MasterStop
+         8   -> XMC_I2C_CH_ClearStatusFlag
+         8   -> XMC_USIC_CH_GetTransmitBufferStatus
+      16   XMC_I2C_CH_MasterTransmit
+        16   -> XMC_I2C_CH_ClearStatusFlag
+        16   -> XMC_USIC_CH_GetTransmitBufferStatus
+       8   XMC_I2C_CH_SetBaudrate
+         8   -> XMC_USIC_CH_SetBaudrate
+       4   XMC_I2C_CH_SetSlaveAddress
+      16   XMC_I2C_CH_SlaveTransmit
+        16   -> XMC_I2C_CH_ClearStatusFlag
+        16   -> XMC_USIC_CH_GetTransmitBufferStatus
+      16   XMC_I2C_CH_Stop
+        16   -> XMC_USIC_CH_GetTransmitBufferStatus
+        16   -> XMC_USIC_CH_SetMode
+       0   XMC_USIC_CH_GetTransmitBufferStatus
+       0   XMC_USIC_CH_SetMode
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable3
+       4  ??DataTable3_1
+       4  ??DataTable3_2
+       4  ??DataTable3_3
+       4  ??DataTable3_4
+       8  XMC_I2C_CH_ClearStatusFlag
+      24  XMC_I2C_CH_DisableEvent
+      24  XMC_I2C_CH_EnableEvent
+      32  XMC_I2C_CH_GetReceivedData
+      32  XMC_I2C_CH_GetSlaveAddress
+      50  XMC_I2C_CH_Init
+      62  XMC_I2C_CH_MasterReceiveAck
+      62  XMC_I2C_CH_MasterReceiveNack
+      74  XMC_I2C_CH_MasterRepeatedStart
+      74  XMC_I2C_CH_MasterStart
+      62  XMC_I2C_CH_MasterStop
+      60  XMC_I2C_CH_MasterTransmit
+      70  XMC_I2C_CH_SetBaudrate
+      46  XMC_I2C_CH_SetSlaveAddress
+      72  XMC_I2C_CH_SlaveTransmit
+      34  XMC_I2C_CH_Stop
+       8  XMC_USIC_CH_GetTransmitBufferStatus
+      14  XMC_USIC_CH_SetMode
+
+ 
+ 828 bytes in section .text
+ 
+ 828 bytes of CODE memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,396 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:52
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\EOL\MemoryBank_Eol.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\EOL\MemoryBank_Eol.c"
+#        -D XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\MemoryBank_Eol.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\MemoryBank_Eol.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\EOL\MemoryBank_Eol.c
+      1          // ---------------------------------------------------------------------------------------------------------------------
+      2          // MemoryBank_Eol.c
+      3          // ---------------------------------------------------------------------------------------------------------------------
+      4          //
+      5          // Indent style: Replace tabs by spaces, 2 spaces per indentation level
+      6          //
+      7          // Initial version: 2013-11, d.fighera@osram.it
+      8          //
+      9          // Change History:
+     10          //
+     11          // $Author: d.fighera $
+     12          // $Revision: 15312 $
+     13          // $Date: 2018-10-17 23:42:49 +0800 (Wed, 17 Oct 2018) $
+     14          // $Id: MemoryBank_Eol.c 15312 2018-10-17 15:42:49Z d.fighera $
+     15          // $URL: https://app-ehnsvn02.int.osram-light.com/svn/EC/Mpc/Outdoor/tags/rev1.3/Src/MemoryBank_Eol.c $
+     16          //
+     17          // ---------------------------------------------------------------------------------------------------------------------
+     18          ///  /brief Implementation of the memory bank "End Of Life Configuration Page".
+     19          ///  MPC ID=13, Version 0, 2D1 2980505
+     20          ///  #define MPC_EOL_NUMBER       [bank number]
+     21          // ---------------------------------------------------------------------------------------------------------------------
+     22          
+     23          
+     24          #include <stdint.h>
+     25          #include <stdbool.h>
+     26          
+     27          #define MODULE_MPC
+     28          #include "Config.h"
+     29          #include "nvm.h"
+     30          
+     31          #include "MemoryBank_Eol.h"
+     32          
+     33          
+     34          typedef struct {
+     35              uint8_t enable;            // RW 6
+     36              uint8_t eol_time;
+     37          } TypeMemoryBank_Eol;
+     38          
+     39          uint8_t memoryBankEol_lockByte[DEVICE_CHANNELS];                                ///< \brief The lock byte of the memory bank.
+     40          uint8_t memoryBankEol_status[DEVICE_CHANNELS];
+     41          
+     42          /// \brief The data of the memory bank.
+     43          TypeMemoryBank_Eol memoryBank_EolPhy[DEVICE_CHANNELS];
+     44          TypeMemoryBank_Eol * memoryBank_Eol[DEVICE_CHANNELS];
+     45          
+     46          
+     47          
+     48          //---------------------------------------------------------------------------------------------------------------------------
+     49          /// \brief Initialise the memory bank.
+     50          ///
+     51          ///
+     52          /// \retval            Return true, the persistent data are changed, else the persistent data are unchanged.
+     53          //---------------------------------------------------------------------------------------------------------------------------
+     54          void MemoryBank_Eol_Init(void )
+     55          {
+     56              uint8_t i;
+     57              bool resetData;
+     58          
+     59              for( i = 0; i < DEVICE_CHANNELS; i++ ) {
+     60          
+     61                  memoryBank_Eol[i] = &memoryBank_EolPhy[i] ;
+     62                  resetData = ( nvmDataInit( (void*)memoryBank_Eol[i] , sizeof( TypeMemoryBank_Eol ), (nvm_memclass_t)0 ) != NVM_INIT_OK );
+     63          
+     64                  if (resetData) {                                                        // set the default values
+     65          
+     66                      memoryBank_Eol[i]->enable = configMemoryBank_Eol_enable;
+     67                      memoryBank_Eol[i]->eol_time = configMemoryBank_Eol_eol_time;
+     68          
+     69                  } else {                                                                // use persistent memory content
+     70                      //
+     71                      // thus no code is needed here
+     72                  }
+     73          
+     74                  memoryBankEol_lockByte[i] = 255;                                        ///< \brief The lock byte of the memory bank.
+     75                  memoryBankEol_status[i] = 0;
+     76          
+     77              }
+     78          
+     79          }
+     80          //---------------------------------------------------------------------------------------------------------------------------
+     81          /// \brief Initialise the memory Bank.
+     82          ///
+     83          /// \param channel    The device channel.
+     84          /// \retval           none
+     85          //---------------------------------------------------------------------------------------------------------------------------
+     86          void MemoryBank_Eol_Reset( uint8_t channel )                                       // reset only MPC variables
+     87          {
+     88              // no variables of MPC have to be reset
+     89          }
+     90          
+     91          
+     92          //---------------------------------------------------------------------------------------------------------------------------
+     93          /// \brief Read m.b data
+     94          ///
+     95          /// The data will be collected from the real device.
+     96          /// The checksum will be handled in MemoryBank.c
+     97          ///
+     98          /// \param address      The address in the selected memory bank.
+     99          /// \param value        Pointer to a memory address to save the result.
+    100          /// \param channel      The device channel.
+    101          ///
+    102          /// \retval            True if successful and value valid.
+    103          //---------------------------------------------------------------------------------------------------------------------------
+    104          bool MemoryBank_Eol_GetValue( uint8_t address, uint8_t *value, uint8_t channel )
+    105          {
+    106          
+    107              switch( address ) {
+    108              case 0:                                                                     //last addressable memory bank location
+    109                  *value = MPC_EOL_LAST_ADDRESS;
+    110                  return true;
+    111              case 1:                                                                     //Checksum is handled by memory_bank.c
+    112                  *value = 0;
+    113                  return true;                                                            //
+    114              case 2:                                                                     // lock byte
+    115                  *value = memoryBankEol_lockByte[channel];
+    116                  return true;
+    117              case 3:                                                                     //number of the multipurpose center
+    118                  *value = MPC_EOL_ID;
+    119                  return true;
+    120              case 4:                                                                     //version of the multipurpose center implementation
+    121                  *value = MPC_EOL_VERSION;
+    122                  return true;
+    123              case 5:
+    124                  *value = memoryBankEol_status[channel];
+    125                  return true;
+    126              case 6:
+    127                  *value = memoryBank_Eol[channel]->enable;
+    128                  return true;
+    129              case 7:
+    130                  *value = memoryBank_Eol[channel]->eol_time;
+    131                  return true;
+    132          
+    133              default:                                                                    //access the sensor table
+    134                  return false;
+    135              }
+    136          }
+    137          
+    138          
+    139          //---------------------------------------------------------------------------------------------------------------------------
+    140          /// \brief Writes a value in a the memory bank
+    141          ///
+    142          /// The bank number in daliDevice->dtr1, address in daliDevice->dtr and channel in daliDevice->channel.
+    143          ///
+    144          /// \param address      The address in the selected memory bank.
+    145          /// \param value        The value to write.
+    146          /// \param channel      The channel ID of the device .
+    147          ///
+    148          /// \retval            True if value was written.
+    149          //---------------------------------------------------------------------------------------------------------------------------
+    150          bool MemoryBank_Eol_SetValue( uint8_t address, uint8_t value, uint8_t channel )
+    151          {
+    152              if ( (memoryBankEol_lockByte[channel] != 0x55) && (address != 2)) {
+    153                  return false;
+    154              }
+    155          
+    156              switch( address ) {
+    157              case 2:                                                                     // the lock byte
+    158                  memoryBankEol_lockByte[channel] = value;
+    159                  return true;
+    160              case 6:
+    161                  memoryBank_Eol[channel]->enable = value;
+    162                  return true;
+    163              case 7:
+    164                  memoryBank_Eol[channel]->eol_time = value;
+    165          #ifdef EOLtestTime
+    166                  EOLtestTime(&memoryBank_Eol[channel]->eol_time) ;
+    167          #endif
+    168                  return true;
+    169              default:
+    170                  return false;
+    171              }
+    172          }
+    173          
+    174          
+    175          //---------------------------------------------------------------------------------------------------------------------------
+    176          /// \brief allow the application to set the status flags
+    177          ///
+    178          /// \param channel      The channel ID of the device.
+    179          /// \param value        The status information.
+    180          ///
+    181          /// \retval             none
+    182          //---------------------------------------------------------------------------------------------------------------------------
+    183          void MemoryBank_Eol_UpdateStatus(uint8_t channel, uint8_t value)
+    184          {
+    185              memoryBankEol_status[channel] = value;
+    186          }
+    187          
+    188          //---------------------------------------------------------------------------------------------------------------------------
+    189          /// \brief allow the application to inquire the enable status
+    190          ///
+    191          /// \param channel     The channel ID of the device.
+    192          ///
+    193          /// \retval            enable
+    194          //---------------------------------------------------------------------------------------------------------------------------
+    195          bool MemoryBank_EOL_GetEnable (uint8_t channel)
+    196          {
+    197              return (memoryBank_Eol[channel]->enable & 0x01);
+    198          }
+    199          
+    200          //---------------------------------------------------------------------------------------------------------------------------
+    201          /// \brief allow the application to inquire the EOL time
+    202          ///
+    203          /// \param channel     The channel ID of the device.
+    204          ///
+    205          /// \retval            EOL time
+    206          //---------------------------------------------------------------------------------------------------------------------------
+    207          uint8_t MemoryBank_EOL_GetEOLtime (uint8_t channel)
+    208          {
+    209              return (memoryBank_Eol[channel]->eol_time);
+    210          }
+    211          
+    212          
+    213          
+    214          
+    215          
+    216          
+    217          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   MemoryBank_EOL_GetEOLtime
+       0   MemoryBank_EOL_GetEnable
+       4   MemoryBank_Eol_GetValue
+       8   MemoryBank_Eol_Init
+         8   -> nvmDataInit
+       0   MemoryBank_Eol_Reset
+       4   MemoryBank_Eol_SetValue
+       0   MemoryBank_Eol_UpdateStatus
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable5
+       4  ??DataTable5_1
+       4  ??DataTable5_2
+       4  ??DataTable5_3
+      14  MemoryBank_EOL_GetEOLtime
+      20  MemoryBank_EOL_GetEnable
+     128  MemoryBank_Eol_GetValue
+     114  MemoryBank_Eol_Init
+       2  MemoryBank_Eol_Reset
+      84  MemoryBank_Eol_SetValue
+       8  MemoryBank_Eol_UpdateStatus
+       1  memoryBankEol_lockByte
+       1  memoryBankEol_status
+       4  memoryBank_Eol
+       2  memoryBank_EolPhy
+
+ 
+   8 bytes in section .bss
+ 386 bytes in section .text
+ 
+ 386 bytes of CODE memory
+   8 bytes of DATA memory
+
+Errors: none
+Warnings: none

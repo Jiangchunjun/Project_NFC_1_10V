@@ -37,6 +37,8 @@ mpc_rw_enum MemoryBank_Info_SetValue( uint8_t address, uint8_t value, uint8_t ch
 mpc_rw_enum MemoryBank_Info_GetValue_port( uint8_t address, uint8_t *pValue, uint8_t channel, uint8_t port );
 mpc_rw_enum MemoryBank_Info_SetValue_port( uint8_t address, uint8_t value, uint8_t channel, uint8_t port );
 
+mpc_rw_enum MemoryBank_Info_SetMinute_value(uint32_t time);
+
 void MemoryBank_Info_SlowTimer( void );
 
 

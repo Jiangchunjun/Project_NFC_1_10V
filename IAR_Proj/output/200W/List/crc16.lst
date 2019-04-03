@@ -1,0 +1,406 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:49
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\CRC16\crc16.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\CRC16\crc16.c"
+#        -D XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\crc16.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\crc16.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\CRC16\crc16.c
+      1          // -----------------------------------------------------------------------------
+      2          // crc16.c
+      3          // -----------------------------------------------------------------------------
+      4          // (c) Osram GmbH
+      5          // Development Electronics for SSL
+      6          // Parkring 33
+      7          // 85748 Garching
+      8          //
+      9          // The content of this file is intellectual property of OSRAM GmbH. It is
+     10          // confidential and not intended for any public release. All rights reserved.
+     11          //
+     12          // Indent style: Replace tabs by spaces, 2 spaces per indentation level
+     13          //
+     14          // Initial version: Sammy el Baradie,  27/07/2016
+     15          // $Author: g.salvador $
+     16          // $Revision: 16296 $
+     17          // $Date: 2018-12-19 22:00:30 +0800 (Wed, 19 Dec 2018) $
+     18          // $Id: crc16.c 16296 2018-12-19 14:00:30Z g.salvador $
+     19          // $URL: https://app-ehnsvn02.int.osram-light.com/svn/EC/Toolbox1.0/Crc16/tags/v1.0/Src/crc16.c $
+     20          //
+     21          // -----------------------------------------------------------------------------
+     22          
+     23          /** \addtogroup Crc16
+     24           * \{
+     25           * \file
+     26           * \brief Central functions for CRC 16 calculation
+     27           * Table based implementation to calculate CRC-16 - CCITT
+     28           * using the polynomial: 0x1021
+     29           * start value: 0
+     30           */
+     31          
+     32          #include <stdint.h>
+     33          #include <stdbool.h>
+     34          #include <stddef.h>
+     35          
+     36          #include "Global.h"
+     37          
+     38          #include "crc16.h"
+     39          
+     40          
+     41          
+     42          #define MAX_CRC_INSTANCES                                                     5
+     43          
+     44          //-----------------------------------------------------------------------------
+     45          // local constants
+     46          //-----------------------------------------------------------------------------
+     47          static const uint16_t crc16_table[] =
+     48          {
+     49            0x0000, 0x1021, 0x2042, 0x3063, 0x4084, 0x50a5, 0x60c6, 0x70e7,
+     50            0x8108, 0x9129, 0xa14a, 0xb16b, 0xc18c, 0xd1ad, 0xe1ce, 0xf1ef
+     51          };
+     52          
+     53          //-----------------------------------------------------------------------------
+     54          // local variables
+     55          //-----------------------------------------------------------------------------
+     56          
+     57          typedef struct
+     58          {
+     59              uint16_t crc16;
+     60              bool    is_busy;
+     61          } checksum_instance_t;
+     62          
+     63          static checksum_instance_t checksum_instance[MAX_CRC_INSTANCES];
+     64          
+     65          //------------------------------------------------------------------------------
+     66          // global variables
+     67          //------------------------------------------------------------------------------
+     68          
+     69          
+     70          //-----------------------------------------------------------------------------
+     71          // local functions
+     72          //-----------------------------------------------------------------------------
+     73          
+     74          //-----------------------------------------------------------------------------
+     75          // global functions
+     76          //-----------------------------------------------------------------------------
+     77          
+     78          //-----------------------------------------------------------------------------
+     79          /**
+     80           * \brief Initialize the given instance of the CRC-16 Checksum to start a new
+     81           * calculation
+     82           * \param instance    -> the instance of the CRC16 calculation used
+     83           * \param start_value -> the start value for the CRC16 calculaton
+     84           * \return -1 if the instance is out of range, the used instance otherwise
+     85           */
+     86          int8_t Crc16Init_Inst(uint8_t instance, uint16_t start_value)
+     87          {
+     88             // uint8_t i = 0;
+     89          
+     90              if( instance < MAX_CRC_INSTANCES)
+     91              {
+     92                  //if(checksum_instance[instance].is_busy == false)
+     93                  {
+     94                      checksum_instance[instance].crc16 = start_value;
+     95                   //   checksum_instance[instance].is_busy = true;
+     96                      return instance;
+     97                  }
+     98              }
+     99              return -1;
+    100          }
+    101          
+    102          //-----------------------------------------------------------------------------
+    103          /**
+    104           * \brief Initialize the default instance (which is 0) of the CRC-16 Checksum to
+    105           * start a new calculation
+    106           * \param start_value
+    107           * \note this is simply a wrapper function to mantain the compatibility with the
+    108           * code that use previous versions of this module.
+    109           */
+    110          void Crc16Init(uint16_t start_value)
+    111          {
+    112              Crc16Init_Inst(0, start_value);
+    113          }
+    114          
+    115          
+    116          //-----------------------------------------------------------------------------
+    117          /**
+    118           * \brief Update the given instance of the CRC-16 checksum with data byte
+    119           * \param instance  -> the instance of the CRC16 calculation used
+    120           * \param data_byte -> data byte to update CRC-16 checksum
+    121           */
+    122          void Crc16AppendByte_Inst(uint8_t instance, uint8_t data_byte)
+    123          {
+    124              // byte - high nibble
+    125              checksum_instance[instance].crc16 =
+    126                      crc16_table[(checksum_instance[instance].crc16 >> 12)
+    127                              ^ (data_byte >> 4)]
+    128                              ^ (checksum_instance[instance].crc16 << 4);
+    129          
+    130              // byte - low nibble
+    131              checksum_instance[instance].crc16 =
+    132                      crc16_table[(checksum_instance[instance].crc16 >> 12)
+    133                              ^ (data_byte & 0xF)]
+    134                              ^ (checksum_instance[instance].crc16 << 4);
+    135          }
+    136          
+    137          //-----------------------------------------------------------------------------
+    138          /**
+    139           * \brief Update the default instance (which is 0) of the CRC-16 checksum with
+    140           * data byte
+    141           * \param data_byte -> data byte to update CRC-16 checksum
+    142           * \note this is simply a wrapper function to mantain the compatibility with the
+    143           * code that use previous versions of this module.
+    144           */
+    145          void Crc16AppendByte(uint8_t data_byte)
+    146          {
+    147              Crc16AppendByte_Inst(0, data_byte);
+    148          }
+    149          
+    150          
+    151          //-----------------------------------------------------------------------------
+    152          /**
+    153           * \brief Update the given instance of the CRC-16 checksum with data byte array
+    154           * \param instance -> the instance of the CRC16 calculation used
+    155           * \param data     -> pointer to data byte array
+    156           * \param length   -> length of data byte array
+    157           */
+    158          void Crc16AppendByteArray_Inst(uint8_t instance, uint8_t *data, uint8_t length)
+    159          {
+    160              uint8_t i1;
+    161              uint8_t *data_ptr;
+    162          
+    163              data_ptr = data;
+    164          
+    165              for (i1 = 0; i1 < length; ++i1)
+    166              {
+    167                  Crc16AppendByte_Inst(instance, *(data_ptr++));
+    168              }
+    169          }
+    170          
+    171          //-----------------------------------------------------------------------------
+    172          /**
+    173           * \brief Update the default instance (which is 0) of the CRC-16 checksum with
+    174           * data byte array
+    175           * \param data   -> pointer to data byte array
+    176           * \param length -> length of data byte array
+    177           * \note this is simply a wrapper function to mantain the compatibility with the
+    178           * code that use previous versions of this module.
+    179           */
+    180          void Crc16AppendByteArray(uint8_t *data, uint8_t length)
+    181          {
+    182              Crc16AppendByteArray_Inst(0, data, length);
+    183          }
+    184          
+    185          //-----------------------------------------------------------------------------
+    186          /**
+    187           * \brief Return the given instance of the calculated CRC-16 checksum
+    188           * \param instance   -> the instance of the CRC16 calculation used
+    189           * \param endianness -> can be set to crc16_big_endian or crc16_little_endian
+    190           * \return the calculated CRC-16 checksum
+    191           * \note the endianness is calculated using the macro REV_BYTE_ORDER16
+    192           * which is supported by the ARM assembler code for CORTEX M0
+    193           */
+    194          uint16_t Crc16Checksum_Inst(uint8_t instance, crc16_endianness_t endianness)
+    195          {
+    196              if(crc16_big_endian == endianness)
+    197              {
+    198                  return REV_BYTE_ORDER16(checksum_instance[instance].crc16);
+    199              }
+    200          
+    201              //checksum_instance[instance].is_busy = false;
+    202          
+    203          
+    204              return checksum_instance[instance].crc16;
+    205          }
+    206          
+    207          //-----------------------------------------------------------------------------
+    208          /**
+    209           * \brief Return the default instance (which is 0) of the calculated CRC-16
+    210           * checksum
+    211           * \param endianness -> can be set to crc16_big_endian or crc16_little_endian
+    212           * \return the calculated CRC-16 checksum
+    213           * \note the endianness is calculated using the macro REV_BYTE_ORDER16
+    214           * which is supported by the ARM assembler code for CORTEX M0
+    215           */
+    216          uint16_t Crc16Checksum(crc16_endianness_t endianness)
+    217          {
+    218              return Crc16Checksum_Inst(0, endianness);
+    219          }
+    220          
+    221          //-----------------------------------------------------------------------------
+    222          
+    223          /** \} */ // Crc16
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   Crc16AppendByte
+         8   -> Crc16AppendByte_Inst
+       8   Crc16AppendByteArray
+         8   -> Crc16AppendByteArray_Inst
+      24   Crc16AppendByteArray_Inst
+        24   -> Crc16AppendByte_Inst
+       4   Crc16AppendByte_Inst
+       8   Crc16Checksum
+         8   -> Crc16Checksum_Inst
+       4   Crc16Checksum_Inst
+       8   Crc16Init
+         8   -> Crc16Init_Inst
+       4   Crc16Init_Inst
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable2
+       4  ??DataTable2_1
+      14  Crc16AppendByte
+      16  Crc16AppendByteArray
+      40  Crc16AppendByteArray_Inst
+     108  Crc16AppendByte_Inst
+      14  Crc16Checksum
+      36  Crc16Checksum_Inst
+      14  Crc16Init
+      28  Crc16Init_Inst
+      20  checksum_instance
+      32  crc16_table
+
+ 
+  20 bytes in section .bss
+  32 bytes in section .rodata
+ 278 bytes in section .text
+ 
+ 278 bytes of CODE  memory
+  32 bytes of CONST memory
+  20 bytes of DATA  memory
+
+Errors: none
+Warnings: none

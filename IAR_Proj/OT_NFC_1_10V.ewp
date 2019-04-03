@@ -203,6 +203,9 @@
           <state>AVAILABLE_PORTS_NUMBER=3</state>
           <state>FW_HIGH=01</state>
           <state>FW_LOW=02</state>
+          <state>ENASTRO</state>
+          <state>MPC_O2T_DEFAULT_SETTINGS</state>
+          <state>MPC_O2T_DEFAULT_BOUNDARIES</state>
         </option>
         <option>
           <name>CCPreprocFile</name>
@@ -218,7 +221,7 @@
         </option>
         <option>
           <name>CCListCFile</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>CCListCMnemonics</name>
@@ -226,7 +229,7 @@
         </option>
         <option>
           <name>CCListCMessages</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>CCListAssFile</name>
@@ -307,7 +310,7 @@
         </option>
         <option>
           <name>CCCompilerRuntimeInfo</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>IFpuProcessor</name>
@@ -366,6 +369,7 @@
           <state>$PROJ_DIR$\..\Application\src\modules\MPC\Csm</state>
           <state>$PROJ_DIR$\..\Application\src\modules\MPC\Info</state>
           <state>$PROJ_DIR$\..\Application\src\modules\MPC\MSK</state>
+          <state>$PROJ_DIR$\..\Application\src\modules\MPC\O2T</state>
           <state>$PROJ_DIR$\..\Application\src\modules\MPC\AstroDim</state>
           <state>$PROJ_DIR$\..\Application\src\modules\MPC\MSKEncryption</state>
           <state>$PROJ_DIR$\..\Application\src\modules\MPC\Power</state>
@@ -398,7 +402,7 @@
         </option>
         <option>
           <name>CCOptLevel</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>CCOptStrategy</name>
@@ -407,7 +411,7 @@
         </option>
         <option>
           <name>CCOptLevelSlave</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>CompilerMisraRules98</name>
@@ -536,7 +540,7 @@
         </option>
         <option>
           <name>ADebug</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>AltRegisterNames</name>
@@ -765,11 +769,11 @@
         </option>
         <option>
           <name>IlinkMapFile</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>IlinkLogFile</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>IlinkLogInitialization</name>
@@ -777,11 +781,11 @@
         </option>
         <option>
           <name>IlinkLogModule</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>IlinkLogSection</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>IlinkLogVeneer</name>
@@ -924,15 +928,15 @@
         </option>
         <option>
           <name>IlinkLogAutoLibSelect</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>IlinkLogRedirSymbols</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>IlinkLogUnusedFragments</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>IlinkCrcReverseByteOrder</name>
@@ -4061,9 +4065,6 @@
       </file>
       <file>
         <name>$PROJ_DIR$\..\Application\src\driver.c</name>
-        <excluded>
-          <configuration>200W</configuration>
-        </excluded>
       </file>
       <file>
         <name>$PROJ_DIR$\..\Application\src\filter.c</name>
@@ -4496,6 +4497,18 @@
       <name>MSK_Encryption</name>
       <file>
         <name>$PROJ_DIR$\..\Application\src\modules\MPC\MSKEncryption\MskEncryption-CortexM0-LittleEndian-IAR7.60.a</name>
+      </file>
+    </group>
+    <group>
+      <name>O2T</name>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\O2T\O2T.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\O2T\O2T.h</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\O2T\O2T_private.h</name>
       </file>
     </group>
   </group>

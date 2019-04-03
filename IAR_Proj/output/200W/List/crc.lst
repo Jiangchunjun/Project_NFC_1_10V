@@ -1,0 +1,413 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:49
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\CRC\api\crc.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\CRC\api\crc.c"
+#        -D XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\crc.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\crc.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\CRC\api\crc.c
+      1          // ---------------------------------------------------------------------------------------------------------------------
+      2          // Microcontroller Toolbox - Firmware Framework for Full Digital SSL Ballasts
+      3          // ---------------------------------------------------------------------------------------------------------------------
+      4          // (c) Osram spa
+      5          //     Via Castagnole 65/a
+      6          //     31100 Treviso (I)
+      7          //
+      8          //
+      9          // The content of this file is intellectual property of OSRAM spa. It is
+     10          // confidential and not intended for any public release. All rights reserved.
+     11          //
+     12          //
+     13          // Indent style: Replace tabs by spaces, 2 spaces per indentation level
+     14          //
+     15          // Initial version: 2014-12, g.marcolin@osram.it
+     16          //
+     17          // Change History:
+     18          //
+     19          // $Author: w.limmer $
+     20          // $Revision: 154 $
+     21          // $Date: 2015-01-16 16:42:52 +0800 (Fri, 16 Jan 2015) $
+     22          // $Id: crc.c 154 2015-01-16 08:42:52Z w.limmer $
+     23          // $URL: https://app-ehnsvn02.int.osram-light.com/svn/EC/Toolbox1.0/Crc/tags/v1.3/api/crc.c $
+     24          //
+     25          // ---------------------------------------------------------------------------------------------------------------------
+     26          
+     27          /** \defgroup Crc Cyclic redundancy check
+     28           * \{
+     29           * \brief CRC checksum calculation with hardware support if available
+     30           *
+     31           * \defgroup CrcAPI Crc API
+     32           * \brief CRC module user interface
+     33           *
+     34           * \defgroup CrcDriverAPI Crc Driver API
+     35           * \brief CRC hardware driver interface
+     36           *
+     37           * \defgroup CrcIntern Crc Internals
+     38           * \brief CRC module implementation details
+     39           *
+     40           * \addtogroup CrcAPI
+     41           * \{
+     42           *
+     43           * \file
+     44           * \brief Central functions for CRC handling.
+     45           */
+     46          
+     47          #define MODULE_CRC    ///< \ingroup CrcIntern
+     48          #include "Config.h"
+     49          
+     50          #include <string.h>
+     51          
+     52          #include "Global.h"
+     53          #include "crc_driver.h"
+     54          #include "crc.h"
+     55          
+     56          /** ********************************************************************************************************************
+     57          * \ingroup CrcIntern
+     58          * \brief Struct for CRC calculation
+     59          *
+     60          * Only words (4 bytes) can be processed by CRC module. If single bytes are added they are temporarily saved in this
+     61          * internal buffer. When the buffer is full, i.e. 4 bytes loaded, the CRC is calculated with the new word.
+     62          ***********************************************************************************************************************/
+     63          
+     64          typedef struct
+     65          {
+     66          	uint32_t byteCnt;
+     67          
+     68          	union
+     69          	{
+     70          		uint8_t buf[4];
+     71          		uint32_t word;
+     72          	};
+     73          }
+     74          crc_t;
+     75          
+     76          /** ********************************************************************************************************************
+     77          * \brief Data for CRC calculation
+     78          *
+     79          ***********************************************************************************************************************/
+     80          
+     81          static crc_t crc;
+     82          
+     83          /** ********************************************************************************************************************
+     84          * \brief CRC module init
+     85          *
+     86          * \note CRC-32 (Ethernet) polynomial: 0x4C11DB7.
+     87          *
+     88          * \warning It must be called once during initialization before any CRC API.
+     89          ***********************************************************************************************************************/
+     90          
+     91          void crcInit( void )
+     92          {
+     93              crc_drv_init();
+     94          
+     95              memset(&crc, 0, sizeof(crc_t));
+     96          }
+     97          
+     98          /** ********************************************************************************************************************
+     99          * \brief Resets CRC to 0xFFFFFFFF
+    100          *
+    101          * \note There is a single instance of CRC therefore any application that needs a CRC calculation must first
+    102          *       reset CRC.
+    103          ***********************************************************************************************************************/
+    104          
+    105          void crcReset( void )
+    106          {
+    107              crc_drv_reset();
+    108          
+    109              memset(&crc, 0, sizeof(crc_t));
+    110          }
+    111          
+    112          /** ********************************************************************************************************************
+    113          * \brief Resets CRC and calculates the buffer CRC
+    114          *
+    115          *  If buffer size is not multiple of 4 the remaining bytes are filled with zeros.
+    116          *
+    117          * \param pdata
+    118          *        Pointer to data buffer
+    119          *
+    120          * \param sizeByte
+    121          *        Number of bytes of the buffer over which CRC is calculated
+    122          *
+    123          * \retval CRC
+    124          ***********************************************************************************************************************/
+    125          
+    126          uint32_t crcCalcBuf( const void *pdata, uint32_t sizeByte )
+    127          {
+    128              const uint8_t *p8;
+    129              const uint32_t *p32;
+    130              uint32_t byte_cnt;
+    131          
+    132              crc_drv_reset();
+    133          
+    134              p32 = pdata;
+    135              byte_cnt = sizeByte;
+    136          
+    137              while(byte_cnt > 3)                             // Load words
+    138              {
+    139                  crc_drv_calc(*p32);
+    140                  p32++;
+    141                  byte_cnt -= 4;
+    142              }
+    143          
+    144              p8 = (uint8_t *)p32;
+    145          
+    146              while(byte_cnt)                                 // Load remaining bytes
+    147              {
+    148                  crcLoadByte(*p8);
+    149                  p8++;
+    150                  byte_cnt--;
+    151              }
+    152          
+    153              return crcGet();
+    154          }
+    155          
+    156          /** ********************************************************************************************************************
+    157          * \brief Loads a word to the actual CRC
+    158          *
+    159          *  The word (4 bytes) is loaded into the internal buffer and CRC immediately updated.
+    160          *
+    161          * \param value
+    162          *        Word to add
+    163          ***********************************************************************************************************************/
+    164          
+    165          void crcLoadWord( uint32_t value )
+    166          {
+    167              uint32_t i = 0;
+    168              uint8_t *p;
+    169          
+    170              p = (uint8_t *)&value;
+    171          
+    172              while(i < 4)
+    173              {
+    174                  crc.buf[crc.byteCnt] = *p;
+    175          
+    176                  if(++crc.byteCnt == 4)
+    177                  {
+    178                      crc_drv_calc(crc.word);
+    179                      crc.word = 0;
+    180                      crc.byteCnt = 0;
+    181                  }
+    182          
+    183                  p++;
+    184                  i++;
+    185              }
+    186          }
+    187          
+    188          /** ********************************************************************************************************************
+    189          * \brief Loads a byte into the temporary internal CRC buffer
+    190          *
+    191          * \note When the internal buffer has four bytes loaded the CRC is updated.
+    192          *
+    193          * \param value
+    194          *        Word to be added
+    195          ***********************************************************************************************************************/
+    196          
+    197          void crcLoadByte( uint8_t value )
+    198          {
+    199              crc.buf[crc.byteCnt] = value;
+    200          
+    201              if(++crc.byteCnt == 4)
+    202              {
+    203                  crc_drv_calc(crc.word);
+    204                  crc.word = 0;
+    205                  crc.byteCnt = 0;
+    206              }
+    207          }
+    208          
+    209          /** ********************************************************************************************************************
+    210          * \brief Getd CRC after loading remaining data saved on internal buffer
+    211          *
+    212          * \retval CRC
+    213          ***********************************************************************************************************************/
+    214          
+    215          uint32_t crcGet( void )
+    216          {
+    217              if(crc.byteCnt)
+    218              {
+    219                  crc_drv_calc(crc.word);                 // Compute CRC with data in buffer and reset crc struct
+    220                  crc.word = 0;
+    221                  crc.byteCnt = 0;
+    222              }
+    223          
+    224              return crc_drv_get();
+    225          }
+    226          
+    227          /**********************************************************************************************************************/
+    228          
+    229          /** \} */ // CrcAPI
+    230          /** \} */ // Crc
+    231          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      16   crcCalcBuf
+        16   -> crcGet
+        16   -> crcLoadByte
+        16   -> crc_drv_calc
+        16   -> crc_drv_reset
+       8   crcGet
+         8   -> crc_drv_calc
+         8   -> crc_drv_get
+       8   crcInit
+         8   -> __aeabi_memset
+         8   -> crc_drv_init
+       8   crcLoadByte
+         8   -> crc_drv_calc
+      16   crcLoadWord
+        16   -> crc_drv_calc
+       8   crcReset
+         8   -> __aeabi_memset
+         8   -> crc_drv_reset
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable4
+       8  crc
+      48  crcCalcBuf
+      36  crcGet
+      20  crcInit
+      52  crcLoadByte
+      68  crcLoadWord
+      20  crcReset
+
+ 
+   8 bytes in section .bss
+ 248 bytes in section .text
+ 
+ 248 bytes of CODE memory
+   8 bytes of DATA memory
+
+Errors: none
+Warnings: none

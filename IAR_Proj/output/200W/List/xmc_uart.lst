@@ -1,0 +1,388 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:58
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc_uart.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc_uart.c"
+#        -D XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\xmc_uart.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\xmc_uart.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc_uart.c
+      1          /**
+      2           * @file xmc_uart.c
+      3           * @date 2015-09-01
+      4           *
+      5           * @cond
+      6           *********************************************************************************************************************
+      7           * XMClib v2.1.6 - XMC Peripheral Driver Library 
+      8           *
+      9           * Copyright (c) 2015-2016, Infineon Technologies AG
+     10           * All rights reserved.                        
+     11           *                                             
+     12           * Redistribution and use in source and binary forms, with or without modification,are permitted provided that the 
+     13           * following conditions are met:   
+     14           *                                                                              
+     15           * Redistributions of source code must retain the above copyright notice, this list of conditions and the following 
+     16           * disclaimer.                        
+     17           * 
+     18           * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following 
+     19           * disclaimer in the documentation and/or other materials provided with the distribution.                       
+     20           * 
+     21           * Neither the name of the copyright holders nor the names of its contributors may be used to endorse or promote 
+     22           * products derived from this software without specific prior written permission.                                           
+     23           *                                                                              
+     24           * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, 
+     25           * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE  
+     26           * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+     27           * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR  
+     28           * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+     29           * WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+     30           * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                                                  
+     31           *                                                                              
+     32           * To improve the quality of the software, users are encouraged to share modifications, enhancements or bug fixes with 
+     33           * Infineon Technologies AG dave@infineon.com).                                                          
+     34           *********************************************************************************************************************
+     35           *
+     36           * Change History
+     37           * --------------
+     38           *
+     39           * 2015-02-20:
+     40           *     - Initial <br>
+     41           *      
+     42           * 2015-05-20:
+     43           *     - xmc_uart_ch_stop API implementation corrected.
+     44           *     - Modified XMC_UART_CH_Stop() API for not setting to IDLE the channel if it is busy <br>
+     45           *
+     46           * 2015-06-20:
+     47           *     - Removed GetDriverVersion API <br>
+     48           *
+     49           * 2015-09-01:
+     50           *     - Modified XMC_UART_CH_EnableEvent() and XMC_UART_CH_DisableEvent() for supporting multiple events configuration <br>
+     51           * @endcond 
+     52           *
+     53           */
+     54          
+     55          /*********************************************************************************************************************
+     56           * HEADER FILES
+     57           *********************************************************************************************************************/
+     58          
+     59          #include <xmc_scu.h>
+     60          #include <xmc_uart.h>
+     61          
+     62          /*********************************************************************************************************************
+     63           * MACROS
+     64           *********************************************************************************************************************/
+     65           
+     66          #define XMC_UART_CH_OVERSAMPLING (16UL)
+     67          #define XMC_UART_CH_OVERSAMPLING_MIN_VAL (4UL)
+     68          
+     69          /*********************************************************************************************************************
+     70           * API IMPLEMENTATION
+     71           *********************************************************************************************************************/
+     72          
+     73          void XMC_UART_CH_Init(XMC_USIC_CH_t *channel, const XMC_UART_CH_CONFIG_t *const config)
+     74          {
+     75            uint32_t oversampling = XMC_UART_CH_OVERSAMPLING;
+     76          
+     77            /* USIC channel switched on*/
+     78            XMC_USIC_CH_Enable(channel);
+     79            
+     80            if(config->oversampling != 0U)
+     81            {
+     82              oversampling = (uint32_t)config->oversampling;
+     83            }
+     84            
+     85            /* Configure baud rate */
+     86            (void)XMC_USIC_CH_SetBaudrate(channel, config->baudrate, oversampling);
+     87            
+     88            /* Configure frame format
+     89             * Configure the number of stop bits
+     90             * Pulse length is set to 0 to have standard UART signaling, 
+     91             * i.e. the 0 level is signaled during the complete bit time
+     92             * Sampling point set equal to the half of the oversampling period
+     93             * Enable Sample Majority Decision */
+     94            channel->PCR_ASCMode = (uint32_t)(((config->stop_bits - 1UL) << USIC_CH_PCR_ASCMode_STPB_Pos) |
+     95          			             (((oversampling >> 1UL) + 1UL) << USIC_CH_PCR_ASCMode_SP_Pos) |
+     96          			             USIC_CH_PCR_ASCMode_SMD_Msk);
+     97          
+     98            /* Set passive data level, high
+     99               Set word length. Data bits - 1
+    100               If frame length is > 0, frame_lemgth-1; else, FLE = WLE (Data bits - 1)
+    101               Transmission Mode: The shift control signal is considered active if it
+    102               is at 1-level. This is the setting to be programmed to allow data transfers */
+    103            channel->SCTR = (uint32_t)((((uint32_t)config->data_bits - 1UL) << USIC_CH_SCTR_WLE_Pos) |
+    104          		              ((0x1UL << USIC_CH_SCTR_TRM_Pos) | USIC_CH_SCTR_PDL_Msk));
+    105          
+    106            if (config->frame_length != 0U)
+    107            {
+    108              channel->SCTR |= (uint32_t)(((uint32_t)config->frame_length - 1UL) << USIC_CH_SCTR_FLE_Pos);
+    109            }
+    110            else
+    111            {
+    112              channel->SCTR |= (uint32_t)(((uint32_t)config->data_bits - 1UL) << USIC_CH_SCTR_FLE_Pos);
+    113            }
+    114          
+    115            /* Enable transfer buffer */
+    116            channel->TCSR = (0x1UL << USIC_CH_TCSR_TDEN_Pos) |
+    117                            USIC_CH_TCSR_TDSSM_Msk;
+    118          
+    119            /* Clear protocol status */
+    120            channel->PSCR = 0xFFFFFFFFUL;
+    121          
+    122            /* Set parity settings */
+    123            channel->CCR = (uint32_t)config->parity_mode;
+    124          }
+    125          
+    126          XMC_UART_CH_STATUS_t XMC_UART_CH_SetBaudrate(XMC_USIC_CH_t *const channel, uint32_t rate, uint32_t oversampling)
+    127          {
+    128            XMC_UART_CH_STATUS_t status;
+    129            
+    130            status = XMC_UART_CH_STATUS_ERROR;
+    131            
+    132            if ((rate <= (XMC_SCU_CLOCK_GetPeripheralClockFrequency() >> 2U)) && (oversampling >= XMC_UART_CH_OVERSAMPLING_MIN_VAL))
+    133            {
+    134              if (XMC_USIC_CH_SetBaudrate(channel, rate, oversampling) == XMC_USIC_CH_STATUS_OK)
+    135              {
+    136                status = XMC_UART_CH_STATUS_OK;
+    137              }
+    138            } 
+    139            return status;
+    140          }
+    141          
+    142          void XMC_UART_CH_Transmit(XMC_USIC_CH_t *const channel, const uint16_t data)
+    143          {
+    144            /* Check FIFO size */
+    145            if ((channel->TBCTR & USIC_CH_TBCTR_SIZE_Msk) == 0UL)
+    146            {
+    147              /* Wait till the Transmit Buffer is free for transmission */
+    148              while(XMC_USIC_CH_GetTransmitBufferStatus(channel) == XMC_USIC_CH_TBUF_STATUS_BUSY)
+    149              {
+    150              }
+    151            
+    152              /* Clear the Transmit Buffer indication flag */
+    153              XMC_UART_CH_ClearStatusFlag(channel, (uint32_t)XMC_UART_CH_STATUS_FLAG_TRANSMIT_BUFFER_INDICATION);
+    154            
+    155              /*Transmit data */
+    156              channel->TBUF[0U] = data;
+    157            }
+    158            else
+    159            {
+    160              channel->IN[0U] = data;
+    161            }
+    162          }
+    163          
+    164          uint16_t XMC_UART_CH_GetReceivedData(XMC_USIC_CH_t *const channel)
+    165          {
+    166            uint16_t retval;
+    167          
+    168            /* Check FIFO size */
+    169            if ((channel->RBCTR & USIC_CH_RBCTR_SIZE_Msk) == 0U)
+    170            {
+    171              retval = (uint16_t)channel->RBUF;
+    172            }
+    173            else
+    174            {
+    175              retval = (uint16_t)channel->OUTR;
+    176            }
+    177          
+    178            return retval;
+    179          }
+    180          
+    181          XMC_UART_CH_STATUS_t XMC_UART_CH_Stop(XMC_USIC_CH_t *const channel)
+    182          {
+    183            XMC_UART_CH_STATUS_t status = XMC_UART_CH_STATUS_OK;
+    184            if ((XMC_USIC_CH_GetTransmitBufferStatus(channel) & (uint32_t) XMC_USIC_CH_TBUF_STATUS_BUSY) != 0U)
+    185            {
+    186          	status = XMC_UART_CH_STATUS_BUSY;
+    187            }
+    188            else
+    189            {
+    190          	/* USIC channel in IDLE mode */
+    191          	XMC_USIC_CH_SetMode(channel, XMC_USIC_CH_OPERATING_MODE_IDLE);
+    192            }
+    193            return status;
+    194          }
+    195          
+    196          void XMC_UART_CH_EnableEvent(XMC_USIC_CH_t *const channel, const uint32_t event)
+    197          {
+    198            channel->CCR |= (event&0x1fc00U);
+    199            channel->PCR_ASCMode |= (event&0xf8U);
+    200          }
+    201          
+    202          void XMC_UART_CH_DisableEvent(XMC_USIC_CH_t *const channel, const uint32_t event)
+    203          {
+    204            channel->CCR &= (uint32_t)~(event&0x1fc00U);
+    205            channel->PCR_ASCMode &= (uint32_t)~(event&0xf8U);
+    206          }
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   XMC_UART_CH_ClearStatusFlag
+       0   XMC_UART_CH_DisableEvent
+       0   XMC_UART_CH_EnableEvent
+       4   XMC_UART_CH_GetReceivedData
+      16   XMC_UART_CH_Init
+        16   -> XMC_USIC_CH_Enable
+        16   -> XMC_USIC_CH_SetBaudrate
+      24   XMC_UART_CH_SetBaudrate
+        24   -> XMC_SCU_CLOCK_GetPeripheralClockFrequency
+        24   -> XMC_USIC_CH_SetBaudrate
+      16   XMC_UART_CH_Stop
+        16   -> XMC_USIC_CH_GetTransmitBufferStatus
+        16   -> XMC_USIC_CH_SetMode
+      16   XMC_UART_CH_Transmit
+        16   -> XMC_UART_CH_ClearStatusFlag
+        16   -> XMC_USIC_CH_GetTransmitBufferStatus
+       0   XMC_USIC_CH_GetTransmitBufferStatus
+       0   XMC_USIC_CH_SetMode
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  XMC_UART_CH_ClearStatusFlag
+      24  XMC_UART_CH_DisableEvent
+      24  XMC_UART_CH_EnableEvent
+      32  XMC_UART_CH_GetReceivedData
+     120  XMC_UART_CH_Init
+      46  XMC_UART_CH_SetBaudrate
+      34  XMC_UART_CH_Stop
+      60  XMC_UART_CH_Transmit
+       8  XMC_USIC_CH_GetTransmitBufferStatus
+      14  XMC_USIC_CH_SetMode
+
+ 
+ 366 bytes in section .text
+ 
+ 366 bytes of CODE memory
+
+Errors: none
+Warnings: none

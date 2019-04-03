@@ -1,0 +1,260 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:50
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\I2C\i2c_config.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\I2C\i2c_config.c"
+#        -D XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\i2c_config.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\i2c_config.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\I2C\i2c_config.c
+      1          /** ----------------------------------------------------------------------------
+      2          // i2c_config.c
+      3          // -----------------------------------------------------------------------------
+      4          // (c) Osram GmbH
+      5          // Development Electronics for SSL
+      6          // Parkring 33
+      7          // 85748 Garching
+      8          //
+      9          // The content of this file is intellectual property of OSRAM GmbH. It is
+     10          // confidential and not intended for any public release. All rights reserved.
+     11          //
+     12          // Indent style: Replace tabs by spaces, 4 spaces per indentation level
+     13          //
+     14          // Initial version: ,
+     15          //
+     16          // $Author: g.salvador $
+     17          // $Revision: 16420 $
+     18          // $Date: 2019-01-10 21:05:27 +0800 (Thu, 10 Jan 2019) $
+     19          // $Id: i2c_config.c 16420 2019-01-10 13:05:27Z g.salvador $
+     20          // $URL: https://app-ehnsvn02.int.osram-light.com/svn/EC/Toolbox1.0/I2c/tags/v1.7/Src/i2c_config.c $
+     21          //
+     22          // Contains the array used for NFC chip Sectors protection
+     23          
+     24          * \addtogroup I2cModule
+     25          * \{
+     26          *   \file
+     27          *   \brief Contains the array used for NFC chip Sectors protection
+     28          * \}
+     29          */
+     30          
+     31          #define MODULE_I2C
+                         ^
+Warning[Pe047]: incompatible redefinition of macro "MODULE_I2C" (declared at
+          line 31)
+     32          #include <stdint.h>
+     33          #include <stdbool.h>
+     34          
+     35          #include "Global.h"
+     36          
+     37          #include "Config.h"
+     38          
+     39          #include <assert.h>
+     40          
+     41          
+     42          #include "i2c_driver.h"
+     43          
+     44          
+     45          //-----------------------------------------------------------------------------
+     46          // global variables
+     47          //-----------------------------------------------------------------------------
+     48          /**
+     49           * array of NFC chip sector security status bytes
+     50           * includes definition for password 1,2 or 3 control
+     51           */
+     52          #if(defined (NFC_CONFIG_UNPROTECTED_LAYOUT) && defined (NFC_CONFIG_PROTECTED_LAYOUT))
+     53            STATIC_ASSERT(0,  "Only ONE TAG protection layout configuration has to be choosen between\n "
+     54                              "NFC_CONFIG_UNPROTECTED_LAYOUT and NFC_CONFIG_PROTECTED_LAYOUT.        \n "
+     55                              "Please ensure to define only one of this in the entire code");
+     56          #endif
+     57          
+     58          #if(defined (NFC_CONFIG_UNPROTECTED_LAYOUT)||defined(NFC_CONFIG_PROTECTED_LAYOUT))
+     59          
+     60          #ifdef NFC_CONFIG_UNPROTECTED_LAYOUT
+     61              uint8_t I2cSectorProtection[M24LR_SECTOR_COUNT] =
+     62              {
+     63                (M24LR_RF_ACCESS_RIGHT_1 | M24LR_RF_PASSWORD_1_CONTROL), // SECTOR 00 ACCESS RIGHT
+     64                (M24LR_RF_ACCESS_RIGHT_1 | M24LR_RF_PASSWORD_1_CONTROL), // SECTOR 01 ACCESS RIGHT
+     65                0,                                                       // SECTOR 02 ACCESS RIGHT
+     66                0,                                                       // SECTOR 03 ACCESS RIGHT
+     67                0,                                                       // SECTOR 04 ACCESS RIGHT
+     68                0,                                                       // SECTOR 05 ACCESS RIGHT
+     69                0,                                                       // SECTOR 06 ACCESS RIGHT
+     70                0,                                                       // SECTOR 07 ACCESS RIGHT
+     71                0,                                                       // SECTOR 08 ACCESS RIGHT
+     72                0,                                                       // SECTOR 09 ACCESS RIGHT
+     73                0,                                                       // SECTOR 10 ACCESS RIGHT
+     74                (M24LR_RF_ACCESS_RIGHT_3 | M24LR_RF_PASSWORD_2_CONTROL), // SECTOR 11 ACCESS RIGHT
+     75                (M24LR_RF_ACCESS_RIGHT_3 | M24LR_RF_PASSWORD_2_CONTROL), // SECTOR 12 ACCESS RIGHT
+     76                (M24LR_RF_ACCESS_RIGHT_3 | M24LR_RF_PASSWORD_2_CONTROL), // SECTOR 13 ACCESS RIGHT
+     77                0,                                                       // SECTOR 14 ACCESS RIGHT
+     78                0                                                        // SECTOR 15 ACCESS RIGHT
+     79              };
+     80          #else
+     81              uint8_t I2cSectorProtection[M24LR_SECTOR_COUNT] =
+     82              {
+     83                (M24LR_RF_ACCESS_RIGHT_1 | M24LR_RF_PASSWORD_1_CONTROL), // SECTOR 00 ACCESS RIGHT
+     84                (M24LR_RF_ACCESS_RIGHT_1 | M24LR_RF_PASSWORD_1_CONTROL), // SECTOR 01 ACCESS RIGHT
+     85                0,                                                       // SECTOR 02 ACCESS RIGHT
+     86                (M24LR_RF_ACCESS_RIGHT_3 | M24LR_RF_PASSWORD_2_CONTROL), // SECTOR 03 ACCESS RIGHT
+     87                (M24LR_RF_ACCESS_RIGHT_3 | M24LR_RF_PASSWORD_2_CONTROL), // SECTOR 04 ACCESS RIGHT
+     88                (M24LR_RF_ACCESS_RIGHT_3 | M24LR_RF_PASSWORD_2_CONTROL), // SECTOR 05 ACCESS RIGHT
+     89                (M24LR_RF_ACCESS_RIGHT_3 | M24LR_RF_PASSWORD_2_CONTROL), // SECTOR 06 ACCESS RIGHT
+     90                (M24LR_RF_ACCESS_RIGHT_3 | M24LR_RF_PASSWORD_2_CONTROL), // SECTOR 07 ACCESS RIGHT
+     91                (M24LR_RF_ACCESS_RIGHT_3 | M24LR_RF_PASSWORD_2_CONTROL), // SECTOR 08 ACCESS RIGHT
+     92                (M24LR_RF_ACCESS_RIGHT_3 | M24LR_RF_PASSWORD_2_CONTROL), // SECTOR 09 ACCESS RIGHT
+     93                (M24LR_RF_ACCESS_RIGHT_3 | M24LR_RF_PASSWORD_2_CONTROL), // SECTOR 10 ACCESS RIGHT
+     94                (M24LR_RF_ACCESS_RIGHT_3 | M24LR_RF_PASSWORD_2_CONTROL), // SECTOR 11 ACCESS RIGHT
+     95                (M24LR_RF_ACCESS_RIGHT_3 | M24LR_RF_PASSWORD_2_CONTROL), // SECTOR 12 ACCESS RIGHT
+     96                (M24LR_RF_ACCESS_RIGHT_3 | M24LR_RF_PASSWORD_2_CONTROL), // SECTOR 13 ACCESS RIGHT
+     97                0,                                                       // SECTOR 14 ACCESS RIGHT
+     98                0                                                        // SECTOR 15 ACCESS RIGHT
+     99              };
+    100          #endif
+    101          
+    102          #else
+    103            STATIC_ASSERT(0,  "A TAG protection layout has to be choosen between NFC_CONFIG_UNPROTECTED_LAYOUT \n"
+    104                              " and NFC_CONFIG_PROTECTED_LAYOUT. Please ensure that your project includes the \n"
+    105                              " definition for the appropriate TAG protection layout. (usually in the Config.h)");
+    106          #endif
+    107          
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      16  I2cSectorProtection
+
+ 
+ 16 bytes in section .data
+ 
+ 16 bytes of DATA memory
+
+Errors: none
+Warnings: 1

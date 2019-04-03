@@ -27,6 +27,8 @@ volatile uint8_t   g_work_mode;
 /* Global Variable ------------------------------------------------------------------------------*/
 uint8_t g_nfc_ini_flag=0;
 
+uint8_t g_nfc_tag_read=0;
+
 /* Function Declaration -------------------------------------------------------------------------*/
 
 
@@ -97,7 +99,8 @@ void System_PowerOnTask(void)
 {
     static uint8_t state = 0;       /* task state */
     static uint32_t systick = 0;
-    extern uint16_t g_one2ten_avg_adc;
+    extern uint16_t g_one2ten_avg_adc,g_target_current;
+    extern uint8_t g_nfc_tag_read;
     /* Check if task has been created */
         
     if( System_CheckTask(SYS_TASK_POWER_ON) == SYS_TASK_DISABLE )
@@ -198,7 +201,17 @@ void System_PowerOnTask(void)
             
             DaliBallast_Init(); 
             
+            //nfc_ed_record(); 
+            
             g_nfc_ini_flag=1;
+            
+            if(g_nfc_tag_read==1)
+            {
+              g_nfc_tag_read=2;
+            }
+            
+            //System_CreateTask(SYS_TASK_NFC_HANDLE);
+            SWT_StartTimer(SWT_ID_NFC_HANDLE, 200);
             
             /* swtich to next state */
             state++;            
@@ -224,10 +237,16 @@ void System_PowerOnTask(void)
         if(systick >= SYS_CTRL_LOOP_START_DELAY)
         {           
             /* Create power control loop task */
+          
+          if(g_nfc_tag_read==4)
+          {
+            g_target_current=MemoryBank_CSM_GetNominalCurrent(0);
+            Power_SetCurrent(g_target_current, SET_MODE_POWER_ON);
             System_CreateTask(SYS_TASK_LOOP);
             
             /* swtich to next state */
             state++;
+          }
         }
         break;
         

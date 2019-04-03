@@ -17,8 +17,8 @@
 #define GLOBAL_DEVICE_EAN                                   4052899957111
 #define GLOBAL_DMAT_NO                                      0x30010259UL
 #define GLOBAL_BASIC_CODE_STRING                            "AB47615 "
-#define NFC_TIME_ADRRESS
-#define FLASH_TIME_ADDRESS                                   0X10010010
+//#define NFC_TIME_ADRRESS
+//#define FLASH_TIME_ADDRESS                                   0X10010010
 // DALI
 #define POWERon_DELAY_TIME_ms                                               (120)
 
@@ -57,7 +57,7 @@
 //uA
 #define LEDSET_MINCURRENT                                   I_LED_MIN*500
 //uA
-#define CURRENTSET_ABS_MINCURRENT_UA                        (1500)
+#define CURRENTSET_ABS_MINCURRENT_UA                        (1400)
 
 
 // Currentset Vin power reduction
@@ -229,11 +229,11 @@
 
 /*------------------ Compensation Coefficient  ---------------------*/
 /* Compensation Coefficient for calculate output current when disable DEBUG PRINT */
-#define IOUT_COMPENSATION       ((0.8750))      /* Output current has about 1% higher when disable DEBUG PRINT */
+#define IOUT_COMPENSATION       ((0.8685))      /* Output current has about 1% higher when disable DEBUG PRINT */
 #define IOUT_OFFSET             (0)         /* Iout offset value */
 
 /* Compensation coefficient for Uout detect */
-#define UOUT_COMPENSATION       (9.61571225E-01)    /* Make sure output power can reach max power */
+#define UOUT_COMPENSATION       1//(9.61571225E-01)    /* Make sure output power can reach max power */
 
 /*--------------- OCP & OVP Trigger Condition define --------------*/
 /* OCP default reference voltage:   16.8% - 700mA  */

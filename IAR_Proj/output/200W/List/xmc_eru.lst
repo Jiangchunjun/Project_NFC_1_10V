@@ -1,0 +1,481 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:57
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc_eru.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc_eru.c"
+#        -D XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\xmc_eru.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\xmc_eru.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc_eru.c
+      1          /**
+      2           * @file xmc_eru.c
+      3           * @date 2016-03-10
+      4           *
+      5           * @cond
+      6           *********************************************************************************************************************
+      7           * XMClib v2.1.6 - XMC Peripheral Driver Library 
+      8           *
+      9           * Copyright (c) 2015-2016, Infineon Technologies AG
+     10           * All rights reserved.                        
+     11           *                                             
+     12           * Redistribution and use in source and binary forms, with or without modification,are permitted provided that the 
+     13           * following conditions are met:   
+     14           *                                                                              
+     15           * Redistributions of source code must retain the above copyright notice, this list of conditions and the following 
+     16           * disclaimer.                        
+     17           * 
+     18           * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following 
+     19           * disclaimer in the documentation and/or other materials provided with the distribution.                       
+     20           * 
+     21           * Neither the name of the copyright holders nor the names of its contributors may be used to endorse or promote 
+     22           * products derived from this software without specific prior written permission.                                           
+     23           *                                                                              
+     24           * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, 
+     25           * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE  
+     26           * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+     27           * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR  
+     28           * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+     29           * WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+     30           * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                                                  
+     31           *                                                                              
+     32           * To improve the quality of the software, users are encouraged to share modifications, enhancements or bug fixes with 
+     33           * Infineon Technologies AG dave@infineon.com).                                                          
+     34           *********************************************************************************************************************
+     35           *
+     36           * Change History
+     37           * --------------
+     38           *
+     39           * 2015-02-20:
+     40           *     - Initial <br>
+     41           *
+     42           * 2015-06-20:
+     43           *     - Removed definition of GetDriverVersion API <br>
+     44           *
+     45           * 2016-03-10:
+     46           *     - XMC_ERU_ETL_GetEdgeDetection() API is added to get the configured edge for event generation. <br>
+     47           *
+     48           * @endcond
+     49           */
+     50          
+     51          /*********************************************************************************************************************
+     52           * HEADER FILES
+     53           ********************************************************************************************************************/
+     54          
+     55          #include "xmc_eru.h"
+     56          
+     57          /*********************************************************************************************************************
+     58           * MACROS
+     59           ********************************************************************************************************************/
+     60          
+     61          #define ERU_EXISEL_BITSIZE (4UL) /* Used to set the input for path A and path B based on the channel */
+     62          #define ERU_EXISEL_INPUT_BITSIZE (2UL)
+     63          
+     64          #define XMC_ERU_ETL_CHECK_INPUT_A(input) \
+     65              ((input == XMC_ERU_ETL_INPUT_A0) || \
+     66               (input == XMC_ERU_ETL_INPUT_A1) || \
+     67               (input == XMC_ERU_ETL_INPUT_A2) || \
+     68               (input == XMC_ERU_ETL_INPUT_A3))
+     69          
+     70          #define XMC_ERU_ETL_CHECK_INPUT_B(input) \
+     71              ((input == XMC_ERU_ETL_INPUT_B0) || \
+     72               (input == XMC_ERU_ETL_INPUT_B1) || \
+     73               (input == XMC_ERU_ETL_INPUT_B2) || \
+     74               (input == XMC_ERU_ETL_INPUT_B3))
+     75          
+     76          #define XMC_ERU_ETL_CHECK_STATUS_FLAG_MODE(mode) \
+     77              ((mode == XMC_ERU_ETL_STATUS_FLAG_MODE_SWCTRL) || \
+     78               (mode == XMC_ERU_ETL_STATUS_FLAG_MODE_HWCTRL))
+     79          
+     80          #define XMC_ERU_ETL_CHECK_EVENT_SOURCE(source) \
+     81              ((source == XMC_ERU_ETL_SOURCE_A)              || \
+     82               (source == XMC_ERU_ETL_SOURCE_B)              || \
+     83               (source == XMC_ERU_ETL_SOURCE_A_OR_B)         || \
+     84               (source == XMC_ERU_ETL_SOURCE_A_AND_B)        || \
+     85               (source == XMC_ERU_ETL_SOURCE_NOT_A)          || \
+     86               (source == XMC_ERU_ETL_SOURCE_NOT_A_OR_B)     || \
+     87               (source == XMC_ERU_ETL_SOURCE_NOT_A_AND_B)    || \
+     88               (source == XMC_ERU_ETL_SOURCE_NOT_B)          || \
+     89               (source == XMC_ERU_ETL_SOURCE_A_OR_NOT_B)     || \
+     90               (source == XMC_ERU_ETL_SOURCE_A_AND_NOT_B)    || \
+     91               (source == XMC_ERU_ETL_SOURCE_NOT_A_OR_NOT_B) || \
+     92               (source == XMC_ERU_ETL_SOURCE_NOT_A_AND_NOT_B))
+     93          
+     94          #define XMC_ERU_ETL_CHECK_TRIGGER_EDGE(edge) \
+     95              ((edge == XMC_ERU_ETL_EDGE_DETECTION_DISABLED) || \
+     96               (edge == XMC_ERU_ETL_EDGE_DETECTION_RISING) || \
+     97               (edge == XMC_ERU_ETL_EDGE_DETECTION_FALLING) || \
+     98               (edge == XMC_ERU_ETL_EDGE_DETECTION_BOTH))
+     99          
+    100          #define XMC_ERU_ETL_CHECK_TRIGGER_CHANNEL(channel) \
+    101              ((channel == XMC_ERU_ETL_OUTPUT_TRIGGER_CHANNEL0) || \
+    102               (channel == XMC_ERU_ETL_OUTPUT_TRIGGER_CHANNEL1) || \
+    103               (channel == XMC_ERU_ETL_OUTPUT_TRIGGER_CHANNEL2) || \
+    104               (channel == XMC_ERU_ETL_OUTPUT_TRIGGER_CHANNEL3))
+    105          
+    106          #define XMC_ERU_OGU_CHECK_PATTERN_INPUT(input) \
+    107              ((input == XMC_ERU_OGU_PATTERN_DETECTION_INPUT0) || \
+    108               (input == XMC_ERU_OGU_PATTERN_DETECTION_INPUT1) || \
+    109               (input == XMC_ERU_OGU_PATTERN_DETECTION_INPUT2) || \
+    110               (input == XMC_ERU_OGU_PATTERN_DETECTION_INPUT3))
+    111          
+    112          #define XMC_ERU_OGU_CHECK_PERIPHERAL_TRIGGER(trigger) \
+    113              ((trigger == XMC_ERU_OGU_PERIPHERAL_TRIGGER1) || \
+    114               (trigger == XMC_ERU_OGU_PERIPHERAL_TRIGGER2) || \
+    115               (trigger == XMC_ERU_OGU_PERIPHERAL_TRIGGER3))
+    116          
+    117          #define XMC_ERU_OGU_CHECK_SERIVCE_REQUEST(service) \
+    118              ((service == XMC_ERU_OGU_SERVICE_REQUEST_DISABLED) || \
+    119               (service == XMC_ERU_OGU_SERVICE_REQUEST_ON_TRIGGER) || \
+    120               (service == XMC_ERU_OGU_SERVICE_REQUEST_ON_TRIGGER_AND_PATTERN_MATCH) || \
+    121               (service == XMC_ERU_OGU_SERVICE_REQUEST_ON_TRIGGER_AND_PATTERN_MISMATCH))
+    122           
+    123          /*********************************************************************************************************************
+    124           * API IMPLEMENTATION
+    125           ********************************************************************************************************************/
+    126          /* Initializes the selected ERU_ETLx channel with the config structure.  */
+    127          void XMC_ERU_ETL_Init(XMC_ERU_t *const eru,
+    128                                const uint8_t channel,
+    129                                const XMC_ERU_ETL_CONFIG_t *const config)
+    130          { 
+    131            XMC_ASSERT("XMC_ERU_ETL_Init:Invalid Module Pointer", XMC_ERU_CHECK_MODULE_PTR(eru));
+    132            XMC_ASSERT("XMC_ERU_ETL_Init:Invalid Channel Number", (channel < 4U));
+    133          
+    134            XMC_ERU_Enable(eru);
+    135          
+    136            eru->EXISEL = (eru->EXISEL & 
+    137                           ~((uint32_t)(ERU_EXISEL_EXS0A_Msk | ERU_EXISEL_EXS0B_Msk) << (channel * ERU_EXISEL_BITSIZE))) |
+    138                          (config->input << (channel * (uint32_t)ERU_EXISEL_BITSIZE));
+    139            
+    140            eru->EXICON[channel] = config->raw;
+    141          }
+    142          
+    143          /* Initializes the selected ERU_OGUy channel with the config structure.  */
+    144          void XMC_ERU_OGU_Init(XMC_ERU_t *const eru,
+    145                                const uint8_t channel,
+    146                                const XMC_ERU_OGU_CONFIG_t *const config)
+    147          {
+    148            XMC_ASSERT("XMC_ERU_OGU_Init:Invalid Module Pointer", XMC_ERU_CHECK_MODULE_PTR(eru));
+    149            XMC_ASSERT("XMC_ERU_OGU_Init:Invalid Channel Number", (channel < 4U));
+    150          
+    151            XMC_ERU_Enable(eru);
+    152          
+    153            eru->EXOCON[channel] = config->raw;
+    154          }
+    155          
+    156          /* Configures the event source for path A and path B, with selected input_a and input_b respectively.*/
+    157          void XMC_ERU_ETL_SetInput(XMC_ERU_t *const eru,
+    158                                    const uint8_t channel,
+    159                                    const XMC_ERU_ETL_INPUT_A_t input_a,
+    160                                    const XMC_ERU_ETL_INPUT_B_t input_b)
+    161          {
+    162            XMC_ASSERT("XMC_ERU_ETL_SetInput:Invalid Module Pointer", XMC_ERU_CHECK_MODULE_PTR(eru));
+    163            XMC_ASSERT("XMC_ERU_ETL_SetInput:Invalid Channel Number", (channel < 4U));
+    164            XMC_ASSERT("XMC_ERU_ETL_SetInput:Invalid A", XMC_ERU_ETL_CHECK_INPUT_A(input_a));
+    165            XMC_ASSERT("XMC_ERU_ETL_SetInput:Invalid B", XMC_ERU_ETL_CHECK_INPUT_B(input_b));
+    166          
+    167            eru->EXISEL = (eru->EXISEL & ~((uint32_t)(ERU_EXISEL_EXS0A_Msk | ERU_EXISEL_EXS0B_Msk) << (channel * ERU_EXISEL_BITSIZE))) |
+    168                          (((uint32_t)input_a | (uint32_t)(input_b << ERU_EXISEL_INPUT_BITSIZE))  << (channel * ERU_EXISEL_BITSIZE));
+    169          }
+    170          
+    171          /* Select input path combination along with polarity for event generation by setting (SS, NA, NB) bits of 
+    172             EXICONx(x = [0 to 3]) register */
+    173          void XMC_ERU_ETL_SetSource(XMC_ERU_t *const eru,
+    174                                    const uint8_t channel,
+    175                                    const XMC_ERU_ETL_SOURCE_t source)
+    176          {
+    177            XMC_ASSERT("XMC_ERU_ETL_SetSource:Invalid Module Pointer", XMC_ERU_CHECK_MODULE_PTR(eru));
+    178            XMC_ASSERT("XMC_ERU_ETL_SetSource:Invalid Channel Number", (channel < 4U));
+    179            XMC_ASSERT("XMC_ERU_ETL_SetSource:Invalid Source", XMC_ERU_ETL_CHECK_EVENT_SOURCE(source));
+    180          
+    181            eru->EXICON_b[channel].SS = (uint8_t)source;
+    182          }
+    183          
+    184          /* Configure event trigger edge/s by setting (RE, FE) bits of EXICONx(x = [0 to 3]) register.*/
+    185          void XMC_ERU_ETL_SetEdgeDetection(XMC_ERU_t *const eru,
+    186                                            const uint8_t channel,
+    187                                            const XMC_ERU_ETL_EDGE_DETECTION_t edge_detection)
+    188          {
+    189            XMC_ASSERT("XMC_ERU_ETL_SetEdgeDetection:Invalid Module Pointer", XMC_ERU_CHECK_MODULE_PTR(eru));
+    190            XMC_ASSERT("XMC_ERU_ETL_SetEdgeDetection:Invalid Channel Number", (channel < 4U));
+    191            XMC_ASSERT("XMC_ERU_ETL_SetEdgeDetection:Invalid Trigger Edge", XMC_ERU_ETL_CHECK_TRIGGER_EDGE(edge_detection));
+    192          
+    193            eru->EXICON_b[channel].ED = (uint8_t)edge_detection;
+    194          }
+    195          
+    196          /* Returns the configured event trigger edge/s by reading (RE, FE) bits of EXICONx(x = [0 to 3]) register. */
+    197          XMC_ERU_ETL_EDGE_DETECTION_t XMC_ERU_ETL_GetEdgeDetection(XMC_ERU_t *const eru, const uint8_t channel)
+    198          {
+    199            XMC_ASSERT("XMC_ERU_ETL_GetEdgeDetection:Invalid Module Pointer", XMC_ERU_CHECK_MODULE_PTR(eru));
+    200            XMC_ASSERT("XMC_ERU_ETL_GetEdgeDetection:Invalid Channel Number", (channel < 4U));
+    201            return ((XMC_ERU_ETL_EDGE_DETECTION_t)(eru->EXICON_b[channel].ED));
+    202          }
+    203          
+    204          /* Set the status flag bit(FL) in EXICONx(x = [0 to 3]). */
+    205          void XMC_ERU_ETL_SetStatusFlagMode(XMC_ERU_t *const eru,
+    206                                             const uint8_t channel,
+    207                                             const XMC_ERU_ETL_STATUS_FLAG_MODE_t mode)
+    208          {
+    209            XMC_ASSERT("XMC_ERU_ETL_SetStatusFlagMode:Invalid Module Pointer", XMC_ERU_CHECK_MODULE_PTR(eru));
+    210            XMC_ASSERT("XMC_ERU_ETL_SetStatusFlagMode:Invalid Channel Number", (channel < 4U));
+    211            XMC_ASSERT("XMC_ERU_ETL_SetStatusFlagMode:Invalid Status Flag Mode", XMC_ERU_ETL_CHECK_STATUS_FLAG_MODE(mode));
+    212          
+    213            eru->EXICON_b[channel].LD = (uint8_t)mode;
+    214          }
+    215          
+    216          /* Configure which Channel of OGUy(Output gating unit y = [0 to 3]) to be mapped by the trigger pulse generated by 
+    217           * ETLx(Event Trigger Logic, x = [0 to 3]) by setting (OCS and PE) bit fields. */
+    218          void XMC_ERU_ETL_EnableOutputTrigger(XMC_ERU_t *const eru,
+    219                                               const uint8_t channel,
+    220                                               const XMC_ERU_ETL_OUTPUT_TRIGGER_CHANNEL_t trigger)
+    221          {
+    222            XMC_ASSERT("XMC_ERU_ETL_EnableOutputTrigger:Invalid Module Pointer", XMC_ERU_CHECK_MODULE_PTR(eru));
+    223            XMC_ASSERT("XMC_ERU_ETL_EnableOutputTrigger:Invalid Channel Number", (channel < 4U));
+    224            XMC_ASSERT("XMC_ERU_ETL_EnableOutputTrigger:Invalid Output Channel", XMC_ERU_ETL_CHECK_TRIGGER_CHANNEL(trigger));
+    225          
+    226            eru->EXICON_b[channel].OCS = (uint8_t)trigger;
+    227            eru->EXICON_b[channel].PE = (uint8_t)true;
+    228          }
+    229          
+    230          /* Disables the trigger pulse generation by clearing the (PE) of the EXICONx(x = [0 to 3]). */
+    231          void XMC_ERU_ETL_DisableOutputTrigger(XMC_ERU_t *const eru, const uint8_t channel)
+    232          {
+    233            XMC_ASSERT("XMC_ERU_ETL_DisableOutputTrigger:Invalid Module Pointer", XMC_ERU_CHECK_MODULE_PTR(eru));
+    234            XMC_ASSERT("XMC_ERU_ETL_DisableOutputTrigger:Invalid Channel Number", (channel < 4U));
+    235          
+    236            eru->EXICON_b[channel].PE = false;
+    237          }
+    238          
+    239          /* Configures ERU_ETLx(x = [0 to 3]) for pattern match detection by setting IPENx(x = [0 to 3) and GEEN bits. */
+    240          void XMC_ERU_OGU_EnablePatternDetection(XMC_ERU_t *const eru,
+    241                                                  const uint8_t channel,
+    242                                                  const XMC_ERU_OGU_PATTERN_DETECTION_INPUT_t input)
+    243          {
+    244            XMC_ASSERT("XMC_ERU_OGU_EnablePatternDetection:Invalid Module Pointer", XMC_ERU_CHECK_MODULE_PTR(eru));
+    245            XMC_ASSERT("XMC_ERU_OGU_EnablePatternDetection:Invalid Channel Number", (channel < 4U));
+    246            XMC_ASSERT("XMC_ERU_OGU_EnablePatternDetection:Invalid Pattern input", XMC_ERU_OGU_CHECK_PATTERN_INPUT(input));
+    247          
+    248            eru->EXOCON_b[channel].IPEN = (uint8_t)input;
+    249            eru->EXOCON_b[channel].GEEN = true;
+    250          }
+    251          
+    252          /* Disable the pattern detection by clearing (GEEN) bit. */
+    253          void XMC_ERU_OGU_DisablePatternDetection(XMC_ERU_t *const eru, const uint8_t channel)
+    254          {
+    255            XMC_ASSERT("XMC_ERU_OGU_DisablePatternDetection:Invalid Module Pointer", XMC_ERU_CHECK_MODULE_PTR(eru));
+    256            XMC_ASSERT("XMC_ERU_OGU_DisablePatternDetection:Invalid Channel Number", (channel < 4U));
+    257          
+    258            eru->EXOCON_b[channel].GEEN = false;
+    259          }
+    260          
+    261          /* Configures peripheral trigger input, by setting (ISS) bit. */
+    262          void XMC_ERU_OGU_EnablePeripheralTrigger(XMC_ERU_t *const eru,
+    263                                                   const uint8_t channel,
+    264                                                   const XMC_ERU_OGU_PERIPHERAL_TRIGGER_t peripheral_trigger)
+    265          {
+    266            XMC_ASSERT("XMC_ERU_OGU_EnablePeripheralTrigger:Invalid Module Pointer", XMC_ERU_CHECK_MODULE_PTR(eru));
+    267            XMC_ASSERT("XMC_ERU_OGU_EnablePeripheralTrigger:Invalid Channel Number", (channel < 4U));
+    268            XMC_ASSERT("XMC_ERU_OGU_EnablePeripheralTrigger:Invalid Peripheral Trigger Input", 
+    269                        XMC_ERU_OGU_CHECK_PERIPHERAL_TRIGGER(peripheral_trigger));
+    270          
+    271            eru->EXOCON_b[channel].ISS = (uint8_t)peripheral_trigger;
+    272          }
+    273          
+    274          /* Disables event generation based on peripheral trigger by clearing (ISS) bit. */
+    275          void XMC_ERU_OGU_DisablePeripheralTrigger(XMC_ERU_t *const eru,
+    276                                                    const uint8_t channel)
+    277          {
+    278            XMC_ASSERT("XMC_ERU_OGU_DisablePeripheralTrigger:Invalid Module Pointer", XMC_ERU_CHECK_MODULE_PTR(eru));
+    279            XMC_ASSERT("XMC_ERU_OGU_DisablePeripheralTrigger:Invalid Channel Number", (channel < 4U));
+    280          
+    281            eru->EXOCON_b[channel].ISS = (uint8_t)0;
+    282          }
+    283          
+    284          /* Configures the gating scheme for service request generation by setting (GP) bit. */
+    285          void XMC_ERU_OGU_SetServiceRequestMode(XMC_ERU_t *const eru,
+    286                                                 const uint8_t channel,
+    287                                                 const XMC_ERU_OGU_SERVICE_REQUEST_t mode)
+    288          {
+    289            XMC_ASSERT("XMC_ERU_OGU_SetServiceRequestMode:Invalid Module Pointer", XMC_ERU_CHECK_MODULE_PTR(eru));
+    290            XMC_ASSERT("XMC_ERU_OGU_SetServiceRequestMode:Invalid Channel Number", (channel < 4U));
+    291            XMC_ASSERT("XMC_ERU_OGU_SetServiceRequestMode:Invalid Service Request Mode", XMC_ERU_OGU_CHECK_SERIVCE_REQUEST(mode));
+    292          
+    293            eru->EXOCON_b[channel].GP = (uint8_t)mode;
+    294          
+    295          }
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   XMC_ERU_ETL_DisableOutputTrigger
+       4   XMC_ERU_ETL_EnableOutputTrigger
+       0   XMC_ERU_ETL_GetEdgeDetection
+      16   XMC_ERU_ETL_Init
+        16   -> XMC_ERU_Enable
+       4   XMC_ERU_ETL_SetEdgeDetection
+      12   XMC_ERU_ETL_SetInput
+       4   XMC_ERU_ETL_SetSource
+       4   XMC_ERU_ETL_SetStatusFlagMode
+       0   XMC_ERU_OGU_DisablePatternDetection
+       0   XMC_ERU_OGU_DisablePeripheralTrigger
+       4   XMC_ERU_OGU_EnablePatternDetection
+       4   XMC_ERU_OGU_EnablePeripheralTrigger
+      16   XMC_ERU_OGU_Init
+        16   -> XMC_ERU_Enable
+       4   XMC_ERU_OGU_SetServiceRequestMode
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable1
+       4  ??DataTable1_1
+      26  XMC_ERU_ETL_DisableOutputTrigger
+      64  XMC_ERU_ETL_EnableOutputTrigger
+      18  XMC_ERU_ETL_GetEdgeDetection
+      52  XMC_ERU_ETL_Init
+      40  XMC_ERU_ETL_SetEdgeDetection
+      36  XMC_ERU_ETL_SetInput
+      42  XMC_ERU_ETL_SetSource
+      40  XMC_ERU_ETL_SetStatusFlagMode
+      26  XMC_ERU_OGU_DisablePatternDetection
+      26  XMC_ERU_OGU_DisablePeripheralTrigger
+      66  XMC_ERU_OGU_EnablePatternDetection
+      38  XMC_ERU_OGU_EnablePeripheralTrigger
+      28  XMC_ERU_OGU_Init
+      40  XMC_ERU_OGU_SetServiceRequestMode
+
+ 
+ 550 bytes in section .text
+ 
+ 550 bytes of CODE memory
+
+Errors: none
+Warnings: none

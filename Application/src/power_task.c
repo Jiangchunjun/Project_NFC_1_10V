@@ -600,13 +600,14 @@ void Power_UpdateOne2TenDimming(uint16_t adc)
     static uint32_t s_min_level=0;
     /* Calculate 1-10V dimming level */
     
-    //if(mem_bank_nfc.mem_bank_1_10.Enable_1_10==0) //TDL
+    if(O2T_GetEnableConfig()==0) //TDL
     {
       g_one2ten_dimming_level= POWER_MAX_DIMMING;     
     }
-    //else                                          //TDL
+    else                                          //TDL
     {
       //s_min_level=(mem_bank_nfc.mem_bank_1_10.Level_h_1_10<<8)+mem_bank_nfc.mem_bank_1_10.Level_l_1_10; //TDL
+      s_min_level=O2T_GetMinDimLevel();
       s_min_level*=10000;
       s_min_level>>=15;
       
@@ -825,6 +826,7 @@ void Power_ControlLoopTask(void)
     {
         return;
     }
+
         
     /*-------- Get Output Average Result from ADC Module -----------------------*/    
     /* Calculate average ADC */
@@ -864,6 +866,7 @@ void Power_ControlLoopTask(void)
     
     /* Convert Uout ADC to Real Voltage in V */
     g_uout_real = (uint16_t)((((UOUT_PARAM_B2 * g_uout_avg_adc) + UOUT_PARAM_B1) * g_uout_avg_adc) + UOUT_PARAM_B0);
+    g_uout_real*=UOUT_COMPENSATION;
     //g_uout_real=200;
     g_test_current=g_iout_real;
     /* Iout compensation when disable DEBUG PRINT */
@@ -898,7 +901,11 @@ void Power_ControlLoopTask(void)
     }
     if(g_uout_real!=0&&g_iout_real>50)
     {
-      g_power_current=(uint32_t)(OUTPUT_POWER*1.02/g_uout_real);// constant power control
+#ifdef OT_NFC_IP67_200W
+      g_power_current=(uint32_t)(OUTPUT_POWER*1.015/g_uout_real);// constant power control
+#else
+      g_power_current=(uint32_t)(OUTPUT_POWER*1.002/g_uout_real);// constant power control
+#endif 
       
       if(abs(g_power_current-g_power_current_pre)<10)
         g_power_current=g_power_current_pre;
@@ -1463,5 +1470,25 @@ void Power_ControlLoopTask(void)
     System_CloseTask( SYS_TASK_LOOP );
 }
 
-
+/*************************************************************************************************/
+void Power_nfc_handle(void)
+{
+  extern uint8_t g_nfc_tag_read;
+  if(System_CheckTask(SYS_TASK_NFC_HANDLE) == SYS_TASK_DISABLE)
+  {
+    return;
+  }
+  
+  //nfc_time_hanlde();
+  
+  AstroTimer();
+  
+  if(g_nfc_tag_read==4)
+  SWT_StartTimer(SWT_ID_NFC_HANDLE, NFC_HANDLE_TIME);
+  else
+  SWT_StartTimer(SWT_ID_NFC_HANDLE, 5);  
+  
+  System_CloseTask( SYS_TASK_NFC_HANDLE );
+  
+}
 /**************** (C) COPYRIGHT OSRAM Asia Pacific Management Company *********END OF FILE*********/

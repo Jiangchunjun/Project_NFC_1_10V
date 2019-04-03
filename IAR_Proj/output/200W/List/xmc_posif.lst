@@ -1,0 +1,453 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:57
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc_posif.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc_posif.c"
+#        -D XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\xmc_posif.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\xmc_posif.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc_posif.c
+      1          /**
+      2           * @file xmc_posif.c
+      3           * @date 2015-06-19
+      4           *
+      5           * @cond
+      6           **********************************************************************************
+      7           * XMClib v2.1.6 - XMC Peripheral Driver Library 
+      8           *
+      9           * Copyright (c) 2015-2016, Infineon Technologies AG
+     10           * All rights reserved.                        
+     11           *                                             
+     12           * Redistribution and use in source and binary forms, with or without           
+     13           * modification,are permitted provided that the following conditions are met:   
+     14           *                                                                              
+     15           *   Redistributions of source code must retain the above copyright notice,      
+     16           *   this list of conditions and the following disclaimer.                        
+     17           * 
+     18           *   Redistributions in binary form must reproduce the above copyright notice,   
+     19           *   this list of conditions and the following disclaimer in the documentation    
+     20           *   and/or other materials provided with the distribution.                       
+     21           * 
+     22           *   Neither the name of the copyright holders nor the names of its contributors 
+     23           *   may be used to endorse or promote products derived from this software without
+     24           *   specific prior written permission.                                           
+     25           *                                                                              
+     26           * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"  
+     27           * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE    
+     28           * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE   
+     29           * ARE  DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE   
+     30           * LIABLE  FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR         
+     31           * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF         
+     32           * SUBSTITUTE GOODS OR  SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS    
+     33           * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN      
+     34           * CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)       
+     35           * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE   
+     36           * POSSIBILITY OF SUCH DAMAGE.                                                  
+     37           *                                                                              
+     38           * To improve the quality of the software, users are encouraged to share        
+     39           * modifications, enhancements or bug fixes with Infineon Technologies AG       
+     40           * dave@infineon.com).                                                          
+     41           **********************************************************************************
+     42           *
+     43           * Change History
+     44           * --------------
+     45           *
+     46           * 2015-02-18:
+     47           *     - Initial version
+     48           *      
+     49           * 2015-02-20:
+     50           *     - Driver description added <BR>
+     51           *
+     52           * 2015-04-30:
+     53           *     - XMC_POSIF_Enable and XMC_POSIF_Disable APIs updated for POSIF1 peripheral check <BR>
+     54           *
+     55           * 2015-06-19:
+     56           *     - Removed GetDriverVersion API <BR> 
+     57           * @endcond 
+     58           *
+     59           */
+     60          
+     61          /*********************************************************************************************************************
+     62           * HEADER FILES
+     63           ********************************************************************************************************************/
+     64          #include <xmc_posif.h>
+     65          
+     66          /* POSIF is not available on XMC1100 and XMC1200 */
+     67          #if defined(POSIF0)
+     68          #include <xmc_scu.h>
+     69          
+     70          /*********************************************************************************************************************
+     71           * MACROS
+     72           ********************************************************************************************************************/
+     73          #define XMC_POSIF_PCONF_INSEL_Msk        (0x3fUL << POSIF_PCONF_INSEL0_Pos) /*< Mask for input pins selection */
+     74          #define XMC_POSIF_INSEL_MAX              (4U) /*< Maximum possible input selector */
+     75          
+     76          /*********************************************************************************************************************
+     77           * LOCAL ROUTINES
+     78           ********************************************************************************************************************/
+     79          #ifdef XMC_ASSERT_ENABLE
+     80          __STATIC_INLINE bool XMC_POSIF_IsPeripheralValid(const XMC_POSIF_t *const peripheral)
+     81          {
+     82            bool tmp;
+     83          
+     84            tmp = (peripheral == POSIF0);
+     85          #if defined(POSIF1)  
+     86            tmp |= (peripheral == POSIF1);
+     87          #endif
+     88          
+     89            return tmp;  
+     90          }
+     91          #endif
+     92          /*********************************************************************************************************************
+     93           * API IMPLEMENTATION
+     94           ********************************************************************************************************************/
+     95          
+     96          /* API to enable the POSIF module */
+     97          void XMC_POSIF_Enable(XMC_POSIF_t *const peripheral)
+     98          {
+     99          #if UC_FAMILY == XMC4
+    100             XMC_SCU_CLOCK_EnableClock(XMC_SCU_CLOCK_CCU);
+    101          #endif
+    102          
+    103            switch ((uint32_t)peripheral)
+    104            {
+    105              case (uint32_t)POSIF0:
+    106          #if defined(CLOCK_GATING_SUPPORTED)
+    107                XMC_SCU_CLOCK_UngatePeripheralClock(XMC_SCU_PERIPHERAL_CLOCK_POSIF0);
+    108          #endif
+    109          #if defined(PERIPHERAL_RESET_SUPPORTED)
+    110                XMC_SCU_RESET_DeassertPeripheralReset(XMC_SCU_PERIPHERAL_RESET_POSIF0);
+    111          #endif
+    112                break;
+    113                
+    114          #if defined(POSIF1)
+    115              case (uint32_t)POSIF1:
+    116          #if defined(CLOCK_GATING_SUPPORTED)
+    117                XMC_SCU_CLOCK_UngatePeripheralClock(XMC_SCU_PERIPHERAL_CLOCK_POSIF1);
+    118          #endif
+    119          #if defined(PERIPHERAL_RESET_SUPPORTED)
+    120                XMC_SCU_RESET_DeassertPeripheralReset(XMC_SCU_PERIPHERAL_RESET_POSIF1);
+    121          #endif
+    122                break;
+    123          #endif
+    124          
+    125              default:
+    126                XMC_ASSERT("XMC_POSIF_Disable:Invalid module pointer", 0);
+    127                break;      
+    128            }
+    129          }
+    130          
+    131          /* API to disable the POSIF module */
+    132          void XMC_POSIF_Disable(XMC_POSIF_t *const peripheral)
+    133          {
+    134            switch ((uint32_t)peripheral)
+    135            {
+    136              case (uint32_t)POSIF0:
+    137          #if defined(PERIPHERAL_RESET_SUPPORTED)
+    138                XMC_SCU_RESET_AssertPeripheralReset(XMC_SCU_PERIPHERAL_RESET_POSIF0);
+    139          #endif
+    140          #if defined(CLOCK_GATING_SUPPORTED)
+    141                XMC_SCU_CLOCK_GatePeripheralClock(XMC_SCU_PERIPHERAL_CLOCK_POSIF0);
+    142          #endif
+    143                break;
+    144                
+    145          #if defined(POSIF1)
+    146              case (uint32_t)POSIF1:
+    147          #if defined(PERIPHERAL_RESET_SUPPORTED)
+    148                XMC_SCU_RESET_AssertPeripheralReset(XMC_SCU_PERIPHERAL_RESET_POSIF1);
+    149          #endif
+    150          #if defined(CLOCK_GATING_SUPPORTED)
+    151                XMC_SCU_CLOCK_GatePeripheralClock(XMC_SCU_PERIPHERAL_CLOCK_POSIF1);
+    152          #endif
+    153                break;
+    154          #endif
+    155              
+    156              default:
+    157                XMC_ASSERT("XMC_POSIF_Disable:Invalid module pointer", 0);
+    158                break;      
+    159            }
+    160          }
+    161          
+    162          /* API to initialize POSIF global resources */
+    163          void XMC_POSIF_Init(XMC_POSIF_t *const peripheral, const XMC_POSIF_CONFIG_t *const config)
+    164          {
+    165            XMC_ASSERT("XMC_POSIF_Init:Invalid module pointer", XMC_POSIF_IsPeripheralValid(peripheral));
+    166            XMC_ASSERT("XMC_POSIF_Init:NULL Pointer", (config != (XMC_POSIF_CONFIG_t *)NULL) );
+    167          
+    168            /* Enable the POSIF module */
+    169            XMC_POSIF_Enable(peripheral);
+    170          
+    171            /* Stop POSIF */
+    172            XMC_POSIF_Stop(peripheral);
+    173          
+    174            /* Program the operational mode, input selectors and debounce filter */
+    175            peripheral->PCONF = config->pconf;
+    176          }
+    177          
+    178          /* API to initialize hall sensor interface */
+    179          XMC_POSIF_STATUS_t XMC_POSIF_HSC_Init(XMC_POSIF_t *const peripheral, const XMC_POSIF_HSC_CONFIG_t * const config)
+    180          {
+    181            XMC_POSIF_STATUS_t retval;
+    182            
+    183            XMC_ASSERT("XMC_POSIF_HSC_Init:Invalid module pointer\n", XMC_POSIF_IsPeripheralValid(peripheral));
+    184            XMC_ASSERT("XMC_POSIF_HSC_Init:NULL Pointer\n", (config != (XMC_POSIF_HSC_CONFIG_t *)NULL) );
+    185          
+    186            if (XMC_POSIF_MODE_HALL_SENSOR == (XMC_POSIF_MODE_t)((peripheral->PCONF) & (uint32_t)POSIF_PCONF_FSEL_Msk) )
+    187            {
+    188              peripheral->PCONF |= config->hall_config;
+    189              retval = XMC_POSIF_STATUS_OK;
+    190            }
+    191            else
+    192            {
+    193              retval = XMC_POSIF_STATUS_ERROR;
+    194            }
+    195            return retval;
+    196          }
+    197          
+    198          /* API to initialize quadrature decoder interface */
+    199          XMC_POSIF_STATUS_t XMC_POSIF_QD_Init(XMC_POSIF_t *const peripheral, const XMC_POSIF_QD_CONFIG_t * const config)
+    200          {
+    201            uint8_t reg;
+    202            XMC_POSIF_STATUS_t retval;
+    203            
+    204            XMC_ASSERT("XMC_POSIF_QD_Init:Invalid module pointer", XMC_POSIF_IsPeripheralValid(peripheral));
+    205            XMC_ASSERT("XMC_POSIF_QD_Init:NULL Pointer", (config != (XMC_POSIF_QD_CONFIG_t *)NULL) );
+    206          
+    207            reg = (uint8_t)((peripheral->PCONF) & (uint32_t)POSIF_PCONF_FSEL_Msk);
+    208            if (((uint32_t)XMC_POSIF_MODE_QD == reg) || ((uint32_t)XMC_POSIF_MODE_MCM_QD == reg))
+    209            {
+    210              /* Program the quadrature mode */
+    211              peripheral->PCONF |= (uint32_t)(config->mode) << POSIF_PCONF_QDCM_Pos;
+    212              peripheral->QDC = config->qdc;
+    213              retval = XMC_POSIF_STATUS_OK;
+    214            }
+    215            else
+    216            {
+    217              retval = XMC_POSIF_STATUS_ERROR;
+    218            }
+    219            
+    220            return retval;
+    221          }
+    222          
+    223          /* API to initialize multi-channel mode.
+    224           * This is used in Hall mode, standalone multi-channel mode and quadrature with multi-channel mode
+    225           */
+    226          XMC_POSIF_STATUS_t XMC_POSIF_MCM_Init(XMC_POSIF_t *const peripheral, const XMC_POSIF_MCM_CONFIG_t * const config)
+    227          {
+    228            XMC_POSIF_STATUS_t retval;
+    229          
+    230            XMC_ASSERT("XMC_POSIF_MCM_Init:Invalid module pointer", XMC_POSIF_IsPeripheralValid(peripheral));
+    231            XMC_ASSERT("XMC_POSIF_MCM_Init:NULL Pointer", (config != (XMC_POSIF_MCM_CONFIG_t *)NULL) );
+    232          
+    233            if ((XMC_POSIF_MODE_t)((peripheral->PCONF) & (uint32_t)POSIF_PCONF_FSEL_Msk) != XMC_POSIF_MODE_QD)
+    234            {
+    235              peripheral->PCONF |= config->mcm_config;
+    236              retval = XMC_POSIF_STATUS_OK;
+    237            }
+    238            else
+    239            {
+    240              retval = XMC_POSIF_STATUS_ERROR;
+    241            }
+    242            return retval;
+    243          }
+    244          
+    245          /* API to configure input source */
+    246          void XMC_POSIF_SelectInputSource (XMC_POSIF_t *const peripheral, const XMC_POSIF_INPUT_PORT_t input0,
+    247              const XMC_POSIF_INPUT_PORT_t input1, const XMC_POSIF_INPUT_PORT_t input2)
+    248          {
+    249            uint32_t reg;
+    250            XMC_ASSERT("XMC_POSIF_SelectInputSource:Invalid module pointer", XMC_POSIF_IsPeripheralValid(peripheral));
+    251            XMC_ASSERT("XMC_POSIF_SelectInputSource:Wrong input port input0", (input0 < XMC_POSIF_INSEL_MAX));
+    252            XMC_ASSERT("XMC_POSIF_SelectInputSource:Wrong input port input1", (input1 < XMC_POSIF_INSEL_MAX));
+    253            XMC_ASSERT("XMC_POSIF_SelectInputSource:Wrong input port input2", (input2 < XMC_POSIF_INSEL_MAX));
+    254          
+    255            reg = (uint32_t)((((uint32_t)input0 << POSIF_PCONF_INSEL0_Pos) & (uint32_t)POSIF_PCONF_INSEL0_Msk) |
+    256                  (((uint32_t)input1 << POSIF_PCONF_INSEL1_Pos) & (uint32_t)POSIF_PCONF_INSEL1_Msk) |
+    257                  (((uint32_t)input2 << POSIF_PCONF_INSEL2_Pos) & (uint32_t)POSIF_PCONF_INSEL2_Msk));
+    258            peripheral->PCONF = ((peripheral->PCONF & ~(uint32_t)XMC_POSIF_PCONF_INSEL_Msk) | reg);
+    259          }
+    260          
+    261          /* API to select an interrupt node */
+    262          void XMC_POSIF_SetInterruptNode(XMC_POSIF_t *const peripheral, const XMC_POSIF_IRQ_EVENT_t event, const XMC_POSIF_SR_ID_t sr)
+    263          {
+    264            uint32_t reg;
+    265            
+    266            XMC_ASSERT("XMC_POSIF_SetInterruptNode:Invalid module pointer", XMC_POSIF_IsPeripheralValid(peripheral));
+    267            XMC_ASSERT("XMC_POSIF_SetInterruptNode:Wrong IRQ event", (event <= XMC_POSIF_IRQ_EVENT_PCLK) );
+    268            XMC_ASSERT("XMC_POSIF_SetInterruptNode:Wrong SR ID", (sr <= XMC_POSIF_SR_ID_1) );
+    269            
+    270            reg = peripheral->PFLGE;
+    271            reg &= ~((uint32_t)1 << ((uint32_t)event + (uint32_t)POSIF_PFLGE_CHESEL_Pos));
+    272            reg |= (uint32_t)sr << ((uint32_t)event + (uint32_t)POSIF_PFLGE_CHESEL_Pos);
+    273            peripheral->PFLGE = reg;
+    274          }
+    275          #endif /* #if defined(POSIF0) */
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   XMC_POSIF_Disable
+         8   -> XMC_SCU_CLOCK_GatePeripheralClock
+       8   XMC_POSIF_Enable
+         8   -> XMC_SCU_CLOCK_UngatePeripheralClock
+       4   XMC_POSIF_HSC_Init
+      16   XMC_POSIF_Init
+        16   -> XMC_POSIF_Enable
+        16   -> XMC_POSIF_Stop
+       4   XMC_POSIF_MCM_Init
+       4   XMC_POSIF_QD_Init
+       4   XMC_POSIF_SelectInputSource
+       8   XMC_POSIF_SetInterruptNode
+       0   XMC_POSIF_Stop
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable2
+       4  ??DataTable2_1
+      18  XMC_POSIF_Disable
+      18  XMC_POSIF_Enable
+      30  XMC_POSIF_HSC_Init
+      24  XMC_POSIF_Init
+      30  XMC_POSIF_MCM_Init
+      44  XMC_POSIF_QD_Init
+      50  XMC_POSIF_SelectInputSource
+      32  XMC_POSIF_SetInterruptNode
+       6  XMC_POSIF_Stop
+
+ 
+ 260 bytes in section .text
+ 
+ 260 bytes of CODE memory
+
+Errors: none
+Warnings: none

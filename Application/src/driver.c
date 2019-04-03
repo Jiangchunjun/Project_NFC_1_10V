@@ -29,7 +29,7 @@
 
 #include "driver.h"
 #include "xmc_flash.h"
-
+#include "i2c_local.h"
 
 
 
@@ -39,7 +39,8 @@ uint8_t  g_nfc_update_flag      = 0;
 uint8_t  g_pwm_update_flag      = 1;
 //uint8_t  g_nfc_start_flag       = 0;
 uint8_t  g_psw_update_flag      = 0;
-uint32_t g_nfc_time             = 0;
+uint32_t g_nfc_time             = 0; //nfc running time
+uint32_t g_nfc_fast_save_time   = 0; //nfc saving time 
 uint32_t g_ed_time              = 0;
 uint32_t g_last_ontime          =0;
 uint8_t  g_nfc_time_id          = 0;
@@ -51,11 +52,11 @@ uint8_t  g_astro_flag=0;//flag for Astros start purpose
 uint8_t  g_inf_time_update=0;
 uint8_t  g_flag_flash_write=0;
 uint8_t  flag_t4t_update=0;
-uint32_t g_time_nvm_pre=0;
+uint32_t g_time_nvm_pre=0,time_save=0;
 uint16_t g_min_dim_level=0;
 uint8_t last_dim_level=4;
 const uint8_t g_gtin_num[6]=GTIN_NUM; 
-
+uint8_t g_nfc_flag_save=0;
 
 
 typedef struct
@@ -80,32 +81,7 @@ bool dimOverride;
 
 
 
-/******************************************************************************
-* @Brief   nfc_bank_clm_handle
-Constant lumen handle, first check if clm is enable. 
-Then based on the current run time do the clm duty setting.
-The const duty is change linearly based on the time counting.
-* @Param   null
-* @Note    
-* @Return  0
-*******************************************************************************/
-uint8_t nfc_bank_clm_handle(void)
-{ 
-
-  
-    static uint32_t s_count=200; 
-    if(g_nfc_start_flag==1&&s_count++>200) //run in every 1s
-    {
-        s_count=0;  
-                
-        Power_SetConstantLumenValue(1100);
-                       
-    }
-    
-    return 0;
-    
-}
-/*******************************************************************************
+/****************************************************************
 * @Brief   nfc_time_record
 record the driver run time in the nfc tag MCU using part
 update g_timer in very 30s. Total 16 blocks are using.
@@ -116,36 +92,52 @@ every 16*30 s update time in the nfc_bank stucture.
 *******************************************************************************/
 void nfc_time_record(void)
 {
-    uint32_t s_time=0;
+    static uint8_t  g_nfc_flag_record=0; //set time period
     
-    uint8_t  g_nfc_flag_record=0; //set time period
+    g_nfc_time=InfoMPC_GetLampOnMinutes(0)*60;
+    
+    if(g_nfc_time-g_nfc_fast_save_time>119&&g_nfc_flag_record==0)//every 2 minute.
+    {
+      g_nfc_flag_record=1;
+      
+      g_nfc_fast_save_time=g_nfc_time;
+    }
+    
+    if(g_nfc_time-time_save>3600)//one hour time to save data
+      
+    {
+      g_nfc_flag_save=g_nfc_flag_save;
+      
+      time_save=g_nfc_time;
+    }
     
     if(g_nfc_flag_record) // 60s flag check
     { 
+      
+      if((I2cAreAllPendingTransfersDone()==1)&&nfc_local_state.fsm_state==nfc_fsm_state_idle) //no nfc mirror task
+      {
         
-        if((I2cAreAllPendingTransfersDone()==1)&&nfc_local_state.fsm_state==nfc_fsm_state_idle) //no nfc mirror task
+        if(I2cWrite(NFC_TIME_ADRRESS+g_nfc_time_id*4, (uint8_t *)&g_nfc_time,4)==true)
+          
         {
-            
-          if(I2cWrite(NFC_TIME_ADRRESS+g_nfc_time_id*4, (uint8_t *)&g_nfc_time,4)==true)
-            
+          
+          g_nfc_flag_record=0;  //close 60s flag
+          
+          if(g_nfc_time_id++>=47)// block++;if it is up to number 47 , need to set to num 0
           {
             
-            g_nfc_flag_record=0;  //close 60s flag
+            g_nfc_time_id=0;  //set block num to 0
             
-            if(g_nfc_time_id++>=47)// block++;if it is up to number 47 , need to set to num 0
-            {
-              
-              g_nfc_time_id=0;  //set block num to 0
-              
-              s_time=g_nfc_time/60; // g_time set from second to minute.
-        
-              
-              g_nfc_update_flag=1;  //set flag to store time in backup area  // need to save the time information
-              
-            }
+            //s_time=g_nfc_time/60; // g_time set from second to minute.
+            
+            
+            //g_nfc_update_flag=1;  //set flag to store time in backup area  // need to save the time information
+            
           }
-        }   
+        }
+      }   
     }
+    
 }
 /*******************************************************************************
 * @Brief   nfc_time_id
@@ -157,125 +149,105 @@ and return time record current index id.
 *******************************************************************************/
 uint8_t nfc_time_id(void)
 {
-    uint8_t s_arr[NFC_TIME_COUNT];
+    static uint8_t s_arr[NFC_TIME_COUNT], id_index=0;
     uint32_t s_arr_time[(NFC_TIME_COUNT>>2)];
-    uint32_t s_run_time=0;
     uint8_t i=0,j=0;
-    static uint32_t s_data[4],s_crc_data;
+    static uint8_t index_flag=0, time_id_flag=0,read_flag=0;
+    extern i2c_local_state_t        i2c_local_state;
     
-    I2cRead(NFC_TIME_ADRRESS,&s_arr[0],192); //read first 60 byte time data //all the time data
-    
-   // I2cRead(NFC_TIME_ADRRESS+64,&s_arr[0+64],64); //read second 60 byte time data //all the time data
-    
-   // I2cRead(NFC_TIME_ADRRESS+128,&s_arr[0+128],64); //read third 60 byte time data //all the time data
-    
-    for(i=0;i<NFC_TIME_COUNT;i+=4)//need to take care of read result
+    if(!time_id_flag)
     {
+    nfc_local_state.fast_timer_cnt = 0;
+    
+    switch (index_flag)
+    {
+      
+    case 0:
+      if(read_flag==0)
+      {
+        if(I2cRead(NFC_TIME_ADRRESS+4*id_index,&s_arr[0+4*id_index],4)==1)//read first 60 byte time data //all the time data
+        {
+          read_flag=1;
+        } 
+      }
+      if(read_flag==1)
+      {
+        if(i2c_local_state.rx_request.is_filled ==false)// read judge is_filled.
+        {        
+          I2cCyclic();
+          id_index++;
+          read_flag=0;
+          //nfc_local_state.fast_timer_cnt = 0;
+        }
+        
+        
+        
+        if(id_index>47)
+        {
+          id_index=0;
+          index_flag=1; //read_data first
+        }
+      }
+      
+      break;
+      
+      
+    case 1:
+      
+      for(i=0;i<NFC_TIME_COUNT;i+=4)//need to take care of read result
+      {
         
         s_arr_time[j++]=(s_arr[i]<<0)+(s_arr[i+1]<<8)+(s_arr[i+2]<<16)+(s_arr[i+3]<<24);
         /* get all 16 record time in s_arr_time*/
         if(s_arr_time[(j-1)]==0XFFFFFFFF)
         {
-            /*if value is FFFFFFFF then set it to zero*/
-            s_arr_time[j-1]=0;
+          /*if value is FFFFFFFF then set it to zero*/
+          s_arr_time[j-1]=0;
         }
-    }
-    
-    j=0;
-    
-    for(i=1;i<(NFC_TIME_COUNT>>2);i++)
-    {
+      }
+      
+      j=0;
+      
+      for(i=1;i<(NFC_TIME_COUNT>>2);i++)
+      {
         if(s_arr_time[0]<s_arr_time[i])
         {
-            
-            s_arr_time[0]=s_arr_time[i];// get the max time data
-            
-            j=i;
-        
+          
+          s_arr_time[0]=s_arr_time[i];// get the max time data
+          
+          j=i;
+          
         }
-    }
-    
-    g_nfc_time=s_arr_time[0]; 
-    /*set g_nfc_time with max record time*/
-    
-    //s_run_time=mem_bank_nfc.mem_bank_inf.Oper_con_1+(mem_bank_nfc.mem_bank_inf.Oper_con_2<<8)+(mem_bank_nfc.mem_bank_inf.Oper_con_3<<16);
-    /*get setting running time fromm T4T */
-    s_run_time*=60;
-    /* transfor from sencond to minute*/
-    if(flag_t4t_update==1)
-        /* if inf_time is update by T4T then update the data */   
-    {
-        
-        flag_t4t_update=0;
-        
-//        g_nfc_time=s_run_time;
-//        for(i=0;i<48;i++) 
-//        {
-//            while(M24LRxx_WriteBuffer(NFC_TIME_ADRRESS+i*4,4,g_nfc_time)!=I2C_CODE_OK)//reset all the time data with update value
-//            {
-//                /*write g_nfc_time in user nfc tag area*/
-//            }
-//        }
-        
-        g_inf_time_update=1;//set flag by inf update
-        
-    }
-    XMC_FLASH_ReadBlocks((uint32_t*)FLASH_TIME_ADDRESS,s_data,1);
-    
-    /*read time in nvm*/
-    g_time_nvm_pre=s_data[0];
-    
-    crcReset();
-    /*reset crc value*/
-    for(i=0;i<4;i++)
-    {
-        
-        crcLoadByte(*((uint8_t*)s_data+i));
-        /*calculate crc value*/
-    }
-    s_crc_data=crcGet();//read crc data
-    
-    if(s_crc_data!=s_data[1])//crc data is not right
-    {
-        g_time_nvm_pre=g_nfc_time;//
-        
-        g_flag_flash_write=1;//set write flag
-    }
-    /*save the time in rom*/
-    if(g_time_nvm_pre==0XFFFFFFFF)//if oxffffffff then it is wrong data
-    {
-        g_time_nvm_pre=0;
-        /*set to default value 0*/
-    }
-    if(g_time_nvm_pre>g_nfc_time&&(g_inf_time_update==0))// judge if nvm_pretime is more than nfc_time
-    {
-        g_nfc_time=g_time_nvm_pre;
-        /*if yes, then set back to g_time_nvm_pre*/
-    }
-    else
-    {
-        if((g_nfc_time-g_time_nvm_pre)>(NVM_TIME_SAVE_PERIOD*2))//judge if time is more than 20h and no update from inf
-        {
-            if(g_inf_time_update==0)
-            {
-                
-                g_nfc_time=g_time_nvm_pre;
-                
-            }
-            /*g_nfc_time is not in right range ,reset to g_time_nvm_pre*/  
-            else
-            {
-                
-                g_time_nvm_pre=g_nfc_time;
-                
-                g_flag_flash_write=1;
-                
-            }
-        }
-        
-    }
+      }
+      
+      g_nfc_time=s_arr_time[0]; 
+      
+      if(abs(g_nfc_time-InfoMPC_GetLampOnMinutes(0)*60)<3600)
+      {
+          MemoryBank_Info_SetMinute_value(g_nfc_time/60);
+      }
+      else
+      {
+        g_nfc_time=InfoMPC_GetLampOnMinutes(0)*60;
+      }
+      /*set g_nfc_time with max record time*/
+      
+      time_id_flag=1;
+      
+      g_nfc_time_id=j;
+      
+      time_save=g_nfc_time;// set time_save when on time saving every one hour
+      
+      g_nfc_fast_save_time=g_nfc_time;//fast time saving every 2min
     
     return j;  // return maximum time record index id.
+    
+    break;
+    
+    }
+    
+    return time_id_flag;
+    }
 }
 /*******************************************************************************
 * @Brief   nfc_ed_record
@@ -284,101 +256,169 @@ calculate ed time and record ed time.
 * @Note    
 * @Return  ed time
 *******************************************************************************/
-uint16_t nfc_ed_record(void)
+bool nfc_ed_record(void)
 {
-    uint8_t ed_index, ed_count,i;
-    uint8_t time_arr[4];
-    uint8_t ed_arr[16];
-    uint32_t runtime_pre;
-    uint32_t ed_time;
+  static uint8_t ed_index, ed_count,i,index_read=0;
+  static uint8_t test_data[24],index_flag=0;
+  static bool ed_read=0;
+  static uint32_t runtime_pre;
+  uint32_t ed_time;
+  extern i2c_local_state_t        i2c_local_state;
+  
+  
+  if(ed_read==0)
+  {
     
-    /*need to add reset on-time history function*/
-      if(I2cRead(NFC_ED_REG_ADRESS,&ed_index,1)==1)
-    { /*read ed index*/
-    }
-    if(ed_index==0XFF)
-    {
-        /*ed_index value is wrong value*/
-        ed_index=0X00;
-    }
-    if(ed_index>8)
-        ed_index=0;
-    /*ed index maximum is 7 then set to num 0*/
-    if (I2cRead(NFC_ED_REG_ADRESS+1,&ed_count,1)==1)
-    {/*read ed record count*/
-    }
-    if(ed_count==0XFF)
-    {
-        /*ed_count value is wrong value*/
-        ed_count=0X00;
-    }
-    if(ed_count>=8)
-        ed_count=8;
-    /*ed record count max is 8*/
-    I2cRead(NFC_RUNTIME_PRE,time_arr,4);
-    /*get last start up time*/
-    runtime_pre=((time_arr[0]<<0)+(time_arr[1]<<8)+(time_arr[2]<<16)+(time_arr[3]<<24));
-    if(runtime_pre==0XFFFFFFFF)
-    {
-        /*runtime_pre value is wrong value*/
-        runtime_pre=0X00;
-    }
-    g_last_ontime=runtime_pre;
+  //nfc_local_state.fast_timer_cnt = 0;
     
-    if(g_nfc_time>runtime_pre)   
-    {
-        ed_time=g_nfc_time-runtime_pre; 
-        /*ed_time is equal last turn off time minus last start up time*/
-    }
-    else
-    {
-        ed_time=0;  
-    }
-    ed_time/=60;// sencond to minute
+  switch (index_flag)   
+  {
     
-    if(ONTIME_MIN_VALUE_MINUTES<=ed_time&&ed_time<=ONTIME_MAX_VALUE_MINUTES)//ed time is in right range
+  case 0: 
+    if (I2cRead(NFC_ED_TIME_ADRESS+4*index_read,&test_data[index_read*4],4)==1)
     {
-        while (I2cWrite(NFC_ED_TIME_ADRESS+ed_index*2,(uint8_t *)&ed_time,1)!=1)
-        {
-        }
-        if(ed_index++>=7)//record 8 times need to recycle
-        {
-            ed_index=0;
-        }
-        if(ed_count<8)
-        {
-            ed_count++;  //count max value is 8
-            while(I2cWrite(NFC_ED_REG_ADRESS+1,&ed_count,1)!=1)//record count
-            {
-            }
-        }
-        while(I2cWrite(NFC_ED_REG_ADRESS,&ed_index,1)!=1) //record index
-        {
-        }
+      
+      if(i2c_local_state.rx_request.is_filled ==false)// read judge is_filled.
+      {        
+        I2cCyclic(); 
+        
+        index_read++;
+        //nfc_local_state.fast_timer_cnt = 0;
+      }
+      
+      if(index_read>5)
+      index_flag=1; //read_data first
     }
-    while (I2cWrite(NFC_RUNTIME_PRE,(uint8_t *)&g_nfc_time,4)!=1)//record last power off time
+    break; 
+    
+  case 1:
+    
     {
-    }
-    g_last_ontime=g_nfc_time;//record start up time
-    if(ed_count>=1)
-    {
-        while(I2cRead(NFC_ED_TIME_ADRESS,ed_arr,ed_count*2)!=1)
+        /*read ed index*/
+        
+        ed_index=test_data[0];
+        
+        if(ed_index==0XFF)
         {
+          /*ed_index value is wrong value*/
+          ed_index=0X00;
         }
-        for(i=0;i<ed_count;i++)
-        {
-            g_ed_time+=ed_arr[2*i];
-            g_ed_time+=(ed_arr[2*i+1]<<8);//get all recorded g_ed_time
-        }
-        g_ed_time/=ed_count;//ed time is average value
-    }
-    else
-    {
-        g_ed_time=0;
-    }
-    return g_ed_time;//return g ed time.
+        /*ed index maximum is 7 then set to num 0*/
+        if(ed_index>8)
+          ed_index=0;
 
+        ed_count= test_data[1];
+      /*read ed record count*/        
+        if(ed_count==0XFF)
+        {
+          /*ed_count value is wrong value*/
+          ed_count=0X00;
+        }
+        if(ed_count>=8)
+          ed_count=8;
+        /*ed record count max is 8*/
+        
+        /*get last start up time*/
+        runtime_pre=((test_data[4]<<0)+(test_data[5]<<8)+(test_data[6]<<16)+(test_data[7]<<24));
+        if(runtime_pre==0XFFFFFFFF)
+        {
+          /*runtime_pre value is wrong value*/
+          runtime_pre=0X00;
+        }
+        index_flag=2;// read data is done
+        
+        break;
+    }
+        
+    case 2:
+      {
+        g_last_ontime=runtime_pre;
+        
+        if(g_nfc_time>runtime_pre)   
+        {
+          ed_time=g_nfc_time-runtime_pre; 
+          /*ed_time is equal last turn off time minus last start up time*/
+        }
+        else
+        {
+          ed_time=0;  
+        }
+        ed_time/=60;// sencond to minute
+        
+        if(ONTIME_MIN_VALUE_MINUTES<=ed_time&&ed_time<=ONTIME_MAX_VALUE_MINUTES)//ed time is in right range
+        {
+                    
+          test_data[8+ed_index*2]=(uint8_t)(ed_time>>8);
+          
+          test_data[8+ed_index*2+1]=(uint8_t)(ed_time);
+          
+          if(ed_index++>=7)//record 8 times need to recycle
+          {
+            ed_index=0;
+          }
+          test_data[0]=ed_index;
+          
+          if(ed_count<8)
+          {
+            ed_count++;  //count max value is 8            
+          }
+          
+          test_data[1]=ed_count;
+
+          
+        }
+        
+        test_data[4]=(uint8_t)(g_nfc_time);//save new on time
+        
+        test_data[5]=(uint8_t)(g_nfc_time>>8);//save new on time
+        
+        test_data[6]=(uint8_t)(g_nfc_time>>16);//save new on time
+        
+        test_data[7]=(uint8_t)(g_nfc_time>>24);//save new on time
+        
+        g_last_ontime=g_nfc_time;//record start up time
+        
+        runtime_pre=g_nfc_time;
+        
+        if(ed_count>=1)
+        {
+          for(i=0;i<ed_count;i++)
+          {
+            g_ed_time+=(test_data[8+2*i]<<8);
+            g_ed_time+=(test_data[8+2*i+1]);//get all recorded g_ed_time
+          }
+          g_ed_time/=ed_count;//ed time is average value
+        }
+        else
+        {
+          g_ed_time=0;
+        }
+        
+        if(g_ed_time>=1440)
+          g_ed_time=1440;
+        
+        index_flag=3;
+        
+        break;
+        
+      case 3:
+        
+         if (I2cWrite(NFC_ED_TIME_ADRESS,test_data,24)==1)
+         {
+           ed_read=1;
+           AstroInit();
+         }
+           
+           break;
+        
+    }
+    
+  }
+  
+  return ed_read;
+  }
 }
+
 /*******************************************************************************
 
 /*******************************************************************************
@@ -393,14 +433,29 @@ uint16_t AstroInit(void)
 {
     uint32_t	ctime, center, ptime;
     uint16_t i;
-   
+    static uint8_t temp_read=0;
 #ifdef ENASTRO   
 	//  -------------------------------------------------------- get parameters
-        MemoryBank_Astro_GetValue(6,(uint8_t *)&dimmer.mode,0) ;  
-        MemoryBank_Astro_GetValue(15,(uint8_t *)&dimmer.duration[0],0) ; 
-        MemoryBank_Astro_GetValue(18,(uint8_t *)&dimmer.duration[1],0) ;
-        MemoryBank_Astro_GetValue(21,(uint8_t *)&dimmer.duration[2],0) ; 
-	dimmer.duration[4] = 0;
+                
+        MemoryBank_Astro_GetValue(6,(uint8_t *)&dimmer.mode,0) ; 
+        
+        MemoryBank_Astro_GetValue(12,&temp_read,0) ;    
+        MemoryBank_Astro_GetValue(13,(uint8_t *)&dimmer.duration[0],0) ; 
+        dimmer.duration[0]+=temp_read;
+        
+        MemoryBank_Astro_GetValue(15,&temp_read,0) ;
+        MemoryBank_Astro_GetValue(16,(uint8_t *)&dimmer.duration[1],0) ; 
+        dimmer.duration[1]+=temp_read<<8;
+//        
+        MemoryBank_Astro_GetValue(18,&temp_read,0) ;
+        MemoryBank_Astro_GetValue(19,(uint8_t *)&dimmer.duration[2],0) ;
+        dimmer.duration[2]+=temp_read<<8;
+        
+        MemoryBank_Astro_GetValue(21,&temp_read,0) ;
+        MemoryBank_Astro_GetValue(22,(uint8_t *)&dimmer.duration[3],0) ; 
+        dimmer.duration[3]+=temp_read<<8;
+	
+        dimmer.duration[4] = 0;
 	dimmer.duration[5] = 0;
 #ifdef FAST_TIME_ASTRO/*Fast Astro rate handle*/
     dimmer.duration[0]/=ASTRO_FAST_RATE;
@@ -418,8 +473,9 @@ uint16_t AstroInit(void)
     dimmer.level[5] = 30;  // minPhysicalLevel;
     /*Astro dimming fade time setting*/ 
     
-    MemoryBank_Astro_GetValue(8,(uint8_t *)&dimmer.fade[0],0);
-    dimmer.fade[0]*=15;					// in seconds (mem_bank_nfc.mem_bank_astro.Astro_startup_fade_h<<8)+
+    MemoryBank_Astro_GetValue(8,&temp_read,0) ;  
+    MemoryBank_Astro_GetValue(9,(uint8_t *)&dimmer.fade[0],0);
+    dimmer.fade[0]+=(temp_read<<8);					// in seconds (mem_bank_nfc.mem_bank_astro.Astro_startup_fade_h<<8)+
     MemoryBank_Astro_GetValue(10,(uint8_t *)&dimmer.fade[1],0);
     dimmer.fade[1]*=2;
     
@@ -452,7 +508,7 @@ uint16_t AstroInit(void)
 	dimEnable = 1;//Set dimming flag
 	dimStep = 0;  //set default dimStep
     
-	if ( (dimmer.mode & ASTRO_TIME_BASE_MASK) == 0) 
+	if (dimmer.mode  == 1) 
     {
         // ------------------------------------------------------------------------- Astro Based
         dimmer.ontimeED = g_ed_time; 										// history    ed time   
@@ -602,200 +658,203 @@ uint16_t AstroTimer(void)
     uint16_t temp;
     uint8_t  tx_buff[9];
     static uint8_t min_level_count=50;
-	if ( count++>=200&&g_astro_flag)// every 1 second
+    
+    if(g_astro_flag)
+    {
+    if ( count++>=1)// every 1 second
     { 															        
-        count=0;
-	 	if(min_level_count++>50)
+      count=0;
+      if(min_level_count++>50)
+      {
+        min_level_count=0;
+        g_min_dim_level=Power_GetMinLevel();
+        //g_min_dim_level=4000;
+        for(i=0;i<6;i++)
         {
-            min_level_count=0;
-            g_min_dim_level=Power_GetMinLevel();
-            //g_min_dim_level=4000;
-            for(i=0;i<6;i++)
-            {
-                if(dimmer.level[i]*100<g_min_dim_level)
-                   dimmer.level[i]= (g_min_dim_level/100);
-            }
+          if(dimmer.level[i]*100<g_min_dim_level)
+            dimmer.level[i]= (g_min_dim_level/100);
         }
-        if (dimStep >= 5) 
+      }
+      if (dimStep >= 5) 
+      {
+        if(dimmer.mode == 1)//Astro Based
         {
-            if((dimmer.mode & ASTRO_TIME_BASE_MASK) == 0)//Astro Based
+          if(dimmer.fade[5]==0XEF1)// no swith off then keep level4
+            
+          {
+            return 0;									// >>>>>>>>>>>>>>  exit point !
+          }
+          
+          else   /*has switch off fade*/
+          {
+            if(dimmer.fade[5]!=0)//fade time is not 0
             {
-                if(dimmer.fade[5]==0XEF1)// no swith off then keep level4
-                    
+              if(dim_count++<dimmer.fade[dimStep])
+              {
+                /*not first dimming level*/
+                temp=dimmer.level[last_dim_level]*100;
+                /*get last dimming level*/
+                if(g_min_dim_level>(dimmer.level[last_dim_level]*100))
                 {
-                    return 0;									// >>>>>>>>>>>>>>  exit point !
+                  /*calculate current setting dimming level, if is increase the value.*/
+                  s_dim_percent=temp+((((g_min_dim_level))-temp)*dim_count)/dimmer.fade[5];
+                  
                 }
-                
-                else   /*has switch off fade*/
+                else
+                  
                 {
-                    if(dimmer.fade[5]!=0)//fade time is not 0
-                    {
-                        if(dim_count++<dimmer.fade[dimStep])
-                        {
-                            /*not first dimming level*/
-                            temp=dimmer.level[last_dim_level]*100;
-                            /*get last dimming level*/
-                            if(g_min_dim_level>(dimmer.level[last_dim_level]*100))
-                            {
-                                /*calculate current setting dimming level, if is increase the value.*/
-                                s_dim_percent=temp+((((g_min_dim_level))-temp)*dim_count)/dimmer.fade[5];
-                                
-                            }
-                            else
-                                
-                            {
-                                /*calculate current setting dimming level, if is decrease the value.*/
-                                s_dim_percent=temp-((temp-((g_min_dim_level)))*dim_count)/dimmer.fade[5];
-                                
-                            }
-                            /*update dimming level*/
-                            Power_SetAstroDimmingLevel(s_dim_percent);
-                            return 0;
-                        }
-                        else
-                        {
-                            dim_count=0;
-                            dimmer.fade[5]=0;
-                            return 0;
-                        }
-                    }
-                    else
-                    {
-                        Power_SetAstroDimmingLevel(g_min_dim_level);
-                        return 0;
-                    }
+                  /*calculate current setting dimming level, if is decrease the value.*/
+                  s_dim_percent=temp-((temp-((g_min_dim_level)))*dim_count)/dimmer.fade[5];
+                  
                 }
+                /*update dimming level*/
+                Power_SetAstroDimmingLevel(s_dim_percent);
+                return 0;
+              }
+              else
+              {
+                dim_count=0;
+                dimmer.fade[5]=0;
+                return 0;
+              }
             }
             else
             {
-                return 0;// Time based no switch off feature.
+              Power_SetAstroDimmingLevel(g_min_dim_level);
+              return 0;
             }
+          }
         }
-        
-        if(dimFlag==(1<<dimStep)&&flag==0)
+        else
         {
-           
-            flag=1;// flag for current Step
-            
-            dimFlag=0;
-            
-            astro_flag=1;// flag for Astro dimming counter at current dimming step
-        
+          return 0;// Time based no switch off feature.
         }
-        if(flag)
+      }
+      
+      if(dimFlag==(1<<dimStep)&&flag==0)
+      {
+        
+        flag=1;// flag for current Step
+        
+        dimFlag=0;
+        
+        astro_flag=1;// flag for Astro dimming counter at current dimming step
+        
+      }
+      if(flag)
+      {
+        if ( dimmer.stepcounter[ dimStep ] )
         {
-            if ( dimmer.stepcounter[ dimStep ] )
+          /*counter couting*/
+          dimmer.stepcounter[dimStep]-- ;   
+          
+          if(astro_flag==1)  
+          {   
+            if(dimmer.fade[dimStep]<=0)
             {
-                /*counter couting*/
-                dimmer.stepcounter[dimStep]-- ;   
-               
-                if(astro_flag==1)  
-                {   
-                    if(dimmer.fade[dimStep]<=0)
-                    {
-                        dimmer.fade[dimStep]=1;//make sure the fade time is not zero
-                    }
-                    /*Astro dimming handle*/
-                    if(dim_count++<dimmer.fade[dimStep])
-                    {
-                        /*level change within the fade time*/
-                        if(astro_first==0)
-                        {
-                            /*if it is first dimming step*/
-                            temp=g_min_dim_level;
-                            /*calculate dimming level linear change rate based on fade time*/
-                            if(temp<(dimmer.level[dimStep]*100))// if level is bigger than samllest level
-                            {
-                                s_dim_percent=temp+((((dimmer.level[dimStep])*100)-temp)*dim_count)/dimmer.fade[dimStep];
-                            }
-                            else
-                            {  /* min level is bigger than set value, set min value directly.*/
-                                s_dim_percent=temp;//3000+((temp-3000)*dim_count)/dimmer.fade[dimStep];//need to check
-                            }
-                            /*update PWM*/
-                            Power_SetAstroDimmingLevel(s_dim_percent);
-                       
-                        }
-                        else
-                        {   
-                            /*not first dimming level*/
-                            temp=dimmer.level[dimStep-1]*100;
-                            /*get last dimming level*/
-                            if(dimmer.level[dimStep]>dimmer.level[dimStep-1])
-                            {
-                                /*calculate current setting dimming level, if is increase the value.*/
-                                s_dim_percent=temp+((((dimmer.level[dimStep])*100)-temp)*dim_count)/dimmer.fade[dimStep];
-                            
-                            }
-                            else
-                            
-                            {
-                                /*calculate current setting dimming level, if is decrease the value.*/
-                                s_dim_percent=temp-((temp-((dimmer.level[dimStep])*100))*dim_count)/dimmer.fade[dimStep];
-                            
-                            }
-                            /*update dimming level*/
-                            Power_SetAstroDimmingLevel(s_dim_percent);
-                        }
-                    }
-                    else
-                    {
-                        /*fade time is over, wait current phase time over*/
-                        if(astro_first==0)
-                        {
-                            /*clear first dimming flag*/
-                            astro_first=1;
-                        
-                        }
-                        /*reset counter value*/
-                        dim_count=0;
-                        /*reset astro dimming step flag*/
-                        astro_flag=0;
-                    }
+              dimmer.fade[dimStep]=1;//make sure the fade time is not zero
+            }
+            /*Astro dimming handle*/
+            if(dim_count++<dimmer.fade[dimStep])
+            {
+              /*level change within the fade time*/
+              if(astro_first==0)
+              {
+                /*if it is first dimming step*/
+                temp=g_min_dim_level;
+                /*calculate dimming level linear change rate based on fade time*/
+                if(temp<(dimmer.level[dimStep]*100))// if level is bigger than samllest level
+                {
+                  s_dim_percent=temp+((((dimmer.level[dimStep])*100)-temp)*dim_count)/dimmer.fade[dimStep];
                 }
+                else
+                {  /* min level is bigger than set value, set min value directly.*/
+                  s_dim_percent=temp;//3000+((temp-3000)*dim_count)/dimmer.fade[dimStep];//need to check
+                }
+                /*update PWM*/
+                Power_SetAstroDimmingLevel(s_dim_percent);
                 
+              }
+              else
+              {   
+                /*not first dimming level*/
+                temp=dimmer.level[dimStep-1]*100;
+                /*get last dimming level*/
+                if(dimmer.level[dimStep]>dimmer.level[dimStep-1])
+                {
+                  /*calculate current setting dimming level, if is increase the value.*/
+                  s_dim_percent=temp+((((dimmer.level[dimStep])*100)-temp)*dim_count)/dimmer.fade[dimStep];
+                  
+                }
+                else
+                  
+                {
+                  /*calculate current setting dimming level, if is decrease the value.*/
+                  s_dim_percent=temp-((temp-((dimmer.level[dimStep])*100))*dim_count)/dimmer.fade[dimStep];
+                  
+                }
+                /*update dimming level*/
+                Power_SetAstroDimmingLevel(s_dim_percent);
+              }
             }
             else
             {
-                /* current setp counter is over*/
-                if ( dimmer.stepcounter[dimStep] <= 0)
-                {
-                    /*move to next step*/
-                    dimStep++;
-                    /*max step num is 5*/
-                    if (dimStep > 5) dimStep = 5;
-                    flag=0;
-                    /* clear flag for current setp astro dimming*/
-                    dimFlag=(1<<dimStep);
-                    /*move to next dimflag*/
-                    dim_count=0;
-                    /*clear dim_count*/
-                    astro_flag=0;
-                    /*clear current step dimming falg*/
-                }
+              /*fade time is over, wait current phase time over*/
+              if(astro_first==0)
+              {
+                /*clear first dimming flag*/
+                astro_first=1;
+                
+              }
+              /*reset counter value*/
+              dim_count=0;
+              /*reset astro dimming step flag*/
+              astro_flag=0;
             }
-        }              
-  	} 
+          }
+          
+        }
+        else
+        {
+          /* current setp counter is over*/
+          if ( dimmer.stepcounter[dimStep] <= 0)
+          {
+            /*move to next step*/
+            dimStep++;
+            /*max step num is 5*/
+            if (dimStep > 5) dimStep = 5;
+            flag=0;
+            /* clear flag for current setp astro dimming*/
+            dimFlag=(1<<dimStep);
+            /*move to next dimflag*/
+            dim_count=0;
+            /*clear dim_count*/
+            astro_flag=0;
+            /*clear current step dimming falg*/
+          }
+        }
+      }              
+    } 
     else
     {
-        if((I2cAreAllPendingTransfersDone()==1)&&nfc_local_state.fsm_state==nfc_fsm_state_idle)
-        {
-            /*nfc is idle*/
-            if (getMainsTimerMinutes() >= H24_CYCLE_MINUTES&&(dimmer.mode & ASTRO_TIME_BASE_MASK) == 0)// >>>  24 h TEST <<<<<<<<<<
-            {					                
-                //while (M24LRxx_WriteBuffer(NFC_RUNTIME_PRE,4,g_nfc_time)!=I2C_CODE_OK) //invalid on-time  and clear current working time      				                   
-                {
-                }
-                /*Reset current on time*/
-                g_last_ontime=g_nfc_time;
-                AstroInit(); 						// restart Astro !        
-                /*reset astro dimming first flag*/
-                astro_first=0;
-            }
+      if((I2cAreAllPendingTransfersDone()==1)&&nfc_local_state.fsm_state==nfc_fsm_state_idle)
+      {
+        /*nfc is idle*/
+        if (getMainsTimerMinutes() >= H24_CYCLE_MINUTES&&(dimmer.mode  == 1))// >>>  24 h TEST <<<<<<<<<<
+        {					                
+          //while (M24LRxx_WriteBuffer(NFC_RUNTIME_PRE,4,g_nfc_time)!=I2C_CODE_OK) //invalid on-time  and clear current working time      				                   
+          {
+          }
+          /*Reset current on time*/
+          g_last_ontime=g_nfc_time;
+          AstroInit(); 						// restart Astro !        
+          /*reset astro dimming first flag*/
+          astro_first=0;
         }
+      }
     }
-	return 0;
-    
+    return 0;
+    }
 }
 /*******************************************************************************
 * @Brief   getMainsTimerMinutes
@@ -917,6 +976,66 @@ void nfc_flash_write(void)
         //SysTick_Config(SYSCLK_Hz / SYSTICK_INT_Hz);//open systick
        // __enable_interrupt();// enable all interrupt   
     }
+}
+/******************************************************************************/
+void nfc_time_hanlde()
+{
+  uint8_t temp_mode=0;
+  extern uint8_t g_nfc_tag_read;
+  
+  if(nfc_local_state.fsm_state==nfc_fsm_state_idle&&I2cAreAllPendingTransfersDone())
+  {
+    switch (g_nfc_tag_read)
+    {
+    case 2:
+      
+      if(nfc_time_id()==1)
+      {
+        g_nfc_tag_read=3;
+      }
+      
+      break;
+      
+    case 3:
+      
+      MemoryBank_Astro_GetValue(6,(uint8_t *)&temp_mode,0) ;
+      if(temp_mode==1)
+      {
+        if(nfc_ed_record()==1)
+        {
+          
+          g_nfc_tag_read=4;
+          
+          g_astro_flag=1;
+          
+          //System_CreateTask(SYS_TASK_NFC_HANDLE);
+        }
+      }
+      else
+      {
+        if(temp_mode==5)//time based mode
+        {
+          AstroInit();
+          
+          g_astro_flag=1;
+          
+          //System_CreateTask(SYS_TASK_NFC_HANDLE);
+        }
+        g_nfc_tag_read=4;
+      }
+      
+      break;
+      
+    case 4:
+      
+       nfc_time_record();
+      
+      break;
+      
+    default:
+      break;
+    }
+  }
 }
 #endif /* MODULE_NFC */
 

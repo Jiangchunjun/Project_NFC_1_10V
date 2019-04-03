@@ -1,0 +1,447 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:55
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc1_flash.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc1_flash.c"
+#        -D XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\xmc1_flash.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\xmc1_flash.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc1_flash.c
+      1          /**
+      2           * @file xmc1_flash.c
+      3           * @date 2015-10-14
+      4           *
+      5           * @cond
+      6           *********************************************************************************************************************
+      7           * XMClib v2.1.6 - XMC Peripheral Driver Library 
+      8           *
+      9           * Copyright (c) 2015-2016, Infineon Technologies AG
+     10           * All rights reserved.                        
+     11           *                                             
+     12           * Redistribution and use in source and binary forms, with or without modification,are permitted provided that the 
+     13           * following conditions are met:   
+     14           *                                                                              
+     15           * Redistributions of source code must retain the above copyright notice, this list of conditions and the following 
+     16           * disclaimer.                        
+     17           * 
+     18           * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following 
+     19           * disclaimer in the documentation and/or other materials provided with the distribution.                       
+     20           * 
+     21           * Neither the name of the copyright holders nor the names of its contributors may be used to endorse or promote 
+     22           * products derived from this software without specific prior written permission.                                           
+     23           *                                                                              
+     24           * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, 
+     25           * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE  
+     26           * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+     27           * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR  
+     28           * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+     29           * WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+     30           * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                                                  
+     31           *                                                                              
+     32           * To improve the quality of the software, users are encouraged to share modifications, enhancements or bug fixes with 
+     33           * Infineon Technologies AG dave@infineon.com).                                                          
+     34           *********************************************************************************************************************
+     35           *
+     36           * Change History
+     37           * --------------
+     38           *
+     39           * 2015-02-10:
+     40           *     - Initial <br>
+     41           *
+     42           * 2015-06-20: 
+     43           *     - Removed definition of GetDriverVersion API 
+     44           *
+     45           * 2015-10-14: 
+     46           *     - Fixed defect in API XMC_FLASH_ErasePages, related to the errata NVM_CM.001
+     47           *     - NVM ROM user routine XMC1000_NvmErasePage(address) used for erase page. 
+     48           *
+     49           * @endcond 
+     50           *
+     51           */
+     52          
+     53          #include "xmc_flash.h"
+     54          
+     55          /*********************************************************************************************************************
+     56           * MACROS
+     57           ********************************************************************************************************************/
+     58          #if UC_FAMILY == XMC1
+     59          
+     60          /*********************************************************************************************************************
+     61           * ENUMS
+     62           ********************************************************************************************************************/
+     63          /* FLASH programming / erase options */
+     64          typedef enum FLASH_ACTION
+     65          {
+     66            FLASH_ACTION_IDLE                        =  (uint32_t)0x00,
+     67            FLASH_ACTION_ONESHOT_WRITE_VERIFY        = ((uint32_t)0x51 << NVM_NVMPROG_ACTION_Pos),
+     68            FLASH_ACTION_ONESHOT_WRITE               = ((uint32_t)0x91 << NVM_NVMPROG_ACTION_Pos),
+     69            FLASH_ACTION_CONTINUOUS_WRITE_VERIFY     = ((uint32_t)0x61 << NVM_NVMPROG_ACTION_Pos),
+     70            FLASH_ACTION_CONTINUOUS_WRITE            = ((uint32_t)0xa1 << NVM_NVMPROG_ACTION_Pos),
+     71            FLASH_ACTION_ONESHOT_PAGE_ERASE          = ((uint32_t)0x92 << NVM_NVMPROG_ACTION_Pos),
+     72            FLASH_ACTION_CONTINUOUS_PAGE_ERASE       = ((uint32_t)0xa2 << NVM_NVMPROG_ACTION_Pos),
+     73            FLASH_ACTION_ONESHOT_VERIFY_ONLY         = ((uint32_t)0xd0 << NVM_NVMPROG_ACTION_Pos),
+     74            FLASH_ACTION_CONTINUOUS_VERIFY_ONLY      = ((uint32_t)0xe0 << NVM_NVMPROG_ACTION_Pos)
+     75          } FLASH_ACTION_t;
+     76          
+     77          
+     78          /*********************************************************************************************************************
+     79           * API IMPLEMENTATION
+     80           ********************************************************************************************************************/
+     81          
+     82          /*
+     83           * This API shall clear the ECC and VERIFICATION error status.
+     84           */
+     85          void XMC_FLASH_ClearStatus(void)
+     86          {
+     87            NVM->NVMPROG |= (uint16_t)((uint16_t)NVM_NVMPROG_RSTVERR_Msk | (uint16_t)NVM_NVMPROG_RSTECC_Msk);
+     88          }
+     89          
+     90          /*
+     91           * This API shall return the status of NVM.
+     92           */
+     93          uint32_t XMC_FLASH_GetStatus(void)
+     94          {
+     95            return NVM->NVMSTATUS;
+     96          }
+     97          
+     98          /*
+     99           * This API shall enable the the flash interrupt event.
+    100           */
+    101          void XMC_FLASH_EnableEvent(const uint32_t event_msk)
+    102          {
+    103            NVM->NVMCONF |= (uint16_t)event_msk;
+    104          }
+    105          
+    106          /*
+    107           * This API shall disable the the flash interrupt event.
+    108           */
+    109          void XMC_FLASH_DisableEvent(const uint32_t event_msk)
+    110          {
+    111            NVM->NVMCONF &= (uint16_t)(~(uint16_t)event_msk);
+    112          }
+    113          
+    114          void XMC_FLASH_ErasePage(uint32_t *address)
+    115          {
+    116            (void)XMC1000_NvmErasePage(address);
+    117          }
+    118          
+    119          void XMC_FLASH_ProgramVerifyPage(uint32_t *address, const uint32_t *data)
+    120          {
+    121            (void)XMC1000_NvmProgVerify(data, address);
+    122          }
+    123          
+    124          /* Write blocks of data into flash*/
+    125          void XMC_FLASH_WriteBlocks(uint32_t *address, const uint32_t *data, uint32_t num_blocks, bool verify)
+    126          {
+    127            uint32_t word;
+    128            uint32_t block;
+    129          
+    130            XMC_ASSERT("XMC_FLASH_WriteBlocks: Starting address not aligned to Block",
+    131                                                                             ((uint32_t)address & FLASH_BLOCK_ADDR_MASK) == 0U)
+    132          
+    133            /* Configure the continuous Write option command and reset the NVM error / verification status*/
+    134            NVM->NVMPROG &= (uint16_t)(~(uint16_t)NVM_NVMPROG_ACTION_Msk);
+    135            NVM->NVMPROG |= (uint16_t)(NVM_NVMPROG_RSTVERR_Msk | NVM_NVMPROG_RSTECC_Msk);
+    136          
+    137            if (verify == true)
+    138            {
+    139              NVM->NVMPROG |= (uint16_t)FLASH_ACTION_CONTINUOUS_WRITE_VERIFY;
+    140            }
+    141            else
+    142            {
+    143              NVM->NVMPROG |= (uint16_t)FLASH_ACTION_CONTINUOUS_WRITE;
+    144            }
+    145          
+    146            for (block = 0U; block < num_blocks; ++block)
+    147            {
+    148              for (word = 0U; word < XMC_FLASH_WORDS_PER_BLOCK; ++word)
+    149              {
+    150                *address = *data;
+    151                data++;
+    152                address++;
+    153              }
+    154                
+    155              while (XMC_FLASH_IsBusy() == true)
+    156              {
+    157              }
+    158            }
+    159          
+    160            /* Stop continuous write operation */
+    161            NVM->NVMPROG &= (uint16_t)(~(uint16_t)NVM_NVMPROG_ACTION_Msk);
+    162          }
+    163          
+    164          /* Erase flash pages */
+    165          void XMC_FLASH_ErasePages(uint32_t *address, uint32_t num_pages)
+    166          {
+    167            uint32_t page;
+    168          
+    169            XMC_ASSERT("XMC_FLASH_ErasePages: Starting address not aligned to Page",
+    170                                                                              ((uint32_t)address & FLASH_PAGE_ADDR_MASK) == 0U)
+    171          
+    172            for (page = 0U; page < num_pages; ++page)
+    173            {
+    174              (void)XMC1000_NvmErasePage(address);
+    175          
+    176              while (XMC_FLASH_IsBusy() == true)
+    177              {
+    178              }
+    179          
+    180              /* Increment the page address for the next erase */
+    181              address += XMC_FLASH_WORDS_PER_PAGE;
+    182          
+    183            }
+    184          
+    185          }
+    186          
+    187          /* Write multiple data blocks and verify the written data */
+    188          void XMC_FLASH_VerifyBlocks(uint32_t *address, const uint32_t *data, uint32_t num_blocks)
+    189          {
+    190            uint32_t word;
+    191            uint32_t block;
+    192          
+    193            XMC_ASSERT("XMC_FLASH_VerifyBlocks: Starting address not aligned to Block",
+    194                                                                             ((uint32_t)address & FLASH_BLOCK_ADDR_MASK) == 0U)
+    195          
+    196            /* Configure the Continuous write with verify option command and reset the NVM error / verification status*/
+    197            NVM->NVMPROG &= (uint16_t)~NVM_NVMPROG_ACTION_Msk;
+    198            NVM->NVMPROG |= (uint16_t)((uint16_t)NVM_NVMPROG_RSTVERR_Msk | 
+    199                                       (uint16_t)NVM_NVMPROG_RSTECC_Msk | 
+    200                                       (uint16_t)FLASH_ACTION_CONTINUOUS_VERIFY_ONLY);
+    201          
+    202            for (block = 0U; block < num_blocks; ++block)
+    203            {
+    204              for (word = 0U; word < XMC_FLASH_WORDS_PER_BLOCK; ++word)
+    205              {
+    206                *address = *data;
+    207                data++;
+    208                address++;
+    209              }
+    210          
+    211              while (XMC_FLASH_IsBusy() == true)
+    212              {
+    213              }
+    214            }
+    215          
+    216            /* Stop continuous verify operation */
+    217            NVM->NVMPROG &= (uint16_t)(~(uint16_t)NVM_NVMPROG_ACTION_Msk);
+    218          }
+    219          
+    220          /* Read data blocks from flash */
+    221          void XMC_FLASH_ReadBlocks(uint32_t *address, uint32_t *data, uint32_t num_blocks)
+    222          {
+    223            uint32_t word;
+    224            uint32_t block;
+    225          
+    226            XMC_ASSERT("XMC_FLASH_ReadBlocks: Starting address not aligned to Block",
+    227                                                                            ((uint32_t)address & FLASH_BLOCK_ADDR_MASK) == 0U)
+    228          
+    229            for (block = 0U; block < num_blocks; ++block)
+    230            {
+    231              for (word = 0U; word < XMC_FLASH_WORDS_PER_BLOCK; ++word)
+    232              {
+    233                *data = *address;
+    234                data++;
+    235                address++;
+    236              }
+    237            }
+    238          }
+    239          
+    240          /* Erase single sector */
+    241          void XMC_FLASH_EraseSector(uint32_t *address)
+    242          {
+    243            XMC_ASSERT("XMC_FLASH_EraseSector: Starting address not aligned to Sector",
+    244                                                                           ((uint32_t)address & FLASH_SECTOR_ADDR_MASK) == 0U)
+    245            XMC_FLASH_ErasePages(address, XMC_FLASH_PAGES_PER_SECTOR);
+    246          }
+    247          
+    248          /* Program single page */
+    249          void XMC_FLASH_ProgramPage(uint32_t *address, const uint32_t *data)
+    250          {
+    251            XMC_FLASH_ProgramVerifyPage(address, data);
+    252          }
+    253          
+    254          #endif
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   XMC_FLASH_ClearStatus
+       0   XMC_FLASH_DisableEvent
+       0   XMC_FLASH_EnableEvent
+       8   XMC_FLASH_ErasePage
+         8   -- Indirect call
+      16   XMC_FLASH_ErasePages
+        16   -- Indirect call
+        16   -> XMC_FLASH_IsBusy
+       8   XMC_FLASH_EraseSector
+         8   -> XMC_FLASH_ErasePages
+       0   XMC_FLASH_GetStatus
+       8   XMC_FLASH_IsBusy
+         8   -> XMC_FLASH_GetStatus
+       8   XMC_FLASH_ProgramPage
+         8   -> XMC_FLASH_ProgramVerifyPage
+       8   XMC_FLASH_ProgramVerifyPage
+         8   -- Indirect call
+      12   XMC_FLASH_ReadBlocks
+      24   XMC_FLASH_VerifyBlocks
+        24   -> XMC_FLASH_IsBusy
+      24   XMC_FLASH_WriteBlocks
+        24   -> XMC_FLASH_IsBusy
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable5
+       4  ??DataTable5_1
+       4  ??DataTable5_2
+       4  ??DataTable5_3
+      16  XMC_FLASH_ClearStatus
+      12  XMC_FLASH_DisableEvent
+      12  XMC_FLASH_EnableEvent
+      12  XMC_FLASH_ErasePage
+      42  XMC_FLASH_ErasePages
+      10  XMC_FLASH_EraseSector
+       8  XMC_FLASH_GetStatus
+      16  XMC_FLASH_IsBusy
+       8  XMC_FLASH_ProgramPage
+      18  XMC_FLASH_ProgramVerifyPage
+      32  XMC_FLASH_ReadBlocks
+      86  XMC_FLASH_VerifyBlocks
+     120  XMC_FLASH_WriteBlocks
+
+ 
+ 408 bytes in section .text
+ 
+ 408 bytes of CODE memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,573 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:58
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc_usic.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc_usic.c"
+#        -D XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\xmc_usic.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\xmc_usic.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc_usic.c
+      1          /**
+      2           * @file xmc_usic.c
+      3           * @date 2015-09-01
+      4           *
+      5           * @cond
+      6            *********************************************************************************************************************
+      7           * XMClib v2.1.6 - XMC Peripheral Driver Library 
+      8           *
+      9           * Copyright (c) 2015-2016, Infineon Technologies AG
+     10           * All rights reserved.                        
+     11           *                                             
+     12           * Redistribution and use in source and binary forms, with or without modification,are permitted provided that the 
+     13           * following conditions are met:   
+     14           *                                                                              
+     15           * Redistributions of source code must retain the above copyright notice, this list of conditions and the following 
+     16           * disclaimer.                        
+     17           * 
+     18           * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following 
+     19           * disclaimer in the documentation and/or other materials provided with the distribution.                       
+     20           * 
+     21           * Neither the name of the copyright holders nor the names of its contributors may be used to endorse or promote 
+     22           * products derived from this software without specific prior written permission.                                           
+     23           *                                                                              
+     24           * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, 
+     25           * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE  
+     26           * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+     27           * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR  
+     28           * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+     29           * WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+     30           * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                                                  
+     31           *                                                                              
+     32           * To improve the quality of the software, users are encouraged to share modifications, enhancements or bug fixes with 
+     33           * Infineon Technologies AG dave@infineon.com).                                                          
+     34           *********************************************************************************************************************
+     35           *
+     36           * Change History
+     37           * --------------
+     38           *
+     39           * 2015-02-20:
+     40           *     - Initial draft <br>
+     41           *     - Documentation improved <br>
+     42           *
+     43           * 2015-05-08:
+     44           *     - Clearing bit fields PDIV, PCTQ, PPPEN in XMC_USIC_CH_SetBaudrate() API <br>
+     45           *      
+     46           * 2015-06-20:
+     47           *     - Removed version macros and declaration of GetDriverVersion API <br>
+     48           *
+     49           * 2015-08-27:
+     50           *     - Added APIs for external input for BRG configuration:XMC_USIC_CH_ConfigExternalInputSignalToBRG() <br>
+     51           *
+     52           * 2015-08-28:
+     53           *     - Added asserts to XMC_USIC_CH_ConfigExternalInputSignalToBRG() <br>
+     54           *
+     55           * 2015-09-01:
+     56           *     - Fixed warning in the asserts <br>
+     57           *
+     58           * @endcond
+     59           *
+     60           */
+     61          
+     62          /*******************************************************************************
+     63           * HEADER FILES
+     64           *******************************************************************************/
+     65          
+     66          #include "xmc_usic.h"
+     67          #include "xmc_scu.h"
+     68          
+     69          /*******************************************************************************
+     70           * MACROS
+     71           *******************************************************************************/
+     72          
+     73          #define USIC_CH_INPR_Msk       (0x7UL)
+     74          
+     75          /*******************************************************************************
+     76           * API IMPLEMENTATION
+     77           *******************************************************************************/
+     78          
+     79          void XMC_USIC_CH_Enable(XMC_USIC_CH_t *const channel)
+     80          {
+     81            XMC_ASSERT("XMC_USIC_CH_Enable: channel not valid", XMC_USIC_IsChannelValid(channel));
+     82          
+     83            if ((channel == XMC_USIC0_CH0) || (channel == XMC_USIC0_CH1))
+     84            {
+     85              XMC_USIC_Enable(XMC_USIC0);
+     86            }
+     87          #if defined(USIC1)
+     88            else if((channel == XMC_USIC1_CH0) || (channel == XMC_USIC1_CH1))
+     89            {
+     90              XMC_USIC_Enable(XMC_USIC1);
+     91            }
+     92          #endif
+     93          #if defined(USIC2)
+     94            else if((channel == XMC_USIC2_CH0) || (channel == XMC_USIC2_CH1))
+     95            {
+     96              XMC_USIC_Enable(XMC_USIC2);
+     97            }
+     98          #endif
+     99            else
+    100            {
+    101              XMC_ASSERT("USIC module not available", 0U/*Always*/);
+    102            }
+    103          
+    104            /* USIC channel switched on*/
+    105            channel->KSCFG = (USIC_CH_KSCFG_MODEN_Msk | USIC_CH_KSCFG_BPMODEN_Msk);
+    106            while ((channel->KSCFG & USIC_CH_KSCFG_MODEN_Msk) == 0U)
+    107            {
+    108              /* Wait till the channel is enabled */
+    109            }
+    110          
+    111            /* Set USIC channel in IDLE mode */
+    112            channel->CCR &= (uint32_t)~USIC_CH_CCR_MODE_Msk;
+    113          }
+    114          
+    115          void XMC_USIC_CH_Disable(XMC_USIC_CH_t *const channel)
+    116          {
+    117            channel->KSCFG = (uint32_t)((channel->KSCFG & (~USIC_CH_KSCFG_MODEN_Msk)) | USIC_CH_KSCFG_BPMODEN_Msk);
+    118          }
+    119          
+    120          XMC_USIC_CH_STATUS_t XMC_USIC_CH_SetBaudrate(XMC_USIC_CH_t *const channel, uint32_t rate, uint32_t oversampling)
+    121          {
+    122            XMC_USIC_CH_STATUS_t status;
+    123            
+    124            uint32_t peripheral_clock;
+    125            
+    126            uint32_t clock_divider;
+    127            uint32_t clock_divider_min;
+    128          
+    129            uint32_t pdiv;
+    130            uint32_t pdiv_int;
+    131            uint32_t pdiv_int_min;
+    132            
+    133            uint32_t pdiv_frac;
+    134            uint32_t pdiv_frac_min;
+    135          
+    136            /* The rate and peripheral clock are divided by 100 to be able to use only 32bit arithmetic */
+    137            if ((rate >= 100U) && (oversampling != 0U))
+    138            {
+    139              peripheral_clock = XMC_SCU_CLOCK_GetPeripheralClockFrequency() / 100U;
+    140              rate = rate / 100U;
+    141          
+    142              clock_divider_min = 1U;
+    143              pdiv_int_min = 1U;
+    144              pdiv_frac_min = 0x3ffU;
+    145          
+    146              for(clock_divider = 1023U; clock_divider > 0U; --clock_divider)
+    147              {
+    148                pdiv = ((peripheral_clock * clock_divider) / (rate * oversampling));
+    149                pdiv_int = pdiv >> 10U;
+    150                pdiv_frac = pdiv & 0x3ffU;
+    151          
+    152                if ((pdiv_int < 1024U) && (pdiv_frac < pdiv_frac_min))
+    153                {
+    154                  pdiv_frac_min = pdiv_frac;
+    155                  pdiv_int_min = pdiv_int;
+    156                  clock_divider_min = clock_divider;
+    157                }
+    158              }
+    159          
+    160              channel->FDR = XMC_USIC_CH_BRG_CLOCK_DIVIDER_MODE_FRACTIONAL |
+    161                             (clock_divider_min << USIC_CH_FDR_STEP_Pos);
+    162          
+    163              channel->BRG = (channel->BRG & ~(USIC_CH_BRG_DCTQ_Msk |
+    164                                               USIC_CH_BRG_PDIV_Msk |
+    165                                               USIC_CH_BRG_PCTQ_Msk |
+    166                                               USIC_CH_BRG_PPPEN_Msk)) |
+    167                             ((oversampling - 1U) << USIC_CH_BRG_DCTQ_Pos) |
+    168                             ((pdiv_int_min - 1U) << USIC_CH_BRG_PDIV_Pos);
+    169                              
+    170              status = XMC_USIC_CH_STATUS_OK;
+    171            }
+    172            else 
+    173            {
+    174              status = XMC_USIC_CH_STATUS_ERROR;
+    175            }
+    176            
+    177            return status;
+    178          }
+    179          
+    180          void XMC_USIC_CH_ConfigExternalInputSignalToBRG(XMC_USIC_CH_t *const channel,
+    181          		                                        const uint16_t pdiv,
+    182          												const uint32_t oversampling,
+    183          												const XMC_USIC_CH_INPUT_COMBINATION_MODE_t combination_mode)
+    184          {
+    185            XMC_ASSERT("XMC_USIC_CH_ConfigExternalInputSignalToBRG: Divider out of range", ((1U < pdiv) || (pdiv < 1024U)));
+    186            XMC_ASSERT("XMC_USIC_CH_ConfigExternalInputSignalToBRG: Oversampling out of range", ((1U < oversampling) || (oversampling < 32U)));
+    187          
+    188            /* Setting the external input frequency source through DX1 */
+    189            XMC_USIC_CH_SetBRGInputClockSource(channel, XMC_USIC_CH_BRG_CLOCK_SOURCE_DX1T);
+    190          
+    191            /* Setting the trigger combination mode */
+    192            XMC_USIC_CH_SetInputTriggerCombinationMode(channel,XMC_USIC_CH_INPUT_DX1,combination_mode);
+    193          
+    194            /* Configuring the dividers and oversampling */
+    195            channel->BRG = (channel->BRG & ~(USIC_CH_BRG_DCTQ_Msk |
+    196                                             USIC_CH_BRG_PDIV_Msk |
+    197                                             USIC_CH_BRG_PCTQ_Msk |
+    198                                             USIC_CH_BRG_PPPEN_Msk)) |
+    199                            (((oversampling) - 1U) << USIC_CH_BRG_DCTQ_Pos) |
+    200                            (((pdiv) - 1U) << USIC_CH_BRG_PDIV_Pos);
+    201          }
+    202          
+    203          void XMC_USIC_CH_TXFIFO_Configure(XMC_USIC_CH_t *const channel,
+    204                                            const uint32_t data_pointer,
+    205                                            const XMC_USIC_CH_FIFO_SIZE_t size,
+    206                                            const uint32_t limit)
+    207          {
+    208            /* Disable FIFO */
+    209            channel->TBCTR &= (uint32_t)~USIC_CH_TBCTR_SIZE_Msk;
+    210          
+    211            /* LOF = 0, A standard transmit buffer event occurs when the filling level equals the limit value and gets
+    212             * lower due to transmission of a data word
+    213             * STBTEN = 0, the trigger of the standard transmit buffer event is based on the transition of the fill level
+    214             *  from equal to below the limit, not the fact being below
+    215             */
+    216            channel->TBCTR = (uint32_t)(channel->TBCTR & (uint32_t)~(USIC_CH_TBCTR_LIMIT_Msk |
+    217                                                                     USIC_CH_TBCTR_DPTR_Msk |
+    218                                                                     USIC_CH_TBCTR_SIZE_Msk)) |
+    219                             (uint32_t)((limit << USIC_CH_TBCTR_LIMIT_Pos) |
+    220                             (data_pointer << USIC_CH_TBCTR_DPTR_Pos) |
+    221                             ((uint32_t)size << USIC_CH_TBCTR_SIZE_Pos));
+    222          }
+    223          
+    224          
+    225          void XMC_USIC_CH_RXFIFO_Configure(XMC_USIC_CH_t *const channel,
+    226                                            const uint32_t data_pointer,
+    227                                            const XMC_USIC_CH_FIFO_SIZE_t size,
+    228                                            const uint32_t limit)
+    229          {
+    230            /* Disable FIFO */
+    231            channel->RBCTR &= (uint32_t)~USIC_CH_RBCTR_SIZE_Msk;
+    232          
+    233            /* LOF = 1, A standard receive buffer event occurs when the filling level equals the limit value and gets bigger
+    234             *  due to the reception of a new data word
+    235             */
+    236            channel->RBCTR = (uint32_t)((channel->RBCTR & (uint32_t)~(USIC_CH_RBCTR_LIMIT_Msk |
+    237                                                                      USIC_CH_RBCTR_DPTR_Msk |
+    238                                                                      USIC_CH_RBCTR_LOF_Msk)) |
+    239                             ((limit << USIC_CH_RBCTR_LIMIT_Pos) |
+    240                             (data_pointer << USIC_CH_RBCTR_DPTR_Pos) |
+    241                             ((uint32_t)size << USIC_CH_RBCTR_SIZE_Pos) |
+    242                             (uint32_t)USIC_CH_RBCTR_LOF_Msk));
+    243          }
+    244          
+    245          void XMC_USIC_CH_TXFIFO_SetSizeTriggerLimit(XMC_USIC_CH_t *const channel,
+    246                                                      const XMC_USIC_CH_FIFO_SIZE_t size,
+    247                                                      const uint32_t limit)
+    248          {
+    249            /* Disable FIFO */
+    250            channel->TBCTR &= (uint32_t)~USIC_CH_TBCTR_SIZE_Msk;
+    251          
+    252            /* STBTEN = 0, the trigger of the standard transmit buffer event is based on the transition of the fill level
+    253             *  from equal to below the limit, not the fact being below
+    254             */
+    255            channel->TBCTR = (uint32_t)((uint32_t)(channel->TBCTR & (uint32_t)~USIC_CH_TBCTR_LIMIT_Msk) |
+    256                             (limit << USIC_CH_TBCTR_LIMIT_Pos) |
+    257                             ((uint32_t)size << USIC_CH_TBCTR_SIZE_Pos));
+    258          }
+    259          
+    260          void XMC_USIC_CH_RXFIFO_SetSizeTriggerLimit(XMC_USIC_CH_t *const channel,
+    261                                                      const XMC_USIC_CH_FIFO_SIZE_t size,
+    262                                                      const uint32_t limit)
+    263          {
+    264            /* Disable FIFO */
+    265            channel->RBCTR &= (uint32_t)~USIC_CH_RBCTR_SIZE_Msk;
+    266          
+    267            channel->RBCTR = (uint32_t)((uint32_t)(channel->RBCTR & (uint32_t)~USIC_CH_RBCTR_LIMIT_Msk) |
+    268                             (limit << USIC_CH_RBCTR_LIMIT_Pos) |
+    269                             ((uint32_t)size << USIC_CH_RBCTR_SIZE_Pos));
+    270          }
+    271          
+    272          void XMC_USIC_CH_SetInterruptNodePointer(XMC_USIC_CH_t *const channel,
+    273                                                   const XMC_USIC_CH_INTERRUPT_NODE_POINTER_t interrupt_node,
+    274                                                   const uint32_t service_request)
+    275          {
+    276            channel->INPR = (uint32_t)((channel->INPR & (~(uint32_t)(USIC_CH_INPR_Msk << (uint32_t)interrupt_node))) |
+    277                            (service_request << (uint32_t)interrupt_node));
+    278          }
+    279          
+    280          void XMC_USIC_CH_TXFIFO_SetInterruptNodePointer(XMC_USIC_CH_t *const channel,
+    281                                                          const XMC_USIC_CH_TXFIFO_INTERRUPT_NODE_POINTER_t interrupt_node,
+    282                                                          const uint32_t service_request)
+    283          {
+    284            channel->TBCTR = (uint32_t)((channel->TBCTR & (~(uint32_t)(USIC_CH_INPR_Msk << (uint32_t)interrupt_node))) |
+    285                             (service_request << (uint32_t)interrupt_node));
+    286          }
+    287          
+    288          void XMC_USIC_CH_RXFIFO_SetInterruptNodePointer(XMC_USIC_CH_t *const channel,
+    289                                                          const XMC_USIC_CH_RXFIFO_INTERRUPT_NODE_POINTER_t interrupt_node,
+    290                                                          const uint32_t service_request)
+    291          {
+    292            channel->RBCTR = (uint32_t)((channel->RBCTR & (~(uint32_t)(USIC_CH_INPR_Msk << (uint32_t)interrupt_node))) |
+    293                             (service_request << (uint32_t)interrupt_node));
+    294          }
+    295          
+    296          void XMC_USIC_Enable(XMC_USIC_t *const usic)
+    297          {
+    298            if (usic == USIC0)
+    299            {
+    300          #if defined(CLOCK_GATING_SUPPORTED)
+    301              XMC_SCU_CLOCK_UngatePeripheralClock(XMC_SCU_PERIPHERAL_CLOCK_USIC0);
+    302          #endif
+    303          #if defined(PERIPHERAL_RESET_SUPPORTED)
+    304              XMC_SCU_RESET_DeassertPeripheralReset(XMC_SCU_PERIPHERAL_RESET_USIC0);
+    305          #endif	
+    306            }
+    307          #if defined(USIC1)  
+    308            else if (usic == USIC1)
+    309            {
+    310          #if defined(CLOCK_GATING_SUPPORTED)
+    311              XMC_SCU_CLOCK_UngatePeripheralClock(XMC_SCU_PERIPHERAL_CLOCK_USIC1);
+    312          #endif	
+    313          #if defined(PERIPHERAL_RESET_SUPPORTED)
+    314              XMC_SCU_RESET_DeassertPeripheralReset(XMC_SCU_PERIPHERAL_RESET_USIC1);
+    315          #endif	
+    316            }
+    317          #endif  
+    318          #if defined(USIC2)  
+    319            else if (usic == USIC2)
+    320            {
+    321          #if defined(CLOCK_GATING_SUPPORTED) 
+    322              XMC_SCU_CLOCK_UngatePeripheralClock(XMC_SCU_PERIPHERAL_CLOCK_USIC2);
+    323          #endif
+    324          #if defined(PERIPHERAL_RESET_SUPPORTED)
+    325              XMC_SCU_RESET_DeassertPeripheralReset(XMC_SCU_PERIPHERAL_RESET_USIC2);
+    326          #endif	
+    327            }
+    328          #endif  
+    329            else
+    330            {
+    331              XMC_ASSERT("USIC module not available", 0/*Always*/);
+    332            }
+    333          }
+    334          
+    335          void XMC_USIC_Disable(XMC_USIC_t *const usic)
+    336          {
+    337            if (usic == (XMC_USIC_t *)USIC0)
+    338            {
+    339          #if defined(PERIPHERAL_RESET_SUPPORTED)  
+    340              XMC_SCU_RESET_AssertPeripheralReset(XMC_SCU_PERIPHERAL_RESET_USIC0);
+    341          #endif	
+    342          #if defined(CLOCK_GATING_SUPPORTED) 
+    343              XMC_SCU_CLOCK_GatePeripheralClock(XMC_SCU_PERIPHERAL_CLOCK_USIC0);
+    344          #endif
+    345            }
+    346          #if defined(USIC1)  
+    347            else if (usic == (XMC_USIC_t *)USIC1)
+    348            {
+    349          #if defined(PERIPHERAL_RESET_SUPPORTED)  
+    350              XMC_SCU_RESET_AssertPeripheralReset(XMC_SCU_PERIPHERAL_RESET_USIC1);
+    351          #endif	
+    352          #if defined(CLOCK_GATING_SUPPORTED) 
+    353              XMC_SCU_CLOCK_GatePeripheralClock(XMC_SCU_PERIPHERAL_CLOCK_USIC1);
+    354          #endif
+    355            }
+    356          #endif  
+    357          #if defined(USIC2)  
+    358            else if (usic == (XMC_USIC_t *)USIC2)
+    359            {
+    360          #if defined(PERIPHERAL_RESET_SUPPORTED)  
+    361              XMC_SCU_RESET_AssertPeripheralReset(XMC_SCU_PERIPHERAL_RESET_USIC2);
+    362          #endif	
+    363          #if defined(CLOCK_GATING_SUPPORTED) 
+    364              XMC_SCU_CLOCK_GatePeripheralClock(XMC_SCU_PERIPHERAL_CLOCK_USIC2);
+    365          #endif
+    366            }
+    367          #endif  
+    368            else
+    369            {
+    370          	  XMC_ASSERT("USIC module not available", 0/*Always*/);
+    371            }
+    372            
+    373          }
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      24   XMC_USIC_CH_ConfigExternalInputSignalToBRG
+        24   -> XMC_USIC_CH_SetBRGInputClockSource
+        24   -> XMC_USIC_CH_SetInputTriggerCombinationMode
+       0   XMC_USIC_CH_Disable
+       8   XMC_USIC_CH_Enable
+         8   -> XMC_USIC_Enable
+       8   XMC_USIC_CH_RXFIFO_Configure
+       4   XMC_USIC_CH_RXFIFO_SetInterruptNodePointer
+       4   XMC_USIC_CH_RXFIFO_SetSizeTriggerLimit
+       0   XMC_USIC_CH_SetBRGInputClockSource
+      40   XMC_USIC_CH_SetBaudrate
+        40   -> XMC_SCU_CLOCK_GetPeripheralClockFrequency
+        40 __aeabi_uidiv
+       4   XMC_USIC_CH_SetInputTriggerCombinationMode
+       4   XMC_USIC_CH_SetInterruptNodePointer
+       8   XMC_USIC_CH_TXFIFO_Configure
+       4   XMC_USIC_CH_TXFIFO_SetInterruptNodePointer
+       4   XMC_USIC_CH_TXFIFO_SetSizeTriggerLimit
+       8   XMC_USIC_Disable
+         8   -> XMC_SCU_CLOCK_GatePeripheralClock
+       8   XMC_USIC_Enable
+         8   -> XMC_SCU_CLOCK_UngatePeripheralClock
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable9
+       4  ??DataTable9_1
+       4  ??DataTable9_2
+       4  ??DataTable9_3
+       4  ??DataTable9_4
+       4  ??DataTable9_5
+       4  ??DataTable9_6
+       4  ??DataTable9_7
+       4  ??DataTable9_8
+      54  XMC_USIC_CH_ConfigExternalInputSignalToBRG
+      14  XMC_USIC_CH_Disable
+      44  XMC_USIC_CH_Enable
+      56  XMC_USIC_CH_RXFIFO_Configure
+      28  XMC_USIC_CH_RXFIFO_SetInterruptNodePointer
+      48  XMC_USIC_CH_RXFIFO_SetSizeTriggerLimit
+      14  XMC_USIC_CH_SetBRGInputClockSource
+     144  XMC_USIC_CH_SetBaudrate
+      36  XMC_USIC_CH_SetInputTriggerCombinationMode
+      20  XMC_USIC_CH_SetInterruptNodePointer
+      50  XMC_USIC_CH_TXFIFO_Configure
+      28  XMC_USIC_CH_TXFIFO_SetInterruptNodePointer
+      48  XMC_USIC_CH_TXFIFO_SetSizeTriggerLimit
+      16  XMC_USIC_Disable
+      16  XMC_USIC_Enable
+
+ 
+ 652 bytes in section .text
+ 
+ 652 bytes of CODE memory
+
+Errors: none
+Warnings: none

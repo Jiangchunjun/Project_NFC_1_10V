@@ -1,0 +1,814 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:50
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\Dali\DaliServices\DaliServices.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\Dali\DaliServices\DaliServices.c"
+#        -D XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\DaliServices.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\DaliServices.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\Dali\DaliServices\DaliServices.c
+      1          /******************** (C) COPYRIGHT OSRAM GmbH ****************************************************************************************************************
+      2          * File Name         : DaliServices.c (Template)
+      3          * Description       : Definition of the Interface-functions providing device specific code, which is needed for the Dali protocol.
+      4          *                     These functions are declared in DaliServices.h and called by the DALI Ballast library.
+      5          *                     For functions marked as mandatory, please write the function body according to the demands of your your device.
+      6          *                     For functions marked as optional, write the function body, IF your device needs this function. ELSE: delete this function.
+      7          * Author(s)         : Jutta Avril (JA), DS D LMS-COM DE-2
+      8          * Created           : 04.08.2014 (JA)         Providing all (empty) functions, which are declared in DaliServices.h
+      9          * Modified by       : DATE       (AUTHOR)     Writing the device-specific function bodies
+     10          **************************************************************************************************************************************************************/
+     11          /// \file
+     12          ///
+     13          
+     14          #include <stdint.h>
+     15          #include <stdbool.h>
+     16          #include <parameter.h>
+     17          
+     18          #define MODULE_DALI
+     19          #include <Config.h>
+     20          #include <DaliDeviceType_FEATURES.h>                                                                                    // all definitions needed for the selected configDeviceType
+     21          #include <DaliServices.h>
+     22          #include <MpcDefs.h>
+     23          #include <ConfigNvm.h>
+     24          #include <nvm.h>
+     25          #include <nfc.h>
+     26          
+     27          ////#include <god_userinterface.h>
+     28          //#include <analog_userinterface.h>
+     29          //#include <os3_userinterface.h>
+     30          //#include <currentset_userinterface.h>
+     31          //#include <SupplyMonitor_userinterface.h>
+     32          //#include <currentset_userinterface.h>
+     33          
+     34          #include <MemoryBank_Clm.h>                                                                                             // use the memory bank "CLM"
+     35          //#include <module_helper.h>
+     36          #include <MemoryBank_CSM.h>
+     37          
+     38          #include <lightControlServices.h>
+     39          #include <ballastServices.h>
+     40          #include <MpcInfo_Services.h>
+     41          
+     42          #include <gpio_xmc1300_tssop38.h>
+     43          
+     44          
+     45          //----------------------------------------------------------------------------------------------------------------------
+     46          // locally used function prototypes
+     47          bool MpcInfoServices_GetLightLevelState( void );
+     48          
+     49          
+     50          //----------------------------------------------------------------------------------------------------------------------
+     51          /// \brief Function is called after firmware start to initalise the functions which control lamp power.
+     52          /// \param                    channels: Ignore, IF your device only has 1 channel. ELSE: Provide an init-loop.
+     53          /// \retval                   Nothing.
+     54          //----------------------------------------------------------------------------------------------------------------------
+     55          void DaliServices_Init( uint8_t channels )
+     56          {
+     57          }
+     58          
+     59          #ifdef DEVICE_CHANNELS_FLEX
+     60          //----------------------------------------------------------------------------------------------------------------------
+     61          /// \brief Function returns the actual number of logical control gear units selected by e.g. DIP switch.
+     62          ///        Called once while init-phase.
+     63          /// \param                      Nothing.
+     64          /// \retval                     channel size.
+     65          //----------------------------------------------------------------------------------------------------------------------
+     66          uint8_t DaliServices_GetChannelSize(void)
+     67          {
+     68              return 1;                                                                                                             // only 1 channel used
+     69          }
+     70          #endif
+     71          
+     72          
+     73          //----------------------------------------------------------------------------------------------------------------------
+     74          /// \brief  This function is called each background loop. Time between calls depends on the scheduler used!
+     75          /// \param  channel             The channel to be updated
+     76          /// \retval                     Nothing.
+     77          //----------------------------------------------------------------------------------------------------------------------
+     78          void DaliServices_Action( uint8_t channel )
+     79          {
+     80              // optional: add code here, if your application needs function calls in background loop
+     81          }
+     82          
+     83          
+     84          
+     85          //----------------------------------------------------------------------------------------------------------------------
+     86          /// \brief  This function is called each DALI_FastTIME_TICK_ms (2.5 ms).
+     87          /// \param  channel             The channel to be updated.
+     88          /// \retval                     None.
+     89          //----------------------------------------------------------------------------------------------------------------------
+     90          void DaliServices_FastTimer( uint8_t channel )
+     91          {
+     92              // optional: add code here, if your application needs function calls at fixed time ticks
+     93          }
+     94          
+     95          
+     96          //----------------------------------------------------------------------------------------------------------------------
+     97          /// \brief  This function is called each DALI_SlowTIME_TICK_ms (25.0 ms).
+     98          /// \param  channel             The channel to be updated
+     99          /// \retval                     Nothing.
+    100          //----------------------------------------------------------------------------------------------------------------------
+    101          void DaliServices_SlowTimer( uint8_t channel )
+    102          {
+    103              
+    104          }
+    105          
+    106          #ifdef DALI_CONFIG_OutputLEVEL
+    107          //----------------------------------------------------------------------------------------------------------------------
+    108          /// \brief  The function forwards the demanded daliLevel for logarithmic curve according to IEC62386-102 to an external unit.
+    109          ///         Use this function only, if control of the lamp power is done externally!
+    110          /// \param  daliLevel           The daliLevel in resolution 8.8
+    111          /// \param  channel             The channel to be updated
+    112          /// \retval                     Nothing.
+    113          //----------------------------------------------------------------------------------------------------------------------
+    114          //
+    115          void DaliServices_LogDaliLevel( uint16_t daliLevel, uint8_t channel )
+    116          {
+    117              // mandatory, if DALI_CONFIG_OutputLEVEL is defined: add your code here
+    118          }
+    119          
+    120          //----------------------------------------------------------------------------------------------------------------------
+    121          /// \brief  The function forwards the demanded daliLevel for linear curve according to IEC62386-102 to an external unit.
+    122          ///         Use this function only, if control of the lamp power is done externally!
+    123          /// \param  daliLevel           The lampPower in resolution 8.8 (for linear curve)
+    124          /// \param  channel             The channel to be updated
+    125          /// \retval                     Nothing.
+    126          //----------------------------------------------------------------------------------------------------------------------
+    127          
+    128          void DaliServices_LinDaliLevel( uint16_t daliLevel, uint8_t channel )
+    129          {
+    130              // mandatory, if DALI_CONFIG_OutputLEVEL is defined and linear dimming curve is provided by the selected DALI_CONFIG_DEVICE_TYPE: add your code here
+    131          }
+    132          #else
+    133          //----------------------------------------------------------------------------------------------------------------------
+    134          /// \brief  The function forwards the demanded lampPower by the DaliLib to the unit, which controls the lamp power.
+    135          ///         Use this function, if control of the lamp power is done internally!
+    136          /// \param  arcPowerLevel       The lampPower in resolution 8.8 (linear range, 0xFFFF = 100 %)
+    137          /// \param  channel             The channel to be updated
+    138          /// \retval                     Nothing.
+    139          //----------------------------------------------------------------------------------------------------------------------
+    140          
+    141          static uint16_t m_current_dali_level;
+    142          //extern uint16_t g_dali_level;
+    143          extern uint8_t g_ovp_judge,g_ocp_judge;
+    144          void LightControlServices_SetArcPower( uint16_t arcPowerLevel, uint8_t channel )
+    145          {
+    146              //CurrentSet_SetDaliArcPowerLevel((uint32_t)arcPowerLevel);
+    147          
+    148              m_current_dali_level = arcPowerLevel;
+    149              //g_dali_level = arcPowerLevel;
+    150          //    MpcInfo_SetDaliLevel(arcPowerLevel);
+    151          }
+    152          #endif
+    153          
+    154          bool MpcInfoServices_GetLightLevelState( void )
+    155          {
+    156              return ( m_current_dali_level > 0 );
+    157          }
+    158          
+    159          
+    160          //----------------------------------------------------------------------------------------------------------------------
+    161          /** Get the actual lamp / ECG failure state and forward it to the DALI library
+    162           *
+    163           * \ failure states for device type 6 (LED applications) as defined in DaliDeviceType_FEATURES.h:
+    164           * \
+    165           * \ #define T6_Failure_SHORT_CIRCUIT                 0x01
+    166           * \ #define T6_Failure_OPEN_CIRCUIT                  0x02
+    167           * \ #define T6_Failure_LOAD_DECREASE                 0x04
+    168           * \ #define T6_Failure_LOAD_INCREASE                 0x08
+    169           * \ #define T6_Failure_CURRENT_PROTECTOR_ACTIVE      0x10
+    170           * \ #define T6_Failure_THERMAL_SHUTDOWN              0x20
+    171           * \ #define T6_Failure_THERMAL_OVERLOAD_RED          0x40
+    172           * \ #define T6_Failure_REFERENCE_FAILED              0x80
+    173           *
+    174           * \ param  ui8  channel
+    175           * \ retval ui8   failure status
+    176           **/
+    177          //----------------------------------------------------------------------------------------------------------------------
+    178          uint8_t DaliServices_GetFailure( uint8_t channel )
+    179          {
+    180              uint8_t failure= 0;
+    181          
+    182          //    if ( g_ocp_judge==0 )
+    183          //    {
+    184          //        failure |= T6_Failure_SHORT_CIRCUIT;
+    185          //    }
+    186          //
+    187          //    if ( g_ovp_judge==0 )  //(god_feedback_struct.error_message == led_overvoltage)
+    188          //    {
+    189          //        failure |= T6_Failure_OPEN_CIRCUIT;
+    190          //    }
+    191          //
+    192          ////    // Report an active power reduction in case of thermal overload
+    193          //    if ( 1==currentset_feedback_struct.thermal_powerred_activ )
+    194          //    {
+    195          //        failure |= T6_Failure_THERMAL_OVERLOAD_RED;
+    196          //    }
+    197          
+    198              return failure;
+    199          }
+    200          
+    201          
+    202          
+    203          //----------------------------------------------------------------------------------------------------------------------
+    204          /** Get the actual operating mode from the secondary side and forward it to the DALI library
+    205           * The operating mode is only != 0 if there is no lamp failure (open or short circuit) and if the buck is running
+    206           *
+    207           * \ operating modes for device type 6 (LED applications) as defined in DaliDeviceType_FEATURES.h:
+    208           * \
+    209           * \ #define T6_OperatingMode_PWM_ACTIVE                 0x01                                                           ///< \brief Definition of the bit positions in the active operatingMode byte.
+    210           * \ #define T6_OperatingMode_AM_ACTIVE                  0x02
+    211           * \ #define T6_OperatingMode_OUT_CURRENT_CONTROLLED     0x04
+    212           * \ #define T6_OperatingMode_HIGH_CURRENT_PULSE_ACTIVE  0x08
+    213           *
+    214           * \param  uint8_t  channel
+    215           * \retval uint8_t  Operating Mode
+    216           **/
+    217          //----------------------------------------------------------------------------------------------------------------------
+    218          uint8_t DaliServices_GetType6_OperatingModes( void )
+    219          {
+    220              return T6_OperatingMode_AM_ACTIVE | T6_OperatingMode_OUT_CURRENT_CONTROLLED;
+    221          }
+    222          
+    223          uint8_t DaliServices_GetOperatingMode( uint8_t channel )
+    224          {
+    225              uint8_t operatingMode = 0;
+    226              uint8_t failure_state = DaliServices_GetFailure(channel) & (~T6_Failure_THERMAL_OVERLOAD_RED);                        // consider failures except thermal overload reduction
+    227          
+    228              //if ( ( currentset_dali_arc_power_level != 0 ) )                                                                     // evaluate operating mode only if DALI level > 0
+    229              {
+    230                  operatingMode |= T6_OperatingMode_AM_ACTIVE;
+    231                  operatingMode |= T6_OperatingMode_OUT_CURRENT_CONTROLLED;
+    232              }
+    233          
+    234              return operatingMode;
+    235          }
+    236          
+    237          
+    238          //---------------------------------------------------------------------------------------------------------------------
+    239          /// \brief    Returns the actual type of power supply (coded as enum-type)
+    240          /// \param    None
+    241          /// \retval   Actual power supply, i.e. NO_SUPPLY, AC_SUPPLY or DC_SUPPLY (if DC-mode supported)
+    242          //---------------------------------------------------------------------------------------------------------------------
+    243          
+    244          TypeSupply BallastServices_GetSupply(void)
+    245          {
+    246          static    TypeSupply  supplytmp=AC_SUPPLY,test_supply=1;
+                                                                       ^
+Warning[Pe188]: enumerated type mixed with another type
+
+  static    TypeSupply  supplytmp=AC_SUPPLY,test_supply=1;
+                        ^
+"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\Dali\DaliServices\DaliServices.c",246  Warning[Pe550]: 
+          variable "supplytmp" was set but never used
+    247          
+    248              // right now DALI does not check whether one has 230V or 48V
+    249              // At the moment this does not matter, because Dali is only called by module god
+    250              // if the power is ok and Dali shall operate OLAF
+    251          //    if (sm_mode_230V == Supply.flags.SM_MODE)
+    252          //    {
+    253          //        if (AC == Supply.flags.SM_POWERTYPE)
+    254          //        {
+    255                      supplytmp = AC_SUPPLY;
+    256          //        }
+    257          //        else
+    258          //        {
+    259          //            supplytmp = DC_SUPPLY;
+    260          //        }
+    261          //    }
+    262          //    else
+    263          //    {
+    264          //        supplytmp = NO_SUPPLY;
+    265          //    }
+    266          
+    267              return test_supply;
+    268          }
+    269          
+    270          ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    271          ///<- brief Interface to nvm
+    272          
+    273          //----------------------------------------------------------------------------------------------------------------------
+    274          /** function executes necessary instructions before power down
+    275           *  Stops all application processes
+    276           * \param  none
+    277           * \retval none
+    278           **/
+    279          //----------------------------------------------------------------------------------------------------------------------
+    280          void DaliServices_PowerDown( void )                                                                                     // Stops all application processes and sets the ?-parts used by the application into power saving state
+    281          {
+    282              //StdoutString("writeall executed...\n");
+    283              //nvmWriteAll();
+    284          }
+    285          
+    286          
+    287          //----------------------------------------------------------------------------------------------------------------------
+    288          /** function restores the uC settings at restart after standby
+    289           * \param  uint8_t  channels (neglected, used for multistring devices)
+    290           * \retval none
+    291          **/
+    292          //----------------------------------------------------------------------------------------------------------------------
+    293          void DaliServices_Restart( uint8_t channels )                                                                           // Restores the ? settings after power-down as needed by the application
+    294          {
+    295              //nvmResume(); //
+    296          }
+    297          
+    298          
+    299          //----------------------------------------------------------------------------------------------------------------------
+    300          /** function forces reset of the device after power loss of longer than DALI_POWER_OFF_TIME_FTT
+    301           * \param  none
+    302           * \retval none
+    303          **/
+    304          //----------------------------------------------------------------------------------------------------------------------
+    305          void DaliServices_ResetDevice(void)                                                                                     // Forces Watchdog-Timer. If not already done in DaliServices_WriteStepNvm(): Store non-volatile memory
+    306          {
+    307              //nvmWriteAll();
+    308              //NfcOnPowerDown(nfc_power_down);
+    309              //P1_1_set();
+    310              // Fix for NFC. Maybe not required in the future anymore
+    311              for ( int i = 0; i < 525000; i++ )
+    312              {
+    313                  __no_operation();
+    314              }
+    315              
+    316               WDT->SRV = 0xAFFEAFFEUL;   //os3_wdt_force_sys_reset();
+    317          }
+    318          
+    319          
+    320          //----------------------------------------------------------------------------------------------------------------------
+    321          /** function is called after DALI 'SAVE PERSISTENT VARIABLES' command and forwards the request to the application
+    322           *  The max number of write commands is limited according to DALI ED 2.0 recommendation (set to 1000)
+    323           * \param  none
+    324           * \retval none
+    325          **/
+    326          //----------------------------------------------------------------------------------------------------------------------
+    327          void DaliServices_StoreNvm(void)
+    328          {
+    329              if (nvmGetWriteCycles() < NVM_WRITE_CYCLES)
+    330              {
+    331                  GOD_Request_nvmWriteAll();                                                                                        // send NVM write request to application
+    332              }
+    333          }
+    334          
+    335          
+    336          //----------------------------------------------------------------------------------------------------------------------
+    337          /// \brief Function provides the firmware version number of the device to the DaliLibrary.
+    338          /// \param                    Nothing.
+    339          /// \retval                   FirmwareVersion major + Minor as 8.8 value.
+    340          //----------------------------------------------------------------------------------------------------------------------
+    341          uint16_t DaliServices_GetFirmwareVersion( void )
+    342          {
+    343              return (DEVICE_FW_VERSION_MAJOR<<8) + DEVICE_FW_VERSION_MINOR;
+    344          }
+    345          
+    346          
+    347          ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    348          ///<- brief Optional functions
+    349          
+    350          #ifndef DEVICE_EAN
+    351          //----------------------------------------------------------------------------------------------------------------------
+    352          /// \brief    Returns a byte of the EAN, selected by index.
+    353          ///           This function is only called, if DEVICE_EAN is not defined in Config.h (e.g. in case of device-families)!
+    354          /// \param    index: selects 1 byte of the EAN. Range of index is 0 ..5.
+    355          /// \retval   Selected byte of the EAN. If index=0 read HighByte, if index=5 read LowByte, index >5 (invalid) returns 0
+    356          //----------------------------------------------------------------------------------------------------------------------
+    357          uint8_t DaliServices_GetEAN(uint8_t index)
+    358          {
+    359              if (index <= 5)
+    360              {
+    361                  return (uint64_t)(GLOBAL_DEVICE_EAN) >> (index*8);
+    362              }
+    363              else
+    364              {
+    365                  return 0;
+    366              }
+    367          }
+    368          #endif
+    369          
+    370          #ifdef POWERon_DELAY_TIME_ms
+    371          //----------------------------------------------------------------------------------------------------------------------
+    372          /// \brief    Returns the delay between switching on power supply and reaching the endless loop in main in device-internal unit.
+    373          ///           This function is only called, if POWERon_DELAY_TIME_ms is not defined in Config.h!
+    374          /// \param    None
+    375          /// \retval   Time delay in FTT (FastTimeTick = 2.5 ms)
+    376          //----------------------------------------------------------------------------------------------------------------------
+    377          uint8_t DaliServices_GetPowerOnDelay_FTT( void )
+    378          {
+    379              uint8_t answer = (uint8_t)( POWERon_DELAY_TIME_ms/DALI_FastTIME_TICK_ms );
+    380              return answer;
+    381          }
+    382          #endif
+    383          
+    384          #ifdef DALI_CONFIG_CORRECT_FADE
+    385          //----------------------------------------------------------------------------------------------------------------------
+    386          /// \brief    This functions allows to correct fast fades to level=0, which the device cannot follow, if commanded from DaliLibrary.
+    387          ///           All fadeTimes lower or equal to DALI_CONFIG_CORRECT_FADE are controlled by DaliServices(), when triggered by this function.
+    388          /// \param    fadeRate: The fadeRate demanded (coding according to IEC62386-102).
+    389          ///           actLevel: The actual level from which the fade should start.
+    390          ///           channel: The device channel selected
+    391          /// \retval   Time delay in FTT (FastTimeTick = 2.5 ms)
+    392          //----------------------------------------------------------------------------------------------------------------------
+    393          void DaliServices_FadeOff( int32_t fadeRate, uint16_t actLevel, uint8_t channel )
+    394          {
+    395              // trigger to fade down to MinLevel until arcPowerLevel = 0 received by DaliServices_SetArcPower()
+    396          }
+    397          #endif
+    398          
+    399          uint16_t LightControlServices_GetPhysMinLinear( void)
+    400          {
+    401              return  (650);//(DALI_CONFIG_PHYSminLEVEL_log);
+    402          }
+    403          
+    404          uint8_t DaliServices_GetType6_GearType( void)
+    405          {
+    406              return DALI_CONFIG_TYPE6_GEAR_TYPE;
+    407          }
+    408          
+    409          uint8_t DaliServices_GetType6_Features( void)
+    410          {
+    411              return DALI_CONFIG_TYPE6_FEATURES;
+    412          }
+    413          
+    414          uint8_t DaliServices_GetMinFastFadeTime( void)
+    415          {
+    416              return DALI_CONFIG_TYPE6_MIN_FastFADE_TIME;
+    417          }
+    418          
+    419          bool LightControlServices_IsLampFailure( uint8_t channel )
+    420          {
+    421              if ( (DaliServices_GetFailure(channel) & DALI_LAMP_FAILURE_MASK) == 0 )
+    422              {
+    423                  return false;
+    424              }
+    425              else
+    426              {
+    427                  return true;
+    428              }
+    429          }
+    430          
+    431          
+    432          bool LightControlServices_IsLampOn( uint8_t channel )
+    433          {
+    434              if ( (DaliServices_GetOperatingMode(channel) & DALI_LAMP_ON_OPERATING_MASK) == 0 )
+    435              {
+    436                  return true;//
+    437              }
+    438              else
+    439              {
+    440                  return true;
+    441              }
+    442          }
+    443          
+    444          
+    445          bool BallastServices_GearOk( uint8_t channel )
+    446          {
+    447              return ( DaliServices_GetFailure( channel ) & DALI_GEAR_FAILURE_MASK ) == 0;
+    448          }
+    449          
+    450          
+    451          uint32_t MpcPowerServices_GetPowerConsumption( uint8_t channel )
+    452          {
+    453              return 64;
+    454          }
+    455          
+    456          
+    457          uint16_t BallastServices_GetDefaultHardwareVersion( void )
+    458          {
+    459              return 0x100;
+    460          }
+    461          
+    462          
+    463          uint8_t BallastServices_GetMaxMpcNumber( void )
+    464          {
+    465              return MPC_MAX_NUMBER;
+    466          }
+    467          
+    468          
+    469          uint8_t BallastServices_GetEAN( uint8_t index )
+    470          {
+    471              return (uint8_t)(((uint64_t)GLOBAL_DEVICE_EAN >> index * 8) & 0xFF);
+    472          }
+    473          
+    474          
+    475          uint16_t BallastServices_GetFirmwareVersion( void )
+    476          {
+    477              return (DEVICE_FW_VERSION_MAJOR<<8) + DEVICE_FW_VERSION_MINOR;
+    478          }
+    479          
+    480          
+    481          void ErrorShutdown(char* str)
+    482          {
+    483              while (1) {};
+    484          }
+    485          
+    486          uint32_t  ControllerUniqueID (void)
+    487          
+    488          {
+    489            static uint32_t ueser_id ;
+                                   ^
+Warning[Pe550]: variable "ueser_id" was set but never used
+    490            
+    491              ueser_id=SCU_GENERAL->DBGROMID;
+    492              return SCU_GENERAL->IDCHIP;
+    493          }
+    494          
+    495          uint32_t getFWRevRoot(void)
+    496          {
+    497              //return SVN_REV_ROOT;
+    498          }
+                 ^
+Warning[Pe940]: missing return statement at end of non-void function
+          "getFWRevRoot"
+    499          
+    500          uint8_t NfcServices_GetEcgOnValue(nfc_mode_t ecg_state)
+    501          {
+    502              if(true == ecg_state)
+    503              {
+    504                      return NFC_STATUS_REGISTER_ECG_ON_VALUE;
+    505              }
+    506              
+    507              return NFC_STATUS_REGISTER_ECG_OFF_VALUE;
+    508          }
+    509          void NfcTagPowerOn(void)
+    510          {
+    511              
+    512          }
+    513          void NfcPowerDownPrepare( void ) 
+    514          {
+    515              
+    516          }
+    517          
+    518          void NfcWatchdogResetRequest( void )
+    519          {
+    520              // Add a watchdog reset here...
+    521              WDT->SRV = 0xABADCAFEUL;                                                      // write "magic word" to WDT service register
+    522          }
+    523          
+    524          void NfcPowerDownSleep( void ) 
+    525          {
+    526          }
+    527          
+    528          void NfcPowerDownResume( void ) 
+    529          {
+    530              
+    531          }
+    532          
+    533          void GOD_Request_nvmWriteAll(void)
+    534          {
+    535              //gi.store_request=please_store;
+    536          }
+    537          void pwrDownSleep(void)
+    538          {
+    539          
+    540          }
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   BallastServices_GearOk
+         8   -> DaliServices_GetFailure
+       0   BallastServices_GetDefaultHardwareVersion
+       4   BallastServices_GetEAN
+         4 __aeabi_llsr
+       0   BallastServices_GetFirmwareVersion
+       0   BallastServices_GetMaxMpcNumber
+       0   BallastServices_GetSupply
+       0   ControllerUniqueID
+       0   DaliServices_Action
+       0   DaliServices_FastTimer
+       4   DaliServices_GetEAN
+         4 __aeabi_llsr
+       0   DaliServices_GetFailure
+       0   DaliServices_GetFirmwareVersion
+       0   DaliServices_GetMinFastFadeTime
+       8   DaliServices_GetOperatingMode
+         8   -> DaliServices_GetFailure
+       0   DaliServices_GetPowerOnDelay_FTT
+       0   DaliServices_GetType6_Features
+       0   DaliServices_GetType6_GearType
+       0   DaliServices_GetType6_OperatingModes
+       0   DaliServices_Init
+       0   DaliServices_PowerDown
+       4   DaliServices_ResetDevice
+       0   DaliServices_Restart
+       0   DaliServices_SlowTimer
+       8   DaliServices_StoreNvm
+         8   -> GOD_Request_nvmWriteAll
+         8   -> nvmGetWriteCycles
+       4   ErrorShutdown
+       0   GOD_Request_nvmWriteAll
+       0   LightControlServices_GetPhysMinLinear
+       8   LightControlServices_IsLampFailure
+         8   -> DaliServices_GetFailure
+       8   LightControlServices_IsLampOn
+         8   -> DaliServices_GetOperatingMode
+       0   LightControlServices_SetArcPower
+       4   MpcInfoServices_GetLightLevelState
+       0   MpcPowerServices_GetPowerConsumption
+       0   NfcPowerDownPrepare
+       0   NfcPowerDownResume
+       0   NfcPowerDownSleep
+       4   NfcServices_GetEcgOnValue
+       0   NfcTagPowerOn
+       0   NfcWatchdogResetRequest
+       0   getFWRevRoot
+       0   pwrDownSleep
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable9
+       4  ??DataTable9_1
+       8  ??DataTable9_10
+       4  ??DataTable9_11
+       4  ??DataTable9_12
+       4  ??DataTable9_2
+       4  ??DataTable9_3
+       4  ??DataTable9_4
+       4  ??DataTable9_5
+       4  ??DataTable9_6
+       4  ??DataTable9_7
+       4  ??DataTable9_8
+       4  ??DataTable9_9
+      24  BallastServices_GearOk
+       6  BallastServices_GetDefaultHardwareVersion
+      20  BallastServices_GetEAN
+       6  BallastServices_GetFirmwareVersion
+       4  BallastServices_GetMaxMpcNumber
+      12  BallastServices_GetSupply
+      14  ControllerUniqueID
+       2  DaliServices_Action
+       2  DaliServices_FastTimer
+      30  DaliServices_GetEAN
+       6  DaliServices_GetFailure
+       6  DaliServices_GetFirmwareVersion
+       4  DaliServices_GetMinFastFadeTime
+      32  DaliServices_GetOperatingMode
+       6  DaliServices_GetPowerOnDelay_FTT
+       4  DaliServices_GetType6_Features
+       4  DaliServices_GetType6_GearType
+       4  DaliServices_GetType6_OperatingModes
+       2  DaliServices_Init
+       2  DaliServices_PowerDown
+      24  DaliServices_ResetDevice
+       2  DaliServices_Restart
+       2  DaliServices_SlowTimer
+      18  DaliServices_StoreNvm
+       4  ErrorShutdown
+       2  GOD_Request_nvmWriteAll
+       4  LightControlServices_GetPhysMinLinear
+      20  LightControlServices_IsLampFailure
+      20  LightControlServices_IsLampOn
+       6  LightControlServices_SetArcPower
+      20  MpcInfoServices_GetLightLevelState
+       4  MpcPowerServices_GetPowerConsumption
+       2  NfcPowerDownPrepare
+       2  NfcPowerDownResume
+       2  NfcPowerDownSleep
+      16  NfcServices_GetEcgOnValue
+       2  NfcTagPowerOn
+       8  NfcWatchdogResetRequest
+       2  getFWRevRoot
+       2  m_current_dali_level
+       2  pwrDownSleep
+       1  supplytmp
+       1  test_supply
+       4  ueser_id
+
+ 
+   6 bytes in section .bss
+   2 bytes in section .data
+ 408 bytes in section .text
+ 
+ 408 bytes of CODE memory
+   8 bytes of DATA memory
+
+Errors: none
+Warnings: 4

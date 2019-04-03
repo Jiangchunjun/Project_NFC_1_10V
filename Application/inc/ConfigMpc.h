@@ -38,7 +38,7 @@
 
 #define MPC_CSM_LEDset2                                                         // if defined, LEDset2 interface is provided
 #define MPC_CSM_MODE                            1                               // if defined, LEDset2 interface is enabled per default
-#define MPC_CSM_DEFAULT_CURRENT                 0X5DC                           //1500mA
+#define MPC_CSM_DEFAULT_CURRENT                 0X578                           //1500mA
 
 //// number of MPC instances in NFC tag
 //#define MPC_NFC_INST                                 (MPC_MSK_NFC_INSTANCES + \
@@ -62,8 +62,8 @@
 //#endif
 
 #define MPC_MAX_NUMBER                         50   // Highest membank number in the DALI address room
-#define MPC_COUNT                              9   // Number of Mpcs allocated
-#define MPC_NFC_INST                           9
+#define MPC_COUNT                              10   // Number of Mpcs allocated
+#define MPC_NFC_INST                           10
 
 #define MPCs_DALI   // Numbers fix, only to create and include the DALI membanks 0 and 1 and DALI parameter page(s)
 #define MPC_MSK_NUMBER                          2
@@ -74,6 +74,7 @@
 #define MPC_EOL_NUMBER                         21   // read-only in 1DIM
 #define MPC_ASTRO_NUMBER                       28
 #define MPC_INFO_NUMBER                        29
+#define MPC_O2T_NUMBER                         34
 
 //#define MPC_POWER_NUMBER                       30
 //#define MPC_TDC_NUMBER                         31

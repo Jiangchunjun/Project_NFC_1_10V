@@ -1,0 +1,359 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:54
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Driver\src\sw_timer.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Driver\src\sw_timer.c" -D
+#        XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\sw_timer.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\sw_timer.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Driver\src\sw_timer.c
+      1          /*
+      2          ***************************************************************************************************
+      3          *                               Software Timer Implementation
+      4          *          Software timer is base on the system tick timer which provide the ticks base
+      5          *
+      6          * File   : sw_timer.c
+      7          * Author : Douglas Xie
+      8          * Date   : 2016.04.15
+      9          ***************************************************************************************************
+     10          * Copyright (C) 2016 OSRAM Asia Pacific Management Company.  All rights reserved.
+     11          ***************************************************************************************************
+     12          */
+     13          
+     14          
+     15          /* Include Head Files ---------------------------------------------------------------------------*/
+     16          #include "sw_timer.h"
+
+  #warning ::::::::::::::::::::::::::: Using original LEDset resistor (wrong for MP) :::::::::::::::::::::::::::
+   ^
+"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\inc\power_config_200w.h",86  Warning[Pe1105]: 
+          #warning directive: ::::::::::::::::::::::::::: Using original LEDset
+          resistor (wrong for MP) :::::::::::::::::::::::::::
+
+  #warning ::::::::::::::::::::::::::: Using original LEDset resistor (wrong for MP) :::::::::::::::::::::::::::
+   ^
+"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\inc\power_config_200w.h",86  Warning[Pe1105]: 
+          #warning directive: ::::::::::::::::::::::::::: Using original LEDset
+          resistor (wrong for MP) :::::::::::::::::::::::::::
+     17          
+     18          /* Macro Defines --------------------------------------------------------------------------------*/
+     19          
+     20          
+     21          /* Private Variable -----------------------------------------------------------------------------*/
+     22          __IO uint32_t  sw_timer_register = 0x00000000;      /* Software timer enable register */
+     23          __IO uint32_t  sw_timer_tick[SWT_ID_TOTAL_NUM];     /* Software timer tick counter array */
+     24          
+     25          
+     26          /* Global Variable ------------------------------------------------------------------------------*/
+     27          
+     28          
+     29          /* Function Declaration -------------------------------------------------------------------------*/
+     30          
+     31          
+     32          /* Function Implement ---------------------------------------------------------------------------*/
+     33          
+     34          /*******************************************************************************
+     35          * @brief  Software Timer Default Initial
+     36          * @param  
+     37          * @note   Close all software timer
+     38          * @retval 
+     39          *******************************************************************************/
+     40          void SWT_Init(void)
+     41          {    
+     42              uint8_t i;
+     43              
+     44              /* timer_id all disable */
+     45              sw_timer_register = 0x00000000;
+     46              
+     47              /* timer_id tick counter all reset to zero */
+     48              for( i = 0; i < SWT_ID_TOTAL_NUM; i++ )
+     49              {
+     50                  sw_timer_tick[i] = 0x00000000;
+     51              }
+     52          }
+     53          
+     54          
+     55          /*******************************************************************************
+     56          * @brief  Software Timer Setup and Start
+     57          * @param  [in]timer_id: software timer id that define in header file
+     58          *         [in]period: uint 1ms, software timer delay timing period value
+     59          * @note   Enable timer_id and load it's tick value  
+     60          * @retval 
+     61          *******************************************************************************/
+     62          void SWT_StartTimer(uint8_t timer_id, uint16_t period)
+     63          {
+     64              uint32_t tick_value = 0;
+     65              
+     66              /* Check timer_id */
+     67              if( timer_id >= SWT_ID_TOTAL_NUM )
+     68              {
+     69                  /* timer_id out of range, get into endless loop for debug */
+     70                  while(1);
+     71              }
+     72              
+     73              /* Register and enable timer_id */
+     74              sw_timer_register |= ( 1 << timer_id );
+     75              
+     76              /* Calculate tick value, rounded to one decimal place */
+     77              //tick_value =  ((uint32_t)period * TICKS_PER_SECOND * 10 + 5) / 10000;
+     78              tick_value =  ((uint32_t)period * (Tick_GetTickFreq()) * 10 + 5) / 10000;
+     79              
+     80              /* Load timer_id tick value */
+     81              sw_timer_tick[timer_id] = (uint16_t)tick_value;
+     82          }
+     83          
+     84          /*******************************************************************************
+     85          * @brief  Software Timer Close
+     86          * @param  
+     87          * @note   Disable timer_id
+     88          * @retval 
+     89          *******************************************************************************/
+     90          void SWT_CloseTimer( uint8_t timer_id )
+     91          {
+     92              /* Check timer_id */
+     93              if( timer_id >= SWT_ID_TOTAL_NUM )
+     94              {
+     95                  /* timer_id out of range, get into endless loop for debug */
+     96                  while(1);
+     97              }
+     98              
+     99              /* Disable timer_id */
+    100              sw_timer_register &= ~( 1 << timer_id );
+    101              
+    102              /* Clear timer_id ick value */
+    103              sw_timer_tick[timer_id] = 0x00000000;
+    104          }
+    105          
+    106          
+    107          /*******************************************************************************
+    108          * @brief  Software Timer Check
+    109          * @param  
+    110          * @note   Check timer_id tick value and return it's status
+    111          * @retval timer_id tick status
+    112          *           -- SWT_STATUS_OFF: timer_id is disable
+    113          *           -- SWT_STATUS_OK:  timer_id is counting and not up yet
+    114          *           -- SWT_STATUS_UP:  timer_id is up, timing finished
+    115          *******************************************************************************/
+    116          uint8_t SWT_CheckTimer(uint8_t timer_id)
+    117          {
+    118              uint8_t  status;
+    119              uint32_t timer_id_Index;
+    120              
+    121              /* Check timer_id */
+    122              if( timer_id >= SWT_ID_TOTAL_NUM )
+    123              {
+    124                  /* timer_id out of range, get into endless loop for debug */
+    125                  while(1);
+    126              }
+    127              
+    128              /* Check timer_id state */
+    129              timer_id_Index = ( 1 << timer_id );
+    130              if(( sw_timer_register & timer_id_Index ) == 0 )
+    131              {
+    132                  /* timer_id is closed */
+    133                  status = SWT_STATUS_OFF;
+    134              }
+    135              else
+    136              {
+    137                  /* timer_id is registered and enable */ 
+    138                  if( sw_timer_tick[timer_id] == 0 )
+    139                  {
+    140                      /* timer_id is Up */
+    141                      status = SWT_STATUS_UP;
+    142                  }
+    143                  else
+    144                  {
+    145                      /* timer_id is Counting */
+    146                      status = SWT_STATUS_OK;
+    147                  }               
+    148              }
+    149              
+    150              return status;
+    151          }
+    152          
+    153          
+    154          /*******************************************************************************
+    155          * @brief  Software Timer Decrease Tick
+    156          * @param  
+    157          * @note   Called by Basic timer interrupt IRQ handler, decrease the counters
+    158          * @retval 
+    159          *******************************************************************************/
+    160          void SWT_DecreaseTick(void)
+    161          {
+    162              uint8_t i = 0;
+    163              
+    164              /* Every software timer tick counter decrement until zero */
+    165              for( i = 0; i < SWT_ID_TOTAL_NUM; i++ )
+    166              {
+    167                  if( sw_timer_tick[i] != 0 )
+    168                  {
+    169                      sw_timer_tick[i]--;
+    170                  }
+    171              }
+    172          }
+    173          
+    174          /**************** (C) COPYRIGHT OSRAM Asia Pacific Management Company *********END OF FILE*********/
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       4   SWT_CheckTimer
+       4   SWT_CloseTimer
+       4   SWT_DecreaseTick
+       4   SWT_Init
+      16   SWT_StartTimer
+        16   -> Tick_GetTickFreq
+        16 __aeabi_uidiv
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable4
+       4  ??DataTable4_1
+       4  ??DataTable4_2
+      52  SWT_CheckTimer
+      38  SWT_CloseTimer
+      54  SWT_DecreaseTick
+      34  SWT_Init
+      72  SWT_StartTimer
+       4  sw_timer_register
+      36  sw_timer_tick
+
+ 
+  40 bytes in section .bss
+ 262 bytes in section .text
+ 
+ 262 bytes of CODE memory
+  40 bytes of DATA memory
+
+Errors: none
+Warnings: 2

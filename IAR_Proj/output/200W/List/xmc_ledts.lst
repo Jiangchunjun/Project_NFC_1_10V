@@ -1,0 +1,523 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:57
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc_ledts.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc_ledts.c"
+#        -D XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\xmc_ledts.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\xmc_ledts.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc_ledts.c
+      1          /**
+      2           * @file xmc_ledts.c
+      3           * @date 2015-06-20
+      4           *
+      5           * @cond
+      6            *********************************************************************************************************************
+      7           * XMClib v2.1.6 - XMC Peripheral Driver Library 
+      8           *
+      9           * Copyright (c) 2015-2016, Infineon Technologies AG
+     10           * All rights reserved.                        
+     11           *                                             
+     12           * Redistribution and use in source and binary forms, with or without modification,are permitted provided that the 
+     13           * following conditions are met:   
+     14           *                                                                              
+     15           * Redistributions of source code must retain the above copyright notice, this list of conditions and the following 
+     16           * disclaimer.                        
+     17           * 
+     18           * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following 
+     19           * disclaimer in the documentation and/or other materials provided with the distribution.                       
+     20           * 
+     21           * Neither the name of the copyright holders nor the names of its contributors may be used to endorse or promote 
+     22           * products derived from this software without specific prior written permission.                                           
+     23           *                                                                              
+     24           * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, 
+     25           * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE  
+     26           * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+     27           * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR  
+     28           * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+     29           * WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+     30           * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                                                  
+     31           *                                                                              
+     32           * To improve the quality of the software, users are encouraged to share modifications, enhancements or bug fixes with 
+     33           * Infineon Technologies AG dave@infineon.com).                                                          
+     34           *********************************************************************************************************************
+     35           *
+     36           * Change History
+     37           * --------------
+     38           *
+     39           * 2015-02-20:
+     40           *     - Initial draft <br>
+     41           *     - New API added: XMC_LEDTS_SetActivePADNo() <br>
+     42           *      
+     43           * 2015-06-20:
+     44           *     - Removed version macros and declaration of GetDriverVersion API
+     45           *
+     46           * <b>Detailed description of file:</b><br>
+     47           * APIs for the functional blocks of LEDTS have been defined:<br>
+     48           * -- GLOBAL (APIs prefixed with LEDTS_GLOBAL_) <br>
+     49           * -- Clock configuration, Function/Event configuration, Interrupt configuration
+     50           *
+     51           * @endcond
+     52           *
+     53           */
+     54          
+     55          /*********************************************************************************************************************
+     56           * HEADER FILES
+     57           ********************************************************************************************************************/
+     58          #include <xmc_ledts.h>
+     59          
+     60          #if defined(LEDTS0)
+     61          #include "xmc_scu.h"
+     62          
+     63          /*********************************************************************************************************************
+     64           * MACROS
+     65           ********************************************************************************************************************/
+     66          #define XMC_LEDTS_CLOCK_NOT_RUNNING 0U
+     67          
+     68          /*********************************************************************************************************************
+     69           * ENUMS
+     70           ********************************************************************************************************************/
+     71          
+     72          /*********************************************************************************************************************
+     73           * DATA STRUCTURES
+     74           ********************************************************************************************************************/
+     75          
+     76          /*********************************************************************************************************************
+     77           * GLOBAL DATA
+     78           ********************************************************************************************************************/
+     79          
+     80          /*********************************************************************************************************************
+     81           * LOCAL/UTILITY ROUTINES
+     82           ********************************************************************************************************************/
+     83          
+     84          /*********************************************************************************************************************
+     85           * API IMPLEMENTATION
+     86           ********************************************************************************************************************/
+     87          
+     88          /**
+     89            * Initialization of global register
+     90            */
+     91          XMC_LEDTS_STATUS_t XMC_LEDTS_InitGlobal(XMC_LEDTS_t *const ledts, const XMC_LEDTS_GLOBAL_CONFIG_t *config)
+     92          {
+     93            XMC_ASSERT("XMC_LEDTS_InitGlobal:Wrong Module Pointer", XMC_LEDTS_CHECK_KERNEL_PTR(ledts));
+     94            XMC_ASSERT("XMC_LEDTS_InitGlobal:Null Pointer", (config != (XMC_LEDTS_GLOBAL_CONFIG_t *)NULL));
+     95          
+     96            switch ((uint32_t)ledts)
+     97            {
+     98              case (uint32_t)XMC_LEDTS0:
+     99          #if defined(CLOCK_GATING_SUPPORTED)
+    100                XMC_SCU_CLOCK_UngatePeripheralClock(XMC_SCU_PERIPHERAL_CLOCK_LEDTS0);
+    101          #endif
+    102          #if defined(PERIPHERAL_RESET_SUPPORTED)
+    103                XMC_SCU_RESET_DeassertPeripheralReset(XMC_SCU_PERIPHERAL_RESET_LEDTS0);
+    104          #endif
+    105                break;
+    106          
+    107          #if defined(LEDTS1)
+    108              case (uint32_t)XMC_LEDTS1:
+    109          #if defined(CLOCK_GATING_SUPPORTED)
+    110                XMC_SCU_CLOCK_UngatePeripheralClock(XMC_SCU_PERIPHERAL_CLOCK_LEDTS1);
+    111          #endif
+    112          #if defined(PERIPHERAL_RESET_SUPPORTED)
+    113                XMC_SCU_RESET_DeassertPeripheralReset(XMC_SCU_PERIPHERAL_RESET_LEDTS1);
+    114          #endif
+    115                break;
+    116          #endif
+    117          
+    118          #if defined(LEDTS2)
+    119              case (uint32_t)XMC_LEDTS2:
+    120          #if defined(CLOCK_GATING_SUPPORTED)
+    121                XMC_SCU_CLOCK_UngatePeripheralClock(XMC_SCU_PERIPHERAL_CLOCK_LEDTS2);
+    122          #endif
+    123          #if defined(PERIPHERAL_RESET_SUPPORTED)
+    124                XMC_SCU_RESET_DeassertPeripheralReset(XMC_SCU_PERIPHERAL_RESET_LEDTS2);
+    125          #endif
+    126                break;
+    127          #endif
+    128                
+    129            }
+    130          
+    131            if((ledts->GLOBCTL & LEDTS_GLOBCTL_CLK_PS_Msk) != XMC_LEDTS_CLOCK_NOT_RUNNING)
+    132            {
+    133              return XMC_LEDTS_STATUS_RUNNING;
+    134            }
+    135          
+    136            ledts->GLOBCTL = config->globctl;
+    137          
+    138            return XMC_LEDTS_STATUS_SUCCESS;
+    139          }
+    140          
+    141          /**
+    142            * Initialization of registers for LED-driving function
+    143            */
+    144          XMC_LEDTS_STATUS_t XMC_LEDTS_InitLED(XMC_LEDTS_t *const ledts, const XMC_LEDTS_LED_CONFIG_t *config)
+    145          {
+    146            XMC_ASSERT("XMC_LEDTS_LED_Init:Wrong Module Pointer", XMC_LEDTS_CHECK_KERNEL_PTR(ledts));
+    147            XMC_ASSERT("XMC_LEDTS_LED_Init:Null Pointer", (config != (XMC_LEDTS_LED_CONFIG_t *)NULL));
+    148          
+    149            if((ledts->GLOBCTL & LEDTS_GLOBCTL_CLK_PS_Msk) != XMC_LEDTS_CLOCK_NOT_RUNNING)
+    150            {
+    151              return XMC_LEDTS_STATUS_RUNNING;
+    152            }
+    153          
+    154            ledts->FNCTL &= ~(LEDTS_FNCTL_COLLEV_Msk | LEDTS_FNCTL_NR_LEDCOL_Msk);
+    155            ledts->FNCTL |= (config->fnctl);
+    156          
+    157            /* Enable LED function */
+    158            ledts->GLOBCTL |= LEDTS_GLOBCTL_LD_EN_Msk;
+    159          
+    160            return XMC_LEDTS_STATUS_SUCCESS;
+    161          }
+    162          
+    163          /**
+    164            * Initialization of registers for basic Touch-Sense control function
+    165            */
+    166          XMC_LEDTS_STATUS_t XMC_LEDTS_InitTSBasic(XMC_LEDTS_t *const ledts, const XMC_LEDTS_TS_CONFIG_BASIC_t *config)
+    167          {
+    168            uint32_t reg;
+    169          
+    170            XMC_ASSERT("XMC_LEDTS_TS_Basic_Init:Wrong Module Pointer", XMC_LEDTS_CHECK_KERNEL_PTR(ledts));
+    171            XMC_ASSERT("XMC_LEDTS_TS_Basic_Init:Null Pointer", (config != (XMC_LEDTS_TS_CONFIG_BASIC_t *)NULL));
+    172          
+    173            if((ledts->GLOBCTL & LEDTS_GLOBCTL_CLK_PS_Msk) != XMC_LEDTS_CLOCK_NOT_RUNNING)
+    174            {
+    175              return XMC_LEDTS_STATUS_RUNNING;
+    176            }
+    177          
+    178            reg = ~(LEDTS_FNCTL_ACCCNT_Msk | LEDTS_FNCTL_TSCCMP_Msk | LEDTS_FNCTL_TSCTRR_Msk | LEDTS_FNCTL_TSCTRSAT_Msk |
+    179          		 LEDTS_FNCTL_NR_TSIN_Msk);
+    180            ledts->FNCTL &= (reg);
+    181            ledts->FNCTL |= (config->fnctl);
+    182          
+    183            /* Enable TS function */
+    184            ledts->GLOBCTL |= LEDTS_GLOBCTL_TS_EN_Msk;
+    185          
+    186            return XMC_LEDTS_STATUS_SUCCESS;
+    187          }
+    188          
+    189          /**
+    190            * Initialization of registers for advanced Touch-Sense control function
+    191            */
+    192          XMC_LEDTS_STATUS_t XMC_LEDTS_InitTSAdvanced (XMC_LEDTS_t *const ledts, const XMC_LEDTS_TS_CONFIG_ADVANCED_t *config)
+    193          {
+    194            uint32_t reg;
+    195          
+    196            XMC_ASSERT("XMC_LEDTS_TS_Advanced_Init:Wrong Module Pointer", XMC_LEDTS_CHECK_KERNEL_PTR(ledts));
+    197            XMC_ASSERT("XMC_LEDTS_TS_Advanced_Init:Null Pointer", (config != (XMC_LEDTS_TS_CONFIG_ADVANCED_t *)NULL));
+    198          
+    199            if((ledts->GLOBCTL & LEDTS_GLOBCTL_CLK_PS_Msk) != XMC_LEDTS_CLOCK_NOT_RUNNING)
+    200            {
+    201              return XMC_LEDTS_STATUS_RUNNING;
+    202            }
+    203          
+    204            reg = ~(LEDTS_GLOBCTL_MASKVAL_Msk | LEDTS_GLOBCTL_FENVAL_Msk);
+    205            ledts->GLOBCTL &= (reg);
+    206            ledts->GLOBCTL |= (config->globctl);
+    207          
+    208            reg = ~(LEDTS_FNCTL_PADT_Msk | LEDTS_FNCTL_PADTSW_Msk | LEDTS_FNCTL_EPULL_Msk | LEDTS_FNCTL_TSOEXT_Msk);
+    209            ledts->FNCTL &= (reg);
+    210            ledts->FNCTL |= (config->fnctl);
+    211          
+    212            return XMC_LEDTS_STATUS_SUCCESS;
+    213          }
+    214          
+    215          /**
+    216            * Starts LEDTS-counter
+    217            */
+    218          void XMC_LEDTS_StartCounter(XMC_LEDTS_t *const ledts, const uint16_t prescaler)
+    219          {
+    220            XMC_ASSERT("XMC_LEDTS_Start_Counter:Wrong Module Pointer", XMC_LEDTS_CHECK_KERNEL_PTR(ledts));
+    221          
+    222            ledts->GLOBCTL |= prescaler<<16U;
+    223          }
+    224          
+    225          /**
+    226            * Stops LEDTS-counter
+    227            */
+    228          void XMC_LEDTS_StopCounter(XMC_LEDTS_t *const ledts)
+    229          {
+    230            XMC_ASSERT("XMC_LEDTS_Stop_Counter:Wrong Module Pointer", XMC_LEDTS_CHECK_KERNEL_PTR(ledts));
+    231          
+    232            ledts->GLOBCTL &= 0x0000FFFF;
+    233          }
+    234          
+    235          /**
+    236            * Reads time interrupt flags
+    237            */
+    238          uint32_t XMC_LEDTS_ReadInterruptFlag(XMC_LEDTS_t *const ledts)
+    239          {
+    240            XMC_ASSERT("XMC_LEDTS_ReadInterruptFlag:Wrong Module Pointer", XMC_LEDTS_CHECK_KERNEL_PTR(ledts));
+    241          
+    242            return (ledts->EVFR & 0xF);
+    243          }
+    244          
+    245          /**
+    246            * Set the active pad number
+    247            */
+    248          void XMC_LEDTS_SetActivePADNo(XMC_LEDTS_t *const ledts, XMC_LEDTS_NUMBER_TS_INPUT_t pad_num)
+    249          {
+    250            uint32_t reg;
+    251          
+    252            XMC_ASSERT("XMC_LEDTS_SetActivePADNo:Wrong Module Pointer", XMC_LEDTS_CHECK_KERNEL_PTR(ledts));
+    253          
+    254            reg = ledts->FNCTL;
+    255            reg &= ~(LEDTS_FNCTL_PADT_Msk);
+    256            reg |= (uint32_t)pad_num;
+    257            ledts->FNCTL = reg;
+    258          }
+    259          
+    260          /**
+    261            * Clears interrupt indication flags
+    262            */
+    263          void XMC_LEDTS_ClearInterruptFlag(XMC_LEDTS_t *const ledts, uint32_t interrupt_mask)
+    264          {
+    265            XMC_ASSERT("XMC_LEDTS_ClearInterruptFlag:Wrong Module Pointer", XMC_LEDTS_CHECK_KERNEL_PTR(ledts));
+    266          
+    267            ledts->EVFR = (interrupt_mask << LEDTS_EVFR_CTSF_Pos);
+    268          }
+    269          
+    270          /**
+    271            * Programming of registers to output pattern on an LED column in LED matrix
+    272            */
+    273          void XMC_LEDTS_SetLEDLinePattern(XMC_LEDTS_t *const ledts, XMC_LEDTS_LED_COLUMN_t column, const uint8_t pattern)
+    274          {
+    275            uint32_t reg;
+    276            uint8_t reg_index = ((uint8_t)column) >> 2;
+    277            uint8_t bit_shift_count = ((uint8_t)column & 0x03) * 8;
+    278          
+    279            XMC_ASSERT("XMC_LEDTS_Set_LED_Line_Pattern:Wrong Module Pointer", XMC_LEDTS_CHECK_KERNEL_PTR(ledts));
+    280          
+    281            reg = ledts->LINE[reg_index];
+    282            reg &= (~(0xff << bit_shift_count));
+    283            reg |= pattern << bit_shift_count;
+    284            ledts->LINE[reg_index] = reg;
+    285          
+    286          }
+    287          
+    288          /**
+    289            * Programming of registers to adjust brightness of an LED column in LED matrix
+    290            */
+    291          void XMC_LEDTS_SetColumnBrightness(XMC_LEDTS_t *const ledts, XMC_LEDTS_LED_COLUMN_t column, const uint8_t brightness)
+    292          {
+    293            uint32_t reg;
+    294            uint8_t reg_index = ((uint8_t)column) >> 2;
+    295            uint8_t bit_shift_count = ((uint8_t)column & 0x03) * 8;
+    296          
+    297            XMC_ASSERT("XMC_LEDTS_Set_Column_Brightness:Wrong Module Pointer", XMC_LEDTS_CHECK_KERNEL_PTR(ledts));
+    298          
+    299          	reg = ledts->LDCMP[reg_index];
+    300          	reg &= (~(0xff << bit_shift_count));
+    301          	reg |= brightness << bit_shift_count;
+    302          	ledts->LDCMP[reg_index] = reg;
+    303          }
+    304          
+    305          /**
+    306            * Programming of registers to set common oscillation window size for touch-sense inputs
+    307            */
+    308          void XMC_LEDTS_SetCommonOscillationWindow(XMC_LEDTS_t *const ledts, const uint8_t common_size)
+    309          {
+    310            uint32_t reg;
+    311          
+    312            XMC_ASSERT("XMC_LEDTS_Set_Common_Oscillation_Window:Wrong Module Pointer", XMC_LEDTS_CHECK_KERNEL_PTR(ledts));
+    313          
+    314            reg = ledts->LDCMP[1];
+    315            reg &= ~LEDTS_LDCMP1_CMP_LDA_TSCOM_Msk;
+    316            reg |= (common_size << LEDTS_LDCMP1_CMP_LDA_TSCOM_Pos);
+    317            ledts->LDCMP[1] = reg;
+    318          }
+    319          
+    320          /**
+    321            * Checking the previous active function or LED column status
+    322            */
+    323          uint32_t XMC_LEDTS_ReadFNCOL(XMC_LEDTS_t *const ledts)
+    324          {
+    325            uint32_t fncol_read;
+    326          
+    327            XMC_ASSERT("XMC_LEDTS_Read_FNCOL:Wrong Module Pointer", XMC_LEDTS_CHECK_KERNEL_PTR(ledts));
+    328          
+    329            fncol_read = ledts->FNCTL & LEDTS_FNCTL_FNCOL_Msk;
+    330            fncol_read >>= LEDTS_FNCTL_FNCOL_Pos;
+    331          
+    332            return fncol_read;
+    333          }
+    334          
+    335          /**
+    336            * Set the number of LED column Enabled
+    337            */
+    338          void XMC_LEDTS_SetNumOfLEDColumns(XMC_LEDTS_t *const ledts, uint8_t count)
+    339          {
+    340          
+    341            XMC_ASSERT("XMC_LEDTS_SetNumOfLEDColumns:Wrong Module Pointer", XMC_LEDTS_CHECK_KERNEL_PTR(ledts));
+    342          
+    343            ledts->FNCTL &= ~(LEDTS_FNCTL_NR_LEDCOL_Msk);
+    344            ledts->FNCTL |= (count << LEDTS_FNCTL_NR_LEDCOL_Pos);
+    345          }
+    346          
+    347          /**
+    348            * Reading recorded number of oscillation counts
+    349            */
+    350          uint16_t XMC_LEDTS_ReadTSVAL(XMC_LEDTS_t *const ledts)
+    351          {
+    352            uint16_t no_of_oscillations;
+    353          
+    354            XMC_ASSERT("XMC_LEDTS_Read_TSVAL:Wrong Module Pointer", XMC_LEDTS_CHECK_KERNEL_PTR(ledts));
+    355          
+    356            no_of_oscillations = (ledts->TSVAL & 0xFFFF);
+    357          
+    358            return no_of_oscillations;
+    359          }
+    360          
+    361          /**
+    362            * Programming of registers to adjust the size of oscillation window
+    363            */
+    364          void XMC_LEDTS_SetOscillationWindow(XMC_LEDTS_t *const ledts, XMC_LEDTS_NUMBER_TS_INPUT_t touchpad, const uint8_t size)
+    365          {
+    366            uint32_t reg;
+    367            uint8_t reg_index = ((uint8_t)touchpad) >> 2;
+    368            uint8_t bit_shift_count = ((uint8_t)touchpad & 0x03) * 8;
+    369          
+    370            XMC_ASSERT("XMC_LEDTS_Set_Oscillation_Window:Wrong Module Pointer", XMC_LEDTS_CHECK_KERNEL_PTR(ledts));
+    371          
+    372          	reg = ledts->TSCMP[reg_index];
+    373          	reg &= (~(0xff << bit_shift_count));
+    374          	reg |= size << bit_shift_count;
+    375          	ledts->TSCMP[reg_index] = reg;
+    376          }
+    377          
+    378          #endif /* LEDTS0 */
+    379          
+
+
+ 
+
+ 
+
+
+Errors: none
+Warnings: none

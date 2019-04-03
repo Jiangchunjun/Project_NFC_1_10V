@@ -1,0 +1,3289 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:53
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\NFC\nfc_module.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\NFC\nfc_module.c"
+#        -D XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\nfc_module.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\nfc_module.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\NFC\nfc_module.c
+      1          /** ----------------------------------------------------------------------------
+      2          // nfc_module.c
+      3          // -----------------------------------------------------------------------------
+      4          // (c) Osram GmbH
+      5          // Development Electronics for SSL
+      6          // Parkring 33
+      7          // 85748 Garching
+      8          //
+      9          // The content of this file is intellectual property of OSRAM GmbH. It is
+     10          // confidential and not intended for any public release. All rights reserved.
+     11          //
+     12          // Indent style: Replace tabs by spaces, 2 spaces per indentation level
+     13          //
+     14          // Initial version: Sammy el Baradie,  27/07/2016
+     15          // $Author: g.salvador $
+     16          // $Revision: 16930 $
+     17          // $Date: 2019-02-13 22:20:52 +0800 (Wed, 13 Feb 2019) $
+     18          // $Id: nfc_module.c 16930 2019-02-13 14:20:52Z g.salvador $
+     19          // $URL: https://app-ehnsvn02.int.osram-light.com/svn/EC/Toolbox1.0/Nfc/tags/v2.7/Src/nfc_module.c $
+     20          //
+     21          // Main NFC module state machine with all related functions
+     22          *   \file
+     23          *   \brief Master file for NFC module
+     24          */
+     25          
+     26          #include <string.h>
+     27          
+     28          #define MODULE_NFC
+                         ^
+Warning[Pe047]: incompatible redefinition of macro "MODULE_NFC" (declared at
+          line 28)
+     29          #include "Global.h"
+     30          #include "Config.h"
+     31          
+     32          #include "ErrorHandler.h"
+     33          #include "crc16.h"
+     34          #include "nvm.h"
+     35          #include "MpcDefs.h"
+     36          #include "MemoryBanks_Dali.h"
+     37          
+     38          #include "Acl.h"
+     39          #include "Mpc.h"
+     40          #include "MpcInternal.h"
+     41          #include "MpcAllocation.h"
+     42          
+     43          #include "Nfc.h"
+     44          #include "nfc_config.h"
+     45          #include "nfc_local.h"
+     46          #include "i2c_userinterface.h"
+
+    #warning "ATTENTION! A standard default value of I2C Cyclic calling period\
+     ^
+"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\I2C\i2c_userinterface.h",82  Warning[Pe1105]: 
+          #warning directive: "ATTENTION! A standard default value of I2C
+          Cyclic calling period I2C_RUNTIME_TIMER_PERIOD_US is going to be
+          used! A custom value, specific for each application is recommended
+          and has to be placed inside ConfigI2c.h"
+
+    #warning "ATTENTION! A standard default value of I2C Cyclic calling period\
+     ^
+"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\I2C\i2c_userinterface.h",92  Warning[Pe1105]: 
+          #warning directive: "ATTENTION! A standard default value of I2C
+          Cyclic calling period I2C_SLEEPMODE_TIMER_PERIOD_US is going to be
+          used! A custom value, specific for each application is recommended
+          and has to be placed inside ConfigI2c.h"
+
+    #warning "ATTENTION! A standard default value of I2C Cyclic calling period\
+     ^
+"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\I2C\i2c_userinterface.h",102  Warning[Pe1105]: 
+          #warning directive: "ATTENTION! A standard default value of I2C
+          Cyclic calling period I2C_POWERDOWN_TIMER_PERIOD_US is going to be
+          used! A custom value, specific for each application is recommended
+          and has to be placed inside ConfigI2c.h"
+     47          #include "nfc_parameters.h"
+     48          
+     49          #include "system.h"
+     50          #include <gpio_xmc1300_tssop38.h>
+     51          
+     52          //------------------------------------------------------------------------------
+     53          // local variables
+     54          //------------------------------------------------------------------------------
+     55          nfc_local_state_t nfc_local_state;
+     56          STATIC uint8_t nfc_tag_mem_tmp[sizeof(nfc_tag_identification_register_t)];
+     57          
+     58          //------------------------------------------------------------------------------
+     59          // global variables
+     60          //------------------------------------------------------------------------------
+     61          nfc_init_status_t nfc_init_status;
+     62          uint8_t g_nfc_start_flag=0;
+     63          
+     64          extern uint8_t g_nfc_tag_read;
+     65          //-----------------------------------------------------------------------------
+     66          // local functions
+     67          //-----------------------------------------------------------------------------
+     68          
+     69          // -----------------------------------------------------------------------------
+     70          /**
+     71           * \brief initialize tag device identification register.
+     72           * \retval busy or done nfc status
+     73           * \note  This function is called if:
+     74           *      - MCU was flashed
+     75           *      - control registers are all 0xFF
+     76           *      - one of the register values are corrupted (wrong CRC)
+     77           */
+     78          STATIC nfc_fct_status_t initialize_tag_device_identification(void)
+     79          {
+     80              uint8_t i1, i2;
+     81              nfc_tag_identification_register_t *tag_reg_ident;
+     82          
+     83              // set pointer for Identification Registers to nfc_tag_mem_tmp
+     84              tag_reg_ident = (nfc_tag_identification_register_t *) nfc_tag_mem_tmp;
+     85          
+     86              // Initialize CRC 16
+     87              Crc16Init (CRC16_CCITT_FALSE_START_VALUE);
+     88          
+     89              // Manufacturer Code
+     90              tag_reg_ident->manufacturer_code = OSRAM_MANUFACTURER_CODE;
+     91          
+     92              // GTIN
+     93              i2 = 5;
+     94              for (i1 = 0; i1 < 6; i1++)
+     95              {
+     96                  tag_reg_ident->gtin[i1] =
+     97                          (((uint64_t) THIS_DEVICE_EAN) >> ((i2--) * 8));
+     98              }
+     99          
+    100              // FW Major Version
+    101              tag_reg_ident->fw_major_version = DEVICE_FW_VERSION_MAJOR;
+    102          
+    103              // FW Minor Version
+    104              tag_reg_ident->fw_minor_version = DEVICE_FW_VERSION_MINOR;
+    105          
+    106              // HW Major Version
+    107              tag_reg_ident->hw_major_version = (uint8_t) (Ballast_GetHW_Version() >> 8);
+    108          
+    109              // NFC Major Version
+    110              tag_reg_ident->nfc_major_version = NFC_VERSION_MAJOR;
+    111          
+    112              // MPC Count
+    113              tag_reg_ident->toc_items = MPC_NFC_INST;
+    114          
+    115              // Status Register Start Address
+    116              tag_reg_ident->status_register_start_addr = REV_BYTE_ORDER16(
+    117                      nfc_tag_addr_config.status_register_start_addr);
+    118          
+    119              // Control Register Start Address
+    120              tag_reg_ident->control_register_start_addr = REV_BYTE_ORDER16(
+    121                      nfc_tag_addr_config.control_register_start_addr);
+    122          
+    123              // Protected Area Start Address
+    124              tag_reg_ident->protected_memory_start_addr = REV_BYTE_ORDER16(
+    125                      nfc_tag_addr_config.protected_memory_start_addr);
+    126          
+    127              // calculate CRC16 for Device Identification
+    128              Crc16AppendByteArray(nfc_tag_mem_tmp,
+    129                                   sizeof(nfc_tag_identification_register_t) - 2);
+    130          
+    131              // set CRC16 as big-endian
+    132              tag_reg_ident->crc16 = Crc16Checksum(crc16_big_endian);
+    133          
+    134              // write Device Identification to TAG
+    135              if(true == I2cWrite(0, nfc_tag_mem_tmp,
+    136                             sizeof(nfc_tag_identification_register_t)))
+    137              {
+    138                  return nfc_fct_done;
+    139              }
+    140          
+    141              return nfc_fct_busy;
+    142          }
+    143          
+    144          // -----------------------------------------------------------------------------
+    145          /**
+    146           * \brief initialize tag TOC register.
+    147           * \retval busy or done nfc status
+    148           * \note  This function is called, if:
+    149           *      - MCU was flashed
+    150           *      - control registers are all 0xFF
+    151           *      - the register values are corrupted (wrong CRC)
+    152           */
+    153          STATIC nfc_fct_status_t initialize_tag_toc(void)
+    154          {
+    155              uint8_t toc_idx;
+    156              uint16_t crc16;
+    157              uint32_t mpc_tag_start_addr;
+    158              nfc_toc_entry_t *toc_entry;
+    159              uint8_t keydata_attribute;
+                             ^
+Warning[Pe550]: variable "keydata_attribute" was set but never used
+    160              uint8_t toc_mb_attribute;
+    161          
+    162              toc_idx = nfc_local_state.mb_proc_idx;
+    163          
+    164              // when all TOC entries are written successfully to TAG....
+    165              if (toc_idx >= MPC_NFC_INST)
+    166              {
+    167                  // write CRC16 to TAG
+    168                  crc16 = Crc16Checksum(crc16_big_endian);
+    169          
+    170                  if (true == I2cWrite(nfc_local_state.mb_entity.addr, (uint8_t *) &crc16,
+    171                                      2))
+    172                  {
+    173                      return nfc_fct_done;
+    174                  }
+    175              }
+    176              else
+    177              {
+    178                  // when it is the 1st TOC entry .....
+    179                  if (0 == toc_idx)
+    180                  {
+    181                      // initialize address to TOC start
+    182                      // the variable mb_entity.addr is re-used here
+    183                      nfc_local_state.mb_entity.addr = NFC_TOC_START_ADDR;
+    184          
+    185                      // Initialize CRC 16
+    186                      Crc16Init (CRC16_CCITT_FALSE_START_VALUE);
+    187                  }
+    188          
+    189                  // set pointer for TOC entry to nfc_tag_mem_tmp
+    190                  toc_entry = (nfc_toc_entry_t *) nfc_tag_mem_tmp;
+    191          
+    192                  // fill TOC entry
+    193                  // 'translate' MPC attributes to TOC attribute (interpreted by SW)
+    194                  keydata_attribute = toc_items[toc_idx].mpc_keydata->attributes;
+    195          
+    196                  #ifdef NFC_CONFIG_UNPROTECTED_LAYOUT // Deprecated, only for transition phase
+    197                      // Deprecated MPC_ATTRIB_NFC_UNPROTECTED is not supported here as
+    198                      // this is the default behavior (again)
+    199                      STATIC_ASSERT(0x02 == MPC_ATTRIB_NFC_PROTECTED,
+    200                                    "ALLOC - NFC protected attribute mismatch");
+    201                      STATIC_ASSERT(0x04 == MPC_ATTRIB_NFC_READONLY,
+    202                                    "ALLOC - NFC Read-only attribute mismatch");
+    203                      toc_mb_attribute = toc_items[toc_idx].mpc_keydata->attributes &
+    204                                    (MPC_ATTRIB_NFC_READONLY | MPC_ATTRIB_NFC_PROTECTED);
+    205                  #else
+    206                      if (keydata_attribute & MPC_ATTRIB_NFC_READONLY)
+    207                      {
+    208                        toc_mb_attribute = 0x04;
+    209                      }
+    210                      else if (keydata_attribute & MPC_ATTRIB_NFC_UNPROTECTED)
+    211                      {
+    212                        toc_mb_attribute = 0x00;
+    213                      }
+    214                      else
+    215                      {
+    216                        toc_mb_attribute = 0x02;
+    217                      }
+    218                  #endif
+    219                  toc_entry->mb_attribute = toc_mb_attribute;
+    220          
+    221                  toc_entry->mpc_id = toc_items[toc_idx].mpc_keydata->id;
+    222                  toc_entry->mpc_version = toc_items[toc_idx].mpc_keydata->version;
+    223                  toc_entry->mb_length = toc_items[toc_idx].mpc_keydata->length;
+    224          
+    225                  mpc_tag_start_addr = REV_BYTE_ORDER16(NfcMpcTagStartAddr[toc_idx]);
+    226          
+    227                  toc_entry->mb_tag_base_addr = mpc_tag_start_addr;
+    228          
+    229                  // Write TOC entry to TAG
+    230                  nfc_local_state.is_pending_i2c_access = !(I2cWrite(
+    231                          nfc_local_state.mb_entity.addr, nfc_tag_mem_tmp,
+    232                          sizeof(nfc_toc_entry_t)));
+    233          
+    234                  // if I2cWrite was successful ....
+    235                  if (false == nfc_local_state.is_pending_i2c_access)
+    236                  {
+    237                      // calculate CRC16 for Device Identification
+    238                      Crc16AppendByteArray(nfc_tag_mem_tmp, sizeof(nfc_toc_entry_t));
+    239          
+    240                      // increment index for next TOC entry
+    241                      nfc_local_state.mb_proc_idx++;
+    242          
+    243                      // increment address for next TOC entry
+    244                      nfc_local_state.mb_entity.addr += sizeof(nfc_toc_entry_t);
+    245                  }
+    246              }
+    247          
+    248              return nfc_fct_busy;
+    249          }
+    250          
+    251          // -----------------------------------------------------------------------------
+    252          /**
+    253           * \brief initialize tag access rights.
+    254           * \retval busy or done nfc status
+    255           * \note  This function is called, if:
+    256           *      - MCU was flashed
+    257           *      - control registers are all 0xFF
+    258           *      - the register values are corrupted (wrong CRC)
+    259           */
+    260          STATIC nfc_fct_status_t initialize_tag_access_rights(void)
+    261          {
+    262              if (nfc_local_state.access_right_init_idx == 0)
+    263              {
+    264                  // present I2C password to change access rights (sss byte)
+    265                  if (true == I2cPresentI2cPwd(0))
+    266                  {
+    267                      nfc_local_state.access_right_init_idx++;
+    268                  }
+    269              }
+    270              else
+    271              {
+    272                  // set pwd control bits and read / write access rights for each sector
+    273                  nfc_local_state.is_pending_i2c_access = !(I2cInitSectorProtection());
+    274          
+    275                  // if I2cWrite was successful ....
+    276                  if (false == nfc_local_state.is_pending_i2c_access)
+    277                  {
+    278                      nfc_local_state.access_right_init_idx = 0;
+    279                      return nfc_fct_done;
+    280                  }
+    281              }
+    282              return nfc_fct_busy;
+    283          }
+    284          
+    285          // -----------------------------------------------------------------------------
+    286          /**
+    287           * \brief reset tag access rights.
+    288           * \retval busy or done nfc status
+    289           * \note called by the specific fsm state *nfc_fsm_state_reset_tag_access_rights*
+    290           * triggered by NFCResetTagAccessRights() function
+    291           */
+    292          STATIC nfc_fct_status_t reset_tag_access_rights(void)
+    293          {
+    294              uint8_t sector_access_rights[16] = { 0 };
+    295          
+    296              // present I2C password to change access rights (sss byte)
+    297              I2cPresentI2cPwd(0);
+    298          
+    299              // Write all sector security status bytes from tag register address 0
+    300              nfc_local_state.is_pending_i2c_access =
+    301                  !(I2cWriteRegister (0, sector_access_rights, 16));
+    302          
+    303              // if I2cWrite was successful ....
+    304              if (true == nfc_local_state.is_pending_i2c_access)
+    305              {
+    306                  return nfc_fct_done;
+    307              }
+    308              return nfc_fct_busy;
+    309          }
+    310          
+    311          // -----------------------------------------------------------------------------
+    312          /**
+    313           * \brief convert addresses from REAL TAG structure to TAG_COPY structure
+    314           * \param tag_addr: address following the REAL TAG structure
+    315           * \retval address recalculated following the TAG COPY structure
+    316           */
+    317          STATIC uint16_t convert_tag_addr_to_tag_copy_addr(uint16_t tag_addr)
+    318          {
+    319              // validate that Tag address is Not less than start address of first MB
+    320              if (tag_addr < nfc_tag_addr_config.first_mpc_start_addr)
+    321              {
+    322                  // Index out of Range prevention !
+    323                  ErrorShutdown (NFC_ERROR_TAG_COPY_ADDR_CONVERSION);
+    324              }
+    325          
+    326              return tag_addr - nfc_tag_addr_config.first_mpc_start_addr;
+    327          }
+    328          
+    329          //------------------------------------------------------------------------------
+    330          /**
+    331           * \brief Compare two data blocks byte wise
+    332           * \param data1_p: pointer to the first block of data
+    333           * \param data2_p: pointer to the second block of data
+    334           * \param byte_length: the by amount of byte to be compared
+    335           * \return true if the data are equal, false otherwise
+    336           */
+    337          STATIC bool is_data_equal(const void *data1_p, const void *data2_p,
+    338                                    uint8_t byte_length)
+    339          {
+    340              uint8_t* p1;
+    341              uint8_t* p2;
+    342              uint8_t i1;
+    343          
+    344              p1 = (uint8_t*) data1_p;
+    345              p2 = (uint8_t*) data2_p;
+    346              i1 = 0;
+    347          
+    348              while ((i1 < byte_length) && (*(p1 + i1) == *(p2 + i1)))
+    349              {
+    350                  i1++;
+    351              }
+    352          
+    353              return (i1 == byte_length);
+    354          }
+    355          
+    356          //------------------------------------------------------------------------------
+    357          /**
+    358           * \brief set the *nfc_local_state.mb_proc_idx* to the number of the next mb
+    359           * that have to be processed
+    360           * \param req_vector: pointer to the 32 bit variable in which each bit set to 1
+    361           * represent a mb to be processed
+    362           * \note This function search the next bit set to 1 in the passed 32 bit variable
+    363           * incrementing accordingly the *nfc_local_state.mb_proc_idx*.
+    364           * Note that at each evaluation the 32 bit variable is modified by a right shift
+    365           */
+    366          STATIC void set_next_requested_mb_idx(uint32_t *req_vector)
+    367          {
+    368              // search next request LSB which is set to 1
+    369              while ((*req_vector) && (!((*req_vector) & 1)))
+    370              {
+    371                  // right shift request vector
+    372                  (*req_vector) >>= 1;
+    373          
+    374                  // increment MB process index
+    375                  nfc_local_state.mb_proc_idx++;
+    376              }
+    377          }
+    378          
+    379          //------------------------------------------------------------------------------
+    380          /**
+    381           * \brief increment by one the *nfc_local_state.mb_proc_idx* and right shift
+    382           * the 32 bit variable passed as parameter.
+    383           * \param req_vector: pointer to the 32 bit variable in which each bit set to 1
+    384           * represent a mb to be processed
+    385           * \note This function is called at the end of every successfull process on the
+    386           * mbs entities(read, write or update). It's needed to avoid to process again
+    387           * the same mb when calling the next *set_next_requested_mb_idx*
+    388           *
+    389           */
+    390          STATIC void increment_requested_mb_idx(uint32_t *req_vector)
+    391          {
+    392              // right shift request vector
+    393              (*req_vector) >>= 1;
+    394          
+    395              // increment MB process index
+    396              nfc_local_state.mb_proc_idx++;
+    397          }
+    398          
+    399          //-----------------------------------------------------------------------------
+    400          /**
+    401           * \brief Write the next byte on the MPC (from tag to MCU)
+    402           * \param idx: index of the MPC to write on
+    403           * \note Based on the *nfc_local_state.mb_entity* structure and on the index of
+    404           * the MPC we're writing on, this function retrieve the address of the byte to
+    405           * be written from the *nfc_tag_copy[]* array and perform the MPC writing taking
+    406           * care of initializing the iterator if is the first writing on that MPC
+    407           */
+    408          STATIC void mpc_write_next_byte(uint8_t idx)
+    409          {
+    410              uint16_t tag_copy_addr;
+    411          
+    412              tag_copy_addr = convert_tag_addr_to_tag_copy_addr(
+    413                      NfcMpcTagStartAddr[idx] + nfc_local_state.mb_entity.addr);
+    414          
+    415              // when address is 0 the MpcRead iterator is initialized
+    416              if (0 == nfc_local_state.mb_entity.addr)
+    417              {
+    418                  // initialize iterator start address first
+    419                  // only dummy data is written
+    420                  MpcOpen(toc_items[idx].keydata_idx, 0, toc_items[idx].ch, MPC_PORT_NFC);
+    421              }
+    422          
+    423              // write byte from TAG copy to MPC Generic
+    424              MpcWrite(MPC_PORT_NFC, nfc_tag_copy[tag_copy_addr]);
+    425          
+    426              // increment address
+    427              nfc_local_state.mb_entity.addr++;
+    428          }
+    429          
+    430          //-----------------------------------------------------------------------------
+    431          /**
+    432           * \brief Read the next entity on the MPC (from MCU to tag)
+    433           * \param idx: index of the MPC to read from
+    434           * \note This function read next entity with real data from MpcGeneric taking
+    435           * care of initializing the iterator if is the first reading from that MPC
+    436           */
+    437          STATIC void mpc_read_next_entity(uint8_t idx)
+    438          {
+    439              mpc_port_t port;
+    440              int mpc_read_return;
+    441              uint16_t channel = (toc_items[idx].ch << 8);
+    442              uint8_t nfc_prot_attr = toc_items[idx].mpc_keydata->attributes;
+    443          
+    444              // set protection attribute:
+    445              // read only and r/w protected MPCs: MPC_PORT_ROOT, otherwise MPC_PORT_NFC
+    446              port = (MPC_ATTRIB_NFC_UNPROTECTED & nfc_prot_attr) ?
+    447                      MPC_PORT_NFC : MPC_PORT_ROOT;
+    448          
+    449              // when address is 0 the MpcRead iterator is initialized
+    450              if (0 == nfc_local_state.mb_entity.addr)
+    451              {
+    452                  // initialize iterator start address first
+    453                  // only dummy data is returned
+    454                  // index reference for MpcRead is MpcKeydata[]!
+    455                  // channel is uint16_t -> always positive thouggh function param is int
+    456                  MpcRead(toc_items[idx].keydata_idx, channel, port, (uint8_t *) &(nfc_local_state.mb_entity.data));
+    457              }
+    458          
+    459              // read next entity with real data from MpcGeneric and return entity length
+    460              mpc_read_return = MpcRead(toc_items[idx].keydata_idx, -1, port,
+    461                                        (uint8_t *) &(nfc_local_state.mb_entity.data));
+    462          
+    463              // set entity length to either entity length or 0 when all entities are read out
+    464              nfc_local_state.mb_entity.length =
+    465                      (mpc_read_return == MPC_OUT_OF_RANGE) ? 0 : mpc_read_return;
+    466          }
+    467          
+    468          //-----------------------------------------------------------------------------
+    469          /**
+    470           * \brief Write on REAL TAG via I2C a full *nfc_local_state.mb_entity*
+    471           * \return true if the I2cWrite was succesfull (i2c tx_fifo was not full)
+    472           * \note This function is called only within mb_update_from_mcu_to_tag()
+    473           * It compares the MCU data with the internal TAG_COPY, and will write to the
+    474           * TAG only if they're different
+    475           */
+    476          STATIC bool tag_write_entity(void)
+    477          {
+    478              uint16_t tag_addr;
+    479              uint16_t tag_copy_addr;
+    480              uint8_t i1;
+    481              uint8_t *data;
+    482              uint8_t length;
+    483              bool is_i2c_write_successful;
+    484          
+    485              data = (uint8_t *) &(nfc_local_state.mb_entity.data);
+    486              length = nfc_local_state.mb_entity.length;
+    487              tag_addr = NfcMpcTagStartAddr[nfc_local_state.mb_proc_idx]
+    488                      + nfc_local_state.mb_entity.addr;
+    489          
+    490              tag_copy_addr = convert_tag_addr_to_tag_copy_addr(tag_addr);
+    491          
+    492              // default - when no I2CWrite is required (data is equal) - return successful
+    493              is_i2c_write_successful = true;
+    494          
+    495              // compare data with TAG copy data
+    496              if (false == is_data_equal(data, &nfc_tag_copy[tag_copy_addr], length))
+    497              {
+    498                  // write to TAG and return if I2CWrite is successful (= true)
+    499                  is_i2c_write_successful = I2cWrite(tag_addr, (uint8_t *) data, length);
+    500          
+    501                  // only when I2cWrite was successful, update Tag copy memory.
+    502                  // It is required for data compare fail to re-trigger pending I2CWrite()
+    503                  if (true == is_i2c_write_successful)
+    504                  {
+    505                      for (i1 = 0; i1 < length; i1++)
+    506                      {
+    507                          nfc_tag_copy[tag_copy_addr] = *data;
+    508                          tag_copy_addr++;
+    509                          data++;
+    510                      }
+    511                  }
+    512              }
+    513          
+    514              return is_i2c_write_successful;
+    515          }
+    516          
+    517          //-----------------------------------------------------------------------------
+    518          /**
+    519           * \brief Write on the REAL TAG the CRC of the mb we are currently working
+    520           * \return true if the I2cWrite was succesfull (i2c tx_fifo was not full)
+    521           * \note This function is called at the end of each MB TAG writings
+    522           * The address to which retrieve the CRC on the TAG is NOT calculated
+    523           * from an Index of the MB passed as parameter (like *mpc_read_next_entity()*)
+    524           * but it is calculated with the actual *mb_proc_idx* and *mb_entity.addr*
+    525           * So we have to be sure to call this function only AT THE END of every mb
+    526           * writings
+    527           */
+    528          STATIC bool tag_write_mb_crc(void)
+    529          {
+    530              uint16_t tag_addr;
+    531              uint16_t tag_copy_addr;
+    532              uint16_t crc_16;
+    533              bool is_i2c_write_successful;
+    534          
+    535              tag_addr = NfcMpcTagStartAddr[nfc_local_state.mb_proc_idx]
+    536                      + nfc_local_state.mb_entity.addr;
+    537          
+    538              tag_copy_addr = convert_tag_addr_to_tag_copy_addr(tag_addr);
+    539          
+    540              crc_16 = Crc16Checksum(crc16_big_endian);
+    541          
+    542              // default - when no I2CWrite is required (data is equal) - return  successful
+    543              is_i2c_write_successful = true;
+    544          
+    545              // compare data with TAG copy data
+    546              if (false == is_data_equal(&crc_16, &nfc_tag_copy[tag_copy_addr], 2))
+    547              {
+    548                  // write to TAG and return if I2CWrite is successful (= true)
+    549                  is_i2c_write_successful = I2cWrite(tag_addr, (uint8_t *) &crc_16, 2);
+    550          
+    551                  // only when I2cWrite was successful update Tag copy memory
+    552                  // required for data compare fail to re-trigger pending I2CWrite()
+    553                  if (true == is_i2c_write_successful)
+    554                  {
+    555                      // write CRC-16 LSB to Tag Copy - LSB
+    556                      nfc_tag_copy[tag_copy_addr] = (0xFF & crc_16);
+    557                      // write CRC-16 MSB - to Tag Copy - MSB
+    558                      nfc_tag_copy[tag_copy_addr + 1] = (crc_16 >> 8);
+    559                  }
+    560              }
+    561          
+    562              return is_i2c_write_successful;
+    563          }
+    564          
+    565          //-----------------------------------------------------------------------------
+    566          /**
+    567           * \brief Read from the REAL TAG the mb specified by the idx parameter
+    568           * \param idx: the index of the requested mb
+    569           * \return true if the i2c reading was succesfull (there are no other pending
+    570           * readings)
+    571           * \note The I2cRead function always reads the appended 2 byte CRC16
+    572           * See function I2Read() for details
+    573           */
+    574          STATIC bool i2c_read_mb(uint8_t idx)
+    575          {
+    576              // load MB via I2C request
+    577              // NOTE:
+    578              return I2cRead(
+    579                      NfcMpcTagStartAddr[idx],
+    580                      &nfc_tag_copy[convert_tag_addr_to_tag_copy_addr(
+    581                                    NfcMpcTagStartAddr[idx])],
+    582                      toc_items[idx].mpc_keydata->length);
+    583          }
+    584          
+    585          //-----------------------------------------------------------------------------
+    586          /**
+    587           * \brief Release the memory lock used for on-line programming whithin the
+    588           * handshake mechanism
+    589           * \note Called to drop the on-line programming in case of:
+    590           *  - crc errors when reading mbs
+    591           *  - at the end of the *nfc_fsm_state_mb_write_to_mcu* state
+    592           */
+    593          STATIC void unlock_tag_memory(void)
+    594          {
+    595              // set local status flag to unlocked
+    596              nfc_local_state.is_tag_mem_locked = false;
+    597          
+    598              // update TAG Control Register - clear URR and MLR
+    599              nfc_local_state.tag_ctrl_register->urr = 0;
+    600              nfc_local_state.tag_ctrl_register->mlr = 0;
+    601              nfc_local_state.is_write_tag_control_reg_requested = true;
+    602          
+    603              // to prevent race condition for TAG Control Register Read (Fast Timer)
+    604              nfc_local_state.fast_timer_cnt = 0;
+    605          }
+    606          
+    607          //-----------------------------------------------------------------------------
+    608          /**
+    609           * \brief Check if the complete TAG control registers is 0xFF
+    610           * \return true if TAG has to be reinitialized, false otherwise
+    611           */
+    612          STATIC bool handle_tag_initialization(void)
+    613          {
+    614              // TAG initialization
+    615              // validate if complete TAG Control Register Memory is 0xFF
+    616              if ((0xFFFFFFFF == nfc_local_state.tag_ctrl_register->urr)
+    617                      && (0xFFFFFFFF == nfc_local_state.tag_ctrl_register->prr)
+    618                      && (0xFF == nfc_local_state.tag_ctrl_register->mlr)
+    619                      && (0xFFFF == nfc_local_state.tag_ctrl_register->crc16))
+    620              {
+    621                  // set TAG Initialization request
+    622                  nfc_local_state.is_tag_initialization_requested = true;
+    623          
+    624                  return true;
+    625              }
+    626          
+    627              return false;
+    628          }
+    629          
+    630          //-----------------------------------------------------------------------------
+    631          /**
+    632           * \brief Recognize the pattern of a faulty NFC chip by checking the Control
+    633           * Regiter block-wise (4 bytes at a time).
+    634           * Since the Control Register starts at address 0x100, it happens that
+    635           * PRR and URR fall into two individual blocks, MLR and CRC fall into one single
+    636           * block.
+    637           * \return true if at least one of the three blocks (4 bytes each) that compose
+    638           * the Control Register is filled with 0xFF, false otherwise.
+    639           */
+    640          /*
+    641          STATIC bool isCrcErrorDueToBlockCorruption(void)
+    642          {
+    643              // TAG Control Register evaluation
+    644              // We can recognize a Control Register corruption due to the faulty NFC chip
+    645              // by checking if at least one of the memory block (4 bytes) is full of 0xff
+    646              if   ((0xFFFFFFFF == nfc_local_state.tag_ctrl_register->prr)
+    647               ||   (0xFFFFFFFF == nfc_local_state.tag_ctrl_register->urr)
+    648               ||  ((0xFF == nfc_local_state.tag_ctrl_register->mlr)
+    649                 && (0xFFFF == nfc_local_state.tag_ctrl_register->crc16)))
+    650              {
+    651                  return true;
+    652              }
+    653          
+    654              return false;
+    655          }
+    656          */
+    657          //-----------------------------------------------------------------------------
+    658          /**
+    659           * \brief
+    660           * Recognize if there is an MLR misalignment between fw and sw by checking the
+    661           * Control Register right after the previous writing of the MLR
+    662           *
+    663           * \return
+    664          */
+    665          STATIC bool isThereCtrlRegisterMlrMisalignment(void)
+    666          {
+    667              if((nfc_local_state.tag_ctrl_register->prr == nfc_local_state.shadow_tag_ctrl_register.prr)
+    668               &&   (nfc_local_state.tag_ctrl_register->urr == nfc_local_state.shadow_tag_ctrl_register.urr)
+    669               &&   (nfc_local_state.tag_ctrl_register->mlr == ((uint8_t)(nfc_local_state.shadow_tag_ctrl_register.mlr-127))))
+    670              {
+    671                  return true;
+    672              }
+    673              return false;
+    674          }
+    675          
+    676          //-----------------------------------------------------------------------------
+    677          /**
+    678           * \brief handle PRR values performing the appropriate actions
+    679           * \param prr: the prr register
+    680           * \return true if different from 0
+    681           */
+    682          STATIC bool handle_tag_register_prr(uint32_t prr)
+    683          {
+    684              uint32_t prr_little_endian;
+    685          
+    686              // Is PRR requested ....
+    687              if (0 != prr)
+    688              {
+    689                  // convert to little-endian and mask out to max number of MBs
+    690                  prr_little_endian = (REV_BYTE_ORDER32(prr)) & NFC_INST_REQUEST_ALL;
+    691          
+    692                  // set MB read request register to PRR
+    693                  nfc_local_state.tag_req_mb_read = prr_little_endian;
+    694          
+    695                  // set MB write request register
+    696                  nfc_local_state.tag_req_mb_write = nfc_local_state.tag_req_mb_read;
+    697          
+    698                  // change loaded TAG PRR to little endian for further processing
+    699                  nfc_local_state.tag_ctrl_register->prr = prr_little_endian;
+    700          
+    701                  // lock TAG Memory when power on condition is true
+    702                  if (true == nfc_local_state.is_power_on_condition)
+    703                  {
+    704                      nfc_local_state.is_tag_mem_locked = true;
+    705                      nfc_local_state.ignore_crc_error = false;
+    706                      nfc_local_state.is_new_data_present_at_power_on = 1;
+    707                  }
+    708                  else
+    709                  {
+    710                    nfc_local_state.is_new_data_present_at_power_on = 0;
+    711                  }
+    712          
+    713                  return true;
+    714              }
+    715              else
+    716              {
+    717                nfc_local_state.is_new_data_present_at_power_on = 0;
+    718              }
+    719          
+    720              return false;
+    721          }
+    722          
+    723          //-----------------------------------------------------------------------------
+    724          /**
+    725           * \brief handle URR values performing the appropriate actions
+    726           * \param urr: the urr register
+    727           * \return true if different from 0
+    728           */
+    729          STATIC bool handle_tag_register_urr(uint32_t urr)
+    730          {
+    731              // handle URR requests only when NOT in Power-On
+    732              if (0 != urr)
+    733              {
+    734                  // set MB update request register to URR
+    735                  // convert to little-endian and mask out to max number of MBs
+    736                  nfc_local_state.tag_req_mb_update =
+    737                  NFC_INST_REQUEST_ALL & (REV_BYTE_ORDER32(urr));
+    738          
+    739                  return true;
+    740              }
+    741          
+    742              return false;
+    743          }
+    744          
+    745          //-----------------------------------------------------------------------------
+    746          /**
+    747           * \brief handle MLR register performing the appropriate actions
+    748           * \param mlr: the mlr register
+    749           * \return true if different from 0
+    750           */
+    751          STATIC bool handle_tag_register_mlr(uint8_t mlr)
+    752          {
+    753              // handle MLR requests only when NOT in Power-On
+    754              if (0 != mlr)
+    755              {
+    756                  // set TAG Memory Locked
+    757                  nfc_local_state.is_tag_mem_locked = true;
+    758          
+    759                  // set MLR response that TAG Memory is locked
+    760                  nfc_local_state.tag_ctrl_register->mlr = mlr + 127;
+    761          
+    762                  // write TAG Control Register
+    763                  // clear PRR (in case of CRC error required)
+    764                  nfc_local_state.tag_ctrl_register->prr = 0;
+    765                  nfc_local_state.is_write_tag_control_reg_requested = true;
+    766          
+    767                  // initialize the MLR counter for timeout in MLR handshaking
+    768                  nfc_local_state.mlr_counter = 0;
+    769          
+    770                  // initialize the CRC error counter during mem lock session
+    771                  nfc_local_state.mem_lock_crc_error_counter = 0;
+    772          
+    773                  // when  STATUS.Error is not 0 clear and update TAG Status Register
+    774                  if (0 != nfc_local_state.tag_status_register.error)
+    775                  {
+    776                      nfc_local_state.tag_status_register.error = 0;
+    777                      nfc_local_state.is_write_tag_status_reg_requested = true;
+    778                      // set local state to no CRC failure
+    779                      nfc_local_state.is_crc_error_read = false;
+    780                  }
+    781          
+    782                  return true;
+    783              }
+    784          
+    785              return false;
+    786          }
+    787          
+    788          //-----------------------------------------------------------------------------
+    789          /**
+    790           * \brief Initalize TAG Control Register
+    791           * \note Initialize to 0 all the TAG control register fields. Due to this
+    792           * initialization we need to re-write it on the TAG, so set to true the
+    793           * correspondant flag. Reset also the fast timer to prevent from unwanted
+    794           * readings.
+    795           */
+    796          STATIC void tag_control_register_init(void)
+    797          {
+    798              // Clear ALL Requests except PRR (only if no error)
+    799              if (false == nfc_local_state.is_crc_error_read)
+    800              {
+    801                  nfc_local_state.tag_ctrl_register->prr = 0;
+    802              }
+    803              nfc_local_state.tag_ctrl_register->urr = 0;
+    804              nfc_local_state.tag_ctrl_register->mlr = 0;
+    805              nfc_local_state.is_write_tag_control_reg_requested = true;
+    806          
+    807              // set local status flag to unlocked
+    808              nfc_local_state.is_tag_mem_locked = false;
+    809          
+    810              // to prevent race condition for TAG Control Register Read (Fast Timer)
+    811              nfc_local_state.fast_timer_cnt = 0;
+    812          }
+    813          
+    814          //-----------------------------------------------------------------------------
+    815          /**
+    816           * \brief Read the whole TOC register from the TAG
+    817           * \return busy or done nfc status
+    818           * \note This function read the whole TOC register and checks:
+    819           * - data integrity via CRC
+    820           * - correspondence between TAG data and internal MCU data
+    821           */
+    822          STATIC nfc_fct_status_t tag_toc_register_read(void)
+    823          {
+    824              uint8_t i1;
+    825              uint8_t mpc_idx;
+    826              uint8_t toc_field_idx;
+    827              uint16_t tmp_adr;
+    828          
+    829              // when NO I2C RX Request is pending and I2C RX is NOT Busy
+    830              if ((false == *(i2c_feedback_struct.is_rx_request_filled))
+    831                      & (i2c_state_busy_rx != i2c_feedback_struct.state))
+    832          
+    833              {
+    834                  // Is read TAG Device Identification Register requested ....
+    835                  if (true == nfc_local_state.is_read_tag_toc_reg_requested)
+    836                  {
+    837                      // read TAG TOC Register until I2cRead return true
+    838                      // than nfc_local_state.is_read_tag_deviceID_reg_requested is false
+    839                      nfc_local_state.is_read_tag_toc_reg_requested = !(I2cRead(
+    840                              NFC_TOC_START_ADDR, nfc_tag_copy,
+    841                              NFC_TAG_TOC_REGISTER_BYTE_COUNT));
+    842          
+    843                      // wait until I2cRead is done
+    844                      return nfc_fct_busy;
+    845                  }
+    846          
+    847                  // validate CRC16
+    848                  // if CRC is NOT correct ....
+    849                  if (false == i2c_feedback_struct.is_crc_correct)
+    850                  {
+    851                      // set TAG Initialization request
+    852                      nfc_local_state.is_tag_initialization_requested = true;
+    853          
+    854                  }
+    855                  // CRC is correct
+    856                  else
+    857                  {
+    858                      // initialize the number of the mpc we're evaluating
+    859                      mpc_idx = 0;
+    860          
+    861                      // initialize the field of the toc we're evaluating
+    862                      toc_field_idx = 0;
+    863          
+    864                      // Data integrity checks
+    865                      for (i1 = 0; i1 < NFC_TAG_TOC_REGISTER_BYTE_COUNT; i1++)
+    866                      {
+    867                          switch (toc_field_idx)
+    868                          {
+    869                              case 0:
+    870                              {
+    871                                  if (nfc_tag_copy[i1]
+    872                                          != ((0x0F)
+    873                                                  & (toc_items[mpc_idx].mpc_keydata->attributes)))
+    874                                  {
+    875                                      nfc_local_state.is_tag_initialization_requested =
+    876                                              true;
+    877                                      return nfc_fct_done;
+    878                                  }
+    879                                  break;
+    880                              }
+    881          
+    882                              case 1:
+    883                              {
+    884                                  if (nfc_tag_copy[i1]
+    885                                          != toc_items[mpc_idx].mpc_keydata->id)
+    886                                  {
+    887                                      nfc_local_state.is_tag_initialization_requested =
+    888                                              true;
+    889                                      return nfc_fct_done;
+    890                                  }
+    891                                  break;
+    892                              }
+    893          
+    894                              case 2:
+    895                              {
+    896                                  if (nfc_tag_copy[i1]
+    897                                          != toc_items[mpc_idx].mpc_keydata->version)
+    898                                  {
+    899                                      nfc_local_state.is_tag_initialization_requested =
+    900                                              true;
+    901                                      return nfc_fct_done;
+    902                                  }
+    903                                  break;
+    904                              }
+    905          
+    906                              case 3:
+    907                              {
+    908                                  if (nfc_tag_copy[i1]
+    909                                          != toc_items[mpc_idx].mpc_keydata->length)
+    910                                  {
+    911                                      nfc_local_state.is_tag_initialization_requested =
+    912                                              true;
+    913                                      return nfc_fct_done;
+    914                                  }
+    915                                  break;
+    916                              }
+    917          
+    918                              case 4:
+    919                              {
+    920                                  tmp_adr = nfc_tag_copy[i1 + 1];
+    921                                  tmp_adr <<= 8;
+    922                                  tmp_adr |= nfc_tag_copy[i1];
+    923          
+    924                                  if (tmp_adr
+    925                                          != REV_BYTE_ORDER16(NfcMpcTagStartAddr[mpc_idx]))
+    926                                  {
+    927                                      nfc_local_state.is_tag_initialization_requested =
+    928                                              true;
+    929                                      return nfc_fct_done;
+    930                                  }
+    931                                  break;
+    932                              }
+    933          
+    934                              default:
+    935                              {
+    936                                  break;
+    937                              }
+    938                          }
+    939          
+    940                          if (++toc_field_idx >= 6)
+    941                          {
+    942                              toc_field_idx = 0;
+    943                              mpc_idx++;
+    944                          }
+    945                      }
+    946                  }
+    947          
+    948                  // TAG Control Register Read is done
+    949                  return nfc_fct_done;
+    950              }
+    951          
+    952              // I2C module is busy RX
+    953              return nfc_fct_busy;
+    954          }
+    955          
+    956          //-----------------------------------------------------------------------------
+    957          /**
+    958           * \brief Read TAG Device Identification Register
+    959           * \return busy or done nfc status
+    960           * \note This function read the whole Device Identification register and checks:
+    961           * - data integrity via CRC
+    962           * - correspondence between TAG data and internal MCU data
+    963           */
+    964          STATIC nfc_fct_status_t tag_device_identification_register_read(void)
+    965          {
+    966              uint8_t i1, i2;
+    967              uint64_t gtin_copy;
+    968              nfc_tag_identification_register_t *tag_reg_ident;
+    969          
+    970              // set pointer for Identification Registers to nfc_tag_mem_tmp
+    971              tag_reg_ident = (nfc_tag_identification_register_t *) nfc_tag_mem_tmp;
+    972          
+    973              // when NO I2C RX Request is pending and I2C RX is NOT Busy
+    974              if ((false == *(i2c_feedback_struct.is_rx_request_filled))
+    975                      & (i2c_state_busy_rx != i2c_feedback_struct.state))
+    976          
+    977              {
+    978                  // Is read TAG Device Identification Register requested ....
+    979                  if (true == nfc_local_state.is_read_tag_deviceID_reg_requested)
+    980                  {
+    981                      // read TAG Device Identification Register until I2cRead return true
+    982                      // than nfc_local_state.is_read_tag_deviceID_reg_requested is false
+    983                      nfc_local_state.is_read_tag_deviceID_reg_requested = !(I2cRead(
+    984                              0, nfc_tag_mem_tmp, NFC_TAG_DEVICE_ID_REGISTER_BYTE_COUNT));
+    985          
+    986                      // wait until I2cRead is done
+    987                      return nfc_fct_busy;
+    988                  }
+    989          
+    990                  // validate CRC16
+    991                  // if CRC is NOT correct ....
+    992                  if (false == i2c_feedback_struct.is_crc_correct)
+    993                  {
+    994                      // set TAG Initialization request
+    995                      nfc_local_state.is_tag_initialization_requested = true;
+    996          
+    997                  }
+    998                  // CRC is correct
+    999                  else
+   1000                  {
+   1001                      // if the manufacturer code has been alterated
+   1002                      if (OSRAM_MANUFACTURER_CODE != tag_reg_ident->manufacturer_code)
+   1003                      {
+   1004                          // set TAG Initialization request
+   1005                          nfc_local_state.is_tag_initialization_requested = true;
+   1006                      }
+   1007                      // if the fw_major_version has been alterated
+   1008                      else if (DEVICE_FW_VERSION_MAJOR != tag_reg_ident->fw_major_version)
+   1009                      {
+   1010                          // set TAG Initialization request
+   1011                          nfc_local_state.is_tag_initialization_requested = true;
+   1012                      }
+   1013                      // if the fw_minor_version has been alterated
+   1014                      else if (DEVICE_FW_VERSION_MINOR != tag_reg_ident->fw_minor_version)
+   1015                      {
+   1016                          // set TAG Initialization request
+   1017                          nfc_local_state.is_tag_initialization_requested = true;
+   1018                      }
+   1019                      // if the hw_major_version has been alterated
+   1020                      else if (((uint8_t) (Ballast_GetHW_Version() >> 8)) != tag_reg_ident->hw_major_version)
+   1021                      {
+   1022                          // set TAG Initialization request
+   1023                          nfc_local_state.is_tag_initialization_requested = true;
+   1024                      }
+   1025                      // if the nfc_major_version has been alterated
+   1026                      else if (NFC_VERSION_MAJOR != tag_reg_ident->nfc_major_version)
+   1027                      {
+   1028                          // set TAG Initialization request
+   1029                          nfc_local_state.is_tag_initialization_requested = true;
+   1030                      }
+   1031                      // if the number of TOC items has been alterated
+   1032                      else if (MPC_NFC_INST != tag_reg_ident->toc_items)
+   1033                      {
+   1034                          // set TAG Initialization request
+   1035                          nfc_local_state.is_tag_initialization_requested = true;
+   1036                      }
+   1037                      // if the Status Register Start Address has been alterated
+   1038                      else if(REV_BYTE_ORDER16(nfc_tag_addr_config.status_register_start_addr) !=
+   1039                              tag_reg_ident->status_register_start_addr)
+   1040                      {
+   1041                          // set TAG Initialization request
+   1042                          nfc_local_state.is_tag_initialization_requested = true;
+   1043                      }
+   1044                      // if the Control Register Start Address has been alterated
+   1045                      else if(REV_BYTE_ORDER16(nfc_tag_addr_config.control_register_start_addr) !=
+   1046                              tag_reg_ident->control_register_start_addr)
+   1047                      {
+   1048                          // set TAG Initialization request
+   1049                          nfc_local_state.is_tag_initialization_requested = true;
+   1050                      }
+   1051                      // if the Protected Area Start Address has been alterated
+   1052                      else if(REV_BYTE_ORDER16(nfc_tag_addr_config.protected_memory_start_addr) !=
+   1053                              tag_reg_ident->protected_memory_start_addr)
+   1054                      {
+   1055                          // set TAG Initialization request
+   1056                          nfc_local_state.is_tag_initialization_requested = true;
+   1057                      }
+   1058                      // if the GTIN has been alterated
+   1059                      else
+   1060                      {
+   1061                          i2 = 5;
+   1062                          for (i1 = 0; i1 < 6; i1++)
+   1063                          {
+   1064                            gtin_copy = ((((uint64_t)THIS_DEVICE_EAN) >> ((i2--) * 8)));
+   1065                            gtin_copy &= 0xff;
+   1066          
+   1067                              if(tag_reg_ident->gtin[i1] != gtin_copy)
+   1068                              {
+   1069                                  // set TAG Initialization request
+   1070                                  nfc_local_state.is_tag_initialization_requested = true;
+   1071                              }
+   1072                          }
+   1073                      }
+   1074                  }
+   1075          
+   1076                  // TAG Control Register Read is done
+   1077                  return nfc_fct_done;
+   1078              }
+   1079          
+   1080              // I2C module is busy RX
+   1081              return nfc_fct_busy;
+   1082          }
+   1083          
+   1084          
+   1085          //-----------------------------------------------------------------------------
+   1086          /**
+   1087           * \brief Read TAG Control Register
+   1088           * \return busy or done nfc status
+   1089           * \note This function read the Control register and checks data integrity via
+   1090           * CRC. Then handle properly each fields prr, urr and mlr.
+   1091           */
+   1092          STATIC nfc_fct_status_t tag_control_register_read(void)
+   1093          {
+   1094              // when NO I2C RX Request is pending and I2C RX is NOT Busy
+   1095              if ((false == *(i2c_feedback_struct.is_rx_request_filled))
+   1096                      & (i2c_state_busy_rx != i2c_feedback_struct.state))
+   1097              {
+   1098                  // Is read TAG Control Register requested ....
+   1099                  if (true == nfc_local_state.is_read_tag_control_reg_requested)
+   1100                  {
+   1101                      // read TAG Control Register until I2cRead return true
+   1102                      // than nfc_local_state.is_read_tag_control_reg_requested is false
+   1103                      nfc_local_state.is_read_tag_control_reg_requested = !(I2cRead(
+   1104                              nfc_tag_addr_config.control_register_start_addr,
+   1105                              nfc_tag_mem_tmp,
+   1106                              NFC_TAG_CONTROL_REGISTER_BYTE_COUNT));
+   1107          
+   1108                      // wait until I2cRead is done
+   1109                      return nfc_fct_busy;
+   1110                  }
+   1111          
+   1112                  // validate CRC16
+   1113                  // if CRC is NOT correct ....
+   1114                  if (false == i2c_feedback_struct.is_crc_correct)
+   1115                  {
+   1116                      // TAG initialization
+   1117                      // validate if complete TAG Control Register Memory is 0xFF
+   1118                      handle_tag_initialization();
+   1119          
+   1120                      // in case of CRC error PRR content will be discarded and thus no
+   1121                      // new data is available
+   1122                      nfc_local_state.is_new_data_present_at_power_on = 0;
+   1123          
+   1124                      if(false == nfc_local_state.is_ctrl_register_write_confirmed)
+   1125                      {
+   1126                         /* if(isCrcErrorDueToBlockCorruption())
+   1127                          {
+   1128                              // Restore the Control Register content of the previous writing
+   1129                              nfc_local_state.tag_ctrl_register->prr = nfc_local_state.shadow_tag_ctrl_register.prr;
+   1130                              nfc_local_state.tag_ctrl_register->urr = nfc_local_state.shadow_tag_ctrl_register.urr;
+   1131                              nfc_local_state.tag_ctrl_register->mlr = nfc_local_state.shadow_tag_ctrl_register.mlr;
+   1132          
+   1133                              // Try to retrigger again the previous writing
+   1134                              nfc_local_state.is_write_tag_control_reg_requested = true;
+   1135          
+   1136                              // TAG Control Register Read is done
+   1137                              return nfc_fct_done;
+   1138                          }*/
+   1139          
+   1140                      }
+   1141          
+   1142                      // when the TAG is not locked by an external tool
+   1143                      if (false == nfc_local_state.is_tag_mem_locked)
+   1144                      {
+   1145                          // when the CRC is not valid reinitialize Tag Control Registers
+   1146                          tag_control_register_init();
+   1147                      }
+   1148                      // when the TAG is locked by an external tool it can happen that
+   1149                      // we're reading while the tool is writing, ending up with a CRC
+   1150                      // error because of the partial writing by the tool.
+   1151                      else
+   1152                      {
+   1153                          // We have to discriminate a CRC error due to block corruption
+   1154                          // from a CRC error due to a reading happened in between of an
+   1155                          // RF writing.
+   1156          
+   1157                          // In case of CRC error due to a reading in between of RF
+   1158                          // writings we have to read out the control registers 3 times
+   1159                          // before to declare as "valid" the CRC error and reinitialize
+   1160                          // the TAG control register
+   1161                          if (++nfc_local_state.mem_lock_crc_error_counter <
+   1162                                  MAX_CRC_ERROR_DURING_MEM_LOCK)
+   1163                          {
+   1164                              nfc_local_state.is_read_tag_control_reg_requested = true;
+   1165                          }
+   1166                          else
+   1167                          {
+   1168                              nfc_local_state.mem_lock_crc_error_counter = 0;
+   1169                              tag_control_register_init();
+   1170                          }
+   1171                      }
+   1172                  }
+   1173                  // CRC is correct
+   1174                  else
+   1175                  {
+   1176                      if (true == nfc_local_state.is_power_on_condition)
+   1177                      {
+   1178                          handle_tag_register_prr(nfc_local_state.tag_ctrl_register->prr);
+   1179                      }
+   1180                      else
+   1181                      {
+   1182                          // TAG Memory is NOT locked ....
+   1183                          if (false == nfc_local_state.is_tag_mem_locked)
+   1184                          {
+   1185                              // handle URR register
+   1186                              if (false
+   1187                                      == handle_tag_register_urr(
+   1188                                              nfc_local_state.tag_ctrl_register->urr))
+   1189                              {
+   1190                                  // handle MLR register when URR is 0
+   1191                                  handle_tag_register_mlr(
+   1192                                          nfc_local_state.tag_ctrl_register->mlr);
+   1193                              }
+   1194                          }
+   1195                          // TAG Memory is locked ....
+   1196                          else
+   1197                          {
+   1198                              // only handle PRR if NOT in Error mode
+   1199                              if (0 == nfc_local_state.tag_status_register.error)
+   1200                              {
+   1201                                  handle_tag_register_prr(
+   1202                                          nfc_local_state.tag_ctrl_register->prr);
+   1203          
+   1204                                  // When TAG is locked, after a Control Register write,
+   1205                                  // in the next reading we have to counter-check if we've
+   1206                                  // written exactly what we wanted.
+   1207                                  //
+   1208                                  // The TAG locking begins when there is the detection of
+   1209                                  // MLR != 0 and ends right after the data transfer
+   1210                                  // from the tag to the mcu (at the end of the  state
+   1211                                  // nfc_fsm_state_mb_write_to_mcu but before the Control
+   1212                                  // Register writing)
+   1213                                  //
+   1214                                  // This means there is only one case in which we're
+   1215                                  // writing the Control Register when the TAG is locked
+   1216                                  // which is the MLR answer.
+   1217          
+   1218                                  // The MLR answer hasn't been confirmed yet
+   1219                                  if(false == nfc_local_state.is_ctrl_register_write_confirmed)
+   1220                                  {
+   1221                                      // Check if the Control Register reading shows the
+   1222                                      // MLR being the initial value of the handshaking
+   1223                                      // If this is the case means that there was either
+   1224                                      // a overwriting by the sw or a no reception of the
+   1225                                      // written data and then the MLR reply has to be
+   1226                                      // retriggered!
+   1227                                      if(isThereCtrlRegisterMlrMisalignment())
+   1228                                      {
+   1229                                          // Restore the Control Register content of the previous writing
+   1230                                          // Actually only the mlr is required to be restored
+   1231                                          nfc_local_state.tag_ctrl_register->prr =
+   1232                                             nfc_local_state.shadow_tag_ctrl_register.prr;
+   1233                                          nfc_local_state.tag_ctrl_register->urr =
+   1234                                             nfc_local_state.shadow_tag_ctrl_register.urr;
+   1235                                          nfc_local_state.tag_ctrl_register->mlr =
+   1236                                             nfc_local_state.shadow_tag_ctrl_register.mlr;
+   1237          
+   1238                                          // Retrigger again the Control Register writing
+   1239                                          nfc_local_state.is_write_tag_control_reg_requested = true;
+   1240          
+   1241          
+   1242                                          // TAG Control Register Read is done
+   1243                                          return nfc_fct_done;
+   1244                                      }
+   1245                                      else
+   1246                                      {
+   1247                                         // If the reading is different from the initial
+   1248                                         // MLR value then there has to be either
+   1249                                         // - the valid MLR answer previously placed, or
+   1250                                         // - a valid Control Register content already
+   1251                                         //   placed by the sw.
+   1252                                         // Infact here we are sure the CRC is correct.
+   1253                                         // Then we can state that the previous writing is
+   1254                                         // confirmed.
+   1255          
+   1256                                         nfc_local_state.is_ctrl_register_write_confirmed = true;
+   1257                                      }
+   1258                                  }
+   1259          
+   1260                                  // handle MLR timeout. MLR is set, but PRR = 0
+   1261                                  if (nfc_local_state.mlr_counter
+   1262                                          > NFC_CTRL_REGISTER_WAIT_CYCLES)
+   1263                                  {
+   1264                                      // reset counter
+   1265                                      nfc_local_state.mlr_counter = 0;
+   1266                                      // unlock tag memory
+   1267                                      unlock_tag_memory();
+   1268                                  }
+   1269                                  nfc_local_state.mlr_counter++;
+   1270          
+   1271                                  // if we got  PRR = 0, URR = 0 and MLR = 0 while the TAG
+   1272                                  // is locked, means the external tool has re-initialized
+   1273                                  // it because of its internal timeout.
+   1274                                  // Then we have to unlock the tag memory, being ready
+   1275                                  // to start again a new handshake, if required
+   1276                                  /*
+   1277                                if((nfc_local_state.tag_ctrl_register->prr == 0)&&
+   1278                                     (nfc_local_state.tag_ctrl_register->urr == 0)&&
+   1279                                     (nfc_local_state.tag_ctrl_register->mlr == 0))
+   1280                                  {
+   1281                                      // reset counter
+   1282                                      nfc_local_state.mlr_counter = 0;
+   1283          
+   1284                                      // set local status flag to unlocked
+   1285                                      nfc_local_state.is_tag_mem_locked = false;
+   1286          
+   1287                                  }*/
+   1288                              }
+   1289                              else
+   1290                              {
+   1291                                // We have something wrong happening here...
+   1292                                nfc_local_state.mlr_counter = 0;
+   1293          
+   1294                              }
+   1295                          }
+   1296                      }
+   1297                  }
+   1298          
+   1299                  // TAG Control Register Read is done
+   1300                  return nfc_fct_done;
+   1301              }
+   1302          
+   1303              // I2C module is busy RX
+   1304              return nfc_fct_busy;
+   1305          }
+   1306          
+   1307          //-----------------------------------------------------------------------------
+   1308          /**
+   1309           * \brief Write TAG Control Register with its CRC
+   1310           * \return busy or done nfc status
+   1311          */
+   1312          nfc_fct_status_t tag_control_register_write(void)
+   1313          {
+   1314              // Initialize CRC 16
+   1315              Crc16Init (CRC16_CCITT_FALSE_START_VALUE);
+   1316          
+   1317              // calculate CRC16 for Device Identification
+   1318              Crc16AppendByteArray(nfc_tag_mem_tmp, NFC_TAG_CONTROL_REGISTER_BYTE_COUNT);
+   1319          
+   1320              // write CRC16
+   1321              nfc_local_state.tag_ctrl_register->crc16 = Crc16Checksum(crc16_big_endian);
+   1322          
+   1323              // Save the Control Register content in order to retrigger the same writing
+   1324              // in case of block corruption
+   1325              nfc_local_state.shadow_tag_ctrl_register.prr
+   1326                                                 = nfc_local_state.tag_ctrl_register->prr;
+   1327              nfc_local_state.shadow_tag_ctrl_register.urr
+   1328                                                 = nfc_local_state.tag_ctrl_register->urr;
+   1329              nfc_local_state.shadow_tag_ctrl_register.mlr
+   1330                                                 = nfc_local_state.tag_ctrl_register->mlr;
+   1331          
+   1332              nfc_local_state.is_ctrl_register_write_confirmed = false;
+   1333          
+   1334              // write all TAG Control Registers including CRC
+   1335              if (true == I2cWrite(nfc_tag_addr_config.control_register_start_addr,
+   1336                                  nfc_tag_mem_tmp,
+   1337                                  NFC_TAG_CONTROL_REGISTER_BYTE_COUNT + 2))
+   1338              {
+   1339                  return nfc_fct_done;
+   1340              }
+   1341          
+   1342              return nfc_fct_busy;
+   1343          }
+   1344          
+   1345          //-----------------------------------------------------------------------------
+   1346          /**
+   1347           * \brief Write TAG Status Register with its CRC
+   1348           * \return busy or done nfc status
+   1349          */
+   1350          nfc_fct_status_t tag_status_register_write(void)
+   1351          {
+   1352              // Initialize CRC 16
+   1353              Crc16Init (CRC16_CCITT_FALSE_START_VALUE);
+   1354          
+   1355              // calculate CRC16 for Device Identification
+   1356              Crc16AppendByteArray((uint8_t *) &nfc_local_state.tag_status_register,
+   1357                                   NFC_TAG_STATUS_REGISTER_BYTE_COUNT);
+   1358          
+   1359              // write CRC16
+   1360              nfc_local_state.tag_status_register.crc16 = Crc16Checksum(crc16_big_endian);
+   1361          
+   1362              // write all TAG Status Registers including CRC
+   1363              if (true == I2cWrite(nfc_tag_addr_config.status_register_start_addr,
+   1364                                  (uint8_t *) &nfc_local_state.tag_status_register,
+   1365                                  NFC_TAG_STATUS_REGISTER_BYTE_COUNT + 2))
+   1366              {
+   1367                  return nfc_fct_done;
+   1368              }
+   1369          
+   1370              return nfc_fct_busy;
+   1371          }
+   1372          
+   1373          //-----------------------------------------------------------------------------
+   1374          /**
+   1375           * \brief Write to the MPC all the MBs specified into the
+   1376           * *nfc_local_state.tag_req_mb_write* register
+   1377           * \return busy or done nfc status
+   1378           */
+   1379          STATIC nfc_fct_status_t mb_write_requested(void)
+   1380          {
+   1381              uint8_t mb_length;
+   1382              uint8_t actual_byte_cnt;
+   1383          
+   1384          
+   1385              // during MB read - stop Fast Timer processing (read TAG Control Register)
+   1386              nfc_local_state.fast_timer_cnt = 0;
+   1387          
+   1388              // check if all MBs written to MCU (no pending requests)
+   1389              if (0 == nfc_local_state.tag_req_mb_write)
+   1390              {
+   1391                  // all MBs written to MCU (no pending requests), we are done
+   1392                  return nfc_fct_done;
+   1393              }
+   1394          
+   1395              // next requested MB Index
+   1396              // search next request LSB which is set to 1
+   1397              set_next_requested_mb_idx(&nfc_local_state.tag_req_mb_write);
+   1398          
+   1399              // set MB length
+   1400              mb_length = toc_items[nfc_local_state.mb_proc_idx].mpc_keydata->length;
+   1401          
+   1402              // initialize actual byte count
+   1403              actual_byte_cnt = (true == nfc_local_state.is_power_on_condition)?
+   1404                              255 : NFC_RUNTIME_MPC_WRITE_BYTE_CNT;
+   1405          
+   1406              // as long as byte address offset is less than MB length
+   1407              // AND the actual byte count is greater than 0, do...
+   1408              while ((nfc_local_state.mb_entity.addr < mb_length) && (0 < actual_byte_cnt))
+   1409              {
+   1410                  // write next byte of TAG copy memory to MPC Generic
+   1411                  mpc_write_next_byte(nfc_local_state.mb_proc_idx);
+   1412          
+   1413                  // decrement byte counter of written bytes within a NfcCyclic() call
+   1414                  actual_byte_cnt--;
+   1415              }
+   1416          
+   1417              // if completed actual MB writing, then ...
+   1418              if (nfc_local_state.mb_entity.addr >= mb_length)
+   1419              {
+   1420                  // increment MB process index
+   1421                  increment_requested_mb_idx(&nfc_local_state.tag_req_mb_write);
+   1422          
+   1423                  // initialize entity address
+   1424                  nfc_local_state.mb_entity.addr = 0;
+   1425          
+   1426                  // when MB is written complete close Lock Byte for MPC
+   1427                  MpcClose (MPC_PORT_NFC);
+   1428              }
+   1429          
+   1430              // we are not done yet
+   1431              return nfc_fct_busy;
+   1432          }
+   1433          
+   1434          //-----------------------------------------------------------------------------
+   1435          /**
+   1436           * \brief Read from the REAL TAG all the MBs specified into the
+   1437           * *nfc_local_state.tag_req_mb_read* register
+   1438           * \return busy or done nfc status
+   1439           */
+   1440          nfc_fct_status_t mb_read_requested(void)
+   1441          {
+   1442              // during MB read - stop Fast Timer processing (read TAG Control Register)
+   1443              nfc_local_state.fast_timer_cnt = 0;
+   1444          
+   1445              // when NO I2C RX Request is pending and I2C RX is NOT Busy
+   1446              if ((false == *(i2c_feedback_struct.is_rx_request_filled))
+   1447                      & (i2c_state_busy_rx != i2c_feedback_struct.state))
+   1448              {
+   1449                  if ((false == nfc_local_state.ignore_crc_error)
+   1450                          && (false == i2c_feedback_struct.is_crc_correct))
+   1451                  {
+   1452                      // set CRC Read error flag
+   1453                      nfc_local_state.is_crc_error_read = true;
+   1454          
+   1455                      // decrement MB processing index, due to post increment required
+   1456                      // Since it is post incremented at every mb read, it is supposed to
+   1457                      // be at least 1 if we detect the CRC in the first mb reading.
+   1458                      // The check if it is > 0 is for safe reasons if we have spurious
+   1459                      // CRC errors from previous i2c reading. In this case we fall down
+   1460                      // here without any mb reading, and so with the mb_proc_idx = 0.
+   1461                      if(nfc_local_state.mb_proc_idx > 0)
+   1462                      {
+   1463                          nfc_local_state.mb_proc_idx--;
+   1464                      }
+   1465          
+   1466                      // stop loading further MBs when CRC Error occurs
+   1467                      return nfc_fct_done;
+   1468                  }
+   1469          
+   1470                  // check if all MBs read (no pending requests)
+   1471                  if (0 == nfc_local_state.tag_req_mb_read)
+   1472                  {
+   1473                      // all MBs read (no pending requests), we are done
+   1474                      return nfc_fct_done;
+   1475                  }
+   1476          
+   1477                  // next requested MB Index
+   1478                  // search next request LSB which is set to 1
+   1479                  set_next_requested_mb_idx(&nfc_local_state.tag_req_mb_read);
+   1480          
+   1481                  // check if MBs are requested
+   1482                  if (0 != nfc_local_state.tag_req_mb_read)
+   1483                  {
+   1484                      // request I2C to read MB
+   1485                      // when request can be processed, shift/increment to next MB
+   1486                      // else raise same request again (MB request index not incremented)
+   1487                      if (true == i2c_read_mb(nfc_local_state.mb_proc_idx))
+   1488                      {
+   1489                          // increment MB process index
+   1490                          increment_requested_mb_idx(&nfc_local_state.tag_req_mb_read);
+   1491                      }
+   1492          
+   1493                      // ToDo: update request register on NFC TAG (I2CWrite())
+   1494          
+   1495                      // not yet done - still busy
+   1496                      return nfc_fct_busy;
+   1497                  }
+   1498                  else
+   1499                  {
+   1500                      // all MBs read (no pending requests), we are done
+   1501                      return nfc_fct_done;
+   1502                  }
+   1503              }
+   1504              return nfc_fct_busy;
+   1505          }
+   1506          
+   1507          
+   1508          //-----------------------------------------------------------------------------
+   1509          /**
+   1510           * \brief Write to the REAL TAG all the MBs specified into the
+   1511           * *nfc_local_state.tag_req_mb_update* register
+   1512           * \return busy or done nfc status
+   1513           */
+   1514          nfc_fct_status_t mb_update_from_mcu_to_tag(void)
+   1515          {
+   1516              // during MB read - stop Fast Timer processing (read TAG Control Register)
+   1517              nfc_local_state.fast_timer_cnt = 0;
+   1518          
+   1519              // completed ? Can we write back the TAG Control register
+   1520              if (0 == nfc_local_state.tag_req_mb_update)
+   1521              {
+   1522                  // done - MB update was successful
+   1523                  return nfc_fct_done;
+   1524              }
+   1525          
+   1526              // set MB processing index to next requested MB of tag_req_mb_update
+   1527              set_next_requested_mb_idx(&nfc_local_state.tag_req_mb_update);
+   1528              // Error - out of index - hard error case - should never happen !
+   1529              if (nfc_local_state.mb_proc_idx >= MPC_NFC_INST)
+   1530              {
+   1531                  // MB processing index is greater than total number of MB
+   1532                  ErrorShutdown (NFC_ERROR_MB_INDEX_GREATER_THAN_MB_CNT);
+   1533              }
+   1534          
+   1535              // when the I2C access is Not pending
+   1536              if (false == nfc_local_state.is_pending_i2c_access)
+   1537              {
+   1538                  // read next entity
+   1539                  mpc_read_next_entity(nfc_local_state.mb_proc_idx);
+   1540              }
+   1541          
+   1542              // when read next entity return valid entity (length != 0)
+   1543              if (0 != nfc_local_state.mb_entity.length)
+   1544              {
+   1545                  // write entity to Tag memory and Tag copy
+   1546                  // when tag_write was not successful (return is false)
+   1547                  // thus is_pending_i2c_access is set to true
+   1548                  nfc_local_state.is_pending_i2c_access = !tag_write_entity();
+   1549          
+   1550                  // when tag write was successful
+   1551                  if (false == nfc_local_state.is_pending_i2c_access)
+   1552                  {
+   1553                      // increment entity address
+   1554                      nfc_local_state.mb_entity.addr += nfc_local_state.mb_entity.length;
+   1555          
+   1556                      // update CRC
+   1557                      Crc16AppendByteArray((uint8_t *) &nfc_local_state.mb_entity.data,
+   1558                                           nfc_local_state.mb_entity.length);
+   1559                  }
+   1560              }
+   1561              else
+   1562              {
+   1563                  // write CRC to TAG
+   1564                  nfc_local_state.is_pending_i2c_access = !tag_write_mb_crc();
+   1565          
+   1566                  // when the I2C access is Not pending
+   1567                  if (false == nfc_local_state.is_pending_i2c_access)
+   1568                  {
+   1569                      // increment MB index
+   1570                      increment_requested_mb_idx(&nfc_local_state.tag_req_mb_update);
+   1571          
+   1572                      // set entity address to MB start address
+   1573                      nfc_local_state.mb_entity.addr = 0;
+   1574          
+   1575                      // initialize CRC calculation
+   1576                      Crc16Init (CRC16_CCITT_FALSE_START_VALUE);
+   1577                  }
+   1578              }
+   1579          
+   1580              return nfc_fct_busy;
+   1581          }
+   1582          
+   1583          //-----------------------------------------------------------------------------
+   1584          /**
+   1585           * \brief Check if the *nfc_local_state.fast_timer_cnt* has expired
+   1586           * \return true if the fast timer has expired
+   1587           * \note This function increment the *nfc_local_state.fast_timer_cnt* at every
+   1588           * call and check if it has expired. Hence it has to be called cyclically to have
+   1589           * the counter counting
+   1590           */
+   1591          bool is_fast_timer_expired(void)
+   1592          {
+   1593              if (nfc_local_state.fast_timer_cnt < NFC_FAST_TIMER_CNT)
+   1594              {
+   1595                  nfc_local_state.fast_timer_cnt++;
+   1596                  return false;
+   1597              }
+   1598              else
+   1599              {
+   1600                  nfc_local_state.fast_timer_cnt = 0;
+   1601                  return true;
+   1602              }
+   1603          }
+   1604          
+   1605          //-----------------------------------------------------------------------------
+   1606          /**
+   1607           * \brief Check if the *nfc_local_state.slow_timer_cnt* has expired
+   1608           * \return true if the slow timer has expired
+   1609           * \note This function increment the *nfc_local_state.slow_timer_cnt* at every
+   1610           * call and check if it has expired. Hence it has to be called cyclically to have
+   1611           * the counter counting
+   1612           */
+   1613          bool is_slow_timer_expired(void)
+   1614          {
+   1615            extern uint8_t g_nfc_flag_save;
+   1616              if (nfc_local_state.slow_timer_cnt < NFC_SLOW_TIMER_CNT)
+   1617              {
+   1618                  nfc_local_state.slow_timer_cnt++;
+   1619                  return false;
+   1620              }
+   1621              else
+   1622              {
+   1623                  nfc_local_state.slow_timer_cnt = 0;
+   1624                  g_nfc_flag_save=1;
+   1625                  return true;
+   1626              }
+   1627          }
+   1628          
+   1629          //-----------------------------------------------------------------------------
+   1630          // global functions
+   1631          //-----------------------------------------------------------------------------
+   1632          
+   1633          
+   1634          
+   1635          // -----------------------------------------------------------------------------
+   1636          /**
+   1637           * \brief   assignment of MPC start addresses in NFC tag
+   1638           * \param   mpc_keydata_ptr: pointer to keydata array
+   1639           * \param   mpc_count: number of included MPC
+   1640           * \param   nfc_inst: number of included MPC instances
+   1641           *
+   1642           */
+   1643          void nfc_mpc_start_addr_create(mpc_keydata_t const * const * mpc_keydata_ptr,
+   1644                                         uint8_t mpc_count, uint8_t nfc_inst)
+   1645          {
+   1646              uint8_t i, j, t, mpc_inst;
+   1647              uint16_t nfc_last_user_mem_addr = 0;
+   1648              uint8_t idx = 0;
+   1649              uint16_t tag_copy_byte_size;
+   1650              uint32_t next_free_temp;
+   1651          
+   1652              nfc_init_arrays(nfc_inst);
+   1653          
+   1654              // start positions for the tag areas to which place the MBs.
+   1655              // this address can vary depending on the tag layout configuration chosen
+   1656              // by the system integrator
+   1657              uint16_t next_free[3] =
+   1658              {
+   1659                // first mpc (located in read-only memory)
+   1660                nfc_tag_addr_config.first_mpc_start_addr,
+   1661          
+   1662                // start address of non-protected MPCs
+   1663                nfc_tag_addr_config.control_register_start_addr + NFC_CTRL_REG_LENGTH,
+   1664          
+   1665                // start address of protected memory
+   1666                nfc_tag_addr_config.protected_memory_start_addr
+   1667              };
+   1668          
+   1669              // for each mpc
+   1670              for (i = 0; i < mpc_count; i++)
+   1671              {
+   1672                  // set to mpc_inst the number of istances required by the mpc
+   1673                  mpc_inst = mpc_keydata_ptr[i]->instances;
+   1674                  if (mpc_inst == 0)
+   1675                  {
+   1676                      mpc_inst = 1;
+   1677                  }
+   1678          
+   1679                  // Set the variable "t" depending on the attribute specified by the
+   1680                  // field in the descriptor
+   1681                  #ifdef NFC_CONFIG_UNPROTECTED_LAYOUT // Deprecated, only for transition phase
+   1682                      t = 1;
+   1683                      if (mpc_keydata_ptr[i]->attributes & MPC_ATTRIB_NFC_READONLY)
+   1684                      {
+   1685                          t = 0;
+   1686                      }
+   1687                      if (mpc_keydata_ptr[i]->attributes & MPC_ATTRIB_NFC_PROTECTED)
+   1688                      {
+   1689                          t = 2;
+   1690                      }
+   1691                  #else
+   1692                      t = 2;
+   1693                      if (mpc_keydata_ptr[i]->attributes & MPC_ATTRIB_NFC_READONLY)
+   1694                      {
+   1695                          t = 0;
+   1696                      }
+   1697                      if (mpc_keydata_ptr[i]->attributes & MPC_ATTRIB_NFC_UNPROTECTED)
+   1698                      {
+   1699                          t = 1;
+   1700                      }
+   1701                  #endif
+   1702          
+   1703                  // for each instance of the mpc
+   1704                  for (j = 0; j < mpc_inst; j++)
+   1705                  {
+   1706                      // assign next free address in NFC tag start address array
+   1707                      NfcMpcTagStartAddr[idx] = next_free[t];
+   1708          
+   1709                      // assign keydata pointer and MPC + NFC index mapping information
+   1710                      // to struct array element
+   1711                      toc_items[idx].mpc_keydata = mpc_keydata_ptr[i];
+   1712                      toc_items[idx].keydata_idx = i;
+   1713                      toc_items[idx].ch = j;
+   1714          
+   1715                      // actual start address + payload length + CRC16 length
+   1716                      next_free_temp = next_free[t] + mpc_keydata_ptr[i]->length
+   1717                              + NFC_CRC_LENGTH;
+   1718          
+   1719                      // alignment required? add 4 and mask first 2 bits
+   1720                      // otherwise assign directly
+   1721                      if (next_free_temp & 0x000003)
+   1722                      {
+   1723                          // + alignment compensation + 0xFFFC (4 byte alignment)
+   1724                          next_free[t] = (next_free_temp + 4) & 0xFFFFFC;
+   1725                      }
+   1726                      else
+   1727                      {
+   1728                          next_free[t] = next_free_temp;
+   1729                      }
+   1730          
+   1731                      // check max address and max length
+   1732                      if (next_free[t] > nfc_last_user_mem_addr)
+   1733                      {
+   1734                          nfc_last_user_mem_addr = next_free[t];
+   1735                      }
+   1736          
+   1737                      idx++;
+   1738          
+   1739                      // check if idx is higher than nfc_inst
+   1740                      if (idx > nfc_inst)
+   1741                      {
+   1742                          ErrorShutdown(NFC_ERROR_IDX1);
+   1743                      }
+   1744                  }
+   1745              }
+   1746          
+   1747              // check if idx is lower than nfc_inst
+   1748              if (idx != nfc_inst)
+   1749              {
+   1750                  ErrorShutdown(NFC_ERROR_IDX2);
+   1751              }
+   1752          
+   1753              // check that the First Mpc start address has to be placed AFTER the TOC end
+   1754              if (nfc_tag_addr_config.first_mpc_start_addr < \
+   1755                 (NFC_TOC_START_ADDR + NFC_TAG_TOC_REGISTER_BYTE_COUNT + NFC_CRC_LENGTH))
+   1756              {
+   1757                  ErrorShutdown(NFC_ERROR_TOC);
+   1758              }
+   1759          
+   1760              // check that the last data placed in the read-only sector is not
+   1761              // overlapping the Status Register
+   1762              if (next_free[0] >= nfc_tag_addr_config.status_register_start_addr)
+   1763              {
+   1764                  ErrorShutdown(NFC_ERROR_RO);
+   1765              }
+   1766          
+   1767              if (next_free[1] >= nfc_tag_addr_config.protected_memory_start_addr)
+   1768              {
+   1769                  ErrorShutdown(NFC_ERROR_PROT);
+   1770              }
+   1771          
+   1772              if (next_free[2] >= NFC_OEM_MEMORY_START_ADDR)
+   1773              {
+   1774                  ErrorShutdown(NFC_ERROR_OEM);
+   1775              }
+   1776          
+   1777              // Calculate tag copy byte size
+   1778              tag_copy_byte_size = nfc_last_user_mem_addr
+   1779                      - nfc_tag_addr_config.first_mpc_start_addr;
+   1780          
+   1781              // Check that is lower than the reserved area: throw an error otherwise
+   1782              if (tag_copy_byte_size > NFC_TAG_COPY_BYTE_SIZE)
+   1783              {
+   1784                  ErrorShutdown(NFC_ERROR_OOM);
+   1785              }
+   1786          }
+   1787          
+   1788          
+   1789          // -----------------------------------------------------------------------------
+   1790          /**
+   1791           * \brief NFC module init function which should be called after power-up
+   1792           */
+   1793          void NfcInit(void)
+   1794          {
+   1795          
+   1796              // set initial FSM state
+   1797              nfc_local_state.fsm_state = nfc_fsm_state_idle;
+   1798              // initialize power on condition to true
+   1799              nfc_local_state.is_power_on_condition = true;
+   1800          
+   1801              // set is TAG Memory Locked to false
+   1802              nfc_local_state.is_tag_mem_locked = false;
+   1803          
+   1804              // set is TAG initialization requested to false
+   1805              nfc_local_state.is_tag_initialization_requested = false;
+   1806          
+   1807              // set tag access rights reset to false
+   1808              nfc_local_state.is_tag_reset_access_rights_requested = false;
+   1809          
+   1810              // set is write TAG Control Register requested to false
+   1811              nfc_local_state.is_write_tag_control_reg_requested = false;
+   1812          
+   1813              // initialize MB write TAG request vector
+   1814              nfc_local_state.tag_req_mb_write = 0;
+   1815          
+   1816              // initialize MB read TAG request vector (set bit for each MB)
+   1817              nfc_local_state.tag_req_mb_read = NFC_INST_REQUEST_ALL;
+   1818          
+   1819          
+   1820              // set pointer for TAG Control Registers to nfc_tag_mem_tmp
+   1821              nfc_local_state.tag_ctrl_register =
+   1822                      (nfc_tag_control_register_t *) nfc_tag_mem_tmp;
+   1823          
+   1824              // initialize fast timer to 0
+   1825              nfc_local_state.fast_timer_cnt = 0;
+   1826          
+   1827              // initialize slow timer to 0
+   1828              nfc_local_state.slow_timer_cnt = 0;
+   1829          
+   1830              // set TAG Status Register to ECG on
+   1831              nfc_local_state.tag_status_register.ecg_on = NfcServices_GetEcgOnValue(NFC_ON);
+   1832          
+   1833              // set TAG Status Register to NO Error
+   1834              nfc_local_state.tag_status_register.error = 0;
+   1835          
+   1836              // set TAG Status Register to Reserved to 0
+   1837              nfc_local_state.tag_status_register.reserved = 0;
+   1838          
+   1839              // request to write Status Register to set status to ECG on
+   1840              nfc_local_state.is_write_tag_status_reg_requested = true;
+   1841          
+   1842              // set local state to no CRC failure
+   1843              nfc_local_state.is_crc_error_read = false;
+   1844          
+   1845              // set to ignore CRC failure (power-up)
+   1846              nfc_local_state.ignore_crc_error = true;
+   1847          
+   1848              // initialize MPC Change Counter
+   1849              nfc_local_state.mpc_change_counter = MpcGetChangeCounter();
+   1850          
+   1851              // initialize MLR counter
+   1852              nfc_local_state.mlr_counter = 0;
+   1853          
+   1854              // initialize access right init index
+   1855              nfc_local_state.access_right_init_idx = 0;
+   1856          
+   1857              // nvm write cycles == 0 -> MCU has just been flashed
+   1858              if(nvmGetWriteCycles() == 0)//nvm is not right need to read tag
+   1859              {
+   1860          
+   1861                 // nfc_local_state.is_tag_initialization_requested = true;
+   1862                  //tag_control_register_init();
+   1863                     handle_tag_register_prr(0xFFFFFFFF); // set control rigistor
+   1864                     
+   1865              }
+   1866              else
+   1867              {
+   1868                // initialize MB update Tag request vector (set bit for each MB)
+   1869                nfc_local_state.tag_req_mb_update = NFC_INST_REQUEST_ALL; //moon 
+   1870                g_nfc_tag_read=1;
+   1871              }
+   1872              {
+   1873                  // set fast timer to expired to force immediately TAG Control reg read
+   1874                  nfc_local_state.fast_timer_cnt = NFC_FAST_TIMER_CNT;
+   1875          
+   1876                  // set the flag to check the correctness of Device Identification reg
+   1877                  nfc_local_state.is_read_tag_deviceID_reg_requested = true;
+   1878          
+   1879                  // set the flag to check the correctness of TOC reg
+   1880                  nfc_local_state.is_read_tag_toc_reg_requested = true;
+   1881              }
+   1882          
+   1883              nfc_local_state.is_wakeup_from_standby = false;
+   1884          
+   1885              // set the is_new_data_present_at_power_on flag to the "unknown" state
+   1886              nfc_local_state.is_new_data_present_at_power_on = -1;
+   1887          
+   1888              // set MPC start addresses in NFC tag
+   1889              nfc_mpc_start_addr_create(MpcKeydata, MPC_COUNT, MPC_NFC_INST);
+   1890          
+   1891              // initialize I2C
+   1892              I2cInit();
+   1893              
+   1894           
+   1895          }
+   1896          
+   1897          //-----------------------------------------------------------------------------
+   1898          /**
+   1899           * \brief Reset the rights access
+   1900           */
+   1901          void NfcResetTagAccessRights(void)
+   1902          {
+   1903              nfc_local_state.is_tag_reset_access_rights_requested = true;
+   1904          }
+   1905          
+   1906          //-----------------------------------------------------------------------------
+   1907          /**
+   1908           * \brief Switch off the Nfc Module if required
+   1909           * \note Note that the I2c module will not be stopped, to let the eventually
+   1910           * ongoing TAG writings take place without corruptions
+   1911           */
+   1912          void NfcSwitchOff(void)
+   1913          {
+   1914            nfc_local_state.fsm_state = nfc_fsm_state_suspended;
+   1915          }
+   1916          //-----------------------------------------------------------------------------
+   1917          /**
+   1918           * \brief Switch on the Nfc Module after a switch off
+   1919           * (device is already running)
+   1920           */
+   1921          void NfcSwitchOn(void)
+   1922          {
+   1923            NfcRuntimeInit();
+   1924          }
+   1925          
+   1926          //-----------------------------------------------------------------------------
+   1927          /**
+   1928           * \brief Set sleep mode for NFC module
+   1929           */
+   1930          void NfcSetSleep(void)
+   1931          {
+   1932              nfc_local_state.set_sleep_cnt = 0;
+   1933          
+   1934              // set TAG Status Register
+   1935              nfc_local_state.tag_status_register.ecg_on = NfcServices_GetEcgOnValue(NFC_STANDBY);
+   1936          
+   1937              nfc_local_state.tag_status_register.error = 0;
+   1938          
+   1939              nfc_local_state.is_write_tag_status_reg_requested = true;
+   1940          
+   1941              // write TAG Status Register
+   1942              while(true == nfc_local_state.is_write_tag_status_reg_requested) // TODO: what if never true? NFC defect, device off?
+   1943              {
+   1944                  // process I2cCyclic
+   1945                  NfcCyclic();
+   1946                  nfc_local_state.set_sleep_cnt++;
+   1947          
+   1948                  if (nfc_local_state.set_sleep_cnt > NFC_SET_SLEEP_WAIT_CYCLES)
+   1949                  {
+   1950                      nfc_local_state.is_write_tag_status_reg_requested = false;
+   1951                  }
+   1952              }
+   1953          
+   1954          }
+   1955          
+   1956          //-----------------------------------------------------------------------------
+   1957          /**
+   1958           * \brief Set wake up from sleep mode for NFC module
+   1959           */
+   1960          void NfcSetWakeup(void)
+   1961          {
+   1962              // don't set initial FSM state - we don't know if initialization was ongoing
+   1963          
+   1964              // initialize power on condition to true
+   1965              nfc_local_state.is_power_on_condition = true;
+   1966          
+   1967              // set is TAG Memory Locked to false
+   1968              nfc_local_state.is_tag_mem_locked = false;
+   1969          
+   1970              // reset MPC index to prevent overflow (required!)
+   1971              nfc_local_state.mb_proc_idx = 0;
+   1972          
+   1973              // initialize MB read TAG request vector (set bit for each MB)
+   1974              nfc_local_state.tag_req_mb_read = NFC_INST_REQUEST_ALL;
+   1975          
+   1976              // initialize MB update Tag request vector (set bit for each MB)
+   1977              nfc_local_state.tag_req_mb_update = NFC_INST_REQUEST_ALL;
+   1978          
+   1979              // set fast timer to expired to force immediately TAG Control register read
+   1980              nfc_local_state.fast_timer_cnt = NFC_FAST_TIMER_CNT; // reads and processes PRR
+   1981          
+   1982              // initialize slow timer to 0
+   1983              nfc_local_state.slow_timer_cnt = 0;
+   1984          
+   1985              // set TAG Status Register to ECG on
+   1986              nfc_local_state.tag_status_register.ecg_on = NfcServices_GetEcgOnValue(NFC_ON);
+   1987          
+   1988              // request to write Status Register to set status to ECG on
+   1989              nfc_local_state.is_write_tag_status_reg_requested = true;
+   1990          
+   1991              // tell the state machine to update Tag if MPC was changed during sleep (otherwise it is assumed that we had a line-switch on and the counter is reset in the state machine
+   1992              nfc_local_state.is_wakeup_from_standby = true;
+   1993          
+   1994          }
+   1995          
+   1996          
+   1997          //-----------------------------------------------------------------------------
+   1998          /**
+   1999           * \brief Save all the latest data into the TAG before the power down
+   2000           * \note This function needs to be called when the ECG is switched off.
+   2001           * - set TAG STATUS Register to ECG off
+   2002           * - initialize TAG Status Error Register
+   2003           * - update all MPCs
+   2004           * - initialize TAG Status Register
+   2005           *
+   2006           */
+   2007          void NfcOnPowerDown(nfc_power_down_use_cases useCase)
+   2008          {
+   2009              // discard all I2C Transfer and empty FIFO
+   2010              I2cDiscardAllTransfers();
+   2011          
+   2012              // during power down we're calling more frequently the I2cCyclic() function
+   2013              // than we need to increase the wait time between a succesfull writing and
+   2014              // the first attempt for the next
+   2015              switch (useCase)
+   2016              {
+   2017                  case nfc_power_down:
+   2018                  {
+   2019                      I2cSetCallTimings(M24LRxx_PAGE_WRITE_WAIT_TIME_TICKS_POWERDOWN);
+   2020          
+   2021                      // set TAG Status Register
+   2022                      nfc_local_state.tag_status_register.ecg_on =
+   2023                                                      NfcServices_GetEcgOnValue(NFC_OFF);
+   2024          
+   2025                      break;
+   2026                  }
+   2027                  case nfc_sleep_mode:
+   2028                  {
+   2029                      I2cSetCallTimings(M24LRxx_PAGE_WRITE_WAIT_TIME_TICKS_SLEEPMODE);
+   2030          
+   2031                      // set TAG Status Register
+   2032                      nfc_local_state.tag_status_register.ecg_on =
+   2033                                                  NfcServices_GetEcgOnValue(NFC_STANDBY);
+   2034          
+   2035                      break;
+   2036                  }
+   2037                  case nfc_what_ever:
+   2038                  {
+   2039                      break;
+   2040                  }
+   2041              }
+   2042          
+   2043          
+   2044          
+   2045          
+   2046              nfc_local_state.tag_status_register.error = 0;
+   2047          
+   2048              // switch on NFC again if it was switched off during runtime due to an error
+   2049              if (nfc_local_state.fsm_state == nfc_fsm_state_suspended)
+   2050              {
+   2051                // set error flag in status register that tag was re-initialized!
+   2052                nfc_local_state.tag_status_register.error = NFC_STATUS_REGISTER_ERROR_I2C_STOPPED;
+   2053          
+   2054                // NfcSwitch on triggers a re-initialization
+   2055                NfcSwitchOn();
+   2056                while ((nfc_fct_done != initialize_tag_device_identification())
+   2057                &&(i2c_feedback_struct.state != i2c_state_error))
+   2058                {
+   2059                    // process I2cCyclic
+   2060                    I2cCyclic();
+   2061                    NfcWatchdogResetRequest();
+   2062                    pwrDownSleep();
+   2063                }
+   2064          
+   2065                nfc_local_state.mb_proc_idx = 0;
+   2066          
+   2067                while ((nfc_fct_done != initialize_tag_toc())
+   2068                &&(i2c_feedback_struct.state != i2c_state_error))
+   2069                {
+   2070                    // process I2cCyclic
+   2071                    I2cCyclic();
+   2072                    NfcWatchdogResetRequest();
+   2073                    pwrDownSleep();
+   2074                }
+   2075              }
+   2076          
+   2077          
+   2078              // write TAG Status Register
+   2079              while ((nfc_fct_done != tag_status_register_write())
+   2080                &&(i2c_feedback_struct.state != i2c_state_error))
+   2081              {
+   2082                  // process I2cCyclic
+   2083                  I2cCyclic();
+   2084                  NfcWatchdogResetRequest();
+   2085                  pwrDownSleep();
+   2086              }
+   2087          
+   2088              // set Request to Update all MPCs
+   2089              nfc_local_state.tag_req_mb_update = NFC_INST_REQUEST_ALL;
+   2090          
+   2091              // set MB process index to 0
+   2092              nfc_local_state.mb_proc_idx = 0;
+   2093          
+   2094              // set local MPC Entity structure start address
+   2095              nfc_local_state.mb_entity.addr = 0;
+   2096          
+   2097              // set to false, no request triggered
+   2098              nfc_local_state.is_pending_i2c_access = false;
+   2099          
+   2100              // initialize CRC calculation
+   2101              Crc16Init (CRC16_CCITT_FALSE_START_VALUE);
+   2102          
+   2103              // update all MPCs
+   2104              while ((nfc_fct_done != mb_update_from_mcu_to_tag())
+   2105                   &&(i2c_feedback_struct.state != i2c_state_error))
+   2106              {
+   2107                  // process I2cCyclic
+   2108                  I2cCyclic();
+   2109                  NfcWatchdogResetRequest();
+   2110                  pwrDownSleep();
+   2111              }
+   2112          
+   2113              // set TAG Control Register
+   2114              nfc_local_state.tag_ctrl_register->urr = 0;
+   2115              nfc_local_state.tag_ctrl_register->prr = 0;
+   2116              nfc_local_state.tag_ctrl_register->mlr = 0;
+   2117          
+   2118              // write TAG Control Register
+   2119              while ((nfc_fct_done != tag_control_register_write())
+   2120                   &&(i2c_feedback_struct.state != i2c_state_error))
+   2121              {
+   2122                  // process I2cCyclic
+   2123                  I2cCyclic();
+   2124                  NfcWatchdogResetRequest();
+   2125                  pwrDownSleep();
+   2126              }
+   2127          
+   2128              while (!I2cAreAllPendingTransfersDone())
+   2129              {
+   2130                  // process only a predetermined fix amount of writings
+   2131                  I2cFlush();
+   2132                  NfcWatchdogResetRequest();
+   2133              }
+   2134          
+   2135              // set back the regular wait time after the while loop just for safe reasons
+   2136              // (e.g.: if you're not powering down really but entering into the sleep
+   2137              // state you want back the regular waiting time when you wake-up
+   2138              I2cSetCallTimings(M24LRxx_PAGE_WRITE_WAIT_TIME_TICKS_RUNTIME);
+   2139          }
+   2140          
+   2141          //-----------------------------------------------------------------------------
+   2142          /** \brief Get the information whether new data was programmed in the NFC tag
+   2143           * during \b power \b off.
+   2144           *
+   2145           * The NFC module needs a certain time to read the complete NFC tag. This time
+   2146           * normally is too long for a normal startup and too long and too unsteady to
+   2147           * fulfill e.g. the DALI requirements.
+   2148           *
+   2149           * Therefore it's important to know \b early in the startup process, whether
+   2150           * the ballast was (re-)programmed during the last powerdown (offline programming).
+   2151           * For example, a new lower current set value is programmed (in the tag only,
+   2152           * but not yet available for the application) and starting with the previous one
+   2153           * might be dangerous for the LED module.
+   2154           *
+   2155           * This function is to provide the information about possibly new data as early
+   2156           * as possible to the application in the statup process.
+   2157           * - When no offline programming happend (no new data is available),
+   2158           *   the startup can be done normally and all timing requirements can be met.
+   2159           * - When there is new data, the application is supposed not to start the light
+   2160           *   and not to do other important things before the complete NFC tag is read
+   2161           *   (see also \ref NfcInitStatus()).
+   2162           *
+   2163           * \returns
+   2164           *        - -1 information still not available
+   2165           *        -  0 no new data present at power on
+   2166           *        -  1 new data present at power on
+   2167           */
+   2168          int8_t NfcIsNewDataPresentAtPowerOn(void)
+   2169          {
+   2170            // For "NFC3.0", consider to consolidate this function with NfcInitStatus()
+   2171            // OTT-611
+   2172            return nfc_local_state.is_new_data_present_at_power_on;
+   2173          }
+   2174          
+   2175          
+   2176          //-----------------------------------------------------------------------------
+   2177          /**
+   2178           * \brief Get the information if the eventually power on data are available
+   2179           * \return true when the NFC initialization has finished AND
+   2180           * there are new data programmed in the TAG during switch OFF
+   2181           */
+   2182          bool NfcIsPowerOnTagDataAvailable(void)
+   2183          {
+   2184            // if we're still in the power on condition data is not available
+   2185            if(nfc_local_state.is_power_on_condition == true)
+   2186            {
+   2187                return false;
+   2188            }
+   2189            else
+   2190            {
+   2191              // otherwise we will return true only if the PRR was set
+   2192              if(nfc_local_state.is_new_data_present_at_power_on == 1)
+   2193              {
+   2194                return true;
+   2195              }
+   2196              else
+   2197              {
+   2198                return false;
+   2199              }
+   2200            }
+   2201          }
+   2202          
+   2203          
+   2204          //-----------------------------------------------------------------------------
+   2205          /**
+   2206           * \brief  Returns the NFC tag initialization progress
+   2207           *
+   2208           * Purpose of this function is to inform the application, when all NFC and MPC
+   2209           * operations needed for a correct ballast startup are finshed.
+   2210           *
+   2211           * The ballast should wait for this event, until it proceeds to switch
+   2212           * on the light or it does other severe things like a software triggered "reset".
+   2213           * This is important especially when an \b offline \b programming  was done
+   2214           * during the last power-off cycle (see also \ref NfcIsNewDataPresentAtPowerOn()).
+   2215           *
+   2216           * If the NFC startup sequence is not finalized before the ballast is reset,
+   2217           * is switched off again or it starts the normal operation too early, it might
+   2218           * happen:
+   2219           * - The ballast starts in the complete wrong (old) operation mode
+   2220           *   (switchable ballasts as Outdoor or Tunable White DT6-DT8)
+   2221           * - The output current is wrong, a LED module is overloaded
+   2222           * - The MSK authentifications are lost, before all related MPCs
+   2223           *   programmings are processed.
+   2224           *
+   2225           * \warning As mentioned, during run-up after offline programming also do not
+   2226           *          \b software-reset the ballast before status FINISHED is reached.
+   2227           *
+   2228           * \returns
+   2229           *       - UNDEFINED if conditions are ambiguous
+   2230           *       - IN_PROGRESS if NFC initialization is still in progress
+   2231           *       - FINISHED if conditions both for mb update and I2C data transfer
+   2232           *       are fulfilled
+   2233           *
+   2234           */
+   2235          nfc_init_status_t NfcInitStatus(void)
+   2236          {
+   2237            // The initialization process is intended to be finished when the
+   2238            // *mb_update_from_mcu_to_tag* has been performed and all pending
+   2239            // I2C transfers are finished, WL 2018-06: ?
+   2240            nfc_init_status_t init_status = UNDEFINED;
+   2241          
+   2242            if ( (!(nfc_local_state.is_power_on_condition)) && (I2cAreAllPendingTransfersDone()))
+   2243          
+   2244            {
+   2245              init_status = FINISHED;
+   2246            }
+   2247          
+   2248            if ( (nfc_local_state.is_power_on_condition) && (!(I2cAreAllPendingTransfersDone())))
+   2249          
+   2250            {
+   2251              init_status = IN_PROGRESS;
+   2252            }
+   2253          
+   2254            return init_status;
+   2255          }
+   2256          
+   2257          
+   2258          //-----------------------------------------------------------------------------
+   2259          /**
+   2260           * \brief Get the information if this is the FIRST power UP after firmware flash
+   2261           * \return true if this is the FIRST power UP after firmware flash
+   2262           */
+   2263          bool NfcInitialPowerUp(void)
+   2264          {
+   2265            if((nvmGetWriteCycles() == 0) && (nfc_local_state.is_power_on_condition == 1))
+   2266            {
+   2267              return false;
+   2268            }
+   2269            else
+   2270            {
+   2271              return false;
+   2272            }
+   2273          }
+   2274          
+   2275          //-----------------------------------------------------------------------------
+   2276          /**
+   2277           * \brief NFC main method,
+   2278           * \note This function has to be called cyclically from main application.
+   2279           */
+   2280          void NfcCyclic(void)
+   2281          {
+   2282              bool is_trigger_mpc_change_counter;
+   2283              bool is_trigger_slow_timer;
+   2284              extern uint8_t g_nfc_flag_save;
+   2285              static uint8_t save=0;
+   2286              extern uint8_t g_astro_flag;
+   2287              
+   2288           
+   2289              if(1)//g_nfc_tag_read>=3)
+   2290              {
+   2291              if(save||g_nfc_flag_save)
+   2292              {
+   2293                 
+   2294                if(I2cAreAllPendingTransfersDone()&&nfc_local_state.fsm_state==nfc_fsm_state_idle)
+   2295                {
+   2296                  
+   2297                  NfcOnPowerDown(nfc_run_time);
+   2298                  nvmWriteAll();
+   2299                  save=0;
+   2300                  g_nfc_flag_save=0;
+   2301                }
+   2302                
+   2303                //WDT->SRV = 0xAFFEAFFEUL;   //os3_wdt_force_sys_reset();
+   2304                
+   2305              }
+   2306              
+   2307              // evaluate if MPC Change Counter is triggered (changed)
+   2308              is_trigger_mpc_change_counter = MpcGetChangeCounter()
+   2309                      != nfc_local_state.mpc_change_counter;
+   2310          
+   2311              is_trigger_slow_timer = is_slow_timer_expired();
+   2312          
+   2313              if (i2c_state_stop == i2c_feedback_struct.state)
+   2314              {
+   2315                  nfc_local_state.fsm_state = nfc_fsm_state_suspended;
+   2316                  nfc_local_state.is_power_on_condition = false;
+   2317              }
+   2318          
+   2319          
+   2320              switch (nfc_local_state.fsm_state)
+   2321              {
+   2322                  case nfc_fsm_state_suspended:
+   2323          
+   2324                    // in thie suspended state we disable both the fast and slow timers
+   2325                    nfc_local_state.fast_timer_cnt = 0;
+   2326                    nfc_local_state.slow_timer_cnt = 0;
+   2327          
+   2328                    // if the suspension timer has expired we try to trigger an nfc_module
+   2329                    // initialization and go back to the idle state right after that
+   2330             /*       if(true == is_suspension_timer_expired())
+   2331                    {
+   2332                      NfcRuntimeInit();
+   2333                    }*/
+   2334                  break;
+   2335          
+   2336                  case nfc_fsm_state_idle:
+   2337          
+   2338                      nfc_local_state.mpc_change_counter_triggered =
+   2339                              is_trigger_mpc_change_counter;
+   2340                      nfc_local_state.slow_timer_expired = is_trigger_slow_timer;
+   2341          
+   2342                      // handle fast timer (highest priority task)
+   2343                      if (true == is_fast_timer_expired())
+   2344                      {
+   2345                          // request to read TAG Control Register
+   2346                          nfc_local_state.is_read_tag_control_reg_requested = true;
+   2347          
+   2348                          // load TAG Control Register
+   2349                          nfc_local_state.fsm_state =
+   2350                                  nfc_fsm_state_tag_control_register_read;
+   2351                      }
+   2352                      else if (true == nfc_local_state.is_read_tag_deviceID_reg_requested)
+   2353                      {
+   2354                          // read the DeviceID register content and check the CRC
+   2355                          nfc_local_state.fsm_state =
+   2356                                  nfc_fsm_state_device_identification_register_read;
+   2357                      }
+   2358                      else if (false != nfc_local_state.is_tag_initialization_requested)
+   2359                      {
+   2360                          // initialize TAG
+   2361                          nfc_local_state.fsm_state =
+   2362                                  nfc_fsm_state_initialize_tag_device_identification;
+   2363                      }
+   2364                      else if (true == nfc_local_state.is_read_tag_toc_reg_requested)
+   2365                      {
+   2366                          // set MB process index to 0
+   2367                          nfc_local_state.mb_proc_idx = 0;
+   2368          
+   2369                          // initialize MB entity address
+   2370                          nfc_local_state.mb_entity.addr = 0;
+   2371          
+   2372                          // read the DeviceID register content and check the CRC
+   2373                          nfc_local_state.fsm_state = nfc_fsm_state_toc_register_read;
+   2374                      }
+   2375                      else if (true == nfc_local_state.is_write_tag_status_reg_requested)
+   2376                      {
+   2377                          // Write TAG Status Register
+   2378                          nfc_local_state.fsm_state =
+   2379                                  nfc_fsm_state_tag_status_register_write;
+   2380                      }
+   2381          
+   2382                      // read = read from TAG
+   2383                      else if (0 != nfc_local_state.tag_req_mb_read)
+   2384                      {
+   2385                          // set MB process index to 0
+   2386                          nfc_local_state.mb_proc_idx = 0;
+   2387          
+   2388                          // load all requested MBs
+   2389                          nfc_local_state.fsm_state = nfc_fsm_state_mb_read_from_tag;
+   2390                      }
+   2391          
+   2392                      // write = write to MpcGeneric
+   2393                      else if ((0 != nfc_local_state.tag_req_mb_write)
+   2394                              && (true == nfc_local_state.is_tag_mem_locked))
+   2395                      {
+   2396                          // set MB process index to 0
+   2397                          nfc_local_state.mb_proc_idx = 0;
+   2398          
+   2399                          // initialize MB entity address
+   2400                          nfc_local_state.mb_entity.addr = 0;
+   2401          
+   2402                          // load all requested MBs
+   2403                          nfc_local_state.fsm_state = nfc_fsm_state_mb_write_to_mcu;
+   2404                      }
+   2405          
+   2406                      // update = write to TAG only when TAG is NOT locked
+   2407                      // AND
+   2408                      // (MB update is requested or MPC Change Counter is changed
+   2409                      // or Slow Timer is expired)
+   2410                      else if ((false == nfc_local_state.is_tag_mem_locked)
+   2411                              && ((0 != nfc_local_state.tag_req_mb_update)
+   2412                                      || (true == is_trigger_mpc_change_counter)
+   2413                                      || (true == is_trigger_slow_timer)))
+   2414                      {
+   2415                          if ((true == is_trigger_mpc_change_counter)
+   2416                                  || (true == is_trigger_slow_timer))
+   2417                          {
+   2418                              // Request to Update All MPCs
+   2419                              nfc_local_state.tag_req_mb_update = NFC_INST_REQUEST_ALL;
+   2420          
+   2421                              // update local copy of MPC Change Counter actual value
+   2422                              nfc_local_state.mpc_change_counter = MpcGetChangeCounter();
+   2423                          }
+   2424          
+   2425                          // set MB process index to 0
+   2426                          nfc_local_state.mb_proc_idx = 0;
+   2427          
+   2428                          // set local MPC Entity structure start address
+   2429                          nfc_local_state.mb_entity.addr = 0;
+   2430          
+   2431                          // set to false, no request triggered
+   2432                          nfc_local_state.is_pending_i2c_access = false;
+   2433          
+   2434                          // initialize CRC calculation
+   2435                          Crc16Init (CRC16_CCITT_FALSE_START_VALUE);
+   2436          
+   2437                          // update all requested MBs into TAG
+   2438                          nfc_local_state.fsm_state = nfc_fsm_state_mb_update_from_mcu_to_tag;
+   2439                      }
+   2440          
+   2441                      else if (true == nfc_local_state.is_write_tag_control_reg_requested)
+   2442                      {
+   2443                          // Write TAG Control Register
+   2444                          nfc_local_state.fsm_state = nfc_fsm_state_tag_control_register_write;
+   2445                      }
+   2446          
+   2447                      else if (true == nfc_local_state.is_tag_reset_access_rights_requested)
+   2448                      {
+   2449                          // reset TAG access rights
+   2450                          nfc_local_state.fsm_state = nfc_fsm_state_reset_tag_access_rights;
+   2451                      }
+   2452          
+   2453                  break;
+   2454          
+   2455                  case nfc_fsm_state_mb_read_from_tag:
+   2456                      if (nfc_fct_done == mb_read_requested())
+   2457                      {
+   2458                          // only if NOT ignore CRC Error
+   2459                          if(false == nfc_local_state.ignore_crc_error)
+   2460                          {
+   2461                              // set TAG Register PRR - clear all request flags of MBs read
+   2462                              NFC_CLEAR_REQUESTS_BELOW_IDX(
+   2463                                      nfc_local_state.tag_ctrl_register->prr,
+   2464                                      nfc_local_state.mb_proc_idx);
+   2465                              nfc_local_state.tag_ctrl_register->prr = REV_BYTE_ORDER32(
+   2466                                      nfc_local_state.tag_ctrl_register->prr);
+   2467          
+   2468                              // clear all write requests for MBs which could not be loaded
+   2469                              NFC_CLEAR_REQUESTS_ABOVE_IDX(
+   2470                                      nfc_local_state.tag_req_mb_write,
+   2471                                      nfc_local_state.mb_proc_idx);
+   2472          
+   2473                              // clear all pending MB read request in case of error
+   2474                              nfc_local_state.tag_req_mb_read = 0;
+   2475          
+   2476                              // if the CRC error flag is set
+   2477                              if (true == nfc_local_state.is_crc_error_read)
+   2478                              {
+   2479                                  // set STATUS.Error to NFC_STATUS_REGISTER_ERROR_PRR
+   2480                                  nfc_local_state.tag_status_register.error |=
+   2481                                          NFC_STATUS_REGISTER_ERROR_PRR;
+   2482          
+   2483                                  // set TAG Status Register write request
+   2484                                  nfc_local_state.is_write_tag_status_reg_requested = true;
+   2485          
+   2486                                  // only for the case that mb_write is 0 due to CRC Error
+   2487                                  // thus FSM state nfc_fsm_state_mb_write_to_mcu is not entered !
+   2488                                  // unlock Tag Memory here, in all other cases after write
+   2489                                  if (0 == nfc_local_state.tag_req_mb_write)
+   2490                                  {
+   2491                                      // always unlock TAG memory
+   2492                                      unlock_tag_memory();
+   2493          
+   2494                                      // always update all MBs
+   2495                                      nfc_local_state.tag_req_mb_update = NFC_INST_REQUEST_ALL;
+   2496          
+   2497                                      // for Power on Condition ....
+   2498                                      if (true == nfc_local_state.is_power_on_condition)
+   2499                                      {
+   2500                                          // request to load all MBs required to keep TAG Copy in sync
+   2501                                          nfc_local_state.tag_req_mb_read = NFC_INST_REQUEST_ALL;
+   2502          
+   2503                                          // set to ignore CRC failure, due to load is only required for TAG sync
+   2504                                          nfc_local_state.ignore_crc_error = true;
+   2505                                      }
+   2506                                  }
+   2507                              }
+   2508          
+   2509                          }
+   2510                          else
+   2511                          {
+   2512                              // disable ignore CRC failure always - default
+   2513                              nfc_local_state.ignore_crc_error = false;
+   2514                          }
+   2515          
+   2516                          // all requested MBs are loaded change FSM state to Idle
+   2517                          nfc_local_state.fsm_state = nfc_fsm_state_idle;
+   2518                      }
+   2519                  break;
+   2520                  case nfc_fsm_state_mb_write_to_mcu:
+   2521                      if (nfc_fct_done == mb_write_requested())
+   2522                      {
+   2523                          // for Power on Condition ....
+   2524                          if (true == nfc_local_state.is_power_on_condition)
+   2525                          {
+   2526                              // request to load all MBs required to keep TAG Copy in sync
+   2527                              nfc_local_state.tag_req_mb_read = NFC_INST_REQUEST_ALL;
+   2528          
+   2529                              // set to ignore CRC failure, due to load is only required for TAG sync
+   2530                              nfc_local_state.ignore_crc_error = true;
+   2531          
+   2532                              // set the power on condition to false
+   2533           //                   nfc_local_state.is_power_on_condition = false;
+   2534                          }
+   2535          
+   2536                          g_nfc_start_flag=1; //add nfc ini flag
+   2537                          // always unlock TAG memory after write is done
+   2538                          unlock_tag_memory();
+   2539          
+   2540                          // always update all MBs
+   2541                          nfc_local_state.tag_req_mb_update = NFC_INST_REQUEST_ALL;
+   2542          
+   2543                          // all requested MBs are loaded, change FSM state to Idle
+   2544                          nfc_local_state.fsm_state = nfc_fsm_state_idle;
+   2545                          
+   2546                          if(g_nfc_tag_read==0)
+   2547                            
+   2548                          {
+   2549                             g_nfc_tag_read=2;
+   2550                          }
+   2551                          
+   2552                          save=1;
+   2553                      }
+   2554                  break;
+   2555                  case nfc_fsm_state_mb_update_from_mcu_to_tag:
+   2556                      if (nfc_fct_done == mb_update_from_mcu_to_tag())
+   2557                      {
+   2558                          // set the power on condition to false
+   2559                          nfc_local_state.is_power_on_condition = false;
+   2560          
+   2561                          // always initialize TAG Control Register (clear ALL Requests)
+   2562                          tag_control_register_init();
+   2563          
+   2564                          // reset Slow Timer
+   2565                          nfc_local_state.slow_timer_cnt = 0;
+   2566          
+   2567                          // all requested MBs are loaded change FSM state to Idle
+   2568                          nfc_local_state.fsm_state = nfc_fsm_state_idle;
+   2569                      }
+   2570                  break;
+   2571          
+   2572                  case nfc_fsm_state_tag_status_register_write:
+   2573                      if (nfc_fct_done == tag_status_register_write())
+   2574                      {
+   2575          
+   2576                          // disable TAG Status Register write request
+   2577                          nfc_local_state.is_write_tag_status_reg_requested = false;
+   2578          
+   2579                          // update local copy of MPC Change Counter actual value
+   2580                          // required here to update to not generate trigger when
+   2581                          // NFC writes to MpcGeneric
+   2582                          // The is_wakeup_from_standby switch has to be on
+   2583                          if( false == nfc_local_state.is_wakeup_from_standby )
+   2584                          {
+   2585                              nfc_local_state.mpc_change_counter = MpcGetChangeCounter();
+   2586                          }
+   2587                          else
+   2588                          {
+   2589                              nfc_local_state.is_wakeup_from_standby = false;
+   2590                          }
+   2591          
+   2592                          // all TAG Status Register written, change FSM state to Idle
+   2593                          nfc_local_state.fsm_state = nfc_fsm_state_idle;
+   2594                      }
+   2595                  break;
+   2596          
+   2597                  case nfc_fsm_state_device_identification_register_read:
+   2598                      if (nfc_fct_done == tag_device_identification_register_read())
+   2599                      {
+   2600                          // disable device identification register read request
+   2601                          nfc_local_state.is_read_tag_deviceID_reg_requested = false;
+   2602          
+   2603                          // all device identification registers data are read:
+   2604                          // change FSM state to Idle
+   2605                          nfc_local_state.fsm_state = nfc_fsm_state_idle;
+   2606                      }
+   2607                  break;
+   2608          
+   2609                  case nfc_fsm_state_toc_register_read:
+   2610                      if (nfc_fct_done == tag_toc_register_read())
+   2611                      {
+   2612                          // disable device identification register read request
+   2613                          nfc_local_state.is_read_tag_toc_reg_requested = false;
+   2614          
+   2615                          // all device identification registers data are read:
+   2616                          // change FSM state to Idle
+   2617                          nfc_local_state.fsm_state = nfc_fsm_state_idle;
+   2618                      }
+   2619                  break;
+   2620          
+   2621                  case nfc_fsm_state_tag_control_register_read:
+   2622                      if (nfc_fct_done == tag_control_register_read())
+   2623                      {
+   2624                          // disable TAG Control Register read request
+   2625                          nfc_local_state.is_read_tag_control_reg_requested = false;
+   2626          
+   2627                          // all TAG Control Register loaded, change FSM state to Idle
+   2628                          nfc_local_state.fsm_state = nfc_fsm_state_idle;
+   2629                      }
+   2630                  break;
+   2631          
+   2632                  case nfc_fsm_state_tag_control_register_write:
+   2633                      if (nfc_fct_done == tag_control_register_write())
+   2634                      {
+   2635          
+   2636                          // disable TAG Control Register write request
+   2637                          nfc_local_state.is_write_tag_control_reg_requested = false;
+   2638          
+   2639                          // all TAG Control Register written, change FSM state to Idle
+   2640                          nfc_local_state.fsm_state = nfc_fsm_state_idle;
+   2641                      }
+   2642                  break;
+   2643          
+   2644                  case nfc_fsm_state_initialize_tag_device_identification:
+   2645                      if (nfc_fct_done == initialize_tag_device_identification())
+   2646                      {
+   2647                          // TAG Device Identification initialized,
+   2648                          // change to Initialize TAG TOC
+   2649                          nfc_local_state.fsm_state = nfc_fsm_state_initialize_tag_toc;
+   2650          
+   2651                          // set MB process index to 0
+   2652                          nfc_local_state.mb_proc_idx = 0;
+   2653          
+   2654                          // set local MPC Entity structure start address
+   2655                          nfc_local_state.mb_entity.addr = 0;
+   2656          
+   2657                          // set to false, no request triggered
+   2658                          nfc_local_state.is_pending_i2c_access = false;
+   2659          
+   2660                          // so no need to re-check that toc again once the initialization
+   2661                          // will be completed
+   2662                          nfc_local_state.is_read_tag_toc_reg_requested = false;
+   2663                      }
+   2664                  break;
+   2665          
+   2666                  case nfc_fsm_state_initialize_tag_toc:
+   2667                      if (nfc_fct_done == initialize_tag_toc())
+   2668                      {
+   2669                          // all TAG TOC initialized, change FSM state to
+   2670                          nfc_local_state.fsm_state =
+   2671                                  nfc_fsm_state_initialize_tag_access_rights;
+   2672          
+   2673                      }
+   2674                  break;
+   2675                  case nfc_fsm_state_initialize_tag_access_rights:
+   2676                      if (nfc_fct_done == initialize_tag_access_rights())
+   2677                      {
+   2678                          // disable TAG initialization
+   2679                          nfc_local_state.is_tag_initialization_requested = false;
+   2680          
+   2681                          // tag initialized, change FSM state to Idle
+   2682                          nfc_local_state.fsm_state = nfc_fsm_state_idle;
+   2683          
+   2684                      }
+   2685                  break;
+   2686                  case nfc_fsm_state_reset_tag_access_rights:
+   2687                      if (nfc_fct_done == reset_tag_access_rights())
+   2688                      {
+   2689                          // all TAG TOC initialized, change FSM state to Idle
+   2690                          nfc_local_state.is_tag_reset_access_rights_requested = false;
+   2691                          nfc_local_state.fsm_state = nfc_fsm_state_idle;
+   2692          
+   2693                      }
+   2694                  break;
+   2695          
+   2696                  default:
+   2697                  break;
+   2698              }
+   2699               
+   2700              // call I2C Cyclic function
+   2701              I2cCyclic();
+   2702              
+   2703              }
+   2704          }
+   2705          
+   2706          
+   2707          /**
+   2708           * \brief NFC module init function
+   2709           * \note THis function is intended to be called at runtime
+   2710           */
+   2711          void NfcRuntimeInit(void)
+   2712          {
+   2713              // set initial FSM state
+   2714              nfc_local_state.fsm_state = nfc_fsm_state_idle;
+   2715          
+   2716              // initialize power on condition to true
+   2717              nfc_local_state.is_power_on_condition = false;
+   2718          
+   2719              // don't read TAG Control Register Read
+   2720              nfc_local_state.fast_timer_cnt = 0;
+   2721          
+   2722              // initialize slow timer to 0 -> update request is done below
+   2723              nfc_local_state.slow_timer_cnt = 0;
+   2724          
+   2725              // set is write TAG Control Register requested to false
+   2726              nfc_local_state.is_write_tag_control_reg_requested = false;
+   2727          
+   2728              // request to write Status Register to set status to ECG on
+   2729              nfc_local_state.is_write_tag_status_reg_requested = true;
+   2730          
+   2731              // don't write from tag to MCU
+   2732              nfc_local_state.tag_req_mb_write = 0;
+   2733          
+   2734              // initialize MB update Tag request vector (set bit for each MB)
+   2735              nfc_local_state.tag_req_mb_update = NFC_INST_REQUEST_ALL;
+   2736          
+   2737              // don't read from tag!
+   2738              nfc_local_state.tag_req_mb_read = 0;
+   2739          
+   2740              // set local state to no CRC failure
+   2741              nfc_local_state.is_crc_error_read = false;
+   2742          
+   2743              // CRC error checks
+   2744              nfc_local_state.ignore_crc_error = false;
+   2745          
+   2746              // initialize MLR counter
+   2747              nfc_local_state.mlr_counter = 0;
+   2748          
+   2749              // set local status flag to unlocked
+   2750              nfc_local_state.is_tag_mem_locked = false;
+   2751          
+   2752              // Clear ALL Requests
+   2753              nfc_local_state.tag_ctrl_register->prr = 0;
+   2754              nfc_local_state.tag_ctrl_register->urr = 0;
+   2755              nfc_local_state.tag_ctrl_register->mlr = 0;
+   2756              nfc_local_state.is_write_tag_control_reg_requested = true;
+   2757          
+   2758          //    // start a new initialization!
+   2759          //    nfc_local_state.is_tag_initialization_requested = true;
+   2760          
+   2761              // initialize I2C
+   2762              I2cInit();
+   2763          }
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      16   NfcCyclic
+        16   -> Crc16Init
+        16   -> I2cAreAllPendingTransfersDone
+        16   -> I2cCyclic
+        16   -> MpcGetChangeCounter
+        16   -> NfcOnPowerDown
+        16   -> initialize_tag_access_rights
+        16   -> initialize_tag_device_identification
+        16   -> initialize_tag_toc
+        16   -> is_fast_timer_expired
+        16   -> is_slow_timer_expired
+        16   -> mb_read_requested
+        16   -> mb_update_from_mcu_to_tag
+        16   -> mb_write_requested
+        16   -> nvmWriteAll
+        16   -> reset_tag_access_rights
+        16   -> tag_control_register_init
+        16   -> tag_control_register_read
+        16   -> tag_control_register_write
+        16   -> tag_device_identification_register_read
+        16   -> tag_status_register_write
+        16   -> tag_toc_register_read
+        16   -> unlock_tag_memory
+        16 __aeabi_uread4
+        16 __aeabi_uwrite4
+       8   NfcInit
+         8   -> I2cInit
+         8   -> MpcGetChangeCounter
+         8   -> NfcServices_GetEcgOnValue
+         8   -> handle_tag_register_prr
+         8   -> nfc_mpc_start_addr_create
+         8   -> nvmGetWriteCycles
+       8   NfcInitStatus
+         8   -> I2cAreAllPendingTransfersDone
+       8   NfcInitialPowerUp
+         8   -> nvmGetWriteCycles
+       0   NfcIsNewDataPresentAtPowerOn
+       4   NfcIsPowerOnTagDataAvailable
+       8   NfcOnPowerDown
+         8   -> Crc16Init
+         8   -> I2cAreAllPendingTransfersDone
+         8   -> I2cCyclic
+         8   -> I2cDiscardAllTransfers
+         8   -> I2cFlush
+         8   -> I2cSetCallTimings
+         8   -> NfcServices_GetEcgOnValue
+         8   -> NfcSwitchOn
+         8   -> NfcWatchdogResetRequest
+         8   -> initialize_tag_device_identification
+         8   -> initialize_tag_toc
+         8   -> mb_update_from_mcu_to_tag
+         8   -> pwrDownSleep
+         8   -> tag_control_register_write
+         8   -> tag_status_register_write
+         8 __aeabi_uwrite4
+       0   NfcResetTagAccessRights
+       8   NfcRuntimeInit
+         8   -> I2cInit
+         8 __aeabi_uwrite4
+       8   NfcSetSleep
+         8   -> NfcCyclic
+         8   -> NfcServices_GetEcgOnValue
+       8   NfcSetWakeup
+         8   -> NfcServices_GetEcgOnValue
+       0   NfcSwitchOff
+       8   NfcSwitchOn
+         8   -> NfcRuntimeInit
+       8   convert_tag_addr_to_tag_copy_addr
+         8   -> ErrorShutdown
+       4   handle_tag_initialization
+         4 __aeabi_uread4
+       4   handle_tag_register_mlr
+         4 __aeabi_uwrite4
+       4   handle_tag_register_prr
+         4 __aeabi_uwrite4
+       4   handle_tag_register_urr
+       8   i2c_read_mb
+         8   -> I2cRead
+         8   -> convert_tag_addr_to_tag_copy_addr
+       0   increment_requested_mb_idx
+       8   initialize_tag_access_rights
+         8   -> I2cInitSectorProtection
+         8   -> I2cPresentI2cPwd
+      16   initialize_tag_device_identification
+        16   -> Ballast_GetHW_Version
+        16   -> Crc16AppendByteArray
+        16   -> Crc16Checksum
+        16   -> Crc16Init
+        16   -> I2cWrite
+        16 __aeabi_llsr
+      16   initialize_tag_toc
+        16   -> Crc16AppendByteArray
+        16   -> Crc16Checksum
+        16   -> Crc16Init
+        16   -> I2cWrite
+       4   isThereCtrlRegisterMlrMisalignment
+         4 __aeabi_uread4
+      12   is_data_equal
+       4   is_fast_timer_expired
+       4   is_slow_timer_expired
+       8   mb_read_requested
+         8   -> i2c_read_mb
+         8   -> increment_requested_mb_idx
+         8   -> set_next_requested_mb_idx
+       8   mb_update_from_mcu_to_tag
+         8   -> Crc16AppendByteArray
+         8   -> Crc16Init
+         8   -> ErrorShutdown
+         8   -> increment_requested_mb_idx
+         8   -> mpc_read_next_entity
+         8   -> set_next_requested_mb_idx
+         8   -> tag_write_entity
+         8   -> tag_write_mb_crc
+      16   mb_write_requested
+        16   -> MpcClose
+        16   -> increment_requested_mb_idx
+        16   -> mpc_write_next_byte
+        16   -> set_next_requested_mb_idx
+      16   mpc_read_next_entity
+        16   -> MpcRead
+      16   mpc_write_next_byte
+        16   -> MpcOpen
+        16   -> MpcWrite
+        16   -> convert_tag_addr_to_tag_copy_addr
+      48   nfc_mpc_start_addr_create
+        48   -> ErrorShutdown
+        48   -> nfc_init_arrays
+      24   reset_tag_access_rights
+        24   -> I2cPresentI2cPwd
+        24   -> I2cWriteRegister
+        24   -> __aeabi_memclr4
+       4   set_next_requested_mb_idx
+       4   tag_control_register_init
+         4 __aeabi_uwrite4
+       8   tag_control_register_read
+         8   -> I2cRead
+         8   -> handle_tag_initialization
+         8   -> handle_tag_register_mlr
+         8   -> handle_tag_register_prr
+         8   -> handle_tag_register_urr
+         8   -> isThereCtrlRegisterMlrMisalignment
+         8   -> tag_control_register_init
+         8   -> unlock_tag_memory
+         8 __aeabi_uread4
+         8 __aeabi_uwrite4
+       8   tag_control_register_write
+         8   -> Crc16AppendByteArray
+         8   -> Crc16Checksum
+         8   -> Crc16Init
+         8   -> I2cWrite
+         8 __aeabi_uread4
+      16   tag_device_identification_register_read
+        16   -> Ballast_GetHW_Version
+        16   -> I2cRead
+        16 __aeabi_llsr
+       8   tag_status_register_write
+         8   -> Crc16AppendByteArray
+         8   -> Crc16Checksum
+         8   -> Crc16Init
+         8   -> I2cWrite
+      16   tag_toc_register_read
+        16   -> I2cRead
+      24   tag_write_entity
+        24   -> I2cWrite
+        24   -> convert_tag_addr_to_tag_copy_addr
+        24   -> is_data_equal
+      24   tag_write_mb_crc
+        24   -> Crc16Checksum
+        24   -> I2cWrite
+        24   -> convert_tag_addr_to_tag_copy_addr
+        24   -> is_data_equal
+       4   unlock_tag_memory
+         4 __aeabi_uwrite4
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable12
+       4  ??DataTable16
+       4  ??DataTable16_1
+       4  ??DataTable17
+       4  ??DataTable18
+       4  ??DataTable18_1
+       4  ??DataTable18_2
+       4  ??DataTable18_3
+       4  ??DataTable18_4
+       4  ??DataTable19
+       4  ??DataTable19_1
+       4  ??DataTable19_2
+       4  ??DataTable19_3
+       4  ??DataTable19_4
+       4  ??DataTable19_5
+       4  ??DataTable19_6
+       4  ??DataTable19_7
+       4  ??DataTable19_8
+       4  ??DataTable20
+       4  ??DataTable20_1
+       4  ??DataTable20_2
+       4  ??DataTable20_3
+       4  ??DataTable20_4
+       4  ??DataTable20_5
+       4  ??DataTable21
+       4  ??DataTable21_1
+       8  ??DataTable23
+       4  ??DataTable23_1
+       4  ??DataTable24
+       4  ??DataTable24_1
+       4  ??DataTable24_2
+       4  ??DataTable24_3
+       4  ??DataTable25
+       4  ??DataTable25_1
+       4  ??DataTable25_2
+       4  ??DataTable25_3
+       4  ??DataTable25_4
+       4  ??DataTable25_5
+       4  ??DataTable25_6
+       4  ??DataTable26
+       4  ??DataTable27
+       4  ??DataTable27_1
+       4  ??DataTable28
+       4  ??DataTable28_1
+       4  ??DataTable28_2
+       4  ??DataTable28_3
+       4  ??DataTable28_4
+       4  ??DataTable29
+       4  ??DataTable29_1
+       4  ??DataTable29_2
+       4  ??DataTable29_3
+       4  ??DataTable29_4
+       4  ??DataTable29_5
+       4  ??DataTable29_6
+       4  ??DataTable29_7
+       4  ??DataTable33
+       4  ??DataTable33_1
+       4  ??DataTable33_2
+       4  ??DataTable34
+       4  ??DataTable34_1
+       4  ??DataTable34_10
+       4  ??DataTable34_11
+       4  ??DataTable34_12
+       4  ??DataTable34_13
+       4  ??DataTable34_14
+       4  ??DataTable34_2
+       4  ??DataTable34_3
+       4  ??DataTable34_4
+       4  ??DataTable34_5
+       4  ??DataTable34_6
+       4  ??DataTable34_7
+       4  ??DataTable34_8
+       4  ??DataTable34_9
+       4  ??DataTable35
+       4  ??DataTable36
+       4  ??DataTable36_1
+       4  ??DataTable36_2
+       4  ??DataTable37
+       4  ??DataTable38
+       4  ??DataTable38_1
+       4  ??DataTable39
+       4  ??DataTable39_1
+       4  ??DataTable39_2
+       4  ??DataTable39_3
+       4  ??DataTable39_4
+       4  ??DataTable39_5
+       4  ??DataTable39_6
+       4  ??DataTable40
+       4  ??DataTable40_1
+       4  ??DataTable40_2
+       4  ??DataTable40_3
+       4  ??DataTable40_4
+       4  ??DataTable40_5
+       4  ??DataTable40_6
+       4  ??DataTable41
+       4  ??DataTable41_1
+       4  ??DataTable41_10
+       4  ??DataTable41_11
+       4  ??DataTable41_12
+       4  ??DataTable41_2
+       4  ??DataTable41_3
+       4  ??DataTable41_4
+       4  ??DataTable41_5
+       4  ??DataTable41_6
+       4  ??DataTable41_7
+       4  ??DataTable41_8
+       4  ??DataTable41_9
+       4  ??DataTable7
+       8  ??DataTable7_1
+       4  ??DataTable7_2
+       4  ??DataTable7_3
+       4  ??DataTable8
+       4  ??DataTable8_1
+       4  ??DataTable9
+       4  ??DataTable9_1
+      16  ?_0
+       4  ?_1
+    1020  NfcCyclic
+     226  NfcInit
+      46  NfcInitStatus
+      26  NfcInitialPowerUp
+       8  NfcIsNewDataPresentAtPowerOn
+      32  NfcIsPowerOnTagDataAvailable
+     366  NfcOnPowerDown
+       8  NfcResetTagAccessRights
+     122  NfcRuntimeInit
+      88  NfcSetSleep
+      82  NfcSetWakeup
+       8  NfcSwitchOff
+       8  NfcSwitchOn
+      32  convert_tag_addr_to_tag_copy_addr
+       1  g_nfc_start_flag
+      82  handle_tag_initialization
+      94  handle_tag_register_mlr
+      80  handle_tag_register_prr
+      24  handle_tag_register_urr
+      58  i2c_read_mb
+      18  increment_requested_mb_idx
+      70  initialize_tag_access_rights
+     152  initialize_tag_device_identification
+     236  initialize_tag_toc
+      62  isThereCtrlRegisterMlrMisalignment
+      50  is_data_equal
+      38  is_fast_timer_expired
+      42  is_slow_timer_expired
+     126  mb_read_requested
+     164  mb_update_from_mcu_to_tag
+     118  mb_write_requested
+     126  mpc_read_next_entity
+      98  mpc_write_next_byte
+       1  nfc_init_status
+      84  nfc_local_state
+     450  nfc_mpc_start_addr_create
+      20  nfc_tag_mem_tmp
+      60  reset_tag_access_rights
+       1  save
+      34  set_next_requested_mb_idx
+      60  tag_control_register_init
+     328  tag_control_register_read
+      98  tag_control_register_write
+     332  tag_device_identification_register_read
+      50  tag_status_register_write
+     328  tag_toc_register_read
+     122  tag_write_entity
+     116  tag_write_mb_crc
+      42  unlock_tag_memory
+
+ 
+   107 bytes in section .bss
+    20 bytes in section .rodata
+ 6 198 bytes in section .text
+ 
+ 6 198 bytes of CODE  memory
+    20 bytes of CONST memory
+   107 bytes of DATA  memory
+
+Errors: none
+Warnings: 5

@@ -1,0 +1,910 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:51
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\AstroDim\MemoryBank_Astro.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\AstroDim\MemoryBank_Astro.c"
+#        -D XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\MemoryBank_Astro.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\MemoryBank_Astro.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\AstroDim\MemoryBank_Astro.c
+      1          // ---------------------------------------------------------------------------------------------------------------------
+      2          // MemoryBank_Astro.c
+      3          // ---------------------------------------------------------------------------------------------------------------------
+      4          //
+      5          // Indent style: Replace tabs by spaces, 2 spaces per indentation level
+      6          //
+      7          // Initial version: 2013-11, d.fighera@osram.it
+      8          //
+      9          // Change History:
+     10          //
+     11          // $Author: d.fighera $
+     12          // $Revision: 15312 $
+     13          // $Date: 2018-10-17 23:42:49 +0800 (Wed, 17 Oct 2018) $
+     14          // $Id: MemoryBank_Astro.c 15312 2018-10-17 15:42:49Z d.fighera $
+     15          // $URL: https://app-ehnsvn02.int.osram-light.com/svn/EC/Mpc/Outdoor/trunk/Src/MemoryBank_Astro.c $
+     16          //
+     17          // ---------------------------------------------------------------------------------------------------------------------
+     18          ///  /brief Implementation of the memory bank "AstroDIM Configuration Page".
+     19          ///  MPC ID=05, Version 2, 2D1 2786697 04
+     20          ///  #define MPC_ASTRO_NUMBER       [bank number]
+     21          // ---------------------------------------------------------------------------------------------------------------------
+     22          
+     23          #include <stdint.h>
+     24          #include <stdbool.h>
+     25          
+     26          #define MODULE_MPC
+     27          #include "Config.h"
+     28          #include "MpcDefs.h"
+     29          #include "nvm.h"
+     30          #include "MemoryBank_Astro.h"
+     31          
+     32          #define MacroLowByte( x )  ( (uint8_t)( x & 0xFF) )                             //Low-Byte eines Integer Wertes
+     33          #define MacroHighByte( x ) ( (uint8_t)( (x & 0xFF00) >> 8 ) )                   //High-Byte eines Integer Wertes
+     34          
+     35          
+     36          typedef struct {
+     37              uint8_t opMode;                 // RW 6
+     38              uint8_t nominal_level;
+     39              uint16_t startUp_fade_time;     // added: 2 bytes for start-up fade time
+     40          
+     41              uint8_t astro_fade;
+     42              uint8_t switchOff_fade;
+     43              int16_t start_time_dim;
+     44          
+     45              uint8_t level_1;
+     46              uint16_t duration_1;
+     47          
+     48              uint8_t level_2;
+     49              uint16_t duration_2;
+     50          
+     51              uint8_t level_3;
+     52              uint16_t duration_3;
+     53          
+     54              uint8_t level_4;
+     55              uint8_t toolBytes[5];
+     56              uint16_t ed_ontime;
+     57          
+     58          } TypeMemoryBank_Astro;
+     59          
+     60          uint8_t memoryBankAstro_lockByte[DEVICE_CHANNELS];                              ///< \brief The lock byte of the memory bank.
+     61          uint8_t memoryBankAstro_status[DEVICE_CHANNELS];
+     62          
+     63          /// \brief The data of the memory bank.
+     64          TypeMemoryBank_Astro * memoryBank_Astro[DEVICE_CHANNELS];
+     65          TypeMemoryBank_Astro memoryBank_AstroPhy[DEVICE_CHANNELS];
+     66          
+     67          
+     68          uint16_t internal_ed_ontime[DEVICE_CHANNELS];
+     69          
+     70          uint16_t readingPortBufferAstro[AVAILABLE_PORTS_NUMBER];
+     71          uint16_t writingPortBufferAstro[AVAILABLE_PORTS_NUMBER];
+     72          
+     73          
+     74          void Astro_factorySettings(uint8_t channel);
+     75          
+     76          //---------------------------------------------------------------------------------------------------------------------------
+     77          /// \brief    Initialise the memory bank.
+     78          ///
+     79          /// \retval   none
+     80          //---------------------------------------------------------------------------------------------------------------------------
+     81          void MemoryBank_Astro_Init( void )
+     82          {
+     83              uint8_t i, j,tempMode;
+     84              bool resetData;
+     85              for( i = 0; i < DEVICE_CHANNELS; i++ ) {
+     86          
+     87                  memoryBank_Astro[i] = &memoryBank_AstroPhy[i] ;
+     88          
+     89                  resetData = ( nvmDataInit( (void*)memoryBank_Astro[i] , sizeof( TypeMemoryBank_Astro ), (nvm_memclass_t)0 ) != NVM_INIT_OK );
+     90          
+     91                  tempMode = 0;
+     92                  if (resetData == false ) {
+     93                      tempMode = (memoryBank_Astro[i]->opMode) & ASTRO_RESET_TIME_MASK;
+     94                      if ( memoryBank_Astro[i]->opMode & ASTRO_RELOAD_PARAM_MASK ) {
+     95                          resetData = true;
+     96                      }
+     97                  }
+     98          
+     99                  if (resetData) {                                                        // set the default values
+    100          
+    101                      Astro_factorySettings(i);
+    102          
+    103                      memoryBank_Astro[i]->opMode =         configMemoryBank_Astro_opMode;
+    104                      memoryBank_Astro[i]->startUp_fade_time = configMemoryBank_Astro_startUp_fade;
+    105          
+    106                      memoryBank_Astro[i]->astro_fade =     configMemoryBank_Astro_astro_fade;
+    107                      memoryBank_Astro[i]->switchOff_fade = configMemoryBank_Astro_switchOff_fade;
+    108                      memoryBank_Astro[i]->start_time_dim = configMemoryBank_Astro_start_time;
+    109          
+    110                      memoryBank_Astro[i]->nominal_level = configMemoryBank_Astro_nominal_level;
+    111                      memoryBank_Astro[i]->level_1 = configMemoryBank_Astro_level1;
+    112                      memoryBank_Astro[i]->level_2 = configMemoryBank_Astro_level2;
+    113                      memoryBank_Astro[i]->level_3 = configMemoryBank_Astro_level3;
+    114                      memoryBank_Astro[i]->level_4 = configMemoryBank_Astro_level4;
+    115          
+    116                      memoryBank_Astro[i]->duration_1 = configMemoryBank_Astro_time1;
+    117                      memoryBank_Astro[i]->duration_2 = configMemoryBank_Astro_time2;
+    118                      memoryBank_Astro[i]->duration_3 = configMemoryBank_Astro_time3;
+    119          
+    120                      for (j=0; j<(5); j++) {
+    121                          memoryBank_Astro[i]->toolBytes[j] = 0;
+    122                      }
+    123                      memoryBank_Astro[i]->ed_ontime = 0xFFFF;
+    124          
+    125                  } else {                                                                // use persistent memory content
+    126          
+    127                      // thus no code is needed here
+    128                  }
+    129          
+    130                  memoryBankAstro_lockByte[i] = 255;
+    131                  memoryBankAstro_status[i] = 0x00;
+    132          
+    133                  memoryBank_Astro[i]->opMode |= tempMode;                                // Set the reset history command flag
+    134          
+    135                  internal_ed_ontime[i] = 0xFFFF;
+    136          
+    137          
+    138          #ifdef AstroTestStarttime
+    139                  AstroTestStarttime(&memoryBank_Astro[i]->start_time_dim) ;
+    140          #endif
+    141          #ifdef AstroTestDuration
+    142                  AstroTestDuration(&memoryBank_Astro[i]->duration_1) ;
+    143                  AstroTestDuration(&memoryBank_Astro[i]->duration_2) ;
+    144                  AstroTestDuration(&memoryBank_Astro[i]->duration_3) ;
+    145          #endif
+    146          
+    147              }
+    148          }
+    149          //---------------------------------------------------------------------------------------------------------------------------
+    150          /// \brief Initialise the memory Bank.
+    151          ///
+    152          /// \param channel    The device channel.
+    153          /// \retval            none
+    154          //---------------------------------------------------------------------------------------------------------------------------
+    155          void MemoryBank_Astro_Reset( uint8_t channel )                                     // reset only MPC variables
+    156          {
+    157              // no variables of MPC have to be reset
+    158          }
+    159          
+    160          //---------------------------------------------------------------------------------------------------------------------------
+    161          /// \brief  Reset the factory settings of Astro
+    162          ///
+    163          /// \param channel    The device channel.
+    164          /// \retval           none
+    165          //---------------------------------------------------------------------------------------------------------------------------
+    166          void MemoryBank_Astro_FactoryReset( void )
+    167          {
+    168          uint8_t i;
+    169          
+    170            for( i = 0; i < DEVICE_CHANNELS; i++ )
+    171            {
+    172                Astro_factorySettings(i);
+    173            }
+    174          
+    175          }
+    176          
+    177          
+    178          //---------------------------------------------------------------------------------------------------------------------------
+    179          /// \brief Read m.b data
+    180          ///
+    181          /// The data will be collected from the real device.
+    182          /// The checksum will be handled in MemoryBank.c
+    183          ///
+    184          /// \param address      The address in the selected memory bank.
+    185          /// \param value        Pointer to a memory address to save the result.
+    186          /// \param channel      The device channel.
+    187          /// \param port         The port number.
+    188          ///
+    189          /// \retval            'MPC_RW_OK' in case of successful read
+    190          //---------------------------------------------------------------------------------------------------------------------------
+    191          mpc_rw_enum MemoryBank_Astro_GetValue_Port( uint8_t address, uint8_t *value, uint8_t channel, uint8_t port )
+    192          {
+    193              uint8_t tmp;
+    194              if ( port >= AVAILABLE_PORTS_NUMBER )
+    195              {
+    196                  return MPC_RW_OUT_OF_RANGE;
+    197              }
+    198          
+    199              if (address > MemoryBank_Astro_LastAddress) {
+    200                  return MPC_RW_OUT_OF_RANGE;
+    201              }
+    202          
+    203              switch( address ) {
+    204              case 0:                                                                     //last addressable memory bank location
+    205                  *value = MemoryBank_Astro_LastAddress;
+    206                  return MPC_RW_OK;
+    207              case 1:                                                                     //Checksum is handled by memory_bank.c
+    208                  *value = 0;
+    209                  return MPC_RW_OK;
+    210              case 2:                                                                     // lock byte
+    211                  *value = memoryBankAstro_lockByte[channel];
+    212                  return MPC_RW_OK;
+    213              case 3:                                                                     //number of the multipurpose center
+    214                  *value = MemoryBank_Astro_ID;
+    215                  return MPC_RW_OK;
+    216              case 4:                                                                     //version of the multipurpose center implementation
+    217                  *value = MemoryBank_Astro_Version;
+    218                  return MPC_RW_OK;
+    219              case 5:
+    220                  *value = memoryBankAstro_status[channel];
+    221                  return MPC_RW_OK;
+    222              case 6:
+    223                  *value = memoryBank_Astro[channel]->opMode;
+    224                  return MPC_RW_OK;
+    225              case 7:
+    226                  *value = memoryBank_Astro[channel]->nominal_level;
+    227                  return MPC_RW_OK;
+    228          
+    229              case 8:
+    230                  readingPortBufferAstro[port] = memoryBank_Astro[channel]->startUp_fade_time;
+    231                  *value = readingPortBufferAstro[port] >> 8;                             // MSB
+    232                  return MPC_RW_OK;
+    233              case 9:
+    234                  *value = readingPortBufferAstro[port];
+    235                  return MPC_RW_OK;
+    236              case 10:
+    237                  *value = memoryBank_Astro[channel]->astro_fade;
+    238                  return MPC_RW_OK;
+    239              case 11:
+    240                  *value = memoryBank_Astro[channel]->switchOff_fade;
+    241                  return MPC_RW_OK;
+    242          
+    243              case 12:
+    244                  readingPortBufferAstro[port] = memoryBank_Astro[channel]->start_time_dim;
+    245                  *value = readingPortBufferAstro[port] >> 8;                             // MSB
+    246                  return MPC_RW_OK;
+    247              case 13:
+    248                  *value = readingPortBufferAstro[port];
+    249                  return MPC_RW_OK;
+    250              case 14:
+    251                  *value = memoryBank_Astro[channel]->level_1;
+    252                  return MPC_RW_OK;
+    253          
+    254              case 15:
+    255                  readingPortBufferAstro[port] = memoryBank_Astro[channel]->duration_1;
+    256                  *value = readingPortBufferAstro[port] >> 8;                             // MSB
+    257                  return MPC_RW_OK;
+    258              case 16:
+    259                  *value = readingPortBufferAstro[port];
+    260                  return MPC_RW_OK;
+    261              case 17:
+    262                  *value = memoryBank_Astro[channel]->level_2;
+    263                  return MPC_RW_OK;
+    264          
+    265              case 18:
+    266                  readingPortBufferAstro[port] = memoryBank_Astro[channel]->duration_2;
+    267                  *value = readingPortBufferAstro[port] >> 8;                             // MSB
+    268                  return MPC_RW_OK;
+    269              case 19:
+    270                  *value = readingPortBufferAstro[port];
+    271                  return MPC_RW_OK;
+    272              case 20:
+    273                  *value = memoryBank_Astro[channel]->level_3;
+    274                  return MPC_RW_OK;
+    275          
+    276              case 21:
+    277                  readingPortBufferAstro[port] = memoryBank_Astro[channel]->duration_3;
+    278                  *value = readingPortBufferAstro[port] >> 8;                             // MSB
+    279                  return MPC_RW_OK;
+    280              case 22:
+    281                  *value = readingPortBufferAstro[port];
+    282                  return MPC_RW_OK;
+    283              case 23:
+    284                  *value = memoryBank_Astro[channel]->level_4;
+    285                  return MPC_RW_OK;
+    286          
+    287              case 29:
+    288                  *value = MacroHighByte( internal_ed_ontime[channel]);                   // MSB
+    289                  return MPC_RW_OK;
+    290              case 30:
+    291                  *value = MacroLowByte( internal_ed_ontime[channel]);
+    292                  return MPC_RW_OK;
+    293          
+    294              default:     // 24 - 28
+    295                  tmp = (address - 24);
+    296                  *value = memoryBank_Astro[channel]->toolBytes[tmp];
+    297                  return MPC_RW_OK;
+    298              }
+    299          }
+    300          
+    301          
+    302          //---------------------------------------------------------------------------------------------------------------------------
+    303          /// \brief Writes a value in a the memory bank
+    304          ///
+    305          /// The bank number in daliDevice->dtr1, address in daliDevice->dtr and channel in daliDevice->channel.
+    306          ///
+    307          /// \param address      The address in the selected memory bank.
+    308          /// \param value        The value to write.
+    309          /// \param channel      The channel ID of the device .
+    310          /// \param port         The port number.
+    311          ///
+    312          /// \retval            'MPC_RW_OK' in case of successful write
+    313          //---------------------------------------------------------------------------------------------------------------------------
+    314          mpc_rw_enum MemoryBank_Astro_SetValue_Port( uint8_t address, uint8_t value, uint8_t channel, uint8_t port )
+    315          {
+    316              uint8_t tmp;
+    317              if ( (memoryBankAstro_lockByte[channel] != 0x55) && (address != 2)) {
+    318                  return MPC_RW_DENY;
+    319              }
+    320              if ( port >= AVAILABLE_PORTS_NUMBER )
+    321              {
+    322                  return MPC_RW_OUT_OF_RANGE;
+    323              }
+    324              if (address > MemoryBank_Astro_LastAddress) {
+    325                  return MPC_RW_OUT_OF_RANGE;
+    326              }
+    327          
+    328              //ServiceOutdoorMpcWriteCounter(MemoryBank_Astro_ID);                         // for counting
+    329          
+    330              switch( address ) {
+    331              case 2:                                                                     // the lock byte
+    332                  memoryBankAstro_lockByte[channel] = value;
+    333                  return MPC_RW_OK;
+    334          
+    335              case 6:
+    336                  memoryBank_Astro[channel]->opMode = value;
+    337                  return MPC_RW_OK;
+    338              case 7:
+    339                  memoryBank_Astro[channel]->nominal_level = value;
+    340          #ifdef DIM4testDimLevel
+    341                  DIM4testDimLevel(&memoryBank_Astro[channel]->nominal_level) ;
+    342          #endif
+    343                  return MPC_RW_OK;
+    344          
+    345              case 8:
+    346                  writingPortBufferAstro[port] = value << 8;                              // MSB
+    347                  return MPC_RW_OK;
+    348              case 9:
+    349                  writingPortBufferAstro[port] |= value;
+    350                  memoryBank_Astro[channel]->startUp_fade_time = writingPortBufferAstro[port];
+    351                  return MPC_RW_OK;
+    352          
+    353              case 10:
+    354                  memoryBank_Astro[channel]->astro_fade = value;
+    355                  return MPC_RW_OK;
+    356              case 11:
+    357                  memoryBank_Astro[channel]->switchOff_fade = value;
+    358                  return MPC_RW_OK;
+    359          
+    360              case 12:
+    361                  writingPortBufferAstro[port] = value << 8;                              // MSB
+    362                  return MPC_RW_OK;
+    363              case 13:
+    364                  writingPortBufferAstro[port] |= value;
+    365                  memoryBank_Astro[channel]->start_time_dim = writingPortBufferAstro[port];
+    366          #ifdef AstroTestStarttime
+    367                  AstroTestStarttime(&memoryBank_Astro[channel]->start_time_dim);
+    368          #endif
+    369                  return MPC_RW_OK;
+    370          
+    371              case 14:
+    372                  memoryBank_Astro[channel]->level_1 = value;
+    373          #ifdef DIM4testDimLevel
+    374                  DIM4testDimLevel(&memoryBank_Astro[channel]->level_1) ;
+    375          #endif
+    376                  return MPC_RW_OK;
+    377          
+    378              case 15:
+    379                  writingPortBufferAstro[port] = value << 8;                              // MSB
+    380                  return MPC_RW_OK;
+    381              case 16:
+    382                  writingPortBufferAstro[port] |= value;
+    383                  memoryBank_Astro[channel]->duration_1 = writingPortBufferAstro[port];
+    384          #ifdef AstroTestDuration
+    385                  AstroTestDuration(&memoryBank_Astro[channel]->duration_1) ;
+    386          #endif
+    387                  return MPC_RW_OK;
+    388              case 17:
+    389                  memoryBank_Astro[channel]->level_2 = value;
+    390          #ifdef DIM4testDimLevel
+    391                  DIM4testDimLevel(&memoryBank_Astro[channel]->level_2) ;
+    392          #endif
+    393                  return MPC_RW_OK;
+    394          
+    395              case 18:
+    396                  writingPortBufferAstro[port] = value << 8;                              // MSB
+    397                  return MPC_RW_OK;
+    398              case 19:
+    399                  writingPortBufferAstro[port] |= value;
+    400                  memoryBank_Astro[channel]->duration_2 = writingPortBufferAstro[port];
+    401          #ifdef AstroTestDuration
+    402                  AstroTestDuration(&memoryBank_Astro[channel]->duration_2) ;
+    403          #endif
+    404                  return MPC_RW_OK;
+    405              case 20:
+    406                  memoryBank_Astro[channel]->level_3 = value;
+    407          #ifdef DIM4testDimLevel
+    408                  DIM4testDimLevel(&memoryBank_Astro[channel]->level_3);
+    409          #endif
+    410                  return MPC_RW_OK;
+    411              case 21:
+    412                  writingPortBufferAstro[port] = value << 8;                              // MSB
+    413                  return MPC_RW_OK;
+    414              case 22:
+    415                  writingPortBufferAstro[port] |= value;
+    416                  memoryBank_Astro[channel]->duration_3 = writingPortBufferAstro[port];
+    417          #ifdef AstroTestDuration
+    418                  AstroTestDuration(&memoryBank_Astro[channel]->duration_3) ;
+    419          #endif
+    420                  return MPC_RW_OK;
+    421              case 23:
+    422                  memoryBank_Astro[channel]->level_4 = value;
+    423          #ifdef DIM4testDimLevel
+    424                  DIM4testDimLevel(&memoryBank_Astro[channel]->level_4);
+    425          #endif
+    426                  return MPC_RW_OK;
+    427          
+    428              case 29:
+    429                  writingPortBufferAstro[port] = value << 8;                              // MSB
+    430                  return MPC_RW_OK;
+    431              case 30:                                                                    // DALI writes
+    432                  writingPortBufferAstro[port] |= value;
+    433                  memoryBank_Astro[channel]->ed_ontime = writingPortBufferAstro[port];
+    434                  internal_ed_ontime[channel] = memoryBank_Astro[channel]->ed_ontime;
+    435                  return MPC_RW_OK;
+    436          
+    437              default:       // 24 - 28
+    438                  if ((address >= 24) && (address <= 28)) {
+    439                      tmp = (address - 24);
+    440                      memoryBank_Astro[channel]->toolBytes[tmp] = value;
+    441                      return MPC_RW_OK;
+    442                  }
+    443                  return MPC_RW_OUT_OF_RANGE;
+    444              }
+    445          }
+    446          
+    447          //---------------------------------------------------------------------------------------------------------------------------
+    448          /// \brief Reads a value from the memory bank                                   Version without port
+    449          ///
+    450          /// The data will be collected from the real device.
+    451          /// The checksum will be handled in MemoryBank.c
+    452          ///
+    453          /// \param address      The address in the selected memory bank.
+    454          /// \param value        Pointer to a memory address to save the result.
+    455          /// \param channel      The device channel.
+    456          ///
+    457          /// \retval            'MPC_RW_OK' in case of successful read
+    458          //---------------------------------------------------------------------------------------------------------------------------
+    459          mpc_rw_enum MemoryBank_Astro_GetValue( uint8_t address, uint8_t *value, uint8_t channel )
+    460          {
+    461              return MemoryBank_Astro_GetValue_Port( address, value, channel, 0 );
+    462          }
+    463          
+    464          //---------------------------------------------------------------------------------------------------------------------------
+    465          /// \brief Writes a value in a the memory bank                                  Version without port
+    466          ///
+    467          /// \param address      The address in the selected memory bank.
+    468          /// \param value        The value to write.
+    469          /// \param channel      The channel ID of the device .
+    470          ///
+    471          /// \retval            'MPC_RW_OK' in case of a successful write
+    472          //---------------------------------------------------------------------------------------------------------------------------
+    473          mpc_rw_enum MemoryBank_Astro_SetValue( uint8_t address, uint8_t value, uint8_t channel )
+    474          {
+    475              return MemoryBank_Astro_SetValue_Port( address, value, channel, 0 );
+    476          }
+    477          
+    478          
+    479          
+    480          
+    481          //---------------------------------------------------------------------------------------------------------------------------
+    482          //    *********************************************     Function to WRITE into MPC
+    483          //---------------------------------------------------------------------------------------------------------------------------
+    484          
+    485          //---------------------------------------------------------------------------------------------------------------------------
+    486          /// \brief allow the application to update the mpc status uint8_t
+    487          ///
+    488          /// \param channel        The channel ID of the device.
+    489          /// \param value        status
+    490          ///
+    491          /// \retval                none
+    492          //---------------------------------------------------------------------------------------------------------------------------
+    493          void MemoryBank_Astro_UpdateStatus(uint8_t channel, uint8_t value)
+    494          {
+    495              memoryBankAstro_status[channel] = value;
+    496          }
+    497          
+    498          //---------------------------------------------------------------------------------------------------------------------------
+    499          /// \brief         To update the mpc operating mode
+    500          ///
+    501          /// \param channel      The channel ID of the device.
+    502          /// \param value        mode
+    503          ///
+    504          /// \retval             none
+    505          //---------------------------------------------------------------------------------------------------------------------------
+    506          void MemoryBank_Astro_UpdateOpMode(uint8_t channel, uint8_t mode)
+    507          {
+    508              memoryBank_Astro[channel]->opMode = mode;
+    509          }
+    510          
+    511          //---------------------------------------------------------------------------------------------------------------------------
+    512          /// \brief         To overwrite ED ontime into mpc structure (permanent)
+    513          ///
+    514          /// \param channel      The channel ID of the device.
+    515          /// \param value        ED value
+    516          ///
+    517          /// \retval             none
+    518          //---------------------------------------------------------------------------------------------------------------------------
+    519          void MemoryBank_Astro_ClearStartEDontime(uint8_t channel, uint16_t value16)
+    520          {
+    521              memoryBank_Astro[channel]->ed_ontime = value16 ;
+    522          }
+    523          
+    524          //---------------------------------------------------------------------------------------------------------------------------
+    525          /// \brief allow the application to set the Estimate Duration time information - runtime
+    526          ///
+    527          /// \param channel      The channel ID of the device.
+    528          /// \param value        duration in minutes
+    529          ///
+    530          /// \retval             none
+    531          //---------------------------------------------------------------------------------------------------------------------------
+    532          void MemoryBank_Astro_UpdateEDonTime(uint8_t channel, uint16_t value16)
+    533          {
+    534              internal_ed_ontime[channel] = value16;
+    535          }
+    536          
+    537          
+    538          //---------------------------------------------------------------------------------------------------------------------------
+    539          //    *********************************************     Function to READ MPC data
+    540          //---------------------------------------------------------------------------------------------------------------------------
+    541          
+    542          //---------------------------------------------------------------------------------------------------------------------------
+    543          /// \brief allow the application to inquire the Astro mode
+    544          ///
+    545          /// \param channel        The channel ID of the device.
+    546          ///
+    547          /// \retval               The mode set by the configuation tool into the MPC.
+    548          //---------------------------------------------------------------------------------------------------------------------------
+    549          uint8_t MemoryBank_Astro_GetMode(uint8_t channel)
+    550          {
+    551          uint8_t  modeA;
+    552          
+    553              modeA = memoryBank_Astro[channel]->opMode;
+    554              if ( (modeA & 0x03) == 0 ) {                                                // Astro is disabled
+    555                  modeA &= 0xC0;
+    556              }
+    557              return (modeA);
+    558          }
+    559          
+    560          // Get Levels %
+    561          uint16_t MemoryBank_Astro_GetNominalLevel(uint8_t channel)
+    562          {
+    563              return (memoryBank_Astro[channel]->nominal_level);
+    564          }
+    565          uint16_t MemoryBank_Astro_GetLevel1(uint8_t channel)
+    566          {
+    567              return (memoryBank_Astro[channel]->level_1);
+    568          }
+    569          uint16_t MemoryBank_Astro_GetLevel2(uint8_t channel)
+    570          {
+    571              return (memoryBank_Astro[channel]->level_2);
+    572          }
+    573          uint16_t MemoryBank_Astro_GetLevel3(uint8_t channel)
+    574          {
+    575              return (memoryBank_Astro[channel]->level_3);
+    576          }
+    577          uint16_t MemoryBank_Astro_GetLevel4(uint8_t channel)
+    578          {
+    579              return (memoryBank_Astro[channel]->level_4);
+    580          }
+    581          
+    582          // Get latched information in minutes (not mpc data)
+    583          int16_t MemoryBank_Astro_GetStartTime(uint8_t channel)                          // signed value
+    584          {
+    585          //    int16_t sstart;
+    586          //    sstart = latch_starttime[channel];                                        // latched value
+    587          //    return ( sstart );
+    588              return memoryBank_Astro[channel]->start_time_dim;
+    589          
+    590          }
+    591          uint16_t MemoryBank_Astro_GetDuration1(uint8_t channel)
+    592          {
+    593              return memoryBank_Astro[channel]->duration_1;
+    594          }
+    595          uint16_t MemoryBank_Astro_GetDuration2(uint8_t channel)
+    596          {
+    597              return memoryBank_Astro[channel]->duration_2;
+    598          }
+    599          uint16_t MemoryBank_Astro_GetDuration3(uint8_t channel)
+    600          {
+    601              return memoryBank_Astro[channel]->duration_3;
+    602          }
+    603          
+    604          // Get fade times in seconds
+    605          uint16_t MemoryBank_Astro_GetStartUpFade(uint8_t channel)
+    606          {
+    607              return memoryBank_Astro[channel]->startUp_fade_time;                        // latched value
+    608          }
+    609          uint16_t MemoryBank_Astro_GetAstroFade(uint8_t channel)
+    610          {
+    611              return ( memoryBank_Astro[channel]->astro_fade * SHORTStepTime);
+    612          }
+    613          uint16_t MemoryBank_Astro_GetSwitchOffFade(uint8_t channel)
+    614          {
+    615              if ( memoryBank_Astro[channel]->switchOff_fade == 255) {
+    616                  return 65535;
+    617              }
+    618              return ( memoryBank_Astro[channel]->switchOff_fade * LONGStepTime );
+    619          }
+    620          
+    621          // Get ED value from mpc structure
+    622          uint16_t MemoryBank_Astro_GetStartEDontime(uint8_t channel)
+    623          {
+    624              return ( memoryBank_Astro[channel]->ed_ontime ) ;
+    625          }
+    626          
+    627          
+    628          
+    629          
+    630          //----------------------------------------------------------------------------------------------------------------------
+    631          /// \brief    Set the factory setting
+    632          ///
+    633          /// \param    channel
+    634          ///
+    635          /// \retval   none
+    636          //----------------------------------------------------------------------------------------------------------------------
+    637          
+    638          static void Astro_factorySettings(uint8_t chan)
+    639          {
+    640          uint8_t j;
+    641          
+    642          //      memoryBank_Astro[chan]->opMode =         configMemoryBank_Astro_opMode;
+    643          //      memoryBank_Astro[chan]->startUp_fade_time = configMemoryBank_Astro_startUp_fade;
+    644          //
+    645          //      memoryBank_Astro[chan]->astro_fade =     configMemoryBank_Astro_astro_fade;
+    646          //      memoryBank_Astro[chan]->switchOff_fade = configMemoryBank_Astro_switchOff_fade;
+    647          //      memoryBank_Astro[chan]->start_time_dim = configMemoryBank_Astro_start_time;
+    648          //
+    649          //      memoryBank_Astro[chan]->nominal_level = configMemoryBank_Astro_nominal_level;
+    650          //      memoryBank_Astro[chan]->level_1 = configMemoryBank_Astro_level1;
+    651          //      memoryBank_Astro[chan]->level_2 = configMemoryBank_Astro_level2;
+    652          //      memoryBank_Astro[chan]->level_3 = configMemoryBank_Astro_level3;
+    653          //      memoryBank_Astro[chan]->level_4 = configMemoryBank_Astro_level4;
+    654          //
+    655          //      memoryBank_Astro[chan]->duration_1 = configMemoryBank_Astro_time1;
+    656          //      memoryBank_Astro[chan]->duration_2 = configMemoryBank_Astro_time2;
+    657          //      memoryBank_Astro[chan]->duration_3 = configMemoryBank_Astro_time3;
+    658          
+    659                for (j=0; j<(5); j++) {
+    660                    memoryBank_Astro[chan]->toolBytes[j] = 0;
+    661                }
+    662          
+    663                memoryBank_Astro[chan]->ed_ontime = 0x0000;  // 0xFFFF;
+    664                memoryBankAstro_lockByte[chan] = 255;
+    665                memoryBankAstro_status[chan] = 0x00;
+    666          
+    667                internal_ed_ontime[chan] = 0xFFFF;
+    668          }
+    669          
+    670          
+    671          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       4   Astro_factorySettings
+       0   MemoryBank_Astro_ClearStartEDontime
+       8   MemoryBank_Astro_FactoryReset
+         8   -> Astro_factorySettings
+       0   MemoryBank_Astro_GetAstroFade
+       0   MemoryBank_Astro_GetDuration1
+       0   MemoryBank_Astro_GetDuration2
+       0   MemoryBank_Astro_GetDuration3
+       0   MemoryBank_Astro_GetLevel1
+       0   MemoryBank_Astro_GetLevel2
+       0   MemoryBank_Astro_GetLevel3
+       0   MemoryBank_Astro_GetLevel4
+       4   MemoryBank_Astro_GetMode
+       0   MemoryBank_Astro_GetNominalLevel
+       0   MemoryBank_Astro_GetStartEDontime
+       0   MemoryBank_Astro_GetStartTime
+       0   MemoryBank_Astro_GetStartUpFade
+       4   MemoryBank_Astro_GetSwitchOffFade
+       8   MemoryBank_Astro_GetValue
+         8   -> MemoryBank_Astro_GetValue_Port
+       8   MemoryBank_Astro_GetValue_Port
+      16   MemoryBank_Astro_Init
+        16   -> Astro_factorySettings
+        16   -> nvmDataInit
+       0   MemoryBank_Astro_Reset
+       8   MemoryBank_Astro_SetValue
+         8   -> MemoryBank_Astro_SetValue_Port
+       8   MemoryBank_Astro_SetValue_Port
+       0   MemoryBank_Astro_UpdateEDonTime
+       0   MemoryBank_Astro_UpdateOpMode
+       0   MemoryBank_Astro_UpdateStatus
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable0
+       4  ??DataTable0_1
+       4  ??DataTable0_2
+       4  ??DataTable0_3
+       4  ??DataTable0_4
+       4  ??DataTable0_5
+       4  ??DataTable1
+       4  ??DataTable15
+       4  ??DataTable16
+       4  ??DataTable1_1
+       4  ??DataTable1_2
+       4  ??DataTable1_3
+       4  ??DataTable1_4
+       4  ??DataTable21
+       4  ??DataTable21_1
+       4  ??DataTable21_2
+       4  ??DataTable21_3
+       4  ??DataTable21_4
+       4  ??DataTable4
+      76  Astro_factorySettings
+      14  MemoryBank_Astro_ClearStartEDontime
+      24  MemoryBank_Astro_FactoryReset
+      20  MemoryBank_Astro_GetAstroFade
+      14  MemoryBank_Astro_GetDuration1
+      14  MemoryBank_Astro_GetDuration2
+      14  MemoryBank_Astro_GetDuration3
+      16  MemoryBank_Astro_GetLevel1
+      16  MemoryBank_Astro_GetLevel2
+      16  MemoryBank_Astro_GetLevel3
+      16  MemoryBank_Astro_GetLevel4
+      28  MemoryBank_Astro_GetMode
+      16  MemoryBank_Astro_GetNominalLevel
+      14  MemoryBank_Astro_GetStartEDontime
+      16  MemoryBank_Astro_GetStartTime
+      14  MemoryBank_Astro_GetStartUpFade
+      42  MemoryBank_Astro_GetSwitchOffFade
+      14  MemoryBank_Astro_GetValue
+     712  MemoryBank_Astro_GetValue_Port
+     402  MemoryBank_Astro_Init
+       2  MemoryBank_Astro_Reset
+      16  MemoryBank_Astro_SetValue
+     760  MemoryBank_Astro_SetValue_Port
+      12  MemoryBank_Astro_UpdateEDonTime
+      14  MemoryBank_Astro_UpdateOpMode
+       8  MemoryBank_Astro_UpdateStatus
+       2  internal_ed_ontime
+       1  memoryBankAstro_lockByte
+       1  memoryBankAstro_status
+       4  memoryBank_Astro
+      28  memoryBank_AstroPhy
+       8  readingPortBufferAstro
+       8  writingPortBufferAstro
+
+ 
+    52 bytes in section .bss
+ 2 386 bytes in section .text
+ 
+ 2 386 bytes of CODE memory
+    52 bytes of DATA memory
+
+Errors: none
+Warnings: none

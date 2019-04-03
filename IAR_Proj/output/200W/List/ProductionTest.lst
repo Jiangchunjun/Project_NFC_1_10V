@@ -1,0 +1,610 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:53
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\Dali\DaliServices\ProductionTest.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\Dali\DaliServices\ProductionTest.c"
+#        -D XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\ProductionTest.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\ProductionTest.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\Dali\DaliServices\ProductionTest.c
+      1          /******************** (C) COPYRIGHT 2013 - 2014 OSRAM AG *********************************************************************************
+      2          * File Name         : ProductionTest.c
+      3          * Description       : Functions to provide device-specific test steps in production.
+      4          * Author(s)         : Jutta Avril (JA)
+      5          * Created           : 14.02.2014 (JA)
+      6          * Modified by       : DATE       (AUTHOR)    DESCRIPTION OF CHANGE
+      7          **********************************************************************************************************************************/
+      8          
+      9          #include <stdint.h>
+     10          #include <stdbool.h>
+     11          #include <intrinsics.h>
+     12          #include <global.h>
+     13          //#include <build_version.h>
+     14          //#include <calibration.h>
+     15          //#include <miscStuff.h>
+     16          //#include <analog_userinterface.h>
+     17          //#include <currentset_userinterface.h>
+     18          //#include <god_userinterface.h>
+     19          //#include <module_helper.h>
+     20          #include <XMC1000_RomFunctionTable.h>
+     21          #include <config.h>
+     22          #include <ProductionTest.h>
+     23          //#include "BMI_module.h"
+     24          
+     25          
+     26          #define BUILD_BUG_ON(condition)         ((void)sizeof(char[1 - 2*!!(condition)]))   // If no static assertion is available
+     27          
+     28          static_assert( sizeof(GLOBAL_BASIC_CODE_STRING)==8+1, "Basic code string has the wrong length!!" );
+     29          
+     30          static bool m_calibration_enable = false;
+     31          
+     32          
+     33          void ProductionTest_Init( uint8_t channel )
+     34          {
+     35              // add your code, if needed
+     36          }
+     37          
+     38          //----------------------------------------------------------------------------------------------------------------------
+     39          /// \brief Production test functions - Activate Test Step.
+     40          ///
+     41          /// \par Sequence
+     42          /// - Go to factory mode with the Osram Command "Set Factory Mode"
+     43          /// - Set with DALI Command 257 "Data Transfer Register" the test Id in the DTR register
+     44          /// - Start test function with the twice Osram Command 1032 "Activate Test Step"
+     45          ///
+     46          ///
+     47          /// \param .
+     48          ///
+     49          /// \retval			nothing
+     50          //---------------------------------------------------------------------------------------------------------------------------
+     51          TEST_RESPONSE_t ProductionTest_Step( uint8_t step, uint8_t dtr1, uint8_t dtr2 )
+     52          {
+     53          //    TEST_RESPONSE_t queryAnswered = TEST_NOT_SUPPORTED;                                                                                            // set true as default, set to false, if not supported
+     54          //
+     55          //    uint16_t word_value;
+     56          //
+     57          //    word_value = dtr2 << 8;
+     58          //    word_value |= dtr1;
+     59          //
+     60          //    switch( step )
+     61          //    {
+     62          //
+     63          //    case 1:         // add your test steps here ..
+     64          //        break;
+     65          //
+     66          //    case 20:
+     67          //        if ( word_value == 0xB15A )
+     68          //        {
+     69          //            GodStopDelayedStart();
+     70          //            m_calibration_enable = true;
+     71          //            queryAnswered = TEST_DONE;
+     72          //        }
+     73          //        break;
+     74          //
+     75          //    case 40:
+     76          //        if ( m_calibration_enable )
+     77          //        {
+     78          //            calibration_command( calibration_step_start, 0 );
+     79          //            queryAnswered = TEST_DONE;
+     80          //        }
+     81          //        break;
+     82          //
+     83          //    case 41:
+     84          //        if ( m_calibration_enable )
+     85          //        {
+     86          //            calibration_command( calibration_step_calculate_vin, word_value );
+     87          //            queryAnswered = TEST_DONE;
+     88          //        }
+     89          //        break;
+     90          //
+     91          //    case 42:
+     92          //        if ( m_calibration_enable )
+     93          //        {
+     94          //            calibration_command( calibration_step_set_current_1, 0 );
+     95          //            queryAnswered = TEST_DONE;
+     96          //        }
+     97          //        break;
+     98          //
+     99          //    case 43:
+    100          //        if ( m_calibration_enable )
+    101          //        {
+    102          //            calibration_command( calibration_step_store_current_1, word_value );
+    103          //            queryAnswered = TEST_DONE;
+    104          //        }
+    105          //        break;
+    106          //
+    107          //    case 44:
+    108          //        if ( m_calibration_enable )
+    109          //        {
+    110          //            calibration_command( calibration_step_store_vout_1, word_value );
+    111          //            queryAnswered = TEST_DONE;
+    112          //        }
+    113          //        break;
+    114          //
+    115          //    case 45:
+    116          //        if ( m_calibration_enable )
+    117          //        {
+    118          //            calibration_command( calibration_step_set_current_2, 0 );
+    119          //            queryAnswered = TEST_DONE;
+    120          //        }
+    121          //        break;
+    122          //
+    123          //    case 46:
+    124          //        if ( m_calibration_enable )
+    125          //        {
+    126          //            calibration_command( calibration_step_store_current_2_and_calculation, word_value );
+    127          //            queryAnswered = TEST_DONE;
+    128          //        }
+    129          //        break;
+    130          //
+    131          //    case 47:
+    132          //        if ( m_calibration_enable )
+    133          //        {
+    134          //            calibration_command( calibration_step_store_vout_2_and_calculation, word_value );
+    135          //            queryAnswered = TEST_DONE;
+    136          //        }
+    137          //        break;
+    138          //
+    139          //    case 48:
+    140          //        if ( m_calibration_enable )
+    141          //        {
+    142          //            calibration_command( calibration_step_ledset_calculation, word_value );
+    143          //            queryAnswered = TEST_DONE;
+    144          //        }
+    145          //        break;
+    146          //
+    147          //    case 49:
+    148          //        if ( m_calibration_enable )
+    149          //        {
+    150          //            calibration_command( calibration_step_end, 0 );
+    151          //            queryAnswered = TEST_DONE;
+    152          //        }
+    153          //        break;
+    154          //
+    155          //    case 50:
+    156          //        if ( m_calibration_enable )
+    157          //        {
+    158          //            calibration_command( calibration_clear_data, 0 );
+    159          //            queryAnswered = TEST_DONE;
+    160          //        }
+    161          //        break;
+    162          //
+    163          //
+    164          //    case 60:
+    165          //        if ( word_value == 0x4CE9 )
+    166          //        {
+    167          //            XMC1000_BmiInstallationReq(0xf9c3);
+    168          //        }
+    169          //        break;
+    170          //
+    171          //    case 199:       // .. valid numbers are in the range 0 <= test step <= 199
+    172          //        break;
+    173          //
+    174          //    default:
+    175          //        queryAnswered = TEST_NOT_SUPPORTED;
+    176          //        break;
+    177          //    }
+    178          //    return queryAnswered;
+    179          }
+                 ^
+Warning[Pe940]: missing return statement at end of non-void function
+          "ProductionTest_Step"
+    180          
+    181          //---------------------------------------------------------------------------------------------------------------------------
+    182          /// \brief Production test functions - Query Test Value.
+    183          ///
+    184          /// \par Sequence
+    185          /// - Go to factory mode with the Osram Command "Set Factory Mode"
+    186          /// - Set with DALI Command 257 "Data Transfer Register" the value Id in the DTR register
+    187          /// - Query value with the Osram Command 1016 "Query Test Value"
+    188          ///
+    189          /// \param daliDevice	 	Pointer to the TypDaliDevice data structure.
+    190          ///
+    191          /// \retval			nothing
+    192          //---------------------------------------------------------------------------------------------------------------------------
+    193          TEST_RESPONSE_t ProductionTest_Query( uint8_t query, uint8_t* pDtr1, uint8_t* pDtr2, uint8_t channel )
+    194          {
+    195          //    TEST_RESPONSE_t queryAnswered = TEST_DONE;                                                    // set true as default, set to false, if not supported
+    196          //
+    197          //    uint16_t tmp = 0;
+    198          //
+    199          //    switch( query )
+    200          //    {
+    201          //    case 10:         // Uline1 mean
+    202          //        tmp = scale_value_to_16( Uline1.mean, 1, 100000 );
+    203          //        separate_bytes( tmp, pDtr1, pDtr2 );
+    204          //        break;
+    205          //
+    206          //    case 11:         // Uline2 mean
+    207          //        tmp = scale_value_to_16( Uline2.mean, 1, 100000 );
+    208          //        separate_bytes( tmp, pDtr1, pDtr2 );
+    209          //        break;
+    210          //
+    211          //    case 12:         // Urail mean
+    212          //        tmp = scale_value_to_16( Urail.mean, 1, 100000 );
+    213          //        separate_bytes( tmp, pDtr1, pDtr2 );
+    214          //        break;
+    215          //
+    216          //    case 13:         // Uled mean
+    217          //        tmp = scale_value_to_16( Uled.mean, 1, 100000 );
+    218          //        separate_bytes( tmp, pDtr1, pDtr2 );
+    219          //        break;
+    220          //
+    221          //    case 14:         // Uledset mean
+    222          //        tmp = scale_value_to_16( Uledset.mean, 1, 1000 );
+    223          //        separate_bytes( tmp, pDtr1, pDtr2 );
+    224          //        break;
+    225          //
+    226          //    case 15:         // Uline1 raw
+    227          //        tmp = scale_value_to_16( Uline1.raw, 1, 1 );
+    228          //        separate_bytes( tmp, pDtr1, pDtr2 );
+    229          //        break;
+    230          //
+    231          //    case 16:         // Uline2 raw
+    232          //        tmp = scale_value_to_16( Uline2.raw, 1, 1 );
+    233          //        separate_bytes( tmp, pDtr1, pDtr2 );
+    234          //        break;
+    235          //
+    236          //    case 17:         // Urail raw
+    237          //        tmp = scale_value_to_16( Urail.raw, 1, 1 );
+    238          //        separate_bytes( tmp, pDtr1, pDtr2 );
+    239          //        break;
+    240          //
+    241          //    case 18:         // Uled raw
+    242          //        tmp = scale_value_to_16( Uled.raw, 1, 1 );
+    243          //        separate_bytes( tmp, pDtr1, pDtr2 );
+    244          //        break;
+    245          //
+    246          //    case 19:         // Uledset raw
+    247          //        tmp = scale_value_to_16( Uledset.raw, 1, 1 );
+    248          //        separate_bytes( tmp, pDtr1, pDtr2 );
+    249          //        break;
+    250          //
+    251          //    case 20:         // uC temperature
+    252          //        tmp = *currentset_feedback_struct.temp_sensor_actual;
+    253          //
+    254          //        if ( tmp > 273 )
+    255          //        {
+    256          //            tmp = tmp - 273;
+    257          //        }
+    258          //        else
+    259          //        {
+    260          //            tmp = 0;
+    261          //        }
+    262          //
+    263          //        *pDtr2 = (uint8_t)(tmp);
+    264          //        *pDtr1 = 0;
+    265          //        break;
+    266          //
+    267          //    case 21:        // calibration result
+    268          //        *pDtr2 = calibration_get_result();
+    269          //        *pDtr1 = 0;
+    270          //        break;
+    271          //
+    272          //    case 23:    // buck output current
+    273          ////        tmp = scale_value_to_16( hBuck_get_output_current(), 1, 1000 );
+    274          //        separate_bytes( tmp, pDtr1, pDtr2 );
+    275          //        break;
+    276          //
+    277          //    case 24:    // buck output voltage
+    278          ////        tmp = scale_value_to_16( hBuck_get_output_voltage(), 1, 100000 );
+    279          //        separate_bytes( tmp, pDtr1, pDtr2 );
+    280          //        break;
+    281          //
+    282          //    case 25:    // buck low delay
+    283          ////        tmp = scale_value_to_16( hbuck_get_low_delay(), 1, 1 );
+    284          //        separate_bytes( tmp, pDtr1, pDtr2 );
+    285          //        break;
+    286          //
+    287          //    case 26:    // Analog compensated Vout
+    288          //        tmp = scale_value_to_16( analog_get_compensated_vout(), 1, 100000 );
+    289          //        separate_bytes( tmp, pDtr1, pDtr2 );
+    290          //        break;
+    291          //
+    292          //    case 27:
+    293          //        tmp = scale_value_to_16( Umaxref.mean, 1, 1000 );
+    294          //        separate_bytes( tmp, pDtr1, pDtr2 );
+    295          //        break;
+    296          //
+    297          //    case 28:    // Currentset nominal current
+    298          //        tmp = scale_value_to_16( *currentset_feedback_struct.nominal_current, 1, 1000 );
+    299          //        separate_bytes( tmp, pDtr1, pDtr2 );
+    300          //        break;
+    301          //
+    302          //    case 29:    // GOD error
+    303          //        *pDtr2 = (uint8_t)god_feedback_struct.error_message;
+    304          //        *pDtr1 = 0;
+    305          //        break;
+    306          //
+    307          //    case 30:    // Buck error
+    308          ////        *pDtr2 = (uint8_t)buck_feedback_struct.error;
+    309          ////        *pDtr1 = 0;
+    310          //        break;
+    311          //
+    312          //    case 31:    // Firmware version
+    313          //        tmp = (DEVICE_FW_VERSION_MAJOR << 8) | DEVICE_FW_VERSION_MINOR;
+    314          //        separate_bytes( tmp, pDtr1, pDtr2 );
+    315          //        break;
+    316          //
+    317          //    case 32:    // SVN revision
+    318          //       // tmp = SVN_REV_ROOT;
+    319          //        separate_bytes( tmp, pDtr1, pDtr2 );
+    320          //        break;
+    321          //
+    322          //    case 33:    // SVN Timestamp lo
+    323          //       // tmp = (uint16_t)SVN_CHECK_TIMESTAMP;
+    324          //        separate_bytes( tmp, pDtr1, pDtr2 );
+    325          //        break;
+    326          //
+    327          //    case 34:    // SVN Timestamp hi
+    328          //       // tmp = (uint16_t)(SVN_CHECK_TIMESTAMP >> 16);
+    329          //        separate_bytes( tmp, pDtr1, pDtr2 );
+    330          //        break;
+    331          //
+    332          //    case 35:    // Global DMAT lo
+    333          //        tmp = (uint16_t)GLOBAL_DMAT_NO;
+    334          //        separate_bytes( tmp, pDtr1, pDtr2 );
+    335          //        break;
+    336          //
+    337          //    case 36:    // Global DMAT hi
+    338          //        tmp = (uint16_t)(GLOBAL_DMAT_NO >> 16);
+    339          //        separate_bytes( tmp, pDtr1, pDtr2 );
+    340          //        break;
+    341          //
+    342          //    case 38:    // buck m
+    343          //        tmp = (uint16_t)calibration_get_data( calibration_idx_buck_m );
+    344          //        separate_bytes( tmp, pDtr1, pDtr2 );
+    345          //        break;
+    346          //
+    347          //    case 39:    // Buck q
+    348          //        tmp = (uint16_t)calibration_get_data( calibration_idx_buck_q );
+    349          //        separate_bytes( tmp, pDtr1, pDtr2 );
+    350          //        break;
+    351          //
+    352          //    case 40:    // Buck lt
+    353          //        tmp = (uint16_t)calibration_get_data( calibration_idx_buck_lt );
+    354          //        separate_bytes( tmp, pDtr1, pDtr2 );
+    355          //        break;
+    356          //
+    357          //    case 41:    // vled
+    358          //        tmp = (uint16_t)(calibration_get_data( calibration_idx_vled ) >> 1);
+    359          //        separate_bytes( tmp, pDtr1, pDtr2 );
+    360          //        break;
+    361          //
+    362          //    case 42:    // vled2
+    363          //        tmp = (uint16_t)(calibration_get_data( calibration_idx_vled2 ) >> 1);
+    364          //        separate_bytes( tmp, pDtr1, pDtr2 );
+    365          //        break;
+    366          //
+    367          //    case 43:    // ledset
+    368          //        tmp = (uint16_t)calibration_get_data( calibration_idx_ledset );
+    369          //        separate_bytes( tmp, pDtr1, pDtr2 );
+    370          //        break;
+    371          //
+    372          //    case 44:    // temperature
+    373          //        tmp = (uint16_t)calibration_get_data( calibration_idx_temperature );
+    374          //        separate_bytes( tmp, pDtr1, pDtr2 );
+    375          //        break;
+    376          //
+    377          //    case 45:    // vline1
+    378          //        tmp = (uint16_t)(calibration_get_data( calibration_idx_vline1 ) >> 2);
+    379          //        separate_bytes( tmp, pDtr1, pDtr2 );
+    380          //        break;
+    381          //
+    382          //    case 46:    // vline2
+    383          //        tmp = (uint16_t)(calibration_get_data( calibration_idx_vline2 ) >> 2);
+    384          //        separate_bytes( tmp, pDtr1, pDtr2 );
+    385          //        break;
+    386          //
+    387          //    case 47:    // vrail
+    388          //        tmp = (uint16_t)(calibration_get_data( calibration_idx_vrail ) >> 2);
+    389          //        separate_bytes( tmp, pDtr1, pDtr2 );
+    390          //        break;
+    391          //
+    392          //    case 48:    // calibrated bitfield
+    393          //        tmp = (uint16_t)(calibration_get_data( calibration_idx_calibrated ) );
+    394          //        separate_bytes( tmp, pDtr1, pDtr2 );
+    395          //        break;
+    396          //
+    397          //    case 49:    // RAW filtered vout value
+    398          //        tmp = calibration_get_filtered_vout_raw();
+    399          //        separate_bytes( tmp, pDtr1, pDtr2 );
+    400          //        break;
+    401          //
+    402          //    case 50:    // Uledset scale value
+    403          //        tmp = (uint16_t)(calibration_get_data( calibration_idx_uledset ) );
+    404          //        separate_bytes( tmp, pDtr1, pDtr2 );
+    405          //        break;
+    406          //
+    407          //    case 51:    // Global Basic code string 7-6
+    408          //        tmp = ((uint8_t)GLOBAL_BASIC_CODE_STRING[7])<<8+((uint8_t)GLOBAL_BASIC_CODE_STRING[6]);
+    409          //        separate_bytes( tmp, pDtr1, pDtr2 );
+    410          //        break;
+    411          //
+    412          //    case 52:    // Global Basic code string 5-4
+    413          //        tmp = ((uint8_t)GLOBAL_BASIC_CODE_STRING[5])<<8+((uint8_t)GLOBAL_BASIC_CODE_STRING[4]);
+    414          //        separate_bytes( tmp, pDtr1, pDtr2 );
+    415          //        break;
+    416          //
+    417          //    case 53:    // Global Basic code string 3-2
+    418          //        tmp = ((uint8_t)GLOBAL_BASIC_CODE_STRING[3])<<8+((uint8_t)GLOBAL_BASIC_CODE_STRING[2]);
+    419          //        separate_bytes( tmp, pDtr1, pDtr2 );
+    420          //        break;
+    421          //
+    422          //    case 54:    // Global Basic code string 1-0
+    423          //        tmp = ((uint8_t)GLOBAL_BASIC_CODE_STRING[1])<<8+((uint8_t)GLOBAL_BASIC_CODE_STRING[0]);
+    424          //        separate_bytes( tmp, pDtr1, pDtr2 );
+    425          //        break;
+    426          //
+    427          //
+    428          //    case 199:       // .. valid numbers are in the range 0 <= test step <= 199
+    429          //        break;
+    430          //
+    431          //    default:
+    432          //        queryAnswered = TEST_DONE;
+    433          //        break;
+    434          //    }
+    435          
+    436           //   return queryAnswered;
+    437          }
+                 ^
+Warning[Pe940]: missing return statement at end of non-void function
+          "ProductionTest_Query"
+
+  static bool m_calibration_enable = false;
+              ^
+"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\Dali\DaliServices\ProductionTest.c",30  Warning[Pe177]: 
+          variable "m_calibration_enable" was declared but never referenced
+    438          
+    439          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   ProductionTest_Init
+       0   ProductionTest_Query
+       0   ProductionTest_Step
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       2  ProductionTest_Init
+       2  ProductionTest_Query
+       2  ProductionTest_Step
+
+ 
+ 6 bytes in section .text
+ 
+ 6 bytes of CODE memory
+
+Errors: none
+Warnings: 3

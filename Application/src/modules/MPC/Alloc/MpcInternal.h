@@ -41,7 +41,8 @@
 
 #ifndef __MPC_IMPLEMENTATION_H
 #define __MPC_IMPLEMENTATION_H
-
+   
+#include "Mpc.h"
 
 #ifndef BYTEORDER_LITTLE_ENDIAN
 STATIC_ASSERT(0, "MPC interface only tested for little endian machines")

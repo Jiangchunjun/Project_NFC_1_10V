@@ -1,0 +1,1008 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:52
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\MSK\MSK.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\MSK\MSK.c"
+#        -D XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\MSK.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\MSK.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\MSK\MSK.c
+      1          // ---------------------------------------------------------------------------------------------------------------------
+      2          // Microcontroller Toolbox - Firmware Framework for Full Digital SSL Ballasts
+      3          // ---------------------------------------------------------------------------------------------------------------------
+      4          // (c) Osram GmbH
+      5          //     DS D EC - MCC
+      6          //     Parkring 33
+      7          //     85748 Garching
+      8          //
+      9          //
+     10          // The content of this file is intellectual property of OSRAM GmbH. It is
+     11          // confidential and not intended for any public release. All rights reserved.
+     12          //
+     13          //
+     14          // Initial version: 2017-01, Olaf Busse, o.busse@osram.com
+     15          //
+     16          // Change History:
+     17          //
+     18          // $Author: w.limmer $
+     19          // $Revision: 11458 $
+     20          // $Date: 2018-01-12 23:48:33 +0800 (Fri, 12 Jan 2018) $
+     21          // $Id: MSK.c 11458 2018-01-12 15:48:33Z w.limmer $
+     22          // $URL: https://app-ehnsvn02.int.osram-light.com/svn/EC/Mpc/MSK/releases/Rel.%201.0.0/Src/MSK.c $
+     23          //
+     24          
+     25          #include "Global.h"
+     26          
+     27          
+     28          #include "Acl.h"
+     29          #include "AclDefaults.h"
+     30          #include "nvm.h"
+     31          #include "ToolboxServices.h"
+     32          #include "Mpc.h"
+     33          #include "MpcInternal.h"
+     34          #include "MpcAllocation.h"
+     35          #include "MSK.h"
+     36          #include "MSK_local.h"
+     37          #include "MskEncryption.h"
+     38          #include "MSK_internal.h"
+     39          
+     40          
+     41          STATIC MSK_record_t MSK_data;
+     42          STATIC uint32_t newMasterPwTemp;
+     43          STATIC uint32_t newServicePwTemp;
+     44          
+     45          static uint32_t MSK_CorrectResponse[2];
+     46          static uint32_t MSK_Response[2];
+     47          
+     48          // ---------------------------------------------------------------------------------------------------------------------
+     49          /** \brief table for MPCgen
+     50           *
+     51           * one descriptor and 3 tables
+     52           *
+     53           */
+     54          // ---------------------------------------------------------------------------------------------------------------------
+     55          /** \brief 32 bit constants for this Mpc.
+     56           *
+     57           * An efficient storage for all constants, which are sometimes used many times.
+     58           *
+     59           * Possible contents:
+     60           *  - values / data constants
+     61           *  - permissions
+     62           *  - pointers to variables
+     63           *  - pointers to functions
+     64           *
+     65           * \note  Don't store permissions and fallback values at position 0: Index 0 is used for "n/a"
+     66           *
+     67           * \warning  It's very error prone to edit this table by hand. Especially when function pointers!
+     68           *           Be very careful and try to avoid editing by hand: In best case it's created by a script
+     69           *           translating the data model described by T4T XML files (tbd).
+     70           */
+     71          #define MSK_MPC_TABLE_ID            27
+     72          #define MSK_MPC_TABLE_VER            1
+     73          
+     74          // Inidices in the constants array
+     75          #define _P_NEVER      1
+     76          #define _P_OSRAM      2
+     77          #define _P_MASTER     3
+     78          #define _P_ALWAYS     4
+     79          
+     80          #define _FFFF         5
+     81          
+     82          #define _RD_MPW       6
+     83          #define _RD_NEW_MPW   8
+     84          #define _RD_NEW_MPWC 10
+     85          #define _M_STAT      12
+     86          #define _M_UNLOCK    13
+     87          #define _M_ERROR     14
+     88          #define _RD_SPW      15
+     89          #define _RD_SPWC     17
+     90          
+     91          #define _S_STAT      19
+     92          #define _S_UNLOCK    20
+     93          #define _S_ERROR     21
+     94          
+     95          #define _RD_PERM_U   22
+     96          #define _RD_PERM_S   24
+     97          #define _RD_UUID     26
+     98          #define _RD_SRR      27
+     99          
+    100          
+    101          STATIC int mskWriteMasterPassword(mpc_io_buffer_t * mpcIo, uint16_t adr, uint8_t channel);
+    102          STATIC uint32_t mskReadMasterPassword(mpc_io_buffer_t * mpcIo, uint16_t adr, uint8_t channel);
+    103          
+    104          STATIC int mskWriteNewMasterPassword(mpc_io_buffer_t * mpcIo, uint16_t adr, uint8_t channel);
+    105          STATIC uint32_t mskReadNewMasterPassword(mpc_io_buffer_t * mpcIo, uint16_t adr, uint8_t channel);
+    106          
+    107          STATIC int mskWriteNewMasterPasswordConfirmation(mpc_io_buffer_t * mpcIo, uint16_t adr, uint8_t channel);
+    108          STATIC uint8_t mskReadNewMasterPasswordConfirmation(mpc_io_buffer_t * mpcIo, uint16_t adr, uint8_t channel);
+    109          
+    110          STATIC int mskWriteServicePassword(mpc_io_buffer_t * mpcIo, uint16_t adr, uint8_t channel);
+    111          STATIC uint32_t mskReadServicePassword(mpc_io_buffer_t * mpcIo, uint16_t adr, uint8_t channel);
+    112          
+    113          STATIC int mskWriteServicePasswordConfirmation(mpc_io_buffer_t * mpcIo, uint16_t adr, uint8_t channel);
+    114          STATIC uint8_t mskReadServicePasswordConfirmation(mpc_io_buffer_t * mpcIo, uint16_t adr, uint8_t channel);
+    115          
+    116          STATIC int mskWritePermissionUser(mpc_io_buffer_t * mpcIo, uint16_t adr, uint8_t channel);
+    117          STATIC uint32_t mskReadPermissionUser(mpc_io_buffer_t * mpcIo, uint16_t adr, uint8_t channel);
+    118          
+    119          STATIC int mskWritePermissionService(mpc_io_buffer_t * mpcIo, uint16_t adr, uint8_t channel);
+    120          STATIC uint32_t mskReadPermissionService(mpc_io_buffer_t * mpcIo, uint16_t adr, uint8_t channel);
+    121          
+    122          
+    123          STATIC void mskFactoryReset( void );
+    124          static void mskReset( void );
+    125          static void mskPageInit(void);
+    126          static void bioPageInit(void);
+    127          static void mskAUTHInit(void);
+    128          
+    129          
+    130          static const MSK_NVM_record_t mskNVMData_Default= {
+    131              .masterKey        = 0x00000000,
+    132              .serviceKey       = 0x00000000,
+    133              .masterUnlockCnt  = 0,
+    134              .masterErrorCnt   = 0,
+    135              .serviceUnlockCnt = 0,
+    136              .serviceErrorCnt  = 0,
+    137              .permUser         = 0xFFFFFFFF,
+    138              .permService      = 0xFFFFFFFF
+    139          };
+    140          
+    141          
+    142          static const uint32_t MSK_constants[] = {
+    143            [ 0] = 0,
+    144            [ 1] = ACL_PERM_NEVER,  //0
+    145            [ 2] = ACL_PERM_OSRAM,  //1
+    146            [ 3] = ACL_PERM_MASTER, //6
+    147            [ 4] = ACL_PERM_ALWAYS, //7
+    148            [ 5] = 0xFFFFFFFF,
+    149            [ 6] = (uint32_t)&mskReadMasterPassword,
+    150            [ 7] = (uint32_t)&mskWriteMasterPassword,
+    151            [ 8] = (uint32_t)&mskReadNewMasterPassword,
+    152            [ 9] = (uint32_t)&mskWriteNewMasterPassword,
+    153            [10] = (uint32_t)&mskReadNewMasterPasswordConfirmation,
+    154            [11] = (uint32_t)&mskWriteNewMasterPasswordConfirmation,
+    155            [12] = (uint32_t)&MSK_data.masterStatus,
+    156            [13] = (uint32_t)&MSK_data.nvm_data.masterUnlockCnt,
+    157            [14] = (uint32_t)&MSK_data.nvm_data.masterErrorCnt,
+    158            [15] = (uint32_t)&mskReadServicePassword,
+    159            [16] = (uint32_t)&mskWriteServicePassword,
+    160            [17] = (uint32_t)&mskReadServicePasswordConfirmation,
+    161            [18] = (uint32_t)&mskWriteServicePasswordConfirmation,
+    162            [19] = (uint32_t)&MSK_data.serviceStatus,
+    163            [20] = (uint32_t)&MSK_data.nvm_data.serviceUnlockCnt,
+    164            [21] = (uint32_t)&MSK_data.nvm_data.serviceErrorCnt,
+    165            [22] = (uint32_t)&mskReadPermissionUser,
+    166            [23] = (uint32_t)&mskWritePermissionUser,
+    167            [24] = (uint32_t)&mskReadPermissionService,
+    168            [25] = (uint32_t)&mskWritePermissionService,
+    169            [26] = (uint32_t)&MSK_data.uuid32,
+    170            [27] = (uint32_t)&MSK_data.svn_rev_root
+    171          };
+    172          
+    173          
+    174          static const mpc_data_entity_t MSK_entities[] = {
+    175            //                  type     ,len,    perm_r,    perm_w, fback,  data rdidx, multichannel
+    176            [ 0] = MPC_ENTITY(MPC_TYP_FUN, 4 , _P_ALWAYS, _P_ALWAYS, _FFFF,     _RD_MPW,           0 ), // MasterPwd
+    177            [ 1] = MPC_ENTITY(MPC_TYP_FUN, 4 , _P_ALWAYS, _P_MASTER, _FFFF, _RD_NEW_MPW,           0 ), // NewMasterPwd
+    178            [ 2] = MPC_ENTITY(MPC_TYP_FUN, 1 , _P_ALWAYS, _P_MASTER, _FFFF,_RD_NEW_MPWC,           0 ), // MasterPwdConfirm
+    179            [ 3] = MPC_ENTITY(MPC_TYP_VAR, 1 , _P_ALWAYS,  _P_NEVER, _FFFF,     _M_STAT,           0 ), // MasterPwdStatusInfo
+    180            [ 4] = MPC_ENTITY(MPC_TYP_VAR, 1 , _P_ALWAYS,  _P_OSRAM, _FFFF,   _M_UNLOCK,           0 ),  // MasterPwdUnlockCounter
+    181            [ 5] = MPC_ENTITY(MPC_TYP_VAR, 1 , _P_ALWAYS,  _P_OSRAM, _FFFF,    _M_ERROR,           0 ),  // MasterPwdErrorCounter
+    182          
+    183            [ 6] = MPC_ENTITY(MPC_TYP_FUN, 4 , _P_ALWAYS, _P_ALWAYS, _FFFF,     _RD_SPW,           0 ),  // ServicePwd
+    184            [ 7] = MPC_ENTITY(MPC_TYP_FUN, 1 , _P_ALWAYS, _P_MASTER, _FFFF,    _RD_SPWC,           0 ),  // ServicePwdConfirm
+    185            [ 8] = MPC_ENTITY(MPC_TYP_VAR, 1 , _P_ALWAYS,  _P_NEVER, _FFFF,     _S_STAT,           0 ),  // ServicePwdStatusInfo
+    186            [ 9] = MPC_ENTITY(MPC_TYP_VAR, 1 , _P_ALWAYS,  _P_OSRAM, _FFFF,   _S_UNLOCK,           0 ),  // ServicePwdUnlockCounter
+    187            [10] = MPC_ENTITY(MPC_TYP_VAR, 1 , _P_ALWAYS,  _P_OSRAM, _FFFF,    _S_ERROR,           0 ),  // ServicePwdErrorCounter
+    188          
+    189            [11] = MPC_ENTITY(MPC_TYP_FUN, 4 , _P_ALWAYS, _P_MASTER, _FFFF,  _RD_PERM_U,           0 ),  // PermUser
+    190            [12] = MPC_ENTITY(MPC_TYP_FUN, 4 , _P_ALWAYS, _P_MASTER, _FFFF,  _RD_PERM_S,           0 ),  // PermService
+    191          
+    192            [13] = MPC_ENTITY(MPC_TYP_FUN, 4 , _P_ALWAYS, _P_NEVER, _FFFF,     _RD_MPW,           0 ),  // MasterPwd encrypted RO
+    193            [14] = MPC_ENTITY(MPC_TYP_FUN, 4 , _P_ALWAYS, _P_NEVER, _FFFF,     _RD_SPW,           0 ),  // ServicePwd encrypted RO
+    194            [15] = MPC_ENTITY(MPC_TYP_FUN, 4 , _P_ALWAYS, _P_NEVER, _FFFF,  _RD_PERM_U,           0 ),  // PermUser RO
+    195            [16] = MPC_ENTITY(MPC_TYP_FUN, 4 , _P_ALWAYS, _P_NEVER, _FFFF,  _RD_PERM_S,           0 ),  // PermService RO
+    196            [17] = MPC_ENTITY(MPC_TYP_VAR, 4 , _P_ALWAYS,  _P_NEVER, _FFFF,    _RD_UUID,          0 ),  // UUID32 RO
+    197            [18] = MPC_ENTITY(MPC_TYP_VAR, 4 , _P_ALWAYS,  _P_NEVER, _FFFF,    _RD_SRR,           0 ),  // UUID32 RO
+    198          };
+    199          
+    200          
+    201          // ---------------------------------------------------------------------------------------------------------------------
+    202          /** \brief Memory layout for read access of MSK Page.
+    203           *
+    204           * Define all accessible addresses here.
+    205           * Using the macros defined for this purpose.
+    206           */
+    207          static const mpc_layout_t MSK_layout[] = {
+    208            [ 0] = MPC_LAYOUT32_MSB           (  0 ),     // MasterPwd
+    209            [ 1] = MPC_LAYOUT32_M2SB          (  0 ),     // MasterPwd
+    210            [ 2] = MPC_LAYOUT32_L2SB          (  0 ),     // MasterPwd
+    211            [ 3] = MPC_LAYOUT32_LSB           (  0 ),     // MasterPwd
+    212            [ 4] = MPC_LAYOUT32_MSB           (  1 ),     // NewMasterPwd
+    213            [ 5] = MPC_LAYOUT32_M2SB          (  1 ),     // NewMasterPwd
+    214            [ 6] = MPC_LAYOUT32_L2SB          (  1 ),     // NewMasterPwd
+    215            [ 7] = MPC_LAYOUT32_LSB           (  1 ),     // NewMasterPwd
+    216            [ 8] = MPC_LAYOUT8                (  2 ),     // MasterPwdConfirm
+    217            [ 9] = MPC_LAYOUT8                (  3 ),     // MasterPwdStatusInfo
+    218            [10] = MPC_LAYOUT8                (  4 ),     // MasterPwdUnlockCounter
+    219            [11] = MPC_LAYOUT8                (  5 ),     // MasterPwdErrorCounter
+    220            [12] = MPC_LAYOUT32_MSB           (  6 ),     // ServicePwd
+    221            [13] = MPC_LAYOUT32_M2SB          (  6 ),     // ServicePwd
+    222            [14] = MPC_LAYOUT32_L2SB          (  6 ),     // ServicePwd
+    223            [15] = MPC_LAYOUT32_LSB           (  6 ),     // ServicePwd
+    224            [16] = MPC_LAYOUT8                (  7 ),     // ServicePwdConfirm
+    225            [17] = MPC_LAYOUT8                (  8 ),     // ServicePwdStatusInfo
+    226            [18] = MPC_LAYOUT8                (  9 ),     // ServicePwdUnlockCounter
+    227            [19] = MPC_LAYOUT8                ( 10 ),     // ServicePwdErrorCounter
+    228            [20] = MPC_LAYOUT32_MSB           ( 11 ),     // PermUser
+    229            [21] = MPC_LAYOUT32_M2SB          ( 11 ),     // PermUser
+    230            [22] = MPC_LAYOUT32_L2SB          ( 11 ),     // PermUser
+    231            [23] = MPC_LAYOUT32_LSB           ( 11 ),     // PermUser
+    232            [24] = MPC_LAYOUT32_MSB           ( 12 ),     // PermService
+    233            [25] = MPC_LAYOUT32_M2SB          ( 12 ),     // PermService
+    234            [26] = MPC_LAYOUT32_L2SB          ( 12 ),     // PermService
+    235            [27] = MPC_LAYOUT32_LSB           ( 12 ),     // PermService
+    236          };
+    237          
+    238          
+    239          // ---------------------------------------------------------------------------------------------------------------------
+    240          /** \brief Memory layout for read access of MSK ENC Page.
+    241           *
+    242           * Define all accessible addresses here.
+    243           * Using the macros defined for this purpose.
+    244           */
+    245          
+    246          static const mpc_layout_t BIO_layout[] = {
+    247            [  0] = MPC_LAYOUT32_MSB          (  13 ),    // MasterPwd
+    248            [  1] = MPC_LAYOUT32_M2SB         (  13 ),    // MasterPwd
+    249            [  2] = MPC_LAYOUT32_L2SB         (  13 ),    // MasterPwd
+    250            [  3] = MPC_LAYOUT32_LSB          (  13 ),    // MasterPwd
+    251            [  4] = MPC_LAYOUT32_MSB          (  14 ),    // ServicePwd
+    252            [  5] = MPC_LAYOUT32_M2SB         (  14 ),    // ServicePwd
+    253            [  6] = MPC_LAYOUT32_L2SB         (  14 ),    // ServicePwd
+    254            [  7] = MPC_LAYOUT32_LSB          (  14 ),    // ServicePwd
+    255            [  8] = MPC_LAYOUT32_MSB          (  15 ),    // PermUser
+    256            [  9] = MPC_LAYOUT32_M2SB         (  15 ),    // PermUser
+    257            [ 10] = MPC_LAYOUT32_L2SB         (  15 ),    // PermUser
+    258            [ 11] = MPC_LAYOUT32_LSB          (  15 ),    // PermUser
+    259            [ 12] = MPC_LAYOUT32_MSB          (  16 ),    // PermService
+    260            [ 13] = MPC_LAYOUT32_M2SB         (  16 ),    // PermService
+    261            [ 14] = MPC_LAYOUT32_L2SB         (  16 ),    // PermService
+    262            [ 15] = MPC_LAYOUT32_LSB          (  16 ),    // PermService
+    263            [ 16] = MPC_LAYOUT32_MSB          (  17 ),    // UUID32
+    264            [ 17] = MPC_LAYOUT32_M2SB         (  17 ),    // UUID32
+    265            [ 18] = MPC_LAYOUT32_L2SB         (  17 ),    // UUID32
+    266            [ 19] = MPC_LAYOUT32_LSB          (  17 ),    // UUID32
+    267            [ 20] = MPC_LAYOUT32_MSB          (  18 ),    // SVN REV ROOT
+    268            [ 21] = MPC_LAYOUT32_M2SB         (  18 ),    // SVN REV ROOT
+    269            [ 22] = MPC_LAYOUT32_L2SB         (  18 ),    // SVN REV ROOT
+    270            [ 23] = MPC_LAYOUT32_LSB          (  18 ),    // SVN REV ROOT
+    271          
+    272          
+    273          
+    274          
+    275          
+    276          };
+    277          
+    278          
+    279          
+    280          STATIC uint32_t mskPwEncrypt(uint32_t pw) {
+    281            #ifdef MSK_DUMMY_ENCRYPTION
+    282              return pw + 1234;
+    283            #else
+    284              return MskPasswordEncrypt(pw);
+    285            #endif
+    286          }
+    287          
+    288          
+    289          
+    290          // -------------------------------------------------------------------------------------------------
+    291          /** \brief Mpc Cmd() function for MSK.
+    292           *
+    293           * Dispatch the Init and FactoryReset commands to the acc. function call sequence.
+    294           */
+    295          mpc_returncodes_enum MSK_command(mpc_cmd_t cmd, uint8_t channel, mpc_port_t port) {
+    296            (void)channel; (void)port; // no warnings
+    297            switch (cmd)
+    298            {
+    299              case MPC_CMD_INIT:
+    300                mskPageInit();  // First init MSK as the master of this
+    301                bioPageInit();  // Then init BIO as a directly dependent module
+    302                mskAUTHInit();  // Finally init AUTH functionality after BIO has picked up the challenge
+    303                break;
+    304              case MPC_CMD_FACTORY_RESET:
+    305                mskFactoryReset();
+    306                break;
+    307              case MPC_CMD_RESET:
+    308                mskReset();
+    309                break;
+    310              default:
+    311                break;
+    312            }
+    313          
+    314            return MPC_OK;
+    315          }
+    316          
+    317          // -------------------------------------------------------------------------------------------------
+    318          /** \brief Mpc Cmd() function for BIO.
+    319           *
+    320           * Empty function to satisfy the system. All tasks for Init() and FactoryReset() of the BIO page
+    321           * currently are done in MSK_command()
+    322           * - to ensure a correct call sequence independent of the Mpc layout
+    323           * - to have Osram Authentication also available when BIO page is not present.
+    324           */
+    325          mpc_returncodes_enum BIO_command(mpc_cmd_t cmd, uint8_t channel, mpc_port_t port) {
+    326            (void)channel; (void)port; // no warnings
+    327            switch (cmd)
+    328            {
+    329              case MPC_CMD_INIT:
+    330                // Done together with MSK; nothing additional here
+    331                break;
+    332              case MPC_CMD_FACTORY_RESET:
+    333                // BIO page is read only, nothing is to be reset. If needed, address MSK for reset instead
+    334                break;
+    335              default:
+    336                break;
+    337            }
+    338          
+    339            return MPC_OK;
+    340          }
+    341          
+    342          
+    343          /** \brief Init Bio Page
+    344           *
+    345           * Called during device start only once (via MSK init)
+    346           *
+    347           * Function:
+    348           * - fetch  ID from uC and store in uuid32
+    349           */
+    350          static void bioPageInit(void)
+    351          {
+    352            MSK_data.uuid32 = ControllerUniqueID();
+    353            MSK_data.svn_rev_root = getFWRevRoot();
+    354          }
+    355          
+    356          
+    357          /** \brief Init MSK MPC
+    358           *
+    359           * Called during device start only once
+    360           *
+    361           * Function:
+    362           * - set pointer for identification registers to nfc_msk_tmp
+    363           * - init local vars but not values stored within NFC
+    364           * - load ACL with USER and SERVICE permissions which are stored within MSK page
+    365           */
+    366          static void mskPageInit (void) {
+    367          //    p2MSK = (MSK_NVM_record_t *) nfc_msk_tmp;
+    368              // check if there is already data sored in persistent memory
+    369              if( nvmDataInit(&(MSK_data.nvm_data),sizeof(MSK_NVM_record_t),NVM_MEM_CLASS_0) != NVM_INIT_OK ) {
+    370                   //  set default values if not.
+    371                   //LOCKBYTE not in useUSE.
+    372                mskFactoryReset();
+    373          
+    374              } else {
+    375                mskReset();
+    376              }
+    377          
+    378          }
+    379          
+    380          static void mskReset(void) {
+    381            MSK_data.masterStatus = 0;
+    382            MSK_data.serviceStatus = 0;
+    383          
+    384            newMasterPwTemp = 0;
+    385            newServicePwTemp = 0;
+    386            AclDynamicPermissionsNotification(ACL_CRED_SLOT_SERVICE_KEY, MSK_data.nvm_data.permService);
+    387            AclDynamicPermissionsNotification(ACL_CRED_SLOT_USER, MSK_data.nvm_data.permUser);
+    388            AclCredentialNotification(ACL_CRED_SLOT_OSRAM_FACTORY_MODE, false);
+    389          }
+    390          
+    391          
+    392          /** \brief Resets MSK MPC to MNO FACTORY Settings
+    393           *
+    394           * Function:
+    395           *  - Sets Master and Service Status to 0
+    396           *  - Sets Permissions to current perm User and perm Service
+    397           *  - removes FACTORY MODE
+    398           */
+    399          
+    400          STATIC void mskFactoryReset(void) {
+    401              MSK_data.nvm_data = mskNVMData_Default;
+    402              // static default value have to be overwritten by dynamic calculated
+    403              // encrypted Password
+    404              MSK_data.nvm_data.masterKey = mskPwEncrypt(0);  // encrypted content only
+    405              MSK_data.nvm_data.serviceKey = mskPwEncrypt(0); // encrypted content only
+    406          
+    407              mskReset();
+    408          }
+    409          
+    410          static void mskAUTHInit(void) {
+    411            MskOsramAuthCalcResponses(MSK_data.uuid32, MSK_CorrectResponse);
+    412          }
+    413          
+    414          
+    415          //------------------------------------------------------------------------------
+    416          //-------------- Entity: MASTER PASSWORD ---------------------------------------
+    417          //------------------------------------------------------------------------------
+    418          /** \brief Function to write Master password to unlock
+    419           *
+    420           * Called by whoever needs it (DALI or NFC via MPCgen)
+    421           *
+    422           * \nFunction:
+    423           * - check whether key is equal to the stored one
+    424           * - if yes -> call ACL to set Master credential
+    425           * - increase unlock counter
+    426           * - set status
+    427           * - (if wrong password is written, status will be set to "locked")
+    428           */
+    429          STATIC int mskWriteMasterPassword(mpc_io_buffer_t * mpcIo, uint16_t adr, uint8_t channel){
+    430              (void)(adr); (void)(channel);
+    431          
+    432              uint32_t pwEnc;
+    433              MSK_Response[0] = mpcIo->uint32;
+    434              pwEnc = mskPwEncrypt(mpcIo->uint32);
+    435              if (MSK_data.nvm_data.masterKey == pwEnc) {
+    436                AclCredentialNotification(ACL_CRED_SLOT_MASTER_KEY, true);
+    437                if (MSK_data.nvm_data.masterUnlockCnt < 254) {
+    438                  MSK_data.nvm_data.masterUnlockCnt++;
+    439                }
+    440                MSK_data.masterStatus = 1;
+    441              }
+    442              else {
+    443                AclCredentialNotification(ACL_CRED_SLOT_MASTER_KEY, false);
+    444                if (mpcIo->uint32) {  // ensure that password zero is neutral for error counter
+    445                  if (MSK_data.nvm_data.masterErrorCnt < 254) {
+    446                    MSK_data.nvm_data.masterErrorCnt++;
+    447                  }
+    448                }
+    449                MSK_data.masterStatus = 0;
+    450                AclCredentialNotification(ACL_CRED_SLOT_OSRAM_FACTORY_MODE, false);
+    451              }
+    452              return MPC_OK;
+    453          }
+    454          
+    455          /** \brief Function to read Master password
+    456           *
+    457           * Called by whoever needs it (DALI or NFC via MPCgen)
+    458           *
+    459           * \nFunction:
+    460           * - gives back the stored AND encrypted value of the Master Password
+    461           */
+    462          STATIC uint32_t mskReadMasterPassword(mpc_io_buffer_t * mpcIo, uint16_t adr, uint8_t channel) {
+    463            (void)(adr); (void)(channel); (void)(*mpcIo);
+    464          
+    465             return (MSK_data.nvm_data.masterKey);
+    466          }
+    467          //------------------------------------------------------------------------------
+    468          //-------------- Entity: NEW MASTER PASSWORD -----------------------------------
+    469          //------------------------------------------------------------------------------
+    470          /** \brief Function to write a NEW Master Password
+    471           *
+    472           * Called by whoever needs it (DALI or NFC via MPCgen)
+    473           * The function is necessary not to store the new password readable
+    474           * within any entity. The new password is just stored within RAM. Only if
+    475           * confirmation is written afterwards, the password will be changed.
+    476           *
+    477           * \nFunction:
+    478           * - the new pw is stored in RAM.
+    479           */
+    480          STATIC int mskWriteNewMasterPassword(mpc_io_buffer_t * mpcIo, uint16_t adr, uint8_t channel){
+    481          //void mskWriteNewMasterPassword(uint32_t new_master_pw) {
+    482              (void)(adr);
+    483              (void)(channel);
+    484                newMasterPwTemp = mpcIo->uint32;
+    485             return MPC_OK;
+    486          }
+    487          /** \brief Function to read Master password
+    488           *
+    489           * Called only by accident or for systemic reasons (DALI or NFC via MPCgen)
+    490           *
+    491           * \nFunction:
+    492           * - gives back a default value 0xFFFFFFFF
+    493           */
+    494          STATIC uint32_t mskReadNewMasterPassword(mpc_io_buffer_t * mpcIo, uint16_t adr, uint8_t channel) {
+    495            (void)(adr); (void)(channel); (void)(*mpcIo);
+    496          
+    497            return (MSK_data.uuid32);
+    498          }
+    499          //------------------------------------------------------------------------------
+    500          //-------------- Entity: NEW MASTER PASSWORD CONFIRMATION ----------------------
+    501          //------------------------------------------------------------------------------
+    502          /** \brief Function to write password confirmation for Master password
+    503           *
+    504           * Called by whoever needs it (DALI or NFC via MPCgen)
+    505           *
+    506           * \nFunction:
+    507           * - check whether pw confirmation fits new_oem_pw
+    508           * - if true store encrypt and store new
+    509           * - Note: Master cred is necessary to write confirmation thus status of master
+    510           * - key remains unchanged in any case!
+    511           */
+    512          STATIC int mskWriteNewMasterPasswordConfirmation(mpc_io_buffer_t * mpcIo, uint16_t adr, uint8_t channel){
+    513              (void)(adr);
+    514              (void)(channel);
+    515              uint8_t x;
+    516              uint8_t pwc;
+    517              pwc = (uint8_t)mpcIo->uint32;
+    518              x = newMasterPwTemp+(newMasterPwTemp>>8)+(newMasterPwTemp>>16)+(newMasterPwTemp>>24);
+    519              x = x/2;
+    520              if (x == pwc) {
+    521                  MSK_data.nvm_data.masterKey = mskPwEncrypt(newMasterPwTemp);
+    522              }
+    523              return MPC_OK;
+    524          }
+    525          /** \brief Function to read Master password confirmation
+    526           *
+    527           * Called only by accident or for systemic reasons (DALI or NFC via MPCgen)
+    528           *
+    529           * \nFunction:
+    530           * - gives back a default value 0xFF
+    531           */
+    532          STATIC uint8_t mskReadNewMasterPasswordConfirmation(mpc_io_buffer_t * mpcIo, uint16_t adr, uint8_t channel) {
+    533              (void)(adr);
+    534              (void)(channel);
+    535              (void)(*mpcIo);
+    536              return (0xFF);
+    537          }
+    538          
+    539          
+    540          STATIC int mskCheckOsramAuth(void)
+    541          {
+    542            if ((MSK_Response[0] == MSK_CorrectResponse[0]) && (MSK_Response[1] == MSK_CorrectResponse[1]))
+    543            {
+    544              AclCredentialNotification(ACL_CRED_SLOT_OSRAM_FACTORY_MODE, true);
+    545              if (MSK_data.masterStatus != 1) {
+    546                if (MSK_data.nvm_data.masterErrorCnt >0)  MSK_data.nvm_data.masterErrorCnt--;
+    547              }
+    548              if (MSK_data.serviceStatus != 1) {
+    549                    if (MSK_data.nvm_data.serviceErrorCnt >0)  MSK_data.nvm_data.serviceErrorCnt--;
+    550                  }
+    551            }
+    552            return MPC_OK;
+    553          }
+    554          
+    555          //------------------------------------------------------------------------------
+    556          //-------------- Entity: SERVICE PASSWORD --------------------------------------
+    557          //------------------------------------------------------------------------------
+    558          /** \brief Function to write a SERVICE Password
+    559           *
+    560           * Called by whoever needs it (DALI or NFC via MPCgen)
+    561           *
+    562           * \nFunction:
+    563           * - the new pw is stored in RAM.
+    564           * - check whether service password is equal to stored service password
+    565           * - if yes, call ACL to change credential
+    566           * - else increase error counter
+    567           * - NOTE: if it is a new service pw and confirmation will be given
+    568           *   the error counter will be decreased after confirmation
+    569           */
+    570          
+    571          STATIC int mskWriteServicePassword(mpc_io_buffer_t * mpcIo, uint16_t adr, uint8_t channel){
+    572              (void)(adr); (void)(channel); uint32_t pwEnc;
+    573          
+    574              newServicePwTemp = mpcIo->uint32;
+    575              MSK_Response[1] = mpcIo->uint32;
+    576              pwEnc = mskPwEncrypt(mpcIo->uint32);
+    577              if (MSK_data.nvm_data.serviceKey == pwEnc) {
+    578                  AclCredentialNotification(ACL_CRED_SLOT_SERVICE_KEY, true);
+    579                  if (MSK_data.nvm_data.serviceUnlockCnt < 254) {
+    580                    MSK_data.nvm_data.serviceUnlockCnt++;
+    581                  }
+    582                  MSK_data.serviceStatus = 1;
+    583              }
+    584              else {
+    585                  AclCredentialNotification(ACL_CRED_SLOT_SERVICE_KEY, false);
+    586                  AclCredentialNotification(ACL_CRED_SLOT_OSRAM_FACTORY_MODE, false);
+    587                  if (newServicePwTemp) { // ensure that password zero is neutral for error counter
+    588                    if (MSK_data.nvm_data.serviceErrorCnt < 254) {
+    589                      MSK_data.nvm_data.serviceErrorCnt++;
+    590                    }
+    591                    MSK_data.serviceStatus = 0;
+    592                  }
+    593              }
+    594              mskCheckOsramAuth();
+    595              return MPC_OK;
+    596          }
+    597          
+    598          
+    599          /** \brief Function to read Service password
+    600           *
+    601           * Called by whoever needs it (DALI or NFC via MPCgen)
+    602           *
+    603           * \nFunction:
+    604           * - gives back the stored AND encrypted value of the Service Password
+    605           */
+    606          STATIC uint32_t mskReadServicePassword(mpc_io_buffer_t * mpcIo, uint16_t adr, uint8_t channel) {
+    607            (void)(adr);
+    608            (void)(channel);
+    609            (void)(*mpcIo);
+    610            return (MSK_data.nvm_data.serviceKey);
+    611          }
+    612          //------------------------------------------------------------------------------
+    613          //-------------- Entity: SERVICE PASSWORD CONFIRMATION -------------------------
+    614          //------------------------------------------------------------------------------
+    615          /** \brief Function to write confirm and change SERVICE Password
+    616           *
+    617           * Called by whoever needs it (DALI or NFC via MPCgen)
+    618           * New serviceKey is finally encrypted and stored.
+    619           *
+    620           * \nFunction:
+    621           * - check whether pw confirmation fits service password
+    622           * - if true store new service password
+    623           * - decrement error counter because it was incremented before
+    624           * - (but only if temp stored password is different from new password)
+    625           * - No credential change is necessary, due to OEM password is given anyhow
+    626           */
+    627          //void mskWriteServicePasswordConfirmation (uint8_t pw_conf) {
+    628          STATIC int mskWriteServicePasswordConfirmation(mpc_io_buffer_t * mpcIo, uint16_t adr, uint8_t channel){
+    629              (void)(adr);
+    630              (void)(channel);
+    631              uint8_t x;
+    632              uint8_t pwc;
+    633              uint32_t encPw;
+    634              pwc = (uint8_t)mpcIo->uint32;
+    635              x = newServicePwTemp+(newServicePwTemp>>8)+(newServicePwTemp>>16)+(newServicePwTemp>>24);
+    636              x = x/2;
+    637              encPw = mskPwEncrypt(newServicePwTemp);
+    638              if (x == pwc) {
+    639                  if ((MSK_data.nvm_data.serviceKey)!=encPw) { // password is new
+    640                      MSK_data.nvm_data.serviceKey = encPw;
+    641                      if (MSK_data.nvm_data.serviceErrorCnt > 0)  MSK_data.nvm_data.serviceErrorCnt--;
+    642                  }
+    643              }
+    644              return MPC_OK;
+    645          }
+    646          /** \brief Function to read Service Password confirmation
+    647           *
+    648           * Called only by accident or for systemic reasons (DALI or NFC via MPCgen)
+    649           *
+    650           * \nFunction:
+    651           * - gives back a default value 0xFF
+    652           */
+    653          STATIC uint8_t mskReadServicePasswordConfirmation(mpc_io_buffer_t * mpcIo, uint16_t adr, uint8_t channel) {
+    654              (void)(adr);
+    655              (void)(channel);
+    656              (void)(*mpcIo);
+    657              return (0xFF);
+    658          }
+    659          //------------------------------------------------------------------------------
+    660          //-------------- Entity: PERMISSION USER ---------------------------------------
+    661          //-----------------------------------------------------------------------------
+    662          /** \brief Function to write dynamic permissions for the User
+    663           *
+    664           * Called by whoever needs it (DALI or NFC via MPCgen)
+    665           *
+    666           * \nFunction:
+    667           * - copy value to internal struct
+    668           * - call ACL function to change permission
+    669           */
+    670          STATIC int mskWritePermissionUser(mpc_io_buffer_t * mpcIo, uint16_t adr, uint8_t channel){
+    671              (void)(adr);
+    672              (void)(channel);
+    673              uint32_t perm_user;
+    674              perm_user = mpcIo->uint32;
+    675              MSK_data.nvm_data.permUser = perm_user;
+    676              AclDynamicPermissionsNotification(ACL_CRED_SLOT_USER, perm_user);
+    677              return MPC_OK;
+    678          }
+    679          /** \brief Function to read User Permissions
+    680           *
+    681           * Called by whoever needs it (DALI or NFC via MPCgen)
+    682           *
+    683           * \nFunction:
+    684           * - gives back the stored User Permissions
+    685           */
+    686          STATIC uint32_t mskReadPermissionUser(mpc_io_buffer_t * mpcIo, uint16_t adr, uint8_t channel){
+    687            (void)(adr);
+    688            (void)(channel);
+    689            (void)(*mpcIo);
+    690            return (MSK_data.nvm_data.permUser);
+    691          }
+    692          //------------------------------------------------------------------------------
+    693          //-------------- Entity: PERMISSION SERVICE ------------------------------------
+    694          //-----------------------------------------------------------------------------
+    695          /** \brief Function to write dynamic permissions for the SERVICE technician
+    696           *
+    697           * Called by whoever needs it (DALI or NFC via MPCgen)
+    698           *
+    699           * \nFunction:
+    700           * - copy value to internal struct
+    701           * - call ACL function to change permission
+    702           */
+    703          STATIC int mskWritePermissionService(mpc_io_buffer_t * mpcIo, uint16_t adr, uint8_t channel){
+    704              (void)(adr);
+    705              (void)(channel);
+    706              uint32_t perm_service;
+    707              perm_service = mpcIo->uint32;
+    708              MSK_data.nvm_data.permService = perm_service;
+    709              AclDynamicPermissionsNotification(ACL_CRED_SLOT_SERVICE_KEY, perm_service);
+    710              return MPC_OK;
+    711          }
+    712          /** \brief Function to read Service Permissions
+    713           *
+    714           * Called by whoever needs it (DALI or NFC via MPCgen)
+    715           *
+    716           * \nFunction:
+    717           * - gives back the stored Service Permissions
+    718           */
+    719          STATIC  uint32_t mskReadPermissionService(mpc_io_buffer_t * mpcIo, uint16_t adr, uint8_t channel){
+    720            (void)(adr);
+    721            (void)(channel);
+    722            (void)(*mpcIo);
+    723            return (MSK_data.nvm_data.permService);
+    724          }
+    725          
+    726          
+    727          
+    728          // ---------------------------------------------------------------------------------------------------------------------
+    729          const mpc_descriptor_t MSK_Descriptor = {
+    730            .keydata            = {
+    731              .id             = 27,
+    732              .version        = 0,
+    733              .attributes     = 0,
+    734              .payload_off    = 5,
+    735              .length         = 28,
+    736            },
+    737            .tables_len   = (sizeof(MSK_layout) / sizeof(mpc_layout_t)),
+    738            .entities     = MSK_entities,
+    739            .constants    = MSK_constants,
+    740            .layout       = MSK_layout,
+    741            .Cmd          = &MSK_command,
+    742          };
+    743          
+    744          const mpc_descriptor_t BIO_Descriptor = {
+    745            .keydata            = {
+    746              .id             = 29,
+    747              .version        = 0,
+    748              .attributes     = MPC_ATTRIB_NFC_READONLY,
+    749              .payload_off    = 5,
+    750              .length         = 24,
+    751            },
+    752            .tables_len   = (sizeof(BIO_layout) / sizeof(mpc_layout_t)),
+    753            .entities     = MSK_entities,
+    754            .constants    = MSK_constants,
+    755            .layout       = BIO_layout,
+    756            .Cmd          = &BIO_command,
+    757          };
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       4   BIO_command
+       8   MSK_command
+         8   -> bioPageInit
+         8   -> mskAUTHInit
+         8   -> mskFactoryReset
+         8   -> mskPageInit
+         8   -> mskReset
+       8   bioPageInit
+         8   -> ControllerUniqueID
+         8   -> getFWRevRoot
+       8   mskAUTHInit
+         8   -> MskOsramAuthCalcResponses
+       8   mskCheckOsramAuth
+         8   -> AclCredentialNotification
+       8   mskFactoryReset
+         8   -> __aeabi_memcpy4
+         8   -> mskPwEncrypt
+         8   -> mskReset
+       8   mskPageInit
+         8   -> mskFactoryReset
+         8   -> mskReset
+         8   -> nvmDataInit
+       8   mskPwEncrypt
+         8   -> MskPasswordEncrypt
+       0   mskReadMasterPassword
+       0   mskReadNewMasterPassword
+       0   mskReadNewMasterPasswordConfirmation
+       0   mskReadPermissionService
+       0   mskReadPermissionUser
+       0   mskReadServicePassword
+       0   mskReadServicePasswordConfirmation
+       8   mskReset
+         8   -> AclCredentialNotification
+         8   -> AclDynamicPermissionsNotification
+       8   mskWriteMasterPassword
+         8   -> AclCredentialNotification
+         8   -> mskPwEncrypt
+       0   mskWriteNewMasterPassword
+       8   mskWriteNewMasterPasswordConfirmation
+         8   -> mskPwEncrypt
+         8 __aeabi_idiv
+       8   mskWritePermissionService
+         8   -> AclDynamicPermissionsNotification
+       8   mskWritePermissionUser
+         8   -> AclDynamicPermissionsNotification
+       8   mskWriteServicePassword
+         8   -> AclCredentialNotification
+         8   -> mskCheckOsramAuth
+         8   -> mskPwEncrypt
+      16   mskWriteServicePasswordConfirmation
+        16   -> mskPwEncrypt
+        16 __aeabi_idiv
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable17
+       4  ??DataTable17_1
+       4  ??DataTable17_2
+       4  ??DataTable17_3
+       4  ??DataTable17_4
+       4  ??DataTable17_5
+      40  BIO_Descriptor
+      24  BIO_command
+      48  BIO_layout
+       8  MSK_CorrectResponse
+      40  MSK_Descriptor
+       8  MSK_Response
+      48  MSK_command
+     112  MSK_constants
+      32  MSK_data
+      76  MSK_entities
+      56  MSK_layout
+      20  bioPageInit
+      14  mskAUTHInit
+      92  mskCheckOsramAuth
+      38  mskFactoryReset
+      20  mskNVMData_Default
+      28  mskPageInit
+       8  mskPwEncrypt
+       6  mskReadMasterPassword
+       6  mskReadNewMasterPassword
+       4  mskReadNewMasterPasswordConfirmation
+       6  mskReadPermissionService
+       6  mskReadPermissionUser
+       6  mskReadServicePassword
+       4  mskReadServicePasswordConfirmation
+      56  mskReset
+     110  mskWriteMasterPassword
+      12  mskWriteNewMasterPassword
+      66  mskWriteNewMasterPasswordConfirmation
+      20  mskWritePermissionService
+      20  mskWritePermissionUser
+     120  mskWriteServicePassword
+      96  mskWriteServicePasswordConfirmation
+       4  newMasterPwTemp
+       4  newServicePwTemp
+
+ 
+  56 bytes in section .bss
+ 392 bytes in section .rodata
+ 834 bytes in section .text
+ 
+ 834 bytes of CODE  memory
+ 392 bytes of CONST memory
+  56 bytes of DATA  memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,901 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:51
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\I2C\i2c_driver_xmc1300.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\I2C\i2c_driver_xmc1300.c"
+#        -D XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\i2c_driver_xmc1300.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\i2c_driver_xmc1300.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\I2C\i2c_driver_xmc1300.c
+      1          /** ----------------------------------------------------------------------------
+      2          // i2c_driver_XMC1300.c
+      3          // -----------------------------------------------------------------------------
+      4          // (c) Osram GmbH
+      5          //     DS D EM
+      6          //     Parkring 33
+      7          //     85748 Garching
+      8          //
+      9          //
+     10          // The content of this file is intellectual property of OSRAM GmbH. It is
+     11          // confidential and not intended for any public release. All rights reserved.
+     12          //
+     13          //
+     14          // Indent style: Replace tabs by spaces, 4 spaces per indentation level
+     15          //
+     16          // Initial version: 2017-07, maximilian.gerber@osram.de
+     17          //
+     18          // Change History:
+     19          //
+     20          // $Author: g.salvador $
+     21          // $Revision: 15910 $
+     22          // $Date: 2018-11-26 19:17:02 +0800 (Mon, 26 Nov 2018) $
+     23          // $Id: i2c_driver_xmc1300.c 15910 2018-11-26 11:17:02Z g.salvador $
+     24          // $URL: https://app-ehnsvn02.int.osram-light.com/svn/EC/Toolbox1.0/I2c/tags/v1.7/Src/i2c_driver_xmc1300.c $
+     25          //
+     26          // -----------------------------------------------------------------------------
+     27          
+     28          * \addtogroup I2cDriverAPI
+     29          * \{
+     30          *   \file
+     31          *   \addtogroup I2cDriverXMC1300
+     32          *   \{
+     33          *       \file
+     34          *       \brief I2c driver for Infineon XMC 1300 using UART FIFO buffer.
+     35          *   \}
+     36          * \}
+     37          */
+     38          
+     39          #include <stdint.h>
+     40          #include <stdbool.h>
+     41          
+     42          #define MODULE_I2C
+                         ^
+Warning[Pe047]: incompatible redefinition of macro "MODULE_I2C" (declared at
+          line 42)
+     43          #include "Config.h"
+     44          
+     45          #include "xmc_gpio.h"
+     46          #include "xmc_i2c.h"
+     47          #include "xmc_usic.h"
+     48          #include "xmc_scu.h"
+     49          #include "xmc1300_ports_hwdriver.h"
+     50          
+     51          #include "crc16.h"
+     52          
+     53          #include "i2c_driver.h"
+     54          #include "i2c_userinterface.h"
+
+    #warning "ATTENTION! A standard default value of I2C Cyclic calling period\
+     ^
+"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\I2C\i2c_userinterface.h",82  Warning[Pe1105]: 
+          #warning directive: "ATTENTION! A standard default value of I2C
+          Cyclic calling period I2C_RUNTIME_TIMER_PERIOD_US is going to be
+          used! A custom value, specific for each application is recommended
+          and has to be placed inside ConfigI2c.h"
+
+    #warning "ATTENTION! A standard default value of I2C Cyclic calling period\
+     ^
+"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\I2C\i2c_userinterface.h",92  Warning[Pe1105]: 
+          #warning directive: "ATTENTION! A standard default value of I2C
+          Cyclic calling period I2C_SLEEPMODE_TIMER_PERIOD_US is going to be
+          used! A custom value, specific for each application is recommended
+          and has to be placed inside ConfigI2c.h"
+
+    #warning "ATTENTION! A standard default value of I2C Cyclic calling period\
+     ^
+"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\I2C\i2c_userinterface.h",102  Warning[Pe1105]: 
+          #warning directive: "ATTENTION! A standard default value of I2C
+          Cyclic calling period I2C_POWERDOWN_TIMER_PERIOD_US is going to be
+          used! A custom value, specific for each application is recommended
+          and has to be placed inside ConfigI2c.h"
+     55          #include "i2c_parameters_xmc1300.h"
+     56          #include "i2c_local.h"
+     57          
+     58          
+     59          //-----------------------------------------------------------------------------
+     60          // local definitions
+     61          //-----------------------------------------------------------------------------
+     62          
+     63          
+     64          // The shift control signal is considered active without referring
+     65          // to the actual signal level. Data frame transfer is possible after
+     66          // each edge of the signal.
+     67          
+     68          #define I2C_TRANSMISSION_MODE       (3U)
+     69          
+     70           // Word length
+     71          #define I2C_WORDLENGTH              (7U)
+     72          // Transmission data valid
+     73          #define I2C_SET_TDV                 (1U)
+     74          
+     75          
+     76          //-----------------------------------------------------------------------------
+     77          // local variables
+     78          //-----------------------------------------------------------------------------
+     79          static bool     i2c_trigger_read_request;
+     80          
+     81          typedef enum XMC_I2C_CH_TDF_local
+     82          {
+     83              I2C_CH_TDF_MASTER_SEND =         0U,
+     84              I2C_CH_TDF_SLAVE_SEND =          (uint32_t)1U << 8U,
+     85              I2C_CH_TDF_MASTER_RECEIVE_ACK =  (uint32_t)2U << 8U,
+     86              I2C_CH_TDF_MASTER_RECEIVE_NACK = (uint32_t)3U << 8U,
+     87              I2C_CH_TDF_MASTER_START =        (uint32_t)4U << 8U,
+     88              I2C_CH_TDF_MASTER_RESTART =      (uint32_t)5U << 8U,
+     89              I2C_CH_TDF_MASTER_STOP =         (uint32_t)6U << 8U
+     90          } XMC_I2C_CH_TDF_local_t;
+     91          
+     92          
+     93          //-----------------------------------------------------------------------------
+     94          // local structs
+     95          //-----------------------------------------------------------------------------
+     96          XMC_GPIO_CONFIG_t sda_pin_config;
+     97          XMC_GPIO_CONFIG_t scl_pin_config;
+     98          XMC_I2C_CH_CONFIG_t i2c_cfg;
+     99          
+    100          
+    101          //-----------------------------------------------------------------------------
+    102          // global variables
+    103          //-----------------------------------------------------------------------------
+    104          i2c_driver_feedback_struct_t i2c_driver_feedback_struct;
+    105          extern i2c_local_state_t *i2c_local_struct;
+    106          
+    107          
+    108          //-----------------------------------------------------------------------------
+    109          // local functions
+    110          //-----------------------------------------------------------------------------
+    111          //void USIC0_0_IRQHandler(void); // @todo: remove (needed only for debugging)
+    112          //void USIC0_1_IRQHandler(void); // @todo: remove (needed only for debugging)
+    113          //void USIC0_2_IRQHandler(void); // @todo: remove (needed only for debugging)
+    114          //void USIC0_3_IRQHandler(void); // @todo: remove (needed only for debugging)
+    115          //void USIC0_4_IRQHandler(void); // @todo: remove (needed only for debugging)
+    116          //void USIC0_5_IRQHandler(void); // @todo: remove (needed only for debugging)
+    117          
+    118          //-----------------------------------------------------------------------------
+    119          // global functions
+    120          //-----------------------------------------------------------------------------
+    121          /**
+    122          * \brief Dummy function not needed for the XMC1300 itself. It is used to mantain
+    123          * the compatibility with SAMD21 driver
+    124          */
+    125          void I2cDrvMasterInitDma(void) {return;}
+    126          
+    127          //-----------------------------------------------------------------------------
+    128          /**
+    129           * \brief I2C driver initialization
+    130          */
+    131          void I2cDrvInit(void)
+    132          {
+    133          
+    134            // set I2C driver status
+    135            i2c_driver_feedback_struct.status = I2C_DRIVER_STATUS_IDLE;
+    136          
+    137            // set trigger read request flag to false
+    138            i2c_trigger_read_request = false;
+    139          
+    140            // I2C configuration
+    141            i2c_cfg.address = 1U; // address of master (XMC)
+    142            //    i2c_cfg.baudrate = 400000U;
+    143          
+    144            // Configure I2C channel
+    145            // Code from XMC_I2C_CH_Init() of XMCLib v2.1.12 with XMC_I2C_CH_SetBaudrate() replaced, because it takes 6ms
+    146            XMC_USIC_CH_Enable(I2C_USIC_CH);
+    147          
+    148            /* Data format configuration */
+    149            I2C_USIC_CH->SCTR = ((uint32_t)I2C_TRANSMISSION_MODE << (uint32_t) USIC_CH_SCTR_TRM_Pos) | /* Transmision mode */
+    150                      ((uint32_t)I2C_WORDLENGTH << (uint32_t) USIC_CH_SCTR_WLE_Pos) | /* 8 data bits */
+    151                      USIC_CH_SCTR_FLE_Msk |  /* unlimited data flow */
+    152                      USIC_CH_SCTR_SDIR_Msk | /* MSB shifted first */
+    153                      USIC_CH_SCTR_PDL_Msk;   /* Passive Data Level */
+    154          
+    155            XMC_I2C_CH_SetSlaveAddress(I2C_USIC_CH, i2c_cfg.address);
+    156          
+    157            // XMC_I2C_CH_SetBaudrate() replaced
+    158            // set I2C Frequency to 400kHz
+    159            I2C_USIC_CH->PCR_IICMode |= (uint32_t) USIC_CH_PCR_IICMode_STIM_Msk;
+    160            I2C_USIC_CH->FDR = (2 << USIC_CH_FDR_DM_Pos) | (960 << USIC_CH_FDR_STEP_Pos);
+    161            I2C_USIC_CH->BRG = (24 << USIC_CH_BRG_DCTQ_Pos) | (2 << USIC_CH_BRG_PDIV_Pos);
+    162          
+    163            /* Enable transfer buffer */
+    164            I2C_USIC_CH->TCSR = ((uint32_t)I2C_SET_TDV << (uint32_t) USIC_CH_TCSR_TDEN_Pos)
+    165                                | USIC_CH_TCSR_TDSSM_Msk;
+    166          
+    167            /* Clear status flags */
+    168            I2C_USIC_CH->PSCR = 0xFFFFFFFFU;
+    169          
+    170            /* Disable parity generation */
+    171            I2C_USIC_CH->CCR = 0x0U;
+    172          
+    173            // Configure I2C pins
+    174            XMC_I2C_CH_SetInputSource(I2C_USIC_CH, XMC_I2C_CH_INPUT_SDA, USIC0_C1_DX0_P1_2);
+    175          
+    176            // enable digital filter on SDA (DX0B)
+    177            SET_BIT(I2C_USIC_CH->DXCR[0], USIC_CH_DX0CR_DFEN_Pos);
+    178          
+    179            XMC_I2C_CH_SetInputSource(I2C_USIC_CH, XMC_I2C_CH_INPUT_SCL, USIC0_C1_DX1_P1_3);
+    180          
+    181            // enable digital filter on SCL (DX1A)
+    182            SET_BIT(I2C_USIC_CH->DXCR[1], USIC_CH_DX1CR_DFEN_Pos);
+    183          
+    184            // set hardware delay for more symmetrical signals
+    185            WR_REG(I2C_USIC_CH->PCR, USIC_CH_PCR_IICMode_HDEL_Msk, USIC_CH_PCR_IICMode_HDEL_Pos, 15);
+    186          
+    187            // Configure UART FIFO
+    188            // TX FIFO
+    189            XMC_USIC_CH_TXFIFO_Configure(I2C_USIC_CH, I2C_FIFO_TX_START, I2C_FIFO_TX_SIZE, I2C_FIFO_TX_LIMIT);
+                                                                                ^
+Warning[Pe188]: enumerated type mixed with another type
+    190            // RX FIFO, generate SRBI on exceeding of RX FIFO limit
+    191            I2C_USIC_CH->RBCTR = (1 << USIC_CH_RBCTR_LOF_Pos);
+    192            XMC_USIC_CH_RXFIFO_Configure(I2C_USIC_CH, I2C_FIFO_RX_START, I2C_FIFO_RX_SIZE, I2C_FIFO_RX_LIMIT);
+                                                                                ^
+Warning[Pe188]: enumerated type mixed with another type
+    193          
+    194            // Start I2C channel
+    195            XMC_I2C_CH_Start(I2C_USIC_CH);
+    196          
+    197            // Configure pins
+    198            // USIC0_CH1.DOUT0 (/USIC0_CH1.DX0B)
+    199            sda_pin_config.mode = XMC_GPIO_MODE_OUTPUT_OPEN_DRAIN_ALT7;
+    200            XMC_GPIO_Init(XMC_GPIO_PORT1, 2, &sda_pin_config);
+    201            // USIC0_CH1.SCLKCOUT (/ USIC0_CH1.DX0A / USIC0_CH1.DX1A / USIC0_CH1.DOUT0)
+    202            scl_pin_config.mode = XMC_GPIO_MODE_OUTPUT_OPEN_DRAIN_ALT6;
+    203            XMC_GPIO_Init(XMC_GPIO_PORT1, 3, &scl_pin_config);
+    204          
+    205            //only for debugging
+    206            ////    I2C_USIC_CH->PCR = 0;
+    207            // SET_BIT(I2C_USIC_CH->PCR, USIC_CH_PCR_IICMode_ERRIEN_Pos); // error + wrong TDF
+    208            // SET_BIT(I2C_USIC_CH->PCR, USIC_CH_PCR_IICMode_ARLIEN_Pos); // arbitration lost
+    209          
+    210            // NVIC_ClearPendingIRQ(USIC0_0_IRQn);
+    211            // NVIC_EnableIRQ(USIC0_0_IRQn);
+    212          }
+    213          
+    214          //-----------------------------------------------------------------------------
+    215          /**
+    216          * \brief Stops I2c HW driver
+    217          * \param
+    218          * \param
+    219          */
+    220          void I2cDrvStop(void)
+    221          {
+    222              // Stop I2C channel
+    223              XMC_I2C_CH_Stop(I2C_USIC_CH);
+    224          }
+    225          
+    226          
+    227          
+    228          //-----------------------------------------------------------------------------
+    229          /**
+    230          * \brief Starts an I2C frame
+    231          * \param dev_select_code: slave address
+    232          * \param length: length of the frame
+    233          */
+    234          void I2cDrvStartTransfer(uint8_t dev_select_code, uint16_t length)
+    235          {
+    236              // clear all flags inside the I2C Protocol Status Register
+    237              // to be able to evaluate the flags for the new transmission/receiving
+    238              I2C_USIC_CH->PSCR = 0x0001FFFF;
+    239          
+    240              // reset all Transmit/Receive Buffer Status Register flags
+    241              // to be able to evaluate the flags for the new transmission/receiving
+    242              I2C_USIC_CH->TRBSCR = USIC_CH_TRBSCR_CSRBI_Msk
+    243                                 | USIC_CH_TRBSCR_CRBERI_Msk
+    244                                 | USIC_CH_TRBSCR_CARBI_Msk
+    245                                 | USIC_CH_TRBSCR_CSTBI_Msk
+    246                                 | USIC_CH_TRBSCR_CTBERI_Msk
+    247                                 | USIC_CH_TRBSCR_CBDV_Msk;
+    248          
+    249              // enable tranmission start when TCSR.TDV=1
+    250              I2C_USIC_CH->TCSR |= 1 << USIC_CH_TCSR_TDEN_Pos;
+    251          }
+    252          
+    253          //-----------------------------------------------------------------------------
+    254          /**
+    255          * \brief Read 1 byte from I2c hardware module
+    256          * \retval read byte
+    257          */
+    258          uint8_t I2cDrvReadByte(void)
+    259          {
+    260            return XMC_USIC_CH_RXFIFO_GetData(I2C_USIC_CH);
+    261          }
+    262          
+    263          
+    264          //-----------------------------------------------------------------------------
+    265          /**
+    266          * \brief Dummy function not needed for the XMC1300 itself. It is used to mantain
+    267          * the compatibility with SAMD21 driver
+    268          */
+    269          void I2cDrvStopTransfer(void) {return;}
+    270          
+    271          
+    272          //-----------------------------------------------------------------------------
+    273          /**
+    274          * \brief Dummy function not needed for the XMC1300 itself. It is used to mantain
+    275          * the compatibility with SAMD21 driver
+    276          */
+    277          void I2cDrvSetAcknoledge(i2c_ack_t acknoledge) {return;}
+    278          
+    279          //-----------------------------------------------------------------------------
+    280          /**
+    281           * \brief Fill I2C TX write data into DMA buffer
+    282           * \param dev_sel_code: (0xA6) write request
+    283           * \param address: TAG start address
+    284           * \param data: pointer to data array
+    285           * \param length: number of bytes to write
+    286           */
+    287          // ToDo add check for length <= 4
+    288          // ToDo add check status should be NOT - BUSY
+    289          //void I2cDrvWriteDataDma(uint8_t dev_sel_code, uint16_t address,
+    290          //                                  uint8_t *data, uint8_t length)
+    291          void I2cDrvWriteData(uint8_t dev_sel_code, uint16_t address,
+    292                                            uint8_t *data, uint8_t length)
+    293          {
+    294              uint8_t i1;
+    295          
+    296              // TDEN=0: disable transmission as long as FIFO buffer is not filled correctly
+    297              I2C_USIC_CH->TCSR &= ~USIC_CH_TCSR_TDEN_Msk;
+    298          
+    299              // completely clear TX FIFO
+    300              XMC_USIC_CH_TXFIFO_Flush(I2C_USIC_CH);
+    301          
+    302              // also reset TX FIFO data pointers
+    303              XMC_USIC_CH_TXFIFO_Configure(I2C_USIC_CH, I2C_FIFO_TX_START, I2C_FIFO_TX_SIZE, I2C_FIFO_TX_LIMIT);
+                                                                                  ^
+Warning[Pe188]: enumerated type mixed with another type
+    304          
+    305              // invalidate current content of TBUF, so that first FIFO entry is transferred automatically
+    306              I2C_USIC_CH->FMR |= 2 << USIC_CH_FMR_MTDV_Pos; // MTDV=2 -> clear TCSR.TDV and TCSR.TE
+    307          
+    308              // fill TX FIFO
+    309              // setup FIFO TX content - START ***********************************************************************************
+    310              // start condition + device selct code + write command
+    311              XMC_USIC_CH_TXFIFO_PutData(I2C_USIC_CH, (dev_sel_code | I2C_CH_TDF_MASTER_START | XMC_I2C_CH_CMD_WRITE));
+    312          
+    313              // fill address into data TX FIFO buffer
+    314              // address high byte + write command
+    315              XMC_USIC_CH_TXFIFO_PutData(I2C_USIC_CH, ((address >> 8) | XMC_I2C_CH_CMD_WRITE));
+    316              // address low byte + write command
+    317              XMC_USIC_CH_TXFIFO_PutData(I2C_USIC_CH, (((uint8_t)(0x00FF & address)) | XMC_I2C_CH_CMD_WRITE));
+    318          
+    319              // fill data into TX FIFO buffer
+    320              for (i1 = 0; i1 < length; i1++)
+    321              {
+    322                  XMC_USIC_CH_TXFIFO_PutData(I2C_USIC_CH, (data[i1] | XMC_I2C_CH_CMD_WRITE));
+    323              }
+    324          
+    325              // send stop condition when all data was written
+    326              XMC_USIC_CH_TXFIFO_PutData(I2C_USIC_CH, I2C_CH_TDF_MASTER_STOP);
+    327              // setup FIFO TX content - END *************************************************************************************
+    328          
+    329              // set trigger read request flag to false
+    330              i2c_trigger_read_request = false;
+    331          
+    332              // set I2C driver status
+    333              i2c_driver_feedback_struct.status = I2C_DRIVER_STATUS_BUSY;
+    334          }
+    335          
+    336          //-----------------------------------------------------------------------------
+    337          /**
+    338          * \brief Fill I2C RX read data into DMA buffer
+    339          * \param dev_sel_code: set to 0xA7 = read request
+    340          * \param address: i2c address
+    341          * \param data: pointer to data array
+    342          * \param length: data length
+    343          */
+    344          // ToDo add check status should be NOT - BUSY
+    345          void I2cDrvReadData(uint8_t dev_sel_code, uint16_t address,
+    346                                            uint8_t *data, uint8_t length)
+    347          {
+    348              uint8_t i1;
+    349          
+    350              // TDEN=0: disable transmission as long as FIFO buffer is not filled correctly
+    351              I2C_USIC_CH->TCSR &= ~USIC_CH_TCSR_TDEN_Msk;
+    352          
+    353              // completely clear TX FIFO
+    354              XMC_USIC_CH_TXFIFO_Flush(I2C_USIC_CH);
+    355          
+    356              // also reset TX FIFO data pointers
+    357              XMC_USIC_CH_TXFIFO_Configure(I2C_USIC_CH, I2C_FIFO_TX_START, I2C_FIFO_TX_SIZE, I2C_FIFO_TX_LIMIT);
+                                                                                  ^
+Warning[Pe188]: enumerated type mixed with another type
+    358              // additionally for RX FIFO: set LIMIT to length-1
+    359              XMC_USIC_CH_RXFIFO_Configure(I2C_USIC_CH, I2C_FIFO_RX_START, I2C_FIFO_RX_SIZE, length-1);
+                                                                                  ^
+Warning[Pe188]: enumerated type mixed with another type
+    360          
+    361              // invalidate current content of TBUF, so that first FIFO entry is transferred automatically
+    362              I2C_USIC_CH->FMR |= 2 << USIC_CH_FMR_MTDV_Pos; // MTDV=2 -> clear TCSR.TDV and TCSR.TE
+    363          
+    364              /* fill TX FIFO */
+    365              // setup FIFO TX content - START ***********************************************************************************
+    366              // start condition + device selct code + write command
+    367              XMC_USIC_CH_TXFIFO_PutData(I2C_USIC_CH, (dev_sel_code | I2C_CH_TDF_MASTER_START | XMC_I2C_CH_CMD_WRITE));
+    368          
+    369              // fill address into data TX FIFO buffer
+    370              // address high byte + write command
+    371              XMC_USIC_CH_TXFIFO_PutData(I2C_USIC_CH, ((address >> 8) | XMC_I2C_CH_CMD_WRITE));
+    372              // address low byte + write command
+    373              XMC_USIC_CH_TXFIFO_PutData(I2C_USIC_CH, (((uint8_t)(0x00FF & address)) | XMC_I2C_CH_CMD_WRITE));
+    374               // restart condition + device selct code + read command
+    375              XMC_USIC_CH_TXFIFO_PutData(I2C_USIC_CH, (dev_sel_code | I2C_CH_TDF_MASTER_RESTART | XMC_I2C_CH_CMD_READ));
+    376          
+    377              // fill data into TX FIFO buffer
+    378              //20170622mg: currenctly no CRC -> length is 2 bytes shorter
+    379              // additionally -1, because first byte was already received after restart
+    380              for (i1 = 0; i1 < length - 1; i1++)
+    381              {
+    382                  XMC_USIC_CH_TXFIFO_PutData(I2C_USIC_CH, I2C_CH_TDF_MASTER_RECEIVE_ACK);
+    383              }
+    384          
+    385              // send stop condition, when all desired bytes were received
+    386              XMC_USIC_CH_TXFIFO_PutData(I2C_USIC_CH, I2C_CH_TDF_MASTER_STOP);
+    387              // setup FIFO TX content - END
+    388          
+    389              // set I2C driver status
+    390              i2c_driver_feedback_struct.status = I2C_DRIVER_STATUS_BUSY;
+    391          
+    392              // set trigger read request flag
+    393              i2c_trigger_read_request = true;
+    394          }
+    395          
+    396          //-----------------------------------------------------------------------------
+    397          /**
+    398          * \brief Dummy function not needed for the XMC1300 itself. It is used to mantain
+    399          * the compatibility with SAMD21 driver
+    400           * \return dummy always 0
+    401           */
+    402          bool I2cDrvIsRxBusy(void) {return 0;}
+    403          
+    404          //-----------------------------------------------------------------------------
+    405          /**
+    406          * \brief Dummy function not needed for the XMC1300 itself. It is used to mantain
+    407          * the compatibility with SAMD21 driver
+    408           * \return dummy always 0
+    409           */
+    410          bool I2cDrvIsTxBusy(void) {return 0;}
+    411          
+    412          //-----------------------------------------------------------------------------
+    413          /**
+    414           * \brief Update i2c_driver_feedback_struct.status
+    415          *  \note Must not be called faster than every 200us to be able to distinguish
+    416          *   sending from receiving after 4th I2C frame.
+    417          */
+    418          void I2cDrvUpdateStatus(void)
+    419          {
+    420              uint32_t i2c_status;
+    421              uint32_t rx_fifo_status;
+    422              uint32_t tx_fifo_status;
+    423          
+    424              // read I2C status flags from Protocol Status Register PSR_IIC
+    425              i2c_status = XMC_I2C_CH_GetStatusFlag(I2C_USIC_CH);
+    426              // read TX FIFO status flags from Transmit/Receive Buffer Status Register
+    427              tx_fifo_status = XMC_USIC_CH_TXFIFO_GetEvent(I2C_USIC_CH);
+    428              // read RX FIFO status flags from Transmit/Receive Buffer Status Register
+    429              rx_fifo_status = XMC_USIC_CH_RXFIFO_GetEvent(I2C_USIC_CH);
+    430          
+    431          //    if (0 == i2c_status)
+    432          //    {
+    433          //        i2c_driver_feedback_struct.status = I2C_DRIVER_STATUS_IDLE;
+    434          //    }
+    435          //    else if (i2c_status & USIC_CH_PSR_IICMode_ERR_Msk)
+    436              if (i2c_status & USIC_CH_PSR_IICMode_ERR_Msk)
+    437              {
+    438                  i2c_driver_feedback_struct.status = I2C_DRIVER_STATUS_ERROR;
+    439              }
+    440              else if (i2c_status & USIC_CH_PSR_IICMode_NACK_Msk)
+    441              {
+    442                  i2c_driver_feedback_struct.status = I2C_DRIVER_STATUS_NACK;
+    443              }
+    444              // if there was NO read request, a transmission is happening
+    445              // the transmission is finished, when the TX FIFO buffer is empty and TBUF is idle
+    446              else if ((false == i2c_trigger_read_request)
+    447                    && (XMC_USIC_CH_TXFIFO_EVENT_STANDARD == tx_fifo_status)
+    448                    && (XMC_USIC_CH_TBUF_STATUS_IDLE == XMC_USIC_CH_GetTransmitBufferStatus(I2C_USIC_CH)))
+    449              {
+    450                  i2c_driver_feedback_struct.status = I2C_DRIVER_STATUS_DONE_TX;
+    451              }
+    452              // if there was a read request, a receiving is happening
+    453              // the receiving is finished, when the RX FIFO buffer equals the amount of data that was instructed to be received
+    454              else if ((true == i2c_trigger_read_request) && (XMC_USIC_CH_RXFIFO_EVENT_STANDARD == rx_fifo_status))
+    455              {
+    456                  i2c_driver_feedback_struct.status = I2C_DRIVER_STATUS_DONE_RX;
+    457          //        // fake CRC-16 (in contrast to SAMD21, the XMC1300 does not offer an automatic CRC to check the data integrity
+    458          //        i2c_driver_feedback_struct.crc_16 = 0;
+    459              }
+    460              else
+    461              {
+    462                // this is, in fact, an error case!
+    463                i2c_driver_feedback_struct.status = I2C_DRIVER_STATUS_BUSY;
+    464              }
+    465          
+    466          //    // clear all status flags
+    467          //    I2C_USIC_CH->PSCR |= 0x1FFFF;
+    468          }
+    469          
+    470          //-----------------------------------------------------------------------------
+    471          /**
+    472           * \brief Issue a new I2c transfer.
+    473           * \note Can be RX or TX, RX will always have the priority, even if a writing
+    474           * procedure is already in progress.
+    475           */
+    476          void start_transfer(void)
+    477          {
+    478              uint16_t dev_select_code;
+    479          
+    480              if (i2c_transfer_direction_rx == i2c_local_struct->transfer_direction)
+    481              {
+    482                  // limit length of RX transfer portion, if hardware cannot handle the whole RX request length at once
+    483                  if ((i2c_local_struct->rx_request.length - i2c_local_struct->rx_request.bytes_received_cnt)
+    484                      >= MAX_RX_TRANSFER_LENGTH)
+    485                  {
+    486                      i2c_local_struct->rx_request.length_portion = MAX_RX_TRANSFER_LENGTH;
+    487                  }
+    488                  else
+    489                  {
+    490                    i2c_local_struct->rx_request.length_portion =
+    491                        i2c_local_struct->rx_request.length
+    492                      - i2c_local_struct->rx_request.bytes_received_cnt;
+    493                  }
+    494          
+    495                  // read from tag register or memory area?
+    496                  // bit 7 set: read from tag register
+    497                  // bit 6 set: read from user memory area
+    498                  dev_select_code =
+    499                          (i2c_local_struct->rx_request.addr & 0xC000) ?
+    500                          M24LRxx_ADDR_REGISTER : M24LRxx_ADDR_DATA;
+    501          
+    502                  // fill transfer data into DMA buffer and start transfer
+    503                  // mask most significant bit of address
+    504          
+    505                  I2cDrvReadData (dev_select_code,
+    506                                    ((i2c_local_struct->rx_request.addr & 0x3FFF) + i2c_local_struct->rx_request.bytes_received_cnt),
+    507                                     i2c_local_struct->rx_request.data_ptr + i2c_local_struct->rx_request.bytes_received_cnt,
+    508                                     i2c_local_struct->rx_request.length_portion);
+    509          
+    510                  // start DMA transfer - Read
+    511                  I2cDrvStartTransfer(dev_select_code, M24LRxx_DATA_ADDR_WIDTH);
+    512              }
+    513              else // i2c_transfer_direction_tx == i2c_local_state.transfer_direction
+    514              {
+    515                  // read from tag register or memory area?
+    516                  dev_select_code =
+    517                          (i2c_local_struct->tx_request.addr & 0xC000) ?
+    518                          M24LRxx_ADDR_REGISTER : M24LRxx_ADDR_DATA;
+    519          
+    520                  // fill transfer data into DMA buffer
+    521                  // mask most significant bit of address
+    522                  I2cDrvWriteData (dev_select_code,
+    523                                     (i2c_local_struct->tx_request.addr & 0x3FFF),
+    524                                     i2c_local_struct->tx_request.data,
+    525                                     i2c_local_struct->tx_request.length);
+    526          
+    527                  // start DMA transfer - Write
+    528                  // length = data_length + 2 = 2 bytes address + length of data
+    529                  I2cDrvStartTransfer (dev_select_code,
+    530                          i2c_local_struct->tx_request.length + M24LRxx_DATA_ADDR_WIDTH);
+    531              }
+    532          }
+    533          
+    534          //-----------------------------------------------------------------------------
+    535          /**
+    536          * \brief Return true if all portions of the RX request were received
+    537          */
+    538          bool is_rx_request_completed(void)
+    539          {
+    540              return i2c_local_struct->rx_request.bytes_received_cnt == i2c_local_struct->rx_request.length;
+    541          }
+    542          
+    543          //-----------------------------------------------------------------------------
+    544          /**
+    545          * \brief Update the CRC calculation after receiving each portion of a RX request
+    546          */
+    547          void update_crc_calculation_on_rx(void)
+    548          {
+    549            uint8_t i1;
+    550          
+    551              // copy data from Rx FIFO and add to CRC calculation
+    552              for (i1 = 0; i1 < (i2c_local_struct->rx_request.length_portion); i1++)
+    553              {
+    554                  i2c_local_struct->rx_request.data_ptr[i2c_local_struct->rx_request.bytes_received_cnt + i1] = I2cDrvReadByte();
+    555                  Crc16AppendByte_Inst(1, i2c_local_struct->rx_request.data_ptr[i2c_local_struct->rx_request.bytes_received_cnt + i1]);
+    556              }
+    557          
+    558              // update bytes_received counter
+    559              i2c_local_struct->rx_request.bytes_received_cnt += i2c_local_struct->rx_request.length_portion;
+    560          }
+    561          
+    562          //-----------------------------------------------------------------------------
+    563          /**
+    564          * \brief Init CRC calculation at the beginning of a RX request
+    565          */
+    566          void init_crc_calculation_on_rx(void)
+    567          {
+    568              // init CRC calculation at the beginning of a receiving
+    569              if (0 == i2c_local_struct->rx_request.bytes_received_cnt)
+    570              {
+    571                  Crc16Init_Inst(1, CRC16_CCITT_FALSE_START_VALUE);
+    572              }
+    573          }
+    574          
+    575          //-----------------------------------------------------------------------------
+    576          /**
+    577          * \brief Check if the last reveived I2c frame had a crc error
+    578          * \return true if there is no crc error
+    579          */
+    580          bool is_crc_correct(void)
+    581          {
+    582              return 0 == Crc16Checksum_Inst(1, crc16_big_endian);
+    583          }
+    584          
+    585          
+    586          
+    587          /** \} */ // I2cDriverXMC1300
+    588          /** \} */ // I2cDriver
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   I2cDrvInit
+         8   -> XMC_GPIO_Init
+         8   -> XMC_I2C_CH_SetInputSource
+         8   -> XMC_I2C_CH_SetSlaveAddress
+         8   -> XMC_I2C_CH_Start
+         8   -> XMC_USIC_CH_Enable
+         8   -> XMC_USIC_CH_RXFIFO_Configure
+         8   -> XMC_USIC_CH_TXFIFO_Configure
+       0   I2cDrvIsRxBusy
+       0   I2cDrvIsTxBusy
+       0   I2cDrvMasterInitDma
+       8   I2cDrvReadByte
+         8   -> XMC_USIC_CH_RXFIFO_GetData
+      16   I2cDrvReadData
+        16   -> XMC_USIC_CH_RXFIFO_Configure
+        16   -> XMC_USIC_CH_TXFIFO_Configure
+        16   -> XMC_USIC_CH_TXFIFO_Flush
+        16   -> XMC_USIC_CH_TXFIFO_PutData
+       0   I2cDrvSetAcknoledge
+       0   I2cDrvStartTransfer
+       8   I2cDrvStop
+         8   -> XMC_I2C_CH_Stop
+       0   I2cDrvStopTransfer
+      16   I2cDrvUpdateStatus
+        16   -> XMC_I2C_CH_GetStatusFlag
+        16   -> XMC_USIC_CH_GetTransmitBufferStatus
+        16   -> XMC_USIC_CH_RXFIFO_GetEvent
+        16   -> XMC_USIC_CH_TXFIFO_GetEvent
+      24   I2cDrvWriteData
+        24   -> XMC_USIC_CH_TXFIFO_Configure
+        24   -> XMC_USIC_CH_TXFIFO_Flush
+        24   -> XMC_USIC_CH_TXFIFO_PutData
+       0   XMC_I2C_CH_GetStatusFlag
+       8   XMC_I2C_CH_SetInputSource
+         8   -> XMC_USIC_CH_SetInputSource
+       8   XMC_I2C_CH_Start
+         8   -> XMC_USIC_CH_SetMode
+       0   XMC_USIC_CH_GetTransmitBufferStatus
+       0   XMC_USIC_CH_RXFIFO_GetData
+       0   XMC_USIC_CH_RXFIFO_GetEvent
+       4   XMC_USIC_CH_SetInputSource
+       0   XMC_USIC_CH_SetMode
+       0   XMC_USIC_CH_TXFIFO_Flush
+       0   XMC_USIC_CH_TXFIFO_GetEvent
+       0   XMC_USIC_CH_TXFIFO_PutData
+       8   init_crc_calculation_on_rx
+         8   -> Crc16Init_Inst
+       8   is_crc_correct
+         8   -> Crc16Checksum_Inst
+       4   is_rx_request_completed
+       8   start_transfer
+         8   -> I2cDrvReadData
+         8   -> I2cDrvStartTransfer
+         8   -> I2cDrvWriteData
+       8   update_crc_calculation_on_rx
+         8   -> Crc16AppendByte_Inst
+         8   -> I2cDrvReadByte
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable10
+       4  ??DataTable10_1
+       4  ??DataTable10_2
+       4  ??DataTable10_3
+       4  ??DataTable10_4
+       4  ??DataTable10_5
+       4  ??DataTable5
+       4  ??DataTable5_1
+       4  ??DataTable5_10
+       4  ??DataTable5_11
+       4  ??DataTable5_12
+       4  ??DataTable5_13
+       4  ??DataTable5_2
+       4  ??DataTable5_3
+       4  ??DataTable5_4
+       4  ??DataTable5_5
+       4  ??DataTable5_6
+       4  ??DataTable5_7
+       4  ??DataTable5_8
+       4  ??DataTable5_9
+       4  ??DataTable6
+       4  ??DataTable6_1
+       4  ??DataTable6_2
+       4  ??DataTable6_3
+       4  ??DataTable6_4
+       4  ??DataTable6_5
+       4  ??DataTable6_6
+       4  ??DataTable7
+       4  ??DataTable7_1
+       4  ??DataTable8
+     222  I2cDrvInit
+       4  I2cDrvIsRxBusy
+       4  I2cDrvIsTxBusy
+       2  I2cDrvMasterInitDma
+      12  I2cDrvReadByte
+     168  I2cDrvReadData
+       2  I2cDrvSetAcknoledge
+      28  I2cDrvStartTransfer
+      10  I2cDrvStop
+       2  I2cDrvStopTransfer
+     112  I2cDrvUpdateStatus
+     146  I2cDrvWriteData
+       4  XMC_I2C_CH_GetStatusFlag
+      40  XMC_I2C_CH_SetInputSource
+      10  XMC_I2C_CH_Start
+       8  XMC_USIC_CH_GetTransmitBufferStatus
+      10  XMC_USIC_CH_RXFIFO_GetData
+      12  XMC_USIC_CH_RXFIFO_GetEvent
+      34  XMC_USIC_CH_SetInputSource
+      14  XMC_USIC_CH_SetMode
+      12  XMC_USIC_CH_TXFIFO_Flush
+      14  XMC_USIC_CH_TXFIFO_GetEvent
+      10  XMC_USIC_CH_TXFIFO_PutData
+       8  i2c_cfg
+       4  i2c_driver_feedback_struct
+       1  i2c_trigger_read_request
+      22  init_crc_calculation_on_rx
+      24  is_crc_correct
+      28  is_rx_request_completed
+       8  scl_pin_config
+       8  sda_pin_config
+     212  start_transfer
+      90  update_crc_calculation_on_rx
+
+ 
+    29 bytes in section .bss
+ 1 376 bytes in section .text
+ 
+ 1 376 bytes of CODE memory
+    29 bytes of DATA memory
+
+Errors: none
+Warnings: 9

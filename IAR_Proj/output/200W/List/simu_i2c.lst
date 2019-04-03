@@ -1,0 +1,519 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:54
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Driver\src\simu_i2c.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Driver\src\simu_i2c.c" -D
+#        XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\simu_i2c.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\simu_i2c.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Driver\src\simu_i2c.c
+      1          /*
+      2          ***************************************************************************************************
+      3          *                            Simulate I2C Basic Read and Write Functions
+      4          *
+      5          * File   : simu_i2c.h
+      6          * Author : Douglas Xie
+      7          * Date   : 2016.03.18
+      8          ***************************************************************************************************
+      9          * Copyright (C) 2016 OSRAM Asia Pacific Management Company.  All rights reserved.
+     10          ***************************************************************************************************
+     11          */
+     12          
+     13          #ifdef DEBUG_VERSION
+     14          
+     15          /* Include Head Files ---------------------------------------------------------------------------*/
+     16          #include "simu_i2c.h"
+     17          
+     18          /* Macro Defines --------------------------------------------------------------------------------*/
+     19          /* Delay Function Define */
+     20          #define SMALL_DELAY()       //Delay_5us()
+     21          
+     22          
+     23          /* Global Variable ------------------------------------------------------------------------------*/
+     24          
+     25          
+     26          /* Function Declaration -------------------------------------------------------------------------*/
+     27          
+     28          
+     29          /* Function Implement ---------------------------------------------------------------------------*/
+     30          
+     31          /*******************************************************************************
+     32          * @brief   Small delay function
+     33          * @param  
+     34          * @note    delay for 5us
+     35          * @retval
+     36          *******************************************************************************/
+     37          void Delay_5us(void)
+     38          {
+     39              /*@Douglas: comment this part for using fast mode */
+     40          //    uint8_t i;
+     41          //    
+     42          //    for (i=5; i>0; i--);
+     43          }
+     44          
+     45          
+     46          /*******************************************************************************
+     47          * @brief   Simulate I2C master initial
+     48          * @param  
+     49          * @note    
+     50          * @retval
+     51          *******************************************************************************/
+     52          void I2C_Initial(void)
+     53          {
+     54              XMC_GPIO_CONFIG_t i2c_sda_config;
+     55              XMC_GPIO_CONFIG_t i2c_scl_config;
+     56              
+     57              /* Pins mode, set to output low level when i2c initial */
+     58          	i2c_sda_config.mode = XMC_GPIO_MODE_OUTPUT_OPEN_DRAIN;
+     59              i2c_sda_config.output_level = XMC_GPIO_OUTPUT_LEVEL_LOW;
+     60          	i2c_scl_config.mode = XMC_GPIO_MODE_OUTPUT_OPEN_DRAIN;
+     61              i2c_scl_config.output_level = XMC_GPIO_OUTPUT_LEVEL_LOW;
+     62              
+     63              /* Configure pins */
+     64          	XMC_GPIO_Init(I2C_SDA_PIN, &i2c_sda_config);
+     65              XMC_GPIO_Init(I2C_SCL_PIN, &i2c_scl_config);                   
+     66          }
+     67          
+     68          /*******************************************************************************
+     69          * @brief   Simulate I2C master start condition
+     70          * @param  
+     71          * @note    SDA 1->0 while SCL High
+     72          * @retval
+     73          *******************************************************************************/
+     74          void I2C_Start(void)
+     75          {
+     76              SDA_OUT_H();                  
+     77              SCL_OUT_H();                   
+     78              Delay_5us();     
+     79              
+     80              SDA_OUT_L();                
+     81              Delay_5us();   
+     82              
+     83              SCL_OUT_L();                    
+     84          }
+     85          
+     86          
+     87          /*******************************************************************************
+     88          * @brief   Simulate I2C master stop condition
+     89          * @param  
+     90          * @note    SDA 0->1 while SCL High
+     91          * @retval
+     92          *******************************************************************************/
+     93          void I2C_Stop(void)
+     94          {
+     95              SDA_OUT_L();                   
+     96              SCL_OUT_H();                  
+     97              Delay_5us();   
+     98              
+     99              SDA_OUT_H();                
+    100              Delay_5us();               
+    101          }
+    102          
+    103          
+    104          /*******************************************************************************
+    105          * @brief   Simulate I2C master send acknowledge signal 
+    106          * @param   ack: I2C_ACK, I2C_NO_ACK 
+    107          * @note   
+    108          * @retval
+    109          *******************************************************************************/
+    110          void I2C_SendACK(uint8_t ack)
+    111          {
+    112              if(ack == 0)
+    113              {
+    114                  SDA_OUT_L(); 
+    115              }  
+    116              else
+    117              {
+    118                  SDA_OUT_H(); 
+    119              }
+    120              
+    121              SCL_OUT_H();                 
+    122              Delay_5us();  
+    123              
+    124              SCL_OUT_L();                
+    125              Delay_5us();     
+    126          }
+    127          
+    128          
+    129          /*******************************************************************************
+    130          * @brief   Simulate I2C master send one byte data
+    131          * @param   sendDAT: data to be send 
+    132          * @note   
+    133          * @retval  return slave ack state: I2C_ACK, I2C_NO_ACK
+    134          *******************************************************************************/
+    135          uint8_t I2C_SendByte(uint8_t sendDAT)
+    136          {
+    137              uint8_t i,revack;
+    138              
+    139              /* Send one byte data */
+    140              for (i= 0 ; i< 8; i++)         
+    141              {
+    142                  SCL_OUT_L();              
+    143                  Delay_5us();  
+    144                  
+    145                  if (sendDAT & 0x80)
+    146                  {
+    147                      SDA_OUT_H();
+    148                  }
+    149                  else   
+    150                  {
+    151                      SDA_OUT_L();
+    152                  }
+    153                  sendDAT <<=  1;
+    154                  
+    155                  SCL_OUT_H();              
+    156                  Delay_5us();     
+    157              } 
+    158              
+    159              SCL_OUT_L();
+    160              Delay_5us();  
+    161              
+    162              /* Receive ack signal */
+    163              SET_SDA_IN();
+    164              SCL_OUT_H();  
+    165              SMALL_DELAY();
+    166              
+    167              if(SDA_IN_DATA())
+    168              {
+    169                  revack = 1;
+    170              }
+    171              else
+    172              {
+    173                  revack = 0;
+    174              }
+    175              Delay_5us();
+    176              SCL_OUT_L();
+    177              SDA_OUT_H();
+    178              Delay_5us();  
+    179              
+    180              return revack;
+    181          }
+    182          
+    183          
+    184          /*******************************************************************************
+    185          * @brief   Simulate I2C master receive one byte data
+    186          * @param  
+    187          * @note   
+    188          * @retval  return receive data
+    189          *******************************************************************************/
+    190          uint8_t I2C_RecvByte(void)
+    191          {
+    192              uint8_t i;
+    193              uint8_t revDAT = 0;
+    194              
+    195              /* latch the Data port befor reading and set SDA input */
+    196              SDA_OUT_H();
+    197              SET_SDA_IN();
+    198              
+    199              /* Receive one byte data */
+    200              for (i=0; i<8; i++)         
+    201              { 
+    202                  revDAT <<= 1;
+    203                  
+    204                  SCL_OUT_H();
+    205                  SMALL_DELAY();
+    206                  
+    207                  if (SDA_IN_DATA())
+    208                  {
+    209                      revDAT |= 0x01; 
+    210                  }
+    211                  else
+    212                  {
+    213                      revDAT &= 0xFE;
+    214                  }
+    215                  Delay_5us(); 
+    216                  
+    217                  SCL_OUT_L();         
+    218                  Delay_5us();  
+    219              }
+    220              
+    221              SDA_OUT_H();
+    222              
+    223              return revDAT;
+    224          }
+    225          
+    226          
+    227          /*******************************************************************************
+    228          * @Brief   Make Sure Whether I2C Bus is Busy or not
+    229          * @Param   [in]byDeviceAddr | Device address that need to confirm
+    230          * @Note       
+    231          * @Return  return TRUE when busy or return FALSE
+    232          *******************************************************************************/
+    233          uint8_t I2C_IsBusy( uint8_t byDeviceAddr )
+    234          {
+    235              uint16_t wBusy = TRUE;                  /* default I2C bus is busy */
+    236              uint8_t byAck;
+    237              
+    238              I2C_Start();
+    239              byAck = I2C_SendByte( byDeviceAddr );
+    240              
+    241              if( byAck == I2C_ACK )
+    242              {
+    243                  wBusy = FALSE;                      /* I2C bus can acknowledge means it is not busy */
+    244              }
+    245              
+    246              I2C_Stop();
+    247              return wBusy;
+    248          }
+    249          
+    250          
+    251          /*******************************************************************************
+    252          * @Brief   I2C Read Data from Device from Random Address
+    253          * @Param   [in]byDeviceAddr: Target device address
+    254          *          [in]wStartAddr  : Read data from this address
+    255          *          [in]wLength     : the number of data that want to read
+    256          *          [out]pbyData    : Return datas that read from device
+    257          * @Note       
+    258          * @Return  return OK when read data success or return ERROR
+    259          *******************************************************************************/
+    260          uint8_t I2C_ReadData( uint8_t byDeiceAddr, uint16_t wStartAddr, uint16_t wLength, uint8_t *pbyData )
+    261          {
+    262              uint8_t byAck;
+    263              
+    264              I2C_Start();
+    265              
+    266              byAck = I2C_SendByte( byDeiceAddr );            /* call device by 7 bits hardware address, LSB is write mode */ 
+    267              if( byAck == I2C_NO_ACK )                       /* judge whether slave acknowledge */
+    268              {
+    269                  I2C_Stop();
+    270                  return ERROR;
+    271              }
+    272              
+    273              byAck = I2C_SendByte( wStartAddr >> 8 );        /* write high byte of memory address */
+    274              if( byAck == I2C_NO_ACK )
+    275              {
+    276                  I2C_Stop();
+    277                  return ERROR;
+    278              }
+    279              
+    280              byAck = I2C_SendByte( wStartAddr & 0x00ff );    /* write low byte of memory address */
+    281              if( byAck == I2C_NO_ACK )
+    282              {
+    283                  I2C_Stop();
+    284                  return ERROR;
+    285              }
+    286              
+    287              I2C_Start();                                    /* restart to get ready to read */
+    288              byAck = I2C_SendByte(byDeiceAddr + 1);          /* call device by 7 bits hardware address, LSB is read mode */
+    289              if( byAck == I2C_NO_ACK )
+    290              {
+    291                  I2C_Stop();
+    292                  return ERROR;
+    293              }
+    294              
+    295              while((--wLength)>0)                /* read (wLength-1) times,each time read one byte data */
+    296              {
+    297                  *pbyData = I2C_RecvByte();      /* read one byte data and save to *pbyData and pointer increase */
+    298                  pbyData++ ;
+    299                  I2C_SendACK( I2C_ACK );
+    300              }
+    301              
+    302              *pbyData = I2C_RecvByte();          /* read last one byte data and save to *pbyData */
+    303              I2C_SendACK( I2C_NO_ACK );
+    304              I2C_Stop();
+    305              
+    306              return OK;
+    307          }
+    308          
+    309          
+    310          /*******************************************************************************
+    311          * @Brief   I2C Write Data to Device from Random Address
+    312          * @Param   [in]byDeviceAddr: Target device address
+    313          *          [in]wStartAddr  : Write data from this address
+    314          *          [in]wLength     : the number of data that want to write
+    315          *          [in]pbyData     : Target datas that will write to device
+    316          * @Note       
+    317          * @Return  return OK when write data success or return ERROR
+    318          *******************************************************************************/
+    319          uint8_t I2C_WriteData( uint8_t byDeiceAddr, uint16_t wStartAddr, uint16_t wLength, uint8_t *pbyData )
+    320          {
+    321              uint8_t byAck;
+    322              uint8_t byTimes = I2C_TIMEOUT;
+    323              
+    324              while((I2C_IsBusy(byDeiceAddr) == TRUE) && (byTimes > 0))
+    325              {
+    326                  byTimes --;
+    327              }
+    328              
+    329              if( byTimes == 0 )                             /* device is busy and retry timeout */
+    330              {
+    331                  return ERROR;
+    332              }
+    333              
+    334          	I2C_Start();
+    335          	byAck = I2C_SendByte( byDeiceAddr );           /* call the slaver I2C device, in write mode */
+    336              if( byAck == I2C_NO_ACK )
+    337              {
+    338                  I2C_Stop();
+    339                  return ERROR;
+    340              }
+    341          	
+    342          	byAck = I2C_SendByte( wStartAddr >> 8 );       /* write high byte of the memory address */
+    343              if( byAck == I2C_NO_ACK )
+    344              {
+    345                  I2C_Stop();
+    346                  return ERROR;
+    347              }
+    348          	
+    349          	byAck = I2C_SendByte( wStartAddr & 0x00ff );   /* write low byte of the memory address */
+    350              if( byAck == I2C_NO_ACK )
+    351              {
+    352                  I2C_Stop();
+    353                  return ERROR;
+    354              }	
+    355              
+    356          	while(( wLength-- ) != 0 )
+    357          	{
+    358          		byAck = I2C_SendByte( *pbyData );          /* send data bit by bit */
+    359                  pbyData++;
+    360                  
+    361                  if( byAck == I2C_NO_ACK )
+    362                  {
+    363                      I2C_Stop();
+    364                      return ERROR;
+    365                  }
+    366              }
+    367          	I2C_Stop();	
+    368              
+    369          	return OK;
+    370          }
+    371          
+    372          #endif /* DEBUG_VERSION */
+    373          
+    374          
+    375          /**************** (C) COPYRIGHT OSRAM Asia Pacific Management Company *********END OF FILE*********/
+
+
+ 
+
+ 
+
+
+Errors: none
+Warnings: none

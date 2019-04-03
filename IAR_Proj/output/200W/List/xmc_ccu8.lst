@@ -1,0 +1,1595 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:56
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc_ccu8.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc_ccu8.c"
+#        -D XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\xmc_ccu8.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\xmc_ccu8.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc_ccu8.c
+      1          /**
+      2           * @file xmc_ccu8.c
+      3           * @date 2015-10-07
+      4           *
+      5           * @cond
+      6           *********************************************************************************************************************
+      7           * XMClib v2.1.6 - XMC Peripheral Driver Library 
+      8           *
+      9           * Copyright (c) 2015-2016, Infineon Technologies AG
+     10           * All rights reserved.                        
+     11           *                                             
+     12           * Redistribution and use in source and binary forms, with or without modification,are permitted provided that the 
+     13           * following conditions are met:   
+     14           *                                                                              
+     15           * Redistributions of source code must retain the above copyright notice, this list of conditions and the following 
+     16           * disclaimer.                        
+     17           * 
+     18           * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following 
+     19           * disclaimer in the documentation and/or other materials provided with the distribution.                       
+     20           * 
+     21           * Neither the name of the copyright holders nor the names of its contributors may be used to endorse or promote 
+     22           * products derived from this software without specific prior written permission.                                           
+     23           *                                                                              
+     24           * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, 
+     25           * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE  
+     26           * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+     27           * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR  
+     28           * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+     29           * WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+     30           * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                                                  
+     31           *                                                                              
+     32           * To improve the quality of the software, users are encouraged to share modifications, enhancements or bug fixes with 
+     33           * Infineon Technologies AG dave@infineon.com).                                                          
+     34           *********************************************************************************************************************
+     35           *
+     36           * Change History
+     37           * --------------
+     38           *
+     39           * 2015-02-20:
+     40           *     - Initial <br>
+     41           *
+     42           * 2015-06-20:
+     43           *     - Removed definition of GetDriverVersion API <br>
+     44           *     - Added XMC_CCU8_SLICE_LoadSelector() API, to select which compare register value has to be loaded 
+     45           *       during external load event. 
+     46           *
+     47           * 2015-07-24:
+     48           *     - XMC_CCU8_SLICE_ConfigureStatusBitOverrideEvent() is updated to support XMC14 device. <br>
+     49           *
+     50           * 2015-08-17:
+     51           *     - XMC_CCU8_SLICE_CHC_CONFIG_MASK is not applicable to XMC14 devices. <br>
+     52           *     - Start of prescaler XMC_CCU8_StartPrescaler() is invoked in XMC_CCU8_Init() API. <br>
+     53           *     - In XMC_CCU8_SLICE_CompareInit(), CHC register is updated according to the device. <br>
+     54           *     - Bug fix XMC_CCU8_SLICE_ConfigureEvent() during the level setting for XMC14 devices. <br>
+     55           *     - XMC_CCU8_EnableShadowTransfer() definition is removed, since the API is made as inline. <br>
+     56           * 
+     57           * 2015-10-07:
+     58           *     - XMC_CCU8_SLICE_GetEvent() is made as inline.
+     59           *     - DOC updates for the newly added APIs.
+     60           *
+     61           * @endcond
+     62           */
+     63          /*********************************************************************************************************************
+     64           * HEADER FILES
+     65           ********************************************************************************************************************/
+     66          #include "xmc_ccu8.h"
+     67          
+     68          #if defined(CCU80)
+     69          #include "xmc_scu.h"
+     70          
+     71          /*********************************************************************************************************************
+     72           * MACROS
+     73           ********************************************************************************************************************/
+     74          #define XMC_CCU8_NUM_SLICES_PER_MODULE          (4U)
+     75          #define XMC_CCU8_SLICE_DITHER_PERIOD_MASK       (1U)
+     76          #define XMC_CCU8_SLICE_DITHER_DUTYCYCLE_MASK    (2U)
+     77          #define XMC_CCU8_SLICE_EVENT_EDGE_CONFIG_MASK   (3U)
+     78          #define XMC_CCU8_SLICE_EVENT_LEVEL_CONFIG_MASK  (1U)
+     79          #define XMC_CCU8_SLICE_EVENT_FILTER_CONFIG_MASK (3U)
+     80          #if defined(CCU8V3) /* Defined for XMC1400 devices */
+     81          #define XMC_CCU8_SLICE_EVENT_INPUT_CONFIG_MASK  CCU8_CC8_INS1_EV0IS_Msk
+     82          #else
+     83          #define XMC_CCU8_SLICE_EVENT_INPUT_CONFIG_MASK  CCU8_CC8_INS_EV0IS_Msk
+     84          #endif
+     85          #define XMC_CCU8_GIDLC_CLOCK_MASK               (15U)
+     86          #define XMC_CCU8_GCSS_SLICE0_MASK               (1U)
+     87          #define XMC_CCU8_GCSS_SLICE1_MASK               (16U)
+     88          #define XMC_CCU8_GCSS_SLICE2_MASK               (256U)
+     89          #define XMC_CCU8_GCSS_SLICE3_MASK               (4096U)
+     90          #define XMC_CCU8_SLICE_DEAD_TIME_CONFIG_MASK    (63U)
+     91          #if !defined(CCU8V3) /* Defined for all devices except XMC1400 */
+     92          #define XMC_CCU8_SLICE_CHC_CONFIG_MASK          (20U)
+     93          #endif
+     94          
+     95          #define XMC_CCU8_SLICE_CHECK_DTC_DIV(div) \
+     96              ((div == XMC_CCU8_SLICE_DTC_DIV_1) || \
+     97               (div == XMC_CCU8_SLICE_DTC_DIV_2) || \
+     98               (div == XMC_CCU8_SLICE_DTC_DIV_4) || \
+     99               (div == XMC_CCU8_SLICE_DTC_DIV_8))
+    100          
+    101          #define XMC_CCU8_SLICE_CHECK_CLOCK(clock) \
+    102              ((clock == XMC_CCU8_CLOCK_SCU)        || \
+    103               (clock == XMC_CCU8_CLOCK_EXTERNAL_A) || \
+    104               (clock == XMC_CCU8_CLOCK_EXTERNAL_B) || \
+    105               (clock == XMC_CCU8_CLOCK_EXTERNAL_C))
+    106          
+    107          #define XMC_CCU8_SLICE_CHECK_OUTPUT(out) \
+    108              ((out == XMC_CCU8_SLICE_OUTPUT_0) || \
+    109               (out == XMC_CCU8_SLICE_OUTPUT_1) || \
+    110               (out == XMC_CCU8_SLICE_OUTPUT_2) || \
+    111               (out == XMC_CCU8_SLICE_OUTPUT_3))
+    112          
+    113          #define XMC_CCU8_SLICE_CHECK_END_MODE(end_mode) \
+    114              ((end_mode == XMC_CCU8_SLICE_END_MODE_TIMER_STOP) || \
+    115               (end_mode == XMC_CCU8_SLICE_END_MODE_TIMER_CLEAR) || \
+    116               (end_mode == XMC_CCU8_SLICE_END_MODE_TIMER_STOP_CLEAR))
+    117          
+    118          #define XMC_CCU8_SLICE_CHECK_EVENT_ID(event_id) \
+    119              ((event_id == XMC_CCU8_SLICE_EVENT_NONE)|| \
+    120               (event_id == XMC_CCU8_SLICE_EVENT_0)   || \
+    121               (event_id == XMC_CCU8_SLICE_EVENT_1)   || \
+    122               (event_id == XMC_CCU8_SLICE_EVENT_2))
+    123          
+    124          #define XMC_CCU8_SLICE_CHECK_EDGE_SENSITIVITY(edge) \
+    125              ((edge == XMC_CCU8_SLICE_EVENT_EDGE_SENSITIVITY_NONE)        || \
+    126               (edge == XMC_CCU8_SLICE_EVENT_EDGE_SENSITIVITY_RISING_EDGE) || \
+    127               (edge == XMC_CCU8_SLICE_EVENT_EDGE_SENSITIVITY_FALLING_EDGE)|| \
+    128               (edge == XMC_CCU8_SLICE_EVENT_EDGE_SENSITIVITY_DUAL_EDGE))
+    129          
+    130          #define XMC_CCU8_SLICE_CHECK_EVENT_FILTER(cycles) \
+    131              ((cycles == XMC_CCU8_SLICE_EVENT_FILTER_DISABLED) || \
+    132               (cycles == XMC_CCU8_SLICE_EVENT_FILTER_3_CYCLES) || \
+    133               (cycles == XMC_CCU8_SLICE_EVENT_FILTER_5_CYCLES) || \
+    134               (cycles == XMC_CCU8_SLICE_EVENT_FILTER_7_CYCLES))
+    135          
+    136          #define XMC_CCU8_SLICE_CHECK_CAP_TIMER_CLEAR_MODE(mode) \
+    137              ((mode == XMC_CCU8_SLICE_TIMER_CLEAR_MODE_NEVER)   || \
+    138               (mode == XMC_CCU8_SLICE_TIMER_CLEAR_MODE_CAP_HIGH)|| \
+    139               (mode == XMC_CCU8_SLICE_TIMER_CLEAR_MODE_CAP_LOW) || \
+    140               (mode == XMC_CCU8_SLICE_TIMER_CLEAR_MODE_ALWAYS))
+    141          
+    142          #define XMC_CCU8_SLICE_CHECK_MCS_ACTION(mcs_action) \
+    143              ((mcs_action == XMC_CCU8_SLICE_MCMS_ACTION_TRANSFER_PR_CR)      || \
+    144               (mcs_action == XMC_CCU8_SLICE_MCMS_ACTION_TRANSFER_PR_CR_PCMP) || \
+    145               (mcs_action == XMC_CCU8_SLICE_MCMS_ACTION_TRANSFER_PR_CR_PCMP_DIT))
+    146          
+    147          #define XMC_CCU8_SLICE_CHECK_SR_ID(id) \
+    148              ((id == XMC_CCU8_SLICE_SR_ID_0) || \
+    149               (id == XMC_CCU8_SLICE_SR_ID_1) || \
+    150               (id == XMC_CCU8_SLICE_SR_ID_2) || \
+    151               (id == XMC_CCU8_SLICE_SR_ID_3))
+    152          
+    153          #define XMC_CCU8_SLICE_CHECK_MODULATION_CHANNEL(channel) \
+    154              ((channel == XMC_CCU8_SLICE_MODULATION_CHANNEL_NONE) || \
+    155               (channel == XMC_CCU8_SLICE_MODULATION_CHANNEL_1)    || \
+    156               (channel == XMC_CCU8_SLICE_MODULATION_CHANNEL_2)    || \
+    157               (channel == XMC_CCU8_SLICE_MODULATION_CHANNEL_1_AND_2))
+    158          
+    159          #if((UC_SERIES == XMC13) || (UC_SERIES == XMC14))
+    160          #define XMC_CCU8_SLICE_CHECK_SLICE_STATUS(channel) \
+    161              ((channel == XMC_CCU8_SLICE_STATUS_CHANNEL_1)       || \
+    162               (channel == XMC_CCU8_SLICE_STATUS_CHANNEL_2)       || \
+    163               (channel == XMC_CCU8_SLICE_STATUS_CHANNEL_1_AND_2) || \
+    164               (channel == XMC_CCU8_SLICE_STATUS_CHANNEL_1_OR_2))
+    165          #else
+    166          #define XMC_CCU8_SLICE_CHECK_SLICE_STATUS(channel) \
+    167              ((channel == XMC_CCU8_SLICE_STATUS_CHANNEL_1)       || \
+    168               (channel == XMC_CCU8_SLICE_STATUS_CHANNEL_2)       || \
+    169               (channel == XMC_CCU8_SLICE_STATUS_CHANNEL_1_AND_2))
+    170          #endif
+    171          
+    172          /*********************************************************************************************************************
+    173           * LOCAL ROUTINES
+    174           ********************************************************************************************************************/
+    175          #if defined(PERIPHERAL_RESET_SUPPORTED)
+    176          __STATIC_INLINE void XMC_CCU8_lAssertReset(const XMC_CCU8_MODULE_t *const module)
+    177          {
+    178            switch ((uint32_t)module)
+    179            {
+    180              case (uint32_t)CCU80:
+    181                XMC_SCU_RESET_AssertPeripheralReset(XMC_SCU_PERIPHERAL_RESET_CCU80);
+    182                break;
+    183                
+    184          #if defined(CCU81)
+    185              case (uint32_t)CCU81:
+    186                XMC_SCU_RESET_AssertPeripheralReset(XMC_SCU_PERIPHERAL_RESET_CCU81);
+    187                break;
+    188          #endif
+    189          
+    190              default:
+    191                XMC_ASSERT("XMC_CCU8_lAssertReset:Invalid Module Pointer", 0);
+    192                break;   
+    193            }
+    194          }
+    195          
+    196          __STATIC_INLINE void XMC_CCU8_lDeassertReset(const XMC_CCU8_MODULE_t *const module)
+    197          {
+    198            switch ((uint32_t)module)
+    199            {
+    200              case (uint32_t)CCU80:
+    201                XMC_SCU_RESET_DeassertPeripheralReset(XMC_SCU_PERIPHERAL_RESET_CCU80);
+    202                break;
+    203                
+    204          #if defined(CCU81)
+    205              case (uint32_t)CCU81:
+    206                XMC_SCU_RESET_DeassertPeripheralReset(XMC_SCU_PERIPHERAL_RESET_CCU81);
+    207                break;
+    208          #endif
+    209          
+    210              default:
+    211                XMC_ASSERT("XMC_CCU8_lDeassertReset:Invalid Module Pointer", 0);
+    212                break;   
+    213            }
+    214          }
+    215          #endif
+    216          
+    217          #if defined(CLOCK_GATING_SUPPORTED)
+    218          __STATIC_INLINE void XMC_CCU8_lGateClock(XMC_CCU8_MODULE_t *const module)
+    219          {
+    220            switch ((uint32_t)module)
+    221            {
+    222              case (uint32_t)CCU80:
+    223                XMC_SCU_CLOCK_GatePeripheralClock(XMC_SCU_PERIPHERAL_CLOCK_CCU80);
+    224                break;
+    225                
+    226          #if defined(CCU81)      
+    227              case (uint32_t)CCU81:
+    228                XMC_SCU_CLOCK_GatePeripheralClock(XMC_SCU_PERIPHERAL_CLOCK_CCU81);
+    229                break;
+    230          #endif
+    231          
+    232              default:
+    233                XMC_ASSERT("XMC_CCU8_lGateClock:Invalid Module Pointer", 0);
+    234                break;   
+    235            }
+    236          }
+    237          
+    238          __STATIC_INLINE void XMC_CCU8_lUngateClock(XMC_CCU8_MODULE_t *const module)
+    239          {
+    240            switch ((uint32_t)module)
+    241            {
+    242              case (uint32_t)CCU80:
+    243                XMC_SCU_CLOCK_UngatePeripheralClock(XMC_SCU_PERIPHERAL_CLOCK_CCU80);
+    244                break;
+    245                
+    246          #if defined(CCU81)      
+    247              case (uint32_t)CCU81:
+    248                XMC_SCU_CLOCK_UngatePeripheralClock(XMC_SCU_PERIPHERAL_CLOCK_CCU81);
+    249                break;
+    250          #endif
+    251          
+    252              default:
+    253                XMC_ASSERT("XMC_CCU8_lUngateClock:Invalid Module Pointer", 0);
+    254                break;   
+    255            }
+    256          }
+    257          #endif
+    258          
+    259          #if defined (XMC_ASSERT_ENABLE)
+    260          __STATIC_INLINE bool XMC_CCU8_SLICE_IsInputvalid(XMC_CCU8_SLICE_INPUT_t input)
+    261          {
+    262          #if (UC_SERIES == XMC14)
+    263            return (input < 48U);
+    264          #else
+    265            return (input < 16U);
+    266          #endif
+    267          }
+    268          #endif
+    269          /*********************************************************************************************************************
+    270           * API IMPLEMENTATION
+    271           ********************************************************************************************************************/
+    272          
+    273          /* API to set the CCU8 module as active and enable the clock  */
+    274          void XMC_CCU8_EnableModule(XMC_CCU8_MODULE_t *const module)
+    275          {
+    276            XMC_ASSERT("XMC_CCU8_EnableModule:Invalid Module Pointer", XMC_CCU8_IsValidModule(module));
+    277          
+    278          #if (UC_FAMILY == XMC4)
+    279            /* Enable CCU8 module clock */
+    280            XMC_SCU_CLOCK_EnableClock(XMC_SCU_CLOCK_CCU);
+    281          #endif
+    282          
+    283          #if defined(CLOCK_GATING_SUPPORTED)
+    284            XMC_CCU8_lUngateClock(module);
+    285          #endif
+    286          
+    287          #if defined(PERIPHERAL_RESET_SUPPORTED)
+    288            XMC_CCU8_lDeassertReset(module);
+    289          #endif
+    290          }
+    291          
+    292          /* API to set the CCU8 module as idle and disable the clock  */
+    293          void XMC_CCU8_DisableModule(XMC_CCU8_MODULE_t *const module)
+    294          {
+    295            XMC_ASSERT("XMC_CCU8_DisableModule:Invalid Module Pointer", XMC_CCU8_IsValidModule(module));
+    296          
+    297          #if defined(PERIPHERAL_RESET_SUPPORTED)
+    298            XMC_CCU8_lAssertReset(module);
+    299          #endif
+    300          
+    301          #if defined(CLOCK_GATING_SUPPORTED)
+    302            XMC_CCU8_lGateClock(module);
+    303          #endif
+    304          }
+    305          
+    306          /* API to initialize CCU8 global resources  */
+    307          void XMC_CCU8_Init(XMC_CCU8_MODULE_t *const module, const XMC_CCU8_SLICE_MCMS_ACTION_t mcs_action)
+    308          {
+    309            uint32_t gctrl;
+    310          
+    311            XMC_ASSERT("XMC_CCU8_Init:Invalid Module Pointer", XMC_CCU8_IsValidModule(module));
+    312            XMC_ASSERT("XMC_CCU8_Init:Invalid mcs action", XMC_CCU8_SLICE_CHECK_MCS_ACTION(mcs_action));
+    313          
+    314            /* Enable CCU8 module */
+    315            XMC_CCU8_EnableModule(module);
+    316            /* Start the prescaler */
+    317            XMC_CCU8_StartPrescaler(module);
+    318            
+    319            gctrl = module->GCTRL;
+    320            gctrl &= ~((uint32_t) CCU8_GCTRL_MSDE_Msk);
+    321            gctrl |= (uint32_t)mcs_action << CCU8_GCTRL_MSDE_Pos;
+    322            
+    323            module->GCTRL = gctrl;
+    324          }
+    325          
+    326          /* API to select CCU8 module clock */
+    327          void XMC_CCU8_SetModuleClock(XMC_CCU8_MODULE_t *const module, const XMC_CCU8_CLOCK_t clock)
+    328          {
+    329            uint32_t gctrl;
+    330          
+    331            XMC_ASSERT("XMC_CCU8_SetModuleClock:Invalid Module Pointer", XMC_CCU8_IsValidModule(module));
+    332            XMC_ASSERT("XMC_CCU8_SetModuleClock:Invalid Module Clock", XMC_CCU8_SLICE_CHECK_CLOCK(clock));
+    333          
+    334            gctrl = module->GCTRL;
+    335            gctrl &= ~((uint32_t) CCU8_GCTRL_PCIS_Msk);
+    336            gctrl |= ((uint32_t) clock) << CCU8_GCTRL_PCIS_Pos;
+    337          
+    338            module->GCTRL = gctrl;
+    339          }
+    340          
+    341          /* API to configure CC8 Slice in Compare mode */
+    342          void XMC_CCU8_SLICE_CompareInit(XMC_CCU8_SLICE_t *const slice,
+    343                                          const XMC_CCU8_SLICE_COMPARE_CONFIG_t *const compare_init)
+    344          {
+    345            XMC_ASSERT("XMC_CCU8_SLICE_CompareInit:Invalid Slice Pointer", XMC_CCU8_IsValidSlice(slice));
+    346            XMC_ASSERT("XMC_CCU8_SLICE_CompareInit:Timer Init Pointer is NULL",
+    347                       (XMC_CCU8_SLICE_COMPARE_CONFIG_t *) NULL != compare_init);
+    348            /* Stops the timer */
+    349            XMC_CCU8_SLICE_StopTimer(slice);
+    350            /* Program the timer mode */
+    351            slice->TC = compare_init->tc;
+    352            /* Enable the timer concatenation */
+    353            slice->CMC =  (uint32_t)compare_init->timer_concatenation << CCU8_CC8_CMC_TCE_Pos;
+    354            /* Program initial prescaler divider value */
+    355            slice->PSC = (uint32_t) compare_init->prescaler_initval;
+    356            /* Program floating prescaler compare value */
+    357            slice->FPCS = (uint32_t) compare_init->float_limit;
+    358            /* Program the dither compare value */
+    359            slice->DITS = (uint32_t) compare_init->dither_limit;
+    360            /* Program timer output passive level */
+    361            slice->PSL = (uint32_t) compare_init->psl;
+    362            /* Asymmetric PWM and Slice output routing configuration */
+    363          #if defined(CCU8V3) /* Defined for XMC1400 devices only */
+    364            slice->CHC = (uint32_t) compare_init->chc;
+    365          #else
+    366            slice->CHC = (uint32_t)((uint32_t)compare_init->chc ^ XMC_CCU8_SLICE_CHC_CONFIG_MASK);
+    367          #endif
+    368          }
+    369          
+    370          /* API to configure CC8 Slice in Capture mode */
+    371          void XMC_CCU8_SLICE_CaptureInit(XMC_CCU8_SLICE_t *const slice, 
+    372                                          const XMC_CCU8_SLICE_CAPTURE_CONFIG_t *const capture_init)
+    373          {
+    374            XMC_ASSERT("XMC_CCU8_SLICE_CaptureInit:Invalid Slice Pointer", XMC_CCU8_IsValidSlice(slice));
+    375            XMC_ASSERT("XMC_CCU8_SLICE_CaptureInit:Capture Init Pointer is NULL", 
+    376                       (XMC_CCU8_SLICE_CAPTURE_CONFIG_t *) NULL != capture_init);
+    377            /* Stops the timer */
+    378            XMC_CCU8_SLICE_StopTimer(slice);
+    379            /* Capture mode configuration */
+    380            slice->TC = capture_init->tc;
+    381            /* Enable the timer concatenation */
+    382            slice->CMC = (uint32_t)capture_init->timer_concatenation << CCU8_CC8_CMC_TCE_Pos;
+    383            /* Program floating prescaler compare value */
+    384            slice->FPCS = (uint32_t) capture_init->float_limit;
+    385            /* Program initial prescaler divider value */
+    386            slice->PSC = (uint32_t) capture_init->prescaler_initval;
+    387          }
+    388          
+    389          /* API to configure the each output of the slice with either STx or inverted STx. */
+    390          void XMC_CCU8_SLICE_SetOutPath(XMC_CCU8_SLICE_t *const slice, const uint32_t out_path_msk)
+    391          {
+    392            uint32_t chc;
+    393            XMC_ASSERT("XMC_CCU8_SLICE_SetOutPath:Invalid Slice Pointer", XMC_CCU8_IsValidSlice(slice));
+    394            chc = slice->CHC;
+    395          #if !defined(CCU8V3) /* Defined for all devices except XMC1400 */
+    396            chc &= ~((uint32_t)out_path_msk >> 16U);
+    397            chc |= ((uint32_t)out_path_msk & 0xFFFFU);
+    398          #else
+    399            chc &= ~((uint32_t)((uint32_t)(out_path_msk & 0xCCCC0U) >> 2U));
+    400            chc |= ((uint32_t)out_path_msk & 0x33330U);
+    401          #endif
+    402            slice->CHC = chc;
+    403          }
+    404          
+    405          /* API to configure the multichannel shadow transfer request via SW and via the CCU8x.MCSS input. */
+    406          void XMC_CCU8_SetMultiChannelShadowTransferMode(XMC_CCU8_MODULE_t *const module, const uint32_t slice_mode_msk)
+    407          {
+    408            uint32_t gctrl;
+    409          
+    410            XMC_ASSERT("XMC_CCU8_SetMultiChannelShadowTransferMode:Invalid module Pointer", XMC_CCU8_IsValidModule(module));
+    411            
+    412            gctrl = module->GCTRL;
+    413            gctrl &= ~((uint32_t)slice_mode_msk >> 16U);
+    414            gctrl |= ((uint32_t)slice_mode_msk & 0xFFFFU);
+    415            module->GCTRL = gctrl;
+    416          }
+    417          
+    418          
+    419          /* API to configure the Start trigger function of a slice*/
+    420          void XMC_CCU8_SLICE_StartConfig(XMC_CCU8_SLICE_t *const slice,
+    421                                          const XMC_CCU8_SLICE_EVENT_t event,
+    422                                          const XMC_CCU8_SLICE_START_MODE_t start_mode)
+    423          {
+    424            uint32_t cmc;
+    425            uint32_t tc;
+    426          
+    427            XMC_ASSERT("XMC_CCU8_SLICE_StartConfig:Invalid Slice Pointer", XMC_CCU8_IsValidSlice(slice));
+    428            XMC_ASSERT("XMC_CCU8_SLICE_StartConfig:Invalid Event ID", XMC_CCU8_SLICE_CHECK_EVENT_ID(event));
+    429            XMC_ASSERT("XMC_CCU8_SLICE_StartConfig:Invalid Start Mode", 
+    430                       ((start_mode == XMC_CCU8_SLICE_START_MODE_TIMER_START) ||\
+    431                        (start_mode == XMC_CCU8_SLICE_START_MODE_TIMER_START_CLEAR)));
+    432            cmc = slice->CMC;
+    433          
+    434            cmc &= ~((uint32_t) CCU8_CC8_CMC_STRTS_Msk);
+    435            cmc |= ((uint32_t) event) << CCU8_CC8_CMC_STRTS_Pos;
+    436          
+    437            slice->CMC = cmc;
+    438          
+    439            tc  = slice->TC;
+    440          
+    441            if(start_mode == XMC_CCU8_SLICE_START_MODE_TIMER_START_CLEAR)
+    442            {
+    443              tc |= (uint32_t) CCU8_CC8_TC_STRM_Msk;
+    444            }
+    445            else
+    446            {
+    447              tc &= ~((uint32_t) CCU8_CC8_TC_STRM_Msk);
+    448            }
+    449          
+    450            slice->TC = tc;
+    451          }
+    452          
+    453          /* API to configure the Stop trigger function of a slice */
+    454          void XMC_CCU8_SLICE_StopConfig(XMC_CCU8_SLICE_t *const slice,
+    455                                         const XMC_CCU8_SLICE_EVENT_t event,
+    456                                         const XMC_CCU8_SLICE_END_MODE_t end_mode)
+    457          {
+    458            uint32_t cmc;
+    459            uint32_t tc;
+    460          
+    461            XMC_ASSERT("XMC_CCU8_SLICE_StopConfig:Invalid Slice Pointer", XMC_CCU8_IsValidSlice(slice));
+    462            XMC_ASSERT("XMC_CCU8_SLICE_StopConfig:Invalid Event ID", XMC_CCU8_SLICE_CHECK_EVENT_ID(event));
+    463            XMC_ASSERT("XMC_CCU8_SLICE_StopConfig:Invalid End Mode", XMC_CCU8_SLICE_CHECK_END_MODE(end_mode));
+    464          
+    465            cmc = slice->CMC;
+    466            /* First, Bind the event with the stop function */
+    467            cmc &= ~((uint32_t) CCU8_CC8_CMC_ENDS_Msk);
+    468            cmc |= ((uint32_t) event) << CCU8_CC8_CMC_ENDS_Pos;
+    469          
+    470            slice->CMC = cmc;
+    471          
+    472            /* Configure the stop mode */
+    473            tc = slice->TC;
+    474            tc &= ~((uint32_t) CCU8_CC8_TC_ENDM_Msk);
+    475            tc |= ((uint32_t) end_mode) << CCU8_CC8_TC_ENDM_Pos;
+    476          
+    477            slice->TC = tc;
+    478          }
+    479          
+    480          /* API to configure the Load trigger function of a slice*/
+    481          void XMC_CCU8_SLICE_LoadConfig(XMC_CCU8_SLICE_t *const slice, const XMC_CCU8_SLICE_EVENT_t event)
+    482          {
+    483            uint32_t cmc;
+    484          
+    485            XMC_ASSERT("XMC_CCU8_SLICE_LoadConfig:Invalid Slice Pointer", XMC_CCU8_IsValidSlice(slice));
+    486            XMC_ASSERT("XMC_CCU8_SLICE_LoadConfig:Invalid Event ID", XMC_CCU8_SLICE_CHECK_EVENT_ID(event));
+    487          
+    488            cmc = slice->CMC;
+    489          
+    490            /* First, Bind the event with the load function */
+    491            cmc &= ~((uint32_t) CCU8_CC8_CMC_LDS_Msk);
+    492            cmc |= ((uint32_t) event) << CCU8_CC8_CMC_LDS_Pos;
+    493          
+    494            slice->CMC = cmc;
+    495          }
+    496          
+    497          /* API to configure, which compare register value has to be loaded during external load event */
+    498          void XMC_CCU8_SLICE_LoadSelector(XMC_CCU8_SLICE_t *const slice, const XMC_CCU8_SLICE_COMPARE_CHANNEL_t ch_num)
+    499          {
+    500            uint32_t tc;
+    501          
+    502            XMC_ASSERT("XMC_CCU8_SLICE_LoadSelector:Invalid Slice Pointer", XMC_CCU8_IsValidSlice(slice));
+    503            XMC_ASSERT("XMC_CCU8_SLICE_LoadSelector:Invalid Channel number", XMC_CCU8_SLICE_CHECK_COMP_CHANNEL(ch_num));
+    504          
+    505            tc = slice->TC;
+    506          
+    507            /* First, Bind the event with the load function */
+    508            tc &= ~((uint32_t) CCU8_CC8_TC_TLS_Msk);
+    509            tc |= (uint32_t)ch_num << CCU8_CC8_TC_TLS_Pos;
+    510          
+    511            slice->TC = tc;
+    512          }
+    513          
+    514          /* API to configure the slice modulation function */
+    515          void XMC_CCU8_SLICE_ModulationConfig(XMC_CCU8_SLICE_t *const slice,
+    516                                               const XMC_CCU8_SLICE_EVENT_t event,
+    517                                               const XMC_CCU8_SLICE_MODULATION_MODE_t mod_mode,
+    518                                               const XMC_CCU8_SLICE_MODULATION_CHANNEL_t channel,
+    519                                               const bool synch_with_pwm)
+    520          {
+    521            uint32_t cmc;
+    522            uint32_t tc;
+    523          
+    524            XMC_ASSERT("XMC_CCU8_SLICE_ModulationConfig:Invalid Slice Pointer", XMC_CCU8_IsValidSlice(slice));
+    525            XMC_ASSERT("XMC_CCU8_SLICE_ModulationConfig:Invalid Event ID", XMC_CCU8_SLICE_CHECK_EVENT_ID(event));
+    526            XMC_ASSERT("XMC_CCU8_SLICE_ModulationConfig:Invalid channel for modulation", 
+    527                       XMC_CCU8_SLICE_CHECK_MODULATION_CHANNEL(channel));
+    528            XMC_ASSERT("XMC_CCU8_SLICE_ModulationConfig:Invalid Modulation Mode", 
+    529                       ((mod_mode == XMC_CCU8_SLICE_MODULATION_MODE_CLEAR_ST_OUT) ||\
+    530                        (mod_mode == XMC_CCU8_SLICE_MODULATION_MODE_CLEAR_OUT)));
+    531          
+    532            cmc = slice->CMC;
+    533          
+    534            /* First, Bind the event with the modulation function */
+    535            cmc &= ~((uint32_t) CCU8_CC8_CMC_MOS_Msk);
+    536            cmc |= ((uint32_t) event) << CCU8_CC8_CMC_MOS_Pos;
+    537          
+    538            slice->CMC = cmc;
+    539          
+    540            tc  = slice->TC;
+    541          
+    542            /* Next, Modulation mode */
+    543            if(mod_mode == XMC_CCU8_SLICE_MODULATION_MODE_CLEAR_OUT)
+    544            {
+    545              tc |= (uint32_t) CCU8_CC8_TC_EMT_Msk;
+    546            }
+    547            else
+    548            {
+    549              tc &= ~((uint32_t) CCU8_CC8_TC_EMT_Msk);
+    550            }
+    551          
+    552            /* Synchronization of modulation effect with PWM cycle */
+    553            if(synch_with_pwm == true)
+    554            {
+    555              tc |= (uint32_t) CCU8_CC8_TC_EMS_Msk;
+    556            }
+    557            else
+    558            {
+    559              tc &= ~((uint32_t) CCU8_CC8_TC_EMS_Msk);
+    560            }
+    561            
+    562            /* Configure on which channel external modulation to be applied */
+    563            tc &= ~((uint32_t) CCU8_CC8_TC_EME_Msk);
+    564            tc |= (uint32_t)channel << CCU8_CC8_TC_EME_Pos;
+    565          
+    566            slice->TC = tc;
+    567          }
+    568          
+    569          /* API to configure the slice count function */
+    570          void XMC_CCU8_SLICE_CountConfig(XMC_CCU8_SLICE_t *const slice, const XMC_CCU8_SLICE_EVENT_t event)
+    571          {
+    572            uint32_t cmc;
+    573          
+    574            XMC_ASSERT("XMC_CCU8_SLICE_CountConfig:Invalid Slice Pointer", XMC_CCU8_IsValidSlice(slice));
+    575            XMC_ASSERT("XMC_CCU8_SLICE_CountConfig:Invalid Event ID", XMC_CCU8_SLICE_CHECK_EVENT_ID(event));
+    576          
+    577            cmc = slice->CMC;
+    578          
+    579            /* First, Bind the event with the count function */
+    580            cmc &= ~((uint32_t) CCU8_CC8_CMC_CNTS_Msk);
+    581            cmc |= ((uint32_t) event) << CCU8_CC8_CMC_CNTS_Pos;
+    582          
+    583            slice->CMC = cmc;
+    584          }
+    585          
+    586          /* API to configure slice gate function */
+    587          void XMC_CCU8_SLICE_GateConfig(XMC_CCU8_SLICE_t *const slice, const XMC_CCU8_SLICE_EVENT_t event)
+    588          {
+    589            uint32_t cmc;
+    590          
+    591            XMC_ASSERT("XMC_CCU8_SLICE_GateConfig:Invalid Slice Pointer", XMC_CCU8_IsValidSlice(slice));
+    592            XMC_ASSERT("XMC_CCU8_SLICE_GateConfig:Invalid Event ID", XMC_CCU8_SLICE_CHECK_EVENT_ID(event));
+    593          
+    594            cmc = slice->CMC;
+    595          
+    596            /* First, Bind the event with the gate function */
+    597            cmc &= ~((uint32_t) CCU8_CC8_CMC_GATES_Msk);
+    598            cmc |= ((uint32_t) event) << CCU8_CC8_CMC_GATES_Pos;
+    599          
+    600            slice->CMC = cmc;
+    601          }
+    602          
+    603          /* API to configure Capture-0 function */
+    604          void XMC_CCU8_SLICE_Capture0Config(XMC_CCU8_SLICE_t *const slice, const XMC_CCU8_SLICE_EVENT_t event)
+    605          {
+    606            uint32_t cmc;
+    607          
+    608            XMC_ASSERT("XMC_CCU8_SLICE_Capture0Config:Invalid Slice Pointer", XMC_CCU8_IsValidSlice(slice));
+    609            XMC_ASSERT("XMC_CCU8_SLICE_Capture0Config:Invalid Event ID", XMC_CCU8_SLICE_CHECK_EVENT_ID(event));
+    610          
+    611            cmc = slice->CMC;
+    612          
+    613            /* First, Bind the event with the gate function */
+    614            cmc &= ~((uint32_t) CCU8_CC8_CMC_CAP0S_Msk);
+    615            cmc |= ((uint32_t) event) << CCU8_CC8_CMC_CAP0S_Pos;
+    616          
+    617            slice->CMC = cmc;
+    618          }
+    619          
+    620          /* API to configure Capture-1 function */
+    621          void XMC_CCU8_SLICE_Capture1Config(XMC_CCU8_SLICE_t *const slice, const XMC_CCU8_SLICE_EVENT_t event)
+    622          {
+    623            uint32_t cmc;
+    624          
+    625            XMC_ASSERT("XMC_CCU8_SLICE_Capture1Config:Invalid Slice Pointer", XMC_CCU8_IsValidSlice(slice));
+    626            XMC_ASSERT("XMC_CCU8_SLICE_Capture1Config:Invalid Event ID", XMC_CCU8_SLICE_CHECK_EVENT_ID(event));
+    627          
+    628          
+    629            cmc = slice->CMC;
+    630          
+    631            /* First, Bind the event with the gate function */
+    632            cmc &= ~((uint32_t) CCU8_CC8_CMC_CAP1S_Msk);
+    633            cmc |= ((uint32_t) event) << CCU8_CC8_CMC_CAP1S_Pos;
+    634          
+    635            slice->CMC = cmc;
+    636          }
+    637          
+    638          /* API to configure direction function */
+    639          void XMC_CCU8_SLICE_DirectionConfig(XMC_CCU8_SLICE_t *const slice, const XMC_CCU8_SLICE_EVENT_t event)
+    640          {
+    641            uint32_t cmc;
+    642          
+    643            XMC_ASSERT("XMC_CCU8_SLICE_DirectionConfig:Invalid Slice Pointer", XMC_CCU8_IsValidSlice(slice));
+    644            XMC_ASSERT("XMC_CCU8_SLICE_DirectionConfig:Invalid Event ID", XMC_CCU8_SLICE_CHECK_EVENT_ID(event));
+    645          
+    646            cmc = slice->CMC;
+    647          
+    648            /* First, Bind the event with the direction function */
+    649            cmc &= ~((uint32_t) CCU8_CC8_CMC_UDS_Msk);
+    650            cmc |= ((uint32_t) event) << CCU8_CC8_CMC_UDS_Pos;
+    651          
+    652            slice->CMC = cmc;
+    653          }
+    654          
+    655          /* API to configure slice status bit override function */
+    656          void XMC_CCU8_SLICE_StatusBitOverrideConfig(XMC_CCU8_SLICE_t *const slice)
+    657          {
+    658            uint32_t cmc;
+    659          
+    660            XMC_ASSERT("XMC_CCU8_SLICE_StatusBitOverrideConfig:Invalid Slice Pointer", XMC_CCU8_IsValidSlice(slice));
+    661          
+    662            cmc = slice->CMC;
+    663          
+    664            /* Map status bit trigger override to Event 1 &
+    665                   status bit value override to Event 2 */
+    666            cmc &= ~((uint32_t) CCU8_CC8_CMC_OFS_Msk);
+    667            cmc |= ((uint32_t) 1) << CCU8_CC8_CMC_OFS_Pos;
+    668          
+    669            slice->CMC = cmc;
+    670          }
+    671          
+    672          /* API to configure trap function*/
+    673          void XMC_CCU8_SLICE_TrapConfig(XMC_CCU8_SLICE_t *const slice,
+    674                                         const XMC_CCU8_SLICE_TRAP_EXIT_MODE_t exit_mode,
+    675                                         const bool synch_with_pwm)
+    676          {
+    677            uint32_t cmc;
+    678            uint32_t tc;
+    679          
+    680            XMC_ASSERT("XMC_CCU8_SLICE_TrapConfig:Invalid Slice Pointer", XMC_CCU8_IsValidSlice(slice));
+    681            XMC_ASSERT("XMC_CCU8_SLICE_TrapConfig:Invalid Exit Mode", ((exit_mode == XMC_CCU8_SLICE_TRAP_EXIT_MODE_AUTOMATIC) ||\
+    682                                                                       (exit_mode == XMC_CCU8_SLICE_TRAP_EXIT_MODE_SW)));
+    683          
+    684            cmc = slice->CMC;
+    685          
+    686            /* Map trap function to Event 2 */
+    687            cmc &= ~((uint32_t) CCU8_CC8_CMC_TS_Msk);
+    688            cmc |= ((uint32_t) 1) << CCU8_CC8_CMC_TS_Pos;
+    689          
+    690            slice->CMC = cmc;
+    691          
+    692            tc = slice->TC;
+    693          
+    694            /* Configure synchronization option */
+    695            if(synch_with_pwm == true)
+    696            {
+    697              tc |= (uint32_t) CCU8_CC8_TC_TRPSE_Msk;
+    698            }
+    699            else
+    700            {
+    701              tc &= ~((uint32_t) CCU8_CC8_TC_TRPSE_Msk);
+    702            }
+    703          
+    704            /* Configure exit mode */
+    705            if(exit_mode == XMC_CCU8_SLICE_TRAP_EXIT_MODE_SW)
+    706            {
+    707              tc |= (uint32_t) CCU8_CC8_TC_TRPSW_Msk;
+    708            }
+    709            else
+    710            {
+    711              tc &= ~((uint32_t) CCU8_CC8_TC_TRPSW_Msk);
+    712            }
+    713          
+    714            slice->TC = tc;
+    715          }
+    716          
+    717          /* API to configure a slice Status Bit Override event */
+    718          void XMC_CCU8_SLICE_ConfigureStatusBitOverrideEvent(XMC_CCU8_SLICE_t *const slice,
+    719                                                              const XMC_CCU8_SLICE_EVENT_CONFIG_t *const ev1_config,
+    720                                                              const XMC_CCU8_SLICE_EVENT_CONFIG_t *const ev2_config)
+    721          {
+    722            uint32_t ins;
+    723          
+    724            XMC_ASSERT("XMC_CCU8_SLICE_ConfigureStatusBitOverrideEvent:Invalid Slice Pointer", XMC_CCU8_IsValidSlice(slice));
+    725            XMC_ASSERT("XMC_CCU8_SLICE_ConfigureStatusBitOverrideEvent:Invalid Input",
+    726          		     XMC_CCU8_SLICE_IsInputvalid(ev1_config->mapped_input));
+    727            XMC_ASSERT("XMC_CCU8_SLICE_ConfigureStatusBitOverrideEvent:Invalid Edge Sensitivity", 
+    728                       XMC_CCU8_SLICE_CHECK_EDGE_SENSITIVITY(ev1_config->edge));
+    729            XMC_ASSERT("XMC_CCU8_SLICE_ConfigureStatusBitOverrideEvent:Invalid Level Sensitivity", 
+    730                       ((ev1_config->level == XMC_CCU8_SLICE_EVENT_LEVEL_SENSITIVITY_ACTIVE_HIGH) ||\
+    731                        (ev1_config->level == XMC_CCU8_SLICE_EVENT_LEVEL_SENSITIVITY_ACTIVE_LOW)));
+    732            XMC_ASSERT("XMC_CCU8_SLICE_ConfigureStatusBitOverrideEvent:Invalid Debounce Period",
+    733                        XMC_CCU8_SLICE_CHECK_EVENT_FILTER(ev1_config->duration));
+    734            XMC_ASSERT("XMC_CCU8_SLICE_ConfigureStatusBitOverrideEvent:Invalid Input",
+    735          		      XMC_CCU8_SLICE_IsInputvalid(ev2_config->mapped_input));
+    736            XMC_ASSERT("XMC_CCU8_SLICE_ConfigureStatusBitOverrideEvent:Invalid Edge Sensitivity",
+    737                        XMC_CCU8_SLICE_CHECK_EDGE_SENSITIVITY(ev2_config->edge));
+    738            XMC_ASSERT("XMC_CCU8_SLICE_ConfigureStatusBitOverrideEvent:Invalid Level Sensitivity",
+    739                       ((ev2_config->level == XMC_CCU8_SLICE_EVENT_LEVEL_SENSITIVITY_ACTIVE_HIGH) ||\
+    740                        (ev2_config->level == XMC_CCU8_SLICE_EVENT_LEVEL_SENSITIVITY_ACTIVE_LOW)));
+    741            XMC_ASSERT("XMC_CCU8_SLICE_ConfigureStatusBitOverrideEvent:Invalid Debounce Period",
+    742                       XMC_CCU8_SLICE_CHECK_EVENT_FILTER(ev2_config->duration));
+    743          
+    744          #if defined(CCU8V3) /* Defined for XMC1400 devices only */
+    745            ins = slice->INS2;
+    746          
+    747            /* Configure the edge sensitivity for event 1 */
+    748            ins &= ~(((uint32_t) XMC_CCU8_SLICE_EVENT_EDGE_CONFIG_MASK) << CCU8_CC8_INS2_EV1EM_Pos);
+    749            ins |= ((uint32_t) ev1_config->edge) << CCU8_CC8_INS2_EV1EM_Pos;
+    750          
+    751            /* Configure the edge sensitivity for event 2 */
+    752            ins &= ~(((uint32_t) XMC_CCU8_SLICE_EVENT_EDGE_CONFIG_MASK) << CCU8_CC8_INS2_EV2EM_Pos);
+    753            ins |= ((uint32_t) ev2_config->edge) << CCU8_CC8_INS2_EV2EM_Pos;
+    754          
+    755            /* Configure the level sensitivity for event 1 */
+    756            ins &= ~(((uint32_t) XMC_CCU8_SLICE_EVENT_LEVEL_CONFIG_MASK) << CCU8_CC8_INS2_EV1LM_Pos);
+    757            ins |= ((uint32_t) ev1_config->level) << CCU8_CC8_INS2_EV1LM_Pos;
+    758          
+    759            /* Configure the level sensitivity for event 2 */
+    760            ins &= ~(((uint32_t) XMC_CCU8_SLICE_EVENT_LEVEL_CONFIG_MASK) << CCU8_CC8_INS2_EV2LM_Pos);
+    761            ins |= ((uint32_t) ev2_config->level) << CCU8_CC8_INS2_EV2LM_Pos;
+    762          
+    763            /* Configure the debounce filter for event 1 */
+    764            ins &= ~(((uint32_t) XMC_CCU8_SLICE_EVENT_FILTER_CONFIG_MASK) << CCU8_CC8_INS2_LPF1M_Pos);
+    765            ins |= ((uint32_t) ev1_config->duration) << CCU8_CC8_INS2_LPF1M_Pos;
+    766          
+    767            /* Configure the debounce filter for event 2 */
+    768            ins &= ~(((uint32_t) XMC_CCU8_SLICE_EVENT_FILTER_CONFIG_MASK) << CCU8_CC8_INS2_LPF2M_Pos);
+    769            ins |= ((uint32_t) ev2_config->duration) << CCU8_CC8_INS2_LPF2M_Pos;
+    770            
+    771            slice->INS2 = ins; 
+    772          
+    773            ins = slice->INS1;
+    774            /* Next, the input for Event1 */
+    775            ins &= ~(((uint32_t) XMC_CCU8_SLICE_EVENT_INPUT_CONFIG_MASK) << CCU8_CC8_INS1_EV1IS_Pos);
+    776            ins |= ((uint32_t) ev1_config->mapped_input) << CCU8_CC8_INS1_EV1IS_Pos;
+    777          
+    778            /* Finally, the input for Event2 */
+    779            ins &= ~(((uint32_t) XMC_CCU8_SLICE_EVENT_INPUT_CONFIG_MASK) << CCU8_CC8_INS1_EV2IS_Pos);
+    780            ins |= ((uint32_t) ev2_config->mapped_input) << CCU8_CC8_INS1_EV2IS_Pos;
+    781          
+    782            slice->INS1 = ins;  
+    783          #else
+    784            ins = slice->INS;
+    785          
+    786            /* Configure the edge sensitivity for event 1 */
+    787            ins &= ~(((uint32_t) XMC_CCU8_SLICE_EVENT_EDGE_CONFIG_MASK) << CCU8_CC8_INS_EV1EM_Pos);
+    788            ins |= ((uint32_t) ev1_config->edge) << CCU8_CC8_INS_EV1EM_Pos;
+    789          
+    790            /* Configure the edge sensitivity for event 2 */
+    791            ins &= ~(((uint32_t) XMC_CCU8_SLICE_EVENT_EDGE_CONFIG_MASK) << CCU8_CC8_INS_EV2EM_Pos);
+    792            ins |= ((uint32_t) ev2_config->edge) << CCU8_CC8_INS_EV2EM_Pos;
+    793          
+    794            /* Configure the level sensitivity for event 1 */
+    795            ins &= ~(((uint32_t) XMC_CCU8_SLICE_EVENT_LEVEL_CONFIG_MASK) << CCU8_CC8_INS_EV1LM_Pos);
+    796            ins |= ((uint32_t) ev1_config->level) << CCU8_CC8_INS_EV1LM_Pos;
+    797          
+    798            /* Configure the level sensitivity for event 2 */
+    799            ins &= ~(((uint32_t) XMC_CCU8_SLICE_EVENT_LEVEL_CONFIG_MASK) << CCU8_CC8_INS_EV2LM_Pos);
+    800            ins |= ((uint32_t) ev2_config->level) << CCU8_CC8_INS_EV2LM_Pos;
+    801          
+    802            /* Configure the debounce filter for event 1 */
+    803            ins &= ~(((uint32_t) XMC_CCU8_SLICE_EVENT_FILTER_CONFIG_MASK) << CCU8_CC8_INS_LPF1M_Pos);
+    804            ins |= ((uint32_t) ev1_config->duration) << CCU8_CC8_INS_LPF1M_Pos;
+    805          
+    806            /* Configure the debounce filter for event 2 */
+    807            ins &= ~(((uint32_t) XMC_CCU8_SLICE_EVENT_FILTER_CONFIG_MASK) << CCU8_CC8_INS_LPF2M_Pos);
+    808            ins |= ((uint32_t) ev2_config->duration) << CCU8_CC8_INS_LPF2M_Pos;
+    809          
+    810            /* Next, the input for Event1 */
+    811            ins &= ~(((uint32_t) XMC_CCU8_SLICE_EVENT_INPUT_CONFIG_MASK) << CCU8_CC8_INS_EV1IS_Pos);
+    812            ins |= ((uint32_t) ev1_config->mapped_input) << CCU8_CC8_INS_EV1IS_Pos;
+    813          
+    814            /* Finally, the input for Event2 */
+    815            ins &= ~(((uint32_t) XMC_CCU8_SLICE_EVENT_INPUT_CONFIG_MASK) << CCU8_CC8_INS_EV2IS_Pos);
+    816            ins |= ((uint32_t) ev2_config->mapped_input) << CCU8_CC8_INS_EV2IS_Pos;
+    817          
+    818            slice->INS = ins;
+    819          #endif
+    820          }
+    821          
+    822          /* API to configure a slice trigger event */
+    823          void XMC_CCU8_SLICE_ConfigureEvent(XMC_CCU8_SLICE_t *const slice,
+    824                                             const XMC_CCU8_SLICE_EVENT_t event,
+    825                                             const XMC_CCU8_SLICE_EVENT_CONFIG_t *const config)
+    826          {
+    827            uint32_t ins;
+    828            uint8_t  pos;
+    829            uint8_t  offset;
+    830          
+    831            XMC_ASSERT("XMC_CCU8_SLICE_ConfigureEvent:Invalid Slice Pointer", XMC_CCU8_IsValidSlice(slice));
+    832            XMC_ASSERT("XMC_CCU8_SLICE_ConfigureEvent:Invalid Event ID", XMC_CCU8_SLICE_CHECK_EVENT_ID(event));
+    833            XMC_ASSERT("XMC_CCU8_SLICE_ConfigureEvent:Invalid Input",  XMC_CCU8_SLICE_IsInputvalid(config->mapped_input));
+    834            XMC_ASSERT("XMC_CCU8_SLICE_ConfigureEvent:Invalid Edge Sensitivity",
+    835                       XMC_CCU8_SLICE_CHECK_EDGE_SENSITIVITY(config->edge));
+    836            XMC_ASSERT("XMC_CCU8_SLICE_ConfigureEvent:Invalid Level Sensitivity", 
+    837                       ((config->level == XMC_CCU8_SLICE_EVENT_LEVEL_SENSITIVITY_ACTIVE_HIGH) ||\
+    838                        (config->level == XMC_CCU8_SLICE_EVENT_LEVEL_SENSITIVITY_ACTIVE_LOW)));
+    839            XMC_ASSERT("XMC_CCU8_SLICE_ConfigureEvent:Invalid Debounce Period",
+    840                       XMC_CCU8_SLICE_CHECK_EVENT_FILTER(config->duration));
+    841          
+    842            /* Calculate offset with reference to event */
+    843            offset = ((uint8_t) event) - 1U;
+    844          
+    845          #if defined(CCU8V3) /* Defined for XMC1400 devices only */
+    846            ins = slice->INS2;
+    847          
+    848            /* First, configure the edge sensitivity */
+    849            pos = ((uint8_t) CCU8_CC8_INS2_EV0EM_Pos) + (uint8_t)(offset << 2U);
+    850            ins &= ~(((uint32_t) XMC_CCU8_SLICE_EVENT_EDGE_CONFIG_MASK) << pos);
+    851            ins |= ((uint32_t) config->edge) << pos;
+    852          
+    853            /* Next, the level */
+    854            pos = ((uint8_t) CCU8_CC8_INS2_EV0LM_Pos) + (uint8_t)(offset << 2U);
+    855            ins &= ~(((uint32_t) XMC_CCU8_SLICE_EVENT_LEVEL_CONFIG_MASK) << pos);
+    856            ins |= ((uint32_t) (config->level)) << pos;
+    857          
+    858            /* Next, the debounce filter */
+    859            pos = ((uint8_t) CCU8_CC8_INS2_LPF0M_Pos) + (uint8_t)(offset << 2U);
+    860            ins &= ~(((uint32_t) XMC_CCU8_SLICE_EVENT_FILTER_CONFIG_MASK) << pos);
+    861            ins |= ((uint32_t) config->duration) << pos;
+    862          
+    863            slice->INS2 = ins;
+    864          
+    865            ins = slice->INS1;
+    866          
+    867            /* Finally the input */
+    868            pos = ((uint8_t) CCU8_CC8_INS1_EV0IS_Pos) + (uint8_t)(offset << 3U);
+    869            ins &= ~(((uint32_t) XMC_CCU8_SLICE_EVENT_INPUT_CONFIG_MASK) << pos);
+    870            ins |= ((uint32_t) config->mapped_input) << pos;
+    871          
+    872            slice->INS1 = ins;
+    873          
+    874          #else
+    875            ins = slice->INS;
+    876          
+    877            /* First, configure the edge sensitivity */
+    878            pos = ((uint8_t) CCU8_CC8_INS_EV0EM_Pos) + (uint8_t)(offset << 1U);
+    879            ins &= ~(((uint32_t) XMC_CCU8_SLICE_EVENT_EDGE_CONFIG_MASK) << pos);
+    880            ins |= ((uint32_t) config->edge) << pos;
+    881          
+    882            /* Next, the level */
+    883            pos = ((uint8_t) CCU8_CC8_INS_EV0LM_Pos) + offset;
+    884            ins &= ~(((uint32_t) XMC_CCU8_SLICE_EVENT_LEVEL_CONFIG_MASK) << pos);
+    885            ins |= ((uint32_t) (config->level)) << pos;
+    886          
+    887            /* Next, the debounce filter */
+    888            pos = ((uint8_t) CCU8_CC8_INS_LPF0M_Pos) + (uint8_t)(offset << 1U);
+    889            ins &= ~(((uint32_t) XMC_CCU8_SLICE_EVENT_FILTER_CONFIG_MASK) << pos);
+    890            ins |= ((uint32_t) config->duration) << pos;
+    891          
+    892            /* Finally the input */
+    893            pos = ((uint8_t) CCU8_CC8_INS_EV0IS_Pos) + (uint8_t)(offset << 2U);
+    894            ins &= ~(((uint32_t) XMC_CCU8_SLICE_EVENT_INPUT_CONFIG_MASK) << pos);
+    895            ins |= ((uint32_t) config->mapped_input) << pos;
+    896          
+    897            slice->INS = ins;
+    898          #endif
+    899          }
+    900          
+    901          /* API to bind an input to a slice trigger event */
+    902          void XMC_CCU8_SLICE_SetInput(XMC_CCU8_SLICE_t *const slice,
+    903                                   const XMC_CCU8_SLICE_EVENT_t event,
+    904                                       const XMC_CCU8_SLICE_INPUT_t input)
+    905          {
+    906            uint32_t ins;
+    907            uint8_t  pos;
+    908            uint8_t  offset;
+    909          
+    910            XMC_ASSERT("XMC_CCU8_SLICE_SetInput:Invalid Slice Pointer", XMC_CCU8_IsValidSlice(slice));
+    911            XMC_ASSERT("XMC_CCU8_SLICE_SetInput:Invalid Event ID", XMC_CCU8_SLICE_CHECK_EVENT_ID(event));
+    912            XMC_ASSERT("XMC_CCU8_SLICE_SetInput:Invalid Input", XMC_CCU8_SLICE_IsInputvalid(input));
+    913          
+    914            /* Calculate offset with reference to event */
+    915            offset = ((uint8_t) event) - 1U;
+    916          
+    917          #if defined(CCU8V3) /* Defined for XMC1400 devices only */
+    918            pos = ((uint8_t) CCU8_CC8_INS1_EV0IS_Pos) + (uint8_t) (offset << 3U);
+    919            ins = slice->INS1;
+    920            ins &= ~(((uint32_t) XMC_CCU8_SLICE_EVENT_INPUT_CONFIG_MASK) << pos);
+    921            ins |= ((uint32_t) input) << pos;
+    922          
+    923            slice->INS1 = ins;
+    924          #else
+    925          
+    926            pos = ((uint8_t) CCU8_CC8_INS_EV0IS_Pos) + (uint8_t) (offset << 2U);
+    927            ins = slice->INS;
+    928            ins &= ~(((uint32_t) XMC_CCU8_SLICE_EVENT_INPUT_CONFIG_MASK) << pos);
+    929            ins |= ((uint32_t) input) << pos;
+    930          
+    931            slice->INS = ins;
+    932          #endif
+    933          }
+    934          
+    935          /* API to program timer repeat mode - Single shot vs repeat  */
+    936          void XMC_CCU8_SLICE_SetTimerRepeatMode(XMC_CCU8_SLICE_t *const slice,
+    937                                             const XMC_CCU8_SLICE_TIMER_REPEAT_MODE_t mode)
+    938          {
+    939            uint32_t tc;
+    940          
+    941            XMC_ASSERT("XMC_CCU8_SLICE_SetTimerRepeatMode:Invalid Slice Pointer", XMC_CCU8_IsValidSlice(slice));
+    942            XMC_ASSERT("XMC_CCU8_SLICE_SetTimerRepeatMode:Invalid Timer Repeat Mode", 
+    943                       ((mode == XMC_CCU8_SLICE_TIMER_REPEAT_MODE_REPEAT) ||\
+    944                        (mode == (mode == XMC_CCU8_SLICE_TIMER_REPEAT_MODE_REPEAT))));
+    945          
+    946            tc = slice->TC;
+    947          
+    948            if(XMC_CCU8_SLICE_TIMER_REPEAT_MODE_REPEAT == mode)
+    949            {
+    950              tc &= ~((uint32_t) CCU8_CC8_TC_TSSM_Msk);
+    951            }
+    952            else
+    953            {
+    954              tc |= (uint32_t) CCU8_CC8_TC_TSSM_Msk;
+    955            }
+    956          
+    957            slice->TC = tc;
+    958          }
+    959          
+    960          /* Programs timer counting mode  */
+    961          void XMC_CCU8_SLICE_SetTimerCountingMode(XMC_CCU8_SLICE_t *const slice, const XMC_CCU8_SLICE_TIMER_COUNT_MODE_t mode)
+    962          {
+    963            uint32_t tc;
+    964          
+    965            XMC_ASSERT("XMC_CCU8_SLICE_SetTimerCountingMode:Invalid Slice Pointer", XMC_CCU8_IsValidSlice(slice));
+    966            XMC_ASSERT("XMC_CCU8_SLICE_SetTimerCountingMode:Invalid Timer Count Mode",
+    967                       ((mode == XMC_CCU8_SLICE_TIMER_COUNT_MODE_EA) ||\
+    968                        (mode == XMC_CCU8_SLICE_TIMER_COUNT_MODE_CA)));
+    969          
+    970            tc = slice->TC;
+    971          
+    972            if(XMC_CCU8_SLICE_TIMER_COUNT_MODE_EA == mode)
+    973            {
+    974              tc &= ~((uint32_t) CCU8_CC8_TC_TCM_Msk);
+    975            }
+    976            else
+    977            {
+    978              tc |= (uint32_t) CCU8_CC8_TC_TCM_Msk;
+    979            }
+    980          
+    981            slice->TC = tc;
+    982          }
+    983          
+    984          /* Programs period match value of the timer  */
+    985          void XMC_CCU8_SLICE_SetTimerPeriodMatch(XMC_CCU8_SLICE_t *const slice, const uint16_t period_val)
+    986          {
+    987            XMC_ASSERT("XMC_CCU8_SLICE_SetTimerPeriodMatch:Invalid Slice Pointer", XMC_CCU8_IsValidSlice(slice));
+    988            slice->PRS = (uint32_t) period_val;
+    989          }
+    990          
+    991          /* Retrieves desired capture register value */
+    992          uint32_t XMC_CCU8_SLICE_GetCaptureRegisterValue(const XMC_CCU8_SLICE_t *const slice, const uint8_t reg_num)
+    993          {
+    994            XMC_ASSERT("XMC_CCU8_SLICE_GetCaptureRegisterValue:Invalid Slice Pointer", XMC_CCU8_IsValidSlice(slice));
+    995            XMC_ASSERT("XMC_CCU8_SLICE_GetCaptureRegisterValue:Invalid register number", (reg_num < 4U));
+    996            return(slice->CV[reg_num]);
+    997          }
+    998          
+    999          /* @brief Retrieves the latest captured timer value */
+   1000          XMC_CCU8_STATUS_t XMC_CCU8_SLICE_GetLastCapturedTimerValue(const XMC_CCU8_SLICE_t *const slice,
+   1001                                                                     const XMC_CCU8_SLICE_CAP_REG_SET_t set,
+   1002                                                                     uint32_t *val_ptr)
+   1003          {
+   1004          
+   1005            XMC_CCU8_STATUS_t retval;
+   1006            uint8_t i;
+   1007            uint8_t start;
+   1008            uint8_t end;
+   1009          
+   1010            XMC_ASSERT("XMC_CCU8_SLICE_GetLastCapturedTimerValue:Invalid Slice Pointer", XMC_CCU8_IsValidSlice(slice));
+   1011            XMC_ASSERT("XMC_CCU8_SLICE_GetLastCapturedTimerValue:Invalid Register Set",
+   1012                       ((set == XMC_CCU8_SLICE_CAP_REG_SET_LOW) ||\
+   1013                        (set == XMC_CCU8_SLICE_CAP_REG_SET_HIGH)));
+   1014          
+   1015            retval = XMC_CCU8_STATUS_ERROR;
+   1016          
+   1017            /* First check if extended capture mode is enabled */
+   1018            if((slice->TC) & CCU8_CC8_TC_ECM_Msk)
+   1019            {
+   1020              /* Extended capture mode has been enabled. So start with the lowest capture register and work your way up */
+   1021              start = 0U;
+   1022              end = XMC_CCU8_NUM_SLICES_PER_MODULE;
+   1023            }
+   1024            else
+   1025            {
+   1026              /* Extended capture mode is not enabled */
+   1027              if(set == XMC_CCU8_SLICE_CAP_REG_SET_HIGH)
+   1028              {
+   1029                start = ((uint8_t) XMC_CCU8_NUM_SLICES_PER_MODULE) >> 1U;
+   1030                end   = (uint8_t) XMC_CCU8_NUM_SLICES_PER_MODULE;
+   1031              }
+   1032              else
+   1033              {
+   1034                start = 0U;
+   1035                end = ((uint8_t) XMC_CCU8_NUM_SLICES_PER_MODULE) >> 1U;
+   1036              }
+   1037            }
+   1038          
+   1039            for(i=start; i<end; i++)
+   1040            {
+   1041              if( (slice->CV[i]) & CCU8_CC8_CV_FFL_Msk )
+   1042              {
+   1043                *val_ptr = slice->CV[i];
+   1044                retval = XMC_CCU8_STATUS_OK;
+   1045                break;
+   1046              }
+   1047            }
+   1048          
+   1049            return retval;
+   1050          }
+   1051          /* Retrieves timer capture value from a FIFO made of capture registers */
+   1052          #if defined(CCU8V1) /* Defined for XMC4800, XMC4700, XMC4500, XMC4400, XMC4200, XMC4100 devices only */
+   1053          int32_t XMC_CCU8_GetCapturedValueFromFifo(const XMC_CCU8_MODULE_t *const module, const uint8_t slice_number)
+   1054          {
+   1055            int32_t  cap;
+   1056            uint32_t extracted_slice;
+   1057            
+   1058            XMC_ASSERT("XMC_CCU8_GetCapturedValueFromFifo:Invalid Slice Pointer", XMC_CCU8_IsValidModule(module));
+   1059          
+   1060            /* First read the global fifo register */
+   1061            cap = (int32_t) module->ECRD;
+   1062              
+   1063            extracted_slice = (((uint32_t) cap) & ((uint32_t) CCU8_ECRD_SPTR_Msk)) >> CCU8_ECRD_SPTR_Pos;
+   1064          
+   1065            /* Return captured result only if it were applicable to this slice */
+   1066            if(extracted_slice != ((uint32_t)slice_number))
+   1067            {
+   1068              cap = -1;
+   1069            }
+   1070          
+   1071            return (cap);
+   1072          }
+   1073          #else
+   1074          /* Retrieves timer capture value from a FIFO made of capture registers */
+   1075          uint32_t XMC_CCU8_SLICE_GetCapturedValueFromFifo(const XMC_CCU8_SLICE_t *const slice, const XMC_CCU8_SLICE_CAP_REG_SET_t set)
+   1076          {
+   1077            uint32_t cap;
+   1078          
+   1079            XMC_ASSERT("XMC_CCU8_SLICE_GetCapturedValueFromFifo:Invalid Slice Pointer", XMC_CCU8_IsValidSlice(slice));
+   1080            XMC_ASSERT("XMC_CCU8_SLICE_GetCapturedValueFromFifo:Invalid Register Set", 
+   1081                       ((set == XMC_CCU8_SLICE_CAP_REG_SET_LOW) ||\
+   1082                        (set == XMC_CCU8_SLICE_CAP_REG_SET_HIGH)));
+   1083          
+   1084            if(XMC_CCU8_SLICE_CAP_REG_SET_LOW == set)
+   1085            {
+   1086          	  cap = slice->ECRD0;
+   1087            }
+   1088            else
+   1089            {
+   1090          	  cap = slice->ECRD1;
+   1091            }
+   1092          
+   1093            return cap;
+   1094          }
+   1095          #endif
+   1096          
+   1097          /* Enables PWM dithering feature */
+   1098          void XMC_CCU8_SLICE_EnableDithering(XMC_CCU8_SLICE_t *const slice,
+   1099                                              const bool period_dither,
+   1100                                              const bool duty_dither,
+   1101                                              const uint8_t spread)
+   1102          {
+   1103            uint32_t tc;
+   1104          
+   1105            XMC_ASSERT("XMC_CCU8_SLICE_EnableDithering:Invalid Slice Pointer", XMC_CCU8_IsValidSlice(slice));
+   1106          
+   1107            tc = slice->TC;
+   1108            tc &= ~((uint32_t) CCU8_CC8_TC_DITHE_Msk);
+   1109          
+   1110            if(true == period_dither)
+   1111            {
+   1112              tc |= (((uint32_t) XMC_CCU8_SLICE_DITHER_PERIOD_MASK) << CCU8_CC8_TC_DITHE_Pos);
+   1113            }
+   1114            if(true == duty_dither)
+   1115            {
+   1116              tc |= (((uint32_t) XMC_CCU8_SLICE_DITHER_DUTYCYCLE_MASK) << CCU8_CC8_TC_DITHE_Pos);
+   1117            }
+   1118          
+   1119            slice->TC = tc;
+   1120          
+   1121            XMC_CCU8_SLICE_SetDitherCompareValue((XMC_CCU8_SLICE_t *)slice, (uint8_t)spread);
+   1122          }
+   1123          
+   1124          /* Programs Pre-scaler divider  */
+   1125          void XMC_CCU8_SLICE_SetPrescaler(XMC_CCU8_SLICE_t *const slice, const uint8_t div_val)
+   1126          {
+   1127            uint32_t fpc;
+   1128          
+   1129            XMC_ASSERT("XMC_CCU8_SLICE_SetPrescaler:Invalid Slice Pointer", XMC_CCU8_IsValidSlice(slice));
+   1130          
+   1131            /* If the prescaler is not running, update directly the divider*/
+   1132            fpc = slice->FPC;
+   1133            fpc &= ~((uint32_t) CCU8_CC8_FPC_PVAL_Msk);
+   1134            fpc |= ((uint32_t) div_val) << CCU8_CC8_FPC_PVAL_Pos;
+   1135            slice->FPC = fpc;
+   1136          
+   1137            /*
+   1138             * In any case, update the initial value of the divider which is to be loaded once the prescaler increments to the
+   1139             * compare value.
+   1140             */
+   1141            slice->PSC = (uint32_t) div_val;
+   1142          }
+   1143          
+   1144          /* Programs timer compare match value for channel 1 or 2 */
+   1145          void XMC_CCU8_SLICE_SetTimerCompareMatch(XMC_CCU8_SLICE_t *const slice,
+   1146                                                   const XMC_CCU8_SLICE_COMPARE_CHANNEL_t channel,
+   1147                                                   const uint16_t compare_val)
+   1148          {
+   1149            XMC_ASSERT("XMC_CCU8_SLICE_SetTimerCompareMatch:Invalid Slice Pointer", XMC_CCU8_IsValidSlice(slice));
+   1150            XMC_ASSERT("XMC_CCU8_SLICE_SetTimerCompareMatch:Invalid channel", XMC_CCU8_SLICE_CHECK_COMP_CHANNEL(channel));
+   1151          
+   1152            if (XMC_CCU8_SLICE_COMPARE_CHANNEL_1 == channel)
+   1153            {
+   1154              slice->CR1S = (uint32_t) compare_val;
+   1155            }
+   1156            else
+   1157            {
+   1158              slice->CR2S = (uint32_t) compare_val;
+   1159            }
+   1160          }
+   1161          
+   1162          /* Returns the timer compare match value for channel 1 or 2 */
+   1163          uint16_t XMC_CCU8_SLICE_GetTimerCompareMatch(const XMC_CCU8_SLICE_t *const slice,
+   1164                                                       const XMC_CCU8_SLICE_COMPARE_CHANNEL_t channel)
+   1165          {
+   1166            uint16_t compare_value;
+   1167          
+   1168            XMC_ASSERT("XMC_CCU8_SLICE_GetCompareMatch:Invalid Slice Pointer", XMC_CCU8_IsValidSlice(slice));
+   1169            XMC_ASSERT("XMC_CCU8_SLICE_GetCompareMatch:Invalid channel", XMC_CCU8_SLICE_CHECK_COMP_CHANNEL(channel));
+   1170          
+   1171            if (XMC_CCU8_SLICE_COMPARE_CHANNEL_1 == channel)
+   1172            {
+   1173              compare_value = (uint16_t) slice->CR1;
+   1174            }
+   1175            else
+   1176            {
+   1177              compare_value = (uint16_t) slice->CR2;
+   1178            }
+   1179          
+   1180            return(compare_value);
+   1181          }
+   1182          
+   1183          /* Binds a capcom event to an NVIC node  */
+   1184          void XMC_CCU8_SLICE_SetInterruptNode(XMC_CCU8_SLICE_t *const slice,
+   1185                                               const XMC_CCU8_SLICE_IRQ_ID_t event,
+   1186                                               const XMC_CCU8_SLICE_SR_ID_t sr)
+   1187          {
+   1188            uint32_t srs;
+   1189            uint32_t mask;
+   1190            uint32_t pos;
+   1191          
+   1192            XMC_ASSERT("XMC_CCU8_SLICE_SetInterruptNode:Invalid Slice Pointer", XMC_CCU8_IsValidSlice(slice));
+   1193            XMC_ASSERT("XMC_CCU8_SLICE_SetInterruptNode:Invalid SR ID ", XMC_CCU8_SLICE_CHECK_SR_ID(sr));
+   1194            XMC_ASSERT("XMC_CCU8_SLICE_SetInterruptNode:Invalid event", XMC_CCU8_SLICE_CHECK_INTERRUPT(event));
+   1195          
+   1196            srs = slice->SRS;
+   1197          
+   1198            switch(event)
+   1199            {
+   1200              case XMC_CCU8_SLICE_IRQ_ID_PERIOD_MATCH:
+   1201              case XMC_CCU8_SLICE_IRQ_ID_ONE_MATCH:
+   1202                mask = ((uint32_t) CCU8_CC8_SRS_POSR_Msk);
+   1203                pos  = CCU8_CC8_SRS_POSR_Pos;
+   1204                break;
+   1205          
+   1206              case XMC_CCU8_SLICE_IRQ_ID_COMPARE_MATCH_UP_CH_1:
+   1207              case XMC_CCU8_SLICE_IRQ_ID_COMPARE_MATCH_DOWN_CH_1:
+   1208                mask = ((uint32_t) CCU8_CC8_SRS_CM1SR_Msk);
+   1209                pos  = CCU8_CC8_SRS_CM1SR_Pos;
+   1210                break;
+   1211          
+   1212              case XMC_CCU8_SLICE_IRQ_ID_COMPARE_MATCH_UP_CH_2:
+   1213              case XMC_CCU8_SLICE_IRQ_ID_COMPARE_MATCH_DOWN_CH_2:
+   1214                mask = ((uint32_t) CCU8_CC8_SRS_CM2SR_Msk);
+   1215                pos  = CCU8_CC8_SRS_CM2SR_Pos;
+   1216                break;
+   1217          
+   1218              case XMC_CCU8_SLICE_IRQ_ID_EVENT0:
+   1219                mask = ((uint32_t) CCU8_CC8_SRS_E0SR_Msk);
+   1220                pos  = CCU8_CC8_SRS_E0SR_Pos;
+   1221                break;
+   1222          
+   1223              case XMC_CCU8_SLICE_IRQ_ID_EVENT1:
+   1224                mask = ((uint32_t) CCU8_CC8_SRS_E1SR_Msk);
+   1225                pos  = CCU8_CC8_SRS_E1SR_Pos;
+   1226                break;
+   1227          
+   1228              default:
+   1229                mask = ((uint32_t) CCU8_CC8_SRS_E2SR_Msk);
+   1230                pos  = CCU8_CC8_SRS_E2SR_Pos;
+   1231                break;
+   1232            }
+   1233            
+   1234            srs &= ~mask;
+   1235            srs |= (uint32_t)sr << pos;
+   1236            
+   1237            slice->SRS = srs;
+   1238          }
+   1239          
+   1240          /* Asserts passive level for the slice output */
+   1241          void XMC_CCU8_SLICE_SetPassiveLevel(XMC_CCU8_SLICE_t *const slice,
+   1242                                              const XMC_CCU8_SLICE_OUTPUT_t out,
+   1243                                              const XMC_CCU8_SLICE_OUTPUT_PASSIVE_LEVEL_t level)
+   1244          {
+   1245            uint32_t psl;
+   1246          
+   1247            XMC_ASSERT("XMC_CCU8_SLICE_SetPassiveLevel:Invalid Slice Pointer", XMC_CCU8_IsValidSlice(slice));
+   1248            XMC_ASSERT("XMC_CCU8_SLICE_SetPassiveLevel:Invalid Slice Output", XMC_CCU8_SLICE_CHECK_OUTPUT(out));
+   1249            XMC_ASSERT("XMC_CCU8_SLICE_SetPassiveLevel:Invalid Passive Level",
+   1250                       ((level == XMC_CCU8_SLICE_OUTPUT_PASSIVE_LEVEL_LOW) ||\
+   1251                        (level == XMC_CCU8_SLICE_OUTPUT_PASSIVE_LEVEL_HIGH)));
+   1252          
+   1253            psl = slice->PSL;
+   1254          
+   1255            psl &= ~((uint32_t) out);
+   1256            psl |= (uint32_t) level << ((uint32_t)out >> 1U);
+   1257          
+   1258            /* Program CC8 slice output passive level */
+   1259            slice->PSL = psl;
+   1260          }
+   1261          
+   1262          /* Initializes Dead time configuration for the slice outputs */
+   1263          void XMC_CCU8_SLICE_DeadTimeInit(XMC_CCU8_SLICE_t *const slice,
+   1264                                           const XMC_CCU8_SLICE_DEAD_TIME_CONFIG_t *const config)
+   1265          {
+   1266            XMC_ASSERT("XMC_CCU8_SLICE_ConfigureDeadTime:Invalid Slice Pointer", XMC_CCU8_IsValidSlice(slice));
+   1267          
+   1268            /* Program dead time value for channel 1 */
+   1269            slice->DC1R = config->dc1r;
+   1270            /* Program dead time value for channel 2 */
+   1271            slice->DC2R = config->dc2r;
+   1272            /* Program dead time control configuration */
+   1273            slice->DTC = config->dtc;
+   1274          }
+   1275          
+   1276          /* Activates or deactivates dead time for compare channel and ST path */
+   1277          void XMC_CCU8_SLICE_ConfigureDeadTime(XMC_CCU8_SLICE_t *const slice, const uint8_t mask)
+   1278          {
+   1279            XMC_ASSERT("XMC_CCU8_SLICE_ConfigureDeadTime:Invalid Slice Pointer", XMC_CCU8_IsValidSlice(slice));
+   1280            XMC_ASSERT("XMC_CCU8_SLICE_ConfigureDeadTime:Invalid Channel", (mask <= XMC_CCU8_SLICE_DEAD_TIME_CONFIG_MASK));
+   1281          
+   1282            slice->DTC &= ~((uint32_t) XMC_CCU8_SLICE_DEAD_TIME_CONFIG_MASK);
+   1283            slice->DTC |= (uint32_t) mask;
+   1284          }
+   1285          
+   1286          /* Configures rising edge delay and falling edge delay for dead time */
+   1287          void XMC_CCU8_SLICE_SetDeadTimeValue(XMC_CCU8_SLICE_t *const slice,
+   1288                                               const XMC_CCU8_SLICE_COMPARE_CHANNEL_t channel,
+   1289                                               const uint8_t rise_value,
+   1290                                               const uint8_t fall_value)
+   1291          {
+   1292            XMC_ASSERT("XMC_CCU8_SLICE_SetDeadTimeValue:Invalid Slice Pointer", XMC_CCU8_IsValidSlice(slice));
+   1293            XMC_ASSERT("XMC_CCU8_SLICE_SetDeadTimeValue:Invalid channel", XMC_CCU8_SLICE_CHECK_COMP_CHANNEL(channel));
+   1294          
+   1295            if (XMC_CCU8_SLICE_COMPARE_CHANNEL_1 == channel)
+   1296            {
+   1297              slice->DC1R = (((uint32_t) fall_value) << CCU8_CC8_DC1R_DT1F_Pos) | ((uint32_t) rise_value);
+   1298            }
+   1299            else
+   1300            {
+   1301            slice->DC2R = (((uint32_t) fall_value) << CCU8_CC8_DC2R_DT2F_Pos) | ((uint32_t) rise_value);
+   1302            }
+   1303          }
+   1304          
+   1305          /* Configures clock division factor for dead time */
+   1306          void XMC_CCU8_SLICE_SetDeadTimePrescaler(XMC_CCU8_SLICE_t *const slice, const XMC_CCU8_SLICE_DTC_DIV_t div_val)
+   1307          {
+   1308            XMC_ASSERT("XMC_CCU8_SLICE_SetDeadTimePrescaler:Invalid Slice Pointer", XMC_CCU8_IsValidSlice(slice));
+   1309            XMC_ASSERT("XMC_CCU8_SLICE_SetDeadTimePrescaler:Invalid divider value", XMC_CCU8_SLICE_CHECK_DTC_DIV(div_val));
+   1310          
+   1311            slice->DTC &= ~((uint32_t) CCU8_CC8_DTC_DTCC_Msk);
+   1312            slice->DTC |= ((uint32_t) div_val) << CCU8_CC8_DTC_DTCC_Pos;
+   1313          }
+   1314          
+   1315          /* Configures status ST1, ST2 mapping to STy */
+   1316          void XMC_CCU8_SLICE_ConfigureStatusBitOutput(XMC_CCU8_SLICE_t *const slice, const XMC_CCU8_SLICE_STATUS_t channel)
+   1317          {
+   1318            XMC_ASSERT("XMC_CCU8_SLICE_ConfigureStatusBitOutput:Invalid Slice Pointer", XMC_CCU8_IsValidSlice(slice));
+   1319            XMC_ASSERT("XMC_CCU8_SLICE_ConfigureStatusBitOutput:Invalid Channel", XMC_CCU8_SLICE_CHECK_SLICE_STATUS(channel));
+   1320          
+   1321            slice->TC &= ~((uint32_t) CCU8_CC8_TC_STOS_Msk);
+   1322            slice->TC |= ((uint32_t) channel) << CCU8_CC8_TC_STOS_Pos;
+   1323          }
+   1324          
+   1325          #endif /* CCU80 */
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   XMC_CCU8_DisableModule
+         8   -> XMC_CCU8_lGateClock
+       8   XMC_CCU8_EnableModule
+         8   -> XMC_CCU8_lUngateClock
+      16   XMC_CCU8_Init
+        16   -> XMC_CCU8_EnableModule
+        16   -> XMC_CCU8_StartPrescaler
+       0   XMC_CCU8_SLICE_Capture0Config
+       0   XMC_CCU8_SLICE_Capture1Config
+      16   XMC_CCU8_SLICE_CaptureInit
+        16   -> XMC_CCU8_SLICE_StopTimer
+      16   XMC_CCU8_SLICE_CompareInit
+        16   -> XMC_CCU8_SLICE_StopTimer
+       0   XMC_CCU8_SLICE_ConfigureDeadTime
+       8   XMC_CCU8_SLICE_ConfigureEvent
+       0   XMC_CCU8_SLICE_ConfigureStatusBitOutput
+       4   XMC_CCU8_SLICE_ConfigureStatusBitOverrideEvent
+       0   XMC_CCU8_SLICE_CountConfig
+       0   XMC_CCU8_SLICE_DeadTimeInit
+       0   XMC_CCU8_SLICE_DirectionConfig
+      16   XMC_CCU8_SLICE_EnableDithering
+        16   -> XMC_CCU8_SLICE_SetDitherCompareValue
+       0   XMC_CCU8_SLICE_GateConfig
+       0   XMC_CCU8_SLICE_GetCaptureRegisterValue
+       4   XMC_CCU8_SLICE_GetCapturedValueFromFifo
+      16   XMC_CCU8_SLICE_GetLastCapturedTimerValue
+       4   XMC_CCU8_SLICE_GetTimerCompareMatch
+       0   XMC_CCU8_SLICE_LoadConfig
+       0   XMC_CCU8_SLICE_LoadSelector
+      12   XMC_CCU8_SLICE_ModulationConfig
+       0   XMC_CCU8_SLICE_SetDeadTimePrescaler
+       4   XMC_CCU8_SLICE_SetDeadTimeValue
+       0   XMC_CCU8_SLICE_SetDitherCompareValue
+       4   XMC_CCU8_SLICE_SetInput
+       8   XMC_CCU8_SLICE_SetInterruptNode
+       0   XMC_CCU8_SLICE_SetOutPath
+       0   XMC_CCU8_SLICE_SetPassiveLevel
+       0   XMC_CCU8_SLICE_SetPrescaler
+       4   XMC_CCU8_SLICE_SetTimerCompareMatch
+       4   XMC_CCU8_SLICE_SetTimerCountingMode
+       0   XMC_CCU8_SLICE_SetTimerPeriodMatch
+       4   XMC_CCU8_SLICE_SetTimerRepeatMode
+       8   XMC_CCU8_SLICE_StartConfig
+       0   XMC_CCU8_SLICE_StatusBitOverrideConfig
+       4   XMC_CCU8_SLICE_StopConfig
+       0   XMC_CCU8_SLICE_StopTimer
+       8   XMC_CCU8_SLICE_TrapConfig
+       0   XMC_CCU8_SetModuleClock
+       0   XMC_CCU8_SetMultiChannelShadowTransferMode
+       0   XMC_CCU8_StartPrescaler
+       8   XMC_CCU8_lGateClock
+         8   -> XMC_SCU_CLOCK_GatePeripheralClock
+       8   XMC_CCU8_lUngateClock
+         8   -> XMC_SCU_CLOCK_UngatePeripheralClock
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable10
+       4  ??DataTable11
+       4  ??DataTable11_1
+       4  ??DataTable12
+       4  ??DataTable12_1
+       4  ??DataTable12_2
+       4  ??DataTable12_3
+       4  ??DataTable12_4
+       4  ??DataTable12_5
+       4  ??DataTable12_6
+       4  ??DataTable12_7
+       4  ??DataTable12_8
+       4  ??DataTable13
+       4  ??DataTable13_1
+       4  ??DataTable13_2
+       4  ??DataTable13_3
+       4  ??DataTable13_4
+       8  XMC_CCU8_DisableModule
+       8  XMC_CCU8_EnableModule
+      38  XMC_CCU8_Init
+      18  XMC_CCU8_SLICE_Capture0Config
+      18  XMC_CCU8_SLICE_Capture1Config
+      48  XMC_CCU8_SLICE_CaptureInit
+      70  XMC_CCU8_SLICE_CompareInit
+      18  XMC_CCU8_SLICE_ConfigureDeadTime
+      82  XMC_CCU8_SLICE_ConfigureEvent
+      20  XMC_CCU8_SLICE_ConfigureStatusBitOutput
+     120  XMC_CCU8_SLICE_ConfigureStatusBitOverrideEvent
+      20  XMC_CCU8_SLICE_CountConfig
+      14  XMC_CCU8_SLICE_DeadTimeInit
+      20  XMC_CCU8_SLICE_DirectionConfig
+      52  XMC_CCU8_SLICE_EnableDithering
+      20  XMC_CCU8_SLICE_GateConfig
+      12  XMC_CCU8_SLICE_GetCaptureRegisterValue
+      20  XMC_CCU8_SLICE_GetCapturedValueFromFifo
+      82  XMC_CCU8_SLICE_GetLastCapturedTimerValue
+      18  XMC_CCU8_SLICE_GetTimerCompareMatch
+      20  XMC_CCU8_SLICE_LoadConfig
+      18  XMC_CCU8_SLICE_LoadSelector
+      84  XMC_CCU8_SLICE_ModulationConfig
+      20  XMC_CCU8_SLICE_SetDeadTimePrescaler
+      32  XMC_CCU8_SLICE_SetDeadTimeValue
+       6  XMC_CCU8_SLICE_SetDitherCompareValue
+      28  XMC_CCU8_SLICE_SetInput
+      92  XMC_CCU8_SLICE_SetInterruptNode
+      16  XMC_CCU8_SLICE_SetOutPath
+      22  XMC_CCU8_SLICE_SetPassiveLevel
+      24  XMC_CCU8_SLICE_SetPrescaler
+      20  XMC_CCU8_SLICE_SetTimerCompareMatch
+      26  XMC_CCU8_SLICE_SetTimerCountingMode
+       6  XMC_CCU8_SLICE_SetTimerPeriodMatch
+      26  XMC_CCU8_SLICE_SetTimerRepeatMode
+      44  XMC_CCU8_SLICE_StartConfig
+      20  XMC_CCU8_SLICE_StatusBitOverrideConfig
+      40  XMC_CCU8_SLICE_StopConfig
+      10  XMC_CCU8_SLICE_StopTimer
+      70  XMC_CCU8_SLICE_TrapConfig
+      18  XMC_CCU8_SetModuleClock
+      16  XMC_CCU8_SetMultiChannelShadowTransferMode
+      12  XMC_CCU8_StartPrescaler
+      20  XMC_CCU8_lGateClock
+      20  XMC_CCU8_lUngateClock
+
+ 
+ 1 484 bytes in section .text
+ 
+ 1 484 bytes of CODE memory
+
+Errors: none
+Warnings: none

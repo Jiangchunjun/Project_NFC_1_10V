@@ -46,6 +46,7 @@
 #include "i2c_userinterface.h"
 #include "nfc_parameters.h"
 
+#include "system.h"
 #include <gpio_xmc1300_tssop38.h>
 
 //------------------------------------------------------------------------------
@@ -59,6 +60,8 @@ STATIC uint8_t nfc_tag_mem_tmp[sizeof(nfc_tag_identification_register_t)];
 //------------------------------------------------------------------------------
 nfc_init_status_t nfc_init_status;
 uint8_t g_nfc_start_flag=0;
+
+extern uint8_t g_nfc_tag_read;
 //-----------------------------------------------------------------------------
 // local functions
 //-----------------------------------------------------------------------------
@@ -1609,6 +1612,7 @@ bool is_fast_timer_expired(void)
  */
 bool is_slow_timer_expired(void)
 {
+  extern uint8_t g_nfc_flag_save;
     if (nfc_local_state.slow_timer_cnt < NFC_SLOW_TIMER_CNT)
     {
         nfc_local_state.slow_timer_cnt++;
@@ -1617,6 +1621,7 @@ bool is_slow_timer_expired(void)
     else
     {
         nfc_local_state.slow_timer_cnt = 0;
+        g_nfc_flag_save=1;
         return true;
     }
 }
@@ -1787,9 +1792,9 @@ void nfc_mpc_start_addr_create(mpc_keydata_t const * const * mpc_keydata_ptr,
  */
 void NfcInit(void)
 {
+
     // set initial FSM state
     nfc_local_state.fsm_state = nfc_fsm_state_idle;
-
     // initialize power on condition to true
     nfc_local_state.is_power_on_condition = true;
 
@@ -1811,8 +1816,6 @@ void NfcInit(void)
     // initialize MB read TAG request vector (set bit for each MB)
     nfc_local_state.tag_req_mb_read = NFC_INST_REQUEST_ALL;
 
-    // initialize MB update Tag request vector (set bit for each MB)
-    nfc_local_state.tag_req_mb_update = NFC_INST_REQUEST_ALL;
 
     // set pointer for TAG Control Registers to nfc_tag_mem_tmp
     nfc_local_state.tag_ctrl_register =
@@ -1852,13 +1855,20 @@ void NfcInit(void)
     nfc_local_state.access_right_init_idx = 0;
 
     // nvm write cycles == 0 -> MCU has just been flashed
-    if(0)//(nvmGetWriteCycles() == 0)
+    if(nvmGetWriteCycles() == 0)//nvm is not right need to read tag
     {
 
-        nfc_local_state.is_tag_initialization_requested = true;
-        tag_control_register_init();
+       // nfc_local_state.is_tag_initialization_requested = true;
+        //tag_control_register_init();
+           handle_tag_register_prr(0xFFFFFFFF); // set control rigistor
+           
     }
     else
+    {
+      // initialize MB update Tag request vector (set bit for each MB)
+      nfc_local_state.tag_req_mb_update = NFC_INST_REQUEST_ALL; //moon 
+      g_nfc_tag_read=1;
+    }
     {
         // set fast timer to expired to force immediately TAG Control reg read
         nfc_local_state.fast_timer_cnt = NFC_FAST_TIMER_CNT;
@@ -1880,6 +1890,8 @@ void NfcInit(void)
 
     // initialize I2C
     I2cInit();
+    
+ 
 }
 
 //-----------------------------------------------------------------------------
@@ -2269,15 +2281,23 @@ void NfcCyclic(void)
 {
     bool is_trigger_mpc_change_counter;
     bool is_trigger_slow_timer;
-    
+    extern uint8_t g_nfc_flag_save;
     static uint8_t save=0;
-    if(save)
+    extern uint8_t g_astro_flag;
+    
+ 
+    if(1)//g_nfc_tag_read>=3)
     {
-      nvmWriteAll();
-      save=0;
+    if(save||g_nfc_flag_save)
+    {
+       
       if(I2cAreAllPendingTransfersDone()&&nfc_local_state.fsm_state==nfc_fsm_state_idle)
       {
+        
         NfcOnPowerDown(nfc_run_time);
+        nvmWriteAll();
+        save=0;
+        g_nfc_flag_save=0;
       }
       
       //WDT->SRV = 0xAFFEAFFEUL;   //os3_wdt_force_sys_reset();
@@ -2523,6 +2543,12 @@ void NfcCyclic(void)
                 // all requested MBs are loaded, change FSM state to Idle
                 nfc_local_state.fsm_state = nfc_fsm_state_idle;
                 
+                if(g_nfc_tag_read==0)
+                  
+                {
+                   g_nfc_tag_read=2;
+                }
+                
                 save=1;
             }
         break;
@@ -2670,9 +2696,11 @@ void NfcCyclic(void)
         default:
         break;
     }
-
+     
     // call I2C Cyclic function
     I2cCyclic();
+    
+    }
 }
 
 

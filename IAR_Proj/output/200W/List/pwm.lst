@@ -1,0 +1,1125 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:54
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Driver\src\pwm.c
+#    Command line =  
+#        "C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Driver\src\pwm.c"
+#        -D XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\pwm.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\pwm.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Driver\src\pwm.c
+      1          /*
+      2          ***************************************************************************************************
+      3          *                           PWM Output Control Function Implementation
+      4          *
+      5          * File   : pwm.c
+      6          * Author : Douglas Xie
+      7          * Date   : 2016.06.13
+      8          ***************************************************************************************************
+      9          * Copyright (C) 2016 OSRAM Asia Pacific Management Company.  All rights reserved.
+     10          ***************************************************************************************************
+     11          */
+     12          
+     13          /* Include Head Files ----------------------------------------------------------------------------*/
+     14          #include "pwm.h"
+
+  #warning ::::::::::::::::::::::::::: Using original LEDset resistor (wrong for MP) :::::::::::::::::::::::::::
+   ^
+"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\inc\power_config_200w.h",86  Warning[Pe1105]: 
+          #warning directive: ::::::::::::::::::::::::::: Using original LEDset
+          resistor (wrong for MP) :::::::::::::::::::::::::::
+
+  #warning ::::::::::::::::::::::::::: Using original LEDset resistor (wrong for MP) :::::::::::::::::::::::::::
+   ^
+"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\inc\power_config_200w.h",86  Warning[Pe1105]: 
+          #warning directive: ::::::::::::::::::::::::::: Using original LEDset
+          resistor (wrong for MP) :::::::::::::::::::::::::::
+     15          
+     16          /* Macro Defines ---------------------------------------------------------------------------------*/
+     17          
+     18          /* Global Variable -------------------------------------------------------------------------------*/
+     19          
+     20          /* Private Variable ------------------------------------------------------------------------------*/
+     21          /* Record the pwm duty for 4 channels */
+     22          uint16_t g_pwm_duty[4] = {0, 0, 0, 0};
+     23          
+     24          /* PWM enter protection state variable */
+     25          uint8_t g_protect_state = PWM_STATE_NORMAL;
+     26          
+     27          extern uint8_t s_flag_off;
+     28          /* Constant Variable -----------------------------------------------------------------------------*/
+     29          /* CCU4 timer slice compare config */
+     30          const XMC_CCU4_SLICE_COMPARE_CONFIG_t g_pwm_timer_config =
+     31          {
+     32              .timer_mode          = XMC_CCU4_SLICE_TIMER_COUNT_MODE_EA,
+     33              .monoshot            = XMC_CCU4_SLICE_TIMER_REPEAT_MODE_REPEAT,
+     34              .shadow_xfer_clear   = 1U,
+     35              .dither_timer_period = 0U,
+     36              .dither_duty_cycle   = 0U,
+     37              .prescaler_mode	     = XMC_CCU4_SLICE_PRESCALER_MODE_NORMAL,
+     38              .mcm_enable		     = 0U,
+     39              .prescaler_initval   = XMC_CCU4_SLICE_PRESCALER_1,
+     40              .float_limit         = 0U,
+     41              .dither_limit		 = 0U,
+     42              .timer_concatenation = 0U,
+     43          #if (PWM_DUTY_INVERT == 1)
+     44              .passive_level       = XMC_CCU4_SLICE_OUTPUT_PASSIVE_LEVEL_LOW
+     45          #else
+     46              .passive_level       = XMC_CCU4_SLICE_OUTPUT_PASSIVE_LEVEL_HIGH
+     47          #endif
+     48          };
+     49          
+     50          /* CCU4 timer slice event config for Event-1 */
+     51          const XMC_CCU4_SLICE_EVENT_CONFIG_t g_slice_event_config = 
+     52          {
+     53              .duration     = XMC_CCU4_SLICE_EVENT_FILTER_DISABLED,
+     54              .edge         = XMC_CCU4_SLICE_EVENT_EDGE_SENSITIVITY_RISING_EDGE,
+     55              .level        = XMC_CCU4_SLICE_EVENT_LEVEL_SENSITIVITY_ACTIVE_HIGH, /* Not needed */
+     56              .mapped_input = XMC_CCU4_SLICE_INPUT_I
+     57          };
+     58          
+     59          /* Function Declaration --------------------------------------------------------------------------*/
+     60          void PWM_CCU4_TimerConfig(void);
+     61          
+     62          /* Function Implement ----------------------------------------------------------------------------*/
+     63          /*******************************************************************************
+     64          * @Brief   PWM CCU4 Timer Config
+     65          * @Param   
+     66          * @Note    Config CCU4 global timer and slice timer to output PWM signal
+     67          * @Return  
+     68          *******************************************************************************/
+     69          void PWM_CCU4_TimerConfig(void)
+     70          {
+     71              /*------------ CCU4 Global Timer Config -----------------------------------*/
+     72              /* Ensure fCCU reaches CCU42 */
+     73              XMC_CCU4_SetModuleClock(CCU40, XMC_CCU4_CLOCK_SCU);
+     74              XMC_CCU4_Init(CCU40, XMC_CCU4_SLICE_MCMS_ACTION_TRANSFER_PR_CR);
+     75              
+     76              /* Start the prescaler and restore clocks to slices */
+     77              XMC_CCU4_StartPrescaler(CCU40);  
+     78              
+     79              /*------------ CCU4 Slice Timer Config for PWM_CH0 ------------------------*/
+     80              /* Get the slice out of idle mode */
+     81              XMC_CCU4_EnableClock(CCU40, PWM_ID_CH_0); 
+     82              
+     83              /* Initialize the Slice */
+     84              XMC_CCU4_SLICE_CompareInit(CCU40_CC40, &g_pwm_timer_config);
+     85              
+     86              /* Configure Event-1 and map it to Input-I */
+     87              XMC_CCU4_SLICE_ConfigureEvent(CCU40_CC40, XMC_CCU4_SLICE_EVENT_1, &g_slice_event_config);
+     88              
+     89              /* Map Event-1 to Start function */
+     90              XMC_CCU4_SLICE_StartConfig(CCU40_CC40, XMC_CCU4_SLICE_EVENT_1, XMC_CCU4_SLICE_START_MODE_TIMER_START_CLEAR);
+     91              
+     92              /* Setup PWM period and init duty cycle */
+     93              PWM_SetDuty(PWM_ID_CH_0, PWM_DUTY_DEFAULT, PWM_MODE_LIMIT);
+     94              
+     95              /*------------ CCU4 Slice Timer Config for PWM_CH1 ------------------------*/
+     96              /* Get the slice out of idle mode */
+     97              XMC_CCU4_EnableClock(CCU40, PWM_ID_CH_1); 
+     98              
+     99              /* Initialize the Slice */
+    100              XMC_CCU4_SLICE_CompareInit(CCU40_CC41, &g_pwm_timer_config);
+    101              
+    102              /* Configure Event-1 and map it to Input-I */
+    103              XMC_CCU4_SLICE_ConfigureEvent(CCU40_CC41, XMC_CCU4_SLICE_EVENT_1, &g_slice_event_config);
+    104              
+    105              /* Map Event-1 to Start function */
+    106              XMC_CCU4_SLICE_StartConfig(CCU40_CC41, XMC_CCU4_SLICE_EVENT_1, XMC_CCU4_SLICE_START_MODE_TIMER_START_CLEAR);
+    107              
+    108              /* Setup PWM period and init duty cycle */
+    109              PWM_SetDuty(PWM_ID_CH_1, PWM_DUTY_DEFAULT, PWM_MODE_LIMIT);
+    110              
+    111              /*------------ CCU4 Slice Timer Config for PWM_CH2 ------------------------*/
+    112              /* Get the slice out of idle mode */
+    113              XMC_CCU4_EnableClock(CCU40, PWM_ID_CH_2); 
+    114              
+    115              /* Initialize the Slice */
+    116              XMC_CCU4_SLICE_CompareInit(CCU40_CC42, &g_pwm_timer_config);
+    117              
+    118              /* Configure Event-1 and map it to Input-I */
+    119              XMC_CCU4_SLICE_ConfigureEvent(CCU40_CC42, XMC_CCU4_SLICE_EVENT_1, &g_slice_event_config);
+    120              
+    121              /* Map Event-1 to Start function */
+    122              XMC_CCU4_SLICE_StartConfig(CCU40_CC42, XMC_CCU4_SLICE_EVENT_1, XMC_CCU4_SLICE_START_MODE_TIMER_START_CLEAR);
+    123              
+    124              /* Setup PWM period and init duty cycle */
+    125              PWM_SetDuty(PWM_ID_CH_2, PWM_DUTY_DEFAULT, PWM_MODE_LIMIT);
+    126              
+    127              /*------------ CCU4 Slice Timer Config for PWM_CH3 ------------------------*/
+    128          #ifdef ENABLE_PWM_CH_3
+    129              /* Get the slice out of idle mode */
+    130              XMC_CCU4_EnableClock(CCU40, PWM_ID_CH_3); 
+    131              
+    132              /* Initialize the Slice */
+    133              XMC_CCU4_SLICE_CompareInit(CCU40_CC43, &g_pwm_timer_config);
+    134              
+    135              /* Configure Event-1 and map it to Input-I */
+    136              XMC_CCU4_SLICE_ConfigureEvent(CCU40_CC43, XMC_CCU4_SLICE_EVENT_1, &g_slice_event_config);
+    137              
+    138              /* Map Event-1 to Start function */
+    139              XMC_CCU4_SLICE_StartConfig(CCU40_CC43, XMC_CCU4_SLICE_EVENT_1, XMC_CCU4_SLICE_START_MODE_TIMER_START_CLEAR);
+    140              
+    141              /* Setup PWM period and init duty cycle */
+    142              PWM_SetDuty(PWM_ID_CH_3, PWM_DEFAULT_DUTY, PWM_MODE_LIMIT);
+    143          #endif /* ENABLE_PWM_CH_3 */
+    144          }
+    145          
+    146          /*******************************************************************************
+    147          * @Brief   Enable PWM Module and Start Output
+    148          * @Param   
+    149          * @Note    Config CCU4 to generate PWM signal and start CCU4 timer
+    150          *          Config GPIO CCU40.OUTx to output PWM signal
+    151          * @Return  
+    152          *******************************************************************************/
+    153          void PWM_Enable(void)
+    154          {
+    155              XMC_GPIO_CONFIG_t pwm_output_config;
+    156              
+    157              /*------------ CCU4 Configuration -----------------------------------------*/
+    158              /* Config CCU4 timer to generate PWM siganl */
+    159              PWM_CCU4_TimerConfig();
+    160              
+    161              /* Start CCU4 Timer by generating an external start trigger */
+    162              XMC_SCU_SetCcuTriggerHigh(SCU_GENERAL_CCUCON_GSC40_Msk);
+    163              
+    164              /*------------ GPIO Configuration -----------------------------------------*/  
+    165              /* PWM pins mode, set to push-pull output in ALT4 function */
+    166              pwm_output_config.mode = XMC_GPIO_MODE_OUTPUT_PUSH_PULL_ALT4;
+    167              
+    168              /* PWM channel gpio pins configuration */
+    169              XMC_GPIO_Init(PWM_GPIO_CH_0, &pwm_output_config);
+    170              XMC_GPIO_Init(PWM_GPIO_CH_1, &pwm_output_config);
+    171              XMC_GPIO_Init(PWM_GPIO_CH_2, &pwm_output_config);
+    172              
+    173          #ifdef ENABLE_PWM_CH_3
+    174              XMC_GPIO_Init(PWM_GPIO_CH_3, &pwm_output_config);
+    175          #endif /* ENABLE_PWM_CH_3 */    
+    176              
+    177              /* Reset channel duty record */
+    178              g_pwm_duty[PWM_ID_CH_0] = 0;
+    179              g_pwm_duty[PWM_ID_CH_1] = 0;
+    180              g_pwm_duty[PWM_ID_CH_2] = 0;
+    181              g_pwm_duty[PWM_ID_CH_3] = 0;    
+    182              
+    183              /* Reset protection state */
+    184              PWM_ResetProtectState();
+    185          }
+    186          
+    187          
+    188          /*******************************************************************************
+    189          * @Brief   Disable PWM Module and Stop Output
+    190          * @Param   
+    191          * @Note   Disable CCU4 timer and config GPIO to output low/high level(PWM 0%)
+    192          *          -- if PWM channel is enable, disable PWM Module will output PWM 0%
+    193          *             whether is low or high level depends on the define PWM_DUTY_INVERT
+    194          *          -- if PWM channel is disable, output will always be low level
+    195          * @Return  
+    196          *******************************************************************************/
+    197          void PWM_Disable(void)
+    198          {
+    199              XMC_GPIO_CONFIG_t pwm_output_config;
+    200              
+    201              /*------------ GPIO Configuration -----------------------------------------*/    
+    202              /* PWM pins mode, set to push-pull output in normal function */
+    203              pwm_output_config.mode = XMC_GPIO_MODE_OUTPUT_PUSH_PULL;
+    204          #if (PWM_DUTY_INVERT == 1)
+    205              pwm_output_config.output_level = XMC_GPIO_OUTPUT_LEVEL_HIGH;
+    206          #else
+    207              pwm_output_config.output_level = XMC_GPIO_OUTPUT_LEVEL_LOW;
+    208          #endif
+    209              
+    210              /* PWM channel gpio pins configuration */
+    211              XMC_GPIO_Init(PWM_GPIO_CH_0, &pwm_output_config);
+    212              XMC_GPIO_Init(PWM_GPIO_CH_1, &pwm_output_config);
+    213              XMC_GPIO_Init(PWM_GPIO_CH_2, &pwm_output_config);
+    214              
+    215          #ifdef ENABLE_PWM_CH_3
+    216              XMC_GPIO_Init(PWM_GPIO_CH_3, &pwm_output_config);
+    217          #endif /* ENABLE_PWM_CH_3 */    
+    218              
+    219              /*------------ CCU4 Configuration -----------------------------------------*/
+    220              /* Disable CCU4 timer to stop PWM output */
+    221              XMC_CCU4_DisableModule(CCU40);
+    222              
+    223              /* Reset channel duty record */
+    224              g_pwm_duty[PWM_ID_CH_0] = 0;
+    225              g_pwm_duty[PWM_ID_CH_1] = 0;
+    226              g_pwm_duty[PWM_ID_CH_2] = 0;
+    227              g_pwm_duty[PWM_ID_CH_3] = 0;  
+    228          }
+    229          
+    230          
+    231          /*******************************************************************************
+    232          * @Brief   Setup PWM Duty Cycle
+    233          * @Param   [in]channel: input pwm channel id form define PWM_ID_CH_x
+    234          *          [in]duty: input duty value which unit is 0.1%
+    235          *          [in]mode: input PWM_MODE_LIMIT or PWM_MODE_FULL
+    236          * @Note    Calculate pulse value according to duty value and update CCU4x timer
+    237          *          Protection mode will disable PWM duty limitation
+    238          * @Return  
+    239          *******************************************************************************/
+    240          void PWM_SetDuty(uint8_t channel, uint16_t duty, uint8_t mode)
+    241          {
+    242              uint32_t pulse = 0;
+    243              uint16_t period = 0;
+    244              
+    245          #if (PWM_DUTY_INVERT == 1)
+    246              /* Convert pwm duty for power control channel when need invert */
+    247              if(channel == PWM_ID_CH_CTRL)
+    248              {
+    249                  duty = PWM_DUTY_FULL - duty;
+    250              }
+    251          #endif
+    252          
+    253               /* Choose period for channel */
+    254              if(channel == PWM_ID_CH_CTRL)
+    255              {
+    256                  period = PWM_PeriodUpdate();//PWM_PERIOD_CTRL;
+    257                  //duty=370;
+    258              }
+    259              else
+    260              {
+    261                  period = PWM_PERIOD_OVP;
+    262              }
+    263              
+    264              /* Normal mode will enable duty limitation */
+    265              if(mode == PWM_MODE_LIMIT)
+    266              {
+    267                  /* Upper limit */
+    268                  if(duty > PWM_DUTY_MAX)
+    269                  {
+    270                      duty = PWM_DUTY_MAX;
+    271                  }
+    272                  
+    273                  /* Lower limit */
+    274                  if(duty < PWM_DUTY_MIN)
+    275                  {
+    276                      duty = PWM_DUTY_MIN;
+    277                  }
+    278              }
+    279              
+    280              /* Duty convert to pulse */
+    281              pulse = (uint32_t)duty * (uint32_t)period / ((uint32_t)PWM_DUTY_FULL);
+    282              
+    283              /* Set pluse */
+    284              switch(channel)
+    285              {
+    286              case PWM_ID_CH_0:
+    287                  if(g_pwm_duty[PWM_ID_CH_0] != pulse)
+    288                  {
+    289                      g_pwm_duty[PWM_ID_CH_0] = pulse;    // Record puluse counter
+    290                      XMC_CCU4_SLICE_SetTimerPeriodMatch(CCU40_CC40, period);
+    291                      XMC_CCU4_SLICE_SetTimerCompareMatch(CCU40_CC40, (uint16_t)pulse);
+    292                      XMC_CCU4_EnableShadowTransfer(CCU40, XMC_CCU4_SHADOW_TRANSFER_SLICE_0);
+    293                  }
+    294                  break;     
+    295                  
+    296              case PWM_ID_CH_1:
+    297                  if(g_pwm_duty[PWM_ID_CH_1] != pulse)
+    298                  {
+    299                      g_pwm_duty[PWM_ID_CH_1] = pulse;    // Record puluse counter
+    300                      XMC_CCU4_SLICE_SetTimerPeriodMatch(CCU40_CC41, period);
+    301                      XMC_CCU4_SLICE_SetTimerCompareMatch(CCU40_CC41, (uint16_t)pulse);
+    302                      XMC_CCU4_EnableShadowTransfer(CCU40, XMC_CCU4_SHADOW_TRANSFER_SLICE_1);
+    303                  }
+    304                  break;
+    305                  
+    306              case PWM_ID_CH_2:
+    307                  
+    308                  if(g_pwm_duty[PWM_ID_CH_2] != pulse)
+    309                  {
+    310                      g_pwm_duty[PWM_ID_CH_2] = pulse;    // Record puluse counter
+    311                      XMC_CCU4_SLICE_SetTimerPeriodMatch(CCU40_CC42, period);
+    312                      XMC_CCU4_SLICE_SetTimerCompareMatch(CCU40_CC42, (uint16_t)pulse);
+    313                      XMC_CCU4_EnableShadowTransfer(CCU40, XMC_CCU4_SHADOW_TRANSFER_SLICE_2);
+    314                  }
+    315                  break;
+    316                  
+    317          #ifdef ENABLE_PWM_CH_3
+    318              case PWM_ID_CH_3:
+    319                  if(g_pwm_duty[PWM_ID_CH_3] != pulse)
+    320                  {
+    321                      g_pwm_duty[PWM_ID_CH_3] = pulse;    // Record puluse counter
+    322                      XMC_CCU4_SLICE_SetTimerPeriodMatch(CCU40_CC43, period);
+    323                      XMC_CCU4_SLICE_SetTimerCompareMatch(CCU40_CC43, (uint16_t)pulse);
+    324                      XMC_CCU4_EnableShadowTransfer(CCU40, XMC_CCU4_SHADOW_TRANSFER_SLICE_3);
+    325                  }
+    326                  break;
+    327          #endif /* ENABLE_PWM_CH_3 */
+    328                  
+    329              default:
+    330                  break;
+    331              }
+    332          }
+    333          
+    334          /*******************************************************************************
+    335          * @Brief   Get Current PWM Duty Cycle
+    336          * @Param   [in]channel: input pwm channel id form define PWM_ID_CH_x
+    337          * @Note    
+    338          * @Return  current pwm channel duty cycle
+    339          *******************************************************************************/
+    340          uint16_t PWM_GetDuty(uint8_t channel)
+    341          {
+    342              uint16_t duty = 0;
+    343              uint16_t pulse = 0;
+    344              uint16_t period = 0;
+    345          
+    346               /* Choose period for channel */
+    347              if(channel == PWM_ID_CH_CTRL)
+    348              {
+    349                  period = PWM_PeriodUpdate();//PWM_PERIOD_CTRL;
+    350              }
+    351              else
+    352              {
+    353                  period = PWM_PERIOD_OVP;
+    354              }
+    355              
+    356              
+    357              /* Get pulse record from global variable */
+    358              switch(channel)
+    359              {
+    360              case PWM_ID_CH_0:
+    361                  pulse = g_pwm_duty[PWM_ID_CH_0];
+    362                  break;     
+    363                  
+    364              case PWM_ID_CH_1:
+    365                  pulse = g_pwm_duty[PWM_ID_CH_1];
+    366                  break;
+    367                  
+    368              case PWM_ID_CH_2:
+    369                  pulse = g_pwm_duty[PWM_ID_CH_2];
+    370                  break;
+    371                  
+    372          #ifdef ENABLE_PWM_CH_3
+    373              case PWM_ID_CH_3:
+    374                  pulse = g_pwm_duty[PWM_ID_CH_3];
+    375                  break;
+    376          #endif /* ENABLE_PWM_CH_3 */
+    377                  
+    378              default:
+    379                  break;
+    380              }
+    381          
+    382              /* Transform to duty */
+    383              duty = (uint16_t)((uint32_t)pulse * (uint32_t)PWM_DUTY_FULL / (uint32_t)period);
+    384          
+    385          #if (PWM_DUTY_INVERT == 1)
+    386              /* Convert pwm duty for power control channel when need invert */
+    387              if(channel == PWM_ID_CH_CTRL)
+    388              {
+    389                  duty = PWM_DUTY_FULL - duty;
+    390              }
+    391          #endif
+    392              
+    393              return duty;
+    394          }
+    395          
+    396          
+    397          /*******************************************************************************
+    398          * @Brief   PWM Duty Cycle Step Up
+    399          * @Param   [in]channel: input pwm channel id form define PWM_ID_CH_x
+    400          *          [in]steps: move steps
+    401          * @Note    Set pwm timer pulse increase one step
+    402          * @Return  
+    403          *******************************************************************************/
+    404          void PWM_DutyStepUp(uint8_t channel, uint16_t steps)
+    405          {
+    406              uint16_t max_pulse = 0;
+    407              uint16_t period = 0;
+    408              uint16_t new_pulse = 0;
+    409              
+    410               /* Choose period for channel */
+    411              if(channel == PWM_ID_CH_CTRL)
+    412              {
+    413                  period = PWM_PeriodUpdate();//PWM_PERIOD_CTRL;
+    414              }
+    415              else
+    416              {
+    417                  period = PWM_PERIOD_OVP;
+    418              }
+    419              
+    420              /* Calculate max pulse counte */
+    421              max_pulse = (uint16_t)((uint32_t)PWM_DUTY_MAX * (uint32_t)period / ((uint32_t)PWM_DUTY_FULL));
+    422          
+    423              /* Increase pwm channel pulse width one step */
+    424              switch(channel)
+    425              {
+    426              case PWM_ID_CH_0:
+    427                  if(max_pulse > (g_pwm_duty[PWM_ID_CH_0] + steps))
+    428                  {
+    429                      new_pulse = g_pwm_duty[PWM_ID_CH_0] + steps;
+    430                  }
+    431                  else
+    432                  {
+    433                      new_pulse = max_pulse;
+    434                  }
+    435                  if(g_pwm_duty[PWM_ID_CH_0] != new_pulse)
+    436                  {
+    437                      g_pwm_duty[PWM_ID_CH_0] = new_pulse;
+    438                      XMC_CCU4_SLICE_SetTimerPeriodMatch(CCU40_CC40, period);
+    439                      XMC_CCU4_SLICE_SetTimerCompareMatch(CCU40_CC40, g_pwm_duty[PWM_ID_CH_0]);
+    440                      XMC_CCU4_EnableShadowTransfer(CCU40, XMC_CCU4_SHADOW_TRANSFER_SLICE_0);
+    441                  }
+    442                  break;     
+    443                  
+    444              case PWM_ID_CH_1:
+    445                  if(max_pulse > (g_pwm_duty[PWM_ID_CH_1] + steps))
+    446                  {
+    447                      new_pulse = g_pwm_duty[PWM_ID_CH_1] + steps;
+    448                  }
+    449                  else
+    450                  {
+    451                      new_pulse = max_pulse;
+    452                  }
+    453                  if(g_pwm_duty[PWM_ID_CH_1] != new_pulse)
+    454                  {
+    455                      g_pwm_duty[PWM_ID_CH_1] = new_pulse;
+    456                      XMC_CCU4_SLICE_SetTimerPeriodMatch(CCU40_CC41, period);
+    457                      XMC_CCU4_SLICE_SetTimerCompareMatch(CCU40_CC41, g_pwm_duty[PWM_ID_CH_1]);
+    458                      XMC_CCU4_EnableShadowTransfer(CCU40, XMC_CCU4_SHADOW_TRANSFER_SLICE_1);
+    459                  }
+    460                  break;
+    461                  
+    462              case PWM_ID_CH_2:
+    463                  if(max_pulse > (g_pwm_duty[PWM_ID_CH_2] + steps))
+    464                  {
+    465                      new_pulse = g_pwm_duty[PWM_ID_CH_2] + steps;
+    466                  }
+    467                  else
+    468                  {
+    469                      new_pulse = max_pulse;
+    470                  }
+    471                  if(g_pwm_duty[PWM_ID_CH_2] != new_pulse)
+    472                  {
+    473                      g_pwm_duty[PWM_ID_CH_2] = new_pulse;
+    474                      XMC_CCU4_SLICE_SetTimerPeriodMatch(CCU40_CC42, period);
+    475                      XMC_CCU4_SLICE_SetTimerCompareMatch(CCU40_CC42, g_pwm_duty[PWM_ID_CH_2]);
+    476                      XMC_CCU4_EnableShadowTransfer(CCU40, XMC_CCU4_SHADOW_TRANSFER_SLICE_2);
+    477                  }
+    478                  break;
+    479                  
+    480          #ifdef ENABLE_PWM_CH_3
+    481              case PWM_ID_CH_3:
+    482                  if(max_pulse > (g_pwm_duty[PWM_ID_CH_3] + steps))
+    483                  {
+    484                      new_pulse = g_pwm_duty[PWM_ID_CH_3] + steps;
+    485                  }
+    486                  else
+    487                  {
+    488                      new_pulse = max_pulse;
+    489                  }
+    490                  if(g_pwm_duty[PWM_ID_CH_3] != new_pulse)
+    491                  {
+    492                      g_pwm_duty[PWM_ID_CH_3] = new_pulse;
+    493                      XMC_CCU4_SLICE_SetTimerPeriodMatch(CCU40_CC43, period);
+    494                      XMC_CCU4_SLICE_SetTimerCompareMatch(CCU40_CC43, g_pwm_duty[PWM_ID_CH_3]);
+    495                      XMC_CCU4_EnableShadowTransfer(CCU40, XMC_CCU4_SHADOW_TRANSFER_SLICE_3);
+    496                  }
+    497                  break;
+    498          #endif /* ENABLE_PWM_CH_3 */
+    499                  
+    500              default:
+    501                  break;
+    502              }
+    503          }
+    504          
+    505          
+    506          /*******************************************************************************
+    507          * @Brief   PWM Duty Cycle Step Down
+    508          * @Param   [in]channel: input pwm channel id form define PWM_ID_CH_x
+    509          *          [in]steps: move steps
+    510          * @Note    Set pwm timer pulse decrease one step
+    511          * @Return  
+    512          *******************************************************************************/
+    513          void PWM_DutyStepDown(uint8_t channel, uint16_t steps)
+    514          {
+    515              uint16_t min_pulse = 0;
+    516              uint16_t period = 0;
+    517              uint16_t new_pulse = 0;
+    518              
+    519               /* Choose period for channel */
+    520              if(channel == PWM_ID_CH_CTRL)
+    521              {
+    522                  period = PWM_PeriodUpdate();//PWM_PERIOD_CTRL;
+    523              }
+    524              else
+    525              {
+    526                  period = PWM_PERIOD_OVP;
+    527              }
+    528              
+    529              /* Calculate max pulse counte */
+    530              min_pulse = (uint16_t)((uint32_t)PWM_DUTY_MIN * (uint32_t)period / ((uint32_t)PWM_DUTY_FULL));
+    531          
+    532              /* Increase pwm channel pulse width one step */
+    533              switch(channel)
+    534              {
+    535              case PWM_ID_CH_0:
+    536                  if((min_pulse + steps) < g_pwm_duty[PWM_ID_CH_0])
+    537                  {
+    538                      new_pulse = g_pwm_duty[PWM_ID_CH_0] - steps;
+    539                  }
+    540                  else
+    541                  {
+    542                      new_pulse = min_pulse;
+    543                  }
+    544                  if(g_pwm_duty[PWM_ID_CH_0] != new_pulse)
+    545                  {
+    546                      g_pwm_duty[PWM_ID_CH_0] = new_pulse;
+    547                      XMC_CCU4_SLICE_SetTimerPeriodMatch(CCU40_CC40, period);
+    548                      XMC_CCU4_SLICE_SetTimerCompareMatch(CCU40_CC40, g_pwm_duty[PWM_ID_CH_0]);
+    549                      XMC_CCU4_EnableShadowTransfer(CCU40, XMC_CCU4_SHADOW_TRANSFER_SLICE_0);
+    550                  }
+    551                  break;     
+    552                  
+    553              case PWM_ID_CH_1:
+    554                  if((min_pulse + steps) < g_pwm_duty[PWM_ID_CH_1])
+    555                  {
+    556                      new_pulse = g_pwm_duty[PWM_ID_CH_1] - steps;
+    557                  }
+    558                  else
+    559                  {
+    560                      new_pulse = min_pulse;
+    561                  }
+    562                  if(g_pwm_duty[PWM_ID_CH_1] != new_pulse)
+    563                  {
+    564                      g_pwm_duty[PWM_ID_CH_1] = new_pulse;
+    565                  XMC_CCU4_SLICE_SetTimerPeriodMatch(CCU40_CC41, period);
+    566                  XMC_CCU4_SLICE_SetTimerCompareMatch(CCU40_CC41, g_pwm_duty[PWM_ID_CH_1]);
+    567                  XMC_CCU4_EnableShadowTransfer(CCU40, XMC_CCU4_SHADOW_TRANSFER_SLICE_1);
+    568                  }
+    569                  break;
+    570                  
+    571              case PWM_ID_CH_2:
+    572                  if((min_pulse + steps) < g_pwm_duty[PWM_ID_CH_2])
+    573                  {
+    574                      new_pulse = g_pwm_duty[PWM_ID_CH_2] - steps;
+    575                  }
+    576                  else
+    577                  {
+    578                      new_pulse = min_pulse;
+    579                  }
+    580                  if(g_pwm_duty[PWM_ID_CH_2] != new_pulse)
+    581                  {
+    582                      g_pwm_duty[PWM_ID_CH_2] = new_pulse;
+    583                      XMC_CCU4_SLICE_SetTimerPeriodMatch(CCU40_CC42, period);
+    584                      XMC_CCU4_SLICE_SetTimerCompareMatch(CCU40_CC42, g_pwm_duty[PWM_ID_CH_2]);
+    585                      XMC_CCU4_EnableShadowTransfer(CCU40, XMC_CCU4_SHADOW_TRANSFER_SLICE_2);
+    586                  }
+    587                  break;
+    588                  
+    589          #ifdef ENABLE_PWM_CH_3
+    590              case PWM_ID_CH_3:
+    591                  if((min_pulse + steps) < g_pwm_duty[PWM_ID_CH_3])
+    592                  {
+    593                      new_pulse = g_pwm_duty[PWM_ID_CH_3] - steps;
+    594                  }
+    595                  else
+    596                  {
+    597                      new_pulse = min_pulse;
+    598                  }
+    599                  if(g_pwm_duty[PWM_ID_CH_3] != new_pulse)
+    600                  {
+    601                      g_pwm_duty[PWM_ID_CH_3] = new_pulse;
+    602                      XMC_CCU4_SLICE_SetTimerPeriodMatch(CCU40_CC43, period);
+    603                      XMC_CCU4_SLICE_SetTimerCompareMatch(CCU40_CC43, g_pwm_duty[PWM_ID_CH_3]);
+    604                      XMC_CCU4_EnableShadowTransfer(CCU40, XMC_CCU4_SHADOW_TRANSFER_SLICE_3);
+    605                  }
+    606                  break;
+    607          #endif /* ENABLE_PWM_CH_3 */
+    608                  
+    609              default:
+    610                  break;
+    611              }
+    612          }
+    613          
+    614          
+    615          /*******************************************************************************
+    616          * @Brief   PWM Enter OVP/OCP Protection
+    617          * @Param   
+    618          * @Note    Set PWM_CONTROL gpio pin to output high/low level
+    619          *          Stop power control channel PWM, set to 0%/100%
+    620          * @Return  
+    621          *******************************************************************************/
+    622          void PWM_EnterProtection(void)
+    623          {
+    624              static uint16_t time=0;
+                                     ^
+Warning[Pe177]: variable "time" was declared but never referenced
+    625              
+    626              if(PWM_GetProtectState() == PWM_STATE_PROTECT)  
+    627              {
+    628                  return;
+    629              }
+    630              
+    631              /* disable global interrupt to improve active time */
+    632              __disable_interrupt();
+    633              
+    634              /* Enable control pwm pull down accerlerate */
+    635              PWM_CtrlAccelerateEnable();
+    636          
+    637              /*------------ PWM Channel Configuration ----------------------------------*/
+    638          #if (PWM_DUTY_INVERT == 1)
+    639              /* PWM_CONTROL channel output 100% */
+    640              PWM_SetDuty(PWM_ID_CH_CTRL, PWM_DUTY_FULL, PWM_MODE_FULL);
+    641          #else
+    642              /* PWM_CONTROL channel output 3% */
+    643              PWM_SetDuty(PWM_ID_CH_CTRL, PWM_DUTY_PROTECT, PWM_MODE_FULL);
+    644          #endif
+    645              
+    646              /*------------ Application Action -----------------------------------------*/
+    647              /* Update protection state */
+    648              PWM_SetProtectState();
+    649              
+    650              /* Start software timer for hiccup */
+    651              if(s_flag_off==1)      
+    652              {
+    653          #if  defined(OT_NFC_IP67_200W)
+    654                SWT_StartTimer(SWT_ID_HICCUP, 2000);
+    655                /* Start software timer to release accelerate pin */
+    656                SWT_StartTimer(SWT_ID_SPEED_UP, 1800);
+    657          #else
+    658                SWT_StartTimer(SWT_ID_HICCUP, 1000);
+    659                /* Start software timer to release accelerate pin */
+    660                SWT_StartTimer(SWT_ID_SPEED_UP, 800);
+    661          #endif
+    662              }
+    663              else
+    664              {
+    665                SWT_StartTimer(SWT_ID_HICCUP, OCP_OVP_HICCUP_PERIOD);
+    666                /* Start software timer to release accelerate pin */
+    667                SWT_StartTimer(SWT_ID_SPEED_UP, OCP_OVP_SPEED_UP_PERIOD);
+    668              }       
+    669              /* Close software timer for control loop task */
+    670              SWT_CloseTimer(SWT_ID_LOOP);
+    671              
+    672              /* Close control loop task */
+    673              System_CloseTask(SYS_TASK_LOOP);
+    674              
+    675          
+    676          
+    677              /* resume global interrupt */
+    678              __enable_interrupt();
+    679          }
+    680          
+    681          
+    682          /*******************************************************************************
+    683          * @Brief   PWM Exit OVP/OCP Protection
+    684          * @Param   
+    685          * @Note    Set PWM_CONTROL gpio pin to input HZ state
+    686          *          Resume power control channel PWM
+    687          * @Return  
+    688          *******************************************************************************/
+    689          void PWM_ExitProtection(void)
+    690          {
+    691              uint16_t i_set = 0;
+    692              
+    693              /* disable global interrupt to improve active time */
+    694              __disable_interrupt();
+    695              
+    696              /*------------ Application Action -----------------------------------------*/
+    697              /* Update protection state */
+    698              PWM_ResetProtectState();
+    699              
+    700              /* Close software timer for hiccup */
+    701              SWT_CloseTimer(SWT_ID_HICCUP);
+    702              
+    703              /* Create control loop task */
+    704              System_CreateTask(SYS_TASK_LOOP);
+    705              
+    706              /* Set target current again for hiccup */
+    707              i_set = Power_GetCurrent();
+    708              Power_SetCurrent(i_set, SET_MODE_POWER_ON);
+    709              
+    710              s_flag_off=0;
+    711              
+    712              /* resume global interrupt */
+    713              __enable_interrupt();
+    714          }
+    715          
+    716          
+    717          /*******************************************************************************
+    718          * @Brief   Get OVP/OCP Protection State
+    719          * @Param   
+    720          * @Note    Get state that if pwm enter protection state 
+    721          * @Return  PWM_STATE_NORMAL / PWM_STATE_PROTECT
+    722          *******************************************************************************/
+    723          uint8_t PWM_GetProtectState(void)
+    724          {
+    725              return g_protect_state;
+    726          }
+    727          
+    728          /*******************************************************************************
+    729          * @Brief   Set OVP/OCP Protection State
+    730          * @Param   
+    731          * @Note    set protection state by set variable of g_protect_state
+    732          * @Return  
+    733          *******************************************************************************/
+    734          void PWM_SetProtectState(void)
+    735          {
+    736              g_protect_state = PWM_STATE_PROTECT;
+    737          }
+    738          
+    739          /*******************************************************************************
+    740          * @Brief   Reset OVP/OCP Protection State
+    741          * @Param   
+    742          * @Note    reset protection state by clear variable of g_protect_state
+    743          * @Return  
+    744          *******************************************************************************/
+    745          void PWM_ResetProtectState(void)
+    746          {
+    747              g_protect_state = PWM_STATE_NORMAL;
+    748          }
+    749          
+    750          /*******************************************************************************
+    751          * @Brief   PWM Control Pin Accelerate Enable
+    752          * @Param   
+    753          * @Note    Set accelerate pin to output low level
+    754          * @Return  
+    755          *******************************************************************************/
+    756          void PWM_CtrlAccelerateEnable(void)
+    757          {    
+    758              XMC_GPIO_CONFIG_t accelerate_config;
+    759              
+    760              /* For OVP and OCP accelerate */
+    761              accelerate_config.mode = XMC_GPIO_MODE_OUTPUT_PUSH_PULL;
+    762              accelerate_config.output_level = XMC_GPIO_OUTPUT_LEVEL_LOW;
+    763              XMC_GPIO_Init(PWM_ACCELERATE_PIN, &accelerate_config);
+    764          }
+    765          
+    766          /*******************************************************************************
+    767          * @Brief   PWM Control Pin Accelerate Disable
+    768          * @Param   
+    769          * @Note    Set accelerate pin to be input high impedance state
+    770          * @Return  
+    771          *******************************************************************************/
+    772          void PWM_CtrlAccelerateDisable(void)
+    773          {
+    774              XMC_GPIO_CONFIG_t accelerate_config;
+    775              
+    776              /* For OVP and OCP accelerate */
+    777              accelerate_config.mode = XMC_GPIO_MODE_INPUT_TRISTATE;
+    778              XMC_GPIO_Init(PWM_ACCELERATE_PIN, &accelerate_config);
+    779          }
+    780          /*******************************************************************************
+    781          * @Brief   PWM_PeriodUpdate
+    782          * @Param   
+    783          * @Note    Update frequency based on current range
+    784          * @Return  
+    785          *******************************************************************************/
+    786          uint16_t PWM_PeriodUpdate(void)
+    787          {
+    788              static uint8_t current_flag=0;
+    789              extern uint16_t g_current_a;
+    790              extern uint32_t g_s_period, g_a_period;
+    791              uint32_t temp,temp1;
+    792              static uint32_t pre_period=0;
+    793              
+    794          //    if(g_current_a>300&&current_flag==0)
+    795          //    {
+    796          //        current_flag=1;
+    797          //    }
+    798          //    if(g_current_a<250&&current_flag==1)
+    799          //    {
+    800          //        current_flag=0;
+    801          //    }
+    802          //    if(current_flag==1)
+    803          //    {
+    804          //        return PWM_PERIOD_CTRL_L;
+    805          //    }
+    806          //    else
+    807          //    {
+    808          //        return PWM_PERIOD_CTRL_H;
+    809          //    }
+    810               temp=g_current_a;
+    811               if(temp>400)temp=400;
+    812               if(temp<70)temp=70;
+    813               temp1=34242-(temp*15515>>8);
+    814               if (temp1>30000) temp1=30000;
+    815               g_s_period=temp1;
+    816               if(abs(g_s_period-pre_period)<200)
+                         ^
+Warning[Pe223]: function "abs" declared implicitly
+
+      static uint8_t current_flag=0;
+                     ^
+"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Driver\src\pwm.c",788  Warning[Pe177]: 
+          variable "current_flag" was declared but never referenced
+    817               {
+    818                   g_s_period=pre_period;
+    819               }
+    820               
+    821               pre_period=g_s_period;
+    822          #if defined(OT_NFC_IP67_200W)
+    823               return 30000; //10000
+    824          #else
+    825               return 30000;
+    826              
+    827          #endif     
+    828          }
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   PWM_CCU4_TimerConfig
+         8   -> PWM_SetDuty
+         8   -> XMC_CCU4_EnableClock
+         8   -> XMC_CCU4_Init
+         8   -> XMC_CCU4_SLICE_CompareInit
+         8   -> XMC_CCU4_SLICE_ConfigureEvent
+         8   -> XMC_CCU4_SLICE_StartConfig
+         8   -> XMC_CCU4_SetModuleClock
+         8   -> XMC_CCU4_StartPrescaler
+      16   PWM_CtrlAccelerateDisable
+        16   -> XMC_GPIO_Init
+      16   PWM_CtrlAccelerateEnable
+        16   -> XMC_GPIO_Init
+      16   PWM_Disable
+        16   -> XMC_CCU4_DisableModule
+        16   -> XMC_GPIO_Init
+      16   PWM_DutyStepDown
+        16   -> PWM_PeriodUpdate
+        16   -> XMC_CCU4_EnableShadowTransfer
+        16   -> XMC_CCU4_SLICE_SetTimerCompareMatch
+        16   -> XMC_CCU4_SLICE_SetTimerPeriodMatch
+        16 __aeabi_uidiv
+      16   PWM_DutyStepUp
+        16   -> PWM_PeriodUpdate
+        16   -> XMC_CCU4_EnableShadowTransfer
+        16   -> XMC_CCU4_SLICE_SetTimerCompareMatch
+        16   -> XMC_CCU4_SLICE_SetTimerPeriodMatch
+        16 __aeabi_uidiv
+      16   PWM_Enable
+        16   -> PWM_CCU4_TimerConfig
+        16   -> PWM_ResetProtectState
+        16   -> XMC_GPIO_Init
+        16   -> XMC_SCU_SetCcuTriggerHigh
+       8   PWM_EnterProtection
+         8   -> PWM_CtrlAccelerateEnable
+         8   -> PWM_GetProtectState
+         8   -> PWM_SetDuty
+         8   -> PWM_SetProtectState
+         8   -> SWT_CloseTimer
+         8   -> SWT_StartTimer
+         8   -> System_CloseTask
+       8   PWM_ExitProtection
+         8   -> PWM_ResetProtectState
+         8   -> Power_GetCurrent
+         8   -> Power_SetCurrent
+         8   -> SWT_CloseTimer
+         8   -> System_CreateTask
+      16   PWM_GetDuty
+        16   -> PWM_PeriodUpdate
+        16 __aeabi_uidiv
+       0   PWM_GetProtectState
+       8   PWM_PeriodUpdate
+         8   -> abs
+       0   PWM_ResetProtectState
+      24   PWM_SetDuty
+        24   -> PWM_PeriodUpdate
+        24   -> XMC_CCU4_EnableShadowTransfer
+        24   -> XMC_CCU4_SLICE_SetTimerCompareMatch
+        24   -> XMC_CCU4_SLICE_SetTimerPeriodMatch
+        24 __aeabi_uidiv
+       0   PWM_SetProtectState
+       0   XMC_CCU4_EnableClock
+       0   XMC_CCU4_EnableShadowTransfer
+       0   XMC_CCU4_SLICE_SetTimerCompareMatch
+       0   XMC_CCU4_SLICE_SetTimerPeriodMatch
+       0   XMC_CCU4_StartPrescaler
+       0   XMC_SCU_SetCcuTriggerHigh
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable14
+       4  ??DataTable15
+       4  ??DataTable15_1
+       4  ??DataTable15_10
+       4  ??DataTable15_11
+       4  ??DataTable15_12
+       4  ??DataTable15_13
+       4  ??DataTable15_2
+       4  ??DataTable15_3
+       4  ??DataTable15_4
+       4  ??DataTable15_5
+       4  ??DataTable15_6
+       4  ??DataTable15_7
+       4  ??DataTable15_8
+       4  ??DataTable15_9
+       4  ??DataTable5
+       4  ??DataTable5_1
+       4  ??DataTable5_2
+       4  ??DataTable5_3
+       4  ??DataTable5_4
+       4  ??DataTable5_5
+       4  ??DataTable5_6
+       4  ??DataTable6
+       4  ??DataTable6_1
+       4  ??DataTable6_2
+       4  ??DataTable6_3
+       4  ??DataTable7
+     170  PWM_CCU4_TimerConfig
+      22  PWM_CtrlAccelerateDisable
+      28  PWM_CtrlAccelerateEnable
+      78  PWM_Disable
+     266  PWM_DutyStepDown
+     266  PWM_DutyStepUp
+      80  PWM_Enable
+      94  PWM_EnterProtection
+      44  PWM_ExitProtection
+      78  PWM_GetDuty
+       6  PWM_GetProtectState
+      84  PWM_PeriodUpdate
+       8  PWM_ResetProtectState
+     226  PWM_SetDuty
+       8  PWM_SetProtectState
+      12  XMC_CCU4_EnableClock
+       4  XMC_CCU4_EnableShadowTransfer
+       6  XMC_CCU4_SLICE_SetTimerCompareMatch
+       6  XMC_CCU4_SLICE_SetTimerPeriodMatch
+      12  XMC_CCU4_StartPrescaler
+      12  XMC_SCU_SetCcuTriggerHigh
+       1  g_protect_state
+       8  g_pwm_duty
+       8  g_pwm_timer_config
+       4  g_slice_event_config
+       4  pre_period
+
+ 
+    13 bytes in section .bss
+    12 bytes in section .rodata
+ 1 618 bytes in section .text
+ 
+ 1 618 bytes of CODE  memory
+    12 bytes of CONST memory
+    13 bytes of DATA  memory
+
+Errors: none
+Warnings: 5

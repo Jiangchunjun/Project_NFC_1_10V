@@ -1,0 +1,384 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:50
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Driver\src\eru.c
+#    Command line =  
+#        "C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Driver\src\eru.c"
+#        -D XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\eru.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\eru.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Driver\src\eru.c
+      1          /*
+      2          ***************************************************************************************************
+      3          *                           Event Request Unit Implementation
+      4          *
+      5          * File   : eru.c
+      6          * Author : Douglas Xie
+      7          * Date   : 2016.06.16
+      8          ***************************************************************************************************
+      9          * Copyright (C) 2016 OSRAM Asia Pacific Management Company.  All rights reserved.
+     10          ***************************************************************************************************
+     11          */
+     12          
+     13          /* Include Head Files ----------------------------------------------------------------------------*/
+     14          #include "eru.h"
+
+  #warning ::::::::::::::::::::::::::: Using original LEDset resistor (wrong for MP) :::::::::::::::::::::::::::
+   ^
+"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\inc\power_config_200w.h",86  Warning[Pe1105]: 
+          #warning directive: ::::::::::::::::::::::::::: Using original LEDset
+          resistor (wrong for MP) :::::::::::::::::::::::::::
+
+  #warning ::::::::::::::::::::::::::: Using original LEDset resistor (wrong for MP) :::::::::::::::::::::::::::
+   ^
+"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\inc\power_config_200w.h",86  Warning[Pe1105]: 
+          #warning directive: ::::::::::::::::::::::::::: Using original LEDset
+          resistor (wrong for MP) :::::::::::::::::::::::::::
+     15          
+     16          /* Macro Defines ---------------------------------------------------------------------------------*/
+     17          
+     18          /* Global Variable -------------------------------------------------------------------------------*/
+     19          
+     20          /* Private Variable ------------------------------------------------------------------------------*/
+     21          
+     22          /* Constant Variable -----------------------------------------------------------------------------*/
+     23          /* ERU OVP Event Generator Configuration */
+     24          const XMC_ERU_ETL_CONFIG_t OVP_source_config =
+     25          {
+     26              .input = ERU_OVP_INPUT,
+     27              .source = XMC_ERU_ETL_SOURCE_A,
+     28              .edge_detection = XMC_ERU_ETL_EDGE_DETECTION_FALLING, //XMC_ERU_ETL_EDGE_DETECTION_BOTH,
+     29              .status_flag_mode = XMC_ERU_ETL_STATUS_FLAG_MODE_HWCTRL,
+     30              .enable_output_trigger = true,
+     31              .output_trigger_channel = ERU_OVP_OUTPUT
+     32          };
+     33          
+     34          /* ERU OCP Event Generator Configuration */
+     35          const XMC_ERU_ETL_CONFIG_t OCP_source_config =
+     36          {
+     37              .input = ERU_OCP_INPUT,
+     38              .source = XMC_ERU_ETL_SOURCE_A,
+     39              .edge_detection = XMC_ERU_ETL_EDGE_DETECTION_FALLING, //XMC_ERU_ETL_EDGE_DETECTION_BOTH,
+     40              .status_flag_mode = XMC_ERU_ETL_STATUS_FLAG_MODE_HWCTRL,
+     41              .enable_output_trigger = true,
+     42              .output_trigger_channel = ERU_OCP_OUTPUT
+     43          };
+     44          
+     45          /* ERU OVP Event Detection Configuration */
+     46          const XMC_ERU_OGU_CONFIG_t OVP_trigger_config =
+     47          {
+     48              .service_request = XMC_ERU_OGU_SERVICE_REQUEST_ON_TRIGGER
+     49          };
+     50          
+     51          /* ERU OCP Event Detection Configuration */
+     52          const XMC_ERU_OGU_CONFIG_t OCP_trigger_config =
+     53          {
+     54              .service_request = XMC_ERU_OGU_SERVICE_REQUEST_ON_TRIGGER
+     55          };
+     56          
+     57          
+     58          
+     59          /* Function Declaration --------------------------------------------------------------------------*/
+     60          
+     61          /* Function Implement ----------------------------------------------------------------------------*/
+     62          /*******************************************************************************
+     63          * @Brief   ERU Enable OVP Response
+     64          * @Param   
+     65          * @Note    Config ACMP output signal to trigger ERU interrupt for OVP
+     66          * @Return  
+     67          *******************************************************************************/
+     68          void ERU_EnableOVP(void)
+     69          {
+     70              /* Config ERU source input and trigger output */
+     71              XMC_ERU_ETL_Init(ERU_OVP_ELT, &OVP_source_config);
+     72              XMC_ERU_OGU_Init(ERU_OVP_OGU, &OVP_trigger_config);
+     73              
+     74              /* Config interrupt */
+     75              NVIC_SetPriority(ERU_OVP_IRQ, ERU_OVP_PRIORITY);
+     76              NVIC_ClearPendingIRQ(ERU_OVP_IRQ);
+     77              NVIC_EnableIRQ(ERU_OVP_IRQ);
+     78          }
+     79          
+     80          /*******************************************************************************
+     81          * @Brief   ERU Enable OCP Response
+     82          * @Param   
+     83          * @Note    Config ACMP output signal to trigger ERU interrupt for OCP
+     84          * @Return  
+     85          *******************************************************************************/
+     86          void ERU_EnableOCP(void)
+     87          {
+     88              /* Config ERU source input and trigger output */
+     89              XMC_ERU_ETL_Init(ERU_OCP_ELT, &OCP_source_config);
+     90              XMC_ERU_OGU_Init(ERU_OCP_OGU, &OCP_trigger_config);
+     91              
+     92              /* Config interrupt */
+     93              NVIC_SetPriority(ERU_OCP_IRQ, ERU_OCP_PRIORITY);
+     94              NVIC_EnableIRQ(ERU_OCP_IRQ);
+     95          }
+     96          
+     97          /*******************************************************************************
+     98          * @Brief   ERU Disable OVP Response
+     99          * @Param   
+    100          * @Note    Disable ERU interrupt for OVP
+    101          * @Return  
+    102          *******************************************************************************/
+    103          void ERU_DisableOVP(void)
+    104          {
+    105              NVIC_DisableIRQ(ERU_OVP_IRQ);
+    106          }
+    107          
+    108          /*******************************************************************************
+    109          * @Brief   ERU Disable OCP Response
+    110          * @Param   
+    111          * @Note    Disable ERU interrupt for OCP
+    112          * @Return  
+    113          *******************************************************************************/
+    114          void ERU_DisableOCP(void)
+    115          {
+    116              NVIC_DisableIRQ(ERU_OCP_IRQ);
+    117          }
+    118          
+    119          /*******************************************************************************
+    120          * @Brief   ERU Channel 0 Interrupt Handler
+    121          * @Param   
+    122          * @Note    for OVP protection
+    123          * @Return  
+    124          *******************************************************************************/
+    125          void ERU0_0_IRQHandler(void)
+    126          { 
+    127          #ifdef ENABLE_OVP
+    128              PWM_EnterProtection();
+    129              //DaliBallast_CyclicTask();
+    130          #endif
+    131              //USART_PrintInfo("OVP....\n");
+    132          }
+    133          
+    134          /*******************************************************************************
+    135          * @Brief   ERU Channel 1 Interrupt Handler
+    136          * @Param   
+    137          * @Note    for OCP protection
+    138          * @Return  
+    139          *******************************************************************************/
+    140          void ERU0_1_IRQHandler(void)
+    141          {
+    142          #ifdef ENABLE_OVP
+    143              //PWM_EnterProtection();
+    144          #endif
+    145              //USART_PrintInfo("OCP....\n");
+    146          }
+    147          
+    148          /*******************************************************************************
+    149          * @Brief   ERU Channel 2 Interrupt Handler
+    150          * @Param   
+    151          * @Note    
+    152          * @Return  
+    153          *******************************************************************************/
+    154          void ERU0_2_IRQHandler(void)
+    155          {
+    156              //...
+    157          }
+    158          
+    159          /*******************************************************************************
+    160          * @Brief   ERU Channel 3 Interrupt Handler
+    161          * @Param   
+    162          * @Note    
+    163          * @Return  
+    164          *******************************************************************************/
+    165          void ERU0_3_IRQHandler(void)
+    166          {
+    167              //...
+    168          }
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   ERU0_0_IRQHandler
+         8   -> PWM_EnterProtection
+       0   ERU0_1_IRQHandler
+       0   ERU0_2_IRQHandler
+       0   ERU0_3_IRQHandler
+       8   ERU_DisableOCP
+         8   -> NVIC_DisableIRQ
+       8   ERU_DisableOVP
+         8   -> NVIC_DisableIRQ
+       8   ERU_EnableOCP
+         8   -> NVIC_EnableIRQ
+         8   -> NVIC_SetPriority
+         8   -> XMC_ERU_ETL_Init
+         8   -> XMC_ERU_OGU_Init
+       8   ERU_EnableOVP
+         8   -> NVIC_ClearPendingIRQ
+         8   -> NVIC_EnableIRQ
+         8   -> NVIC_SetPriority
+         8   -> XMC_ERU_ETL_Init
+         8   -> XMC_ERU_OGU_Init
+       0   NVIC_ClearPendingIRQ
+       0   NVIC_DisableIRQ
+       0   NVIC_EnableIRQ
+      20   NVIC_SetPriority
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable5
+       4  ??DataTable5_1
+       4  ??DataTable5_2
+       4  ??DataTable5_3
+       4  ??DataTable5_4
+       4  ??DataTable5_5
+       4  ??DataTable5_6
+       4  ??DataTable5_7
+       4  ??DataTable5_8
+       4  ??DataTable5_9
+       8  ERU0_0_IRQHandler
+       2  ERU0_1_IRQHandler
+       2  ERU0_2_IRQHandler
+       2  ERU0_3_IRQHandler
+      10  ERU_DisableOCP
+      10  ERU_DisableOVP
+      38  ERU_EnableOCP
+      44  ERU_EnableOVP
+      14  NVIC_ClearPendingIRQ
+      14  NVIC_DisableIRQ
+      14  NVIC_EnableIRQ
+     132  NVIC_SetPriority
+       8  OCP_source_config
+       4  OCP_trigger_config
+       8  OVP_source_config
+       4  OVP_trigger_config
+
+ 
+  24 bytes in section .rodata
+ 330 bytes in section .text
+ 
+ 330 bytes of CODE  memory
+  24 bytes of CONST memory
+
+Errors: none
+Warnings: 2

@@ -1,0 +1,1159 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:49
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\comm_task.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\comm_task.c" -D
+#        XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\comm_task.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\comm_task.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\comm_task.c
+      1          /*
+      2          ***************************************************************************************************
+      3          *                             Usart Communition Interface
+      4          *       Data Format: StartByte(1) + Command(1) + Param(1) + Data(8) + CheckSum(1) = 12bytes
+      5          *
+      6          * File   : comm_task.c
+      7          * Author : Douglas Xie
+      8          * Date   : 2016.10.13
+      9          ***************************************************************************************************
+     10          * Copyright (C) 2016 OSRAM Asia Pacific Management Company.  All rights reserved.
+     11          ***************************************************************************************************
+     12          */
+     13          
+     14          #ifdef ENABLE_COMM
+     15          
+     16          /* Include Head Files ---------------------------------------------------------------------------*/
+     17          #include "comm_task.h"
+
+  #warning ::::::::::::::::::::::::::: Using original LEDset resistor (wrong for MP) :::::::::::::::::::::::::::
+   ^
+"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\inc\power_config_200w.h",86  Warning[Pe1105]: 
+          #warning directive: ::::::::::::::::::::::::::: Using original LEDset
+          resistor (wrong for MP) :::::::::::::::::::::::::::
+
+  #warning ::::::::::::::::::::::::::: Using original LEDset resistor (wrong for MP) :::::::::::::::::::::::::::
+   ^
+"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\inc\power_config_200w.h",86  Warning[Pe1105]: 
+          #warning directive: ::::::::::::::::::::::::::: Using original LEDset
+          resistor (wrong for MP) :::::::::::::::::::::::::::
+     18          #include "stdlib.h" /* srand() function */
+     19          #include "stdio.h"
+     20          
+     21          #include "adc.h"
+     22          #include "pwm.h"
+     23          #include "power_task.h"
+     24          
+     25          /* OSRAM Communication Protocol -----------------------------------------------------------------*/
+     26          /* Packet data size */
+     27          #define COMM_PACKET_SIZE            USART_RX_BUFFER_SIZE /* 12 */
+     28          
+     29          /*--------------------------------------*/
+     30          /* StartByte, 1st byte */
+     31          #define COMM_HEAD_RX                0xAB
+     32          #define COMM_HEAD_TX                0xBA
+     33          
+     34          /*--------------------------------------*/
+     35          /* Command, 2nd byte */
+     36          /* Command 0xE0 ~ 0xFF always active */
+     37          /* Command 0x10 ~ 0xDF active when unlock */
+     38          #define COMM_NONE                   0x00
+     39          
+     40          /* Unlock process */
+     41          #define COMM_REQUEST_KEY            0xE1
+     42          #define COMM_SUBMIT_PASSWORD        0xE2
+     43          
+     44          /* Error information */ 
+     45          #define COMM_ERROR_CODE             0xF0    /* Error code start from 0xF0 */
+     46          #define COMM_ERROR_PACKET           0xF0
+     47          #define COMM_ERROR_COMMAND          0xF1
+     48          #define COMM_ERROR_PARAMETER        0xF2
+     49          #define COMM_ERROR_DATA             0xF3
+     50          #define COMM_ERROR_CS               0xF4
+     51          #define COMM_ERROR_LOCK             0xF5
+     52          #define COMM_ERROR_PASSWORD         0xF6
+     53          #define COMM_ERROR_TIMEOUT          0xF7
+     54          #define COMM_ERROR_UNKNOWN          0xFF
+     55          
+     56          /* Echo command, use for keep unlock state */
+     57          #define COMM_ECHO                   0xAA
+     58          
+     59          /* Get command */
+     60          #define COMM_GET_PROJECT_CODE       0x10    /* 3pm number */
+     61          #define COMM_GET_DEVICE_TYPE        0x11
+     62          #define COMM_GET_OUTPUT_POWER       0x12
+     63          #define COMM_GET_FW_VERSION         0x13
+     64          #define COMM_GET_HW_VERSION         0x14
+     65          #define COMM_GET_SN                 0x15
+     66          #define COMM_GET_SAMPLE_AD          0x16
+     67          #define COMM_GET_AVERAGE_AD         0x17
+     68          #define COMM_GET_RAW_VALUE          0x18
+     69          #define COMM_GET_REAL_VALUE         0x19
+     70          #define COMM_GET_LOOP_STATE         0x1A
+     71          #define COMM_GET_PWM_DUTY           0x1B
+     72          #define COMM_GET_DIMMING_LEVEL      0x1C
+     73          
+     74          /* Set command */
+     75          #define COMM_SET_BOOT_MODE          0x20
+     76          
+     77          /* Memory operation */
+     78          #define COMM_WRITE_MEMORY           0x30
+     79          #define COMM_READ_MEMORY            0x31
+     80          #define COMM_ERASE_MEMORY           0x32
+     81          
+     82          /*--------------------------------------*/
+     83          /* Parameter, 3rd byte, user define */
+     84          /* sample channel define */
+     85          #define COMM_CH_IOUT            0x00
+     86          #define COMM_CH_UOUT            0x01
+     87          #define COMM_CH_DIMM            0x02
+     88          #define COMM_CH_ED_TIME         0x03    /* for raw/real value */
+     89          #define COMM_CH_RUN_TIME        0x04    /* for raw/real value */
+     90          
+     91          /* pwm channel define */
+     92          #define COMM_PWM_CTRL           0x00
+     93          #define COMM_PWM_OVP_REF        0x01
+     94          #define COMM_PWM_OCP_REF        0x02
+     95          
+     96          /* dimming level channel define */
+     97          #define COMM_DIMM_CONSTANT      0x00
+     98          #define COMM_DIMM_ASTRO         0x01
+     99          #define COMM_DIMM_EOL           0x02
+    100          #define COMM_DIMM_ONE2TEN       0x03
+    101          
+    102          /* unlock parameter define */
+    103          #define COMM_UNLOCK_ONCE        0x00
+    104          #define COMM_UNLOCK_KEEP        0x01
+    105          
+    106          
+    107          /* Global Variable ------------------------------------------------------------------------------*/
+    108          uint8_t g_CommRxState;                  /* Data packet receive state */
+    109          uint8_t g_CommBuff[COMM_PACKET_SIZE];
+    110          
+    111          uint8_t g_CommLock = COMM_UNLOCK;
+    112          uint8_t g_Key[4];
+    113          uint8_t g_Password[4];
+    114          
+    115          /* Function Declaration -------------------------------------------------------------------------*/
+    116          /* Comm Task Command Handler */
+    117          void Comm_CmdHandler(uint8_t cmd);
+    118          void Comm_RequestKey(void);
+    119          void Comm_SubmitPassword(void);
+    120          void Comm_Echo(void);
+    121          void Comm_GetProjectCode(void);
+    122          void Comm_GetDeviceType(void);
+    123          void Comm_GetOutputPower(void);
+    124          void Comm_GetFirmwareVersion(void);
+    125          void Comm_GetHardwareVersion(void);
+    126          void Comm_GetSerialNumber(void);
+    127          void Comm_GetSampleAD(void);
+    128          void Comm_GetAverageAD(void);
+    129          void Comm_GetRawValue(void);
+    130          void Comm_GetRealValue(void);
+    131          void Comm_GetLoopState(void);
+    132          void Comm_GetPwmDuty(void);
+    133          void Comm_GetDimmingLevel(void);
+    134          void Comm_SetBootMode(void);
+    135          void Comm_WriteMemory(void);
+    136          void Comm_ReadMemory(void);
+    137          void Comm_EraseMemory(void);
+    138          
+    139          
+    140          /* Function Implement ---------------------------------------------------------------------------*/
+    141          
+    142          /*******************************************************************************
+    143          * @brief  Comm Generate Password
+    144          * @param  
+    145          * @note   generate password according to key
+    146          * @retval 
+    147          *******************************************************************************/
+    148          void Comm_GeneratePassword(uint8_t *key, uint8_t *password)
+    149          {
+    150              const uint8_t vector[4] = {0x1C, 0xAE, 0x95, 0x32};
+    151              uint8_t i;
+    152              
+    153              for(i = 0; i < 4; i++)
+    154              {
+    155                  *(password+i) = *(key+i) ^ vector[i];
+    156                  *(password+i) = *(password+i) ^ vector[3-i];
+    157              }
+    158          }
+    159          
+    160          /*******************************************************************************
+    161          * @brief  Comm Check Packet
+    162          * @param  
+    163          * @note   Check usart receive data packet. 
+    164          * @retval receive state COMM_RX_READY / COMM_RX_RECEVING / COMM_RX_DONE 
+    165          *******************************************************************************/
+    166          uint8_t Comm_CheckPacket(void)
+    167          {
+    168              uint8_t rx_data_count = 0;
+    169              uint8_t rx_state = COMM_RX_READY;
+    170              
+    171              /* Get Comm Receive Buffer Data Number */
+    172              rx_data_count = Comm_GetRxCount();
+    173              
+    174              /* If Comm Receive Buffer is not empty */
+    175              if( rx_data_count != 0 )
+    176              { 
+    177                  rx_state = COMM_RX_RECEVING;
+    178                  
+    179                  if( Comm_CheckRxTimer() == COMM_TIMER_OFF )
+    180                  {
+    181                      /* Setup Comm Receive Timer when starting receive data */
+    182                      Comm_StartRxTimer();
+    183                  }
+    184                  
+    185                  /* If Comm Receive Timer is timeout */
+    186                  if( Comm_CheckRxTimer() == COMM_TIMER_UP )
+    187                  {
+    188                      /* Reset Comm Register */
+    189                      Comm_ResetBuffer();
+    190                      
+    191                      /* Close Comm Receive Timer */
+    192                      Comm_CloseRxTimer();  
+    193                      
+    194                      /* Send Error: Receive Timeout */
+    195                      g_CommBuff[0] = COMM_HEAD_RX; 
+    196                      g_CommBuff[1] = COMM_ERROR_TIMEOUT; 
+    197                      
+    198                      /* Update Comm Receive State */
+    199                      rx_state = COMM_RX_DONE;
+    200                  }              
+    201                  /* Check if receive data number is enough */
+    202                  else if( rx_data_count >= COMM_PACKET_SIZE )
+    203                  {
+    204                      /* Copy Receive Data to Receive Buffer */
+    205                      Comm_GetRxData(g_CommBuff);
+    206                      
+    207                      /* Close Comm Receive Timer */
+    208                      Comm_CloseRxTimer();
+    209                      
+    210                      /* Reset Comm Register */
+    211                      Comm_ResetBuffer();
+    212                      
+    213                      /* Update Comm Receive State */
+    214                      rx_state = COMM_RX_DONE;
+    215                  }
+    216              }
+    217              
+    218              return rx_state;
+    219          }
+    220          
+    221          
+    222          /*******************************************************************************
+    223          * @Brief   CheckSum Calculate Formula 
+    224          * @Param   [in]data  - pointer to the data buffer
+    225          *          [in]size - data buffer size
+    226          * @Note    calculate data buffer checksum and return
+    227          * @Return  checksum
+    228          *******************************************************************************/
+    229          uint8_t Comm_CalcuCS(uint8_t *data, uint8_t size)
+    230          {
+    231              uint8_t i;
+    232              uint8_t checksum = 0;
+    233              
+    234              /* calculate checksum */
+    235              for (i = 0; i < size; i++)
+    236              {
+    237                  checksum +=  data[i];
+    238              }
+    239              
+    240              return checksum;
+    241          }
+    242          
+    243          
+    244          /*******************************************************************************
+    245          * @brief  Comm Verify CheckSum
+    246          * @param  
+    247          * @note   Check if data packet checksum is right and return command
+    248          * @retval  
+    249          *******************************************************************************/
+    250          uint8_t Comm_VerifyCS(void)
+    251          {
+    252              uint8_t command;
+    253              uint8_t check_sum = 0;    
+    254              
+    255              command = g_CommBuff[1];
+    256              
+    257              /* Check if command is error code */
+    258              if(command < COMM_ERROR_CODE)
+    259              {
+    260                  /* Calculate packet checksum */
+    261                  check_sum = Comm_CalcuCS(g_CommBuff, COMM_PACKET_SIZE - 1);
+    262                  
+    263                  /* Verify checksum */
+    264                  if( g_CommBuff[COMM_PACKET_SIZE - 1] != check_sum )
+    265                  {
+    266                      /* Checksum error */
+    267                      command = COMM_ERROR_CS;
+    268                  }
+    269              }
+    270              
+    271              return command;
+    272          }
+    273          
+    274          
+    275          /*******************************************************************************
+    276          * @brief  Comm Send Feedback Packet
+    277          * @param  
+    278          * @note   Update StartByte and CheckSum then send out feedback packet
+    279          * @retval  
+    280          *******************************************************************************/
+    281          void Comm_Feedback(uint8_t *data)
+    282          {
+    283              /* Update StartByte and CheckSum */
+    284              data[0] = COMM_HEAD_TX;
+    285              data[COMM_PACKET_SIZE-1] = Comm_CalcuCS(data, COMM_PACKET_SIZE-1);
+    286              
+    287              /* Send feedback packet to PC */
+    288              Comm_SendTxData(data, COMM_PACKET_SIZE);
+    289          }
+    290          
+    291          
+    292          /*******************************************************************************
+    293          * @brief  Comm Task Implement
+    294          * @param  
+    295          * @note   Analyse the data packet and excute the command 
+    296          * @retval  
+    297          *******************************************************************************/
+    298          void Comm_Task(void)
+    299          {
+    300              uint8_t rx_state = COMM_RX_READY;
+    301              uint8_t command = COMM_NONE;
+    302              
+    303              /* Check receive packet */
+    304              rx_state = Comm_CheckPacket();
+    305              
+    306              /* Check if task has receive a full packet */
+    307              if(rx_state == COMM_RX_DONE)
+    308              {        
+    309                  /* Verify data packet checksum and return command */
+    310                  command = Comm_VerifyCS();
+    311                  
+    312                  /* Call command handler to excute the command */
+    313                  Comm_CmdHandler(command);
+    314                  
+    315                  /* Reset comm buffer */
+    316                  Comm_ResetBuffer();
+    317                  
+    318                  /* Close Comm Receive Timer */
+    319                  Comm_CloseRxTimer();  
+    320              }
+    321              
+    322              /* Check unlock timer */
+    323              if(SWT_CheckTimer(SWT_ID_COMM_UNLOCK) == SWT_STATUS_UP)
+    324              {
+    325                  /* Unlock timer time-up, close timer and lock comm */
+    326                  SWT_CloseTimer(SWT_ID_COMM_UNLOCK);
+    327                  g_CommLock = COMM_UNLOCK;
+    328              }
+    329          }
+    330          
+    331          
+    332          /* Comm Task Command Handle Implement --------------------------------------------------------*/
+    333          
+    334          void Comm_CmdHandler(uint8_t cmd)
+    335          {
+    336              /* Command that feedback error */
+    337              if((cmd & 0xF0) == 0xF0)
+    338              {
+    339                  switch(cmd)
+    340                  {
+    341                  case COMM_ERROR_PACKET:
+    342                  case COMM_ERROR_COMMAND:
+    343                  case COMM_ERROR_PARAMETER:
+    344                  case COMM_ERROR_DATA:
+    345                  case COMM_ERROR_CS:
+    346                  case COMM_ERROR_LOCK: 
+    347                  case COMM_ERROR_PASSWORD:
+    348                  case COMM_ERROR_TIMEOUT:
+    349                      g_CommBuff[1] = cmd; 
+    350                      break;
+    351                      
+    352                  default:
+    353                      g_CommBuff[1] = COMM_ERROR_UNKNOWN;
+    354                      break;
+    355                  }
+    356                  
+    357                  /* Send feedback packet */  
+    358                  Comm_Feedback(g_CommBuff);  
+    359              }
+    360              /* Command that always active */
+    361              else if((cmd & 0xF0) == 0xE0)
+    362              { 
+    363                  switch(cmd)
+    364                  {
+    365                  case COMM_REQUEST_KEY:
+    366                      Comm_RequestKey();
+    367                      break;
+    368                      
+    369                  case COMM_SUBMIT_PASSWORD:
+    370                      Comm_SubmitPassword();
+    371                      break;
+    372                      
+    373                  default:
+    374                      /* Error feedback */
+    375                      g_CommBuff[1] = COMM_ERROR_COMMAND; 
+    376                      Comm_Feedback(g_CommBuff);  
+    377                      break;
+    378                  }
+    379              }
+    380              /* Command that active when unlock */
+    381              else
+    382              {
+    383                  /* Comm Unlock, Excute command */
+    384                  if(g_CommLock == COMM_UNLOCK)
+    385                  {
+    386                      switch(cmd)
+    387                      {
+    388                      case COMM_ECHO:
+    389                          Comm_Echo();
+    390                          break;
+    391                      case COMM_GET_PROJECT_CODE:
+    392                          Comm_GetProjectCode();
+    393                          break;
+    394                      case COMM_GET_DEVICE_TYPE:
+    395                          Comm_GetDeviceType();
+    396                          break;
+    397                      case COMM_GET_OUTPUT_POWER:
+    398                          Comm_GetOutputPower();
+    399                          break;
+    400                      case COMM_GET_FW_VERSION:
+    401                          Comm_GetFirmwareVersion();
+    402                          break;
+    403                      case COMM_GET_HW_VERSION:
+    404                          Comm_GetHardwareVersion();
+    405                          break;
+    406                      case COMM_GET_SN:
+    407                          Comm_GetSerialNumber();
+    408                          break;
+    409                      case COMM_GET_SAMPLE_AD:
+    410                          Comm_GetSampleAD();
+    411                          break;
+    412                      case COMM_GET_AVERAGE_AD:
+    413                          Comm_GetAverageAD();
+    414                          break;
+    415                      case COMM_GET_RAW_VALUE:
+    416                          Comm_GetRawValue();
+    417                          break;
+    418                      case COMM_GET_REAL_VALUE:
+    419                          Comm_GetRealValue();
+    420                          break;
+    421                      case COMM_GET_LOOP_STATE:
+    422                          Comm_GetLoopState();
+    423                          break;
+    424                      case COMM_GET_PWM_DUTY:
+    425                          Comm_GetPwmDuty();
+    426                          break;
+    427                      case COMM_GET_DIMMING_LEVEL:
+    428                          Comm_GetDimmingLevel();
+    429                          break;
+    430                      case COMM_SET_BOOT_MODE:
+    431                          Comm_SetBootMode();
+    432                          break;
+    433                      case COMM_WRITE_MEMORY:
+    434                          Comm_SetBootMode();
+    435                          break;
+    436                      case COMM_READ_MEMORY:
+    437                          Comm_SetBootMode();
+    438                          break;
+    439                      case COMM_ERASE_MEMORY:
+    440                          Comm_SetBootMode();
+    441                          break;
+    442                          
+    443                      default:
+    444                          /* Error feedback */
+    445                          g_CommBuff[1] = COMM_ERROR_COMMAND; 
+    446                          Comm_Feedback(g_CommBuff);  
+    447                          break;  
+    448                      }
+    449                  }
+    450                  /* Comm Lock, Ignore command */
+    451                  else
+    452                  {
+    453                      /* Error feedback */
+    454                      g_CommBuff[1] = COMM_ERROR_LOCK; 
+    455                      Comm_Feedback(g_CommBuff);
+    456                  }
+    457              }
+    458          }
+    459          
+    460          //=============================================================================
+    461          void Comm_RequestKey(void)
+    462          {   
+    463              uint8_t i;
+    464              uint16_t seed;
+    465              
+    466              /* Set seed for srand(), init random function */
+    467              seed = Tick_GetTicks();
+    468              srand(seed); 
+    469              
+    470              /* Generate random key */
+    471              for(i = 0; i < 4; i++)
+    472              {
+    473                  g_Key[i] = rand() % 256;
+    474                  g_CommBuff[i+3] = g_Key[i];
+    475              }
+    476              
+    477              /* Generate password according to key */
+    478              Comm_GeneratePassword(g_Key, g_Password);
+    479              
+    480              /* Send feedback packet */  
+    481              Comm_Feedback(g_CommBuff);
+    482          }
+    483          
+    484          //=============================================================================
+    485          void Comm_SubmitPassword(void)
+    486          {   
+    487              uint8_t i;
+    488              uint8_t state = COMM_OK;
+    489              
+    490              /* Verify password from PC */
+    491              for(i = 0; i < 4; i++)
+    492              {
+    493                  if(g_Password[i] != g_CommBuff[i+3])
+    494                  {
+    495                      state = COMM_ERROR;   
+    496                      break;
+    497                  }
+    498              }
+    499              
+    500              if(state == COMM_OK)
+    501              {
+    502                  /* Unlock comm & start unlock timer */
+    503                  g_CommLock = COMM_UNLOCK;
+    504                  
+    505                  if(g_CommBuff[2] == COMM_UNLOCK_ONCE)
+    506                  {
+    507                      /* Start unlock timer */
+    508                      SWT_StartTimer(SWT_ID_COMM_UNLOCK, COMM_UNLOCK_TIMEOUT);
+    509                  }
+    510                  
+    511                  if(g_CommBuff[2] == COMM_UNLOCK_KEEP)
+    512                  {
+    513                      /* Stop unlock timer */
+    514                      SWT_CloseTimer(SWT_ID_COMM_UNLOCK);
+    515                  }
+    516                  
+    517                  /* Feedback the same data when password ok */
+    518              }
+    519              else
+    520              {
+    521                  /* Lock comm */
+    522                  g_CommLock = COMM_LOCK;
+    523                  
+    524                  /* Error feedback */
+    525                  g_CommBuff[1] = COMM_ERROR_PASSWORD; 
+    526              }
+    527              
+    528              /* Send feedback packet */  
+    529              Comm_Feedback(g_CommBuff);
+    530          }
+    531          
+    532          //=============================================================================
+    533          void Comm_Echo(void)
+    534          {
+    535              /* Send feedback packet for keep device unlock */
+    536              Comm_Feedback(g_CommBuff);
+    537          }
+    538          
+    539          //=============================================================================
+    540          void Comm_GetProjectCode(void)
+    541          {  
+    542              /* Copy code from high to low byte */
+    543              g_CommBuff[3] = (PROJECT_CODE & 0xFF000000) >> 24; 
+    544              g_CommBuff[4] = (PROJECT_CODE & 0x00FF0000) >> 16; 
+    545              g_CommBuff[5] = (PROJECT_CODE & 0x0000FF00) >> 8; 
+    546              g_CommBuff[6] = (PROJECT_CODE & 0x000000FF); 
+    547              
+    548              /* Send feedback packet */  
+    549              Comm_Feedback(g_CommBuff);
+    550          }
+    551          
+    552          //=============================================================================
+    553          void Comm_GetDeviceType(void)
+    554          {
+    555              /* Copy code from high to low byte */
+    556              g_CommBuff[3] = DEVICE_TYPE >> 8; 
+    557              g_CommBuff[4] = DEVICE_TYPE & 0xFF; 
+    558              
+    559              /* Send feedback packet */  
+    560              Comm_Feedback(g_CommBuff);
+    561          }
+    562          
+    563          //=============================================================================
+    564          void Comm_GetOutputPower(void)
+    565          {
+    566              uint16_t power = OUTPUT_POWER / 1000;
+    567              
+    568              /* Copy code from high to low byte */
+    569              g_CommBuff[3] = power >> 8; 
+    570              g_CommBuff[4] = power & 0xFF; 
+    571              
+    572              /* Send feedback packet */  
+    573              Comm_Feedback(g_CommBuff);
+    574          }
+    575          
+    576          //=============================================================================
+    577          void Comm_GetFirmwareVersion(void)
+    578          {
+    579              /* Copy code from high to low byte */
+    580              g_CommBuff[3] = FW_VERSION_MAJOR; 
+    581              g_CommBuff[4] = FW_VERSION_MINOR; 
+    582              
+    583              /* Send feedback packet */  
+    584              Comm_Feedback(g_CommBuff);
+    585          }
+    586          
+    587          //=============================================================================
+    588          void Comm_GetHardwareVersion(void)
+    589          {
+    590              /* Copy code from high to low byte */
+    591              g_CommBuff[3] = HW_VERSION_MAJOR; 
+    592              g_CommBuff[4] = HW_VERSION_MINOR; 
+    593              
+    594              /* Send feedback packet */  
+    595              Comm_Feedback(g_CommBuff);
+    596          }
+    597          
+    598          //=============================================================================
+    599          void Comm_GetSerialNumber(void)
+    600          {
+    601              /* Copy code from high to low byte */
+    602              g_CommBuff[3] = (SN_CODE & 0xFF000000) >> 24; 
+    603              g_CommBuff[4] = (SN_CODE & 0x00FF0000) >> 16; 
+    604              g_CommBuff[5] = (SN_CODE & 0x0000FF00) >> 8; 
+    605              g_CommBuff[6] = (SN_CODE & 0x000000FF); 
+    606              
+    607              /* Send feedback packet */  
+    608              Comm_Feedback(g_CommBuff);
+    609          }
+    610          
+    611          //=============================================================================
+    612          void Comm_GetSampleAD(void)
+    613          {
+    614              uint16_t sample_adc = 0;
+    615              
+    616              if(g_CommBuff[2] == COMM_CH_IOUT)
+    617              {
+    618                  sample_adc = ADC_GetSample(ADC_CHANNEL_IOUT);
+    619              }
+    620              else if(g_CommBuff[2] == COMM_CH_UOUT)
+    621              {
+    622                  sample_adc = ADC_GetSample(ADC_CHANNEL_UOUT);
+    623              }
+    624              else if(g_CommBuff[2] == COMM_CH_DIMM)
+    625              {
+    626                  sample_adc = ADC_GetSample(ADC_CHANNEL_DIM);
+    627              }
+    628              else
+    629              {
+    630                  g_CommBuff[1] = COMM_ERROR_PARAMETER;
+    631              }
+    632              
+    633              /* Copy value from high to low byte */
+    634              g_CommBuff[3] = 0; 
+    635              g_CommBuff[4] = 0; 
+    636              g_CommBuff[5] = sample_adc >> 8; 
+    637              g_CommBuff[6] = sample_adc & 0xFF; 
+    638              
+    639              /* Send feedback packet */  
+    640              Comm_Feedback(g_CommBuff);
+    641          }
+    642          
+    643          //=============================================================================
+    644          void Comm_GetAverageAD(void)
+    645          {
+    646              uint16_t avg_adc = 0;
+    647              
+    648              if(g_CommBuff[2] == COMM_CH_IOUT)
+    649              {
+    650                  avg_adc = Power_GetIoutAvgADC();
+    651              }
+    652              else if(g_CommBuff[2] == COMM_CH_UOUT)
+    653              {
+    654                  avg_adc = Power_GetUoutAvgADC();
+    655              }
+    656              else if(g_CommBuff[2] == COMM_CH_DIMM)
+    657              {
+    658                  avg_adc = 0;
+    659              }
+    660              else
+    661              {
+    662                  g_CommBuff[1] = COMM_ERROR_PARAMETER;
+    663              }
+    664                    
+    665              /* Copy value from high to low byte */
+    666              g_CommBuff[3] = 0; 
+    667              g_CommBuff[4] = 0; 
+    668              g_CommBuff[5] = avg_adc >> 8; 
+    669              g_CommBuff[6] = avg_adc & 0xFF; 
+    670              
+    671              /* Send feedback packet */  
+    672              Comm_Feedback(g_CommBuff);
+    673          }
+    674          
+    675          //=============================================================================
+    676          void Comm_GetRawValue(void)
+    677          {
+    678              //TODO: NOT IMPLEMENT
+    679              
+    680              /* Send feedback packet */  
+    681              Comm_Feedback(g_CommBuff);
+    682          }
+    683          
+    684          //=============================================================================
+    685          void Comm_GetRealValue(void)
+    686          {
+    687              uint32_t real_value = 0;
+    688              
+    689              if(g_CommBuff[2] == COMM_CH_IOUT)
+    690              {
+    691                  real_value = Power_GetRealIout() * 100;
+    692              }
+    693              else if(g_CommBuff[2] == COMM_CH_UOUT)
+    694              {
+    695                  real_value = Power_GetRealUout() * 100;
+    696              }
+    697              else if(g_CommBuff[2] == COMM_CH_DIMM)
+    698              {
+    699                  //TODO: NOT IMPLEMENT 
+    700              }
+    701              else if(g_CommBuff[2] == COMM_CH_ED_TIME)
+    702              {        
+    703                   //real_value = g_ed_time;
+    704              }
+    705              else if(g_CommBuff[2] == COMM_CH_RUN_TIME)
+    706              {
+    707                  //real_value = g_nfc_time;
+    708              }
+    709              else
+    710              {
+    711                  g_CommBuff[1] = COMM_ERROR_PARAMETER;
+    712              }
+    713                    
+    714              /* Copy value from high to low byte */
+    715              g_CommBuff[3] = (real_value & 0xFF000000) >> 24; 
+    716              g_CommBuff[4] = (real_value & 0x00FF0000) >> 16; 
+    717              g_CommBuff[5] = (real_value & 0x0000FF00) >> 8; 
+    718              g_CommBuff[6] = (real_value & 0x000000FF); 
+    719                  
+    720              /* Send feedback packet */  
+    721              Comm_Feedback(g_CommBuff);
+    722          }
+    723          
+    724          //=============================================================================
+    725          void Comm_GetLoopState(void)
+    726          {
+    727              Power_State_t loop_state;
+    728              
+    729              loop_state = Power_GetPowerLoopState();
+    730              
+    731              g_CommBuff[3] = (uint8_t)loop_state;
+    732              
+    733              /* Send feedback packet */  
+    734              Comm_Feedback(g_CommBuff);
+    735          }
+    736          
+    737          //=============================================================================
+    738          void Comm_GetPwmDuty(void)
+    739          {
+    740              uint16_t pwm_duty = 0;  /* duty x 100 */
+    741              
+    742              if(g_CommBuff[2] == COMM_PWM_CTRL)
+    743              {
+    744                  pwm_duty = PWM_GetDuty(PWM_ID_CH_CTRL) * 10;
+    745              }
+    746              else if(g_CommBuff[2] == COMM_PWM_OCP_REF)
+    747              {
+    748                  pwm_duty = PWM_GetDuty(PWM_ID_CH_OCP) * 10;
+    749              }
+    750              else if(g_CommBuff[2] == COMM_PWM_OVP_REF)
+    751              {
+    752                  pwm_duty = PWM_GetDuty(PWM_ID_CH_OVP) * 10;
+    753              }
+    754              else
+    755              {
+    756                  g_CommBuff[1] = COMM_ERROR_PARAMETER;
+    757              }    
+    758              
+    759              /* Copy value from high to low byte */
+    760              g_CommBuff[3] = pwm_duty >> 8; 
+    761              g_CommBuff[4] = pwm_duty & 0xFF; 
+    762                  
+    763              /* Send feedback packet */  
+    764              Comm_Feedback(g_CommBuff);
+    765          }
+    766          
+    767          //=============================================================================
+    768          void Comm_GetDimmingLevel(void)
+    769          {
+    770              uint16_t level = 0;
+    771              
+    772              if(g_CommBuff[2] == COMM_DIMM_CONSTANT)
+    773              {
+    774                  level = Power_GetConstantLumenValue();
+    775              }
+    776              else if(g_CommBuff[2] == COMM_DIMM_ASTRO)
+    777              {
+    778                  level = Power_GetAstroDimmingLevel();
+    779              }   
+    780              else if(g_CommBuff[2] == COMM_DIMM_EOL)
+    781              {
+    782                  level = Power_GetEolDimmingLevel();
+    783              }   
+    784              else if(g_CommBuff[2] == COMM_DIMM_ONE2TEN)
+    785              {
+    786                  level = Power_GetOne2TenDimming();
+    787              }
+    788              else
+    789              {
+    790                  g_CommBuff[1] = COMM_ERROR_PARAMETER;
+    791              }    
+    792              
+    793              /* Copy value from high to low byte */
+    794              g_CommBuff[3] = level >> 8; 
+    795              g_CommBuff[4] = level & 0xFF; 
+    796                  
+    797              /* Send feedback packet */  
+    798              Comm_Feedback(g_CommBuff);
+    799          }
+    800          
+    801          //=============================================================================
+    802          void Comm_SetBootMode(void)
+    803          {
+    804              if(g_CommBuff[2] <= BMI_MAX)
+    805              {
+    806                  MCU_ChangeBMI(g_CommBuff[2]);
+                                       ^
+Warning[Pe188]: enumerated type mixed with another type
+    807              }
+    808              else
+    809              {        
+    810                  /* Error feedback */
+    811                  g_CommBuff[1] = COMM_ERROR_PARAMETER; 
+    812              }
+    813              
+    814              /* Send feedback packet */  
+    815              Comm_Feedback(g_CommBuff);
+    816          }
+    817          
+    818          //=============================================================================
+    819          void Comm_WriteMemory(void)
+    820          {
+    821              //TODO: NOT IMPLEMENT
+    822              
+    823              /* Send feedback packet */  
+    824              Comm_Feedback(g_CommBuff);
+    825          }
+    826          
+    827          
+    828          //=============================================================================
+    829          void Comm_ReadMemory(void)
+    830          {
+    831              //TODO: NOT IMPLEMENT
+    832              
+    833              /* Send feedback packet */  
+    834              Comm_Feedback(g_CommBuff);
+    835          }
+    836          
+    837          
+    838          //=============================================================================
+    839          void Comm_EraseMemory(void)
+    840          {
+    841              //TODO: NOT IMPLEMENT
+    842          
+    843              /* Send feedback packet */  
+    844              Comm_Feedback(g_CommBuff);
+    845          }
+    846          
+    847          #endif
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      12   Comm_CalcuCS
+      16   Comm_CheckPacket
+        16   -> SWT_CheckTimer
+        16   -> SWT_CloseTimer
+        16   -> SWT_StartTimer
+        16   -> USART_GetRxCount
+        16   -> USART_GetRxData
+        16   -> USART_ResetBuffer
+       8   Comm_CmdHandler
+         8   -> Comm_Echo
+         8   -> Comm_Feedback
+         8   -> Comm_GetAverageAD
+         8   -> Comm_GetDeviceType
+         8   -> Comm_GetDimmingLevel
+         8   -> Comm_GetFirmwareVersion
+         8   -> Comm_GetHardwareVersion
+         8   -> Comm_GetLoopState
+         8   -> Comm_GetOutputPower
+         8   -> Comm_GetProjectCode
+         8   -> Comm_GetPwmDuty
+         8   -> Comm_GetRawValue
+         8   -> Comm_GetRealValue
+         8   -> Comm_GetSampleAD
+         8   -> Comm_GetSerialNumber
+         8   -> Comm_RequestKey
+         8   -> Comm_SetBootMode
+         8   -> Comm_SubmitPassword
+       8   Comm_Echo
+         8   -> Comm_Feedback
+       8   Comm_EraseMemory
+         8   -> Comm_Feedback
+       8   Comm_Feedback
+         8   -> Comm_CalcuCS
+         8   -> USART_SendData
+      16   Comm_GeneratePassword
+       8   Comm_GetAverageAD
+         8   -> Comm_Feedback
+         8   -> Power_GetIoutAvgADC
+         8   -> Power_GetUoutAvgADC
+       8   Comm_GetDeviceType
+         8   -> Comm_Feedback
+       8   Comm_GetDimmingLevel
+         8   -> Comm_Feedback
+         8   -> Power_GetAstroDimmingLevel
+         8   -> Power_GetConstantLumenValue
+         8   -> Power_GetEolDimmingLevel
+         8   -> Power_GetOne2TenDimming
+       8   Comm_GetFirmwareVersion
+         8   -> Comm_Feedback
+       8   Comm_GetHardwareVersion
+         8   -> Comm_Feedback
+       8   Comm_GetLoopState
+         8   -> Comm_Feedback
+         8   -> Power_GetPowerLoopState
+       8   Comm_GetOutputPower
+         8   -> Comm_Feedback
+       8   Comm_GetProjectCode
+         8   -> Comm_Feedback
+       8   Comm_GetPwmDuty
+         8   -> Comm_Feedback
+         8   -> PWM_GetDuty
+       8   Comm_GetRawValue
+         8   -> Comm_Feedback
+       8   Comm_GetRealValue
+         8   -> Comm_Feedback
+         8   -> Power_GetRealIout
+         8   -> Power_GetRealUout
+       8   Comm_GetSampleAD
+         8   -> ADC_GetSample
+         8   -> Comm_Feedback
+       8   Comm_GetSerialNumber
+         8   -> Comm_Feedback
+       8   Comm_ReadMemory
+         8   -> Comm_Feedback
+       8   Comm_RequestKey
+         8   -> Comm_Feedback
+         8   -> Comm_GeneratePassword
+         8   -> Tick_GetTicks
+         8   -> rand
+         8   -> srand
+         8 __aeabi_idivmod
+       8   Comm_SetBootMode
+         8   -> Comm_Feedback
+         8   -> MCU_ChangeBMI
+       8   Comm_SubmitPassword
+         8   -> Comm_Feedback
+         8   -> SWT_CloseTimer
+         8   -> SWT_StartTimer
+       8   Comm_Task
+         8   -> Comm_CheckPacket
+         8   -> Comm_CmdHandler
+         8   -> Comm_VerifyCS
+         8   -> SWT_CheckTimer
+         8   -> SWT_CloseTimer
+         8   -> USART_ResetBuffer
+       8   Comm_VerifyCS
+         8   -> Comm_CalcuCS
+       8   Comm_WriteMemory
+         8   -> Comm_Feedback
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable13
+       4  ??DataTable19
+       4  ??DataTable19_1
+       4  ??DataTable21
+       4  ??DataTable24
+       4  ??DataTable5
+       4  ??DataTable8
+       4  ?_0
+      34  Comm_CalcuCS
+     106  Comm_CheckPacket
+     308  Comm_CmdHandler
+      10  Comm_Echo
+      10  Comm_EraseMemory
+      28  Comm_Feedback
+      60  Comm_GeneratePassword
+      84  Comm_GetAverageAD
+      22  Comm_GetDeviceType
+      88  Comm_GetDimmingLevel
+      22  Comm_GetFirmwareVersion
+      22  Comm_GetHardwareVersion
+      18  Comm_GetLoopState
+      26  Comm_GetOutputPower
+      34  Comm_GetProjectCode
+      92  Comm_GetPwmDuty
+      10  Comm_GetRawValue
+     102  Comm_GetRealValue
+      92  Comm_GetSampleAD
+      34  Comm_GetSerialNumber
+      10  Comm_ReadMemory
+      72  Comm_RequestKey
+      34  Comm_SetBootMode
+     100  Comm_SubmitPassword
+      60  Comm_Task
+      40  Comm_VerifyCS
+      10  Comm_WriteMemory
+      12  g_CommBuff
+       1  g_CommLock
+       1  g_CommRxState
+       4  g_Key
+       4  g_Password
+
+ 
+    21 bytes in section .bss
+     1 byte  in section .data
+     4 bytes in section .rodata
+ 1 556 bytes in section .text
+ 
+ 1 556 bytes of CODE  memory
+     4 bytes of CONST memory
+    22 bytes of DATA  memory
+
+Errors: none
+Warnings: 3

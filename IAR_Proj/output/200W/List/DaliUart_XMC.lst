@@ -1,0 +1,616 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:50
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\Dali\HW\DaliUart_XMC.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\Dali\HW\DaliUart_XMC.c"
+#        -D XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\DaliUart_XMC.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\DaliUart_XMC.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\Dali\HW\DaliUart_XMC.c
+      1          /******************** (C) COPYRIGHT 2007 - 2015 OSRAM AG *********************************************************************************
+      2          * File Name         : DaliUart_XMC.c
+      3          * Description       : Hardware-dependent part of XMC1xxx for the DALI-Rx and DALI-Tx functions (InputCapture and OutputCompare)
+      4          *                     #ifdefs: configDaliUartSoftSync (times for fading and answer frame derived from command frame)
+      5          * Author(s)         : Jutta Avril (JA)
+      6          * Created           : 14.09.2013 (JA)
+      7          * Modified by       : DATE       (AUTHOR)    DESCRIPTION OF CHANGE
+      8          **********************************************************************************************************************************/
+      9          #include <stdint.h>
+     10          #include <stdbool.h>
+     11          
+     12          #define MODULE_DALI
+     13          #include "config.h"
+     14          #include "XMC1xxx.h"
+     15          //#include "DaliDefs.h"
+     16          //#include "DaliTypes.h"
+     17          
+     18          #include "DaliUartHAL.h"
+     19          #include "DaliUart_XMC1xxx.h"
+     20          #include "xmc1300_ports_hwdriver.h"
+     21          
+     22          typedef enum
+     23          {
+     24              DALI_SetClock_NOT_SUPPORTED,
+     25              DALI_SetClock_DONE,
+     26              DALI_SetClock_NOT_DONE
+     27          } TypeDaliSetClock;
+     28          
+     29          TypeDaliSetClock DaliHAL_SetClock(uint32_t mclk_MHz);
+     30          
+     31          ///<- data structure for DaliTx control
+     32          void DaliUart_RxCaptureISR(void);
+     33          void DaliUart_TxCompareISR(void);
+     34          
+     35          ///<- data structure for DaliTx control
+     36          #define MAX_IDX_TX     7                                                       // MAX_IDX_TX = (2^x -1), with x avoiding buffer overrun!
+     37          typedef struct {
+     38            uint16_t pattern[MAX_IDX_TX+1][2];                                            // buffer for both idleState (2nd index 0) and activeState (2nd index 1)
+     39            uint8_t sendIdx;                                                              //
+     40            uint8_t receiveIdx;                                                           //
+     41          } tx_t;
+     42          
+     43          typedef struct {
+     44            tx_t tx;
+     45          } daliHAL_t;
+     46          daliHAL_t daliHAL;
+     47          
+     48          
+     49          #define MAX_IDX_DaliCapture     31                                              // MAX_IDX_DaliCapture = (2^x -1), with x avoiding buffer overrun!
+     50          typedef struct {                                                                // times are initialized/updated by DaliUart.c, read-only by DaliUart_HAL.c
+     51            uint8_t index;
+     52            uint16_t times[MAX_IDX_DaliCapture+1];
+     53          } TypeDaliCapture;
+     54          TypeDaliCapture daliCapture;	                                                //
+     55          
+     56          /******************************************************************************/
+     57          TypeDaliVoltage DaliHAL_Init(void)
+     58          {
+     59            ///<- Configure TIMER registers (Timer control registers are all 16 bit):
+     60          //MSK  ENABLE_DALI_TIMER_CLOCK_Rx;                                                   // enable Clock to DALI_TIM
+     61            INIT_DALI_TIMER;                                                              // Clear CR1, CR2, set Timer to unlimited upcounting, set prescaler to count µs
+     62            ENABLE_DALI_TIMER_CLOCK_Rx;                                                   //MSK // enable Clock to DALI_TIM
+     63            INIT_DALI_RxCAPTURE;                                                          // select InputCapture mode
+     64            ENABLE_DALI_TIMER_CLOCK_Tx;
+     65            ENABLE_DALI_TxCOMPARE;
+     66            FORCE_IDLE_DALI_TxCOMPARE;
+     67          //DALI_TIM_Tx->PSL |= CCU4_CC4_PSL_PSL_Msk;                                     // Set passiveLevel = High
+     68            DALI_TIM_Tx->CMC = 0;                                                         // clear inputCapture settings
+     69            ENABLE_SHADOW_TRANS_Tx;                                                       // enable loading of PSL immediately (timer is not running yet)
+     70            DISABLE_DALI_TIMER_CLOCK_Tx;                                                  // stop clock after configuration
+     71          
+     72          ///<- Then configure GPIO (registers are all 32 bit:  CRL, CRH, IDR, ODR, BSRR, BRR, LCKR)
+     73            DALI_GPIO_Rx_INIT;                                                            // Start clock, set pin to input, no pull-up,
+     74          #ifdef DALI_CONFIG_RX_PULLUP
+     75            hw_gpio_set_mode(P0_6, XMC_GPIO_MODE_INPUT_PULL_UP);
+     76          #endif
+     77            DALI_GPIO_Tx_INIT_IDLE;
+     78          
+     79          /*
+     80          #ifdef LIB_DEBUG
+     81            DALI_GPIO_Tx_SET_ACTIVE;				//set output always to push/pull in debug mode
+     82            ENA_SHADOW_TRANS_Tx;
+     83            SET_TxDALI_onCOMPARE;
+     84            DALI_TIM_Tx->TCCLR = CCU4_CC4_TCCLR_TCC_Msk;
+     85          #endif
+     86          */
+     87            return DaliHAL_GetVoltage();
+     88          }
+     89          
+     90          ///------------------------------------------------------------------------------------------------------------------------------------------------------------
+     91          /// \brief                (Re)starts the DaliUart hardware in InputCapture mode.
+     92          /// \param                nothing
+     93          /// \retval               nothing
+     94          /// \calling extern       none
+     95          //-------------------------------------------------------------------------------------------------------------------------------------------------------------
+     96          //
+     97          uint8_t DaliHAL_Start(void) {
+     98            daliHAL.tx.receiveIdx = 0;
+     99            daliHAL.tx.sendIdx = 0;
+    100            CLEAR_DALI_RxCAPTURE_FLAG;
+    101            if (IS_DALI_RxLEVEL_HIGH) {                                                   ///<- Start InputCapture: select polarity of captured edge ..
+    102              daliCapture.index = 0;                                                      // .. rising edges are captured to even index (index ist pre-incremented)
+    103              START_DALI_RxCAPTURE_FALLING;
+    104            }
+    105            else {
+    106              daliCapture.index = 1;                                                      // .. falling edges are captured to odd index (index ist pre-incremented)
+    107              START_DALI_RxCAPTURE_RISING;
+    108            }
+    109            START_DALI_TIMER_Rx;                                                          ///<- Start Timer (if not already running)
+    110            ENABLE_DALI_RxCAPTURE_IRQ;
+    111            return daliCapture.index;
+    112          }
+    113          
+    114          ///------------------------------------------------------------------------------------------------------------------------------------------------------------
+    115          /// \brief                Stops DaliUart functions and sets the ÂµC-parts used by DaliUart into power saving state.
+    116          /// \param                nothing
+    117          /// \retval               nothing
+    118          /// \calling extern       none
+    119          //-------------------------------------------------------------------------------------------------------------------------------------------------------------
+    120          //
+    121          void DaliHAL_Stop( void ) {
+    122          #ifdef DALI_DATA_OUT      // defined in IAR-Project!
+    123            if (daliUartHALStop < 0xFFFF) {daliUartHALStop++;}
+    124          #endif
+    125            DALI_GPIO_Tx_SET_IDLE;                                                        // avoid power consumption (if DaliTx is active, answer is finalized "internally", because interrupts are not disabled)
+    126          }
+    127          
+    128          //------------------------------------------------------------------------------
+    129          //
+    130          TypeDaliVoltage DaliHAL_GetVoltage(void) {
+    131            if (IS_DALI_RxLEVEL_HIGH) {return DALI_HIGH;}
+    132            else                      {return DALI_LOW;}
+    133          }
+    134          
+    135          
+    136          ///------------------------------------------------------------------------------------------------------------------------------------------------------------
+    137          /// \brief                Provides the actual time to the non-hardware dependend part.
+    138          /// \param                nothing
+    139          /// \retval               actual 16 bit value of the Dali-Timer in µs
+    140          /// \calling extern       none
+    141          //-------------------------------------------------------------------------------------------------------------------------------------------------------------
+    142          //
+    143          uint16_t DaliHAL_GetTimer_us(void) {
+    144            return READ_DALI_RxTIMER;
+    145          }
+    146          
+    147          ///------------------------------------------------------------------------------------------------------------------------------------------------------------
+    148          /// \brief                Provides the captured times to the non-hardware dependend part.
+    149          /// \param                readIndex: index to last edge read
+    150          ///                       *captTime: pointer where to store the captured time of readIndex in µs
+    151          ///                       *actTime: pointer where to store the actual time in µs
+    152          ///                       *readIndex: pointer to the index of last edge read (writable for limiting to the legal range)
+    153          /// \retval               index of the last edge captured
+    154          /// \calling extern       none
+    155          //-------------------------------------------------------------------------------------------------------------------------------------------------------------
+    156          //   | Start-bit   | D_n          | D_(n-1)
+    157          // __        ______ _______
+    158          //   |______|      |_______|______|______|
+    159          //   0      1      0       1                last bit of capture index
+    160          //-
+    161          
+    162          uint8_t DaliHAL_GetCapture(uint16_t *captTime, uint16_t *actTime, uint8_t *readIndex) {
+    163            *readIndex &= MAX_IDX_DaliCapture;                                            // limit read index to legal range
+    164            *captTime = daliCapture.times[*readIndex];
+    165            *actTime = READ_DALI_RxTIMER;                                                 //
+    166          
+    167            return daliCapture.index;                                                     // first read time, then index!
+    168          }
+    169          
+    170          //-------------------------------------------------------------------------------------------------------------------------------------------------------------
+    171          /// \brief ISR - Interrupt to store a captured edge.
+    172          ///
+    173          /// Variable time with 1 µs resolution. Overrun of readIdx is not checked: Evaluation must create an error, if diffTimes between edges are close to 2^16
+    174          //-------------------------------------------------------------------------------------------------------------------------------------------------------------
+    175          //
+    176          inline void DaliUart_RxCaptureISR( void )                                       //
+    177          {
+    178            uint8_t captureIdx, risingEdge;
+    179          
+    180            captureIdx = (daliCapture.index+1) & MAX_IDX_DaliCapture;                     // preincrement index
+    181            daliCapture.times[captureIdx] = READ_DALI_RxCAPTURE_REG;                      // capture also, if overrun, for timeout check
+    182            daliCapture.index = captureIdx;
+    183            TOGGLE_DALI_RxCAPTURE;
+    184          
+    185            risingEdge = captureIdx&0x01;                                                 // next edge to capture (falling edges are captured to odd index)
+    186            if (   ( !(IS_DALI_RxLEVEL_HIGH) && (risingEdge == 0))                        // detect a missing edge: if level is low and next capture is falling edge ..
+    187                ||    (IS_DALI_RxLEVEL_HIGH && (risingEdge != 0))  ) {                    // .. or vice versa
+    188              FORCE_DALI_RxCAPTURE_IRQ;                                                   // captures the actual timer upon force.
+    189            }
+    190          }
+    191          
+    192          ///--------------------------------------------------------------------------------------------------------------------------------
+    193          /// \brief                Triggers sending an answer to Dali command (manchester frame of 8 bit).
+    194          /// \param                startTimeDelay Delay time between last rising edge of receive frame and first falling edge of answer-frame.
+    195          /// \retval               none
+    196          /// \calling extern       none
+    197          //---------------------------------------------------------------------------------------------------------------------------------
+    198          //
+    199          bool DaliHAL_AddTxPattern(uint16_t idleStateTime_us, uint16_t periodTime_us) {
+    200            uint8_t writeIdx = daliHAL.tx.receiveIdx;
+    201          
+    202            if (IS_DALI_Tx_TIMER_RUNNING) {                                               // add pattern
+    203              uint8_t endIdx = (writeIdx+1) & MAX_IDX_TX;
+    204              if (endIdx != daliHAL.tx.sendIdx) {
+    205                daliHAL.tx.pattern[writeIdx][0] = idleStateTime_us;
+    206                daliHAL.tx.pattern[writeIdx][1] = periodTime_us;
+    207                daliHAL.tx.pattern[endIdx][0] = periodTime_us+1;                          // no edges: Compare > Period: indicates that telegram finished
+    208                daliHAL.tx.pattern[endIdx][1] = periodTime_us;
+    209                daliHAL.tx.receiveIdx = endIdx;
+    210                return true;
+    211              }
+    212              else {
+    213                return false;                                                             // buffer already full
+    214              }
+    215            }
+    216            else {                                                                        // start transmission
+    217              if (daliHAL.tx.receiveIdx == 0 ) {
+    218                ENABLE_DALI_TIMER_CLOCK_Tx;
+    219                DALI_TIM_Tx->CRS = idleStateTime_us;                                      // keep active level while startup time and ..
+    220                DALI_TIM_Tx->PRS = periodTime_us;                                         // .. activate pattern upon next call
+    221                daliHAL.tx.receiveIdx = 1;
+    222                daliHAL.tx.sendIdx = 0;                                                   //
+    223              }
+    224              else {
+    225                ENABLE_SHADOW_TRANS_Tx;                                                   // enable loading of startperiod immediately (timer is not running yet)
+    226                START_DALI_Tx_TIMER;
+    227                PPB->NVIC_ICPR = DALI_CMPR_IRQ_MSK;   	                                  // clear interrupt pending flag in NVIC
+    228                DALI_TIM_Tx->SWR |= CCU4_CC4_SWR_RPM_Msk;                                 // clear "PeriodMatch"-flag
+    229                DALI_TIM_Tx->INTE |= CCU4_CC4_INTE_PME_Msk;                               // enable interupt "PeriodMatch"
+    230                DALI_GPIO_Tx_SET_ACTIVE;
+    231                DALI_TIM_Tx->CRS = idleStateTime_us;                                      // 1st and 2nd pattern is not stored to buffer!
+    232                DALI_TIM_Tx->PRS = periodTime_us;
+    233                ENABLE_SHADOW_TRANS_Tx;                                                   // enable reload of new level/period with next period overflow
+    234                daliHAL.tx.pattern[1][0] = periodTime_us+1;                               // no edges: Compare > Period to finalize frame
+    235                daliHAL.tx.pattern[1][1] = periodTime_us;
+    236              }
+    237              return true;
+    238            }
+    239          }
+    240          
+    241          //---------------------------------------------------------------------------------------------------------------------------
+    242          /// \brief ISR - Interrupt on OutputCompare each interval of 416 Ö³ (nominal) - used to perform the DaliTx state machine.
+    243          //
+    244          //   | Start-bit   | D_n          | D_(n-1)
+    245          // __        ______ _______
+    246          //   |______|      |_______|______|______|
+    247          //   D->M   M->D   D-M
+    248          //
+    249          //---------------------------------------------------------------------------------------------------------------------------
+    250          //
+    251          inline void DaliUart_TxCompareISR( void )
+    252          {
+    253            uint16_t period = DALI_TIM_Tx->PR;                                            // define variable to compile without warning (comparision of two ÂµC-registers):
+    254            if ( DALI_TIM_Tx->CR > period ) {                                             // if last pattern (only to force IRQ after last frame-pattern)
+    255              STOP_DALI_TIMER_Tx;                                                         // stop and clear timer
+    256              DALI_TIM_Tx->INTE &= (~CCU4_CC4_INTE_PME_Msk);                              // DISABLE_DALI_TxCOMPARE_IRQ;
+    257              DALI_GPIO_Tx_SET_IDLE;                                                      // read-modify-write must not be interrupted!
+    258              DISABLE_DALI_TIMER_CLOCK_Tx;
+    259              daliHAL.tx.receiveIdx = 0;                                                  // indicates, that all received pattern of telegram was sent
+    260            }
+    261            else {                                                                        // pattern running, write next pattern to shadow registers
+    262              uint8_t sendIdx = daliHAL.tx.sendIdx;
+    263              sendIdx = (sendIdx+1) & MAX_IDX_TX;
+    264              daliHAL.tx.sendIdx = sendIdx;
+    265              DALI_TIM_Tx->CRS = daliHAL.tx.pattern[sendIdx][0];
+    266              DALI_TIM_Tx->PRS = daliHAL.tx.pattern[sendIdx][1];
+    267              ENABLE_SHADOW_TRANS_Tx;                                                     // enable reload of new level/period with next period overflow
+    268            }
+    269          }
+    270          
+    271          /* Following function may be reactivated. If so, function declaration must be provided in a header different from DaliUart_HAL.h! */
+    272          ///------------------------------------------------------------------------------------------------------------------------------------------------------------
+    273          /// \brief                Changes CPU-clock to the value received as parameter (if supported).
+    274          /// \param                CPU-clock in MHz to be applied together with correction of the prescaler to Dali-Rx and Dali-Tx timers()
+    275          /// \retval               Result DALI_SetClock_NOT_SUPPORTED / DALI_SetClock_DONE / DALI_SetClock_NOT_DONE
+    276          //-------------------------------------------------------------------------------------------------------------------------------------------------------------
+    277          //
+    278          TypeDaliSetClock DaliHAL_SetClock(uint32_t mclk_MHz) {
+    279            uint32_t updateCLKCR;                                 // to update 32-bit register ClockVontrolRegister CLKCR in SystemVontrolUnit SCU, i.e. type UL
+    280            uint32_t updatePrescaler;                             // to update 32-bit register, i.e. type UL
+    281          
+    282            updateCLKCR = 0x3FF00000;
+    283            updateCLKCR |= (1UL << (uint32_t)SCU_CLK_CLKCR_PCLKSEL_Pos) & (uint32_t)SCU_CLK_CLKCR_PCLKSEL_Msk;    // always set peripheral clock = 2x main clock!
+    284          
+    285            switch(mclk_MHz) {
+    286            default:
+    287              return DALI_SetClock_NOT_SUPPORTED;                                         // RETURN!!!!!!!!!
+    288            case 1:
+    289              updateCLKCR |= (64UL << (uint32_t)SCU_CLK_CLKCR_IDIV_Pos) & (uint32_t)SCU_CLK_CLKCR_IDIV_Msk;
+    290              updatePrescaler = 0UL;
+    291              break;
+    292            case 2:
+    293              updateCLKCR |= (32UL << (uint32_t)SCU_CLK_CLKCR_IDIV_Pos) & (uint32_t)SCU_CLK_CLKCR_IDIV_Msk;
+    294              updatePrescaler = 1UL;
+    295              break;
+    296            case 4:
+    297              updateCLKCR |= (16UL << (uint32_t)SCU_CLK_CLKCR_IDIV_Pos) & (uint32_t)SCU_CLK_CLKCR_IDIV_Msk;
+    298              updatePrescaler = 2UL;
+    299              break;
+    300            case 8:
+    301              updateCLKCR |= (8UL << (uint32_t)SCU_CLK_CLKCR_IDIV_Pos) & (uint32_t)SCU_CLK_CLKCR_IDIV_Msk;
+    302              updatePrescaler = 3UL;
+    303              break;
+    304            case 16:
+    305              updateCLKCR |= (4UL << (uint32_t)SCU_CLK_CLKCR_IDIV_Pos) & (uint32_t)SCU_CLK_CLKCR_IDIV_Msk;
+    306              updatePrescaler = 4UL;
+    307              break;
+    308            case 32:
+    309              updateCLKCR |= (2UL << (uint32_t)SCU_CLK_CLKCR_IDIV_Pos) & (uint32_t)SCU_CLK_CLKCR_IDIV_Msk;
+    310              updatePrescaler = 5UL;
+    311              break;
+    312            case 64:
+    313              // set divider IDIV for main clock (reset value of CLKCR: 0x3FF00400) -> IDIV=bit8..15
+    314              updateCLKCR |= (1UL << (uint32_t)SCU_CLK_CLKCR_IDIV_Pos) & (uint32_t)SCU_CLK_CLKCR_IDIV_Msk;
+    315              updatePrescaler = 6UL;
+    316              break;
+    317            }
+    318            if (updatePrescaler > DALI_TIM_Rx->PSC) {
+    319            __disable_interrupt();
+    320              DALI_TIM_Rx->PSC = updatePrescaler;                                         // if PCLK is rising, change prescaler of timer before the one for PCLK
+    321              DALI_TIM_Tx->PSC = updatePrescaler;
+    322              //----CLOCK-SETUP---------------------------------------------------------------------------------
+    323              SCU_GENERAL->PASSWD = 0x000000C0UL;                                                 // disable write protection to SCU registers
+    324              //  WR_REG(SCU_CLK->CLKCR, SCU_CLK_CLKCR_CNTADJ_Msk, SCU_CLK_CLKCR_CNTADJ_Pos, 0x3FFU); // set delay for stabilizing VCC to 16us
+    325              SCU_CLK->CLKCR = updateCLKCR;
+    326              SCU_GENERAL->PASSWD = 0x000000C3UL;                                                 // enable write protection to SCU registers
+    327            __enable_interrupt();
+    328            }
+    329            else if (updatePrescaler < DALI_TIM_Rx->PSC){
+    330            __disable_interrupt();
+    331              //----CLOCK-SETUP---------------------------------------------------------------------------------
+    332              SCU_GENERAL->PASSWD = 0x000000C0UL;                                                 // disable write protection to SCU registers
+    333            //  WR_REG(SCU_CLK->CLKCR, SCU_CLK_CLKCR_CNTADJ_Msk, SCU_CLK_CLKCR_CNTADJ_Pos, 0x3FFU); // set delay for stabilizing VCC to 16us
+    334              SCU_CLK->CLKCR = updateCLKCR;
+    335              SCU_GENERAL->PASSWD = 0x000000C3UL;                                                 // enable write protection to SCU registers
+    336              //------------------------------------------------------------------------------------------------
+    337              DALI_TIM_Rx->PSC = updatePrescaler;                                         // if PCLK is reduced, change prescaler of timer after the one for PCLK
+    338              DALI_TIM_Tx->PSC = updatePrescaler;
+    339            __enable_interrupt();
+    340            } // no else: no update, if updatePrescaler == DALI_TIM_Rx->PSC
+    341            return DALI_SetClock_DONE;
+    342          }
+    343          
+    344          ///--- p r i v a t e   f u n c t i o n s ---------------------------------------
+    345          /*
+    346          #define INIT_DALI_TIMER                       {DISABLE_PSSWRD_PRTCTN; \
+    347          											  CLR_MCLCK_DIVIDER; \
+    348          											  SET_MCLCK_DIVIDER; \
+    349          											  CLR_PCLK_MCLK_RATIO; \
+    350          											  SET_PCLK_MCLK_RATIO; \
+    351          											  ENA_CCU4_CLOCK; \
+    352          											  CLR_DALI_INTRPT_PENDING; \
+    353          											  ENABLE_DALI_INTRPT_NODE; \
+    354                                                        START_CCU4_PRESCALER; \
+    355                                                        CLR_CCU4_SUSPEND; \
+    356                                                        SET_CCU4_SAFE_STOP; \
+    357                                                        \
+    358                                                        SET_DALI_Rx_MAX_PERIOD; \
+    359                                                        SET_DALI_Rx_PRESCALER; \
+    360                                                        SET_DALI_Rx_SERVICE; \
+    361                                                        ENA_SHADOW_TRANS_Rx; \
+    362                                                        CONF_DALI_Rx_TIMER; \
+    363            	  	  	  	  	  	  	  	  	  	  	  \
+    364            	  	  	  	  	  	  	  	  	  	  	  CLR_DALI_Tx_PERIOD; \
+    365                                                        SET_DALI_Tx_PRESCALER; \
+    366                                                        SET_DALI_Tx_SERVICE; \
+    367                                                        CONF_DALI_Tx_TIMER;}
+    368          */
+    369          /*
+    370          void DaliHALinitTimer(void) {
+    371          
+    372          }
+    373          */
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       4   CCU40_0_IRQHandler
+       4   CCU40_1_IRQHandler
+      12   DaliHAL_AddTxPattern
+       4   DaliHAL_GetCapture
+       0   DaliHAL_GetTimer_us
+       4   DaliHAL_GetVoltage
+       8   DaliHAL_Init
+         8   -> DaliHAL_GetVoltage
+       4   DaliHAL_SetClock
+       4   DaliHAL_Start
+       0   DaliHAL_Stop
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable4
+       4  ??DataTable4_1
+       4  ??DataTable4_2
+       4  ??DataTable5
+       4  ??DataTable5_1
+       4  ??DataTable5_2
+       4  ??DataTable5_3
+       4  ??DataTable5_4
+       4  ??DataTable5_5
+       4  ??DataTable5_6
+       4  ??DataTable5_7
+       4  ??DataTable6
+       4  ??DataTable6_1
+       4  ??DataTable6_10
+       4  ??DataTable6_11
+       4  ??DataTable6_12
+       4  ??DataTable6_13
+       4  ??DataTable6_14
+       4  ??DataTable6_15
+       4  ??DataTable6_16
+       4  ??DataTable6_17
+       4  ??DataTable6_18
+       4  ??DataTable6_19
+       4  ??DataTable6_2
+       4  ??DataTable6_20
+       4  ??DataTable6_21
+       4  ??DataTable6_3
+       4  ??DataTable6_4
+       4  ??DataTable6_5
+       4  ??DataTable6_6
+       4  ??DataTable6_7
+       4  ??DataTable6_8
+       4  ??DataTable6_9
+       4  ??DataTable7
+       4  ??DataTable7_1
+       4  ??DataTable7_2
+       4  ??DataTable7_3
+       4  ??DataTable7_4
+       4  ??DataTable8
+       4  ??DataTable8_1
+       4  ??DataTable8_2
+       4  ??DataTable9
+       4  ??DataTable9_1
+       4  ??DataTable9_10
+       4  ??DataTable9_11
+       4  ??DataTable9_12
+       4  ??DataTable9_13
+       4  ??DataTable9_14
+       4  ??DataTable9_15
+       4  ??DataTable9_16
+       4  ??DataTable9_17
+       4  ??DataTable9_18
+       4  ??DataTable9_19
+       4  ??DataTable9_2
+       4  ??DataTable9_20
+       4  ??DataTable9_21
+       4  ??DataTable9_22
+       4  ??DataTable9_3
+       4  ??DataTable9_4
+       4  ??DataTable9_5
+       4  ??DataTable9_6
+       4  ??DataTable9_7
+       4  ??DataTable9_8
+       4  ??DataTable9_9
+     142  CCU40_0_IRQHandler
+      90  CCU40_1_IRQHandler
+     250  DaliHAL_AddTxPattern
+      38  DaliHAL_GetCapture
+       8  DaliHAL_GetTimer_us
+      18  DaliHAL_GetVoltage
+     362  DaliHAL_Init
+     204  DaliHAL_SetClock
+     140  DaliHAL_Start
+      14  DaliHAL_Stop
+      68  daliCapture
+      36  daliHAL
+
+ 
+   104 bytes in section .bss
+ 1 522 bytes in section .text
+ 
+ 1 522 bytes of CODE memory
+   104 bytes of DATA memory
+
+Errors: none
+Warnings: none

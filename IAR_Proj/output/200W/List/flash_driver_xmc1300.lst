@@ -1,0 +1,498 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:51
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\NVM\driver_xmc1300\flash_driver_xmc1300.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\NVM\driver_xmc1300\flash_driver_xmc1300.c"
+#        -D XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\flash_driver_xmc1300.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\flash_driver_xmc1300.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\NVM\driver_xmc1300\flash_driver_xmc1300.c
+      1          // ---------------------------------------------------------------------------------------------------------------------
+      2          // Microcontroller Toolbox - Firmware Framework for Full Digital SSL Ballasts
+      3          // ---------------------------------------------------------------------------------------------------------------------
+      4          // (c) Osram spa
+      5          //     Via Castagnole 65/a
+      6          //     31100 Treviso (I)
+      7          //
+      8          //
+      9          // The content of this file is intellectual property of OSRAM spa. It is
+     10          // confidential and not intended for any public release. All rights reserved.
+     11          //
+     12          //
+     13          // Indent style: Replace tabs by spaces, 2 spaces per indentation level
+     14          //
+     15          // Initial version: 2014-12, g.marcolin@osram.it
+     16          //
+     17          // Change History:
+     18          //
+     19          // $Author: G.Marcolin $
+     20          // $Revision: 1003 $
+     21          // $Date: 2015-07-10 21:09:45 +0800 (Fri, 10 Jul 2015) $
+     22          // $Id: flash_driver_xmc1300.c 1003 2015-07-10 13:09:45Z G.Marcolin $
+     23          // $URL: https://app-ehnsvn02.int.osram-light.com/svn/EC/Toolbox1.0/Nvm/tags/v1.2/driver_xmc1300/flash_driver_xmc1300.c $
+     24          //
+     25          // ---------------------------------------------------------------------------------------------------------------------
+     26          
+     27          /** \addtogroup NvmDriver
+     28           * \{
+     29           * \defgroup NvmDriverXmc1300 Nvm driver Xmc1300
+     30           * \{
+     31           * \brief Flash driver for Xmc1300 
+     32           *
+     33           * \file
+     34           * \brief Nvm driver for Xmc1300
+     35           */
+     36          
+     37          #include <stdint.h>
+     38          #include <XMC1300.h>
+     39          
+     40          #define MODULE_NVM
+     41          #include "Config.h"
+     42          
+     43          #include "Global.h"
+     44          #include "nvm_driver_mcu.h"
+     45          #include "nvm_driver.h"
+     46          
+     47          /**********************************************************************************************************************/
+     48          
+     49          typedef enum FLASH003_NVMStatus
+     50          {
+     51          	/*the function succeeded*/
+     52          	FLASH003_NVM_PASS               = (int32_t) 0x00010000,
+     53          	/*generic error code*/
+     54          	FLASH003_NVM_E_FAIL             = (int32_t) 0x80010001,
+     55          	/*source data not in RAM*/
+     56          	FLASH003_NVM_E_SRC_AREA_EXCCEED = (int32_t) 0x80010003,
+     57          	/*source data is not 4 byte aligned*/
+     58          	FLASH003_NVM_E_SRC_ALIGNMENT    = (int32_t) 0x80010004,
+     59          	/*NVM module cannot be physically accessed*/
+     60          	FLASH003_NVM_E_NVM_FAIL         = (int32_t) 0x80010005,
+     61          	 /*verification of written page not successful*/
+     62          	FLASH003_NVM_E_VERIFY           = (int32_t) 0x80010006,
+     63          	/*destination data is not (completely) located in NVM*/
+     64          	FLASH003_NVM_E_DST_AREA_EXCEED  = (int32_t) 0x80010009,
+     65          	/*destination data is not properly aligned*/
+     66          	FLASH003_NVM_E_DST_ALIGNMENT    = (int32_t) 0x80010010
+     67          
+     68          } FLASH003_NVM_STATUS;
+     69          
+     70          /**********************************************************************************************************************/
+     71          
+     72          #define FLASH003_ROM_FUNCTION_TABLE_START   (0x00000100U)   															// Start address of the ROM function table
+     73          
+     74          #define FLASH003_NvmErase            		(FLASH003_ROM_FUNCTION_TABLE_START + 0x00U) 								// Pointer to Erase Flash Page routine
+     75          
+     76          #define FLASH003_NvmErasePage        		(*((FLASH003_NVM_STATUS (**) (uint32_t * src_add)) FLASH003_NvmErase))		// Macro for Erase Flash Page routine
+     77          
+     78          #define FLASH003_RESET                      (0)
+     79          
+     80          #define FLASH003_ONESHOT_WRITE				(0x91)
+     81          
+     82          #define FLASH003_ECCVERRRST_IDLESET         (0x3000)																	// Macro to check ECC and Verification error
+     83          
+     84          /**********************************************************************************************************************/
+     85          
+     86          #define WPAGE_WORD_CNT						(NVM_WPAGE_SIZE_BYTE / 4)
+     87          
+     88          #if ( (4*WPAGE_WORD_CNT) != NVM_WPAGE_SIZE_BYTE)
+     89          #error !!! NVM_WPAGE_SIZE_BYTE must be multiple of 4 !!!
+     90          #endif
+     91          
+     92          /** ********************************************************************************************************************
+     93          * \brief Initializes nv memory driver
+     94          *
+     95          ***********************************************************************************************************************/
+     96          
+     97          void nvm_drv_init( void )
+     98          {
+     99          	NVM->NVMPROG = FLASH003_ECCVERRRST_IDLESET;					// Enabling flash Idle State
+    100          
+    101          	SET_BIT( NVM->NVMPROG, NVM_NVMPROG_RSTECC_Pos);				// Reset ECC2READ,ECC1READ in NVMSTATUS
+    102          
+    103          	SET_BIT( NVM->NVMPROG, NVM_NVMPROG_RSTVERR_Pos);			// Reset Write protocol error in NVMSTATUS
+    104          }
+    105          
+    106          /** ********************************************************************************************************************
+    107          * \brief Locks nv memory
+    108          *
+    109          ***********************************************************************************************************************/
+    110          
+    111          void nvm_drv_lock(void)
+    112          {
+    113          
+    114          }
+    115          
+    116          /** ********************************************************************************************************************
+    117          * \brief Unlocks nv memory
+    118          *
+    119          ***********************************************************************************************************************/
+    120          
+    121          void nvm_drv_unlock(void)
+    122          {
+    123          
+    124          }
+    125          
+    126          /** ********************************************************************************************************************
+    127          * \brief Erases an e-page
+    128          *
+    129          * \param epage_addr
+    130          *        e-page address
+    131          *
+    132          * \retval NVM_ERR_NO_ERR if e-page erased successfully
+    133          *
+    134          ***********************************************************************************************************************/
+    135          
+    136          nvm_err_t nvm_drv_erase_epage( uint32_t epage_addr )
+    137          {
+    138              nvm_err_t err_code = NVM_ERR_NO_ERR;
+    139              uint32_t addr_check;
+    140          
+    141              addr_check = (NVM_EPAGE_SIZE_BYTE*(epage_addr/NVM_EPAGE_SIZE_BYTE));        // Addr must be multiple of e-page size
+    142          
+    143              if(addr_check != epage_addr)
+    144              {
+    145                  err_code = NVM_ERR_ADDR;
+    146              }
+    147          	else
+    148              {
+    149                  if(FLASH003_NvmErasePage((uint32_t *)epage_addr) != FLASH003_NVM_PASS)
+    150                  {
+    151                      err_code = NVM_ERR_ERASE;
+    152                  }
+    153              }
+    154          
+    155              return err_code;
+    156          }
+    157          
+    158          /** ********************************************************************************************************************
+    159          * \brief Writes a w-page
+    160          *
+    161          * \param wpage_addr
+    162          *        w-page address
+    163          *
+    164          * \param pdata
+    165          *        pointer to data to write
+    166          *
+    167          * \warning pdata shall pointer to a memory area as big as a w-page
+    168          *
+    169          * \retval NVM_ERR_NO_ERR if w-page written successfully
+    170          *
+    171          ***********************************************************************************************************************/
+    172          
+    173          nvm_err_t nvm_drv_write_wpage( uint32_t wpage_addr, const void *pdata )
+    174          {
+    175              nvm_err_t err_code = NVM_ERR_NO_ERR;
+    176              uint32_t addr_check;
+    177          	uint32_t word_cnt;
+    178          	uint32_t *ptr;
+    179          
+    180              addr_check = (NVM_WPAGE_SIZE_BYTE*(wpage_addr/NVM_WPAGE_SIZE_BYTE));        // Addr must be multiple of w-page size
+    181          
+    182              if(addr_check != wpage_addr)
+    183              {
+    184                  err_code = NVM_ERR_ADDR;
+    185              }
+    186          	else
+    187              {
+    188          	    WR_REG(NVM->NVMPROG, NVM_NVMPROG_ACTION_Msk, NVM_NVMPROG_ACTION_Pos, FLASH003_ONESHOT_WRITE);
+    189          
+    190          		ptr = (uint32_t *)pdata;
+    191          
+    192          		for(word_cnt = 0; word_cnt < WPAGE_WORD_CNT; word_cnt++)
+    193          		{
+    194          		  *((uint32_t *) (wpage_addr + (4 * word_cnt) )) = *ptr;
+    195          		  ptr++;
+    196          		}
+    197              }
+    198          
+    199              return err_code;
+    200          }
+    201          
+    202          /** ********************************************************************************************************************
+    203          * \brief Reads a byte
+    204          *
+    205          * \param addr 
+    206          *        byte address
+    207          *
+    208          * \param pdata 
+    209          *        pointer to byte where data is copied
+    210          *
+    211          * \retval NVM_ERR_NO_ERR if byte read successfully
+    212          *
+    213          ***********************************************************************************************************************/
+    214          
+    215          nvm_err_t nvm_drv_read_byte( uint32_t addr, uint8_t *pdata)
+    216          {
+    217              nvm_err_t err_code = NVM_ERR_NO_ERR;
+    218          	uint32_t rd1;
+    219              uint32_t rd2;
+    220              uint32_t rd3;
+    221          
+    222              if((addr < NVM_BASE_ADDR) || (addr > ( NVM_BASE_ADDR + NVM_SIZE_BYTE - 1)))
+    223              {
+    224                  err_code = NVM_ERR_ADDR;
+    225              }
+    226              else
+    227              {
+    228          	    rd1 = RD_REG(NVM->NVMPROG, NVM_NVMPROG_ACTION_Msk, NVM_NVMPROG_ACTION_Pos);
+    229          
+    230          		rd2 = RD_REG(NVM->NVMSTATUS, NVM_NVMSTATUS_BUSY_Msk, NVM_NVMSTATUS_BUSY_Pos);
+    231          
+    232          		rd3 = RD_REG(NVM->NVMSTATUS, NVM_NVMSTATUS_SLEEP_Msk, NVM_NVMSTATUS_SLEEP_Pos);
+    233          
+    234          		if((rd1 == FLASH003_RESET) && (rd2 == FLASH003_RESET) && (rd3 == FLASH003_RESET))
+    235          		{
+    236          			*pdata = (*(volatile uint8_t *)(addr));
+    237          
+    238          			rd1 = RD_REG(NVM->NVMSTATUS, NVM_NVMSTATUS_ECC1READ_Msk, NVM_NVMSTATUS_ECC1READ_Pos);
+    239          
+    240          			rd2 = RD_REG(NVM->NVMSTATUS, NVM_NVMSTATUS_ECC2READ_Msk,NVM_NVMSTATUS_ECC2READ_Pos);
+    241          
+    242          			if((rd1 != FLASH003_RESET) || (rd2 != FLASH003_RESET))
+    243          			{
+    244          				err_code = NVM_ERR_READ;
+    245          			}
+    246          		}
+    247          		else
+    248          		{
+    249          			err_code = NVM_ERR_READ;
+    250          		}
+    251              }
+    252          
+    253              return err_code;
+    254          }
+    255          
+    256          /** ********************************************************************************************************************
+    257          * \brief Reads a block of memory
+    258          *
+    259          * \param addr 
+    260          *        starting address
+    261          *
+    262          * \param size 
+    263          *        number of byte to read
+    264          *
+    265          * \param pdata 
+    266          *        pointer to block of memory where data is copied
+    267          *
+    268          * \retval NVM_ERR_NO_ERR if byte read successfully
+    269          *
+    270          ***********************************************************************************************************************/
+    271          
+    272          nvm_err_t nvm_drv_read_buffer( uint32_t addr, uint32_t size, void *pdata )
+    273          {
+    274              uint32_t i;
+    275          	uint32_t rd1;
+    276              uint32_t rd2;
+    277              uint32_t rd3;
+    278              uint8_t *p;
+    279              nvm_err_t err_code = NVM_ERR_NO_ERR;
+    280          
+    281              if((addr < NVM_BASE_ADDR) || ((addr + size) > ( NVM_BASE_ADDR + NVM_SIZE_BYTE)))
+    282              {
+    283                  err_code = NVM_ERR_ADDR;
+    284              }
+    285              else
+    286              {
+    287          		rd1 = RD_REG(NVM->NVMPROG, NVM_NVMPROG_ACTION_Msk, NVM_NVMPROG_ACTION_Pos);
+    288          
+    289          		rd2 = RD_REG(NVM->NVMSTATUS, NVM_NVMSTATUS_BUSY_Msk, NVM_NVMSTATUS_BUSY_Pos);
+    290          
+    291          		rd3 = RD_REG(NVM->NVMSTATUS, NVM_NVMSTATUS_SLEEP_Msk, NVM_NVMSTATUS_SLEEP_Pos);
+    292          
+    293          		if((rd1 == FLASH003_RESET) && (rd2 == FLASH003_RESET) && (rd3 == FLASH003_RESET))
+    294          		{
+    295          			p = (uint8_t *)pdata;
+    296          
+    297          			for(i = 0; i < size; i++)
+    298          			{
+    299          				*p = (*(volatile uint8_t *)(addr + i));
+    300          				p++;
+    301          			}
+    302          
+    303          			rd1 = RD_REG(NVM->NVMSTATUS, NVM_NVMSTATUS_ECC1READ_Msk, NVM_NVMSTATUS_ECC1READ_Pos);
+    304          
+    305          			rd2 = RD_REG(NVM->NVMSTATUS, NVM_NVMSTATUS_ECC2READ_Msk,NVM_NVMSTATUS_ECC2READ_Pos);
+    306          
+    307          			if((rd1 != FLASH003_RESET) || (rd2 != FLASH003_RESET))
+    308          			{
+    309          				err_code = NVM_ERR_READ;
+    310          			}
+    311          		}
+    312          		else
+    313          		{
+    314          			err_code = NVM_ERR_READ;
+    315          		}
+    316              }
+    317          
+    318              return err_code;
+    319          }
+    320          
+    321          /**********************************************************************************************************************/
+    322          
+    323          /** \} */ // NvmDriverXmc1300
+    324          /** \} */ // NvmDriver
+    325          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   nvm_drv_erase_epage
+         8   -- Indirect call
+       0   nvm_drv_init
+       0   nvm_drv_lock
+      20   nvm_drv_read_buffer
+      16   nvm_drv_read_byte
+       0   nvm_drv_unlock
+      12   nvm_drv_write_wpage
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable3
+       4  ??DataTable3_1
+       4  ??DataTable3_2
+       4  ??DataTable3_3
+      44  nvm_drv_erase_epage
+      38  nvm_drv_init
+       2  nvm_drv_lock
+     124  nvm_drv_read_buffer
+     106  nvm_drv_read_byte
+       2  nvm_drv_unlock
+      64  nvm_drv_write_wpage
+
+ 
+ 396 bytes in section .text
+ 
+ 396 bytes of CODE memory
+
+Errors: none
+Warnings: none

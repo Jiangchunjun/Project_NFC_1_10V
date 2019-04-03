@@ -1,0 +1,334 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:52
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\Alloc\Legacy\MemoryBanksGeneric.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\Alloc\Legacy\MemoryBanksGeneric.c"
+#        -D XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\MemoryBanksGeneric.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\MemoryBanksGeneric.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\Alloc\Legacy\MemoryBanksGeneric.c
+      1          // ---------------------------------------------------------------------------------------------------------------------
+      2          // MemoryBanksGeneric.c
+      3          // ---------------------------------------------------------------------------------------------------------------------
+      4          // (c) Osram GmbH
+      5          // Development Electronics for SSL
+      6          // Parkring 33
+      7          // 85748 Garching
+      8          //
+      9          // The content of this file is intellectual property of OSRAM GmbH. It is
+     10          // confidential and not intended for any public release. All rights reserved.
+     11          //
+     12          // Indent style: Replace tabs by spaces, 2 spaces per indentation level
+     13          //
+     14          // Initial version: Jutta Avril, 14.03.2014
+     15          //
+     16          // $Author: w.limmer $
+     17          // $Revision: 11112 $
+     18          // $Date: 2017-12-06 05:58:10 +0800 (Wed, 06 Dec 2017) $
+     19          // $Id: MemoryBanksGeneric.c 11112 2017-12-05 21:58:10Z w.limmer $
+     20          // $URL: https://app-ehnsvn02.int.osram-light.com/svn/EC/Mpc/Alloc/branches/RC_2018-02-20/Src/Legacy/MemoryBanksGeneric.c $
+     21          //
+     22          // ---------------------------------------------------------------------------------------------------------------------
+     23          
+     24          /// \file
+     25          /// \brief Implementation of memory banks > 1
+     26          ///
+     27          ///
+     28          /// \par Bank 2 ... n
+     29          /// All other banks are in seperate files. Only the init and the connection to the DALI read and write commands are in this file.
+     30          
+     31          #include <stdint.h>
+     32          #include <stdbool.h>
+     33          
+     34          #define MODULE_MPC
+     35          #include "Config.h"
+     36          #include "MpcDefs.h"                          // only: use definition of DALI_FastTIME_TICK_ms, DALI_SlowTIME_TICK_ms
+     37          
+     38          #include "Mpc.h"
+     39          
+     40          #include "MemoryBanksGeneric.h"
+     41          #ifdef MPC_INFO_NUMBER
+     42           #include "MemoryBank_Info.h"
+     43          #endif
+     44          #include "Global.h"
+     45          
+     46          #ifdef MPC_PASSWORD2_NUMBER
+     47          STATIC_ASSERT( (MPC_PASSWORD1_NUMBER + 2) <= MPC_PASSWORD2_NUMBER, \
+     48                          "MPC_PASSWORD2_NUMBER must be greater or equal to MPC_PASSWORD1_NUMBER + 2 to protect at least 1 MPC");
+     49          #endif
+     50          
+     51          
+     52          //----------------------------------------------------------------------------------------------------------------------
+     53          /// \brief Initialise the memory Banks
+     54          ///
+     55          /// \param  none. All channels are initialised
+     56          ///
+     57          /// \retval      Return true, the persistent data are changed, else the persistent data are unchanged.
+     58          //----------------------------------------------------------------------------------------------------------------------
+     59          void MemoryBankGeneric_Init( void )
+     60          {
+     61            MpcInit();
+     62          }
+     63          
+     64          //----------------------------------------------------------------------------------------------------------------------
+     65          /// \brief Sets the reset values of the memory bank upon Dali-Reset (at least reset lockMpc).
+     66          /// \param bank        Selection of the bank to be reset (if bank = 0: reset all).
+     67          /// \param channel    The selected device channel.
+     68          /// \retval      none.
+     69          //----------------------------------------------------------------------------------------------------------------------
+     70          //
+     71          void MemoryBankGeneric_Reset( uint8_t bank_nr, uint8_t channel )
+     72          {
+     73            uint8_t selectBank, firstBank, lastBank, lockMPC;
+     74          
+     75            if (bank_nr == 0) {
+     76              firstBank = 2;
+     77              lastBank = MPC_MAX_NUMBER;
+     78            }
+     79            else {
+     80              firstBank = lastBank = bank_nr;
+     81            }
+     82          
+     83            for (selectBank = firstBank; selectBank <= lastBank; selectBank++) {
+     84              MpcReadDali(selectBank, 0x02, channel, &lockMPC);
+     85              // A reset via DALI is allowed only when a Mpc is unlocked and not password protected
+     86              if (lockMPC == 0x55) {
+     87                // But skip extra password lock query here: By contract, the lockbyte always reads as 0x00
+     88                // when a password lock is present for a Mpc: The if(lockMPC == 0x55) is sufficient
+     89                MpcCmd (bank_nr, MPC_CMD_RESET, MPC_PORT_DALI, channel);
+     90                MpcWriteDali(selectBank, 0x02, channel, 0xFF);
+     91              }
+     92            }
+     93          }
+     94          
+     95          //----------------------------------------------------------------------------------------------------------------------
+     96          /// \brief Reads a value from a DALI memory bank.
+     97          ///
+     98          /// The address 0x00 contains the last accessible memory location and the address 0x01 the checksum of the memory bank.
+     99          /// Attention: recursive function! To calculate the checksum function calls itself.
+    100          ///
+    101          /// \param bank      The memory bank number.
+    102          /// \param address    The address in the selected memory bank.
+    103          /// \param value    Pointer to a memory address to save the result.
+    104          /// \param channel    The device channel.
+    105          ///
+    106          /// \retval      MPC_RW_OK = value read / MPC_RW_OUT_OF_RANGE.
+    107          //----------------------------------------------------------------------------------------------------------------------
+    108          mpc_rw_enum MemoryBankGeneric_GetValue( uint8_t bank, uint8_t address, uint8_t *pValue, uint8_t channel )
+    109          {
+    110            mpc_returncodes_enum res = MpcReadDali(bank, address, channel, pValue);
+    111            if (res > 0) {
+    112              return MPC_RW_OK;
+    113            }
+    114            else {
+    115              return MPC_RW_OUT_OF_RANGE;
+    116            }
+    117          }
+    118          
+    119          
+    120          
+    121          //----------------------------------------------------------------------------------------------------------------------
+    122          /// \brief Writes a value in a DALI memory bank.
+    123          ///
+    124          /// The bank number in pDaliDevice->dtr1, address in pDaliDevice->dtr and channel in pDaliDevice->channel.
+    125          ///
+    126          /// \param bank      The memory bank number.
+    127          /// \param address    The address in the selected memory bank.
+    128          /// \param value    The value to write.
+    129          /// \param channel    The device channel.
+    130          ///
+    131          /// \retval      MPC_RW_OK = value written / MPC_RW_DENY = write not possible / MPC_RW_OUT_OF_RANGE..
+    132          //----------------------------------------------------------------------------------------------------------------------
+    133          mpc_rw_enum MemoryBankGeneric_SetValue( uint8_t bank, uint8_t address, uint8_t value, uint8_t channel )
+    134          {
+    135            mpc_rw_enum mpcWrite = MPC_RW_OUT_OF_RANGE;
+    136            mpc_returncodes_enum mpcNewWrite = MPC_OUT_OF_RANGE;
+    137          
+    138            mpcNewWrite = MpcWriteDali (bank, address, channel, value);
+    139          
+    140            if (mpcNewWrite >= 0) {
+    141              mpcWrite = MPC_RW_OK;
+    142            }else
+    143            {
+    144              mpcWrite = (mpcNewWrite == MPC_OK)?MPC_RW_OK:((mpcNewWrite == MPC_DENY)?  \
+    145                        MPC_RW_DENY:MPC_RW_OUT_OF_RANGE);
+    146            }
+    147            if (mpcWrite == MPC_RW_OK) {
+    148              MpcIncChangeCounter();
+    149            }
+    150            return mpcWrite;
+    151          }
+    152          
+    153          
+    154          
+    155          void MemoryBankGeneric_SlowTimer( uint8_t channels ) {
+    156          #ifdef MPC_PASSWORD1_NUMBER                                                     // MPC_PASSWORD2_NUMBER may be optionally defined in addition
+    157            MemoryBank_Password_SlowTimer();
+    158          #endif
+    159          #ifdef MPC_INFO_NUMBER
+    160            MemoryBank_Info_SlowTimer();
+    161          #endif
+    162          }
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   MemoryBankGeneric_GetValue
+         8   -> MpcReadDali
+       8   MemoryBankGeneric_Init
+         8   -> MpcInit
+      24   MemoryBankGeneric_Reset
+        24   -> MpcCmd
+        24   -> MpcReadDali
+        24   -> MpcWriteDali
+      16   MemoryBankGeneric_SetValue
+        16   -> MpcIncChangeCounter
+        16   -> MpcWriteDali
+       8   MemoryBankGeneric_SlowTimer
+         8   -> MemoryBank_Info_SlowTimer
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      34  MemoryBankGeneric_GetValue
+       8  MemoryBankGeneric_Init
+      96  MemoryBankGeneric_Reset
+      86  MemoryBankGeneric_SetValue
+       8  MemoryBankGeneric_SlowTimer
+
+ 
+ 232 bytes in section .text
+ 
+ 232 bytes of CODE memory
+
+Errors: none
+Warnings: none

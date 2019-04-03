@@ -1,0 +1,691 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:52
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\Csm\MemoryBank_Csm.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\Csm\MemoryBank_Csm.c"
+#        -D XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\MemoryBank_Csm.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\MemoryBank_Csm.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\Csm\MemoryBank_Csm.c
+      1          /******************** (C) COPYRIGHT 2012 OSRAM OEC *****************************
+      2          * File Name          : MemoryBank_Csm.c
+      3          * Author             : Fighera Diego, modified by Jutta Avril
+      4          * Date               : 11/2016
+      5          * Description        : MemoryBank, Id=12, Version 2, CSM current setting module, 2D1 2911382 03
+      6          *
+      7          *                     Multiport version
+      8          *******************************************************************************/
+      9          
+     10          // $Author: d.fighera $
+     11          // $Revision: 8883 $
+     12          // $Date: 2017-06-29 23:24:02 +0800 (Thu, 29 Jun 2017) $
+     13          // $Id: MemoryBank_Csm.c 8883 2017-06-29 15:24:02Z d.fighera $
+     14          // $URL: https://app-ehnsvn02.int.osram-light.com/svn/EC/Mpc/Csm/tags/Revision3.0/Source/MemoryBank_Csm.c $
+     15          
+     16          ///
+     17          /// Implementation of the memory bank "CSM Configuration Page". To enable define:
+     18          /// #define MPC_CSM_NUMBER      [bank number]
+     19          /// #define AVAILABLE_PORTS_NUMBER
+     20          
+     21          #include <stdint.h>
+     22          #include <stdbool.h>
+     23          
+     24          #define MODULE_MPC
+     25          #include "Config.h"
+     26          #include "MpcDefs.h"
+     27          #include "nvm.h"
+     28          
+     29          #include "MemoryBank_Csm.h"
+     30          
+     31          
+     32          
+     33          
+     34          #ifdef MPC_CSM_LEDset2
+     35          #define MPC_CSM_LEDset2_FLAG        0x80
+     36          #else
+     37          #define MPC_CSM_LEDset2_FLAG        0x00
+     38          #endif
+     39          
+     40          #ifndef MPC_CSM_PROTECT_CURRENT
+     41            #define MPC_CSM_PROTECT_CURRENT   0xFFFF
+     42          #endif
+     43          
+     44          
+     45          #ifndef AVAILABLE_PORTS_NUMBER
+     46            #define AVAILABLE_PORTS_NUMBER    1
+     47            #warning  "Undefined number of ports for MPC access !"
+     48          #endif
+     49          
+     50          #define MPC_CSM_MODE_MASK           0x7F                                        // bit no
+     51          
+     52          
+     53          #define MacroLowByte( x )  ( (uint8_t)( x & 0xFF) )                                 //Low-Byte eines Integer Wertes
+     54          #define MacroHighByte( x ) ( (uint8_t)( (x & 0xFF00) >> 8 ) )                       //High-Byte eines Integer Wertes
+     55          
+     56          
+     57          typedef struct
+     58          {
+     59              uint8_t lockByte;                                                           ///< \brief The lock uint8_t of the memory bank.
+     60              uint8_t opMode;                    // RW 6
+     61              uint8_t nom_cur_hi;                // RW
+     62              uint8_t nom_cur_lo;                // RW
+     63              uint8_t protect_cur_hi;            // RW
+     64              uint8_t protect_cur_lo;            // RW
+     65          
+     66          } TypeMemoryBank_CSM;
+     67          
+     68          uint8_t  ledset_status[DEVICE_CHANNELS];
+     69          uint16_t ledset_current[DEVICE_CHANNELS];
+     70          // uint16_t actual_current[DEVICE_CHANNELS];
+     71          
+     72          
+     73          /// \brief The data of the memory bank.
+     74          TypeMemoryBank_CSM memoryBank_CSMPhy[DEVICE_CHANNELS];
+     75          TypeMemoryBank_CSM * memoryBank_CSM[DEVICE_CHANNELS];
+     76          
+     77          
+     78          uint16_t latch_nominal_current[DEVICE_CHANNELS];
+     79          uint16_t latch_protect_current[DEVICE_CHANNELS];
+     80          
+     81          uint16_t readingPortBufferLedsetCurrent[DEVICE_CHANNELS][AVAILABLE_PORTS_NUMBER];
+     82          
+     83          uint16_t readingPortBufferCsmCurrent[DEVICE_CHANNELS][AVAILABLE_PORTS_NUMBER];
+     84          uint16_t writingPortBufferCsmCurrent[DEVICE_CHANNELS][AVAILABLE_PORTS_NUMBER];
+     85          
+     86          uint16_t readingPortBufferCsmProtection[DEVICE_CHANNELS][AVAILABLE_PORTS_NUMBER];
+     87          uint16_t writingPortBufferCsmProtection[DEVICE_CHANNELS][AVAILABLE_PORTS_NUMBER];
+     88          
+     89          
+     90          uint16_t joinBytes(uint8_t *ptr);
+     91          
+     92          
+     93          //---------------------------------------------------------------------------------------------------------------------------
+     94          /// \brief Initialise the memory bank.
+     95          ///
+     96          ///
+     97          /// \retval   Return true, the persistent data are changed, else the persistent data are unchanged.
+     98          //---------------------------------------------------------------------------------------------------------------------------
+     99          void MemoryBank_Csm_Init(  )
+    100          {
+    101              uint8_t i;
+    102              bool resetData;
+    103          
+    104              for( i = 0; i < DEVICE_CHANNELS; i++ )
+    105              {
+    106          
+    107                  memoryBank_CSM[i] = &memoryBank_CSMPhy[i] ;
+    108          
+    109                  resetData = ( nvmDataInit( (void*)memoryBank_CSM[i] , sizeof( TypeMemoryBank_CSM ), (nvm_memclass_t)0 ) != NVM_INIT_OK );
+    110          
+    111                  if (resetData)                                                          // set the default values
+    112                  {
+    113          
+    114                      memoryBank_CSM[i]->opMode = MPC_CSM_MODE;
+    115                      memoryBank_CSM[i]->nom_cur_hi = MacroHighByte(MPC_CSM_DEFAULT_CURRENT);
+    116                      memoryBank_CSM[i]->nom_cur_lo = MacroLowByte(MPC_CSM_DEFAULT_CURRENT);
+    117                      memoryBank_CSM[i]->protect_cur_hi = MacroHighByte(MPC_CSM_PROTECT_CURRENT);
+    118                      memoryBank_CSM[i]->protect_cur_lo = MacroLowByte(MPC_CSM_PROTECT_CURRENT);
+    119          
+    120                      ledset_status[i] = MPC_CSM_LEDset2_FLAG;
+    121          
+    122                  }
+    123                  else                                                                    // use persistent memory content
+    124                  {
+    125                      // copy into buffer is done during calling HalPersistentMemoryGetBlock
+    126                      // thus no code is needed here
+    127                  }
+    128          
+    129                  latch_nominal_current[i] = joinBytes( &memoryBank_CSM[i]->nom_cur_hi) ;
+    130                  latch_protect_current[i] = joinBytes( &memoryBank_CSM[i]->protect_cur_hi);
+    131          
+    132          #ifdef CSMtestNominalCurrent
+    133                  CSMtestNominalCurrent(&latch_nominal_current[i]) ;
+    134                  memoryBank_CSM[i]->nom_cur_hi = latch_nominal_current[i] >> 8 ;
+    135                  memoryBank_CSM[i]->nom_cur_lo = latch_nominal_current[i] ;
+    136          #endif
+    137          #ifdef CSMtestProtectionCurrent
+    138                  CSMtestProtectionCurrent(&latch_protect_current[i]) ;
+    139                  memoryBank_CSM[i]->protect_cur_hi = latch_protect_current[i] >> 8 ;
+    140                  memoryBank_CSM[i]->protect_cur_lo = latch_protect_current[i] ;
+    141          #endif
+    142          
+    143                  //thermal_index[i] = 0xFF;
+    144                  ledset_current[i] = 0xFFFF;
+    145          
+    146                  memoryBank_CSM[i]->lockByte = 255;
+    147              }
+    148          }
+    149          
+    150          //---------------------------------------------------------------------------------------------------------------------------
+    151          /// \brief Initialise the memory Bank.
+    152          ///
+    153          /// \param channel    The device channel.
+    154          /// \retval           none
+    155          //---------------------------------------------------------------------------------------------------------------------------
+    156          void MemoryBank_Csm_Reset( uint8_t channel )                                    // reset only MPC variables
+    157          {
+    158              // no variables of MPC have to be reset
+    159              memoryBank_CSM[channel]->lockByte = 255;
+    160          }
+    161          
+    162          //---------------------------------------------------------------------------------------------------------------------------
+    163          /// \brief Reads a value from the memory bank "CSM".
+    164          ///
+    165          /// The data will be collected from the real device.
+    166          /// The checksum will be handled in MemoryBank.c
+    167          ///
+    168          /// \param address      The address in the selected memory bank.
+    169          /// \param value        Pointer to a memory address to save the result.
+    170          /// \param channel      The device channel.
+    171          /// \param port         The port number.
+    172          ///
+    173          /// \retval            'MPC_RW_OK' in case of successful read
+    174          //---------------------------------------------------------------------------------------------------------------------------
+    175          
+    176          mpc_rw_enum MemoryBank_Csm_GetValue_port( uint8_t address, uint8_t *value, uint8_t channel, uint8_t port )
+    177          {
+    178              if ( port >= AVAILABLE_PORTS_NUMBER )
+    179              {
+    180                  return MPC_RW_OUT_OF_RANGE;
+    181              }
+    182          
+    183              switch( address )
+    184              {
+    185              case 0:                                                                     //last addressable memory bank location
+    186                  *value = MPC_CurrentSetting_LastADDRESS;
+    187                  return MPC_RW_OK;
+    188          
+    189              case 1:                                                                     // indicator byte is always 0
+    190                  *value = 0;
+    191                  return MPC_RW_OK;
+    192          
+    193              case 2:                                                                     // lock byte
+    194                  *value = memoryBank_CSM[channel]->lockByte;
+    195                  return MPC_RW_OK;
+    196          
+    197              case 3:                                                                     //number of the multipurpose center
+    198                  *value = MPC_CurrentSetting_ID ;
+    199                  return MPC_RW_OK;
+    200          
+    201              case 4:                                                                     //version of the multipurpose center implementation
+    202                  *value = MPC_CurrentSetting_VERSION;
+    203                  return MPC_RW_OK;
+    204          
+    205              case 5:                                                                     // enable
+    206                  *value = ledset_status[channel] | MPC_CSM_LEDset2_FLAG;
+    207                  return MPC_RW_OK;
+    208          
+    209              case 6:
+    210                  *value = memoryBank_CSM[channel]->opMode;
+    211                  return MPC_RW_OK;
+    212          
+    213              case 7:
+    214                  readingPortBufferCsmCurrent[channel][port] = ((uint16_t)memoryBank_CSM[channel]->nom_cur_hi) << 8 | (uint16_t)memoryBank_CSM[channel]->nom_cur_lo;
+    215                  *value = (uint8_t)(readingPortBufferCsmCurrent[channel][port] >> 8);
+    216                  return MPC_RW_OK;
+    217          
+    218              case 8:
+    219                  *value = (uint8_t)(readingPortBufferCsmCurrent[channel][port]);
+    220                  return MPC_RW_OK;
+    221          
+    222          
+    223              case 9:
+    224                  readingPortBufferCsmProtection[channel][port] = ((uint16_t)memoryBank_CSM[channel]->protect_cur_hi) << 8 | (uint16_t)memoryBank_CSM[channel]->protect_cur_lo;
+    225                  *value = (uint8_t)(readingPortBufferCsmProtection[channel][port] >> 8);
+    226                  return MPC_RW_OK;
+    227          
+    228              case 10:
+    229                  *value = (uint8_t)(readingPortBufferCsmProtection[channel][port]);
+    230                  return MPC_RW_OK;
+    231          
+    232          
+    233              case 11:
+    234                  readingPortBufferLedsetCurrent[channel][port] = ledset_current[channel];
+    235                  *value = MacroHighByte( readingPortBufferLedsetCurrent[channel][port] );
+    236                  return MPC_RW_OK;
+    237          
+    238              case 12:
+    239                  *value = MacroLowByte( readingPortBufferLedsetCurrent[channel][port] );
+    240                  return MPC_RW_OK;
+    241          
+    242              default:
+    243                  return MPC_RW_OUT_OF_RANGE;
+    244              }
+    245          }
+    246          
+    247          //---------------------------------------------------------------------------------------------------------------------------
+    248          /// \brief Writes a value in the memory bank "CSM".
+    249          ///
+    250          /// The bank number in daliDevice->dtr1, address in daliDevice->dtr and channel in daliDevice->channel.
+    251          ///
+    252          /// \param address      The address in the selected memory bank.
+    253          /// \param value        The value to write.
+    254          /// \param channel      The channel ID of the device .
+    255          /// \param port         The port number.
+    256          ///
+    257          /// \retval            'MPC_RW_OK' in case of a successful write
+    258          //---------------------------------------------------------------------------------------------------------------------------
+    259          
+    260          mpc_rw_enum MemoryBank_Csm_SetValue_port( uint8_t address, uint8_t value, uint8_t channel, uint8_t port )
+    261          {
+    262              if ( (memoryBank_CSM[channel]->lockByte != 0x55) && (address != 2))
+    263              {
+    264                  return MPC_RW_DENY;
+    265              }
+    266          
+    267              if ( port >= AVAILABLE_PORTS_NUMBER )
+    268              {
+    269                  return MPC_RW_OUT_OF_RANGE;
+    270              }
+    271          
+    272              switch( address )
+    273              {
+    274              case 2:                                                                     // the lock byte
+    275                  memoryBank_CSM[channel]->lockByte = value;
+    276                  return MPC_RW_OK;
+    277          
+    278              case 6:                                                                     // 0x80 reserved bit
+    279                  //value &= (memoryBank_CSM[channel]->opMode | 0x7F);                      // it can not be changed from 0 to 1
+    280                  value &= MPC_CSM_MODE_MASK;                                             // any writes reset reserved bit-7 
+    281                  memoryBank_CSM[channel]->opMode = value;
+    282                  return MPC_RW_OK;
+    283          
+    284              case 7:
+    285                  memoryBank_CSM[channel]->nom_cur_hi = value;
+    286          
+    287                  writingPortBufferCsmCurrent[channel][port] = ( (uint16_t)value ) << 8;
+    288                  return MPC_RW_OK;
+    289          
+    290              case 8:
+    291                  memoryBank_CSM[channel]->nom_cur_lo = value;
+    292          
+    293                  writingPortBufferCsmCurrent[channel][port] |= (uint16_t)value;
+    294          
+    295                  latch_nominal_current[channel] = writingPortBufferCsmCurrent[channel][port] ;
+    296          
+    297          #ifdef CSMtestNominalCurrent
+    298                  CSMtestNominalCurrent(&latch_nominal_current[channel]) ;
+    299                  memoryBank_CSM[channel]->nom_cur_hi = latch_nominal_current[channel] >> 8 ;
+    300                  memoryBank_CSM[channel]->nom_cur_lo = latch_nominal_current[channel] ;
+    301          #endif
+    302                  return MPC_RW_OK;
+    303          
+    304          
+    305              case 9:
+    306          #ifdef MPC_CSM_PROTECT_CURRENT
+    307                  memoryBank_CSM[channel]->protect_cur_hi = value;
+    308          
+    309                  writingPortBufferCsmProtection[channel][port] = ((uint16_t)value) << 8;
+    310          #endif
+    311                  return MPC_RW_OK;
+    312          
+    313              case 10:
+    314          #ifdef MPC_CSM_PROTECT_CURRENT
+    315                  memoryBank_CSM[channel]->protect_cur_lo = value;
+    316          
+    317                  writingPortBufferCsmProtection[channel][port] |= (uint16_t)value;
+    318          #else
+    319                  writingPortBufferCsmProtection[channel][port] = ((uint16_t)memoryBank_CSM[channel]->protect_cur_hi) << 8 | (uint16_t)memoryBank_CSM[channel]->protect_cur_lo;
+    320          #endif
+    321          
+    322                  latch_protect_current[channel] = writingPortBufferCsmProtection[channel][port];
+    323          
+    324          #ifdef CSMtestProtectionCurrent
+    325                  CSMtestProtectionCurrent(&latch_protect_current[channel]) ;
+    326                  memoryBank_CSM[channel]->protect_cur_hi = latch_protect_current[channel] >> 8 ;
+    327                  memoryBank_CSM[channel]->protect_cur_lo = latch_protect_current[channel] ;
+    328          #endif
+    329                  return MPC_RW_OK;
+    330          
+    331              default:
+    332                  return MPC_RW_OUT_OF_RANGE;                              // other values are not writable
+    333              }
+    334          }
+    335          
+    336          //---------------------------------------------------------------------------------------------------------------------------
+    337          /// \brief Reads a value from the memory bank "CSM".                            Version without port
+    338          ///
+    339          /// The data will be collected from the real device.
+    340          /// The checksum will be handled in MemoryBank.c
+    341          ///
+    342          /// \param address      The address in the selected memory bank.
+    343          /// \param value        Pointer to a memory address to save the result.
+    344          /// \param channel      The device channel.
+    345          ///
+    346          /// \retval            'MPC_RW_OK' in case of successful read
+    347          //---------------------------------------------------------------------------------------------------------------------------
+    348          mpc_rw_enum MemoryBank_Csm_GetValue( uint8_t address, uint8_t *value, uint8_t channel )
+    349          {
+    350              return MemoryBank_Csm_GetValue_port( address, value, channel, 0 );
+    351          }
+    352          
+    353          //---------------------------------------------------------------------------------------------------------------------------
+    354          /// \brief Writes a value in a the memory bank "CSM".                           Version without port
+    355          ///
+    356          /// The bank number in daliDevice->dtr1, address in daliDevice->dtr and channel in daliDevice->channel.
+    357          ///
+    358          /// \param address      The address in the selected memory bank.
+    359          /// \param value        The value to write.
+    360          /// \param channel      The channel ID of the device .
+    361          ///
+    362          /// \retval            'MPC_RW_OK' in case of a successful write
+    363          //---------------------------------------------------------------------------------------------------------------------------
+    364          mpc_rw_enum MemoryBank_Csm_SetValue( uint8_t address, uint8_t value, uint8_t channel )
+    365          {
+    366              return MemoryBank_Csm_SetValue_port( address, value, channel, 0 );
+    367          }
+    368          
+    369          
+    370          //--------------------------------------------------------------------------------------------------------------------------
+    371          //
+    372          //                        Application functions
+    373          //
+    374          //--------------------------------------------------------------------------------------------------------------------------
+    375          
+    376          
+    377          // **************************************************** Function to GET MPC data
+    378          
+    379          //---------------------------------------------------------------------------------------------------------------------------
+    380          /// \brief allow the application to inquire the current mode
+    381          ///
+    382          /// \param channel     The channel ID of the device.
+    383          ///
+    384          /// \retval            The mode set by the configuation tool into the MPC.
+    385          //---------------------------------------------------------------------------------------------------------------------------
+    386          uint8_t MemoryBank_CSM_GetLedsetMode (uint8_t channel)
+    387          {
+    388              return ((memoryBank_CSM[channel]->opMode) & 0x87);
+    389          }
+    390          
+    391          
+    392          //---------------------------------------------------------------------------------------------------------------------------
+    393          /// \brief allow the application to get the nominal current set the configuation tool into the MPC.
+    394          ///
+    395          /// \param channel     The channel ID of the device.
+    396          ///
+    397          /// \retval            nominal current
+    398          //---------------------------------------------------------------------------------------------------------------------------
+    399          uint16_t MemoryBank_CSM_GetNominalCurrent(uint8_t channel)
+    400          {
+    401              return latch_nominal_current[channel] ;
+    402          }
+    403          
+    404          
+    405          #ifdef MPC_CSM_PROTECT_CURRENT
+    406          //---------------------------------------------------------------------------------------------------------------------------
+    407          /// \brief allow the application to get the protection current set the configuation tool into the MPC.
+    408          ///
+    409          /// \param channel     The channel ID of the device.
+    410          ///
+    411          /// \retval            protection current
+    412          //---------------------------------------------------------------------------------------------------------------------------
+    413          uint16_t MemoryBank_CSM_GetProtectionCurrent(uint8_t channel)
+    414          {
+    415              return latch_protect_current[channel] ;
+    416          }
+    417          #endif
+    418          
+    419          
+    420          // ************************************************** Function to WRITE into MPC
+    421          
+    422          
+    423          //---------------------------------------------------------------------------------------------------------------------------
+    424          /// \brief   allow the application to set / reset the operating mode to any value
+    425          ///
+    426          /// \param channel     The channel ID of the device.
+    427          /// \param value       The new operating mode.
+    428          ///
+    429          /// \retval            none
+    430          //---------------------------------------------------------------------------------------------------------------------------
+    431          void MemoryBank_CSM_Set_OpMode(uint8_t channel, uint8_t value)                  /***** OSRAM RESERVED */
+    432          {
+    433              memoryBank_CSM[channel]->opMode = value;
+    434          }
+    435          
+    436          //---------------------------------------------------------------------------------------------------------------------------
+    437          /// \brief allow the application to set the status flags
+    438          ///
+    439          /// \param channel     The channel ID of the device.
+    440          /// \param value       The status information.
+    441          ///
+    442          /// \retval            none
+    443          //---------------------------------------------------------------------------------------------------------------------------
+    444          void MemoryBank_CSM_UpdateLedsetStatus(uint8_t channel, uint8_t value)
+    445          {
+    446              ledset_status[channel] = value;
+    447          }
+    448          
+    449          
+    450          //---------------------------------------------------------------------------------------------------------------------------
+    451          /// \brief allow the application to set the LEDset current
+    452          ///
+    453          /// \param channel    The channel ID of the device.
+    454          /// \param value      The present current
+    455          ///
+    456          /// \retval           none
+    457          //---------------------------------------------------------------------------------------------------------------------------
+    458          void MemoryBank_CSM_UpdateLedsetCurrent(uint8_t channel, uint16_t value16)
+    459          {
+    460              ledset_current[channel] = value16 ;
+    461          }
+    462          
+    463          
+    464          //----------------------------------------------------------------------------------------------------------------------
+    465          /// \brief    Put together two consecutive byte to have 16 bit value
+    466          ///
+    467          /// \param    byte pointer, MSB first
+    468          ///
+    469          /// \retval   16 bit result value
+    470          //----------------------------------------------------------------------------------------------------------------------
+    471          
+    472          uint16_t joinBytes(uint8_t *ptr)
+    473          {
+    474              return ( (uint16_t)(ptr[0] << 8) + ptr[1] );
+    475          }
+    476          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   MemoryBank_CSM_GetLedsetMode
+       0   MemoryBank_CSM_GetNominalCurrent
+       0   MemoryBank_CSM_GetProtectionCurrent
+       0   MemoryBank_CSM_Set_OpMode
+       0   MemoryBank_CSM_UpdateLedsetCurrent
+       0   MemoryBank_CSM_UpdateLedsetStatus
+       8   MemoryBank_Csm_GetValue
+         8   -> MemoryBank_Csm_GetValue_port
+      20   MemoryBank_Csm_GetValue_port
+       8   MemoryBank_Csm_Init
+         8   -> joinBytes
+         8   -> nvmDataInit
+       0   MemoryBank_Csm_Reset
+       8   MemoryBank_Csm_SetValue
+         8   -> MemoryBank_Csm_SetValue_port
+      16   MemoryBank_Csm_SetValue_port
+       0   joinBytes
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable2
+       4  ??DataTable2_1
+       4  ??DataTable2_2
+       4  ??DataTable2_3
+       4  ??DataTable2_4
+       4  ??DataTable2_5
+       4  ??DataTable2_6
+       4  ??DataTable5
+       4  ??DataTable9
+       4  ??DataTable9_1
+       4  ??DataTable9_2
+       4  ??DataTable9_3
+       4  ??DataTable9_4
+       4  ??DataTable9_5
+       4  ??DataTable9_6
+       4  ??DataTable9_7
+       4  ??DataTable9_8
+       4  ??DataTable9_9
+      18  MemoryBank_CSM_GetLedsetMode
+      12  MemoryBank_CSM_GetNominalCurrent
+      12  MemoryBank_CSM_GetProtectionCurrent
+      14  MemoryBank_CSM_Set_OpMode
+      12  MemoryBank_CSM_UpdateLedsetCurrent
+       8  MemoryBank_CSM_UpdateLedsetStatus
+      14  MemoryBank_Csm_GetValue
+     426  MemoryBank_Csm_GetValue_port
+     226  MemoryBank_Csm_Init
+      16  MemoryBank_Csm_Reset
+      16  MemoryBank_Csm_SetValue
+     350  MemoryBank_Csm_SetValue_port
+      12  joinBytes
+       2  latch_nominal_current
+       2  latch_protect_current
+       2  ledset_current
+       1  ledset_status
+       4  memoryBank_CSM
+       8  memoryBank_CSMPhy
+       8  readingPortBufferCsmCurrent
+       8  readingPortBufferCsmProtection
+       8  readingPortBufferLedsetCurrent
+       8  writingPortBufferCsmCurrent
+       8  writingPortBufferCsmProtection
+
+ 
+    59 bytes in section .bss
+ 1 208 bytes in section .text
+ 
+ 1 208 bytes of CODE memory
+    59 bytes of DATA memory
+
+Errors: none
+Warnings: none

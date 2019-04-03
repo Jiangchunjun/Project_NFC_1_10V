@@ -69,7 +69,7 @@
 #define ONE2TEN_LOWER_LIMIT     (1000)//500
 #define ONE2TEN_UPPER_LIMIT     (10000)
 
-
+#define NFC_HANDLE_TIME         500//1s
 
 /* 1-10V dimming change */
 #define POWER_DIM_CHANGE_DUTY   (100)
@@ -78,7 +78,8 @@
 /*--------------- NFC Data Backup Flash Address define -------------*/
 /* No OTA Bootloader */
 #define  FLASH_START_ADDRESS    (0x10010000)  /* address for Flash save area, locate in 60k */
-#define  FLASH_TIME_ADDRESS     (0x10010100)  /* address for run time */
+#define  FLASH_TIME_ADDRESS     (0X10010700)  /* address for run time */
+
 
 /*------------------ Current Setting Mode define -------------------*/
 /* Current setting mode */
@@ -317,7 +318,9 @@ uint16_t Power_GetOne2TenDimming(void);
 *******************************************************************************/
 void Power_ControlLoopTask(void);
 
+/*******************************************************************************/
 
+void Power_nfc_handle(void);
 #endif /* _POWER_TASK_H */
 
 /**************** (C) COPYRIGHT OSRAM Asia Pacific Management Company *********END OF FILE*********/

@@ -1,0 +1,1546 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:53
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\NVM\api\nvm.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\NVM\api\nvm.c"
+#        -D XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\nvm.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\nvm.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\NVM\api\nvm.c
+      1          // ---------------------------------------------------------------------------------------------------------------------
+      2          // Microcontroller Toolbox - Firmware Framework for Full Digital SSL Ballasts
+      3          // ---------------------------------------------------------------------------------------------------------------------
+      4          // (c) Osram spa
+      5          //     Via Castagnole 65/a
+      6          //     31100 Treviso (I)
+      7          //
+      8          //
+      9          // The content of this file is intellectual property of OSRAM spa. It is
+     10          // confidential and not intended for any public release. All rights reserved.
+     11          //
+     12          //
+     13          // Indent style: Replace tabs by spaces, 2 spaces per indentation level
+     14          //
+     15          // Initial version: 2014-12, g.marcolin@osram.it
+     16          //
+     17          // Change History:
+     18          //
+     19          // $Author: G.Marcolin $
+     20          // $Revision: 2995 $
+     21          // $Date: 2016-02-22 15:35:26 +0800 (Mon, 22 Feb 2016) $
+     22          // $Id: nvm.c 2995 2016-02-22 07:35:26Z G.Marcolin $
+     23          // $URL: https://app-ehnsvn02.int.osram-light.com/svn/EC/Toolbox1.0/Nvm/tags/v1.2/api/nvm.c $
+     24          //
+     25          // ---------------------------------------------------------------------------------------------------------------------
+     26          
+     27          /** \defgroup Nvm Nonvolatile Memory
+     28           * \{
+     29           * \brief Hardware abstraction for non-volatile memory
+     30           *
+     31           * Nvm module provides an interface for the configuration and management of non-volatile memories for initialization,
+     32           * reading and writing of data. The module is thought to handle data on flash memories but it can be extended to EEPROM
+     33           * or other kinds of non-volatile storage supports. It adopts the so called "paging" strategy typically used for EEPROM
+     34           * simulation in flash and consisting in dividing the flash memory in several pages (partitions) able to contain all
+     35           * the needed data. Every time data is intended to be saved a new page is selected, erase and written. Whenever data
+     36           * needs to be retrieved the most recent saved page is selected. The candidate page for erasing is instead the one
+     37           * with the oldest data. Nv(m) stands for non-volatile (memory).
+     38           *
+     39           * Typically flash memories allow erase and write operations on partitions with different size i.e. the minimum
+     40           * erasable area is different in size from the minimum writeable area. The nvm module extends therefore the concept of
+     41           * pages to handle data properly by defining writeable, erasable and data pages:
+     42           *
+     43           * e-page = minimum erasable memory partition   <BR>
+     44           * w-page = minimum writeable memory partition  <BR>
+     45           * d-page = minimum writeable partition able to contain all data intended to be saved in nvm  <BR>
+     46           *
+     47           * E-page and w-page sizes are fixed and MCU dependent while the d-page size is determined by the amount of data
+     48           * the user wants to store in nvm. The table below shows the pages' characteristics for three MCUs.
+     49           *
+     50          |                |   STM32F0xx   |    XMC1000    |  SAM D10/21   |
+     51          |:---------------|:-------------:|:-------------:|:-------------:|
+     52          |w-page          |2 bytes        |16 bytes       |64 bytes       |
+     53          |d-page          |(Nx2) bytes    |(Nx16) bytes   |(Nx64) bytes   |
+     54          |e-page          |1 Kbyte        |256 bytes      |256 bytes      |
+     55          |e-page cycles   |10K            |50K            |25K            |
+     56           *
+     57           * D-pages are multiples of w-pages by design while in a single e-page several d-pages can find place or if the
+     58           * d-page is bigger than an e-page more e-pages might be required to cover the complete d-page.
+     59           * <BR><BR><B>Example (XMC100):</B> if data to save is 600 bytes, the d-page must be (16 x 38) = 608 bytes and therefore 3 e-pages
+     60           * are needed (256 x 3 = 768 bytes).
+     61           *
+     62           * \dot
+     63           * digraph G
+     64           * {
+     65           *  rankdir="UD"
+     66           *   node1
+     67           *   [
+     68           *       shape = none
+     69           *       label =<  <table  BORDER="0" CELLSPACING="1" >
+     70           *	            <tr><td port="port0" border="0"                  height="15"    >           </td></tr>
+     71           *              <tr><td port="port0" border="1" bgcolor="orange" height="64" 	>  d-page   </td></tr>
+     72           *               </table> >
+     73           *   ]
+     74           *
+     75           *   node2
+     76           *   [
+     77           *       shape = none
+     78           *       label = <  <table title="test_title" border="0" cellspacing="0" >
+     79           *	            <tr><td port="port0" border="0"                     height="30"	    >          </td></tr>
+     80           *              <tr><td port="port0" border="1" bgcolor="turquoise" height="25"   	> e-page 0 </td></tr>
+     81           *	            <tr><td port="port1" border="1" bgcolor="turquoise" height="25" 	> e-page 1 </td></tr>
+     82           *	            <tr><td port="port2" border="1" bgcolor="turquoise" height="25" 	> e-page 2 </td></tr>
+     83           *               </table>>
+     84           *   ]
+     85           * }
+     86           * \enddot
+     87           * <BR><B>Example (SAM D10/21):</B> if data to save is 100 bytes, the d-page must be (64 x 2) = 128 bytes and therefore
+     88           * one e-page can be divided in two parts. In this case a new e-page will be erased every two writing cycles.
+     89           * \dot
+     90           * digraph G
+     91           * {
+     92           * rankdir="UD"
+     93           * node1
+     94           * [
+     95           *      shape = none
+     96           *      label =<  <table  BORDER="0" CELLSPACING="2" >
+     97           *	                    <tr><td port="port0" border="0" height="6"                      >            </td></tr>
+     98           *                   	<tr><td port="port1" border="1" bgcolor="orange" height="25" 	>  d-page 0  </td></tr>
+     99           *	                    <tr><td port="port2" border="1" bgcolor="orange" height="25" 	>  d-page 1  </td></tr>
+    100           *               </table> >
+    101           *   ]
+    102           *
+    103           *   node2
+    104           *   [
+    105           *       shape = none
+    106           *       label = <  <table title="test_title" border="0" cellspacing="0" >
+    107           *	                    <tr><td port="port0" border="0"                     height="28"	    >          </td></tr>
+    108           *                   	<tr><td port="port1" border="1" bgcolor="turquoise" height="58"   	> e-page 0 </td></tr>
+    109           *               </table>>
+    110           *   ]
+    111           * }
+    112           * \enddot
+    113           * Because flash memory partitions must be erased before being written, in order to safely save data in flash, at least
+    114           * two d-pages are needed: one that contains saved data and one ready to be written.
+    115           * The actual number of d-pages required to fulfil the application needs is calculated according to the configuration
+    116           * parameters defined by the user in NvmConfig.h i.e. number of writing cycles and data size to be saved. In any case
+    117           * to guarantee a certain level of redundancy of persistent data at least 4 d-pages are configured.
+    118           *
+    119           * At power-on RAM data is initialized with the most recent saved d-page provided that data integrity is verified (valid
+    120           * CRC). A new d-page, the one containing the least recent data, is then erased, ready to be used at next data saving.
+    121           * Data is typically saved in flash when a power-failure is detected.
+    122           *
+    123           * \dot
+    124           * digraph G
+    125           * {
+    126           *    rankdir = LR;
+    127           *    node1
+    128           *    [
+    129           *        shape = none
+    130           *        label = <<table border="0" cellspacing="2">
+    131           *
+    132           * 	                    <tr><td port="Title1" border="0"		                        >   Flash    </td></tr>
+    133           *                    	<tr><td port="port0"  border="1" bgcolor="orange"	            >  d-page 0  </td></tr>
+    134           *                    	<tr><td port="port1"  border="1" bgcolor="orange"	            >  d-page 1  </td></tr>
+    135           *                    	<tr><td port="port2"  border="2" bgcolor="turquoise"      	    >  d-page 2  </td></tr>
+    136           *                    	<tr><td port="port3"  border="1" bgcolor="grey"          	    >  d-page 3  </td></tr>
+    137           *		                <tr><td port="port4"  border="1" bgcolor="orange"         	    >  d-page 4  </td></tr>
+    138           *		                <tr><td port="port5"  border="1" bgcolor="green"  height="100"  >    code    </td></tr>
+    139           *
+    140           *                </table>>
+    141           *    ]
+    142           *
+    143           *    node2
+    144           *    [
+    145           *        shape = none
+    146           *        label = <<table border="0" cellspacing="0">
+    147           *
+    148           *                      <tr><td port="title2" border="0"		                >    RAM    </td></tr>
+    149           *                    	<tr><td port="port0" border="2" bgcolor="turquoise"	    >page mirror</td></tr>
+    150           *
+    151           *                </table>>
+    152           *    ]
+    153           *
+    154           *
+    155           *	node1:port2 -> node2:port0 [label="Power-on"   color="green"]
+    156           *	node2:port0 -> node1:port3 [label="Power-down" color="red"]
+    157           *	node2:port0:s -> node2:port0:e [label="Run-time"   color="black" constraint="false"]
+    158           * }
+    159           * \enddot
+    160           *
+    161           * <B>Module usage</B> <BR>
+    162           * In order to use the non-volatile memory module the following files must be included in the project:
+    163           *
+    164           * nvm.c    <BR>
+    165           * crc.c
+    166           *
+    167           * and the related driver files depending on the MCU in use. Crc.c and the related driver files belong to crc module. <BR>
+    168           * <I>Drivers for STM32F0xx </I>:
+    169           *
+    170           * flash_driver_stm32f0xx.c <BR>
+    171           * crc_driver_stm32f0xx.c
+    172           *
+    173           * together with ST standard peripheral library v1.0.0:
+    174           *
+    175           * stm32f0xx_flash.c	<BR>
+    176           * stm32f0xx_crc.c		<BR>
+    177           * stm32f0xx_rcc.c		<BR>
+    178           *
+    179           * <I>Drivers for XMC1000</I>:
+    180           *
+    181           * flash_driver_xmc1300.c   <BR>
+    182           * crc_driver_sw.c
+    183           *
+    184           * <I>Drivers for SAM D10/21</I>:
+    185           *
+    186           * flash_driver_samd21.c    <BR>
+    187           * crc_driver_sw.c
+    188           *
+    189           * The nvm module requires then the definitions of some parameters. See Nvm configuration. Once compiled the module
+    190           * offers some informations on the memory structure to save nv data with the following symbols (defines): <BR>
+    191           *
+    192           Symbol                    | Description
+    193          -------------------------- | ----------------------------------------------------
+    194          __NVM_DPAGE_TOT_CNT        | Number of d-pages used
+    195          __NVM_DPAGE_SIZE_BYTE      | Size [byte] of a d-page
+    196          __NVM_DPAGE_CNT_PER_EPAGE  | Number of d-pages contained in an e-page
+    197          __NVM_EPAGE_CNT_PER_DPAGE  | Number of e-pages needed to cover a d-page
+    198          __NVM_DATA_TOT_SIZE_BYTE   | Total size [bytes] of flash memory used for nv data
+    199          __NVM_DATA_BASE_ADDR       | Starting address of nv data area
+    200           *
+    201           * The linker checks whether the flash memory area for nv data overlaps the code area.
+    202           *
+    203           * \file
+    204           * \brief Central functions for Nvm handling.
+    205           *
+    206           * \defgroup NvmInternal Nvm Internals
+    207           * \brief Nvm module implementation details
+    208           *
+    209           * \defgroup NvmConfig Nvm Configuration
+    210           * \brief Parameters to configure the Nvm module
+    211           *
+    212           * \defgroup NvmDriverAPI Nvm Driver API
+    213           * \brief Nvm module hardware driver interface
+    214           *
+    215           * \defgroup NvmAPI Nvm API
+    216           * \brief Nvm module user interface
+    217           *
+    218           * \{
+    219           */
+    220          
+    221          #define MODULE_NVM
+    222          #include "Config.h"
+    223          
+    224          #include <string.h>
+    225          #include <stdbool.h>
+    226          #include <stdint.h>
+    227          
+    228          #include "Global.h"
+    229          
+    230          #include "nvm_defs.h"
+    231          #include "nvm_driver.h"
+    232          #include "nvm.h"
+    233          
+    234          #include "crc.h"
+    235          #include "ErrorHandler.h"
+    236          
+    237          /**********************************************************************************************************************/
+    238          
+    239          #include "message_flash_size.h"
+    240          
+    241          #define XSTR(x) STR(x)
+    242          #define STR(x) #x
+    243          
+    244          #pragma message ("NVM data flash size [byte]: 0x" XSTR(NVM_SIZE_BYTE3S) XSTR(NVM_SIZE_BYTE2S) XSTR(NVM_SIZE_BYTE1S) "0")
+    245          
+    246          /**********************************************************************************************************************/
+    247          
+    248          #ifdef _X86_
+    249          	#include "stm32f0xx_flash.h"	    		// Driver double
+    250          #else
+    251              #define GET_NVM_ADDR( a )   ( a )		    // Do nothing
+    252          #endif
+    253          
+    254          /** ********************************************************************************************************************
+    255           * \ingroup NvmAPI
+    256           * \brief Mock array to reserve the space for nvm data flash area.
+    257           *
+    258           * The concept of the nvm module is to use a part of program memory to store the non-volatile data (data flash).
+    259           * But neither the compiler nor the linker know anything about this usage and there is the risk, that the nvm module
+    260           * and the program memory overlap. If this silently happens, the nvm module would erase portions of the code
+    261           * sooner or later. <b> This must not happen.</b>
+    262           *
+    263           * To prevent this, this array is to reserve the space in flash memory (at compile/link time) at exactly the
+    264           * same position, which will be used later on by the nvm module (during runtime):
+    265           * A linker error will raise if program code and nvm data flash overlap.
+    266           *
+    267           * \warning The compiler/linker does not check, whether there is really flash memory at the absolute address assigned
+    268           * to this array. Normally the programming tool will warn in case of.
+    269           *
+    270           * \note Temporarily uncomment this array definition to preserve data flash content over re-programming cycles and
+    271           * to speed up program download.
+    272           */
+    273          
+    274          #ifndef _X86_
+    275          extern const uint8_t nvm_dataflash_area[]; // extern declaration not needed, but present to help doxygen
+    276          
+    277          // object_attribute=__root: Include this object in hex code even if it's unreferenced in the program
+    278          #pragma object_attribute=__root
+    279          const uint8_t nvm_dataflash_area[__NVM_AREA_TOT_SIZE_BYTE] @ (__NVM_DATA_BASE_ADDR) = {0};
+    280          #endif
+    281          
+    282          /*************************************************** Structs **********************************************************/
+    283          
+    284          typedef enum
+    285          {
+    286          	CMD_DPAGE_FAILED,
+    287          	CMD_DPAGE_OK,
+    288          	CMD_DPAGE_MAX
+    289          }
+    290          cmd_dpage_t;
+    291          
+    292          /*************************************************** Structs **********************************************************/
+    293          
+    294          typedef struct
+    295          {
+    296              uint32_t totWriteCycles;
+    297              uint32_t eraseCycles;
+    298          //    uint32_t totCrcErrCnt;
+    299              uint32_t dataSizeByte;
+    300              uint32_t crc;
+    301          }
+    302          dpage_info_t;
+    303          
+    304          //-----------------------------
+    305          
+    306          typedef struct
+    307          {
+    308              uint32_t index;
+    309              uint32_t addr;
+    310              nvm_state_t state;
+    311              dpage_info_t info;
+    312          }
+    313          dpage_t;
+    314          
+    315          //-----------------------------
+    316          
+    317          typedef struct
+    318          {
+    319              uint8_t  buf[NVM_WPAGE_SIZE_BYTE];
+    320              uint32_t addr;
+    321              uint32_t byteCnt;
+    322          }
+    323          wpage_t;
+    324          
+    325          //-----------------------------
+    326          
+    327          typedef struct
+    328          {
+    329          	struct
+    330          	{
+    331          		uint8_t *ptr;
+    332          		uint32_t size;
+    333          
+    334          	} item[NVM_DATA_STRUCTS_CNT_MAX];
+    335          
+    336              uint32_t idxMax;
+    337          	uint32_t totSizeByte;
+    338          }
+    339          nvm_data_t;
+    340          
+    341          /************************************************ Local functions *****************************************************/
+    342          
+    343          static uint32_t getDpageAddr( uint32_t dPageIdx );
+    344          static cmd_dpage_t setupNextDpage( dpage_t *pNextDpage );
+    345          static bool isDpageBlank( uint32_t dPageIdx );
+    346          static bool isDpageCRCok( uint32_t dPageIdx );
+    347          static cmd_dpage_t eraseDpage(uint32_t dPageIdx);
+    348          static void updateNvmData( const dpage_t *pActualDpage, const dpage_t *pNextDpage );
+    349          static void crcErrCount( bool *crcOkBuf, const dpage_t *pActualDpage );
+    350          static void getActualDpage( dpage_t *pDpage );
+    351          static void getNextDpage( const dpage_t *pActualDpage, dpage_t *pNextDpage );
+    352          static void getDpageInfo( dpage_info_t *pDpage, uint32_t dPageIdx );
+    353          static void resetNvmErrors( void );
+    354          static nvm_err_t wPageAddByte( uint8_t value );
+    355          
+    356          /**************************************************** Local data ******************************************************/
+    357          
+    358          static nvm_t		nvm;
+    359          static nvm_data_t	nvmData;
+    360          static dpage_t		actualDpage;
+    361          static dpage_t		nextDpage;
+    362          static wpage_t		wpage;
+    363          
+    364          /** ********************************************************************************************************************
+    365          * \brief Gets d-page address
+    366          *
+    367          * Adress of the first byte of the struct
+    368          *
+    369          * \param dPageIdx
+    370          *        d-page index
+    371          *
+    372          * \retval d-page address
+    373          *
+    374          ***********************************************************************************************************************/
+    375          
+    376          static uint32_t getDpageAddr( uint32_t dPageIdx )
+    377          {
+    378              uint32_t startAddr;
+    379          
+    380          #if (__NVM_DPAGE_CNT_PER_EPAGE == 0)
+    381          
+    382              startAddr = __NVM_DATA_BASE_ADDR + dPageIdx * ( __NVM_EPAGE_CNT_PER_DPAGE * NVM_EPAGE_SIZE_BYTE );
+    383          
+    384          #else
+    385          
+    386              uint32_t ePageCnt = ( dPageIdx / __NVM_DPAGE_CNT_PER_EPAGE );
+    387              uint32_t dPageCnt = ( dPageIdx - ( __NVM_DPAGE_CNT_PER_EPAGE * ePageCnt) );
+    388          
+    389              startAddr = __NVM_DATA_BASE_ADDR + ( ePageCnt * NVM_EPAGE_SIZE_BYTE ) + ( dPageCnt * __NVM_DPAGE_SIZE_BYTE );
+    390          
+    391          #endif
+    392          
+    393              return startAddr;
+    394          }
+    395          
+    396          /** ********************************************************************************************************************
+    397          * \brief Gets d-page infos
+    398          *
+    399          *  Gets d-page footer with meaningful infos about actual d-page
+    400          *
+    401          * \param pInfoDpage
+    402          *        pointer to info struct where d-page footer will be copied
+    403          *
+    404          * \param dPageIdx
+    405          *        d-page index
+    406          *
+    407          ***********************************************************************************************************************/
+    408          
+    409          static void getDpageInfo( dpage_info_t *pInfoDpage, uint32_t dPageIdx )
+    410          {
+    411              uint32_t dpageInfoAddr = getDpageAddr(dPageIdx) + NVM_OFFSET_DPAGE_INFO;
+    412          
+    413              nvm_drv_read_buffer(dpageInfoAddr, sizeof(dpage_info_t), pInfoDpage);
+    414          }
+    415          
+    416          /** ********************************************************************************************************************
+    417          * \brief Checks CRC of the specified d-page
+    418          *
+    419          * \param dPageIdx
+    420          *        d-page index
+    421          *
+    422          * \retval TRUE if CRC ok
+    423          *
+    424          ***********************************************************************************************************************/
+    425          
+    426          static bool isDpageCRCok( uint32_t dPageIdx )
+    427          {
+    428          	uint32_t addr;
+    429              dpage_info_t iPage;
+    430              bool crcOk = false;
+    431          
+    432              getDpageInfo(&iPage, dPageIdx);
+    433          
+    434              addr = getDpageAddr(dPageIdx);
+    435          
+    436          	addr = GET_NVM_ADDR(addr);
+    437          
+    438              if(crcCalcBuf((void *)(addr), (NVM_DATA_PLUS_INFO_PAGE_SIZE_BYTE - 4)) == iPage.crc)              // CRC bytes not counted
+    439              {
+    440                  crcOk = true;
+    441              }
+    442          
+    443              return crcOk;
+    444          }
+    445          
+    446          /** ********************************************************************************************************************
+    447          * \brief Checks whether d-page is blank
+    448          *
+    449          * \param dPageIdx
+    450          *        d-page index
+    451          *
+    452          * \retval TRUE if d-page is blank (all 0xFF)
+    453          *
+    454          ***********************************************************************************************************************/
+    455          
+    456          static bool isDpageBlank( uint32_t dPageIdx )
+    457          {
+    458              bool dpageBlank = true;
+    459              uint16_t value;
+    460              uint32_t i, addr;
+    461          
+    462              addr = getDpageAddr(dPageIdx);
+    463          
+    464              for(i = 0; i < (__NVM_DPAGE_SIZE_BYTE/2); i++)
+    465              {
+    466                  nvm_drv_read_buffer(addr + 2*i, 2 , &value);                        // D-page is a multiple of w-page. W-page size is even -> check on half-word (16 bits)
+    467                  if(value != 0xFFFF)
+    468                  {
+    469                      dpageBlank = false;
+    470                  }
+    471              }
+    472          
+    473              return dpageBlank;
+    474          }
+    475          
+    476          /** ********************************************************************************************************************
+    477          * \brief Erases specified d-page
+    478          *
+    479          * \param dPageIdx
+    480          *        d-page struct
+    481          *
+    482          * \retval CMD_DPAGE_OK if erase succeeded otherwise CMD_DPAGE_FAILED
+    483          *
+    484          ***********************************************************************************************************************/
+    485          
+    486          static cmd_dpage_t eraseDpage(uint32_t dPageIdx)
+    487          {
+    488          	uint32_t i;
+    489          	uint32_t addr;
+    490          	cmd_dpage_t eraseDpage = CMD_DPAGE_OK;
+    491          
+    492          	addr = getDpageAddr(dPageIdx);
+    493          
+    494          	for(i = 0; i < __NVM_EPAGE_CNT_PER_DPAGE; i++)                                              // D-page might be covered by multiple e-pages
+    495          	{
+    496          		nvm_drv_unlock();
+    497          
+    498          		if(nvm_drv_erase_epage(addr + (i*NVM_EPAGE_SIZE_BYTE)) != NVM_ERR_NO_ERR)
+    499          		{
+    500          			eraseDpage = CMD_DPAGE_FAILED;
+    501          		}
+    502          
+    503          		nvm_drv_lock();
+    504          	}
+    505          
+    506          	return eraseDpage;
+    507          }
+    508          
+    509          /** ********************************************************************************************************************
+    510          * \brief Checks if d-page is already erased. If not erases d-page, whenever possible
+    511          *
+    512          * \param pNextDpage
+    513          *        pointer to a d-page struct
+    514          *
+    515          * \retval CMD_DPAGE_OK if erase succeeded otherwise CMD_DPAGE_FAILED
+    516          *
+    517          ***********************************************************************************************************************/
+    518          
+    519          static cmd_dpage_t setupNextDpage( dpage_t *pNextDpage )
+    520          {
+    521              dpage_info_t iPage;
+    522              cmd_dpage_t dpageBlank = CMD_DPAGE_FAILED;
+    523          
+    524              #if (__NVM_DPAGE_CNT_PER_EPAGE > 1)
+    525          	uint32_t firstDpageIdx;
+    526          
+    527          	if((pNextDpage->index) % __NVM_DPAGE_CNT_PER_EPAGE)			// Not first d-page inside e-page
+    528          	{
+    529                  if(isDpageBlank((pNextDpage->index)))					// Page must be already erased
+    530          		{
+    531          			dpageBlank = CMD_DPAGE_OK;
+    532          			firstDpageIdx =__NVM_DPAGE_CNT_PER_EPAGE * (pNextDpage->index / __NVM_DPAGE_CNT_PER_EPAGE); // Index of first page (inside same e-page)
+    533          
+    534          			if(isDpageCRCok(firstDpageIdx))
+    535          			{
+    536          				getDpageInfo(&iPage, firstDpageIdx);					// Reload info of first d-page (CRC ok)
+    537          				pNextDpage->info.eraseCycles = iPage.eraseCycles;
+    538          			}
+    539          			else
+    540          			{
+    541          				pNextDpage->info.eraseCycles = 1;
+    542          			}
+    543          		}
+    544              }
+    545          	else
+    546              #endif
+    547          	{
+    548          		getDpageInfo(&iPage, pNextDpage->index);
+    549          
+    550          		if((iPage.crc == 0xFFFFFFFF) && (iPage.eraseCycles == 0xFFFFFFFF))	// Is this a blank d-page?
+    551          		{
+    552          			pNextDpage->info.eraseCycles = 1;
+    553          
+    554          			if(isDpageBlank(pNextDpage->index))								// Check done when eraseCycle = 0xFFFFFFFF (factory new)
+    555          			{
+    556          				dpageBlank = CMD_DPAGE_OK;
+    557          			}
+    558          			else
+    559          			{
+    560          				dpageBlank = eraseDpage(pNextDpage->index);
+    561          			}
+    562          		}
+    563          		else
+    564          		{
+    565          			if(isDpageCRCok(pNextDpage->index))
+    566          			{
+    567          				if(pNextDpage->info.eraseCycles < NVM_EPAGE_CYCLES)			// CRC ok -> check erase cycles
+    568          				{
+    569          					pNextDpage->info.eraseCycles += 1;
+    570          					dpageBlank = eraseDpage(pNextDpage->index);
+    571          				}
+    572          			}
+    573          			else
+    574          			{
+    575          				pNextDpage->info.eraseCycles = 1;
+    576          				dpageBlank = eraseDpage(pNextDpage->index);
+    577          			}
+    578          		}
+    579          	}
+    580          
+    581              return dpageBlank;
+    582          }
+    583          
+    584          /** ********************************************************************************************************************
+    585          * \brief Counts CRC errors
+    586          *
+    587          * \param crcOkBuf
+    588          *        pointer to array CRC buffer
+    589          *
+    590          * \param pActualDpage
+    591          *        pointer to actual d-page
+    592          *
+    593          ***********************************************************************************************************************/
+    594          
+    595          static void crcErrCount( bool *crcOkBuf, const dpage_t *pActualDpage )
+    596          {
+    597              uint32_t i;
+    598          
+    599              for(i=0; i < __NVM_DPAGE_TOT_CNT; i++)                                                  // Log CRC errors
+    600              {
+    601                  if(crcOkBuf[i] == false)
+    602                  {
+    603                      nvm.error.crc++;
+    604          
+    605                      if(pActualDpage->state == NVM_STATE_OK)
+    606                      {
+    607          //                page->info.totCrcErrCnt++;
+    608                      }
+    609                  }
+    610              }
+    611          }
+    612          
+    613          /** ********************************************************************************************************************
+    614          * \brief Gets d-page with most recent valid data
+    615          *
+    616          * The function looks for the d-page with greatest totWriteCycles i.e. the last d-page written; if totWriteCycles equals
+    617          * 0xFFFFFFFF the d-page is considered blank, just erased and is ignored. If the found d-page has  wrong CRC the function
+    618          * ignores this d-page too and starts the research again. The process continues until a d-page with valid CRC is found or
+    619          * until all the pages have been checked.
+    620          * If a valid d-page is found:       pDpage->state == NVM_STATE_OK <BR>
+    621          * If all d-pages are blank:         pDpage->state == NVM_STATE_NO_DATA <BR>
+    622          * If a valid d-pages is not found:  pDpage->state == NVM_STATE_ERR
+    623          *
+    624          * \param pDpage
+    625          *        pointer to d-page where to store the actual d-page
+    626          *
+    627          ***********************************************************************************************************************/
+    628          
+    629          static void getActualDpage( dpage_t *pDpage )
+    630          {
+    631              uint32_t i,j;
+    632              dpage_info_t iPage;
+    633              bool crcDpageOk[ __NVM_DPAGE_TOT_CNT ];
+    634          
+    635              memset(pDpage, 0, sizeof(dpage_t));                                                     // External struct init
+    636          
+    637          	for(i=0; i < __NVM_DPAGE_TOT_CNT; i++)
+    638          	{
+    639          		crcDpageOk[i] = true;
+    640          	}
+    641          
+    642              pDpage->state = NVM_STATE_NO_DATA;
+    643              i = __NVM_DPAGE_TOT_CNT;
+    644          
+    645              do                                                                                      // Look for page with valid CRC
+    646              {
+    647                  i--;
+    648                  pDpage->index = 0;
+    649                  pDpage->info.totWriteCycles = 0;
+    650          
+    651                  //-------- Search d-page with greatest number of power-down cycles --------
+    652                  for(j = 0; j < __NVM_DPAGE_TOT_CNT; j++)
+    653                  {
+    654                      if(crcDpageOk[j] == true)
+    655                      {
+    656                          getDpageInfo(&iPage, j);                                                    // Load d-page
+    657          
+    658                          if(iPage.totWriteCycles == 0xFFFFFFFF)                                      // Page never used
+    659                          {
+    660                              iPage.totWriteCycles = 0;
+    661                          }
+    662          
+    663                          if(iPage.totWriteCycles > pDpage->info.totWriteCycles)
+    664                          {
+    665                              pDpage->info.totWriteCycles = iPage.totWriteCycles;
+    666                              pDpage->index = j;
+    667                              pDpage->state = NVM_STATE_OK;
+    668                          }
+    669                      }
+    670                  }
+    671          
+    672                  //---------------------- Check candidate d-page CRC -----------------------
+    673                  if(pDpage->state == NVM_STATE_OK)
+    674                  {
+    675                      if(isDpageCRCok(pDpage->index) == true)                                         // CRC check is time consuming -> done only once at the end of search
+    676                      {
+    677                          getDpageInfo(&(pDpage->info), pDpage->index);                               // Load d-page
+    678                      }
+    679                      else
+    680                      {
+    681                          pDpage->state = NVM_STATE_ERR;                                              // Wrong CRC
+    682                          crcDpageOk[pDpage->index] = false;
+    683                      }
+    684                  }
+    685              }
+    686              while((i > 0) && (pDpage->state == NVM_STATE_ERR));                                     // Cycle over all pages
+    687          
+    688              crcErrCount(crcDpageOk, pDpage);
+    689          
+    690              pDpage->addr = getDpageAddr(pDpage->index);
+    691          
+    692              if(pDpage->state != NVM_STATE_OK)
+    693              {
+    694                  pDpage->info.totWriteCycles = 0;
+    695          		//pDpage->info.totCrcErrCnt = 0;
+    696              }
+    697          }
+    698          
+    699          /** ********************************************************************************************************************
+    700          * \brief Identifies d-page with least recent data and erases it
+    701          *
+    702          * Actual d-page (if present) cointains most recent data therefore is not included in the research. This function looks
+    703          * for the d-page with the smallest eraseCycles number i.e. the d-page that cointains the "oldest" data. According to
+    704          * d-page and e-page sizes different scenarios can be found. If an e-page contains more d-pages than every e-page erasure
+    705          * prepares as many d-pages for writing as the number of d-pages contained in the e-page.
+    706          * If a d-page is ready for writing:         pNextDpage->state == NVM_STATE_OK <BR>
+    707          * If no d-page is available for writing:    pNextDpage->state == NVM_STATE_ERR
+    708          *
+    709          * \param pActualDpage
+    710          *        pointer to actual d-page
+    711          *
+    712          * \param pNextDpage
+    713          *        pointer to next d-page (erased)
+    714          *
+    715          ***********************************************************************************************************************/
+    716          
+    717          static void getNextDpage( const dpage_t *pActualDpage, dpage_t *pNextDpage )
+    718          {
+    719              uint32_t i, j;
+    720              dpage_info_t iPage;
+    721              bool doSearch = false;
+    722              bool dPageValid[ __NVM_DPAGE_TOT_CNT ];
+    723          
+    724              memset(pNextDpage, 0, sizeof(dpage_t));                                                             // Next page init
+    725          
+    726          	for(i = 0; i < __NVM_DPAGE_TOT_CNT; i++)
+    727          	{
+    728          		dPageValid[i] = true;
+    729          	}
+    730          
+    731              if(pActualDpage->state != NVM_STATE_OK)  // i.e. -> NVM_STATE_ERR or NVM_STATE_NO_DATA
+    732              {
+    733                  doSearch = true;
+    734              }
+    735              else if((pActualDpage->state == NVM_STATE_OK) && (pActualDpage->info.totWriteCycles < NVM_WRITE_CYCLES))
+    736              {
+    737                  dPageValid[pActualDpage->index] = false;                                                        // Actual d-page must NOT be erased
+    738                  doSearch = true;
+    739          
+    740                  #if (__NVM_DPAGE_CNT_PER_EPAGE > 1)
+    741                  dPageValid[__NVM_DPAGE_CNT_PER_EPAGE *(pActualDpage->index/__NVM_DPAGE_CNT_PER_EPAGE)] = false; // ... also first d-page of e-page must NOT be erased
+    742                  #endif
+    743          
+    744          		pNextDpage->info.totWriteCycles = pActualDpage->info.totWriteCycles;							// Load number of cycles of actual page
+    745          	}
+    746          
+    747          	pNextDpage->index = 0;
+    748          	pNextDpage->state = NVM_STATE_ERR;
+    749          
+    750              if(doSearch)
+    751              {
+    752          		i = __NVM_DPAGE_TOT_CNT;
+    753                  do
+    754                  {
+    755                      i--;
+    756                      pNextDpage->index = 0;
+    757                      pNextDpage->info.eraseCycles = 0xFFFFFFFF;
+    758          
+    759                      //-------- Search d-page with smallest number of page-erase cycles --------
+    760                      for(j = 0; j < __NVM_DPAGE_TOT_CNT; j++)
+    761                      {
+    762                          if(dPageValid[j] == true)
+    763                          {
+    764                              getDpageInfo(&iPage, j);
+    765          
+    766                              if(iPage.eraseCycles > NVM_EPAGE_CYCLES)                                    // Page never used (0xFFFFFFFF) or corrupted
+    767                              {
+    768                                  iPage.eraseCycles = 0;
+    769                              }
+    770          
+    771                              if(iPage.eraseCycles < pNextDpage->info.eraseCycles)
+    772                              {
+    773                                  pNextDpage->info.eraseCycles = iPage.eraseCycles;
+    774                                  pNextDpage->index = j;
+    775                                  pNextDpage->state = NVM_STATE_OK;
+    776                              }
+    777                          }
+    778                      }
+    779          
+    780                      if(pNextDpage->state == NVM_STATE_OK)
+    781                      {
+    782                          if(setupNextDpage(pNextDpage) == CMD_DPAGE_OK)
+    783                          {
+    784                              pNextDpage->info.totWriteCycles = pActualDpage->info.totWriteCycles + 1;
+    785          					//pNextDpage->info.totCrcErrCnt   = actualDpage.info.totCrcErrCnt;
+    786                          }
+    787                          else
+    788                          {
+    789                              nvm.error.erase++;
+    790                              pNextDpage->state = NVM_STATE_ERR;
+    791                              dPageValid[(pNextDpage->index)] = false;                                // Erase failed d-page invalid
+    792          
+    793                              #if (__NVM_DPAGE_CNT_PER_EPAGE > 1)
+    794                              if(((pNextDpage->index) % __NVM_DPAGE_CNT_PER_EPAGE) == 0)
+    795                              {
+    796                                  for(j = 1; j < __NVM_DPAGE_CNT_PER_EPAGE; j++)
+    797                                  {
+    798                                      dPageValid[(pNextDpage->index) + j] = false;                    // If first d-page erase failed -> all d-pages contained in e-page are invalid
+    799                                  }
+    800                              }
+    801                              #endif
+    802                          }
+    803                      }
+    804                  }
+    805                  while((i > 0) && (pNextDpage->state != NVM_STATE_OK));
+    806              }
+    807          
+    808              pNextDpage->addr = getDpageAddr(pNextDpage->index);
+    809          }
+    810          
+    811          /** ********************************************************************************************************************
+    812          * \brief Updates Nvm state according to actual and next d-pages states
+    813          *
+    814          * If (actual d-page == no data) and (next d-page == error) then     nvm.state = NVM_STATE_ERR
+    815          * If (actual d-page == no data) and (next d-page == ok)    then     nvm.state = NVM_STATE_NO_DATA
+    816          * If (actual d-page == ok)      and (next d-page == error) then     nvm.state = NVM_STATE_READ_ONLY
+    817          * If (actual d-page == ok)      and (next d-page == ok)    then     nvm.state = NVM_STATE_OK
+    818          * If (actual d-page == error)   and (next d-page == ok)    then     nvm.state = NVM_STATE_NO_DATA
+    819          * If (actual d-page == error)   and (next d-page == error) then     nvm.state = NVM_STATE_NO_ERR
+    820          *
+    821          * \param pActualDpage
+    822          *        pointer to actual d-page
+    823          *
+    824          * \param pNextDpage
+    825          *        pointer to next d-page (erased)
+    826          *
+    827          ***********************************************************************************************************************/
+    828          
+    829          static void updateNvmData( const dpage_t *pActualDpage, const dpage_t *pNextDpage )
+    830          {
+    831              switch(pActualDpage->state)
+    832              {
+    833                  case NVM_STATE_NO_DATA:                                     // No valid data present
+    834                      if(pNextDpage->state == NVM_STATE_ERR)
+    835                      {
+    836                          nvm.state = NVM_STATE_ERR;                          // NO read, no write
+    837                      }
+    838                      else
+    839                      {
+    840                          nvm.state = NVM_STATE_NO_DATA;
+    841                      }
+    842                      break;
+    843          
+    844                  case NVM_STATE_OK:                                          // Valid data present
+    845                      nvm.dbg.readPageCycles = pActualDpage->info.eraseCycles;
+    846                      nvm.dbg.readPageIndex  = pActualDpage->index;
+    847          
+    848                      if(pNextDpage->state == NVM_STATE_ERR)
+    849                      {
+    850                          nvm.state = NVM_STATE_READ_ONLY;                    // Read only
+    851                      }
+    852                      else
+    853                      {
+    854                          nvm.state = NVM_STATE_OK;
+    855                      }
+    856                      break;
+    857          
+    858                  default:
+    859                  case NVM_STATE_ERR:											// Pages with wrong crc
+    860                      if(pNextDpage->state == NVM_STATE_OK)
+    861                      {
+    862                          nvm.state = NVM_STATE_NO_DATA;                      // No valid data present
+    863                      }
+    864                      else
+    865                      {
+    866                          nvm.state = NVM_STATE_ERR;
+    867                      }
+    868                      break;
+    869              }
+    870          
+    871              nvm.writeCycles = pActualDpage->info.totWriteCycles;
+    872          
+    873              if(pNextDpage->state == NVM_STATE_OK)
+    874              {
+    875                  nvm.dbg.writePageCycles = pNextDpage->info.eraseCycles;
+    876                  nvm.dbg.writePageIndex  = pNextDpage->index;
+    877              }
+    878          }
+    879          
+    880          /** ********************************************************************************************************************
+    881          * \brief Resets nvm errors
+    882          *
+    883          ***********************************************************************************************************************/
+    884          
+    885          static void resetNvmErrors( void )
+    886          {
+    887              memset(&nvm.error, 0, sizeof(nvm_err_t));
+    888          }
+    889          
+    890          /** ********************************************************************************************************************
+    891          * \brief  Adds a byte to the w-page buffer. If buffer is full w-page is written in nv memory
+    892          *
+    893          * \param value
+    894          *        byte to add
+    895          *
+    896          * \retval error structs
+    897          *
+    898          ***********************************************************************************************************************/
+    899          
+    900          static nvm_err_t wPageAddByte( uint8_t value )
+    901          {
+    902              nvm_err_t err = NVM_ERR_NO_ERR;
+    903          
+    904              wpage.buf[wpage.byteCnt] = value;
+    905          
+    906              if(++wpage.byteCnt == NVM_WPAGE_SIZE_BYTE)                     // If w-page full -> write it and increment addr offset
+    907              {
+    908                  nvm_drv_unlock();
+    909          
+    910                  err = nvm_drv_write_wpage(wpage.addr, (uint8_t *)wpage.buf);
+    911          
+    912                  nvm_drv_lock();
+    913          
+    914                  wpage.addr += NVM_WPAGE_SIZE_BYTE;
+    915          
+    916                  memset(wpage.buf, 0, NVM_WPAGE_SIZE_BYTE);
+    917          
+    918                  wpage.byteCnt = 0;
+    919              }
+    920          
+    921              return err;
+    922          }
+    923          
+    924          /*********************************************** Interface functions **************************************************/
+    925          
+    926          /** ********************************************************************************************************************
+    927          * \brief Initializes the nv memory at system power-on.
+    928          *
+    929          * Initializes hardware and internal data structures of the nvm module.
+    930          *
+    931          * It identifies the d-page where data has been saved during most recent nvmWriteAll() call. If the CRC of this page is
+    932          * corrupted the previously used page is addressed.
+    933          *
+    934          * It prepares the nv memory to be written again by erasing the d-page used least recently.
+    935          * If a d-page has bad CRC it is erased and used.
+    936          *
+    937          * \warning This routine must be called during initialization (after reset) \b exactly \b once before any other
+    938          * Nvm API usage.
+    939          *
+    940          * \warning It may take several tens of ms and may block the controller completely, even interrupt execution might
+    941          * be not possible during this function call.
+    942          *
+    943          * \warning This function decreases the number of writing cycles by one because a new memory page is erased in order
+    944          * to be used at next nvmWriteAll() call.
+    945          *
+    946          * \warning This function changes <B>(Atmel SAM-Dxx MCUs only)</B> the fuses settings according to the required flash
+    947          * memory size.
+    948          *
+    949          ** \retval constant pointer to nvm_t struct (see nvm.h).
+    950          *
+    951          ***********************************************************************************************************************/
+    952          
+    953          const nvm_t* nvmInit( void )
+    954          {
+    955          	nvm_drv_init();
+    956          
+    957              #ifdef NVM_DRV_SAMD21
+    958              if(nvm_drv_get_eeprom_fuses() > EEPROM_SIZE_CFG)
+    959              {
+    960                  nvm_drv_set_eeprom_fuses(EEPROM_SIZE_CFG);                      // Change fuses
+    961              }
+    962              #endif
+    963          
+    964              crcInit();
+    965          
+    966              if(sizeof(dpage_info_t) != NVM_DPAGE_INFO_SIZE_BYTE)                // Check dpage_info_t struct size according to user config
+    967              {
+    968                  ErrorShutdown("Dpage size error");
+    969              }
+    970          
+    971          	memset(&nvm,     0, sizeof(nvm_t));
+    972          	memset(&nvmData, 0, sizeof(nvm_data_t));
+    973          
+    974          	getActualDpage(&actualDpage);
+    975              getNextDpage(&actualDpage, &nextDpage);
+    976          
+    977              updateNvmData(&actualDpage, &nextDpage);
+    978          
+    979          	return &nvm;
+    980          }
+    981          
+    982          /** ********************************************************************************************************************
+    983          * \brief Resumes nv module after nvmWriteAll() call
+    984          *
+    985          * Re-initializes internal data structures and whenever needed prepares a new page to be written at next nvmWriteAll()
+    986          * call.
+    987          *
+    988          * \warning This routine must be called after every nvmWriteAll() call before any further Nvm API usage <B>if and only if
+    989          * the MCU does not reset i.e. does not execute nvmInit()</B>.
+    990          *
+    991          * \warning It may take several tens of ms and may block the controller completely, even interrupt execution might
+    992          * be not possible during this function call.
+    993          *
+    994          * \warning This function decreases the number of writing cycles by one because a new memory page is erased in order
+    995          * to be used at next nvmWriteAll() call.
+    996          *
+    997          ***********************************************************************************************************************/
+    998          
+    999          void nvmResume( void )
+   1000          {
+   1001              resetNvmErrors();
+   1002          
+   1003              getActualDpage(&actualDpage);
+   1004          
+   1005              if(actualDpage.index != nextDpage.index)
+   1006              {
+   1007          		nvm.error.write++;
+   1008              }
+   1009          
+   1010              getNextDpage(&actualDpage, &nextDpage);
+   1011          
+   1012              updateNvmData(&actualDpage, &nextDpage);
+   1013          }
+   1014          
+   1015          /** ********************************************************************************************************************
+   1016          * \brief Declares and initializes data as nvm data
+   1017          *
+   1018          * In order to make data non-volatile this function records address and size of data structures; these information are
+   1019          * then used when nvmWriteAll() is called in order to save data in nv memory. If the nv memory has valid data (CRC is ok)
+   1020          * this function loads data from nv memory to RAM structures.
+   1021          *
+   1022          * \warning If the specified maximum number of initializations is exceeded i.e. nvmDataInit() has been called more than
+   1023          * NVM_DATA_STRUCTS_CNT_MAX times, an error is thrown.
+   1024          *
+   1025          * \warning If the specified total maximum size of nv data i.e. NVM_DATA_SIZE_BYTE is exceeded then the function throws
+   1026          * an error.
+   1027          *
+   1028          * \warning During initialization nvmDataInit() might be called several times but the calling sequence shall remain the
+   1029          * same over multiple power cycles. Conditional calls of nvmDataInit() are therefore not allowed.
+   1030          *
+   1031          * \param pdata
+   1032          *        pointer to data to initialize
+   1033          *
+   1034          * \param size
+   1035          *        data size [byte]
+   1036          *
+   1037          * \param mc
+   1038          *        memory class (currently unused)
+   1039          *
+   1040          * \retval NVM_INIT_OK when data has been successfully initialized, NVM_INIT_NEW if data not initialized.
+   1041          *
+   1042          ***********************************************************************************************************************/
+   1043          
+   1044          nvm_init_t nvmDataInit( void *pdata, uint32_t size, nvm_memclass_t mc )
+   1045          {
+   1046              nvm_init_t nvmDataInit = NVM_INIT_NEW;
+   1047          
+   1048              resetNvmErrors();
+   1049          
+   1050              //---------- Store data info -----------
+   1051              if(nvmData.idxMax < NVM_DATA_STRUCTS_CNT_MAX)
+   1052              {
+   1053                  nvmData.item[nvmData.idxMax].ptr = (uint8_t *)pdata;
+   1054                  nvmData.item[nvmData.idxMax].size = size;
+   1055          
+   1056                  nvmData.idxMax++;
+   1057              }
+   1058              else
+   1059              {
+   1060                  ErrorShutdown("Structs number max exceeded");
+   1061              }
+   1062          
+   1063              //--------- Load data from nvm ---------
+   1064              if((nvm.state == NVM_STATE_OK) || (nvm.state == NVM_STATE_READ_ONLY))
+   1065              {
+   1066          		if((nvmData.totSizeByte + size) <= actualDpage.info.dataSizeByte)
+   1067          		{
+   1068          			nvm_drv_read_buffer((actualDpage.addr + nvmData.totSizeByte), size, pdata);
+   1069          
+   1070          			nvmDataInit = NVM_INIT_OK;
+   1071          		}
+   1072              }
+   1073          
+   1074          	nvmData.totSizeByte += size;
+   1075          
+   1076          	if(size != (2*(size>>1)))						// Even alignment check
+   1077          	{
+   1078          		nvmData.totSizeByte += 1;
+   1079          	}
+   1080          
+   1081              if(nvmData.totSizeByte > NVM_DATA_WORD_ALIGNED_SIZE_BYTE)
+   1082              {
+   1083                  ErrorShutdown("Not enough space");
+   1084              }
+   1085          
+   1086              return nvmDataInit;
+   1087          }
+   1088          
+   1089          /** ********************************************************************************************************************
+   1090          * \brief Writes all RAM data initialized with nvmDataInit() in nv memory.
+   1091          *
+   1092          * This function is intended to be called when a power-failure is detected. After that the MCU is expected to switch-off
+   1093          * or,whenever the power-supply is restored, an nvmResume() call is needed in order to set-up the nvm memory again.
+   1094          *
+   1095          * \warning It may take several ms and may block the controller completely, even interrupt execution might
+   1096          * be not possible during each w-page writing.
+   1097          *
+   1098          * \warning If nvmWriteAll() is used during a power-failure event, it must be guaranteed under every circumstance to
+   1099          * bring the function call to conclusion otherwise data in flash might result incomplete or corrupted.
+   1100          *
+   1101          ***********************************************************************************************************************/
+   1102          
+   1103          void nvmWriteAll( void )
+   1104          {
+   1105              uint8_t *p;
+   1106              uint32_t byteCnt;
+   1107              uint32_t dataIdx = 0;
+   1108          
+   1109              resetNvmErrors();
+   1110          
+   1111              if((nvm.state == NVM_STATE_OK) || (nvm.state == NVM_STATE_NO_DATA))
+   1112              {
+   1113                  crcReset();
+   1114          
+   1115                  memset(&wpage, 0, sizeof(wpage_t));
+   1116                  wpage.addr = nextDpage.addr;
+   1117          
+   1118                  nextDpage.info.dataSizeByte = 0;
+   1119          
+   1120                  //--------------------- Write data structs -------------------
+   1121                  for(dataIdx = 0; dataIdx < nvmData.idxMax; dataIdx++)
+   1122                  {
+   1123                      p = (uint8_t *)nvmData.item[dataIdx].ptr;
+   1124          
+   1125                      for(byteCnt = 0; byteCnt < nvmData.item[dataIdx].size; byteCnt++, p++)
+   1126                      {
+   1127          				if(wPageAddByte(*p) != NVM_ERR_NO_ERR)
+   1128          				{
+   1129          					nvm.error.write++;
+   1130          				}
+   1131          
+   1132                          crcLoadByte(*p);
+   1133                      }
+   1134          
+   1135                      nextDpage.info.dataSizeByte += nvmData.item[dataIdx].size;
+   1136          
+   1137                      if(nvmData.item[dataIdx].size != (2*(nvmData.item[dataIdx].size >> 1)))
+   1138                      {
+   1139          				if(wPageAddByte(0) != NVM_ERR_NO_ERR)
+   1140          				{
+   1141          					nvm.error.write++;
+   1142          				}
+   1143          
+   1144                          crcLoadByte(0);
+   1145                          nextDpage.info.dataSizeByte += 1;
+   1146                      }
+   1147                  }
+   1148          
+   1149                  //----------------- Dummy bytes up to info page --------------
+   1150                  for(byteCnt = nextDpage.info.dataSizeByte; byteCnt < NVM_OFFSET_DPAGE_INFO; byteCnt++)
+   1151                  {
+   1152          			if(wPageAddByte(0) != NVM_ERR_NO_ERR)
+   1153          			{
+   1154          				nvm.error.write++;
+   1155          			}
+   1156          
+   1157                      crcLoadByte(0);
+   1158                  }
+   1159          
+   1160                  //------------------------- Info page ------------------------
+   1161                  p = (uint8_t *)&nextDpage.info;
+   1162          
+   1163                  for(byteCnt = 0; byteCnt < (NVM_DPAGE_INFO_SIZE_BYTE - 4); byteCnt++, p++)          // Do not load CRC yet
+   1164                  {
+   1165          			if(wPageAddByte(*p) != NVM_ERR_NO_ERR)
+   1166          			{
+   1167          				nvm.error.write++;
+   1168          			}
+   1169          
+   1170                      crcLoadByte(*p);
+   1171                  }
+   1172          
+   1173                  //------------------------ Write CRC -------------------------
+   1174                  nextDpage.info.crc = crcGet();                                                     // Data is mutliple of 4 byte -> CRC calculation must be word aligned
+   1175                  p = (uint8_t *)&nextDpage.info.crc;
+   1176                  for(byteCnt = 0; byteCnt < 4; byteCnt++, p++)
+   1177                  {
+   1178          			if(wPageAddByte(*p) != NVM_ERR_NO_ERR)
+   1179          			{
+   1180          				nvm.error.write++;
+   1181          			}
+   1182                  }
+   1183          
+   1184                  //--------------- Dummy bytes up to end of d-page -------------
+   1185                  for(byteCnt = NVM_DATA_PLUS_INFO_PAGE_SIZE_BYTE; byteCnt < __NVM_DPAGE_SIZE_BYTE; byteCnt++)
+   1186                  {
+   1187          			if(wPageAddByte(0) != NVM_ERR_NO_ERR)
+   1188          			{
+   1189          				nvm.error.write++;
+   1190          			}
+   1191                  }
+   1192          
+   1193                  if(wpage.addr != (nextDpage.addr + __NVM_DPAGE_SIZE_BYTE))                        // Check if all data has been written
+   1194                  {
+   1195                      nvm.error.addr++;
+   1196                  }
+   1197              }
+   1198              else
+   1199              {
+   1200                  nvm.error.write++;
+   1201              }
+   1202          }
+   1203          
+   1204          /** ********************************************************************************************************************
+   1205          * \brief Compares nv RAM data with corresponding data stored in nv memory
+   1206          *
+   1207          * \param pdata
+   1208          *        Pointer to data
+   1209          *
+   1210          * \param sizeByte
+   1211          *        data size
+   1212          *
+   1213          * \retval NVM_CMP_EQUAL if data matches otherwise NVM_CMP_NOT_EQUAL
+   1214          *
+   1215          ***********************************************************************************************************************/
+   1216          
+   1217          nvm_cmp_t nvmDataCompare( const void *pdata, uint32_t sizeByte )
+   1218          {
+   1219              uint32_t i;
+   1220          	uint32_t addr;
+   1221              nvm_cmp_t dataCmp = NVM_CMP_NOT_EQUAL;
+   1222          	uint32_t addrOffset;
+   1223          
+   1224              resetNvmErrors();
+   1225              i = 0;
+   1226              addrOffset = 0;
+   1227          
+   1228              while(((uint8_t *)pdata) != nvmData.item[i].ptr && (i < nvmData.idxMax))							// Look for struct with same address
+   1229              {
+   1230          		addrOffset += nvmData.item[i].size;
+   1231          
+   1232          		if(nvmData.item[i].size != (2*(nvmData.item[i].size >> 1)))                                     // Odd size
+   1233          		{
+   1234          			addrOffset += 1;
+   1235          		}
+   1236          
+   1237          		i++;
+   1238              }
+   1239          
+   1240              if((i < nvmData.idxMax) && (sizeByte <= nvmData.item[i].size))										// Check data size
+   1241              {
+   1242          		addr = actualDpage.addr + addrOffset;
+   1243          
+   1244          		addr = GET_NVM_ADDR(addr);
+   1245          
+   1246                  if(memcmp(pdata, (void *)(addr), sizeByte) == 0)												// Compare
+   1247                  {
+   1248                      dataCmp = NVM_CMP_EQUAL;
+   1249                  }
+   1250              }
+   1251          
+   1252              return dataCmp;
+   1253          }
+   1254          
+   1255          /** ********************************************************************************************************************
+   1256          * \brief Returns the total number of write-cycles already done.
+   1257          *
+   1258          * If writeCycles > NVM_WRITE_CYCLES the number is invalid.
+   1259          *
+   1260          * \retval tot write-cycles
+   1261          *
+   1262          ***********************************************************************************************************************/
+   1263          
+   1264          uint32_t nvmGetWriteCycles(void)
+   1265          {
+   1266              return nvm.writeCycles;
+   1267          }
+   1268          
+   1269          /**********************************************************************************************************************/
+   1270          
+   1271          /** \} */ // NvmAPI
+   1272          /** \} */ // Nvm
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       4   crcErrCount
+      16   eraseDpage
+        16   -> getDpageAddr
+        16   -> nvm_drv_erase_epage
+        16   -> nvm_drv_lock
+        16   -> nvm_drv_unlock
+      40   getActualDpage
+        40   -> __aeabi_memset
+        40   -> crcErrCount
+        40   -> getDpageAddr
+        40   -> getDpageInfo
+        40   -> isDpageCRCok
+       0   getDpageAddr
+       8   getDpageInfo
+         8   -> getDpageAddr
+         8   -> nvm_drv_read_buffer
+      40   getNextDpage
+        40   -> __aeabi_memset
+        40   -> getDpageAddr
+        40   -> getDpageInfo
+        40   -> setupNextDpage
+      24   isDpageBlank
+        24   -> getDpageAddr
+        24   -> nvm_drv_read_buffer
+      32   isDpageCRCok
+        32   -> crcCalcBuf
+        32   -> getDpageAddr
+        32   -> getDpageInfo
+      24   nvmDataCompare
+        24   -> memcmp
+        24   -> resetNvmErrors
+      16   nvmDataInit
+        16   -> ErrorShutdown
+        16   -> nvm_drv_read_buffer
+        16   -> resetNvmErrors
+       0   nvmGetWriteCycles
+       8   nvmInit
+         8   -> __aeabi_memset
+         8   -> crcInit
+         8   -> getActualDpage
+         8   -> getNextDpage
+         8   -> nvm_drv_init
+         8   -> updateNvmData
+       8   nvmResume
+         8   -> getActualDpage
+         8   -> getNextDpage
+         8   -> resetNvmErrors
+         8   -> updateNvmData
+      16   nvmWriteAll
+        16   -> __aeabi_memset
+        16   -> crcGet
+        16   -> crcLoadByte
+        16   -> crcReset
+        16   -> resetNvmErrors
+        16   -> wPageAddByte
+       8   resetNvmErrors
+         8   -> __aeabi_memset
+      32   setupNextDpage
+        32   -> eraseDpage
+        32   -> getDpageInfo
+        32   -> isDpageBlank
+        32   -> isDpageCRCok
+       4   updateNvmData
+      16   wPageAddByte
+        16   -> __aeabi_memset
+        16   -> nvm_drv_lock
+        16   -> nvm_drv_unlock
+        16   -> nvm_drv_write_wpage
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable10
+       4  ??DataTable10_1
+       4  ??DataTable11
+       4  ??DataTable11_1
+       4  ??DataTable11_2
+       4  ??DataTable11_3
+       4  ??DataTable11_4
+       4  ??DataTable11_5
+       4  ??DataTable12
+       4  ??DataTable13
+       4  ??DataTable13_1
+       4  ??DataTable13_2
+       4  ??DataTable13_3
+       4  ??DataTable13_4
+       4  ??DataTable13_5
+       4  ??DataTable13_6
+       4  ??DataTable13_7
+       4  ??DataTable4
+       4  ??DataTable5
+       4  ??DataTable8
+       4  ??DataTable9
+      28  ?_0
+      20  ?_1
+      28  actualDpage
+      30  crcErrCount
+      52  eraseDpage
+     186  getActualDpage
+      12  getDpageAddr
+      26  getDpageInfo
+     226  getNextDpage
+      54  isDpageBlank
+      46  isDpageCRCok
+      28  nextDpage
+      40  nvm
+     152  nvmData
+     132  nvmDataCompare
+     168  nvmDataInit
+       6  nvmGetWriteCycles
+      60  nvmInit
+      52  nvmResume
+     414  nvmWriteAll
+    2048  nvm_dataflash_area
+      16  resetNvmErrors
+     118  setupNextDpage
+     116  updateNvmData
+      84  wPageAddByte
+      24  wpage
+
+ 
+   272 bytes in section .bss
+    48 bytes in section .rodata
+ 2 048 bytes in section .rodata (abs)
+ 1 882 bytes in section .text
+ 
+ 1 882 bytes of CODE  memory
+ 2 096 bytes of CONST memory
+   272 bytes of DATA  memory
+
+Errors: none
+Warnings: none

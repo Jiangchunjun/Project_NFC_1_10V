@@ -1,0 +1,1218 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:56
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc1_scu.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc1_scu.c"
+#        -D XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\xmc1_scu.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\xmc1_scu.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc1_scu.c
+      1          /**
+      2           * @file xmc1_scu.c
+      3           * @date 2016-04-15
+      4           *
+      5           * @cond
+      6           *********************************************************************************************************************
+      7           * XMClib v2.1.6 - XMC Peripheral Driver Library 
+      8           *
+      9           * Copyright (c) 2015-2016, Infineon Technologies AG
+     10           * All rights reserved.
+     11           *
+     12           * Redistribution and use in source and binary forms, with or without modification,are permitted provided that the
+     13           * following conditions are met:
+     14           *
+     15           * Redistributions of source code must retain the above copyright notice, this list of conditions and the following
+     16           * disclaimer.
+     17           *
+     18           * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following
+     19           * disclaimer in the documentation and/or other materials provided with the distribution.
+     20           *
+     21           * Neither the name of the copyright holders nor the names of its contributors may be used to endorse or promote
+     22           * products derived from this software without specific prior written permission.
+     23           *
+     24           * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+     25           * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+     26           * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+     27           * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+     28           * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+     29           * WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+     30           * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     31           *
+     32           * To improve the quality of the software, users are encouraged to share modifications, enhancements or bug fixes with
+     33           * Infineon Technologies AG dave@infineon.com).
+     34           *********************************************************************************************************************
+     35           *
+     36           * Change History
+     37           * --------------
+     38           *
+     39           * 2015-02-20:
+     40           *     - Initial <br>
+     41           *
+     42           * 2015-05-20:
+     43           *     - XMC_SCU_StartTempMeasurement API is modified
+     44           *     - XMC_ASSERT statements are added in XMC_SCU_INTERRUPT_SetEventHandler
+     45           *
+     46           * 2015-06-20:
+     47           *     - XMC_SCU_INTERRUPT_EnableEvent,XMC_SCU_INTERRUPT_DisableEvent,
+     48           *     - XMC_SCU_INTERRUPT_TriggerEvent,XMC_SCU_INTERUPT_GetEventStatus,
+     49           *     - XMC_SCU_INTERRUPT_ClearEventStatus APIs are added
+     50           *
+     51           * 2015-09-23:
+     52           *     - XMC1400 support added
+     53           *
+     54           * 2015-11-30:
+     55           *     - Documentation improved
+     56           *
+     57           * 2016-02-29:
+     58           *     - Fixed XMC_SCU_CLOCK_ScaleMCLKFrequency
+     59           *       It solves issues with down clock frequency scaling
+     60           *
+     61           * 2016-04-15:
+     62           *     - Fixed XMC_SCU_CLOCK_Init for XMC1400
+     63           *       It solves issues when trying to disable the OSCHP and use the XTAL pins as GPIO
+     64           *
+     65           *
+     66           * @endcond
+     67           *
+     68           */
+     69          
+     70          /**
+     71           *
+     72           * @brief SCU low level driver API prototype definition for XMC1 family of microcontrollers <br>
+     73           *
+     74           * <b>Detailed description of file</b> <br>
+     75           * APIs provided in this file cover the following functional blocks of SCU: <br>
+     76           * -- GCU (APIs prefixed with XMC_SCU_GEN_) <br>
+     77           * ----Temperature Monitoring, Voltage Monitoring, CCU Start etc
+     78           *
+     79           * -- CCU (APIs prefixed with XMC_SCU_CLOCK_)<br>
+     80           * ---- Clock initialization, Clock Gating, Sleep Management etc
+     81           *
+     82           * -- RCU (APIs prefixed with XMC_SCU_RESET_) <br>
+     83           * ---- Reset Init, Cause, Manual Reset Assert/Deassert etc
+     84           *
+     85           * -- INTERRUPT (APIs prefixed with XMC_SCU_INTERRUPT_)<br>
+     86           * ---- Initialization, Manual Assert/Deassert, Acknowledge etc
+     87           *
+     88           */
+     89          
+     90          /*********************************************************************************************************************
+     91           * HEADER FILES
+     92           ********************************************************************************************************************/
+     93          #include <xmc_scu.h>
+     94          
+     95          #if UC_FAMILY == XMC1
+     96          
+     97          /*********************************************************************************************************************
+     98           * MACROS
+     99           ********************************************************************************************************************/
+    100          #define SCU_IRQ_NUM             (3U)  /**< array index value for list of events that can generate SCU interrupt */
+    101          #define SCU_GCU_PASSWD_PROT_ENABLE  (195UL) /**< Password for enabling protection */
+    102          #define SCU_GCU_PASSWD_PROT_DISABLE (192UL) /**< Password for disabling protection */
+    103          
+    104          
+    105          #define XMC_SCU_CHECK_RTCCLKSRC(source)       ( (source == XMC_SCU_CLOCK_RTCCLKSRC_DCO2) || \
+    106                                                          (source == XMC_SCU_CLOCK_RTCCLKSRC_ERU_IOUT0) || \
+    107                                                          (source == XMC_SCU_CLOCK_RTCCLKSRC_ACMP0_OUT) || \
+    108                                                          (source == XMC_SCU_CLOCK_RTCCLKSRC_ACMP1_OUT) || \
+    109                                                          (source == XMC_SCU_CLOCK_RTCCLKSRC_ACMP2_OUT) ) /**< Used to verify
+    110                                                                                                          whether provided RTC
+    111                                                                                                          clock source is valid
+    112                                                                                                          or not */
+    113          #define SCU_GENERAL_INTCR_INTSEL_Msk SCU_GENERAL_INTCR0_INTSEL0_Msk /**< Mask value of Interrupt Source Select
+    114                                                                                   for Node 0 */
+    115          #define SCU_GENERAL_INTCR_INTSEL_Size SCU_GENERAL_INTCR0_INTSEL1_Pos /**< Bit position value of Interrupt Source Select
+    116                                                                                   for Node 1 */
+    117          
+    118          #define ANA_TSE_T1   (0x10000F30U) /**< d is a constant data can be retrieved from Flash sector 0 to calculate OFFSET
+    119                                                   value for DCO calibration */
+    120          #define ANA_TSE_T2   (0x10000F31U) /**< e is a constant data can be retrieved from Flash sector 0 to calculate OFFSET
+    121                                                   value for DCO calibration */
+    122          #define DCO_ADJLO_T1 (0x10000F32U) /**< b is a constant data can be retrieved from Flash sector 0 to calculate OFFSET
+    123                                                   value for DCO calibration */
+    124          #define DCO_ADJLO_T2 (0x10000F33U) /**< a is a constant data can be retrieved from Flash sector 0 to calculate OFFSET
+    125                                                   value for DCO calibration */
+    126          
+    127          #if UC_SERIES == XMC14
+    128          #define XMC_SCU_INTERRUPT_EVENT_MAX (64U) /**< Maximum supported SCU events for XMC14 device. */
+    129          #else
+    130          #define XMC_SCU_INTERRUPT_EVENT_MAX (32U)  /**< Maximum supported SCU events for XMC11/12/13 device. */
+    131          #endif
+    132          
+    133          #if UC_SERIES == XMC14
+    134          #define DCO1_DIV2_FREQUENCY_KHZ_Q22_10 (48000U << 10) /**< used to configures main clock (MCLK) frequency to requested
+    135                                                                   frequency value during runtime for XMC14 device. */
+    136          #else
+    137          #define DCO1_DIV2_FREQUENCY_KHZ_Q24_8 (32000U << 8) /**< used to configures main clock (MCLK) frequency to requested
+    138                                                                   frequency value during runtime for XMC11/12/13  device. */
+    139          #endif
+    140          
+    141          #define ROM_BmiInstallationReq \
+    142                  (*((uint32_t (**)(uint32_t requestedBmiValue))0x00000108U)) /**< Pointer to Request BMI installation routine is
+    143                                                                                   available inside ROM. */
+    144          
+    145          #define ROM_CalcTemperature \
+    146                  (*((uint32_t (**)(void))0x0000010cU)) /**<  Pointer to Calculate chip temperature routine is
+    147                                                              available inside ROM. */
+    148          
+    149          #define ROM_CalcTSEVAR \
+    150                  (*((uint32_t (**)(uint32_t temperature))0x00000120U)) /**<  Pointer to Calculate target level for temperature
+    151                                                                              comparison routine is available inside ROM. */
+    152                  
+    153          /*********************************************************************************************************************
+    154           * LOCAL DATA
+    155           ********************************************************************************************************************/
+    156          static XMC_SCU_INTERRUPT_EVENT_HANDLER_t event_handler_list[XMC_SCU_INTERRUPT_EVENT_MAX]; /**< For registering callback
+    157                                                                                                  functions on SCU event
+    158                                                                                                  occurrence. */
+    159          
+    160          static XMC_SCU_INTERRUPT_EVENT_t event_masks[SCU_IRQ_NUM] =
+    161          {
+    162            (XMC_SCU_INTERRUPT_EVENT_FLASH_ERROR |
+    163             XMC_SCU_INTERRUPT_EVENT_FLASH_COMPLETED |
+    164             XMC_SCU_INTERRUPT_EVENT_PESRAM |
+    165             XMC_SCU_INTERRUPT_EVENT_PEUSIC0 |
+    166          #if defined(USIC1)
+    167             XMC_SCU_INTERRUPT_EVENT_PEUSIC1 |
+    168          #endif
+    169          #if defined(CAN)
+    170             XMC_SCU_INTERRUPT_EVENT_PEMCAN |
+    171          #endif
+    172          #if UC_SERIES == XMC14
+    173             XMC_SCU_INTERRUPT_EVENT_LOSS_EXT_CLOCK |
+    174          #endif
+    175             XMC_SCU_INTERRUPT_EVENT_LOCI),
+    176          
+    177            (XMC_SCU_INTERRUPT_EVENT_STDBYCLKFAIL |
+    178          #if UC_SERIES == XMC14
+    179             XMC_SCU_INTERRUPT_EVENT_DCO1_OUT_SYNC |
+    180          #endif
+    181             XMC_SCU_INTERRUPT_EVENT_VDDPI |
+    182             XMC_SCU_INTERRUPT_EVENT_VDROP |
+    183             XMC_SCU_INTERRUPT_EVENT_VCLIP |
+    184             XMC_SCU_INTERRUPT_EVENT_TSE_DONE |
+    185             XMC_SCU_INTERRUPT_EVENT_TSE_HIGH |
+    186             XMC_SCU_INTERRUPT_EVENT_TSE_LOW |
+    187             XMC_SCU_INTERRUPT_EVENT_WDT_WARN |
+    188             XMC_SCU_INTERRUPT_EVENT_RTC_PERIODIC |
+    189             XMC_SCU_INTERRUPT_EVENT_RTC_ALARM |
+    190             XMC_SCU_INTERRUPT_EVENT_RTCCTR_UPDATED |
+    191             XMC_SCU_INTERRUPT_EVENT_RTCATIM0_UPDATED |
+    192             XMC_SCU_INTERRUPT_EVENT_RTCATIM1_UPDATED |
+    193             XMC_SCU_INTERRUPT_EVENT_RTCTIM0_UPDATED |
+    194             XMC_SCU_INTERRUPT_EVENT_RTCTIM1_UPDATED),
+    195          
+    196            (
+    197          #if UC_SERIES != XMC11
+    198             XMC_SCU_INTERRUPT_EVENT_ORC0 |
+    199             XMC_SCU_INTERRUPT_EVENT_ORC1 |
+    200             XMC_SCU_INTERRUPT_EVENT_ORC2 |
+    201             XMC_SCU_INTERRUPT_EVENT_ORC3 |
+    202             XMC_SCU_INTERRUPT_EVENT_ORC4 |
+    203             XMC_SCU_INTERRUPT_EVENT_ORC5 |
+    204             XMC_SCU_INTERRUPT_EVENT_ORC6 |
+    205             XMC_SCU_INTERRUPT_EVENT_ORC7 |
+    206          #endif
+    207          #if defined(COMPARATOR)
+    208             XMC_SCU_INTERRUPT_EVENT_ACMP0 |
+    209             XMC_SCU_INTERRUPT_EVENT_ACMP1 |
+    210             XMC_SCU_INTERRUPT_EVENT_ACMP2 |
+    211          #if UC_SERIES == XMC14
+    212             XMC_SCU_INTERRUPT_EVENT_ACMP3 |
+    213          #endif
+    214          #endif
+    215             0)
+    216          }; /**<   Defines list of events that can generate SCU interrupt and also indicates SCU events mapping to corresponding
+    217                   service request number. These event mask values can be used to verify which event is triggered that corresponds
+    218                   to service request number during runtime. All the event items are tabulated as per service request sources list
+    219                   table of SCU. */
+    220          
+    221          /*********************************************************************************************************************
+    222           * LOCAL ROUTINES
+    223           ********************************************************************************************************************/
+    224          /* Utility routine to perform frequency up scaling */
+    225          static void XMC_SCU_CLOCK_lFrequencyUpScaling(uint32_t curr_idiv, uint32_t idiv);
+    226          
+    227          /* Utility routine to perform frequency down scaling */
+    228          static void XMC_SCU_CLOCK_lFrequencyDownScaling(uint32_t curr_idiv, uint32_t idiv);
+    229          
+    230          /* Calculates the value which must be installed in ANATSEIx register to get indication in
+    231             SCU_INTERRUPT->SRRAW  bit when the chip temperature is above/below some target/threshold. */
+    232          static uint32_t XMC_SCU_CalcTSEVAR(uint32_t temperature)
+    233          {
+    234            uint32_t limit;
+    235          
+    236            XMC_ASSERT("XMC_SCU_CalcTSEVAR: temperature out of range", (temperature >= 233U) && (temperature <= 388U));
+    237          
+    238            limit = ROM_CalcTSEVAR(temperature);
+    239            if (limit == 0U)
+    240            {
+    241              limit = ROM_CalcTSEVAR(temperature + 1U);
+    242              if (limit == 0U)
+    243              {
+    244                limit = ROM_CalcTSEVAR(temperature - 1U);
+    245              }
+    246            }
+    247            
+    248            return (limit);
+    249          }
+    250          
+    251          #if UC_SERIES == XMC14
+    252          /* This is a local function used to generate the delay until register get updated with new configured value.  */
+    253          static void delay(uint32_t cycles)
+    254          {
+    255            while(cycles > 0U)
+    256            {
+    257              __NOP();
+    258              cycles--;
+    259            }
+    260          }
+    261          #endif
+    262          
+    263          /*********************************************************************************************************************
+    264           * API IMPLEMENTATION
+    265           ********************************************************************************************************************/
+    266           #ifdef XMC_ASSERT_ENABLE
+    267          /* API to verify SCU event weather it is valid event or not */
+    268          __STATIC_INLINE bool XMC_SCU_INTERRUPT_IsValidEvent(XMC_SCU_INTERRUPT_EVENT_t event)
+    269          {
+    270            return ((event == XMC_SCU_INTERRUPT_EVENT_WDT_WARN) ||
+    271                    (event == XMC_SCU_INTERRUPT_EVENT_RTC_PERIODIC) ||
+    272                    (event == XMC_SCU_INTERRUPT_EVENT_RTC_ALARM) ||
+    273                    (event == XMC_SCU_INTERRUPT_EVENT_VDDPI) ||
+    274          #if defined(USIC1)
+    275                    (event == XMC_SCU_INTERRUPT_EVENT_PEUSIC1) ||
+    276          #endif
+    277          #if defined(CAN)
+    278                    (event == XMC_SCU_INTERRUPT_EVENT_PEMCAN) ||
+    279          #endif
+    280          #if UC_SERIES == XMC14
+    281                    (event == XMC_SCU_INTERRUPT_EVENT_LOSS_EXT_CLOCK) ||
+    282                    (event == XMC_SCU_INTERRUPT_EVENT_DCO1_OUT_SYNC) ||
+    283          #endif
+    284          #if defined(COMPARATOR)
+    285                    (event == XMC_SCU_INTERRUPT_EVENT_ACMP0) ||
+    286                    (event == XMC_SCU_INTERRUPT_EVENT_ACMP1) ||
+    287                    (event == XMC_SCU_INTERRUPT_EVENT_ACMP2) ||
+    288          #if UC_SERIES == XMC14
+    289                    (event == XMC_SCU_INTERRUPT_EVENT_ACMP3) ||
+    290          #endif
+    291          #endif
+    292                    (event == XMC_SCU_INTERRUPT_EVENT_VDROP) ||
+    293          #if UC_SERIES != XMC11
+    294                    (event == XMC_SCU_INTERRUPT_EVENT_ORC0) ||
+    295                    (event == XMC_SCU_INTERRUPT_EVENT_ORC1) ||
+    296                    (event == XMC_SCU_INTERRUPT_EVENT_ORC2) ||
+    297                    (event == XMC_SCU_INTERRUPT_EVENT_ORC3) ||
+    298                    (event == XMC_SCU_INTERRUPT_EVENT_ORC4) ||
+    299                    (event == XMC_SCU_INTERRUPT_EVENT_ORC5) ||
+    300                    (event == XMC_SCU_INTERRUPT_EVENT_ORC6) ||
+    301                    (event == XMC_SCU_INTERRUPT_EVENT_ORC7) ||
+    302          #endif
+    303                    (event == XMC_SCU_INTERRUPT_EVENT_LOCI) ||
+    304                    (event == XMC_SCU_INTERRUPT_EVENT_PESRAM) ||
+    305                    (event == XMC_SCU_INTERRUPT_EVENT_PEUSIC0) ||
+    306                    (event == XMC_SCU_INTERRUPT_EVENT_FLASH_ERROR) ||
+    307                    (event == XMC_SCU_INTERRUPT_EVENT_FLASH_COMPLETED) ||
+    308                    (event == XMC_SCU_INTERRUPT_EVENT_VCLIP) ||
+    309                    (event == XMC_SCU_INTERRUPT_EVENT_STDBYCLKFAIL) ||
+    310                    (event == XMC_SCU_INTERRUPT_EVENT_RTCCTR_UPDATED) ||
+    311                    (event == XMC_SCU_INTERRUPT_EVENT_RTCATIM0_UPDATED) ||
+    312                    (event == XMC_SCU_INTERRUPT_EVENT_RTCATIM1_UPDATED) ||
+    313                    (event == XMC_SCU_INTERRUPT_EVENT_RTCTIM0_UPDATED) ||
+    314                    (event == XMC_SCU_INTERRUPT_EVENT_RTCTIM1_UPDATED) ||
+    315                    (event == XMC_SCU_INTERRUPT_EVENT_TSE_DONE) ||
+    316                    (event == XMC_SCU_INTERRUPT_EVENT_TSE_HIGH) ||
+    317                    (event == XMC_SCU_INTERRUPT_EVENT_TSE_LOW));
+    318          }
+    319           #endif
+    320          
+    321          /* API to enable the SCU event */
+    322          void XMC_SCU_INTERRUPT_EnableEvent(const XMC_SCU_INTERRUPT_EVENT_t event)
+    323          {
+    324            SCU_INTERRUPT->SRMSK |= (uint32_t)event;
+    325          #if UC_SERIES == XMC14
+    326            SCU_INTERRUPT->SRMSK1 |= (uint32_t)(event >> 32U);
+    327          #endif
+    328          }
+    329          
+    330          /* API to disable the SCU event */
+    331          void XMC_SCU_INTERRUPT_DisableEvent(const XMC_SCU_INTERRUPT_EVENT_t event)
+    332          {
+    333            SCU_INTERRUPT->SRMSK &= ~(uint32_t)event;
+    334          #if UC_SERIES == XMC14
+    335            SCU_INTERRUPT->SRMSK1 &= (uint32_t)~(event >> 32U);
+    336          #endif
+    337          }
+    338          
+    339          /* API to trigger the SCU event */
+    340          void XMC_SCU_INTERRUPT_TriggerEvent(const XMC_SCU_INTERRUPT_EVENT_t event)
+    341          {
+    342            SCU_INTERRUPT->SRSET |= (uint32_t)event;
+    343          #if UC_SERIES == XMC14
+    344            SCU_INTERRUPT->SRSET1 |= (uint32_t)(event >> 32U);
+    345          #endif
+    346          }
+    347          
+    348          /* API to get the SCU event status */
+    349          XMC_SCU_INTERRUPT_EVENT_t XMC_SCU_INTERUPT_GetEventStatus(void)
+    350          {
+    351            XMC_SCU_INTERRUPT_EVENT_t tmp;
+    352          
+    353            tmp = SCU_INTERRUPT->SRRAW;
+    354          #if UC_SERIES == XMC14
+    355            tmp |= ((int64_t)SCU_INTERRUPT->SRRAW1 << 32U);
+    356          #endif
+    357            return (tmp);
+    358          }
+    359          
+    360          /* API to clear the SCU event status */
+    361          void XMC_SCU_INTERRUPT_ClearEventStatus(const XMC_SCU_INTERRUPT_EVENT_t event)
+    362          {
+    363            SCU_INTERRUPT->SRCLR |= (uint32_t)event;
+    364          #if UC_SERIES == XMC14
+    365            SCU_INTERRUPT->SRCLR1 |= (uint32_t)(event >> 32U);
+    366          #endif
+    367          }
+    368          
+    369          /* API to lock protected bitfields from being modified */
+    370          void XMC_SCU_LockProtectedBits(void)
+    371          {
+    372            SCU_GENERAL->PASSWD = SCU_GCU_PASSWD_PROT_ENABLE;
+    373          }
+    374          
+    375          /* API to make protected bitfields available for modification */
+    376          void XMC_SCU_UnlockProtectedBits(void)
+    377          {
+    378            SCU_GENERAL->PASSWD = SCU_GCU_PASSWD_PROT_DISABLE;
+    379          
+    380            while(((SCU_GENERAL->PASSWD) & SCU_GENERAL_PASSWD_PROTS_Msk))
+    381            {
+    382              /* Loop until the lock is removed */
+    383            }
+    384          }
+    385          
+    386          /* API to initialize power supply monitoring unit */
+    387          void XMC_SCU_SupplyMonitorInit(const XMC_SCU_SUPPLYMONITOR_t *obj)
+    388          {
+    389            uint32_t anavdel;
+    390            uint32_t irqmask;
+    391          
+    392            anavdel = 0UL;
+    393          
+    394            anavdel |= (uint32_t)((obj-> ext_supply_threshold) << SCU_ANALOG_ANAVDEL_VDEL_SELECT_Pos);
+    395            anavdel |= (uint32_t)((obj->ext_supply_monitor_speed) << SCU_ANALOG_ANAVDEL_VDEL_TIM_ADJ_Pos);
+    396          
+    397            if(true == (obj->enable_at_init))
+    398            {
+    399              anavdel |= (uint32_t)SCU_ANALOG_ANAVDEL_VDEL_EN_Msk;
+    400            }
+    401             SCU_ANALOG->ANAVDEL = (uint16_t) anavdel;
+    402          
+    403            irqmask = 0UL;
+    404          
+    405            if(true == (obj->enable_prewarning_int))
+    406            {
+    407              irqmask |= (uint32_t)SCU_INTERRUPT_SRMSK_VDDPI_Msk;
+    408            }
+    409          
+    410            if(true == (obj->enable_vdrop_int))
+    411            {
+    412              irqmask |= (uint32_t)SCU_INTERRUPT_SRMSK_VDROPI_Msk;
+    413            }
+    414          
+    415            if(true == (obj->enable_vclip_int))
+    416            {
+    417              irqmask |= (uint32_t)SCU_INTERRUPT_SRMSK_VCLIPI_Msk;
+    418            }
+    419            SCU_INTERRUPT->SRMSK |= (uint32_t)irqmask;
+    420          }
+    421          
+    422          /* API to program lower temperature limit */
+    423          XMC_SCU_STATUS_t XMC_SCU_SetTempLowLimit(uint32_t limit)
+    424          {
+    425            XMC_SCU_STATUS_t status = XMC_SCU_STATUS_OK;
+    426          
+    427            limit = XMC_SCU_CalcTSEVAR(limit);
+    428          
+    429            if (limit != 0) 
+    430            {
+    431              SCU_ANALOG->ANATSEIL = (uint16_t)limit;
+    432            }
+    433            else
+    434            {
+    435              status = XMC_SCU_STATUS_ERROR;
+    436            }
+    437          
+    438            return (status);
+    439          }
+    440            
+    441          /* API to program higher temperature limit */
+    442          XMC_SCU_STATUS_t XMC_SCU_SetTempHighLimit(uint32_t limit)
+    443          {
+    444            XMC_SCU_STATUS_t status = XMC_SCU_STATUS_OK;
+    445          
+    446            limit = XMC_SCU_CalcTSEVAR(limit);
+    447          
+    448            if (limit != 0) 
+    449            {
+    450              SCU_ANALOG->ANATSEIH = (uint16_t)limit;
+    451            }
+    452            else
+    453            {
+    454              status = XMC_SCU_STATUS_ERROR;
+    455            } 
+    456          
+    457            return (status);
+    458          }
+    459          
+    460          /* API to program temperature limits as raw digital values into temperature sensor */
+    461          void XMC_SCU_SetRawTempLimits(const uint32_t lower_temp, const uint32_t upper_temp)
+    462          {
+    463            SCU_ANALOG->ANATSEIH = (uint16_t)(upper_temp & SCU_ANALOG_ANATSEIH_TSE_IH_Msk);
+    464            SCU_ANALOG->ANATSEIL = (uint16_t)(lower_temp & SCU_ANALOG_ANATSEIL_TSE_IL_Msk);
+    465          }
+    466          
+    467          /* API to start temperature measurement */
+    468          void XMC_SCU_StartTempMeasurement(void)
+    469          {
+    470            SCU_ANALOG->ANATSECTRL |= (uint16_t)SCU_ANALOG_ANATSECTRL_TSE_EN_Msk;
+    471          }
+    472          
+    473          /* API to stop temperature measurement */
+    474          void XMC_SCU_StopTempMeasurement(void)
+    475          {
+    476            SCU_ANALOG->ANATSECTRL &= (uint16_t)~SCU_ANALOG_ANATSECTRL_TSE_EN_Msk;
+    477          }
+    478          
+    479          /* API to check if the temperature has gone past the ceiling */
+    480          bool XMC_SCU_HighTemperature(void)
+    481          {
+    482            return ((SCU_INTERRUPT->SRRAW & SCU_INTERRUPT_SRRAW_TSE_HIGH_Msk) == SCU_INTERRUPT_SRRAW_TSE_HIGH_Msk);
+    483          }
+    484          
+    485          /* API to check if the temperature is lower than normal */
+    486          bool XMC_SCU_LowTemperature(void)
+    487          {
+    488            return ((SCU_INTERRUPT->SRRAW & SCU_INTERRUPT_SRRAW_TSE_LOW_Msk) == SCU_INTERRUPT_SRRAW_TSE_LOW_Msk);
+    489          }
+    490          
+    491          /* API to retrieve the device temperature */
+    492          uint32_t XMC_SCU_GetTemperature(void)
+    493          {
+    494            uint32_t temperature;
+    495          
+    496            temperature = (uint32_t)(SCU_ANALOG->ANATSEMON);
+    497          
+    498            return (temperature);
+    499          }
+    500          
+    501          /* Calculates the die temperature value using ROM function */
+    502          uint32_t XMC_SCU_CalcTemperature(void)
+    503          {
+    504            return (ROM_CalcTemperature());
+    505          }
+    506          
+    507          
+    508          /* API which initializes the clock tree ofthe device */
+    509          void XMC_SCU_CLOCK_Init(const XMC_SCU_CLOCK_CONFIG_t *const config)
+    510          {
+    511            /* Remove protection */
+    512            XMC_SCU_UnlockProtectedBits();
+    513          
+    514          #if (UC_SERIES == XMC14)
+    515            /* OSCHP source selection - OSC mode */
+    516          
+    517            if (config->oschp_mode != XMC_SCU_CLOCK_OSCHP_MODE_DISABLED)
+    518            {
+    519              if (OSCHP_GetFrequency() > 20000000U)
+    520              {
+    521                SCU_ANALOG->ANAOSCHPCTRL |= (uint16_t)SCU_ANALOG_ANAOSCHPCTRL_HYSCTRL_Msk;
+    522              }
+    523          
+    524              SCU_ANALOG->ANAOSCHPCTRL = (uint16_t)(SCU_ANALOG->ANAOSCHPCTRL & ~(SCU_ANALOG_ANAOSCHPCTRL_SHBY_Msk | SCU_ANALOG_ANAOSCHPCTRL_MODE_Msk)) |
+    525                                           config->oschp_mode;
+    526          
+    527              /* Enable OSC_HP oscillator watchdog*/
+    528              SCU_CLK->OSCCSR |= SCU_CLK_OSCCSR_XOWDEN_Msk;
+    529          
+    530              do
+    531              {
+    532                /* Restart OSC_HP oscillator watchdog */
+    533                SCU_INTERRUPT->SRCLR1 = SCU_INTERRUPT_SRCLR1_LOECI_Msk;
+    534                SCU_CLK->OSCCSR |= SCU_CLK_OSCCSR_XOWDRES_Msk;
+    535          
+    536                /* Wait a few DCO2 cycles for the update of the clock detection result */
+    537                delay(2500);
+    538          
+    539                /* check clock is ok */
+    540              }
+    541              while(SCU_INTERRUPT->SRRAW1 & SCU_INTERRUPT_SRRAW1_LOECI_Msk);
+    542            }
+    543            else /* (config->oschp_mode == XMC_SCU_CLOCK_OSCHP_MODE_DISABLED) */
+    544            {
+    545              SCU_ANALOG->ANAOSCHPCTRL |= SCU_ANALOG_ANAOSCHPCTRL_MODE_Msk;
+    546            }
+    547          
+    548            SCU_ANALOG->ANAOSCLPCTRL = (uint16_t)config->osclp_mode;
+    549          
+    550            SCU_CLK->CLKCR1 = (SCU_CLK->CLKCR1 & ~SCU_CLK_CLKCR1_DCLKSEL_Msk) |
+    551                              config->dclk_src;
+    552          
+    553          #endif
+    554            /* Update PCLK selection mux. */
+    555            SCU_CLK->CLKCR = (SCU_CLK->CLKCR & (uint32_t)~(SCU_CLK_CLKCR_PCLKSEL_Msk | SCU_CLK_CLKCR_RTCCLKSEL_Msk)) |
+    556                             config->rtc_src |
+    557                             config->pclk_src;
+    558          
+    559            /* Close the lock opened above. */
+    560            XMC_SCU_LockProtectedBits();
+    561          
+    562            /* Update the dividers now */
+    563            XMC_SCU_CLOCK_ScaleMCLKFrequency(config->idiv, config->fdiv);
+    564          
+    565          }
+    566          
+    567          /* API which selects one of the available parent clock nodes for a given child clock node */
+    568          void XMC_SCU_CLOCK_SetRtcClockSource(const XMC_SCU_CLOCK_RTCCLKSRC_t source)
+    569          {
+    570            XMC_ASSERT("XMC_SCU_CLOCK_SetRtcSourceClock:Wrong Parent Clock", XMC_SCU_CHECK_RTCCLKSRC(source));
+    571          
+    572            XMC_SCU_UnlockProtectedBits();
+    573          
+    574            SCU_CLK->CLKCR = (SCU_CLK->CLKCR & (uint32_t)~SCU_CLK_CLKCR_RTCCLKSEL_Msk) |
+    575                             source;
+    576          
+    577            XMC_SCU_LockProtectedBits();
+    578          }
+    579          
+    580          /* API to program the divider placed between fperiph and its parent */
+    581          void XMC_SCU_CLOCK_SetFastPeripheralClockSource(const XMC_SCU_CLOCK_PCLKSRC_t source)
+    582          {
+    583            XMC_SCU_UnlockProtectedBits();
+    584          
+    585            SCU_CLK->CLKCR = (SCU_CLK->CLKCR & (uint32_t)~SCU_CLK_CLKCR_PCLKSEL_Msk) |
+    586                             source;
+    587          
+    588            XMC_SCU_LockProtectedBits();
+    589          }
+    590          
+    591          /* API which gates a clock node at its source */
+    592          void XMC_SCU_CLOCK_GatePeripheralClock(const XMC_SCU_PERIPHERAL_CLOCK_t peripheral)
+    593          {
+    594            XMC_SCU_UnlockProtectedBits();
+    595            SCU_CLK->CGATSET0 |= (uint32_t)peripheral;
+    596            XMC_SCU_LockProtectedBits();
+    597          }
+    598          
+    599          /* API which ungates a clock note at its source */
+    600          void XMC_SCU_CLOCK_UngatePeripheralClock(const XMC_SCU_PERIPHERAL_CLOCK_t peripheral)
+    601          {
+    602            XMC_SCU_UnlockProtectedBits();
+    603            SCU_CLK->CGATCLR0 |= (uint32_t)peripheral;
+    604            while ((SCU_CLK->CLKCR) & SCU_CLK_CLKCR_VDDC2LOW_Msk)
+    605            {
+    606              /* Wait voltage suply stabilization */
+    607            }
+    608            XMC_SCU_LockProtectedBits();
+    609          }
+    610          
+    611          /* Checks the status of peripheral clock gating */
+    612          bool XMC_SCU_CLOCK_IsPeripheralClockGated(const XMC_SCU_PERIPHERAL_CLOCK_t peripheral)
+    613          {
+    614            return (bool)((SCU_CLK->CGATSTAT0 & peripheral) != 0);
+    615          }
+    616          
+    617          /* This API configures main clock (MCLK) frequency to requested frequency value. */
+    618          void XMC_SCU_CLOCK_SetMCLKFrequency(uint32_t freq_khz)
+    619          {
+    620            uint32_t ratio;
+    621            uint32_t ratio_int;
+    622            uint32_t ratio_frac;
+    623          
+    624          #if UC_SERIES == XMC14
+    625            if (((SCU_CLK->CLKCR1) & SCU_CLK_CLKCR1_DCLKSEL_Msk) == 0U)
+    626            {
+    627               ratio = DCO1_DIV2_FREQUENCY_KHZ_Q22_10 / freq_khz;
+    628            }
+    629            else
+    630            {
+    631               ratio = ((OSCHP_GetFrequency() / 1000U) << 10U) / freq_khz;
+    632            }
+    633          
+    634            /* Manage overflow */
+    635            if (ratio > 0xffffffU)
+    636            {
+    637              ratio = 0xffffffU;
+    638            }
+    639          
+    640            ratio_int = ratio >> 10U;
+    641            ratio_frac = ratio & 0x3ffU;
+    642          #else
+    643              ratio = DCO1_DIV2_FREQUENCY_KHZ_Q24_8 / freq_khz;
+    644          
+    645            /* Manage overflow */
+    646            if (ratio > 0xffffU)
+    647            {
+    648              ratio = 0xffffU;
+    649            }
+    650          
+    651            ratio_int = ratio >> 8U;
+    652            ratio_frac = ratio & 0xffU;
+    653          #endif
+    654          
+    655            XMC_SCU_CLOCK_ScaleMCLKFrequency(ratio_int, ratio_frac);
+    656          }
+    657          
+    658          
+    659          /* A utility routine which updates the fractional dividers in steps */
+    660          void XMC_SCU_CLOCK_ScaleMCLKFrequency(uint32_t idiv, uint32_t fdiv)
+    661          {
+    662            /* Find out current and target value of idiv */
+    663            uint32_t curr_idiv;
+    664          
+    665            XMC_SCU_UnlockProtectedBits();
+    666          
+    667            /* Take a snapshot of value already programmed into IDIV */
+    668            curr_idiv = (SCU_CLK->CLKCR & SCU_CLK_CLKCR_IDIV_Msk) >> SCU_CLK_CLKCR_IDIV_Pos;
+    669          
+    670          #if (UC_SERIES == XMC14)
+    671            SCU_CLK->CLKCR1 = (SCU_CLK->CLKCR1 & (uint32_t)~(SCU_CLK_CLKCR1_FDIV_Msk)) |
+    672                             (uint32_t)((fdiv >> 8U) << SCU_CLK_CLKCR1_FDIV_Pos);
+    673          
+    674            SCU_CLK->CLKCR = (SCU_CLK->CLKCR & (uint32_t)~(SCU_CLK_CLKCR_FDIV_Msk | SCU_CLK_CLKCR_CNTADJ_Msk)) |
+    675                             (uint32_t)((fdiv & 0xffU) << SCU_CLK_CLKCR_FDIV_Pos) |
+    676                             (uint32_t)(1023UL << SCU_CLK_CLKCR_CNTADJ_Pos);
+    677          #else
+    678            SCU_CLK->CLKCR = (SCU_CLK->CLKCR & (uint32_t)~(SCU_CLK_CLKCR_FDIV_Msk | SCU_CLK_CLKCR_CNTADJ_Msk)) |
+    679                             (uint32_t)(fdiv << SCU_CLK_CLKCR_FDIV_Pos) |
+    680                             (uint32_t)(1023UL << SCU_CLK_CLKCR_CNTADJ_Pos);
+    681          #endif
+    682          
+    683            while ((SCU_CLK->CLKCR)& SCU_CLK_CLKCR_VDDC2LOW_Msk)
+    684            {
+    685              /* Spin until the core supply stabilizes */
+    686            }
+    687          
+    688            if(curr_idiv <= idiv)
+    689            {
+    690              /* Requested IDIV is greater than currently programmed IDIV. So downscale the frequency */
+    691              XMC_SCU_CLOCK_lFrequencyDownScaling(curr_idiv, idiv);
+    692            }
+    693            else
+    694            {
+    695              /* Requested IDIV is lower than currently programmed IDIV. So upscale the frequency */
+    696              XMC_SCU_CLOCK_lFrequencyUpScaling(curr_idiv, idiv);
+    697            }
+    698          
+    699            SCU_CLK->CLKCR = (SCU_CLK->CLKCR & (uint32_t)~(SCU_CLK_CLKCR_IDIV_Msk | SCU_CLK_CLKCR_CNTADJ_Msk)) |
+    700                             (uint32_t)(idiv << SCU_CLK_CLKCR_IDIV_Pos) | (uint32_t)(1023UL << SCU_CLK_CLKCR_CNTADJ_Pos);
+    701          
+    702            while ((SCU_CLK->CLKCR) & SCU_CLK_CLKCR_VDDC2LOW_Msk)
+    703            {
+    704              /* Wait voltage suply stabilization */
+    705            }
+    706          
+    707            XMC_SCU_LockProtectedBits();
+    708          
+    709            SystemCoreClockUpdate();
+    710          
+    711          }
+    712          
+    713          /* Utility routine to perform frequency up scaling */
+    714          static void XMC_SCU_CLOCK_lFrequencyUpScaling(uint32_t curr_idiv, uint32_t target_idiv)
+    715          {
+    716            while (curr_idiv > (target_idiv * 4UL))
+    717            {
+    718              curr_idiv = (uint32_t)(curr_idiv >> 2UL);   /* Divide by 4. */
+    719          
+    720              SCU_CLK->CLKCR = (SCU_CLK->CLKCR & (uint32_t)~(SCU_CLK_CLKCR_IDIV_Msk | SCU_CLK_CLKCR_CNTADJ_Msk)) |
+    721                               (uint32_t)(curr_idiv << SCU_CLK_CLKCR_IDIV_Pos) | 
+    722                               (uint32_t)(1023UL << SCU_CLK_CLKCR_CNTADJ_Pos);
+    723          
+    724              while (SCU_CLK->CLKCR & SCU_CLK_CLKCR_VDDC2LOW_Msk)
+    725              {
+    726              /* Wait voltage suply stabilization */
+    727              }
+    728            }
+    729          }
+    730          
+    731          /* Utility routine to perform frequency down scaling */
+    732          static void XMC_SCU_CLOCK_lFrequencyDownScaling(uint32_t curr_idiv, uint32_t target_idiv)
+    733          {
+    734          
+    735            while ((curr_idiv * 4UL) < target_idiv)
+    736            {
+    737              if(0U == curr_idiv)
+    738              {
+    739                curr_idiv = 1U;
+    740              }
+    741              curr_idiv  = (uint32_t)(curr_idiv << 2UL);   /* Multiply by 4. */
+    742              SCU_CLK->CLKCR = (SCU_CLK->CLKCR & (uint32_t)~(SCU_CLK_CLKCR_IDIV_Msk | SCU_CLK_CLKCR_CNTADJ_Msk)) |
+    743                               (uint32_t)(curr_idiv << SCU_CLK_CLKCR_IDIV_Pos) |
+    744                               (uint32_t)(1023UL << SCU_CLK_CLKCR_CNTADJ_Pos);
+    745          
+    746              while (SCU_CLK->CLKCR & SCU_CLK_CLKCR_VDDC2LOW_Msk)
+    747              {
+    748              /* Wait voltage suply stabilization */
+    749              }
+    750            }
+    751          }
+    752          
+    753          /*
+    754           * API to retrieve clock frequency of peripherals on the peripheral bus using a shared functional clock
+    755           */
+    756          uint32_t XMC_SCU_CLOCK_GetPeripheralClockFrequency(void)
+    757          {
+    758            return (SystemCoreClock);
+    759          }
+    760          
+    761          /* Provides the clock frequency of peripherals on the peripheral bus that are using a shared functional clock */
+    762          uint32_t XMC_SCU_CLOCK_GetFastPeripheralClockFrequency(void)
+    763          {
+    764            return (SystemCoreClock << ((SCU_CLK->CLKCR & SCU_CLK_CLKCR_PCLKSEL_Msk) >> SCU_CLK_CLKCR_PCLKSEL_Pos));
+    765          }
+    766          
+    767          /* DCO1 clock frequency can be calibrated during runtime to achieve a better accuracy */
+    768          void XMC_SCU_CLOCK_CalibrateOscillatorOnTemperature(int32_t temperature)
+    769          {
+    770            int32_t a;
+    771            int32_t b;
+    772            int32_t d;
+    773            int32_t e;
+    774            int32_t offset;
+    775          
+    776            a = *((uint8_t*)DCO_ADJLO_T2);
+    777            b = *((uint8_t*)DCO_ADJLO_T1);
+    778            d = *((uint8_t*)ANA_TSE_T1);
+    779            e = *((uint8_t*)ANA_TSE_T2);
+    780          
+    781            offset = b + (((a - b) * (temperature - d)) / (e - d));
+    782            offset &= SCU_ANALOG_ANAOFFSET_ADJL_OFFSET_Msk;
+    783          
+    784            XMC_SCU_UnlockProtectedBits();
+    785            SCU_ANALOG->ANAOFFSET = (uint16_t)offset;
+    786            XMC_SCU_LockProtectedBits();
+    787          }
+    788          
+    789          /*
+    790           * API to assign the event handler function to be executed on occurrence of the selected event
+    791           */
+    792          XMC_SCU_STATUS_t XMC_SCU_INTERRUPT_SetEventHandler(XMC_SCU_INTERRUPT_EVENT_t event, XMC_SCU_INTERRUPT_EVENT_HANDLER_t handler)
+    793          {
+    794            uint32_t index;
+    795            XMC_SCU_STATUS_t status;
+    796          
+    797            XMC_ASSERT("XMC_SCU_INTERRUPT_SetEventHandler: Invalid event", XMC_SCU_INTERRUPT_IsValidEvent(event));
+    798            XMC_ASSERT("XMC_SCU_INTERRUPT_SetEventHandler: Invalid handler", handler != NULL);
+    799          
+    800            index = 0U;
+    801          
+    802            while (((event & ((XMC_SCU_INTERRUPT_EVENT_t)1 << index)) == 0U) && (index < XMC_SCU_INTERRUPT_EVENT_MAX))
+    803            {
+    804              index++;
+    805            }
+    806          
+    807            if (index == XMC_SCU_INTERRUPT_EVENT_MAX)
+    808            {
+    809              status = XMC_SCU_STATUS_ERROR;
+    810            }
+    811            else
+    812            {
+    813              event_handler_list[index] = handler;
+    814              status = XMC_SCU_STATUS_OK;
+    815            }
+    816          
+    817            return (status);
+    818          }
+    819          
+    820          /*
+    821           * A common function to execute callback functions for multiple events
+    822           */
+    823          void XMC_SCU_IRQHandler(uint32_t sr_num)
+    824          {
+    825            XMC_ASSERT("XMC_SCU_IRQHandler: Invalid sr_num", sr_num < SCU_IRQ_NUM);
+    826          
+    827            uint32_t index;
+    828            XMC_SCU_INTERRUPT_EVENT_t event;
+    829            XMC_SCU_INTERRUPT_EVENT_HANDLER_t event_handler;
+    830          
+    831            index = 0U;
+    832            event = XMC_SCU_INTERUPT_GetEventStatus() & event_masks[sr_num];
+    833            XMC_SCU_INTERRUPT_ClearEventStatus(event);
+    834          
+    835            while ((event != 0) && (index < XMC_SCU_INTERRUPT_EVENT_MAX))
+    836            {
+    837              if ((event & ((XMC_SCU_INTERRUPT_EVENT_t)1 << index)) != 0U)
+    838              {
+    839                event &= ~((XMC_SCU_INTERRUPT_EVENT_t)1 << index);
+    840                event_handler = event_handler_list[index];
+    841                if (event_handler != NULL)
+    842                {
+    843                  event_handler();
+    844                }
+    845          
+    846                /* break; XMC1: Only PULSE interrupts */
+    847              }
+    848              index++;
+    849            }
+    850          }
+    851          
+    852          #if (UC_SERIES == XMC14)
+    853          /* DCO1 clock frequency can be calibrated during runtime to achieve a better accuracy */
+    854          void XMC_SCU_CLOCK_EnableDCO1ExtRefCalibration(XMC_SCU_CLOCK_SYNC_CLKSRC_t sync_clk, uint32_t prescaler, uint32_t syn_preload)
+    855          {
+    856          
+    857            XMC_SCU_UnlockProtectedBits();
+    858            SCU_ANALOG->ANASYNC2 = (uint16_t)(prescaler << SCU_ANALOG_ANASYNC2_PRESCALER_Pos);
+    859            SCU_ANALOG->ANASYNC1 = (uint16_t)(syn_preload |
+    860                                   sync_clk |
+    861                                   SCU_ANALOG_ANASYNC1_SYNC_DCO_EN_Msk);
+    862          
+    863            XMC_SCU_LockProtectedBits();
+    864          
+    865          }
+    866          
+    867          /* This function stops the automatic DCO1 calibration based on the selected clock source */
+    868          void XMC_SCU_CLOCK_DisableDCO1ExtRefCalibration(void)
+    869          {
+    870            XMC_SCU_UnlockProtectedBits();
+    871            SCU_ANALOG->ANASYNC2 = 0U;
+    872            SCU_ANALOG->ANASYNC1 = 0U;
+    873            XMC_SCU_LockProtectedBits();
+    874          }
+    875          
+    876          /* This functions checks the status of the synchronisation */
+    877          bool XMC_SCU_CLOCK_IsDCO1ExtRefCalibrationReady(void)
+    878          {
+    879            return (bool)((SCU_ANALOG->ANASYNC2 & SCU_ANALOG_ANASYNC2_SYNC_READY_Msk) != 0U);
+    880          }
+    881          
+    882          /**
+    883           * This function enables the watchdog on the DCO1 frequency
+    884           */
+    885          void XMC_SCU_CLOCK_EnableDCO1OscillatorWatchdog(void)
+    886          {
+    887            SCU_CLK->OSCCSR |= SCU_CLK_OSCCSR_OWDEN_Msk;
+    888          }
+    889          
+    890          /**
+    891           * This function disables the watchdog on the DCO1 frequency
+    892           */
+    893          void XMC_SCU_CLOCK_DisableDCO1OscillatorWatchdog(void)
+    894          {
+    895            SCU_CLK->OSCCSR &= ~SCU_CLK_OSCCSR_OWDEN_Msk;
+    896          }
+    897          
+    898          /**
+    899           * This function clears the status of the watchdog on the DCO1 frequency
+    900           */
+    901          void XMC_SCU_CLOCK_ClearDCO1OscillatorWatchdogStatus(void)
+    902          {
+    903            SCU_CLK->OSCCSR |= SCU_CLK_OSCCSR_OWDRES_Msk;
+    904          }
+    905          
+    906          /**
+    907           * This function checks if the DCO1 frequency is in the limits of the watchdog.
+    908           */
+    909          bool XMC_SCU_CLOCK_IsDCO1ClockFrequencyUsable(void)
+    910          {
+    911            return ((SCU_CLK->OSCCSR & (SCU_CLK_OSCCSR_OSC2L_Msk | SCU_CLK_OSCCSR_OSC2H_Msk)) == 0U);
+    912          }
+    913          
+    914          /* This function selects service request source for a NVIC interrupt node */
+    915          void XMC_SCU_SetInterruptControl(uint8_t irq_number, XMC_SCU_IRQCTRL_t source)
+    916          {
+    917            XMC_ASSERT("XMC_SCU_SetInterruptControl: Invalid irq_number", irq_number < 32);
+    918            XMC_ASSERT("XMC_SCU_SetInterruptControl: Invalid source", (source >> 8) == irq_number);
+    919          
+    920            source &= 0x3U;
+    921            if (irq_number < 16U)
+    922            {
+    923              SCU_GENERAL->INTCR0 = (SCU_GENERAL->INTCR0 & ~(SCU_GENERAL_INTCR_INTSEL_Msk << (irq_number * SCU_GENERAL_INTCR_INTSEL_Size))) |
+    924                                    (source << (irq_number * SCU_GENERAL_INTCR_INTSEL_Size));
+    925            }
+    926            else
+    927            {
+    928              irq_number &= 0x0fU;
+    929              SCU_GENERAL->INTCR1 = (SCU_GENERAL->INTCR1 & ~(SCU_GENERAL_INTCR_INTSEL_Msk << (irq_number  * SCU_GENERAL_INTCR_INTSEL_Size))) |
+    930                                    (source << (irq_number  * SCU_GENERAL_INTCR_INTSEL_Size));
+    931            }
+    932          }
+    933          
+    934          #endif
+    935          #endif /* UC_FAMILY == XMC1 */
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   XMC_SCU_CLOCK_CalibrateOscillatorOnTemperature
+         8   -> XMC_SCU_LockProtectedBits
+         8   -> XMC_SCU_UnlockProtectedBits
+         8 __aeabi_idiv
+       8   XMC_SCU_CLOCK_GatePeripheralClock
+         8   -> XMC_SCU_LockProtectedBits
+         8   -> XMC_SCU_UnlockProtectedBits
+       0   XMC_SCU_CLOCK_GetFastPeripheralClockFrequency
+       0   XMC_SCU_CLOCK_GetPeripheralClockFrequency
+       8   XMC_SCU_CLOCK_Init
+         8   -> XMC_SCU_CLOCK_ScaleMCLKFrequency
+         8   -> XMC_SCU_LockProtectedBits
+         8   -> XMC_SCU_UnlockProtectedBits
+       4   XMC_SCU_CLOCK_IsPeripheralClockGated
+      16   XMC_SCU_CLOCK_ScaleMCLKFrequency
+        16   -> SystemCoreClockUpdate
+        16   -> XMC_SCU_CLOCK_lFrequencyDownScaling
+        16   -> XMC_SCU_CLOCK_lFrequencyUpScaling
+        16   -> XMC_SCU_LockProtectedBits
+        16   -> XMC_SCU_UnlockProtectedBits
+       8   XMC_SCU_CLOCK_SetFastPeripheralClockSource
+         8   -> XMC_SCU_LockProtectedBits
+         8   -> XMC_SCU_UnlockProtectedBits
+       8   XMC_SCU_CLOCK_SetMCLKFrequency
+         8   -> XMC_SCU_CLOCK_ScaleMCLKFrequency
+         8 __aeabi_uidiv
+       8   XMC_SCU_CLOCK_SetRtcClockSource
+         8   -> XMC_SCU_LockProtectedBits
+         8   -> XMC_SCU_UnlockProtectedBits
+       8   XMC_SCU_CLOCK_UngatePeripheralClock
+         8   -> XMC_SCU_LockProtectedBits
+         8   -> XMC_SCU_UnlockProtectedBits
+       4   XMC_SCU_CLOCK_lFrequencyDownScaling
+       4   XMC_SCU_CLOCK_lFrequencyUpScaling
+       8   XMC_SCU_CalcTSEVAR
+         8   -- Indirect call
+       8   XMC_SCU_CalcTemperature
+         8   -- Indirect call
+       0   XMC_SCU_GetTemperature
+       0   XMC_SCU_HighTemperature
+       0   XMC_SCU_INTERRUPT_ClearEventStatus
+       0   XMC_SCU_INTERRUPT_DisableEvent
+       0   XMC_SCU_INTERRUPT_EnableEvent
+       4   XMC_SCU_INTERRUPT_SetEventHandler
+       0   XMC_SCU_INTERRUPT_TriggerEvent
+       0   XMC_SCU_INTERUPT_GetEventStatus
+      16   XMC_SCU_IRQHandler
+        16   -- Indirect call
+        16   -> XMC_SCU_INTERRUPT_ClearEventStatus
+        16   -> XMC_SCU_INTERUPT_GetEventStatus
+       0   XMC_SCU_LockProtectedBits
+       0   XMC_SCU_LowTemperature
+       0   XMC_SCU_SetRawTempLimits
+       8   XMC_SCU_SetTempHighLimit
+         8   -> XMC_SCU_CalcTSEVAR
+       8   XMC_SCU_SetTempLowLimit
+         8   -> XMC_SCU_CalcTSEVAR
+       0   XMC_SCU_StartTempMeasurement
+       0   XMC_SCU_StopTempMeasurement
+       4   XMC_SCU_SupplyMonitorInit
+       4   XMC_SCU_UnlockProtectedBits
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable26
+       4  ??DataTable27
+       4  ??DataTable27_1
+       4  ??DataTable27_2
+       4  ??DataTable27_3
+       4  ??DataTable27_4
+       4  ??DataTable29
+       4  ??DataTable29_1
+       4  ??DataTable29_2
+       4  ??DataTable30
+       4  ??DataTable30_1
+       4  ??DataTable30_10
+       4  ??DataTable30_11
+       4  ??DataTable30_12
+       4  ??DataTable30_13
+       4  ??DataTable30_14
+       4  ??DataTable30_15
+       4  ??DataTable30_16
+       4  ??DataTable30_17
+       4  ??DataTable30_18
+       4  ??DataTable30_19
+       4  ??DataTable30_2
+       4  ??DataTable30_20
+       4  ??DataTable30_3
+       4  ??DataTable30_4
+       4  ??DataTable30_5
+       4  ??DataTable30_6
+       4  ??DataTable30_7
+       4  ??DataTable30_8
+       4  ??DataTable30_9
+      60  XMC_SCU_CLOCK_CalibrateOscillatorOnTemperature
+      26  XMC_SCU_CLOCK_GatePeripheralClock
+      20  XMC_SCU_CLOCK_GetFastPeripheralClockFrequency
+       6  XMC_SCU_CLOCK_GetPeripheralClockFrequency
+      42  XMC_SCU_CLOCK_Init
+      24  XMC_SCU_CLOCK_IsPeripheralClockGated
+     100  XMC_SCU_CLOCK_ScaleMCLKFrequency
+      28  XMC_SCU_CLOCK_SetFastPeripheralClockSource
+      34  XMC_SCU_CLOCK_SetMCLKFrequency
+      28  XMC_SCU_CLOCK_SetRtcClockSource
+      34  XMC_SCU_CLOCK_UngatePeripheralClock
+      50  XMC_SCU_CLOCK_lFrequencyDownScaling
+      44  XMC_SCU_CLOCK_lFrequencyUpScaling
+      48  XMC_SCU_CalcTSEVAR
+      12  XMC_SCU_CalcTemperature
+       8  XMC_SCU_GetTemperature
+      14  XMC_SCU_HighTemperature
+      12  XMC_SCU_INTERRUPT_ClearEventStatus
+      12  XMC_SCU_INTERRUPT_DisableEvent
+      12  XMC_SCU_INTERRUPT_EnableEvent
+      42  XMC_SCU_INTERRUPT_SetEventHandler
+      12  XMC_SCU_INTERRUPT_TriggerEvent
+       6  XMC_SCU_INTERUPT_GetEventStatus
+      70  XMC_SCU_IRQHandler
+       8  XMC_SCU_LockProtectedBits
+      10  XMC_SCU_LowTemperature
+      10  XMC_SCU_SetRawTempLimits
+      26  XMC_SCU_SetTempHighLimit
+      26  XMC_SCU_SetTempLowLimit
+      14  XMC_SCU_StartTempMeasurement
+      14  XMC_SCU_StopTempMeasurement
+      86  XMC_SCU_SupplyMonitorInit
+      18  XMC_SCU_UnlockProtectedBits
+     128  event_handler_list
+      12  event_masks
+
+ 
+   128 bytes in section .bss
+    12 bytes in section .data
+ 1 076 bytes in section .text
+ 
+ 1 076 bytes of CODE memory
+   140 bytes of DATA memory
+
+Errors: none
+Warnings: none

@@ -36,7 +36,7 @@
 int main(void)
 {      
   extern uint8_t g_nfc_ini_flag;
-        static uint8_t save=0;
+
     /* MCU Power On Initial */
     MCU_PowerOnInit();   
     
@@ -46,7 +46,7 @@ int main(void)
     while(1)
     {
         
-        
+      
         System_PeriodTaskManagement();
         
         System_PowerOnTask();
@@ -55,7 +55,8 @@ int main(void)
         
         //Comm_Task();
         
-      
+        Power_nfc_handle();
+        
         Power_ControlLoopTask();
         System_SleepTask();
         

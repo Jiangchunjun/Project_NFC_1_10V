@@ -1,0 +1,721 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:56
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc_bccu.c
+#    Command line =  
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc_bccu.c"
+#        -D XMC1301_T038x0064 -D OT_NFC_IP67_200W -D NDEBUG -D ENABLT_WDT -D
+#        ENABLE_COMM -D ENABLE_USART -D nDEBUG_PRINT -D nDEBUG_VERSION -D
+#        MODULE_I2C -D MODULE_M24LRxx -D MODULE_NFC -D MODULE_NFC_DALI -D
+#        ENASTRO -D NO_FAST_TIME_ASTRO -D NO_EN_CLM_TIME_FAST -D ENABLE_OVP -D
+#        ENABLE_MOBILE -D ENABLE_ONE2TEN -D BYTEORDER_LITTLE_ENDIAN -D
+#        AVAILABLE_PORTS_NUMBER=3 -D FW_HIGH=01 -D FW_LOW=02 -D ENASTRO -D
+#        MPC_O2T_DEFAULT_SETTINGS -D MPC_O2T_DEFAULT_BOUNDARIES -lc "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List" -o "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M0 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\IAR ARM
+#        7.8\arm\INC\c\DLib_Config_Normal.h" -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\XMC_Peripheral_Library\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\inc\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Driver\inc\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\devices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\Config\" -I "C:\C
+#        Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\driver_ot\" -I
+#        "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\fileTank\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\I2cExt\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Import\modules\NfcExt\M24LRxx\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\"
+#        -I PROJ_DIR$\..\Application\src\modules\NVM\api\ -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\driver_xmc1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC\driver_api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\currentset\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\DaliServices\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\HW\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Modules\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Optional\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\Dali\iFace\Services\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Acl\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Alloc\Legacy\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Clm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Csm\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Info\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSK\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\O2T\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\AstroDim\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\MSKEncryption\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\Power\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\EOL\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NFC\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\I2C\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\XMCLib\inc\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\CRC16\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\hwdrivers\XMC1300\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\NVM\api\"
+#        -I "C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor\"
+#        -Ol
+#    Locale       =  Chinese (Simplified)_CHN.936
+#    List file    =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\List\xmc_bccu.lst
+#    Object file  =  
+#        C:\C Pan\work\NFC
+#        1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\200W\Obj\xmc_bccu.o
+#
+###############################################################################
+
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc_bccu.c
+      1          /**
+      2           * @file xmc_bccu.c
+      3           * @date 2015-06-20
+      4           *
+      5           * @cond
+      6            *********************************************************************************************************************
+      7           * XMClib v2.1.6 - XMC Peripheral Driver Library 
+      8           *
+      9           * Copyright (c) 2015-2016, Infineon Technologies AG
+     10           * All rights reserved.                        
+     11           *                                             
+     12           * Redistribution and use in source and binary forms, with or without modification,are permitted provided that the 
+     13           * following conditions are met:   
+     14           *                                                                              
+     15           * Redistributions of source code must retain the above copyright notice, this list of conditions and the following 
+     16           * disclaimer.                        
+     17           * 
+     18           * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following 
+     19           * disclaimer in the documentation and/or other materials provided with the distribution.                       
+     20           * 
+     21           * Neither the name of the copyright holders nor the names of its contributors may be used to endorse or promote 
+     22           * products derived from this software without specific prior written permission.                                           
+     23           *                                                                              
+     24           * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, 
+     25           * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE  
+     26           * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+     27           * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR  
+     28           * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+     29           * WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+     30           * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                                                  
+     31           *                                                                              
+     32           * To improve the quality of the software, users are encouraged to share modifications, enhancements or bug fixes with 
+     33           * Infineon Technologies AG dave@infineon.com).                                                          
+     34           *********************************************************************************************************************
+     35           *
+     36           * Change History
+     37           * --------------
+     38           *
+     39           * 2015-02-19:
+     40           *     - Initial draft <br>
+     41           *
+     42           * 2015-05-08:
+     43           *     - Minor bug fixes in following APIs: XMC_BCCU_ConcurrentStartDimming(), XMC_BCCU_ConcurrentAbortDimming(),
+     44           *               XMC_BCCU_SetGlobalDimmingLevel() <br>
+     45           *     
+     46           * 2015-06-20:
+     47           *     - Removed version macros and declaration of GetDriverVersion API
+     48           *
+     49           * <b>Detailed description of file:</b><br>
+     50           * APIs for the functional blocks of BCCU have been defined:<br>
+     51           * -- GLOBAL configuration <br>
+     52           * -- Clock configuration, Function/Event configuration, Interrupt configuration <br>
+     53           *
+     54           * @endcond
+     55           *
+     56           */
+     57          
+     58          /*********************************************************************************************************************
+     59           * HEADER FILES
+     60           ********************************************************************************************************************/
+     61          #include <xmc_bccu.h>
+     62          
+     63          #if defined(BCCU0)
+     64          #include <xmc_scu.h>
+     65          
+     66          /*********************************************************************************************************************
+     67           * MACROS
+     68           ********************************************************************************************************************/
+     69          #define XMC_BCCU_NO_OF_CHANNELS    (9U)
+     70          #define XMC_BCCU_CHANNEL_MASK      ((0x1 << XMC_BCCU_NO_OF_CHANNELS)-1)
+     71          #define XMC_BCCU_NO_OF_DIM_ENGINE  (3U)
+     72          #define XMC_BCCU_DIM_ENGINE_MASK   (((0x1 << XMC_BCCU_NO_OF_DIM_ENGINE)-1))
+     73          
+     74          /*********************************************************************************************************************
+     75           * ENUMS
+     76           ********************************************************************************************************************/
+     77          
+     78          /*********************************************************************************************************************
+     79           * DATA STRUCTURES
+     80           ********************************************************************************************************************/
+     81          
+     82          /*********************************************************************************************************************
+     83           * GLOBAL DATA
+     84           ********************************************************************************************************************/
+     85          
+     86          /*********************************************************************************************************************
+     87           * LOCAL/UTILITY ROUTINES
+     88           ********************************************************************************************************************/
+     89          
+     90          /*********************************************************************************************************************
+     91           * API IMPLEMENTATION
+     92           ********************************************************************************************************************/
+     93          
+     94          /*
+     95           * API to initialise the global resources of a BCCU module
+     96           */
+     97          void XMC_BCCU_GlobalInit(XMC_BCCU_t *const bccu, const XMC_BCCU_GLOBAL_CONFIG_t *const config)
+     98          {
+     99            XMC_SCU_CLOCK_UngatePeripheralClock(XMC_SCU_PERIPHERAL_CLOCK_BCCU0);
+    100          
+    101            bccu->GLOBCON = config->globcon;
+    102            
+    103            bccu->GLOBCLK = config->globclk;
+    104            bccu->GLOBDIM = config->global_dimlevel;  
+    105          
+    106          }
+    107          
+    108          /*
+    109           * API to configure the global trigger mode & delay of a BCCU module
+    110           */
+    111          void XMC_BCCU_ConfigGlobalTrigger(XMC_BCCU_t *const bccu, XMC_BCCU_TRIGMODE_t mode, XMC_BCCU_TRIGDELAY_t delay)
+    112          {
+    113            bccu->GLOBCON &= ~(uint32_t)(BCCU_GLOBCON_TM_Msk | BCCU_GLOBCON_TRDEL_Msk);
+    114            bccu->GLOBCON |= ((uint32_t)mode | ((uint32_t)delay << BCCU_GLOBCON_TRDEL_Pos));
+    115          }
+    116          
+    117          /*
+    118           * API to configure the trap input selection of a BCCU module
+    119           */
+    120          void XMC_BCCU_SelectTrapInput (XMC_BCCU_t *const bccu, XMC_BCCU_CH_TRAP_IN_t input)
+    121          {
+    122            bccu->GLOBCON &= ~(uint32_t)(BCCU_GLOBCON_TRAPIS_Msk);
+    123            bccu->GLOBCON |= ((uint32_t)input << BCCU_GLOBCON_TRAPIS_Pos);
+    124          }
+    125          
+    126          /*
+    127           * API to configure the trap edge selection of a BCCU module
+    128           */
+    129          void XMC_BCCU_SetTrapEdge (XMC_BCCU_t *const bccu, XMC_BCCU_CH_TRAP_EDGE_t edge)
+    130          {
+    131            bccu->GLOBCON &= ~(uint32_t)(BCCU_GLOBCON_TRAPED_Msk);
+    132            bccu->GLOBCON |= ((uint32_t)edge << BCCU_GLOBCON_TRAPED_Pos);
+    133          }
+    134          
+    135          /*
+    136           * API to configure the suspend mode of a BCCU module
+    137           */
+    138          void XMC_BCCU_ConfigSuspendMode (XMC_BCCU_t *const bccu, XMC_BCCU_SUSPEND_MODE_t mode)
+    139          {
+    140            bccu->GLOBCON &= ~(uint32_t)(BCCU_GLOBCON_SUSCFG_Msk);
+    141            bccu->GLOBCON |= ((uint32_t)mode << BCCU_GLOBCON_SUSCFG_Pos);
+    142          }
+    143          
+    144          /*
+    145           * API to configure number of consecutive zeroes allowed at modulator output (flicker watch-dog number)
+    146           */
+    147          void XMC_BCCU_SetFlickerWDThreshold (XMC_BCCU_t *const bccu, uint32_t threshold_no)
+    148          {
+    149            XMC_ASSERT("XMC_BCCU_SetFlickerWDThreshold: Invalid threshold no", (threshold_no <= BCCU_GLOBCON_WDMBN_Msk));
+    150            
+    151            bccu->GLOBCON &= ~(uint32_t)(BCCU_GLOBCON_WDMBN_Msk);
+    152            bccu->GLOBCON |= (uint32_t)(threshold_no << BCCU_GLOBCON_WDMBN_Pos);
+    153          }
+    154          
+    155          /*
+    156           * API to configure the fast clock prescaler factor of a BCCU module
+    157           */
+    158          void XMC_BCCU_SetFastClockPrescaler (XMC_BCCU_t *const bccu, uint32_t div)
+    159          {
+    160            XMC_ASSERT("XMC_BCCU_SetFastClockPrescaler: Invalid divider value", (div <= BCCU_GLOBCLK_FCLK_PS_Msk));
+    161            
+    162            bccu->GLOBCLK &= ~(uint32_t)(BCCU_GLOBCLK_FCLK_PS_Msk);
+    163            bccu->GLOBCLK |= div;
+    164            
+    165          }
+    166          
+    167          /*
+    168           * API to configure the dimmer clock prescaler factor of a BCCU module
+    169           */
+    170          void XMC_BCCU_SetDimClockPrescaler (XMC_BCCU_t *const bccu, uint32_t div)
+    171          {
+    172            XMC_ASSERT("XMC_BCCU_SetDimClockPrescaler: Invalid divider value", (div <= BCCU_GLOBCLK_DCLK_PS_Msk));
+    173          
+    174            bccu->GLOBCLK &= ~(uint32_t)(BCCU_GLOBCLK_DCLK_PS_Msk);
+    175            bccu->GLOBCLK |= (uint32_t)(div << BCCU_GLOBCLK_DCLK_PS_Pos);
+    176            
+    177          }
+    178          
+    179          /*
+    180           * API to configure the modulator output (bit-time) clock prescaler factor of a BCCU module
+    181           */
+    182          void XMC_BCCU_SelectBitClock (XMC_BCCU_t *const bccu, XMC_BCCU_BCLK_MODE_t div)
+    183          {
+    184            bccu->GLOBCLK &= ~(uint32_t)(BCCU_GLOBCLK_BCS_Msk);
+    185            bccu->GLOBCLK |= ((uint32_t)div << BCCU_GLOBCLK_BCS_Pos);
+    186          }
+    187          
+    188          /*
+    189           * API to enable the channels at the same time
+    190           */
+    191          void XMC_BCCU_ConcurrentEnableChannels (XMC_BCCU_t *const bccu, uint32_t mask)
+    192          {
+    193            XMC_ASSERT("XMC_BCCU_ConcurrentEnableChannels: Invalid channel mask", (mask <= XMC_BCCU_CHANNEL_MASK));
+    194          
+    195            bccu->CHEN |= mask;
+    196          }
+    197          
+    198          /*
+    199           * API to disable the channels at the same time
+    200           */
+    201          void XMC_BCCU_ConcurrentDisableChannels (XMC_BCCU_t *const bccu, uint32_t mask)
+    202          {
+    203            XMC_ASSERT("XMC_BCCU_ConcurrentDisableChannels: Invalid channel mask", (mask <= XMC_BCCU_CHANNEL_MASK));
+    204            bccu->CHEN &= ~(uint32_t)(mask);
+    205          }
+    206          
+    207          /*
+    208           * API to set the channel's output passive levels at the same time
+    209           */
+    210          void XMC_BCCU_ConcurrentSetOutputPassiveLevel(XMC_BCCU_t *const bccu, uint32_t chan_mask, XMC_BCCU_CH_ACTIVE_LEVEL_t level)
+    211          {
+    212            XMC_ASSERT("XMC_BCCU_ConcurrentSetOutputPassiveLevel: Invalid channel mask", (chan_mask <= XMC_BCCU_CHANNEL_MASK));
+    213            
+    214            bccu->CHOCON &= ~(uint32_t)(chan_mask);
+    215            bccu->CHOCON |= (chan_mask * (uint32_t)level);
+    216          }
+    217          
+    218          /*
+    219           * API to enable the various types of traps at the same time
+    220           */
+    221          void XMC_BCCU_ConcurrentEnableTrap (XMC_BCCU_t *const bccu, uint32_t mask)
+    222          {
+    223            XMC_ASSERT("XMC_BCCU_ConcurrentEnableTrap: Invalid channel mask", (mask <= XMC_BCCU_CHANNEL_MASK));
+    224          
+    225            bccu->CHOCON |= (uint32_t)(mask << BCCU_CHOCON_CH0TPE_Pos);
+    226          }
+    227          
+    228          /*
+    229           * API to disable the various types of traps at the same time
+    230           */
+    231          void XMC_BCCU_ConcurrentDisableTrap (XMC_BCCU_t *const bccu, uint32_t mask)
+    232          {
+    233            XMC_ASSERT("XMC_BCCU_ConcurrentDisableTrap: Invalid channel mask", (mask <= XMC_BCCU_CHANNEL_MASK));
+    234          
+    235            bccu->CHOCON &= ~(uint32_t)(mask << BCCU_CHOCON_CH0TPE_Pos);
+    236          }
+    237          
+    238          /*
+    239           * API to configure trigger mode and trigger delay at the same time, and also configure the channel enable
+    240           */
+    241          void XMC_BCCU_ConcurrentConfigTrigger (XMC_BCCU_t *const bccu, XMC_BCCU_TRIG_CONFIG_t *trig)
+    242          {
+    243            uint32_t reg;
+    244            
+    245            XMC_ASSERT("XMC_BCCU_ConcurrentConfigTrigger: Invalid channel mask", (trig->mask_chans <= XMC_BCCU_CHANNEL_MASK));
+    246          
+    247            bccu->GLOBCON &= ~(uint32_t)(BCCU_GLOBCON_TM_Msk | BCCU_GLOBCON_TRDEL_Msk);
+    248            bccu->GLOBCON |= ((uint32_t)trig->mode | ((uint32_t)trig->delay << BCCU_GLOBCON_TRDEL_Pos));
+    249            reg = 0U;
+    250            reg |= trig->mask_chans;
+    251            reg |= ((uint32_t)trig->mask_trig_lines << BCCU_CHTRIG_TOS0_Pos);
+    252            bccu->CHTRIG = reg;
+    253          }
+    254          
+    255          /*
+    256           * API to start the linear walk of the channels to change towards target intensity at the same time
+    257           */
+    258          void XMC_BCCU_ConcurrentStartLinearWalk (XMC_BCCU_t *const bccu, uint32_t mask)
+    259          {
+    260            XMC_ASSERT("XMC_BCCU_ConcurrentStartLinearWalk: Invalid channel mask", (mask <= XMC_BCCU_CHANNEL_MASK));
+    261          
+    262            bccu->CHSTRCON |= (uint32_t)(mask);
+    263          }
+    264          
+    265          /*
+    266           * API to abort the linear walk of the channels at the same time
+    267           */
+    268          void XMC_BCCU_ConcurrentAbortLinearWalk (XMC_BCCU_t *const bccu, uint32_t mask)
+    269          {
+    270            XMC_ASSERT("XMC_BCCU_ConcurrentAbortLinearWalk: Invalid channel mask", (mask <= XMC_BCCU_CHANNEL_MASK));
+    271          
+    272            bccu->CHSTRCON |= (uint32_t)(mask << BCCU_CHSTRCON_CH0A_Pos);
+    273          }
+    274          
+    275          /*
+    276           * API to enable the dimming engines at the same time
+    277           */
+    278          void XMC_BCCU_ConcurrentEnableDimmingEngine (XMC_BCCU_t *const bccu, uint32_t mask)
+    279          {
+    280            XMC_ASSERT("XMC_BCCU_ConcurrentEnableDimmingEngine: Invalid dimming engine mask", (mask <= XMC_BCCU_DIM_ENGINE_MASK));
+    281          
+    282            bccu->DEEN = (uint32_t)(mask);
+    283          }
+    284          
+    285          /*
+    286           * API to enable the dimming engines at the same time
+    287           */
+    288          void XMC_BCCU_ConcurrentDisableDimmingEngine (XMC_BCCU_t *const bccu, uint32_t mask)
+    289          {
+    290            XMC_ASSERT("XMC_BCCU_ConcurrentDisableDimmingEngine: Invalid dimming engine mask", (mask <= XMC_BCCU_DIM_ENGINE_MASK));
+    291          
+    292            bccu->DEEN &= ~(uint32_t)(mask);
+    293          }
+    294          
+    295          /*
+    296           * API to start the dimming engines at the same time to change towards target dim level
+    297           */
+    298          void XMC_BCCU_ConcurrentStartDimming (XMC_BCCU_t *const bccu, uint32_t mask)
+    299          {
+    300            XMC_ASSERT("XMC_BCCU_ConcurrentStartDimming: Invalid dimming engine mask", (mask <= XMC_BCCU_DIM_ENGINE_MASK));
+    301          
+    302            bccu->DESTRCON = (uint32_t)(mask);
+    303          }
+    304          
+    305          /*
+    306           * API to abort the dimming engines at the same time
+    307           */
+    308          void XMC_BCCU_ConcurrentAbortDimming (XMC_BCCU_t *const bccu, uint32_t mask)
+    309          {
+    310            XMC_ASSERT("XMC_BCCU_ConcurrentAbortDimming: Invalid dimming engine mask", (mask <= XMC_BCCU_DIM_ENGINE_MASK));
+    311          
+    312            bccu->DESTRCON = (uint32_t)(mask << BCCU_DESTRCON_DE0A_Pos);
+    313          }
+    314          
+    315          /*
+    316           * API to configure the dim level of a dimming engine
+    317           */
+    318          void  XMC_BCCU_SetGlobalDimmingLevel (XMC_BCCU_t *const bccu, uint32_t level)
+    319          {
+    320            XMC_ASSERT("XMC_BCCU_SetGlobalDimmingLevel: Invalid global dimming level", (level <= BCCU_GLOBDIM_GLOBDIM_Msk));
+    321          
+    322            bccu->GLOBDIM = level;
+    323          }
+    324          
+    325          /*
+    326           * API to enable a specific channel
+    327           */
+    328          void XMC_BCCU_EnableChannel (XMC_BCCU_t *const bccu, uint32_t chan_no)
+    329          {
+    330            XMC_ASSERT("XMC_BCCU_EnableChannel: Invalid channel number", (chan_no <= (XMC_BCCU_NO_OF_CHANNELS-1)));
+    331          
+    332            bccu->CHEN |= (uint32_t)(BCCU_CHEN_ECH0_Msk << chan_no);
+    333          }
+    334          
+    335          /*
+    336           * API to disable a specific channel
+    337           */
+    338          void XMC_BCCU_DisableChannel (XMC_BCCU_t *const bccu, uint32_t chan_no)
+    339          {
+    340            XMC_ASSERT("XMC_BCCU_DisableChannel: Invalid channel number", (chan_no <= (XMC_BCCU_NO_OF_CHANNELS-1)));
+    341          
+    342            bccu->CHEN &= ~(uint32_t)(BCCU_CHEN_ECH0_Msk << chan_no);
+    343          }
+    344          
+    345          /*
+    346           * API to set the specific channel's passive level
+    347           */
+    348          void XMC_BCCU_SetOutputPassiveLevel(XMC_BCCU_t *const bccu, uint32_t chan_no, XMC_BCCU_CH_ACTIVE_LEVEL_t level)
+    349          {
+    350            XMC_ASSERT("XMC_BCCU_SetOutputPassiveLevel: Invalid channel number", (chan_no <= (XMC_BCCU_NO_OF_CHANNELS-1)));
+    351          
+    352            bccu->CHOCON |= ((uint32_t)level << chan_no);
+    353          }
+    354          
+    355          /*
+    356           * API to enable the specific channel trap
+    357           */
+    358          void XMC_BCCU_EnableTrap (XMC_BCCU_t *const bccu, uint32_t chan_no)
+    359          {
+    360            XMC_ASSERT("XMC_BCCU_EnableTrap: Invalid channel number", (chan_no <= (XMC_BCCU_NO_OF_CHANNELS-1)));
+    361          
+    362            bccu->CHOCON |= (uint32_t)(BCCU_CHOCON_CH0TPE_Msk << chan_no);
+    363          }
+    364          
+    365          /*
+    366           * API to disable the specific channel trap
+    367           */
+    368          void XMC_BCCU_DisableTrap (XMC_BCCU_t *const bccu, uint32_t chan_no)
+    369          {
+    370            XMC_ASSERT("XMC_BCCU_DisableTrap: Invalid channel number", (chan_no <= (XMC_BCCU_NO_OF_CHANNELS-1)));
+    371          
+    372            bccu->CHOCON &= ~(uint32_t)(BCCU_CHOCON_CH0TPE_Msk << chan_no);
+    373          }
+    374          
+    375          /*
+    376           * API to configure specific channel trigger enable and trigger line.
+    377           */
+    378          void XMC_BCCU_EnableChannelTrigger (XMC_BCCU_t *const bccu, uint32_t chan_no, XMC_BCCU_CH_TRIGOUT_t trig_line)
+    379          {
+    380            uint32_t reg;
+    381            XMC_ASSERT("XMC_BCCU_EnableChannelTrigger: Invalid channel number", (chan_no <= (XMC_BCCU_NO_OF_CHANNELS-1)));
+    382          
+    383            bccu->CHTRIG &= ~(uint32_t)(BCCU_CHTRIG_TOS0_Msk << chan_no);
+    384            reg = (uint32_t)(BCCU_CHTRIG_ET0_Msk << chan_no);
+    385            reg |= ((uint32_t)trig_line << (BCCU_CHTRIG_TOS0_Pos + chan_no));
+    386            bccu->CHTRIG |= reg;
+    387          }
+    388          
+    389          /*
+    390           * API to disable specific channel
+    391           */
+    392          void XMC_BCCU_DisableChannelTrigger (XMC_BCCU_t *const bccu, uint32_t chan_no)
+    393          {
+    394            XMC_ASSERT("XMC_BCCU_DisableChannelTrigger: Invalid channel number", (chan_no <= (XMC_BCCU_NO_OF_CHANNELS-1)));
+    395          
+    396            bccu->CHTRIG &= ~(uint32_t)(BCCU_CHTRIG_ET0_Msk << chan_no);
+    397          }
+    398          
+    399          /*
+    400           * API to initialise the channel of a BCCU module
+    401           */
+    402          void XMC_BCCU_CH_Init (XMC_BCCU_CH_t *const channel, const XMC_BCCU_CH_CONFIG_t *const config)
+    403          {
+    404            channel->CHCONFIG = config->chconfig;
+    405           
+    406            channel->PKCMP = config->pkcmp;
+    407           
+    408            channel->PKCNTR = config->pkcntr;
+    409          }
+    410          
+    411          /*
+    412           * API to configure channel trigger edge and force trigger edge
+    413           */
+    414          void XMC_BCCU_CH_ConfigTrigger (XMC_BCCU_CH_t *const channel, XMC_BCCU_CH_TRIG_EDGE_t edge, uint32_t force_trig_en)
+    415          {
+    416            uint32_t reg; 
+    417            channel->CHCONFIG &= ~(uint32_t)(BCCU_CH_CHCONFIG_TRED_Msk | BCCU_CH_CHCONFIG_ENFT_Msk);
+    418            
+    419            reg = ((uint32_t)edge << BCCU_CH_CHCONFIG_TRED_Pos);
+    420            reg |= (uint32_t)(force_trig_en << BCCU_CH_CHCONFIG_ENFT_Pos);
+    421            channel->CHCONFIG |= reg;
+    422          }
+    423          
+    424          /*
+    425           * API to configure the linear walker clock prescaler factor of a BCCU channel
+    426           */
+    427          void XMC_BCCU_CH_SetLinearWalkPrescaler (XMC_BCCU_CH_t *const channel, uint32_t clk_div)
+    428          {
+    429            channel->CHCONFIG &= ~(uint32_t)(BCCU_CH_CHCONFIG_LINPRES_Msk);
+    430            channel->CHCONFIG |= (uint32_t)(clk_div << BCCU_CH_CHCONFIG_LINPRES_Pos);
+    431          }
+    432          
+    433          /*
+    434           * API to set channel target intensity
+    435           */
+    436          void XMC_BCCU_CH_SetTargetIntensity (XMC_BCCU_CH_t *const channel, uint32_t ch_int)
+    437          {
+    438            channel->INTS = ch_int;
+    439          }
+    440          
+    441          /*
+    442           * API to retrieve the channel actual intensity
+    443           */
+    444          uint32_t XMC_BCCU_CH_ReadIntensity (XMC_BCCU_CH_t *const channel)
+    445          {
+    446            return (uint32_t)(channel->INT & BCCU_CH_INT_CHINT_Msk);
+    447          }
+    448          
+    449          /*
+    450           * API to enable packer. Also configures packer threshold, off-time and on-time compare levels
+    451           */
+    452          void XMC_BCCU_CH_EnablePacker (XMC_BCCU_CH_t *const channel, uint32_t thresh, uint32_t off_comp, uint32_t on_comp)
+    453          {
+    454            channel->CHCONFIG &= ~(uint32_t)(BCCU_CH_CHCONFIG_PEN_Msk | BCCU_CH_CHCONFIG_PKTH_Msk);
+    455            channel->CHCONFIG |= thresh;
+    456            channel->PKCMP = (off_comp | (uint32_t)(on_comp << BCCU_CH_PKCMP_ONCMP_Pos));
+    457            channel->CHCONFIG |= (uint32_t)BCCU_CH_CHCONFIG_PEN_Msk;
+    458          }
+    459          
+    460          /*
+    461           * API to configure packer threshold
+    462           */
+    463          void XMC_BCCU_CH_SetPackerThreshold (XMC_BCCU_CH_t *const channel, uint32_t val)
+    464          {
+    465            channel->CHCONFIG &= ~(uint32_t)(BCCU_CH_CHCONFIG_PKTH_Msk);
+    466            channel->CHCONFIG |= val;
+    467          }
+    468          
+    469          /*
+    470           * API to configure packer off-time compare level
+    471           */
+    472          void XMC_BCCU_CH_SetPackerOffCompare (XMC_BCCU_CH_t *const channel, uint32_t level)
+    473          {
+    474            channel->PKCMP &= ~(uint32_t)(BCCU_CH_PKCMP_OFFCMP_Msk);
+    475            channel->PKCMP |= level;
+    476          }
+    477          
+    478          /*
+    479           * API to configure packer on-time compare level.
+    480           */
+    481          void XMC_BCCU_CH_SetPackerOnCompare (XMC_BCCU_CH_t *const channel, uint32_t level)
+    482          {
+    483            channel->PKCMP &= ~(uint32_t)(BCCU_CH_PKCMP_ONCMP_Msk);
+    484            channel->PKCMP |= (level << BCCU_CH_PKCMP_ONCMP_Pos);
+    485          }
+    486          
+    487          /*
+    488           * API to disable a packer.
+    489           */
+    490          void XMC_BCCU_CH_DisablePacker (XMC_BCCU_CH_t *const channel)
+    491          {
+    492            channel->CHCONFIG &= ~(uint32_t)(BCCU_CH_CHCONFIG_PEN_Msk);
+    493          }
+    494          
+    495          /*
+    496           * API to set packer off-time counter value
+    497           */
+    498          void XMC_BCCU_CH_SetPackerOffCounter (XMC_BCCU_CH_t *const channel, uint32_t cnt_val)
+    499          {
+    500            channel->PKCNTR &= ~(uint32_t)(BCCU_CH_PKCNTR_OFFCNTVAL_Msk);
+    501            channel->PKCNTR |= cnt_val;
+    502          }
+    503          
+    504          /*
+    505           * API to set packer on-time counter value
+    506           */
+    507          void XMC_BCCU_CH_SetPackerOnCounter (XMC_BCCU_CH_t *const channel, uint32_t cnt_val)
+    508          {
+    509            channel->PKCNTR &= ~(uint32_t)(BCCU_CH_PKCNTR_ONCNTVAL_Msk);
+    510            channel->PKCNTR |= (uint32_t)(cnt_val << BCCU_CH_PKCNTR_ONCNTVAL_Pos);
+    511          }
+    512          
+    513          /*
+    514           * API to select the dimming engine of a channel
+    515           */
+    516          void XMC_BCCU_CH_SelectDimEngine (XMC_BCCU_CH_t *const channel, XMC_BCCU_CH_DIMMING_SOURCE_t sel)
+    517          {
+    518            channel->CHCONFIG &= ~(uint32_t)(BCCU_CH_CHCONFIG_DSEL_Msk);
+    519            channel->CHCONFIG |= ((uint32_t)sel << BCCU_CH_CHCONFIG_DSEL_Pos);
+    520          }
+    521          
+    522          /*
+    523           * API to bypass the dimming engine. And the brightness of channel is depending only on
+    524           * intensity of the channel.
+    525           */
+    526          void XMC_BCCU_CH_EnableDimmingBypass (XMC_BCCU_CH_t *const channel)
+    527          {
+    528            channel->CHCONFIG |= (uint32_t)(BCCU_CH_CHCONFIG_DBP_Msk);
+    529          }
+    530          
+    531          /*
+    532           * API to disable the bypass of dimming engine. And the brightness of channel is depending
+    533           * on intensity of channel and dimming level of dimming engine.
+    534           */
+    535          void XMC_BCCU_CH_DisableDimmingBypass (XMC_BCCU_CH_t *const channel)
+    536          {
+    537            channel->CHCONFIG &= ~(uint32_t)(BCCU_CH_CHCONFIG_DBP_Msk);
+    538          }
+    539          
+    540          /*
+    541           * API to initialise a specific dimming engine of a BCCU module
+    542           */
+    543          void XMC_BCCU_DIM_Init (XMC_BCCU_DIM_t *const dim_engine, const XMC_BCCU_DIM_CONFIG_t *const config)
+    544          {
+    545            dim_engine->DTT = config->dtt;
+    546          }
+    547          
+    548          /*
+    549           * API to set dimming engine target dim level
+    550           */
+    551          void XMC_BCCU_DIM_SetTargetDimmingLevel (XMC_BCCU_DIM_t *const dim_engine, uint32_t level)
+    552          {
+    553            dim_engine->DLS = level;
+    554          }
+    555          
+    556          /*
+    557           * API to configure the dimming clock prescaler factor of a dimming engine
+    558           */
+    559          void XMC_BCCU_DIM_SetDimDivider (XMC_BCCU_DIM_t *const dim_engine, uint32_t div)
+    560          {
+    561            dim_engine->DTT &= ~(uint32_t)(BCCU_DE_DTT_DIMDIV_Msk);
+    562            dim_engine->DTT |= div;
+    563          }
+    564          
+    565          /*
+    566           * API to configure the dimming curve
+    567           */
+    568          void XMC_BCCU_DIM_ConfigDimCurve (XMC_BCCU_DIM_t *const dim_engine, uint32_t dither_en, XMC_BCCU_DIM_CURVE_t sel)
+    569          {
+    570            uint32_t reg;
+    571            dim_engine->DTT &= ~(uint32_t)(BCCU_DE_DTT_DTEN_Msk | BCCU_DE_DTT_CSEL_Msk);
+    572            reg = (uint32_t)(dither_en << BCCU_DE_DTT_DTEN_Pos);
+    573            reg |= ((uint32_t)sel << BCCU_DE_DTT_CSEL_Pos);
+    574            dim_engine->DTT |= reg;
+    575          }
+    576          
+    577          #endif /* BCCU0 */
+
+
+ 
+
+ 
+
+
+Errors: none
+Warnings: none
