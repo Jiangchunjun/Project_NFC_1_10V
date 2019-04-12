@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:55
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       11/Apr/2019  17:19:46
 # Copyright 1999-2016 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -231,18 +231,20 @@ C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Driver\src\tick.c
                          ^
 Warning[Pe223]: function "NfcCyclic" declared implicitly
      85                
-     86                  if(count++>0)
-     87                  {
-     88                  DaliBallast_CyclicTask();
+     86                 
+     87                  DaliBallast_CyclicTask();
                          ^
 Warning[Pe223]: function "DaliBallast_CyclicTask" declared implicitly
-     89                  count=0;
-     90                  }
-     91              }
-     92              /* Update nfc task software timer */
-     93              
-     94          }
-     95          
+
+      static uint8_t count=0;
+                     ^
+"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Driver\src\tick.c",72  Warning[Pe177]: 
+          variable "count" was declared but never referenced
+     88              }
+     89              /* Update nfc task software timer */
+     90              
+     91          }
+     92          
 
    Maximum stack usage in bytes:
 
@@ -276,23 +278,21 @@ Warning[Pe223]: function "DaliBallast_CyclicTask" declared implicitly
        4  ??DataTable5_6
        4  ??DataTable5_7
        4  ??DataTable5_8
-       4  ??DataTable5_9
      132  NVIC_SetPriority
       48  SysTick_Config
-      62  SysTick_Handler
+      38  SysTick_Handler
        6  Tick_GetTickFreq
        6  Tick_GetTicks
       26  Tick_SetFrequency
-       1  count
        4  g_global_ticks
        2  g_tick_frequency
 
  
-   7 bytes in section .bss
- 320 bytes in section .text
+   6 bytes in section .bss
+ 292 bytes in section .text
  
- 320 bytes of CODE memory
-   7 bytes of DATA memory
+ 292 bytes of CODE memory
+   6 bytes of DATA memory
 
 Errors: none
-Warnings: 4
+Warnings: 5

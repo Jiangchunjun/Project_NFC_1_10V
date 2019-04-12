@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:50
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       10/Apr/2019  11:23:48
 # Copyright 1999-2016 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -528,9 +528,9 @@ C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\Dali
 
    Bytes  Function/Label
    -----  --------------
+       4  ??DataTable3
        4  ??DataTable4
        4  ??DataTable4_1
-       4  ??DataTable4_2
        4  ??DataTable5
        4  ??DataTable5_1
        4  ??DataTable5_2
@@ -539,6 +539,8 @@ C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\Dali
        4  ??DataTable5_5
        4  ??DataTable5_6
        4  ??DataTable5_7
+       4  ??DataTable5_8
+       4  ??DataTable5_9
        4  ??DataTable6
        4  ??DataTable6_1
        4  ??DataTable6_10
@@ -553,7 +555,6 @@ C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\Dali
        4  ??DataTable6_19
        4  ??DataTable6_2
        4  ??DataTable6_20
-       4  ??DataTable6_21
        4  ??DataTable6_3
        4  ??DataTable6_4
        4  ??DataTable6_5
@@ -600,16 +601,16 @@ C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\Dali
       18  DaliHAL_GetVoltage
      362  DaliHAL_Init
      204  DaliHAL_SetClock
-     140  DaliHAL_Start
+     142  DaliHAL_Start
       14  DaliHAL_Stop
       68  daliCapture
       36  daliHAL
 
  
    104 bytes in section .bss
- 1 522 bytes in section .text
+ 1 528 bytes in section .text
  
- 1 522 bytes of CODE memory
+ 1 528 bytes of CODE memory
    104 bytes of DATA memory
 
 Errors: none

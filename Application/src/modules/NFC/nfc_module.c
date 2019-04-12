@@ -1613,9 +1613,12 @@ bool is_fast_timer_expired(void)
 bool is_slow_timer_expired(void)
 {
   extern uint8_t g_nfc_flag_save;
+  
+     P2_1_toggle();
+     
     if (nfc_local_state.slow_timer_cnt < NFC_SLOW_TIMER_CNT)
     {
-        nfc_local_state.slow_timer_cnt++;
+        nfc_local_state.slow_timer_cnt+=30;
         return false;
     }
     else
@@ -2293,7 +2296,7 @@ void NfcCyclic(void)
        
       if(I2cAreAllPendingTransfersDone()&&nfc_local_state.fsm_state==nfc_fsm_state_idle)
       {
-        
+        nfc_local_state.fast_timer_cnt=0;
         NfcOnPowerDown(nfc_run_time);
         nvmWriteAll();
         save=0;

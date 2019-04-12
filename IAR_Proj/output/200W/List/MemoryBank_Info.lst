@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:52
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       12/Apr/2019  15:33:53
 # Copyright 1999-2016 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -161,7 +161,7 @@ C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\
      26          #include <stdint.h>
      27          #include <stdbool.h>
      28          
-     29          
+     29          #include <gpio_xmc1300_tssop38.h>
      30          #define MODULE_MPC                                                                 // to #include "MemoryBanksDefault.h" in config.h                                                       
      31          #include "Config.h"
      32          #include "MpcDefs.h"
@@ -360,235 +360,244 @@ C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\
     225            uint8_t actualTemperature;
     226            uint16_t *totalOvervoltageDuration = &mpcInfo.nvm.totalOvervoltageDuration;
     227            uint16_t *ovTimeTicks = &mpcInfo.nvm.overvoltageTimeTicks;
-    228          
-    229            for( i = 0; i < DEVICE_CHANNELS; i++ ) {
-    230              if ( DaliServices_GetOperatingMode( i ) != 0)                                 // lamp is ON if operating mode is set to AM or PWM
-    231              {  infoCounter_t *actCounter = &mpcInfo.nvm.lampCounter[i];
-    232                actCounter->ticks++;
-    233                if (actCounter->ticks >= MPC_INFO_STT_PER_MINUTE) {
-    234                  if (actCounter->minutes < 0x00FFFFFE)
-    235                  {         
-    236                    actCounter->ticks = 0;
-    237                    actCounter->minutes++;
-    238          #ifdef MPC_CLM_NUMBER                                                             // JA added
-    239                    if ( (uint8_t)(actCounter->minutes) == 0)                               // Update mpcClm-adjustFactor each 256 minutes (= 4,27 hours)
-    240                    {  
-    241                      MemoryBank_Clm_UpdateAdjustFactor(actCounter->minutes, i);
-    242                    }
-    243          #endif
-    244                  } 
-    245                } 
-    246              } 
-    247              
-    248              // get overvoltage shut down flag and add it to the stored value
-    249              // if no overvoltage condition was active before and DALI Level is > 0
-    250              if ( MpcInfoServices_GetOvervoltageShutDownState() == true ) { 
-    251                if ( mpcInfo.nvm.overvoltageShutdownEvents < MPC_INFO_OV_SHUTDOWN_COUNTER ) {
-    252                  if ( mpcInfo.internal_state == no_overvoltage ) {
-    253                    mpcInfo.nvm.overvoltageShutdownEvents++;                                // increase OV event counter only if OV is detected after normal operation
-    254                    mpcInfo.internal_state = overvoltage;
-    255                  }
-    256                }  
-    257                
-    258                (*ovTimeTicks)++;                                                            // increasee overvoltage time ticks
-    259                if ( *ovTimeTicks >= MPC_INFO_STT_PER_MINUTE) {
-    260                  *ovTimeTicks = 0;            
-    261                  if ( *totalOvervoltageDuration < MPC_INFO_OV_DURATION_LIMIT ) {
-    262                    (*totalOvervoltageDuration)++;                                           // add one minute
-    263                  }     
-    264                }
-    265              }
-    266              else {
-    267                mpcInfo.internal_state = no_overvoltage;
-    268              }  
-    269          
-    270              // get actual temperature and compare with stored max value
-    271              actualTemperature = MpcInfoServices_GetActualTemperature();    
-    272              if ( actualTemperature < 255 ) {
-    273                mpcInfo.actTemperature = actualTemperature;
-    274                if ( actualTemperature > mpcInfo.nvm.maxTemperature ) {
-    275                  mpcInfo.nvm.maxTemperature = actualTemperature;
-    276                }
-    277              }
-    278          
-    279              // get actual supply voltage and compare with stored max value
-    280              supplyVoltage =  MpcInfoServices_GetSupplyVoltage();
-    281              if ( ( supplyVoltage < 255 ) && ( supplyVoltage > mpcInfo.nvm.maxSupplyVoltage ) ) {
-    282                mpcInfo.nvm.maxSupplyVoltage = supplyVoltage;
-    283              }    
-    284            }
-    285          }
-    286          
-    287          //----------------------------------------------------------------------------------------------------------------------
-    288          /// \brief Reads a value from the memory bank "General Info Page".
-    289          ///
-    290          /// The data will be collected from the real device.
-    291          /// The checksum will be handle in MemoryBank.c
-    292          ///
-    293          /// \param address    The address in the selected memory bank.
-    294          /// \param *pValue   Pointer to a memory address to get the result.
-    295          /// \param channel    The device channel.
+    228            uint32_t temp=0;
+    229            
+    230            for( i = 0; i < DEVICE_CHANNELS; i++ ) {
+    231              if ( DaliServices_GetOperatingMode( i ) != 0)                                 // lamp is ON if operating mode is set to AM or PWM
+    232              {  infoCounter_t *actCounter = &mpcInfo.nvm.lampCounter[i];
+    233                actCounter->ticks+=30;
+    234                if (actCounter->ticks >= MPC_INFO_STT_PER_MINUTE) {
+    235                  if (actCounter->minutes < 0x00FFFFFE)
+    236                  {         
+    237                    actCounter->ticks = 0;
+    238                    actCounter->minutes++;
+    239          #ifdef MPC_CLM_NUMBER                                                             // JA added
+    240                    if ( (uint8_t)(actCounter->minutes) == 0)                               // Update mpcClm-adjustFactor each 256 minutes (= 4,27 hours)
+    241                    {  
+    242                      MemoryBank_Clm_UpdateAdjustFactor(actCounter->minutes, i);
+    243                      
+    244                      temp=(ConstantLumen_GetFactor(0)*10000);
+    245                      
+    246                      temp=temp>>14;
+    247                        
+    248                      Power_SetConstantLumenValue(temp);
+                             ^
+Warning[Pe223]: function "Power_SetConstantLumenValue" declared implicitly
+    249                    }
+    250          #endif
+    251                  } 
+    252                } 
+    253              } 
+    254              
+    255              // get overvoltage shut down flag and add it to the stored value
+    256              // if no overvoltage condition was active before and DALI Level is > 0
+    257              if ( MpcInfoServices_GetOvervoltageShutDownState() == true ) { 
+    258                if ( mpcInfo.nvm.overvoltageShutdownEvents < MPC_INFO_OV_SHUTDOWN_COUNTER ) {
+    259                  if ( mpcInfo.internal_state == no_overvoltage ) {
+    260                    mpcInfo.nvm.overvoltageShutdownEvents++;                                // increase OV event counter only if OV is detected after normal operation
+    261                    mpcInfo.internal_state = overvoltage;
+    262                  }
+    263                }  
+    264                
+    265                (*ovTimeTicks)++;                                                            // increasee overvoltage time ticks
+    266                if ( *ovTimeTicks >= MPC_INFO_STT_PER_MINUTE) {
+    267                  *ovTimeTicks = 0;            
+    268                  if ( *totalOvervoltageDuration < MPC_INFO_OV_DURATION_LIMIT ) {
+    269                    (*totalOvervoltageDuration)++;                                           // add one minute
+    270                  }     
+    271                }
+    272              }
+    273              else {
+    274                mpcInfo.internal_state = no_overvoltage;
+    275              }  
+    276          
+    277              // get actual temperature and compare with stored max value
+    278              actualTemperature = MpcInfoServices_GetActualTemperature();    
+    279              if ( actualTemperature < 255 ) {
+    280                mpcInfo.actTemperature = actualTemperature;
+    281                if ( actualTemperature > mpcInfo.nvm.maxTemperature ) {
+    282                  mpcInfo.nvm.maxTemperature = actualTemperature;
+    283                }
+    284              }
+    285          
+    286              // get actual supply voltage and compare with stored max value
+    287              supplyVoltage =  MpcInfoServices_GetSupplyVoltage();
+    288              if ( ( supplyVoltage < 255 ) && ( supplyVoltage > mpcInfo.nvm.maxSupplyVoltage ) ) {
+    289                mpcInfo.nvm.maxSupplyVoltage = supplyVoltage;
+    290              }    
+    291            }
+    292          }
+    293          
+    294          //----------------------------------------------------------------------------------------------------------------------
+    295          /// \brief Reads a value from the memory bank "General Info Page".
     296          ///
-    297          /// \retval      True in case of a successful address access.
-    298          //----------------------------------------------------------------------------------------------------------------------
-    299          mpc_rw_enum MemoryBank_Info_GetValue_port( uint8_t address, uint8_t *pValue, uint8_t channel, uint8_t port )
-    300          {
-    301            if ( port >= AVAILABLE_PORTS_NUMBER )
-    302            {
-    303                return MPC_RW_OUT_OF_RANGE;
-    304            }
-    305          
-    306              switch( address )
-    307              {
-    308                case 0:                                                                       
-    309                  *pValue = MPC_Info_LastADDRESS;
-    310                  return MPC_RW_OK;
-    311                case 1:                                                                       
-    312                  *pValue = 0;
-    313                  return MPC_RW_OK;
-    314                case 2:                                                                       
-    315                  *pValue = mpcInfo.lockByte[channel];
-    316                  return MPC_RW_OK;
-    317                case 3:                                                                     
-    318                  *pValue = MPC_Info_ID;
-    319                  return MPC_RW_OK;
-    320                case 4:                                                                     
-    321                  *pValue = MPC_Info_VERSION;
-    322                  return MPC_RW_OK;
-    323                case 5:                                                                       // lamp operation timer
-    324                  mpcInfo.readCounter[channel] = mpcInfo.nvm.lampCounter[channel].minutes;    // latch value when reading MSB
-    325                  readingPortBufferCounter[channel][port] = mpcInfo.readCounter[channel];
-    326                  *pValue = (uint8_t)(readingPortBufferCounter[channel][port] >>16);          // return MSB of latched value
-    327                  return MPC_RW_OK;
-    328                case 6:
-    329                  *pValue = (uint8_t)(readingPortBufferCounter[channel][port] >>8);
-    330                  return MPC_RW_OK;
-    331                case 7:
-    332                  *pValue = (uint8_t)readingPortBufferCounter[channel][port];                 // return LSB of latched value
-    333                  return MPC_RW_OK;
-    334                case 8:
-    335                  *pValue = mpcInfo.actTemperature ;
-    336                  return MPC_RW_OK;
-    337                case 9:
-    338                  *pValue = mpcInfo.nvm.maxTemperature;
-    339                  return MPC_RW_OK;
-    340                case 10:
-    341                  mpcInfo.readTemperatureTimeIntegrator = mpcInfo.nvm.temperatureTimeIntegrator; // latch value, when reading MSB
-    342                  readingPortBufferTemperature[port] = mpcInfo.readTemperatureTimeIntegrator;
-    343                  *pValue = (uint8_t)( readingPortBufferTemperature[port] >>16 );             // return MSB of latched value
-    344                  return MPC_RW_OK;
-    345                case 11:
-    346                  *pValue = (uint8_t)(readingPortBufferTemperature[port] >> 8 );
-    347                  return MPC_RW_OK;
-    348                case 12:
-    349                  *pValue = (uint8_t)readingPortBufferTemperature[port];                      // return LSB of latched value
-    350                  return MPC_RW_OK;
-    351                case 13:
-    352                  *pValue = (uint8_t) mpcInfo.nvm.overvoltageShutdownEvents;
-    353                  return MPC_RW_OK;
-    354                case 14:
-    355                  *pValue = (uint8_t) mpcInfo.nvm.maxSupplyVoltage;
-    356                  return MPC_RW_OK;
-    357                case 15:
-    358                  mpcInfo.readtotalOvervoltageDuration = mpcInfo.nvm.totalOvervoltageDuration;    // latch value, when reading MSB
-    359                  readingPortBufferOvervoltage[port] = mpcInfo.readtotalOvervoltageDuration;
-    360                  *pValue = (uint8_t)(readingPortBufferOvervoltage[port] >>8);               // return MSB of latched value
-    361                  return MPC_RW_OK;
-    362                case 16:
-    363                  *pValue = (uint8_t)(readingPortBufferOvervoltage[port]);                   // return LSB of latched value
-    364                  return MPC_RW_OK;
-    365                default:
-    366                  return MPC_RW_OUT_OF_RANGE;
-    367            }
-    368          }
-    369          
-    370          
-    371          //---------------------------------------------------------------------------------------------------------------------------
-    372          /// \brief Writes a value in a the memory bank "General Info Page".
-    373          ///
-    374          /// \param address    The address in the selected memory bank.
-    375          /// \param value      The value to write.
-    376          /// \param channel    The device channel.
-    377          ///
-    378          /// \retval      True if value was written.
-    379          //---------------------------------------------------------------------------------------------------------------------------
-    380          mpc_rw_enum MemoryBank_Info_SetValue_port( uint8_t address, uint8_t value, uint8_t channel, uint8_t port )
-    381          {
-    382            if ( port >= AVAILABLE_PORTS_NUMBER )
-    383            {
-    384                return MPC_RW_OUT_OF_RANGE;
-    385            }
-    386          
-    387            if ( (mpcInfo.lockByte[channel] != MPC_UNLOCK) && (address != 2))
-    388            {
-    389                return MPC_RW_DENY;
-    390            }
-    391          
-    392            switch( address ) {
-    393              case 2:                                                                         
-    394                mpcInfo.lockByte[channel] = value;
-    395                return MPC_RW_OK;
-    396              case 5:                                                                         
-    397                writingPortBufferCounter[channel][port] = (uint32_t)value <<16;
-    398                return MPC_RW_OK;
-    399              case 6:
-    400                writingPortBufferCounter[channel][port] &= 0x00FF00FF;                                   // to avoid overrun ..
-    401                writingPortBufferCounter[channel][port] += (uint32_t)value <<8;                          // .. by multiple additions
+    297          /// The data will be collected from the real device.
+    298          /// The checksum will be handle in MemoryBank.c
+    299          ///
+    300          /// \param address    The address in the selected memory bank.
+    301          /// \param *pValue   Pointer to a memory address to get the result.
+    302          /// \param channel    The device channel.
+    303          ///
+    304          /// \retval      True in case of a successful address access.
+    305          //----------------------------------------------------------------------------------------------------------------------
+    306          mpc_rw_enum MemoryBank_Info_GetValue_port( uint8_t address, uint8_t *pValue, uint8_t channel, uint8_t port )
+    307          {
+    308            if ( port >= AVAILABLE_PORTS_NUMBER )
+    309            {
+    310                return MPC_RW_OUT_OF_RANGE;
+    311            }
+    312          
+    313              switch( address )
+    314              {
+    315                case 0:                                                                       
+    316                  *pValue = MPC_Info_LastADDRESS;
+    317                  return MPC_RW_OK;
+    318                case 1:                                                                       
+    319                  *pValue = 0;
+    320                  return MPC_RW_OK;
+    321                case 2:                                                                       
+    322                  *pValue = mpcInfo.lockByte[channel];
+    323                  return MPC_RW_OK;
+    324                case 3:                                                                     
+    325                  *pValue = MPC_Info_ID;
+    326                  return MPC_RW_OK;
+    327                case 4:                                                                     
+    328                  *pValue = MPC_Info_VERSION;
+    329                  return MPC_RW_OK;
+    330                case 5:                                                                       // lamp operation timer
+    331                  mpcInfo.readCounter[channel] = mpcInfo.nvm.lampCounter[channel].minutes;    // latch value when reading MSB
+    332                  readingPortBufferCounter[channel][port] = mpcInfo.readCounter[channel];
+    333                  *pValue = (uint8_t)(readingPortBufferCounter[channel][port] >>16);          // return MSB of latched value
+    334                  return MPC_RW_OK;
+    335                case 6:
+    336                  *pValue = (uint8_t)(readingPortBufferCounter[channel][port] >>8);
+    337                  return MPC_RW_OK;
+    338                case 7:
+    339                  *pValue = (uint8_t)readingPortBufferCounter[channel][port];                 // return LSB of latched value
+    340                  return MPC_RW_OK;
+    341                case 8:
+    342                  *pValue = mpcInfo.actTemperature ;
+    343                  return MPC_RW_OK;
+    344                case 9:
+    345                  *pValue = mpcInfo.nvm.maxTemperature;
+    346                  return MPC_RW_OK;
+    347                case 10:
+    348                  mpcInfo.readTemperatureTimeIntegrator = mpcInfo.nvm.temperatureTimeIntegrator; // latch value, when reading MSB
+    349                  readingPortBufferTemperature[port] = mpcInfo.readTemperatureTimeIntegrator;
+    350                  *pValue = (uint8_t)( readingPortBufferTemperature[port] >>16 );             // return MSB of latched value
+    351                  return MPC_RW_OK;
+    352                case 11:
+    353                  *pValue = (uint8_t)(readingPortBufferTemperature[port] >> 8 );
+    354                  return MPC_RW_OK;
+    355                case 12:
+    356                  *pValue = (uint8_t)readingPortBufferTemperature[port];                      // return LSB of latched value
+    357                  return MPC_RW_OK;
+    358                case 13:
+    359                  *pValue = (uint8_t) mpcInfo.nvm.overvoltageShutdownEvents;
+    360                  return MPC_RW_OK;
+    361                case 14:
+    362                  *pValue = (uint8_t) mpcInfo.nvm.maxSupplyVoltage;
+    363                  return MPC_RW_OK;
+    364                case 15:
+    365                  mpcInfo.readtotalOvervoltageDuration = mpcInfo.nvm.totalOvervoltageDuration;    // latch value, when reading MSB
+    366                  readingPortBufferOvervoltage[port] = mpcInfo.readtotalOvervoltageDuration;
+    367                  *pValue = (uint8_t)(readingPortBufferOvervoltage[port] >>8);               // return MSB of latched value
+    368                  return MPC_RW_OK;
+    369                case 16:
+    370                  *pValue = (uint8_t)(readingPortBufferOvervoltage[port]);                   // return LSB of latched value
+    371                  return MPC_RW_OK;
+    372                default:
+    373                  return MPC_RW_OUT_OF_RANGE;
+    374            }
+    375          }
+    376          
+    377          
+    378          //---------------------------------------------------------------------------------------------------------------------------
+    379          /// \brief Writes a value in a the memory bank "General Info Page".
+    380          ///
+    381          /// \param address    The address in the selected memory bank.
+    382          /// \param value      The value to write.
+    383          /// \param channel    The device channel.
+    384          ///
+    385          /// \retval      True if value was written.
+    386          //---------------------------------------------------------------------------------------------------------------------------
+    387          mpc_rw_enum MemoryBank_Info_SetValue_port( uint8_t address, uint8_t value, uint8_t channel, uint8_t port )
+    388          {
+    389            if ( port >= AVAILABLE_PORTS_NUMBER )
+    390            {
+    391                return MPC_RW_OUT_OF_RANGE;
+    392            }
+    393          
+    394            if ( (mpcInfo.lockByte[channel] != MPC_UNLOCK) && (address != 2))
+    395            {
+    396                return MPC_RW_DENY;
+    397            }
+    398          
+    399            switch( address ) {
+    400              case 2:                                                                         
+    401                mpcInfo.lockByte[channel] = value;
     402                return MPC_RW_OK;
-    403              case 7:
-    404                writingPortBufferCounter[channel][port] &= 0x00FFFF00;
-    405                writingPortBufferCounter[channel][port] += value;
-    406                mpcInfo.writeCounter[channel] = writingPortBufferCounter[channel][port];
-    407                mpcInfo.nvm.lampCounter[channel].minutes = writingPortBufferCounter[channel][port];
-    408                mpcInfo.nvm.lampCounter[channel].ticks = 0;
-    409          #ifdef MPC_CLM_NUMBER
-    410                MemoryBank_Clm_UpdateAdjustFactor(mpcInfo.writeCounter[channel], channel);
-    411          #endif
-    412                return MPC_RW_OK;
-    413            default:
-    414                return MPC_RW_OUT_OF_RANGE;
-    415            }
-    416          }
-    417          
-    418          
-    419          //----------------------------------------------------------------------------------------------------------------------
-    420          /// \brief Reads a value from the memory bank "General Info Page".
-    421          ///
-    422          /// \param address    selected memory bank address
-    423          /// \param *pValue    memory address pointer to return value.
-    424          /// \param channel    device channel
-    425          ///
-    426          /// \retval           'MPC_RW_OK' in case of a successful address access
-    427          //----------------------------------------------------------------------------------------------------------------------
-    428          mpc_rw_enum MemoryBank_Info_GetValue( uint8_t address, uint8_t *pValue, uint8_t channel )
-    429          {
-    430            return MemoryBank_Info_GetValue_port( address, pValue, channel, 0 );
-    431          }
-    432          
-    433          
-    434          
-    435          //---------------------------------------------------------------------------------------------------------------------------
-    436          /// \brief Writes a value to memory bank "General Info Page".
-    437          ///
-    438          /// \param address    selected memory bank address
-    439          /// \param value      value to be written
-    440          /// \param channel    device channel
-    441          ///
-    442          /// \retval           'MPC_RW_OK' if value was written
-    443          //---------------------------------------------------------------------------------------------------------------------------
-    444          mpc_rw_enum MemoryBank_Info_SetValue( uint8_t address, uint8_t value, uint8_t channel )
-    445          {
-    446            return MemoryBank_Info_SetValue_port( address, value, channel, 0 );
-    447          }
-    448          
-    449          
-    450          mpc_rw_enum MemoryBank_Info_SetMinute_value(uint32_t time)
-    451          
+    403              case 5:                                                                         
+    404                writingPortBufferCounter[channel][port] = (uint32_t)value <<16;
+    405                return MPC_RW_OK;
+    406              case 6:
+    407                writingPortBufferCounter[channel][port] &= 0x00FF00FF;                                   // to avoid overrun ..
+    408                writingPortBufferCounter[channel][port] += (uint32_t)value <<8;                          // .. by multiple additions
+    409                return MPC_RW_OK;
+    410              case 7:
+    411                writingPortBufferCounter[channel][port] &= 0x00FFFF00;
+    412                writingPortBufferCounter[channel][port] += value;
+    413                mpcInfo.writeCounter[channel] = writingPortBufferCounter[channel][port];
+    414                mpcInfo.nvm.lampCounter[channel].minutes = writingPortBufferCounter[channel][port];
+    415                mpcInfo.nvm.lampCounter[channel].ticks = 0;
+    416          #ifdef MPC_CLM_NUMBER
+    417                MemoryBank_Clm_UpdateAdjustFactor(mpcInfo.writeCounter[channel], channel);
+    418          #endif
+    419                return MPC_RW_OK;
+    420            default:
+    421                return MPC_RW_OUT_OF_RANGE;
+    422            }
+    423          }
+    424          
+    425          
+    426          //----------------------------------------------------------------------------------------------------------------------
+    427          /// \brief Reads a value from the memory bank "General Info Page".
+    428          ///
+    429          /// \param address    selected memory bank address
+    430          /// \param *pValue    memory address pointer to return value.
+    431          /// \param channel    device channel
+    432          ///
+    433          /// \retval           'MPC_RW_OK' in case of a successful address access
+    434          //----------------------------------------------------------------------------------------------------------------------
+    435          mpc_rw_enum MemoryBank_Info_GetValue( uint8_t address, uint8_t *pValue, uint8_t channel )
+    436          {
+    437            return MemoryBank_Info_GetValue_port( address, pValue, channel, 0 );
+    438          }
+    439          
+    440          
+    441          
+    442          //---------------------------------------------------------------------------------------------------------------------------
+    443          /// \brief Writes a value to memory bank "General Info Page".
+    444          ///
+    445          /// \param address    selected memory bank address
+    446          /// \param value      value to be written
+    447          /// \param channel    device channel
+    448          ///
+    449          /// \retval           'MPC_RW_OK' if value was written
+    450          //---------------------------------------------------------------------------------------------------------------------------
+    451          mpc_rw_enum MemoryBank_Info_SetValue( uint8_t address, uint8_t value, uint8_t channel )
     452          {
-    453            mpcInfo.nvm.lampCounter[0].minutes=time;
-    454            
-    455            return MPC_RW_OK;
-    456          }
+    453            return MemoryBank_Info_SetValue_port( address, value, channel, 0 );
+    454          }
+    455          
+    456          
+    457          mpc_rw_enum MemoryBank_Info_SetMinute_value(uint32_t time)
+    458          
+    459          {
+    460            mpcInfo.nvm.lampCounter[0].minutes=time;
+    461            
+    462            return MPC_RW_OK;
+    463          }
 
    Maximum stack usage in bytes:
 
@@ -611,11 +620,13 @@ C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\
       16   MemoryBank_Info_SetValue_port
         16   -> MemoryBank_Clm_UpdateAdjustFactor
       16   MemoryBank_Info_SlowTimer
+        16   -> ConstantLumen_GetFactor
         16   -> DaliServices_GetOperatingMode
         16   -> MemoryBank_Clm_UpdateAdjustFactor
         16   -> MpcInfoServices_GetActualTemperature
         16   -> MpcInfoServices_GetOvervoltageShutDownState
         16   -> MpcInfoServices_GetSupplyVoltage
+        16   -> Power_SetConstantLumenValue
        0   MpcInfoServices_GetActualTemperature
        0   MpcInfoServices_GetLightLevelState
        0   MpcInfoServices_GetOvervoltageShutDownState
@@ -628,6 +639,7 @@ C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\
    -----  --------------
        4  ??DataTable3
        4  ??DataTable3_1
+       4  ??DataTable3_2
        4  ??DataTable4
        4  ??DataTable4_1
        4  ??DataTable4_2
@@ -649,7 +661,7 @@ C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\
        8  MemoryBank_Info_SetMinute_value
       16  MemoryBank_Info_SetValue
      358  MemoryBank_Info_SetValue_port
-     230  MemoryBank_Info_SlowTimer
+     250  MemoryBank_Info_SlowTimer
        4  MpcInfoServices_GetActualTemperature
        4  MpcInfoServices_GetLightLevelState
       24  MpcInfoServices_GetOvervoltageShutDownState
@@ -662,10 +674,10 @@ C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\
 
  
     96 bytes in section .bss
- 1 326 bytes in section .text
+ 1 350 bytes in section .text
  
- 1 290 bytes of CODE memory (+ 36 bytes shared)
+ 1 314 bytes of CODE memory (+ 36 bytes shared)
     96 bytes of DATA memory
 
 Errors: none
-Warnings: none
+Warnings: 1

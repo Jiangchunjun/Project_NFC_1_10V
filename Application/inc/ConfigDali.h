@@ -23,8 +23,8 @@
 //======================================================================================================================
 
 //-----   config Rx timer   ---------------------------------------------------
-#define DALI_CONFIG_Rx_TIMER				  0	      // CCU40 timer (value has to be between 0 - 3)
-#define DALI_CONFIG_RxPIN_P0_6				        // input of timer 0 (TSSOP38)
+#define DALI_CONFIG_Rx_TIMER				  3	      // CCU40 timer (value has to be between 0 - 3)
+#define DALI_CONFIG_RxPIN_P0_9				        // input of timer 0 (TSSOP38)
 
 //-----   config Tx timer   ---------------------------------------------------
 #define DALI_CONFIG_Tx_TIMER 			    1	      // CCU40 timer (value has to be between 0 - 3, but different from DALI_CONFIG_Rx_TIMER)

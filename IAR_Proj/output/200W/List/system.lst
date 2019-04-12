@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:54
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       11/Apr/2019  17:19:45
 # Copyright 1999-2016 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -352,222 +352,230 @@ Warning[Pe223]: function "DaliBallast_Init" declared implicitly
     203                      
     204                      //nfc_ed_record(); 
     205                      
-    206                      g_nfc_ini_flag=1;
-    207                      
-    208                      if(g_nfc_tag_read==1)
-    209                      {
-    210                        g_nfc_tag_read=2;
-    211                      }
-    212                      
-    213                      //System_CreateTask(SYS_TASK_NFC_HANDLE);
-    214                      SWT_StartTimer(SWT_ID_NFC_HANDLE, 200);
-    215                      
-    216                      /* swtich to next state */
-    217                      state++;            
-    218                  }
-    219                  break;
-    220                  
-    221                  /* state of delay for initial ADC and calibrate ADC */
-    222              case POWER_ON_STATE_ADC_INIT:
-    223                  /* Check delay for enable ADC */
-    224                  if(systick >= SYS_ADC_INIT_DELYA)
-    225                  {           
-    226                      /* enable ADC again for output current and voltage monitor */
-    227                      ADC_Enable();
-    228                      
-    229                      /* swtich to next state */
-    230                      state++;            
-    231                  }
-    232                  break;
-    233                  
-    234                  /* state of delay for start control loop */
-    235              case POWER_ON_STATE_LOOP_START:
-    236                  /* Check delay for create control loop task */
-    237                  if(systick >= SYS_CTRL_LOOP_START_DELAY)
-    238                  {           
-    239                      /* Create power control loop task */
-    240                    
-    241                    if(g_nfc_tag_read==4)
-    242                    {
-    243                      g_target_current=MemoryBank_CSM_GetNominalCurrent(0);
+    206          //            while(nfc_time_id()==0)
+    207          //            {
+    208          //              I2cCyclic();
+    209          //              NfcWatchdogResetRequest();
+    210          //            }
+    211                      
+    212                      //System_CreateTask(SYS_TASK_NFC_HANDLE);
+    213                      SWT_StartTimer(SWT_ID_NFC_HANDLE, 1);
+    214                      
+    215                      /* swtich to next state */
+    216                      
+    217                      
+    218                      g_nfc_ini_flag=1;
+    219                      
+    220                      if(g_nfc_tag_read==1)
+    221                      {
+    222                        g_nfc_tag_read=2;
+    223                      }
+    224                      
+    225                      state++;            
+    226                  }
+    227                  break;
+    228                  
+    229                  /* state of delay for initial ADC and calibrate ADC */
+    230              case POWER_ON_STATE_ADC_INIT:
+    231                  /* Check delay for enable ADC */
+    232                  if(systick >= SYS_ADC_INIT_DELYA)
+    233                  {           
+    234                      /* enable ADC again for output current and voltage monitor */
+    235                      ADC_Enable();
+    236                      
+    237                      /* swtich to next state */
+    238                      state++;            
+    239                  }
+    240                  break;
+    241                  
+    242                  /* state of delay for start control loop */
+    243              case POWER_ON_STATE_LOOP_START:
+    244                  /* Check delay for create control loop task */
+    245                  if(systick >= SYS_CTRL_LOOP_START_DELAY)
+    246                  {           
+    247                      /* Create power control loop task */
+    248                    
+    249                    if(g_nfc_tag_read==4)
+    250                    {
+    251                      g_target_current=MemoryBank_CSM_GetNominalCurrent(0);
                                               ^
 Warning[Pe223]: function "MemoryBank_CSM_GetNominalCurrent" declared implicitly
-    244                      Power_SetCurrent(g_target_current, SET_MODE_POWER_ON);
-    245                      System_CreateTask(SYS_TASK_LOOP);
-    246                      
-    247                      /* swtich to next state */
-    248                      state++;
-    249                    }
-    250                  }
-    251                  break;
-    252                  
-    253                  /* state of delay for finish power on task */
-    254              case POWER_ON_STATE_END:
-    255                  /* Close power on task */
-    256                  System_CloseTask(SYS_TASK_POWER_ON);
-    257                  //Power_SetCurrent(700, SET_MODE_NORMAL);
-    258                  break;
-    259                  
-    260              default: /* error state */
-    261                  /* enter infinite loop, wait for watchdog reset MCU */
-    262                  while(1);
-    263                  break;
-    264              }
-    265              
-    266              return;
-    267          }
-    268          
-    269          
-    270          /*******************************************************************************
-    271          * @brief  System Power Off Task
-    272          * @param  
-    273          * @note   
-    274          * @retval 
-    275          *******************************************************************************/
-    276          void System_PowerOffTask(void)
-    277          {
-    278              /* Check if task has been created */
-    279              if( System_CheckTask(SYS_TASK_POWER_OFF) == SYS_TASK_DISABLE )
-    280              {
-    281                  return;
-    282              }
-    283              
-    284              /* TASK IMPLEMENTATION FROM HERE */
-    285              
-    286              System_CloseTask(SYS_TASK_POWER_OFF);
-    287          }
-    288          
-    289          
-    290          /*******************************************************************************
-    291          * @brief  System Sleep Task
-    292          * @param  
-    293          * @note   
-    294          * @retval 
-    295          *******************************************************************************/
-    296          void System_SleepTask(void)
-    297          {
-    298              /* Check if task has been created */
-    299              if( System_CheckTask(SYS_TASK_SLEEP) == SYS_TASK_DISABLE )
-    300              {
-    301                  return;
-    302              }
-    303              
-    304              /* MCU clock low speed config*/
-    305              MCU_ClockConfigLowSpeed();   
-    306              
-    307              /* Disable system tick timer */
-    308              MCU_SysTickDisable();
-    309              
-    310              /* Disable PWM module */
-    311              PWM_Disable();
-    312              
-    313              /* Disable ACMP and ERU for detect OVP & OCP */
-    314              ACMP_DisableOVP();
-    315              ERU_DisableOVP();
-    316              
-    317              /* Disable ADC */
-    318              ADC_Disable();
-    319              
-    320              /* Disable USART */
-    321              USART_Disable(); 
-    322              
-    323              /* System task controler init */
-    324              System_TaskInit();
-    325              
-    326              /* Software timer init */
-    327              SWT_Init();
-    328              
-    329              /* Simulate I2C init */
-    330              I2C_Initial();
-    331              
-    332              /* Feed watchdog for refresh timer */
-    333              WDT_Feeds();
-    334              
-    335              System_CloseTask(SYS_TASK_SLEEP);
-    336          }
-    337          
-    338          
-    339          /*******************************************************************************
-    340          * @brief  System Wakeup Task
-    341          * @param  
-    342          * @note   
-    343          * @retval 
-    344          *******************************************************************************/
-    345          void System_WakeupTask(void)
-    346          {
-    347              /* Check if task has been created */
-    348              if( System_CheckTask(SYS_TASK_WAKEUP) == SYS_TASK_DISABLE )
-    349              {
-    350                  return;
-    351              }
-    352              
-    353              /* TASK IMPLEMENTATION FROM HERE */
-    354              
-    355              System_CloseTask(SYS_TASK_WAKEUP);
-    356          }
-    357          
-    358          
-    359          /*******************************************************************************
-    360          * @brief  System Work Mode Change Task
-    361          * @param  
-    362          * @note   
-    363          * @retval 
-    364          *******************************************************************************/
-    365          void System_WorkModeChangeTask(void)
-    366          {
-    367              /* Check if task has been created */
-    368              if( System_CheckTask(SYS_TASK_MODE_CHANGE) == SYS_TASK_DISABLE )
-    369              {
-    370                  return;
-    371              }
-    372              
-    373              /* TASK IMPLEMENTATION FROM HERE */
-    374              
-    375              System_CloseTask(SYS_TASK_MODE_CHANGE);
-    376          }
-    377          
-    378          
-    379          /*******************************************************************************
-    380          * @brief  System Period Task Management
-    381          * @param  
-    382          * @note   Check timing task which are enabled and run the handler when time up
-    383          * @retval
-    384          *******************************************************************************/
-    385          void System_PeriodTaskManagement(void)
-    386          {
-    387                  //DaliBallast_CyclicTask();
-    388              /* Power control loop task period */
-    389              if(SWT_CheckTimer(SWT_ID_LOOP) == SWT_STATUS_UP)
-    390              {        
-    391                  /* Create power control loop task */
-    392                  System_CreateTask(SYS_TASK_LOOP); 
-    393              }
-    394              
-    395              /* NFC communication task period */
-    396              if(SWT_CheckTimer(SWT_ID_NFC_HANDLE) == SWT_STATUS_UP)
-    397              {        
-    398                  /* Create nfc communication task */
-    399                  System_CreateTask(SYS_TASK_NFC_HANDLE);  
-    400              }
-    401              
-    402              /* Hiccup period timer for OVP and OCP */
-    403              if(SWT_CheckTimer(SWT_ID_HICCUP) == SWT_STATUS_UP)
-    404              {        
-    405                  /* Exit Protection */
-    406                  PWM_ExitProtection();
-    407              }  
-    408              
-    409              /* OVP accelerate pin release */
-    410              if(SWT_CheckTimer(SWT_ID_SPEED_UP) == SWT_STATUS_UP)
-    411              {        
-    412                  /* Release control accerlerate pin to avoid lock primary IC */
-    413                  PWM_CtrlAccelerateDisable();
-    414                  
-    415                  SWT_CloseTimer(SWT_ID_SPEED_UP);
-    416              }
-    417          }
-    418          
-    419          /**************** (C) COPYRIGHT OSRAM Asia Pacific Management Company *********END OF FILE*********/
+    252                      Power_SetCurrent(g_target_current, SET_MODE_POWER_ON);
+    253                      System_CreateTask(SYS_TASK_LOOP);
+    254                      
+    255                      /* swtich to next state */
+    256                      state++;
+    257                    }
+    258                  }
+    259                  break;
+    260                  
+    261                  /* state of delay for finish power on task */
+    262              case POWER_ON_STATE_END:
+    263                  /* Close power on task */
+    264                  System_CloseTask(SYS_TASK_POWER_ON);
+    265                  //Power_SetCurrent(700, SET_MODE_NORMAL);
+    266                  break;
+    267                  
+    268              default: /* error state */
+    269                  /* enter infinite loop, wait for watchdog reset MCU */
+    270                  while(1);
+    271                  break;
+    272              }
+    273              
+    274              return;
+    275          }
+    276          
+    277          
+    278          /*******************************************************************************
+    279          * @brief  System Power Off Task
+    280          * @param  
+    281          * @note   
+    282          * @retval 
+    283          *******************************************************************************/
+    284          void System_PowerOffTask(void)
+    285          {
+    286              /* Check if task has been created */
+    287              if( System_CheckTask(SYS_TASK_POWER_OFF) == SYS_TASK_DISABLE )
+    288              {
+    289                  return;
+    290              }
+    291              
+    292              /* TASK IMPLEMENTATION FROM HERE */
+    293              
+    294              System_CloseTask(SYS_TASK_POWER_OFF);
+    295          }
+    296          
+    297          
+    298          /*******************************************************************************
+    299          * @brief  System Sleep Task
+    300          * @param  
+    301          * @note   
+    302          * @retval 
+    303          *******************************************************************************/
+    304          void System_SleepTask(void)
+    305          {
+    306              /* Check if task has been created */
+    307              if( System_CheckTask(SYS_TASK_SLEEP) == SYS_TASK_DISABLE )
+    308              {
+    309                  return;
+    310              }
+    311              
+    312              /* MCU clock low speed config*/
+    313              MCU_ClockConfigLowSpeed();   
+    314              
+    315              /* Disable system tick timer */
+    316              MCU_SysTickDisable();
+    317              
+    318              /* Disable PWM module */
+    319              PWM_Disable();
+    320              
+    321              /* Disable ACMP and ERU for detect OVP & OCP */
+    322              ACMP_DisableOVP();
+    323              ERU_DisableOVP();
+    324              
+    325              /* Disable ADC */
+    326              ADC_Disable();
+    327              
+    328              /* Disable USART */
+    329              USART_Disable(); 
+    330              
+    331              /* System task controler init */
+    332              System_TaskInit();
+    333              
+    334              /* Software timer init */
+    335              SWT_Init();
+    336              
+    337              /* Simulate I2C init */
+    338              I2C_Initial();
+    339              
+    340              /* Feed watchdog for refresh timer */
+    341              WDT_Feeds();
+    342              
+    343              System_CloseTask(SYS_TASK_SLEEP);
+    344          }
+    345          
+    346          
+    347          /*******************************************************************************
+    348          * @brief  System Wakeup Task
+    349          * @param  
+    350          * @note   
+    351          * @retval 
+    352          *******************************************************************************/
+    353          void System_WakeupTask(void)
+    354          {
+    355              /* Check if task has been created */
+    356              if( System_CheckTask(SYS_TASK_WAKEUP) == SYS_TASK_DISABLE )
+    357              {
+    358                  return;
+    359              }
+    360              
+    361              /* TASK IMPLEMENTATION FROM HERE */
+    362              
+    363              System_CloseTask(SYS_TASK_WAKEUP);
+    364          }
+    365          
+    366          
+    367          /*******************************************************************************
+    368          * @brief  System Work Mode Change Task
+    369          * @param  
+    370          * @note   
+    371          * @retval 
+    372          *******************************************************************************/
+    373          void System_WorkModeChangeTask(void)
+    374          {
+    375              /* Check if task has been created */
+    376              if( System_CheckTask(SYS_TASK_MODE_CHANGE) == SYS_TASK_DISABLE )
+    377              {
+    378                  return;
+    379              }
+    380              
+    381              /* TASK IMPLEMENTATION FROM HERE */
+    382              
+    383              System_CloseTask(SYS_TASK_MODE_CHANGE);
+    384          }
+    385          
+    386          
+    387          /*******************************************************************************
+    388          * @brief  System Period Task Management
+    389          * @param  
+    390          * @note   Check timing task which are enabled and run the handler when time up
+    391          * @retval
+    392          *******************************************************************************/
+    393          void System_PeriodTaskManagement(void)
+    394          {
+    395                  //DaliBallast_CyclicTask();
+    396              /* Power control loop task period */
+    397              if(SWT_CheckTimer(SWT_ID_LOOP) == SWT_STATUS_UP)
+    398              {        
+    399                  /* Create power control loop task */
+    400                  System_CreateTask(SYS_TASK_LOOP); 
+    401              }
+    402              
+    403              /* NFC communication task period */
+    404              if(SWT_CheckTimer(SWT_ID_NFC_HANDLE) == SWT_STATUS_UP)
+    405              {        
+    406                  /* Create nfc communication task */
+    407                  System_CreateTask(SYS_TASK_NFC_HANDLE);  
+    408              }
+    409              
+    410              /* Hiccup period timer for OVP and OCP */
+    411              if(SWT_CheckTimer(SWT_ID_HICCUP) == SWT_STATUS_UP)
+    412              {        
+    413                  /* Exit Protection */
+    414                  PWM_ExitProtection();
+    415              }  
+    416              
+    417              /* OVP accelerate pin release */
+    418              if(SWT_CheckTimer(SWT_ID_SPEED_UP) == SWT_STATUS_UP)
+    419              {        
+    420                  /* Release control accerlerate pin to avoid lock primary IC */
+    421                  PWM_CtrlAccelerateDisable();
+    422                  
+    423                  SWT_CloseTimer(SWT_ID_SPEED_UP);
+    424              }
+    425          }
+    426          
+    427          /**************** (C) COPYRIGHT OSRAM Asia Pacific Management Company *********END OF FILE*********/
 
    Maximum stack usage in bytes:
 
@@ -656,7 +664,7 @@ Warning[Pe223]: function "MemoryBank_CSM_GetNominalCurrent" declared implicitly
       12  System_CreateTask
       70  System_PeriodTaskManagement
       20  System_PowerOffTask
-     376  System_PowerOnTask
+     372  System_PowerOnTask
       72  System_SleepTask
        8  System_TaskInit
       20  System_WakeupTask
@@ -670,9 +678,9 @@ Warning[Pe223]: function "MemoryBank_CSM_GetNominalCurrent" declared implicitly
 
  
   12 bytes in section .bss
- 744 bytes in section .text
+ 740 bytes in section .text
  
- 744 bytes of CODE memory
+ 740 bytes of CODE memory
   12 bytes of DATA memory
 
 Errors: none

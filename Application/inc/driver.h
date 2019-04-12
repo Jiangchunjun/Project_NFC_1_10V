@@ -80,8 +80,8 @@
 
 
 
-#define NFC_TIME_ADRRESS            0x740   //0X 7C0
-#define NFC_TIME_COUNT              0xC0   // C0 for 48 pcs data;// 0x40 only for 16 pcs saving
+#define NFC_TIME_ADRRESS            1800//0x720   //0X 7C0
+#define NFC_TIME_COUNT              (0xC0>>1)   // C0 for 48 pcs data;// 0x40 only for 16 pcs saving
 #define NVM_TIME_SAVE_PERIOD (36000)//10h
 #define NFC_1_10_ENABLE             292
 

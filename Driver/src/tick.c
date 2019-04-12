@@ -83,11 +83,8 @@ void SysTick_Handler(void)
     {
         NfcCyclic();
       
-        if(count++>0)
-        {
+       
         DaliBallast_CyclicTask();
-        count=0;
-        }
     }
     /* Update nfc task software timer */
     

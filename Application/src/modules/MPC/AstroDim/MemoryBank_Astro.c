@@ -532,6 +532,7 @@ void MemoryBank_Astro_ClearStartEDontime(uint8_t channel, uint16_t value16)
 void MemoryBank_Astro_UpdateEDonTime(uint8_t channel, uint16_t value16)
 {
     internal_ed_ontime[channel] = value16;
+    memoryBank_Astro[channel]->ed_ontime=value16;
 }
 
 

@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  13:33:09
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       12/Apr/2019  15:31:08
 # Copyright 1999-2016 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -993,46 +993,14 @@ Warning[Pe223]: function "O2T_GetMinDimLevel" declared implicitly
     837              g_uout_avg_adc = ADC_GetAverage(ADC_CHANNEL_UOUT);
     838              
     839              
-    840                  uint8_t *pinfo; //add test
-    841              sprintf((char*)tx_buff, "%d \n", g_iout_avg_adc);
-                     ^
-Warning[Pe223]: function "sprintf" declared implicitly
-
-      uint8_t i = 0;
-              ^
-"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\power_task.c",793  Warning[Pe177]: 
-          variable "i" was declared but never referenced
-
-      static uint16_t g_set_current=400,g_test_current=0;
-                      ^
-"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\power_task.c",805  Warning[Pe177]: 
-          variable "g_set_current" was declared but never referenced
-
-      static uint16_t g_set_current=400,g_test_current=0;
-                                        ^
-"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\power_task.c",805  Warning[Pe550]: 
-          variable "g_test_current" was set but never used
-
-      uint16_t duty = 0;
-               ^
-"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\power_task.c",811  Warning[Pe177]: 
-          variable "duty" was declared but never referenced
-
-      uint16_t avg_adc_iout = 0;
-               ^
-"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\power_task.c",812  Warning[Pe177]: 
-          variable "avg_adc_iout" was declared but never referenced
-
-      uint16_t avg_adc_uout = 0;
-               ^
-"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\power_task.c",813  Warning[Pe177]: 
-          variable "avg_adc_uout" was declared but never referenced
-    842              pinfo=tx_buff;
-    843                  while(*pinfo != '\0')
-    844              {
-    845                  XMC_UART_CH_Transmit(USART_CHANNEL, *pinfo);
-    846                  pinfo++;
-    847              }
+    840          //        uint8_t *pinfo; //add test
+    841          //    sprintf((char*)tx_buff, "%d \n", g_iout_avg_adc);
+    842          //    pinfo=tx_buff;
+    843          //        while(*pinfo != '\0')
+    844          //    {
+    845          //        XMC_UART_CH_Transmit(USART_CHANNEL, *pinfo);
+    846          //        pinfo++;
+    847          //    }
     848              /* Update 1-10V Dimming Level */
     849              if(SWT_CheckTimer(SWT_ID_ONE2TEN) != SWT_STATUS_OK)
     850              {
@@ -1266,6 +1234,38 @@ Warning[Pe223]: function "sprintf" declared implicitly
    1078              else
    1079              {
    1080                  sprintf((char*)tx_buff, "%3d.%1d \n", g_iout_real);
+                         ^
+Warning[Pe223]: function "sprintf" declared implicitly
+
+      uint8_t i = 0;
+              ^
+"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\power_task.c",793  Warning[Pe177]: 
+          variable "i" was declared but never referenced
+
+      static uint16_t g_set_current=400,g_test_current=0;
+                      ^
+"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\power_task.c",805  Warning[Pe177]: 
+          variable "g_set_current" was declared but never referenced
+
+      static uint16_t g_set_current=400,g_test_current=0;
+                                        ^
+"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\power_task.c",805  Warning[Pe550]: 
+          variable "g_test_current" was set but never used
+
+      uint16_t duty = 0;
+               ^
+"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\power_task.c",811  Warning[Pe177]: 
+          variable "duty" was declared but never referenced
+
+      uint16_t avg_adc_iout = 0;
+               ^
+"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\power_task.c",812  Warning[Pe177]: 
+          variable "avg_adc_iout" was declared but never referenced
+
+      uint16_t avg_adc_uout = 0;
+               ^
+"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\power_task.c",813  Warning[Pe177]: 
+          variable "avg_adc_uout" was declared but never referenced
    1081                  USART_PrintInfo(tx_buff);
    1082              }
    1083           /*power off judge**/   
@@ -1662,26 +1662,43 @@ Warning[Pe223]: function "sprintf" declared implicitly
    1474          void Power_nfc_handle(void)
    1475          {
    1476            extern uint8_t g_nfc_tag_read;
-   1477            if(System_CheckTask(SYS_TASK_NFC_HANDLE) == SYS_TASK_DISABLE)
-   1478            {
-   1479              return;
-   1480            }
+   1477            
+   1478            extern uint32_t g_nfc_time;
+   1479            
+   1480            static uint8_t count_time=0;
    1481            
-   1482            //nfc_time_hanlde();
-   1483            
-   1484            AstroTimer();
+   1482            if(System_CheckTask(SYS_TASK_NFC_HANDLE) == SYS_TASK_DISABLE)
+   1483            {
+   1484              return;
+   1485            }
+   1486            
+   1487            nfc_time_hanlde();
+                   ^
+Warning[Pe223]: function "nfc_time_hanlde" declared implicitly
+   1488            
+   1489            AstroTimer();
                    ^
 Warning[Pe223]: function "AstroTimer" declared implicitly
-   1485            
-   1486            if(g_nfc_tag_read==4)
-   1487            SWT_StartTimer(SWT_ID_NFC_HANDLE, NFC_HANDLE_TIME);
-   1488            else
-   1489            SWT_StartTimer(SWT_ID_NFC_HANDLE, 5);  
    1490            
-   1491            System_CloseTask( SYS_TASK_NFC_HANDLE );
-   1492            
-   1493          }
-   1494          /**************** (C) COPYRIGHT OSRAM Asia Pacific Management Company *********END OF FILE*********/
+   1491            if(g_nfc_tag_read==4)
+   1492            {
+   1493              SWT_StartTimer(SWT_ID_NFC_HANDLE, NFC_HANDLE_TIME); 
+   1494              
+   1495              if(count_time++>=1)
+   1496              {
+   1497                    g_nfc_time+=30;
+   1498                    count_time=0;
+   1499                    //P2_1_toggle();
+   1500              }
+   1501            }
+   1502            else
+   1503            {
+   1504              SWT_StartTimer(SWT_ID_NFC_HANDLE, 1);  
+   1505            }
+   1506            System_CloseTask( SYS_TASK_NFC_HANDLE );
+   1507            
+   1508          }
+   1509          /**************** (C) COPYRIGHT OSRAM Asia Pacific Management Company *********END OF FILE*********/
 
    Maximum stack usage in bytes:
 
@@ -1701,7 +1718,6 @@ Warning[Pe223]: function "AstroTimer" declared implicitly
         40   -> System_CheckTask
         40   -> System_CloseTask
         40   -> USART_PrintInfo
-        40   -> XMC_UART_CH_Transmit
         40   -> __aeabi_d2iz
         40   -> __aeabi_d2uiz
         40   -> __aeabi_dadd
@@ -1776,6 +1792,7 @@ Warning[Pe223]: function "AstroTimer" declared implicitly
          8   -> SWT_StartTimer
          8   -> System_CheckTask
          8   -> System_CloseTask
+         8   -> nfc_time_hanlde
 
 
    Section sizes:
@@ -1818,6 +1835,8 @@ Warning[Pe223]: function "AstroTimer" declared implicitly
        4  ??DataTable21_13
        4  ??DataTable21_14
        4  ??DataTable21_15
+       4  ??DataTable21_16
+       4  ??DataTable21_17
        4  ??DataTable21_2
        4  ??DataTable21_3
        4  ??DataTable21_4
@@ -1859,11 +1878,10 @@ Warning[Pe223]: function "AstroTimer" declared implicitly
        4  ??DataTable9_7
        4  ??DataTable9_8
        4  ??DataTable9_9
-       8  ?_0
-      12  ?_1
+      12  ?_0
+       4  ?_1
        8  ?_10
-       8  ?_11
-       4  ?_2
+       8  ?_2
        8  ?_3
        8  ?_4
        8  ?_5
@@ -1871,7 +1889,7 @@ Warning[Pe223]: function "AstroTimer" declared implicitly
        8  ?_7
        8  ?_8
        8  ?_9
-    2258  Power_ControlLoopTask
+    2218  Power_ControlLoopTask
        6  Power_GetAstroDimmingLevel
        6  Power_GetConstantLumenValue
      124  Power_GetControlInitDuty
@@ -1894,7 +1912,8 @@ Warning[Pe223]: function "AstroTimer" declared implicitly
       50  Power_SetEolDimmingLevel
       44  Power_TaskInit
      356  Power_UpdateOne2TenDimming
-      52  Power_nfc_handle
+      90  Power_nfc_handle
+       1  count_time
        1  delay
        4  dim_level_1_10
        1  g_OCP_counter
@@ -1940,14 +1959,14 @@ Warning[Pe223]: function "AstroTimer" declared implicitly
        4  u_out_roll
 
  
-    84 bytes in section .bss
+    85 bytes in section .bss
     21 bytes in section .data
-    96 bytes in section .rodata
- 4 244 bytes in section .text
+    88 bytes in section .rodata
+ 4 250 bytes in section .text
  
- 4 244 bytes of CODE  memory
-    96 bytes of CONST memory
-   105 bytes of DATA  memory
+ 4 250 bytes of CODE  memory
+    88 bytes of CONST memory
+   106 bytes of DATA  memory
 
 Errors: none
-Warnings: 13
+Warnings: 14

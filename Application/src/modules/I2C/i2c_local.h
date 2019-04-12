@@ -47,7 +47,7 @@
     #define I2C_POWERDOWN_TIMER_PERIOD_US   (4)   // [us]
     #define I2C_SLEEPMODE_TIMER_PERIOD_US   (3)   // [us]
 #else
-    #define I2C_TX_FIFO_LENGTH              128
+    #define I2C_TX_FIFO_LENGTH              128 //128
 #endif
 
 /** Byte width of the CRC */

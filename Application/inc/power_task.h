@@ -69,7 +69,7 @@
 #define ONE2TEN_LOWER_LIMIT     (1000)//500
 #define ONE2TEN_UPPER_LIMIT     (10000)
 
-#define NFC_HANDLE_TIME         500//1s
+#define NFC_HANDLE_TIME         500//1s 500ms
 
 /* 1-10V dimming change */
 #define POWER_DIM_CHANGE_DUTY   (100)

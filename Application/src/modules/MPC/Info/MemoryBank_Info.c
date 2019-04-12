@@ -26,7 +26,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-
+#include <gpio_xmc1300_tssop38.h>
 #define MODULE_MPC                                                                 // to #include "MemoryBanksDefault.h" in config.h                                                       
 #include "Config.h"
 #include "MpcDefs.h"
@@ -225,11 +225,12 @@ void MemoryBank_Info_SlowTimer( void )
   uint8_t actualTemperature;
   uint16_t *totalOvervoltageDuration = &mpcInfo.nvm.totalOvervoltageDuration;
   uint16_t *ovTimeTicks = &mpcInfo.nvm.overvoltageTimeTicks;
-
+  uint32_t temp=0;
+  
   for( i = 0; i < DEVICE_CHANNELS; i++ ) {
     if ( DaliServices_GetOperatingMode( i ) != 0)                                 // lamp is ON if operating mode is set to AM or PWM
     {  infoCounter_t *actCounter = &mpcInfo.nvm.lampCounter[i];
-      actCounter->ticks++;
+      actCounter->ticks+=30;
       if (actCounter->ticks >= MPC_INFO_STT_PER_MINUTE) {
         if (actCounter->minutes < 0x00FFFFFE)
         {         
@@ -239,6 +240,12 @@ void MemoryBank_Info_SlowTimer( void )
           if ( (uint8_t)(actCounter->minutes) == 0)                               // Update mpcClm-adjustFactor each 256 minutes (= 4,27 hours)
           {  
             MemoryBank_Clm_UpdateAdjustFactor(actCounter->minutes, i);
+            
+            temp=(ConstantLumen_GetFactor(0)*10000);
+            
+            temp=temp>>14;
+              
+            Power_SetConstantLumenValue(temp);
           }
 #endif
         } 

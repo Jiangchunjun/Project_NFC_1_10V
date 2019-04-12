@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       03/Apr/2019  11:37:51
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       10/Apr/2019  11:23:49
 # Copyright 1999-2016 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -667,143 +667,144 @@ C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\
     532          void MemoryBank_Astro_UpdateEDonTime(uint8_t channel, uint16_t value16)
     533          {
     534              internal_ed_ontime[channel] = value16;
-    535          }
-    536          
+    535              memoryBank_Astro[channel]->ed_ontime=value16;
+    536          }
     537          
-    538          //---------------------------------------------------------------------------------------------------------------------------
-    539          //    *********************************************     Function to READ MPC data
-    540          //---------------------------------------------------------------------------------------------------------------------------
-    541          
-    542          //---------------------------------------------------------------------------------------------------------------------------
-    543          /// \brief allow the application to inquire the Astro mode
-    544          ///
-    545          /// \param channel        The channel ID of the device.
-    546          ///
-    547          /// \retval               The mode set by the configuation tool into the MPC.
-    548          //---------------------------------------------------------------------------------------------------------------------------
-    549          uint8_t MemoryBank_Astro_GetMode(uint8_t channel)
-    550          {
-    551          uint8_t  modeA;
-    552          
-    553              modeA = memoryBank_Astro[channel]->opMode;
-    554              if ( (modeA & 0x03) == 0 ) {                                                // Astro is disabled
-    555                  modeA &= 0xC0;
-    556              }
-    557              return (modeA);
-    558          }
-    559          
-    560          // Get Levels %
-    561          uint16_t MemoryBank_Astro_GetNominalLevel(uint8_t channel)
-    562          {
-    563              return (memoryBank_Astro[channel]->nominal_level);
-    564          }
-    565          uint16_t MemoryBank_Astro_GetLevel1(uint8_t channel)
-    566          {
-    567              return (memoryBank_Astro[channel]->level_1);
-    568          }
-    569          uint16_t MemoryBank_Astro_GetLevel2(uint8_t channel)
-    570          {
-    571              return (memoryBank_Astro[channel]->level_2);
-    572          }
-    573          uint16_t MemoryBank_Astro_GetLevel3(uint8_t channel)
-    574          {
-    575              return (memoryBank_Astro[channel]->level_3);
-    576          }
-    577          uint16_t MemoryBank_Astro_GetLevel4(uint8_t channel)
-    578          {
-    579              return (memoryBank_Astro[channel]->level_4);
-    580          }
-    581          
-    582          // Get latched information in minutes (not mpc data)
-    583          int16_t MemoryBank_Astro_GetStartTime(uint8_t channel)                          // signed value
-    584          {
-    585          //    int16_t sstart;
-    586          //    sstart = latch_starttime[channel];                                        // latched value
-    587          //    return ( sstart );
-    588              return memoryBank_Astro[channel]->start_time_dim;
-    589          
-    590          }
-    591          uint16_t MemoryBank_Astro_GetDuration1(uint8_t channel)
-    592          {
-    593              return memoryBank_Astro[channel]->duration_1;
-    594          }
-    595          uint16_t MemoryBank_Astro_GetDuration2(uint8_t channel)
-    596          {
-    597              return memoryBank_Astro[channel]->duration_2;
-    598          }
-    599          uint16_t MemoryBank_Astro_GetDuration3(uint8_t channel)
-    600          {
-    601              return memoryBank_Astro[channel]->duration_3;
-    602          }
-    603          
-    604          // Get fade times in seconds
-    605          uint16_t MemoryBank_Astro_GetStartUpFade(uint8_t channel)
-    606          {
-    607              return memoryBank_Astro[channel]->startUp_fade_time;                        // latched value
-    608          }
-    609          uint16_t MemoryBank_Astro_GetAstroFade(uint8_t channel)
-    610          {
-    611              return ( memoryBank_Astro[channel]->astro_fade * SHORTStepTime);
-    612          }
-    613          uint16_t MemoryBank_Astro_GetSwitchOffFade(uint8_t channel)
-    614          {
-    615              if ( memoryBank_Astro[channel]->switchOff_fade == 255) {
-    616                  return 65535;
-    617              }
-    618              return ( memoryBank_Astro[channel]->switchOff_fade * LONGStepTime );
-    619          }
-    620          
-    621          // Get ED value from mpc structure
-    622          uint16_t MemoryBank_Astro_GetStartEDontime(uint8_t channel)
-    623          {
-    624              return ( memoryBank_Astro[channel]->ed_ontime ) ;
-    625          }
-    626          
+    538          
+    539          //---------------------------------------------------------------------------------------------------------------------------
+    540          //    *********************************************     Function to READ MPC data
+    541          //---------------------------------------------------------------------------------------------------------------------------
+    542          
+    543          //---------------------------------------------------------------------------------------------------------------------------
+    544          /// \brief allow the application to inquire the Astro mode
+    545          ///
+    546          /// \param channel        The channel ID of the device.
+    547          ///
+    548          /// \retval               The mode set by the configuation tool into the MPC.
+    549          //---------------------------------------------------------------------------------------------------------------------------
+    550          uint8_t MemoryBank_Astro_GetMode(uint8_t channel)
+    551          {
+    552          uint8_t  modeA;
+    553          
+    554              modeA = memoryBank_Astro[channel]->opMode;
+    555              if ( (modeA & 0x03) == 0 ) {                                                // Astro is disabled
+    556                  modeA &= 0xC0;
+    557              }
+    558              return (modeA);
+    559          }
+    560          
+    561          // Get Levels %
+    562          uint16_t MemoryBank_Astro_GetNominalLevel(uint8_t channel)
+    563          {
+    564              return (memoryBank_Astro[channel]->nominal_level);
+    565          }
+    566          uint16_t MemoryBank_Astro_GetLevel1(uint8_t channel)
+    567          {
+    568              return (memoryBank_Astro[channel]->level_1);
+    569          }
+    570          uint16_t MemoryBank_Astro_GetLevel2(uint8_t channel)
+    571          {
+    572              return (memoryBank_Astro[channel]->level_2);
+    573          }
+    574          uint16_t MemoryBank_Astro_GetLevel3(uint8_t channel)
+    575          {
+    576              return (memoryBank_Astro[channel]->level_3);
+    577          }
+    578          uint16_t MemoryBank_Astro_GetLevel4(uint8_t channel)
+    579          {
+    580              return (memoryBank_Astro[channel]->level_4);
+    581          }
+    582          
+    583          // Get latched information in minutes (not mpc data)
+    584          int16_t MemoryBank_Astro_GetStartTime(uint8_t channel)                          // signed value
+    585          {
+    586          //    int16_t sstart;
+    587          //    sstart = latch_starttime[channel];                                        // latched value
+    588          //    return ( sstart );
+    589              return memoryBank_Astro[channel]->start_time_dim;
+    590          
+    591          }
+    592          uint16_t MemoryBank_Astro_GetDuration1(uint8_t channel)
+    593          {
+    594              return memoryBank_Astro[channel]->duration_1;
+    595          }
+    596          uint16_t MemoryBank_Astro_GetDuration2(uint8_t channel)
+    597          {
+    598              return memoryBank_Astro[channel]->duration_2;
+    599          }
+    600          uint16_t MemoryBank_Astro_GetDuration3(uint8_t channel)
+    601          {
+    602              return memoryBank_Astro[channel]->duration_3;
+    603          }
+    604          
+    605          // Get fade times in seconds
+    606          uint16_t MemoryBank_Astro_GetStartUpFade(uint8_t channel)
+    607          {
+    608              return memoryBank_Astro[channel]->startUp_fade_time;                        // latched value
+    609          }
+    610          uint16_t MemoryBank_Astro_GetAstroFade(uint8_t channel)
+    611          {
+    612              return ( memoryBank_Astro[channel]->astro_fade * SHORTStepTime);
+    613          }
+    614          uint16_t MemoryBank_Astro_GetSwitchOffFade(uint8_t channel)
+    615          {
+    616              if ( memoryBank_Astro[channel]->switchOff_fade == 255) {
+    617                  return 65535;
+    618              }
+    619              return ( memoryBank_Astro[channel]->switchOff_fade * LONGStepTime );
+    620          }
+    621          
+    622          // Get ED value from mpc structure
+    623          uint16_t MemoryBank_Astro_GetStartEDontime(uint8_t channel)
+    624          {
+    625              return ( memoryBank_Astro[channel]->ed_ontime ) ;
+    626          }
     627          
     628          
     629          
-    630          //----------------------------------------------------------------------------------------------------------------------
-    631          /// \brief    Set the factory setting
-    632          ///
-    633          /// \param    channel
-    634          ///
-    635          /// \retval   none
-    636          //----------------------------------------------------------------------------------------------------------------------
-    637          
-    638          static void Astro_factorySettings(uint8_t chan)
-    639          {
-    640          uint8_t j;
-    641          
-    642          //      memoryBank_Astro[chan]->opMode =         configMemoryBank_Astro_opMode;
-    643          //      memoryBank_Astro[chan]->startUp_fade_time = configMemoryBank_Astro_startUp_fade;
-    644          //
-    645          //      memoryBank_Astro[chan]->astro_fade =     configMemoryBank_Astro_astro_fade;
-    646          //      memoryBank_Astro[chan]->switchOff_fade = configMemoryBank_Astro_switchOff_fade;
-    647          //      memoryBank_Astro[chan]->start_time_dim = configMemoryBank_Astro_start_time;
-    648          //
-    649          //      memoryBank_Astro[chan]->nominal_level = configMemoryBank_Astro_nominal_level;
-    650          //      memoryBank_Astro[chan]->level_1 = configMemoryBank_Astro_level1;
-    651          //      memoryBank_Astro[chan]->level_2 = configMemoryBank_Astro_level2;
-    652          //      memoryBank_Astro[chan]->level_3 = configMemoryBank_Astro_level3;
-    653          //      memoryBank_Astro[chan]->level_4 = configMemoryBank_Astro_level4;
-    654          //
-    655          //      memoryBank_Astro[chan]->duration_1 = configMemoryBank_Astro_time1;
-    656          //      memoryBank_Astro[chan]->duration_2 = configMemoryBank_Astro_time2;
-    657          //      memoryBank_Astro[chan]->duration_3 = configMemoryBank_Astro_time3;
-    658          
-    659                for (j=0; j<(5); j++) {
-    660                    memoryBank_Astro[chan]->toolBytes[j] = 0;
-    661                }
-    662          
-    663                memoryBank_Astro[chan]->ed_ontime = 0x0000;  // 0xFFFF;
-    664                memoryBankAstro_lockByte[chan] = 255;
-    665                memoryBankAstro_status[chan] = 0x00;
-    666          
-    667                internal_ed_ontime[chan] = 0xFFFF;
-    668          }
-    669          
+    630          
+    631          //----------------------------------------------------------------------------------------------------------------------
+    632          /// \brief    Set the factory setting
+    633          ///
+    634          /// \param    channel
+    635          ///
+    636          /// \retval   none
+    637          //----------------------------------------------------------------------------------------------------------------------
+    638          
+    639          static void Astro_factorySettings(uint8_t chan)
+    640          {
+    641          uint8_t j;
+    642          
+    643          //      memoryBank_Astro[chan]->opMode =         configMemoryBank_Astro_opMode;
+    644          //      memoryBank_Astro[chan]->startUp_fade_time = configMemoryBank_Astro_startUp_fade;
+    645          //
+    646          //      memoryBank_Astro[chan]->astro_fade =     configMemoryBank_Astro_astro_fade;
+    647          //      memoryBank_Astro[chan]->switchOff_fade = configMemoryBank_Astro_switchOff_fade;
+    648          //      memoryBank_Astro[chan]->start_time_dim = configMemoryBank_Astro_start_time;
+    649          //
+    650          //      memoryBank_Astro[chan]->nominal_level = configMemoryBank_Astro_nominal_level;
+    651          //      memoryBank_Astro[chan]->level_1 = configMemoryBank_Astro_level1;
+    652          //      memoryBank_Astro[chan]->level_2 = configMemoryBank_Astro_level2;
+    653          //      memoryBank_Astro[chan]->level_3 = configMemoryBank_Astro_level3;
+    654          //      memoryBank_Astro[chan]->level_4 = configMemoryBank_Astro_level4;
+    655          //
+    656          //      memoryBank_Astro[chan]->duration_1 = configMemoryBank_Astro_time1;
+    657          //      memoryBank_Astro[chan]->duration_2 = configMemoryBank_Astro_time2;
+    658          //      memoryBank_Astro[chan]->duration_3 = configMemoryBank_Astro_time3;
+    659          
+    660                for (j=0; j<(5); j++) {
+    661                    memoryBank_Astro[chan]->toolBytes[j] = 0;
+    662                }
+    663          
+    664                memoryBank_Astro[chan]->ed_ontime = 0x0000;  // 0xFFFF;
+    665                memoryBankAstro_lockByte[chan] = 255;
+    666                memoryBankAstro_status[chan] = 0x00;
+    667          
+    668                internal_ed_ontime[chan] = 0xFFFF;
+    669          }
     670          
     671          
+    672          
 
    Maximum stack usage in bytes:
 
@@ -853,8 +854,8 @@ C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\
        4  ??DataTable0_4
        4  ??DataTable0_5
        4  ??DataTable1
+       4  ??DataTable14
        4  ??DataTable15
-       4  ??DataTable16
        4  ??DataTable1_1
        4  ??DataTable1_2
        4  ??DataTable1_3
@@ -888,7 +889,7 @@ C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\
        2  MemoryBank_Astro_Reset
       16  MemoryBank_Astro_SetValue
      760  MemoryBank_Astro_SetValue_Port
-      12  MemoryBank_Astro_UpdateEDonTime
+      24  MemoryBank_Astro_UpdateEDonTime
       14  MemoryBank_Astro_UpdateOpMode
        8  MemoryBank_Astro_UpdateStatus
        2  internal_ed_ontime
@@ -901,9 +902,9 @@ C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\
 
  
     52 bytes in section .bss
- 2 386 bytes in section .text
+ 2 398 bytes in section .text
  
- 2 386 bytes of CODE memory
+ 2 398 bytes of CODE memory
     52 bytes of DATA memory
 
 Errors: none

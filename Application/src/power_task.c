@@ -837,14 +837,14 @@ void Power_ControlLoopTask(void)
     g_uout_avg_adc = ADC_GetAverage(ADC_CHANNEL_UOUT);
     
     
-        uint8_t *pinfo; //add test
-    sprintf((char*)tx_buff, "%d \n", g_iout_avg_adc);
-    pinfo=tx_buff;
-        while(*pinfo != '\0')
-    {
-        XMC_UART_CH_Transmit(USART_CHANNEL, *pinfo);
-        pinfo++;
-    }
+//        uint8_t *pinfo; //add test
+//    sprintf((char*)tx_buff, "%d \n", g_iout_avg_adc);
+//    pinfo=tx_buff;
+//        while(*pinfo != '\0')
+//    {
+//        XMC_UART_CH_Transmit(USART_CHANNEL, *pinfo);
+//        pinfo++;
+//    }
     /* Update 1-10V Dimming Level */
     if(SWT_CheckTimer(SWT_ID_ONE2TEN) != SWT_STATUS_OK)
     {
@@ -1474,20 +1474,35 @@ void Power_ControlLoopTask(void)
 void Power_nfc_handle(void)
 {
   extern uint8_t g_nfc_tag_read;
+  
+  extern uint32_t g_nfc_time;
+  
+  static uint8_t count_time=0;
+  
   if(System_CheckTask(SYS_TASK_NFC_HANDLE) == SYS_TASK_DISABLE)
   {
     return;
   }
   
-  //nfc_time_hanlde();
+  nfc_time_hanlde();
   
   AstroTimer();
   
   if(g_nfc_tag_read==4)
-  SWT_StartTimer(SWT_ID_NFC_HANDLE, NFC_HANDLE_TIME);
+  {
+    SWT_StartTimer(SWT_ID_NFC_HANDLE, NFC_HANDLE_TIME); 
+    
+    if(count_time++>=1)
+    {
+          g_nfc_time+=30;
+          count_time=0;
+          //P2_1_toggle();
+    }
+  }
   else
-  SWT_StartTimer(SWT_ID_NFC_HANDLE, 5);  
-  
+  {
+    SWT_StartTimer(SWT_ID_NFC_HANDLE, 1);  
+  }
   System_CloseTask( SYS_TASK_NFC_HANDLE );
   
 }

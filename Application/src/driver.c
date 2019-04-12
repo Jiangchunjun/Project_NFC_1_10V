@@ -61,7 +61,7 @@ uint8_t g_nfc_flag_save=0;
 
 typedef struct
 {
-	uint16_t  mode ;
+	uint8_t  mode ;
   	int16_t  duration[8];
 	uint16_t  level[8];
 	uint16_t  fade[8];
@@ -94,9 +94,9 @@ void nfc_time_record(void)
 {
     static uint8_t  g_nfc_flag_record=0; //set time period
     
-    g_nfc_time=InfoMPC_GetLampOnMinutes(0)*60;
+    //g_nfc_time=InfoMPC_GetLampOnMinutes(0)*60; //get running time
     
-    if(g_nfc_time-g_nfc_fast_save_time>119&&g_nfc_flag_record==0)//every 2 minute.
+    if(g_nfc_time-g_nfc_fast_save_time>179&&g_nfc_flag_record==0)//every 3 minute. total 3*24 72min
     {
       g_nfc_flag_record=1;
       
@@ -123,7 +123,7 @@ void nfc_time_record(void)
           
           g_nfc_flag_record=0;  //close 60s flag
           
-          if(g_nfc_time_id++>=47)// block++;if it is up to number 47 , need to set to num 0
+          if(g_nfc_time_id++>=23)// block++;if it is up to number 47 , need to set to num 0
           {
             
             g_nfc_time_id=0;  //set block num to 0
@@ -155,14 +155,19 @@ uint8_t nfc_time_id(void)
     static uint8_t index_flag=0, time_id_flag=0,read_flag=0;
     extern i2c_local_state_t        i2c_local_state;
     
-    if(!time_id_flag)
+    if(time_id_flag==0)
     {
+      
     nfc_local_state.fast_timer_cnt = 0;
     
     switch (index_flag)
     {
       
     case 0:
+      
+      //index_flag=1; //read_data first
+      
+      
       if(read_flag==0)
       {
         if(I2cRead(NFC_TIME_ADRRESS+4*id_index,&s_arr[0+4*id_index],4)==1)//read first 60 byte time data //all the time data
@@ -170,24 +175,28 @@ uint8_t nfc_time_id(void)
           read_flag=1;
         } 
       }
-      if(read_flag==1)
+      else
       {
-        if(i2c_local_state.rx_request.is_filled ==false)// read judge is_filled.
-        {        
-          I2cCyclic();
-          id_index++;
-          read_flag=0;
-          //nfc_local_state.fast_timer_cnt = 0;
+        if(read_flag==1)
+        {
+          if(i2c_local_state.rx_request.is_filled ==false)// read judge is_filled.
+          {        
+            //I2cCyclic();
+            id_index++;
+            read_flag=0;
+            //nfc_local_state.fast_timer_cnt = 0;
+          }
+          
         }
+      }
         
-        
-        
-        if(id_index>47)
+        if(id_index>23)
         {
           id_index=0;
           index_flag=1; //read_data first
+          //time_id_flag=1;
         }
-      }
+
       
       break;
       
@@ -240,7 +249,7 @@ uint8_t nfc_time_id(void)
       
       g_nfc_fast_save_time=g_nfc_time;//fast time saving every 2min
     
-    return j;  // return maximum time record index id.
+    //return j;  // return maximum time record index id.
     
     break;
     
@@ -259,8 +268,8 @@ calculate ed time and record ed time.
 bool nfc_ed_record(void)
 {
   static uint8_t ed_index, ed_count,i,index_read=0;
-  static uint8_t test_data[24],index_flag=0;
-  static bool ed_read=0;
+  static uint8_t test_data[24],index_flag=0,read_flag=0;
+  static bool ed_read=0,update_flag=0;
   static uint32_t runtime_pre;
   uint32_t ed_time;
   extern i2c_local_state_t        i2c_local_state;
@@ -274,8 +283,19 @@ bool nfc_ed_record(void)
   switch (index_flag)   
   {
     
-  case 0: 
-    if (I2cRead(NFC_ED_TIME_ADRESS+4*index_read,&test_data[index_read*4],4)==1)
+  case 0:
+    
+     nfc_local_state.fast_timer_cnt=0; // reset slow timer count
+     
+    if(read_flag==0)
+    {
+      if (I2cRead(NFC_ED_TIME_ADRESS+4*index_read,&test_data[index_read*4],4)==1)
+      {
+        read_flag=1;
+      }
+    }
+    
+    if(read_flag==1)
     {
       
       if(i2c_local_state.rx_request.is_filled ==false)// read judge is_filled.
@@ -283,6 +303,8 @@ bool nfc_ed_record(void)
         I2cCyclic(); 
         
         index_read++;
+        
+        read_flag=0;
         //nfc_local_state.fast_timer_cnt = 0;
       }
       
@@ -308,6 +330,16 @@ bool nfc_ed_record(void)
           ed_index=0;
 
         ed_count= test_data[1];
+        
+        if(MemoryBank_Astro_GetStartEDontime(0)==0)// reset ed time
+          
+        {
+          ed_index=0;
+          test_data[0]=0;
+          
+          ed_count=0;
+          test_data[1]=0;         
+        }
       /*read ed record count*/        
         if(ed_count==0XFF)
         {
@@ -364,7 +396,9 @@ bool nfc_ed_record(void)
           }
           
           test_data[1]=ed_count;
-
+          
+          update_flag=1;
+ 
           
         }
         
@@ -397,12 +431,23 @@ bool nfc_ed_record(void)
         if(g_ed_time>=1440)
           g_ed_time=1440;
         
+        MemoryBank_Astro_UpdateEDonTime(0,g_ed_time);
+        
+        if(update_flag==1)
+        {
+          g_nfc_flag_save=1;
+          
+          update_flag=0;
+        }
+        
         index_flag=3;
         
         break;
         
       case 3:
-        
+         
+         nfc_local_state.fast_timer_cnt=0; // reset slow timer count
+         
          if (I2cWrite(NFC_ED_TIME_ADRESS,test_data,24)==1)
          {
            ed_read=1;
@@ -436,7 +481,7 @@ uint16_t AstroInit(void)
     static uint8_t temp_read=0;
 #ifdef ENASTRO   
 	//  -------------------------------------------------------- get parameters
-                
+        //MemoryBank_Astro_GetMode(0);        
         MemoryBank_Astro_GetValue(6,(uint8_t *)&dimmer.mode,0) ; 
         
         MemoryBank_Astro_GetValue(12,&temp_read,0) ;    
@@ -656,7 +701,7 @@ uint16_t AstroTimer(void)
     static uint32_t s_dim_percent=0;
     uint8_t i=0;
     uint16_t temp;
-    uint8_t  tx_buff[9];
+    static uint8_t  tx_buff[4];
     static uint8_t min_level_count=50;
     
     if(g_astro_flag)
@@ -743,10 +788,10 @@ uint16_t AstroTimer(void)
       }
       if(flag)
       {
-        if ( dimmer.stepcounter[ dimStep ] )
+        if ( dimmer.stepcounter[ dimStep ]>=0)
         {
           /*counter couting*/
-          dimmer.stepcounter[dimStep]-- ;   
+          dimmer.stepcounter[dimStep]-=1 ;   
           
           if(astro_flag==1)  
           {   
@@ -837,19 +882,25 @@ uint16_t AstroTimer(void)
     } 
     else
     {
-      if((I2cAreAllPendingTransfersDone()==1)&&nfc_local_state.fsm_state==nfc_fsm_state_idle)
+       if (getMainsTimerMinutes() >= H24_CYCLE_MINUTES&&(dimmer.mode  == 1))// >>>  24 h TEST <<<<<<<<<<
       {
         /*nfc is idle*/
-        if (getMainsTimerMinutes() >= H24_CYCLE_MINUTES&&(dimmer.mode  == 1))// >>>  24 h TEST <<<<<<<<<<
-        {					                
-          //while (M24LRxx_WriteBuffer(NFC_RUNTIME_PRE,4,g_nfc_time)!=I2C_CODE_OK) //invalid on-time  and clear current working time      				                   
+          
+          if((I2cAreAllPendingTransfersDone()==1)&&nfc_local_state.fsm_state==nfc_fsm_state_idle)
+        {
+          nfc_local_state.fast_timer_cnt=0; // reset slow timer count
+          tx_buff[3]=g_nfc_time>>24;
+          tx_buff[2]=(uint8_t)(g_nfc_time>>16);
+          tx_buff[1]=(uint8_t)(g_nfc_time>>8);
+          tx_buff[0]=(uint8_t)g_nfc_time;
+          if (I2cWrite(NFC_ED_TIME_ADRESS+4,tx_buff,4)==1)// (M24LRxx_WriteBuffer(NFC_RUNTIME_PRE,4,g_nfc_time)!=I2C_CODE_OK) //invalid on-time  and clear current working time      				                   
           {
+            /*Reset current on time*/
+            g_last_ontime=g_nfc_time;
+            AstroInit(); 						// restart Astro !        
+            /*reset astro dimming first flag*/
+            astro_first=0;
           }
-          /*Reset current on time*/
-          g_last_ontime=g_nfc_time;
-          AstroInit(); 						// restart Astro !        
-          /*reset astro dimming first flag*/
-          astro_first=0;
         }
       }
     }
@@ -903,15 +954,15 @@ hanlde eol feature
 * @Note    
 * @Return 
 *******************************************************************************/
-void nfc_eol_handle(void)
+void nfc_eol_handle(void) //call every 500ms
 {
     static uint8_t eol_flag=0;// 0: default ;1: no eol; 2; eol is enable 3; eol handle is ongoing; 4:eol handle is finished
     static uint32_t time_cout=0;
     if(eol_flag==0)
     {
-        if(1)//(mem_bank_nfc.mem_bank_eol.Eol_enable==0x01)//eol is enable
+        if(MemoryBank_EOL_GetEnable(0)==1)//(mem_bank_nfc.mem_bank_eol.Eol_enable==0x01)//eol is enable
         {
-            //if(g_nfc_time>(mem_bank_nfc.mem_bank_eol.Eol_time*3600*1000))
+            if(g_nfc_time>(MemoryBank_EOL_GetEOLtime(0)*3600*1000))
             {
                 eol_flag=2;
             }
@@ -930,11 +981,11 @@ void nfc_eol_handle(void)
         }
         if(eol_flag==3)
         {
-            if(time_cout++>=(200*600))
+            if(time_cout++>=(60*2))//1min
             {
                 eol_flag=4;//finished eol handle
-                //mem_bank_nfc.mem_bank_eol.Eol_status=0x01;
-                Power_SetEolDimmingLevel(10000);//set to 25%
+                MemoryBank_Eol_UpdateStatus(0,1);//mem_bank_nfc.mem_bank_eol.Eol_status=0x01;
+                Power_SetEolDimmingLevel(10000);//set to 100%
                 time_cout=0;
             }
         }
@@ -982,6 +1033,7 @@ void nfc_time_hanlde()
 {
   uint8_t temp_mode=0;
   extern uint8_t g_nfc_tag_read;
+  uint32_t temp;
   
   if(nfc_local_state.fsm_state==nfc_fsm_state_idle&&I2cAreAllPendingTransfersDone())
   {
@@ -991,8 +1043,17 @@ void nfc_time_hanlde()
       
       if(nfc_time_id()==1)
       {
+        
+        temp=(ConstantLumen_GetFactor(0)*10000);
+        
+        temp=temp>>14;
+        
+        Power_SetConstantLumenValue(temp);
+        
         g_nfc_tag_read=3;
       }
+      
+      
       
       break;
       
@@ -1008,7 +1069,6 @@ void nfc_time_hanlde()
           
           g_astro_flag=1;
           
-          //System_CreateTask(SYS_TASK_NFC_HANDLE);
         }
       }
       else
@@ -1019,7 +1079,6 @@ void nfc_time_hanlde()
           
           g_astro_flag=1;
           
-          //System_CreateTask(SYS_TASK_NFC_HANDLE);
         }
         g_nfc_tag_read=4;
       }
@@ -1029,6 +1088,8 @@ void nfc_time_hanlde()
     case 4:
       
        nfc_time_record();
+       
+       nfc_eol_handle();
       
       break;
       

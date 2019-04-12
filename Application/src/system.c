@@ -203,6 +203,18 @@ void System_PowerOnTask(void)
             
             //nfc_ed_record(); 
             
+//            while(nfc_time_id()==0)
+//            {
+//              I2cCyclic();
+//              NfcWatchdogResetRequest();
+//            }
+            
+            //System_CreateTask(SYS_TASK_NFC_HANDLE);
+            SWT_StartTimer(SWT_ID_NFC_HANDLE, 1);
+            
+            /* swtich to next state */
+            
+            
             g_nfc_ini_flag=1;
             
             if(g_nfc_tag_read==1)
@@ -210,10 +222,6 @@ void System_PowerOnTask(void)
               g_nfc_tag_read=2;
             }
             
-            //System_CreateTask(SYS_TASK_NFC_HANDLE);
-            SWT_StartTimer(SWT_ID_NFC_HANDLE, 200);
-            
-            /* swtich to next state */
             state++;            
         }
         break;

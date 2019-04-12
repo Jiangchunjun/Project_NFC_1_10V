@@ -41,7 +41,7 @@ int main(void)
     MCU_PowerOnInit();   
     
     //AstroInit();    
-             
+       P2_1_set_mode(OUTPUT_PP_GP);//update         
     /*------------ Application Task Runtime Routine -------------------------*/
     while(1)
     {
@@ -58,9 +58,9 @@ int main(void)
         Power_nfc_handle();
         
         Power_ControlLoopTask();
-        System_SleepTask();
+        //System_SleepTask();
         
-        System_WakeupTask();
+        //System_WakeupTask();
         
         if(g_nfc_ini_flag==1)
         {
