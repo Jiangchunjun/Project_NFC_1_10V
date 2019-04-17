@@ -74,7 +74,7 @@
 
 /* ADC Step Respond define */
 //#define ADC_STEP_DIFFER_I       (50)//50
-#define ADC_STEP_DIFFER_U       (100)    /* about 3.4V */
+#define ADC_STEP_DIFFER_U       (300)    /* about 3.4V */
 #define ADC_STEP_RESPOND_COUNT  (5)
 //#define ADC_STEP_DIFFER_I       (15)
 //#define ADC_STEP_DIFFER_U       (25)    /* about 3.4V */

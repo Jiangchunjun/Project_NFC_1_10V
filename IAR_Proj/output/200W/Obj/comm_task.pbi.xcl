@@ -136,7 +136,7 @@ C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Import\modules\NfcExt\M24LRx
 -I
 C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\NVM
 -I
-C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\Info\Application\src\modules\NVM\api
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\Application\src\modules\NVM\api
 -I
 C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\NVM\driver_api
 -I

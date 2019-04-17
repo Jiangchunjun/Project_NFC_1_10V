@@ -2209,7 +2209,7 @@
           <state>ENABLT_WDT</state>
           <state>ENABLE_COMM</state>
           <state>ENABLE_USART</state>
-          <state>NDEBUG_PRINT</state>
+          <state>nDEBUG_PRINT</state>
           <state>nDEBUG_VERSION</state>
           <state>MODULE_I2C</state>
           <state>MODULE_M24LRxx</state>
@@ -2221,7 +2221,13 @@
           <state>ENABLE_OVP</state>
           <state>ENABLE_MOBILE</state>
           <state>ENABLE_ONE2TEN</state>
-          <state>ENABLE_LOOP_OVP_OCP1</state>
+          <state>BYTEORDER_LITTLE_ENDIAN</state>
+          <state>AVAILABLE_PORTS_NUMBER=3</state>
+          <state>FW_HIGH=01</state>
+          <state>FW_LOW=02</state>
+          <state>ENASTRO</state>
+          <state>MPC_O2T_DEFAULT_SETTINGS</state>
+          <state>MPC_O2T_DEFAULT_BOUNDARIES</state>
         </option>
         <option>
           <name>CCPreprocFile</name>
@@ -2365,6 +2371,40 @@
           <state>$PROJ_DIR$\..\Import\modules\I2cExt\driver_api</state>
           <state>$PROJ_DIR$\..\Import\modules\NfcExt\api</state>
           <state>$PROJ_DIR$\..\Import\modules\NfcExt\M24LRxx</state>
+          <state>$PROJ_DIR$\..\Application\src\modules\NVM</state>
+          <state>PROJ_DIR$\..\Application\src\modules\NVM\api</state>
+          <state>$PROJ_DIR$\..\Application\src\modules\NVM\driver_api\</state>
+          <state>$PROJ_DIR$\..\Application\src\modules\NVM\driver_xmc1300\</state>
+          <state>$PROJ_DIR$\..\Application\src\modules\CRC\api</state>
+          <state>$PROJ_DIR$\..\Application\src\modules\CRC\driver_api\</state>
+          <state>$PROJ_DIR$\..\Application\src\modules\currentset</state>
+          <state>$PROJ_DIR$\..\Application\src\modules\supplymonitor</state>
+          <state>$PROJ_DIR$\..\Application\src\modules\Dali\DaliServices</state>
+          <state>$PROJ_DIR$\..\Application\src\modules\Dali\HW</state>
+          <state>$PROJ_DIR$\..\Application\src\modules\Dali\iFace\Modules</state>
+          <state>$PROJ_DIR$\..\Application\src\modules\Dali\iFace\Optional</state>
+          <state>$PROJ_DIR$\..\Application\src\modules\Dali\iFace\Services</state>
+          <state>$PROJ_DIR$\..\Application\src\modules\MPC\Acl</state>
+          <state>$PROJ_DIR$\..\Application\src\modules\MPC\Alloc</state>
+          <state>$PROJ_DIR$\..\Application\src\modules\MPC\Alloc\Legacy</state>
+          <state>$PROJ_DIR$\..\Application\src\modules\MPC\Clm</state>
+          <state>$PROJ_DIR$\..\Application\src\modules\MPC\Csm</state>
+          <state>$PROJ_DIR$\..\Application\src\modules\MPC\Info</state>
+          <state>$PROJ_DIR$\..\Application\src\modules\MPC\MSK</state>
+          <state>$PROJ_DIR$\..\Application\src\modules\MPC\O2T</state>
+          <state>$PROJ_DIR$\..\Application\src\modules\MPC\AstroDim</state>
+          <state>$PROJ_DIR$\..\Application\src\modules\MPC\MSKEncryption</state>
+          <state>$PROJ_DIR$\..\Application\src\modules\MPC\Power</state>
+          <state>$PROJ_DIR$\..\Application\src\modules\MPC\EOL</state>
+          <state>$PROJ_DIR$\..\Application\src\modules\NFC</state>
+          <state>$PROJ_DIR$\..\Application\src\modules\I2C</state>
+          <state>$PROJ_DIR$\..\Application\src\modules\XMCLib\XMCLib\inc</state>
+          <state>$PROJ_DIR$\..\Application\src\modules\XMCLib\CMSIS\Include</state>
+          <state>$PROJ_DIR$\..\Application\src\modules\XMCLib\CMSIS\Infineon\XMC1300_series\Include</state>
+          <state>$PROJ_DIR$\..\Application\src\modules\CRC16</state>
+          <state>$PROJ_DIR$\..\Application\src\hwdrivers\XMC1300</state>
+          <state>$PROJ_DIR$\..\Application\src\modules\NVM\api</state>
+          <state>$PROJ_DIR$\..\Application\src\modules\supplymonitor</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>

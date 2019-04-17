@@ -791,7 +791,7 @@ uint16_t Power_GetOne2TenDimming(void)
 void Power_ControlLoopTask(void)
 {
     uint8_t i = 0;
-    uint16_t target_current = 0;    /* target current with dimming */
+    static uint16_t target_current = 0;    /* target current with dimming */
     uint16_t difference = 0;        /* difference between real and target value */
     uint16_t pwm_duty = 0;
     uint16_t adjust_speed = 0;
@@ -873,9 +873,9 @@ void Power_ControlLoopTask(void)
     g_iout_real = (uint32_t)(g_iout_real * IOUT_COMPENSATION + IOUT_OFFSET);
         /* Get stable vlaue for I_out Add by moon 2018.3.9*/   
     temp1=g_iout_real;
-    temp2 += (((temp1<<10)- temp2)>>2);
+    temp2 += (((temp1<<10)- temp2)>>5);//2
     i_out_roll=temp2>>10;
-    if(abs(i_out_roll-g_iout_real)<10)
+    if(abs(i_out_roll-g_iout_real)<15)//10mA
     {
         g_iout_real=i_out_roll;
     }
@@ -1473,11 +1473,13 @@ void Power_ControlLoopTask(void)
 /*************************************************************************************************/
 void Power_nfc_handle(void)
 {
-  extern uint8_t g_nfc_tag_read;
+  extern uint8_t g_nfc_tag_read, g_nfc_flag_save;
   
   extern uint32_t g_nfc_time;
   
   static uint8_t count_time=0;
+  
+  static uint16_t nfc_save_time=0;
   
   if(System_CheckTask(SYS_TASK_NFC_HANDLE) == SYS_TASK_DISABLE)
   {
@@ -1494,10 +1496,17 @@ void Power_nfc_handle(void)
     
     if(count_time++>=1)
     {
-          g_nfc_time+=30;
-          count_time=0;
-          //P2_1_toggle();
+      g_nfc_time+=1;
+      count_time=0;
+      //P2_1_toggle();
+      if(nfc_save_time++>120)// nfc save time 67minutes
+      {
+        g_nfc_flag_save=1;
+        
+        nfc_save_time=0;
+      }
     }
+
   }
   else
   {

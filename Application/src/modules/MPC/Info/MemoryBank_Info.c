@@ -230,7 +230,7 @@ void MemoryBank_Info_SlowTimer( void )
   for( i = 0; i < DEVICE_CHANNELS; i++ ) {
     if ( DaliServices_GetOperatingMode( i ) != 0)                                 // lamp is ON if operating mode is set to AM or PWM
     {  infoCounter_t *actCounter = &mpcInfo.nvm.lampCounter[i];
-      actCounter->ticks+=30;
+      actCounter->ticks+=1;
       if (actCounter->ticks >= MPC_INFO_STT_PER_MINUTE) {
         if (actCounter->minutes < 0x00FFFFFE)
         {         

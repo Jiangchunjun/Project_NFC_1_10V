@@ -46,7 +46,7 @@
 //*************************** OT PSE *******************************************
 //******************************************************************************
 
-// ----------------- OTi PSE 50W -----------------------
+
 #ifdef OT_NFC_IP67_200W
 // validate multi device defines
 #ifdef device_type_is_defined
@@ -59,7 +59,19 @@
 #include "power_config_200w.h"
 #endif
 
+#ifdef OT_NFC_IP67_100W
+// validate multi device defines
+#ifdef device_type_is_defined
+#error "(parameter.h): ERROR - more than 1 device type is defined !!"
+#else
+#define device_type_is_defined
+#pragma message(":::::: (parameter.h): OTi PSE 50W is selected! ::::::")
+#endif
 
+
+
+#include "power_config_100w.h"
+#endif
 
 
 //******************************************************************************

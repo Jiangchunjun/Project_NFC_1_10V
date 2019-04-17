@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       12/Apr/2019  15:31:08
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       15/Apr/2019  16:02:25
 # Copyright 1999-2016 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -1661,44 +1661,53 @@ Warning[Pe223]: function "sprintf" declared implicitly
    1473          /*************************************************************************************************/
    1474          void Power_nfc_handle(void)
    1475          {
-   1476            extern uint8_t g_nfc_tag_read;
+   1476            extern uint8_t g_nfc_tag_read, g_nfc_flag_save;
    1477            
    1478            extern uint32_t g_nfc_time;
    1479            
    1480            static uint8_t count_time=0;
    1481            
-   1482            if(System_CheckTask(SYS_TASK_NFC_HANDLE) == SYS_TASK_DISABLE)
-   1483            {
-   1484              return;
-   1485            }
-   1486            
-   1487            nfc_time_hanlde();
+   1482            static uint16_t nfc_save_time=0;
+   1483            
+   1484            if(System_CheckTask(SYS_TASK_NFC_HANDLE) == SYS_TASK_DISABLE)
+   1485            {
+   1486              return;
+   1487            }
+   1488            
+   1489            nfc_time_hanlde();
                    ^
 Warning[Pe223]: function "nfc_time_hanlde" declared implicitly
-   1488            
-   1489            AstroTimer();
+   1490            
+   1491            AstroTimer();
                    ^
 Warning[Pe223]: function "AstroTimer" declared implicitly
-   1490            
-   1491            if(g_nfc_tag_read==4)
-   1492            {
-   1493              SWT_StartTimer(SWT_ID_NFC_HANDLE, NFC_HANDLE_TIME); 
-   1494              
-   1495              if(count_time++>=1)
-   1496              {
-   1497                    g_nfc_time+=30;
-   1498                    count_time=0;
-   1499                    //P2_1_toggle();
-   1500              }
-   1501            }
-   1502            else
-   1503            {
-   1504              SWT_StartTimer(SWT_ID_NFC_HANDLE, 1);  
-   1505            }
-   1506            System_CloseTask( SYS_TASK_NFC_HANDLE );
-   1507            
-   1508          }
-   1509          /**************** (C) COPYRIGHT OSRAM Asia Pacific Management Company *********END OF FILE*********/
+   1492            
+   1493            if(g_nfc_tag_read==4)
+   1494            {
+   1495              SWT_StartTimer(SWT_ID_NFC_HANDLE, NFC_HANDLE_TIME); 
+   1496              
+   1497              if(count_time++>=1)
+   1498              {
+   1499                g_nfc_time+=1;
+   1500                count_time=0;
+   1501                //P2_1_toggle();
+   1502                if(nfc_save_time++>120)// nfc save time 67minutes
+   1503                {
+   1504                  g_nfc_flag_save=1;
+   1505                  
+   1506                  nfc_save_time=0;
+   1507                }
+   1508              }
+   1509          
+   1510            }
+   1511            else
+   1512            {
+   1513              SWT_StartTimer(SWT_ID_NFC_HANDLE, 1);  
+   1514            }
+   1515            System_CloseTask( SYS_TASK_NFC_HANDLE );
+   1516            
+   1517          }
+   1518          /**************** (C) COPYRIGHT OSRAM Asia Pacific Management Company *********END OF FILE*********/
 
    Maximum stack usage in bytes:
 
@@ -1837,6 +1846,8 @@ Warning[Pe223]: function "AstroTimer" declared implicitly
        4  ??DataTable21_15
        4  ??DataTable21_16
        4  ??DataTable21_17
+       4  ??DataTable21_18
+       4  ??DataTable21_19
        4  ??DataTable21_2
        4  ??DataTable21_3
        4  ??DataTable21_4
@@ -1912,7 +1923,7 @@ Warning[Pe223]: function "AstroTimer" declared implicitly
       50  Power_SetEolDimmingLevel
       44  Power_TaskInit
      356  Power_UpdateOne2TenDimming
-      90  Power_nfc_handle
+     120  Power_nfc_handle
        1  count_time
        1  delay
        4  dim_level_1_10
@@ -1946,6 +1957,7 @@ Warning[Pe223]: function "AstroTimer" declared implicitly
        2  g_uout_avg_adc
        2  g_uout_real
        4  i_out_roll
+       2  nfc_save_time
        1  s_flag_off
        1  s_hiccup_counter
        4  s_min_level
@@ -1959,14 +1971,14 @@ Warning[Pe223]: function "AstroTimer" declared implicitly
        4  u_out_roll
 
  
-    85 bytes in section .bss
+    87 bytes in section .bss
     21 bytes in section .data
     88 bytes in section .rodata
- 4 250 bytes in section .text
+ 4 288 bytes in section .text
  
- 4 250 bytes of CODE  memory
+ 4 288 bytes of CODE  memory
     88 bytes of CONST memory
-   106 bytes of DATA  memory
+   108 bytes of DATA  memory
 
 Errors: none
 Warnings: 14

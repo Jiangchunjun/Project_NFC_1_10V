@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       12/Apr/2019  15:33:53
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       16/Apr/2019  11:20:02
 # Copyright 1999-2016 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -365,7 +365,7 @@ C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\
     230            for( i = 0; i < DEVICE_CHANNELS; i++ ) {
     231              if ( DaliServices_GetOperatingMode( i ) != 0)                                 // lamp is ON if operating mode is set to AM or PWM
     232              {  infoCounter_t *actCounter = &mpcInfo.nvm.lampCounter[i];
-    233                actCounter->ticks+=30;
+    233                actCounter->ticks+=1;
     234                if (actCounter->ticks >= MPC_INFO_STT_PER_MINUTE) {
     235                  if (actCounter->minutes < 0x00FFFFFE)
     236                  {         

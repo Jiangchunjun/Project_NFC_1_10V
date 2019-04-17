@@ -271,7 +271,7 @@
 #define OCP_OVP_TRIGGER_COUNTER     (3)     /* exceed such times will active OCP/OVP protection */
 
 
-#define ADC_STEP_DIFFER_I       (300)//50
+#define ADC_STEP_DIFFER_I       (400)//300
 #define ADC_BUFFER_SIZE_IOUT    (20)//240
 /* Max PWM Duty Tolerance define */
 //#define MAX_DUTY_TOLERANCE          (20)

@@ -12,12 +12,104 @@
 
 #if defined(OT_NFC_IP67_100W)
 
+
+// EAN
+#define GLOBAL_DEVICE_EAN                                   4062172060677
+#define GLOBAL_DMAT_NO                                      0x30010259UL
+#define GLOBAL_BASIC_CODE_STRING                            "AM27585 "
+//#define NFC_TIME_ADRRESS
+//#define FLASH_TIME_ADDRESS                                   0X10010010
+// DALI
+#define POWERon_DELAY_TIME_ms                                               (120)
+
+// ADC Mult Factor
+#define GLOBAL_ULINE1_ADC_FACTOR                            120804UL            // (3.45V/4096) * 1e6 * ((4700kOhm + 33kOhm) / 33kOhm) = 120.804
+
+// NVM SIZE
+#define GLOBAL_NVM_SIZE_KBYTE                               64
+
+// NFC enable
+#define GLOBAL_NFC_ENABLED                                  true
+
+/** Module BOOSTPFC */
+#define GLOBAL_BOOSTPFC_CHOKE                               CHOKE_D30000602
+#define GLOBAL_BOOSTPFC_INDUCTIVITY_uH                      1500
+#define GLOBAL_BOOSTPFC_VRAIL_OPER_AC                       VOLTS(400)
+#define GLOBAL_BOOSTPFC_VRAIL_OPER_DC                       VOLTS(400)
+#define GLOBAL_BOOSTPFC_VRAIL_VLINE_DELTA                   VOLTS(50)
+#define GLOBAL_BOOSTPFC_VRAIL_INCREASE_MAXVOLTS             VOLTS(430)
+
+
+/** Module CurrentSet */
+// Label values
+#define I_LED_MIN                                           150UL
+#define I_LED_MAX                                           700UL
+
+
+// [W]
+#define GLOBAL_MIN_POWER                                    20
+// [W]
+#define GLOBAL_MIN_POWER_EL                                 27
+
+
+//uA
+#define LEDSET_MAXCURRENT                                   I_LED_MAX*1000
+//uA
+#define LEDSET_MINCURRENT                                   I_LED_MIN*500
+//uA
+#define CURRENTSET_ABS_MINCURRENT_UA                        (1400)
+
+
+// Currentset Vin power reduction
+#define CURRENTSET_U_P_RED_VOLTAGE_LIMIT_AC                 VOLTS(277)
+#define CURRENTSET_U_P_RED_VOLTAGE_LIMIT_DC                 VOLTS(195)
+#define CURRENTSET_U_P_RED_VOLTAGE_LOW_AC                   VOLTS(248)
+#define CURRENTSET_U_P_RED_VOLTAGE_LOW_DC                   VOLTS(176)
+#define CURRENTSET_U_P_RED_VOLTAGE_FACTOR_AC                (15165UL)
+#define CURRENTSET_U_P_RED_VOLTAGE_FACTOR_DC                (23147UL)
+#define CURRENTSET_U_P_RED_VOLTAGE_FACTOR_AC_MAX            (0.6)
+#define CURRENTSET_U_P_RED_VOLTAGE_FACTOR_DC_MAX            (0.6)
+
+#define CURRENTSET_STABLE_TIME_ms                           (700)
+
+// Temperature [K] limit for thermal power reduction
+#define TEMP_LIMIT_NOM_K                                    96
+#define TEMP_DELTA_EL_K                                     30
+
+
+/** Module Kernel */
+///< [W] Max output power at the LED string
+#define GLOBAL_POWER_OUTPUT_MAX_W                           75
+
+// LEDset conversion data
+#if LEDSET_R_CORRECTION==0
+#warning ::::::::::::::::::::::::::: Using original LEDset resistor (wrong for MP) :::::::::::::::::::::::::::
+#define LEDSET_M                                            (30591)
+#define LEDSET_Q                                            (1783687)
+#define LEDSET_ADC_LIMIT                                    (15000)
+#define LEDSET_RESISTOR_SUM_OHM                             (2970.0)
+#else
+#define LEDSET_M                                            (32913)
+#define LEDSET_Q                                            (1900065)
+#define LEDSET_ADC_LIMIT                                    (15000)
+#define LEDSET_RESISTOR_SUM_OHM                             (3030.0)
+#endif
+
+// Power memory bank conversion data
+#define GPC_P_STANDBY                                       (15)    //theoretical Standby Power
+#define GPC_M                                               (9673)
+#define GPC_Q                                               (124)
+
+// Calibration
+#define CALIBRATION_VLED_CORRECTION                         (0)
+
+
 #ifndef _POWER_CONFIG_100W_H
 #define _POWER_CONFIG_100W_H
 
 /* Power Control Loop Task Period define, unit: ms */
-#define POWER_TASK_PERIOD       12//(12)       /* 12ms */
-#define POWER_TASK_PERIOD_LOW   8//(8)       /* 5ms */
+#define POWER_TASK_PERIOD       5//(12)       /* 12ms */
+#define POWER_TASK_PERIOD_LOW   3//(8)       /* 5ms */
 
 /*---------------- Device Specific Information ---------------------*/
 /* GTIN Number */
@@ -91,8 +183,8 @@
 
 /*----------- PWM Adjust Speed and Choose Condition define ---------*/
 /* PWM Adjustment Speed define */
-#define PWM_SPEED_HIGH          (20)//(20)        /* PWM High speed adjustment:   +/- 2.0%  */
-#define PWM_SPEED_MID           (8)//(8)         /* PWM Middle speed adjustment: +/- 0.8%  */
+#define PWM_SPEED_HIGH          (10)//(20)        /* PWM High speed adjustment:   +/- 2.0%  */
+#define PWM_SPEED_MID           (3)//(8)         /* PWM Middle speed adjustment: +/- 0.8%  */
 #define PWM_SPEED_LOW           (1)         /* PWM Low speed adjustment:    +/- 0.1%  */
 #define PWM_SPEED_STEP          (0)         /* PWM step adjustment: call step function*/
 
@@ -109,7 +201,7 @@
 #define PWM_STABLE_UOUT_2       (20)        /* Unit: 0.1%, PWM Stable Voltage Range: 2.0% */
 #define PWM_STABLE_IOUT_2       (5)         /* Unit: 0.1%, PWM Stable Current Range: 0.5% */
 /*----- above divide use threshold 2 --------*/
-#define IOUT_DIVIDER_2_1        (700)       /* Current divider for section2 and section1 */
+#define IOUT_DIVIDER_2_1        (400)       /* Current divider for section2 and section1 */
 /*----- below divide use threshold 1 --------*/
 #define IOUT_THRESHOLD_HIGH_1   (200)       /* PWM High speed threshold:   > 350mA */
 #define IOUT_THRESHOLD_MID_1    (50)        /* PWM Middle speed threshold: > 50mA  */
@@ -138,8 +230,8 @@
 
 /*------------------ Compensation Coefficient  ---------------------*/
 /* Compensation Coefficient for calculate output current when disable DEBUG PRINT */
-#define IOUT_COMPENSATION       (0.8749)//(1.01)      /* Output current has about 1% higher when disable DEBUG PRINT */
-#define IOUT_OFFSET             (7.8)       /* Iout offset value */
+#define IOUT_COMPENSATION       (0.8664)//(1.01)      /* Output current has about 1% higher when disable DEBUG PRINT */
+#define IOUT_OFFSET             (0)       /* Iout offset value */
 
 /* Compensation coefficient for Uout detect */
 #define UOUT_COMPENSATION       (1)    /* Make sure output power can reach max power */
@@ -173,15 +265,15 @@
 #define OCP_CURRENT_CONST           (4500)  /* Unit: mA */
 
 /* OVP Exceed Voltage define, OVP Voltage = Target Max Voltage + Exceed Voltage */
-#define OVP_TRIGGER_EXCEED          (20)    /* Unit: V */
+#define OVP_TRIGGER_EXCEED          (15)    /* Unit: V */
 #define OVP_AVERAGE_EXCEED          (10)    /* Unit: V */
 
 /* OCP & OVP trigger counter for avoid error trigger condition */
 #define OCP_OVP_TRIGGER_COUNTER     (3)     /* exceed such times will active OCP/OVP protection */
 
 
-#define ADC_STEP_DIFFER_I       (300)//50
-#define ADC_BUFFER_SIZE_IOUT    (20)
+#define ADC_STEP_DIFFER_I       (400)//300
+#define ADC_BUFFER_SIZE_IOUT    (30)
 
 /*ONE_TEN PARAMETERS SETTING*/
 #define ONE_TEN_LOW_VOLTAGE 147 //180mV

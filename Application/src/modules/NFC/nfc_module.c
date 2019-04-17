@@ -48,7 +48,7 @@
 
 #include "system.h"
 #include <gpio_xmc1300_tssop38.h>
-
+#include "i2c_local.h"
 //------------------------------------------------------------------------------
 // local variables
 //------------------------------------------------------------------------------
@@ -1614,17 +1614,17 @@ bool is_slow_timer_expired(void)
 {
   extern uint8_t g_nfc_flag_save;
   
-     P2_1_toggle();
+     //P2_1_toggle();
      
     if (nfc_local_state.slow_timer_cnt < NFC_SLOW_TIMER_CNT)
     {
-        nfc_local_state.slow_timer_cnt+=30;
+        nfc_local_state.slow_timer_cnt+=1;
         return false;
     }
     else
     {
         nfc_local_state.slow_timer_cnt = 0;
-        g_nfc_flag_save=1;
+        //g_nfc_flag_save=1;
         return true;
     }
 }
@@ -1795,7 +1795,9 @@ void nfc_mpc_start_addr_create(mpc_keydata_t const * const * mpc_keydata_ptr,
  */
 void NfcInit(void)
 {
-
+   static uint8_t status_data[4];
+    extern i2c_local_state_t        i2c_local_state;
+    
     // set initial FSM state
     nfc_local_state.fsm_state = nfc_fsm_state_idle;
     // initialize power on condition to true
@@ -1839,8 +1841,8 @@ void NfcInit(void)
     // set TAG Status Register to Reserved to 0
     nfc_local_state.tag_status_register.reserved = 0;
 
-    // request to write Status Register to set status to ECG on
-    nfc_local_state.is_write_tag_status_reg_requested = true;
+    //ECG status check
+   
 
     // set local state to no CRC failure
     nfc_local_state.is_crc_error_read = false;
@@ -1894,7 +1896,26 @@ void NfcInit(void)
     // initialize I2C
     I2cInit();
     
- 
+      // request to write Status Register to set status to ECG on
+    
+    while(I2cRead(252,status_data,4)==0)
+    {   
+      I2cCyclic();
+      NfcWatchdogResetRequest();
+    }
+    
+    while(false != i2c_local_state.rx_request.is_filled)
+    {
+      I2cCyclic();
+      NfcWatchdogResetRequest();
+    }
+    
+    if(status_data[0]==0&&status_data[1]==0&&status_data[2]==0X1D&&status_data[3]==0X0F)
+    
+    nfc_local_state.is_write_tag_status_reg_requested = false; //no need to update  true
+    
+    else
+      nfc_local_state.is_write_tag_status_reg_requested = true; //no need to update  true
 }
 
 //-----------------------------------------------------------------------------

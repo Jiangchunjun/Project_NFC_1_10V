@@ -53,7 +53,7 @@ I2C during runtime. This flag is set at power down when I2C is switched on again
 #define NFC_RUNTIME_MPC_WRITE_BYTE_CNT                                         2
 
 /** NFC Fast Timer period given as cycle counts of function NfcCyclic() */
-#define NFC_FAST_TIMER_CNT                                                   1200//300
+#define NFC_FAST_TIMER_CNT                                                   4800//300
 
 /** NFC Slow Timer period given as cycle counts of function NfcCyclic()  //2k4 Hz 
  * set to 1h = 3600s * 2400 */
