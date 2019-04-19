@@ -108,8 +108,8 @@
 #define _POWER_CONFIG_100W_H
 
 /* Power Control Loop Task Period define, unit: ms */
-#define POWER_TASK_PERIOD       5//(12)       /* 12ms */
-#define POWER_TASK_PERIOD_LOW   3//(8)       /* 5ms */
+#define POWER_TASK_PERIOD       12//(12) 5      /* 12ms */
+#define POWER_TASK_PERIOD_LOW   8//(8)  3     /* 5ms */
 
 /*---------------- Device Specific Information ---------------------*/
 /* GTIN Number */
@@ -150,9 +150,9 @@
 
 /*---------------------- Power Level define ------------------------*/
 /* Current level define */
-#define CURRENT_LEVEL_0         (100)       /* min    ~ 100mA  */
-#define CURRENT_LEVEL_1         (220)       /* 100mA  ~ 220mA  */
-#define CURRENT_LEVEL_2         (350)       /* 220mA  ~ 350mA  */
+#define CURRENT_LEVEL_0         (300)       /* min    ~ 100mA  */
+#define CURRENT_LEVEL_1         (500)       /* 100mA  ~ 220mA  */
+#define CURRENT_LEVEL_2         (500)       /* 220mA  ~ 350mA  */
 #define CURRENT_LEVEL_3         (500)       /* 350mA  ~ 500mA  */
 #define CURRENT_LEVEL_4         (600)       /* 500mA  ~ 600mA  */
 #define CURRENT_LEVEL_5         (700)       /* 600mA  ~ 700mA  */
@@ -167,53 +167,53 @@
 /*-------------- Power Level Init PWM Duty define -----------------*/
 /* Initial Control PWM duty define */
 #define INIT_CTRL_DUTY_DEFAULT  (30)        /* 3.0%  */
-#define INIT_CTRL_DUTY_0        (50)        /* 5.0%  */
-#define INIT_CTRL_DUTY_1        (80)        /* 8.0% */
-#define INIT_CTRL_DUTY_2        (107)       /* 10.7% */
-#define INIT_CTRL_DUTY_3        (119)       /* 11.9% */
-#define INIT_CTRL_DUTY_4        (140)       /* 14.0% */
-#define INIT_CTRL_DUTY_5        (174)       /* 17.4% */
-#define INIT_CTRL_DUTY_6        (227)       /* 22.7% */
-#define INIT_CTRL_DUTY_7        (445)       /* 44.5% */
-#define INIT_CTRL_DUTY_8        (536)       /* 53.6% */
-#define INIT_CTRL_DUTY_9        (568)       /* 56.8% */
-#define INIT_CTRL_DUTY_10       (606)       /* 60.6% */
-#define INIT_CTRL_DUTY_11       (638)       /* 63.8% */
-#define INIT_CTRL_DUTY_12       (675)       /* 67.5% */
+#define INIT_CTRL_DUTY_0        (100)        /* 3.5%  */
+#define INIT_CTRL_DUTY_1        (100)        /* 8.0%  */
+#define INIT_CTRL_DUTY_2        (100)       /* 12.0% */
+#define INIT_CTRL_DUTY_3        (100)       /* 12.0% */
+#define INIT_CTRL_DUTY_4        (100)       /* 23.8% */
+#define INIT_CTRL_DUTY_5        (400)       /* 29.0% */
+#define INIT_CTRL_DUTY_6        (400)       /* 35.0% */
+#define INIT_CTRL_DUTY_7        (413)       /* 41.3% */
+#define INIT_CTRL_DUTY_8        (430)       /* 45.0% */
+#define INIT_CTRL_DUTY_9        (450)       /* 50.0% */
+#define INIT_CTRL_DUTY_10       (500)       /* 56.8% */
+#define INIT_CTRL_DUTY_11       (540)       /* 56.8% */
+#define INIT_CTRL_DUTY_12       (580)       /* 56.8% */
 
 /*----------- PWM Adjust Speed and Choose Condition define ---------*/
 /* PWM Adjustment Speed define */
-#define PWM_SPEED_HIGH          (10)//(20)        /* PWM High speed adjustment:   +/- 2.0%  */
-#define PWM_SPEED_MID           (3)//(8)         /* PWM Middle speed adjustment: +/- 0.8%  */
+#define PWM_SPEED_HIGH          (20)//(20)  10      /* PWM High speed adjustment:   +/- 2.0%  */
+#define PWM_SPEED_MID           (8)//(8) 3        /* PWM Middle speed adjustment: +/- 0.8%  */
 #define PWM_SPEED_LOW           (1)         /* PWM Low speed adjustment:    +/- 0.1%  */
 #define PWM_SPEED_STEP          (0)         /* PWM step adjustment: call step function*/
 
 /* PWM Adjustment Speed for Low Current (<250mA) define */
-#define PWM_SPEED_L3            3//(10)        /* PWM adjust: +/- 1.0%  */
-#define PWM_SPEED_L2            2//(2)         /* PWM adjust: +/- 0.2%  */
+#define PWM_SPEED_L3            3//(10) 3       /* PWM adjust: +/- 1.0%  */
+#define PWM_SPEED_L2            2//(2)   2      /* PWM adjust: +/- 0.2%  */
 #define PWM_SPEED_L1            1//(5)         /* PWM adjust: 5 steps   */ //Moon change to 1
 
 /*--------------- Output Power Stable Condition define -------------*/
 /* Current Control PWM Speed Threshold define */
-#define IOUT_THRESHOLD_HIGH_2   (200)       /* PWM High speed threshold:   > 250mA */
-#define IOUT_THRESHOLD_MID_2    (35)        /* PWM Middle speed threshold: > 35mA  */
-#define IOUT_THRESHOLD_LOW_2    (10)        /* PWM Middle speed threshold: > 10mA  */
+#define IOUT_THRESHOLD_HIGH_2   (300)       /* PWM High speed threshold:   > 250mA */
+#define IOUT_THRESHOLD_MID_2    (40)        /* PWM Middle speed threshold: > 35mA  */
+#define IOUT_THRESHOLD_LOW_2    (20)        /* PWM Middle speed threshold: > 10mA  */
 #define PWM_STABLE_UOUT_2       (20)        /* Unit: 0.1%, PWM Stable Voltage Range: 2.0% */
 #define PWM_STABLE_IOUT_2       (5)         /* Unit: 0.1%, PWM Stable Current Range: 0.5% */
 /*----- above divide use threshold 2 --------*/
 #define IOUT_DIVIDER_2_1        (400)       /* Current divider for section2 and section1 */
 /*----- below divide use threshold 1 --------*/
-#define IOUT_THRESHOLD_HIGH_1   (200)       /* PWM High speed threshold:   > 350mA */
-#define IOUT_THRESHOLD_MID_1    (50)        /* PWM Middle speed threshold: > 50mA  */
-#define IOUT_THRESHOLD_LOW_1    (20)        /* PWM Middle speed threshold: > 12mA  */
+#define IOUT_THRESHOLD_HIGH_1   (300)       /* PWM High speed threshold:   > 350mA */
+#define IOUT_THRESHOLD_MID_1    (35)        /* PWM Middle speed threshold: > 50mA  */
+#define IOUT_THRESHOLD_LOW_1    (15)        /* PWM Middle speed threshold: > 12mA  */
 #define PWM_STABLE_UOUT_1       (20)        /* Unit: 0.1%, PWM Stable Voltage Range: 2.0% */
 #define PWM_STABLE_IOUT_1       (10)        /* Unit: 0.1%, PWM Stable Current Range: 1.0% */
 /*----- above divide use threshold 1 --------*/
-#define IOUT_DIVIDER_1_0        (300)       /* Current divider for section1 and section0 */
+#define IOUT_DIVIDER_1_0        (50)       /* Current divider for section1 and section0 */
 /*----- below divide use threshold 0 --------*/
-#define IOUT_THRESHOLD_HIGH_0   (70)        /* PWM High speed threshold:    > 60mA */
-#define IOUT_THRESHOLD_MID_0    (50)        /* PWM Middle speed threshold:  > 40mA */
-#define IOUT_THRESHOLD_LOW_0    (30)        /* PWM Middle speed threshold: > 20mA */
+#define IOUT_THRESHOLD_HIGH_0   (60)        /* PWM High speed threshold:    > 60mA */
+#define IOUT_THRESHOLD_MID_0    (25)        /* PWM Middle speed threshold:  > 40mA */
+#define IOUT_THRESHOLD_LOW_0    (10)        /* PWM Middle speed threshold: > 20mA */
 #define PWM_STABLE_UOUT_0       (20)        /* Unit: 0.1%, PWM Stable Voltage Range: 2.0% */
 #define PWM_STABLE_IOUT_0       (10)        /* Unit: 0.1%, PWM Stable Current Range: 1.0% */
 
@@ -272,8 +272,8 @@
 #define OCP_OVP_TRIGGER_COUNTER     (3)     /* exceed such times will active OCP/OVP protection */
 
 
-#define ADC_STEP_DIFFER_I       (400)//300
-#define ADC_BUFFER_SIZE_IOUT    (30)
+#define ADC_STEP_DIFFER_I       (400)//30
+#define ADC_BUFFER_SIZE_IOUT    (40)
 
 /*ONE_TEN PARAMETERS SETTING*/
 #define ONE_TEN_LOW_VOLTAGE 147 //180mV

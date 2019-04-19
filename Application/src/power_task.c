@@ -805,6 +805,10 @@ void Power_ControlLoopTask(void)
     static uint16_t g_set_current=400,g_test_current=0;
     static uint8_t delay=0;
     static uint32_t g_power_current=0,g_power_current_pre=0;
+    
+    static uint16_t start_time=0;
+    static uint8_t start_flag=0;
+    
     int32_t test1;
 
     uint8_t  tx_buff[20]; 
@@ -826,8 +830,15 @@ void Power_ControlLoopTask(void)
     {
         return;
     }
-
-        
+    
+    if(start_flag==0)
+    {
+      if(start_time++>2500/POWER_TASK_PERIOD)
+      {
+        start_flag=1;
+      }
+    }
+    
     /*-------- Get Output Average Result from ADC Module -----------------------*/    
     /* Calculate average ADC */
     ADC_CalculateAverage();
@@ -873,7 +884,7 @@ void Power_ControlLoopTask(void)
     g_iout_real = (uint32_t)(g_iout_real * IOUT_COMPENSATION + IOUT_OFFSET);
         /* Get stable vlaue for I_out Add by moon 2018.3.9*/   
     temp1=g_iout_real;
-    temp2 += (((temp1<<10)- temp2)>>5);//2
+    temp2 += (((temp1<<10)- temp2)>>2);//2
     i_out_roll=temp2>>10;
     if(abs(i_out_roll-g_iout_real)<15)//10mA
     {
@@ -1082,20 +1093,20 @@ void Power_ControlLoopTask(void)
     }
  /*power off judge**/   
 #ifndef OT_NFC_IP67_100W 
-    if(s_flag_off==0)
-    {
-      if(delay++>50)
-      {
-        delay=150;
-        
-        if(((g_iout_real+50)<target_current)&&(s_one_ten_update==0)&&(target_current<400))
-        {
-          s_flag_off=1;
-          //PWM_EnterProtection();
-          delay=0;
-        }
-      }  
-    }
+//    if(s_flag_off==0)
+//    {
+//      if(delay++>50)
+//      {
+//        delay=150;
+//        
+//        if(((g_iout_real+50)<target_current)&&(s_one_ten_update==0)&&(target_current<400))
+//        {
+//          s_flag_off=1;
+//          //PWM_EnterProtection();
+//          delay=0;
+//        }
+//      }  
+//    }
 #endif   
 //    uint8_t *pinfo; //add test
 //    sprintf((char*)tx_buff, "%d \n", PWM_GetDuty(PWM_ID_CH_CTRL));
@@ -1188,13 +1199,19 @@ void Power_ControlLoopTask(void)
                 {
                     if(adjust_speed == PWM_SPEED_MID)
                     {
+                      if(start_flag==0)
                         pwm_duty = PWM_GetDuty(PWM_ID_CH_CTRL) + PWM_SPEED_L2;
+                      else
+                        pwm_duty = PWM_GetDuty(PWM_ID_CH_CTRL) + 1;
                     }
                     else
                     {
+                      if(start_flag==0)
                         pwm_duty = PWM_GetDuty(PWM_ID_CH_CTRL) + PWM_SPEED_L3;
+                      else
+                        pwm_duty = PWM_GetDuty(PWM_ID_CH_CTRL) + 1;
                     }
-                
+                    
                     if(pwm_duty > g_max_pwm_duty)
                     {
                         pwm_duty = g_max_pwm_duty; 
@@ -1209,6 +1226,8 @@ void Power_ControlLoopTask(void)
                 pwm_duty = PWM_GetDuty(PWM_ID_CH_CTRL);
                 
                 /* Calculate Next PWM duty */
+                if(adjust_speed<9)
+                  adjust_speed=4;
                 pwm_duty += adjust_speed;
                 if(pwm_duty > g_max_pwm_duty)  //if(pwm_duty > PWM_DUTY_FULL)
                 {
@@ -1326,7 +1345,10 @@ void Power_ControlLoopTask(void)
                     }
                     else
                     {
+                      if(start_flag==0)
                         adjust_speed = PWM_SPEED_L3;
+                      else
+                        adjust_speed = 1;
                     }
                     pwm_duty = PWM_GetDuty(PWM_ID_CH_CTRL);
                     if(pwm_duty > adjust_speed)
@@ -1346,6 +1368,8 @@ void Power_ControlLoopTask(void)
                 /* Get current pwm duty cycle */
                 pwm_duty = PWM_GetDuty(PWM_ID_CH_CTRL);
                 
+                if(adjust_speed<9)
+                  adjust_speed=1;
                 /* Calculate Next PWM duty */
                 if(pwm_duty > adjust_speed)
                 {
