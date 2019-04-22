@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       16/Apr/2019  11:20:00
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       22/Apr/2019  09:57:14
 # Copyright 1999-2016 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -914,6 +914,7 @@ C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Driver\src\adc.c
        4  ??DataTable2_15
        4  ??DataTable2_16
        4  ??DataTable2_17
+       4  ??DataTable2_18
        4  ??DataTable2_2
        4  ??DataTable2_3
        4  ??DataTable2_4
@@ -935,12 +936,12 @@ C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Driver\src\adc.c
        4  ??DataTable4
        4  ??DataTable4_1
        4  ??DataTable7
+       4  ??DataTable7_1
        4  ??DataTable8
        4  ??DataTable8_1
        4  ??DataTable8_10
        4  ??DataTable8_11
        4  ??DataTable8_12
-       4  ??DataTable8_13
        4  ??DataTable8_2
        4  ??DataTable8_3
        4  ??DataTable8_4
@@ -956,7 +957,7 @@ C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Driver\src\adc.c
       46  ADC_GetAverage
       46  ADC_GetSample
        6  ADC_GetStartFlag
-     532  ADC_ReadResult
+     536  ADC_ReadResult
       28  ADC_SHS_Calibration
       16  XMC_VADC_GROUP_GetResult
        8  XMC_VADC_GROUP_QueueInsertChannel
@@ -972,7 +973,7 @@ C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Driver\src\adc.c
        2  g_buffer_index_dim
        2  g_buffer_index_iout
        2  g_buffer_index_uout
-      40  g_buffer_iout
+      80  g_buffer_iout
      240  g_buffer_uout
       16  g_channel_handle_dim
       16  g_channel_handle_iout
@@ -992,14 +993,14 @@ C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Driver\src\adc.c
        1  s_step_count_u
 
  
-   547 bytes in section .bss
+   587 bytes in section .bss
      4 bytes in section .data
    120 bytes in section .rodata
- 1 486 bytes in section .text
+ 1 494 bytes in section .text
  
- 1 486 bytes of CODE  memory
+ 1 494 bytes of CODE  memory
    120 bytes of CONST memory
-   551 bytes of DATA  memory
+   591 bytes of DATA  memory
 
 Errors: none
 Warnings: 1

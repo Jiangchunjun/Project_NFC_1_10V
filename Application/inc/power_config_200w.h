@@ -272,7 +272,7 @@
 
 
 #define ADC_STEP_DIFFER_I       (400)//300
-#define ADC_BUFFER_SIZE_IOUT    (20)//240
+#define ADC_BUFFER_SIZE_IOUT    (40)//240
 /* Max PWM Duty Tolerance define */
 //#define MAX_DUTY_TOLERANCE          (20)
 

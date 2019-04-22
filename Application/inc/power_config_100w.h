@@ -108,8 +108,8 @@
 #define _POWER_CONFIG_100W_H
 
 /* Power Control Loop Task Period define, unit: ms */
-#define POWER_TASK_PERIOD       12//(12) 5      /* 12ms */
-#define POWER_TASK_PERIOD_LOW   8//(8)  3     /* 5ms */
+#define POWER_TASK_PERIOD       10//(12) 5      /* 12ms */
+#define POWER_TASK_PERIOD_LOW   7//(8)  3     /* 5ms */
 
 /*---------------- Device Specific Information ---------------------*/
 /* GTIN Number */
@@ -183,14 +183,14 @@
 
 /*----------- PWM Adjust Speed and Choose Condition define ---------*/
 /* PWM Adjustment Speed define */
-#define PWM_SPEED_HIGH          (20)//(20)  10      /* PWM High speed adjustment:   +/- 2.0%  */
+#define PWM_SPEED_HIGH          (60)//(20)  10      /* PWM High speed adjustment:   +/- 2.0%  */
 #define PWM_SPEED_MID           (8)//(8) 3        /* PWM Middle speed adjustment: +/- 0.8%  */
 #define PWM_SPEED_LOW           (1)         /* PWM Low speed adjustment:    +/- 0.1%  */
 #define PWM_SPEED_STEP          (0)         /* PWM step adjustment: call step function*/
 
 /* PWM Adjustment Speed for Low Current (<250mA) define */
 #define PWM_SPEED_L3            3//(10) 3       /* PWM adjust: +/- 1.0%  */
-#define PWM_SPEED_L2            2//(2)   2      /* PWM adjust: +/- 0.2%  */
+#define PWM_SPEED_L2            1//(2)   2      /* PWM adjust: +/- 0.2%  */
 #define PWM_SPEED_L1            1//(5)         /* PWM adjust: 5 steps   */ //Moon change to 1
 
 /*--------------- Output Power Stable Condition define -------------*/
@@ -209,7 +209,7 @@
 #define PWM_STABLE_UOUT_1       (20)        /* Unit: 0.1%, PWM Stable Voltage Range: 2.0% */
 #define PWM_STABLE_IOUT_1       (10)        /* Unit: 0.1%, PWM Stable Current Range: 1.0% */
 /*----- above divide use threshold 1 --------*/
-#define IOUT_DIVIDER_1_0        (50)       /* Current divider for section1 and section0 */
+#define IOUT_DIVIDER_1_0        (250)       /* Current divider for section1 and section0 */
 /*----- below divide use threshold 0 --------*/
 #define IOUT_THRESHOLD_HIGH_0   (60)        /* PWM High speed threshold:    > 60mA */
 #define IOUT_THRESHOLD_MID_0    (25)        /* PWM Middle speed threshold:  > 40mA */
@@ -273,7 +273,7 @@
 
 
 #define ADC_STEP_DIFFER_I       (400)//30
-#define ADC_BUFFER_SIZE_IOUT    (40)
+#define ADC_BUFFER_SIZE_IOUT    (40)//40
 
 /*ONE_TEN PARAMETERS SETTING*/
 #define ONE_TEN_LOW_VOLTAGE 147 //180mV

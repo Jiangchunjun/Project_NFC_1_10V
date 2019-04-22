@@ -808,7 +808,7 @@ void Power_ControlLoopTask(void)
     
     static uint16_t start_time=0;
     static uint8_t start_flag=0;
-    
+    static uint8_t current_minus_flag=0;
     int32_t test1;
 
     uint8_t  tx_buff[20]; 
@@ -833,7 +833,7 @@ void Power_ControlLoopTask(void)
     
     if(start_flag==0)
     {
-      if(start_time++>2500/POWER_TASK_PERIOD)
+      if(start_time++>4500/POWER_TASK_PERIOD)
       {
         start_flag=1;
       }
@@ -890,6 +890,19 @@ void Power_ControlLoopTask(void)
     {
         g_iout_real=i_out_roll;
     }
+    if(g_iout_real<250&&current_minus_flag==0)
+    {
+      current_minus_flag=1;
+    }
+    else
+    {
+      if(g_iout_real>270&&g_iout_real==1)
+      {
+        current_minus_flag=0;
+      }
+    }
+    if(current_minus_flag==1)
+      g_iout_real+=5;
     /* Target current with dimming control */
     target_current = (uint16_t)((uint32_t)g_target_current * g_astro_dimming_level / POWER_MAX_DIMMING);
     /* Target current with constant lumen control */
@@ -899,7 +912,7 @@ void Power_ControlLoopTask(void)
 #ifdef ENABLE_ONE2TEN
     /* Target current with 1-10V dimming level */
     target_current = (uint16_t)((uint32_t)target_current * g_one2ten_dimming_level / POWER_MAX_DIMMING);
-    //target_current=1400;
+    //target_current=135;
     //target_current=g_set_current; //add test code moon
         /* Update control loop current adjustment speed threshold */
 #endif    
@@ -1080,7 +1093,7 @@ void Power_ControlLoopTask(void)
     else
         test1=target_current-g_iout_real;
     //test1=abs((int16_t)(g_iout_real-target_current));
-    if (test1<5)//current tolerance when current
+    if (test1<2)//current tolerance when current
     {
         g_iout_real=target_current;
         g_control_loop_state = POWER_STATE_KEEP;
@@ -1091,6 +1104,118 @@ void Power_ControlLoopTask(void)
         sprintf((char*)tx_buff, "%3d.%1d \n", g_iout_real);
         USART_PrintInfo(tx_buff);
     }
+    
+    /***** new loop control *************************************************/
+    
+    switch(g_control_loop_state)
+    {
+      case POWER_STATE_INCREASE:
+        
+        
+        pwm_duty = PWM_GetDuty(PWM_ID_CH_CTRL);
+        
+        if((target_current-g_iout_real)>500)
+        {
+          pwm_duty+=20;
+          if(pwm_duty > g_max_pwm_duty)
+          {
+            pwm_duty = g_max_pwm_duty; 
+            USART_PrintInfo("-MAX- ");
+          }
+          PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
+        }
+        else
+        {
+          if((target_current-g_iout_real)>200)
+          {
+            pwm_duty+=8;//5
+            
+            if(pwm_duty > g_max_pwm_duty)
+            {
+              pwm_duty = g_max_pwm_duty; 
+              USART_PrintInfo("-MAX- ");
+            }
+            
+            PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
+          }
+          else
+          {
+            if((target_current-g_iout_real)>50)
+            {
+              pwm_duty+=2;//3
+              
+              if(pwm_duty > g_max_pwm_duty)
+              {
+                pwm_duty = g_max_pwm_duty; 
+                USART_PrintInfo("-MAX- ");
+              }
+              
+              PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
+            }
+            else
+              if((target_current-g_iout_real)>30)
+              {
+                pwm_duty+=1;
+                
+                if(pwm_duty > g_max_pwm_duty)
+                {
+                  pwm_duty = g_max_pwm_duty; 
+                  USART_PrintInfo("-MAX- ");
+                }
+                
+                PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
+              }
+              else 
+                PWM_DutyStepUp(PWM_ID_CH_CTRL, 1);//Moon change 1
+          }
+        }
+        
+        
+        
+        break;
+        
+      case POWER_STATE_DECREASE:  
+        
+        
+        pwm_duty = PWM_GetDuty(PWM_ID_CH_CTRL);
+        
+        if((g_iout_real-target_current)>300)
+        {
+          if(pwm_duty>5)
+            pwm_duty-=3;
+          else
+            pwm_duty=0;
+          
+          PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
+        }
+        else
+        {
+          if((g_iout_real-target_current)>30)
+          {
+            if(pwm_duty>1)
+              pwm_duty-=1;
+            else
+              pwm_duty=0;
+            
+            PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
+          }
+          else
+          {
+            PWM_DutyStepDown(PWM_ID_CH_CTRL, 1); //Moon change to 0
+          }
+        }
+        
+        
+        break;
+    
+    }
+    
+    
+    
+    
+    
+    
+    
  /*power off judge**/   
 #ifndef OT_NFC_IP67_100W 
 //    if(s_flag_off==0)
@@ -1117,330 +1242,335 @@ void Power_ControlLoopTask(void)
 //        pinfo++;
 //    }
     /*-------- Adjust PWM for Control Loop -------------------------------------*/
-    switch(g_control_loop_state)
-    {
-    case POWER_STATE_INCREASE:
-        /* Clear OVP & OCP counter */
-        g_OVP_counter = 0;
-        g_OCP_counter = 0;
-        
-        /* Calculate the difference between real value and target value */
-        difference = target_current - g_iout_real;
-        
-        /* Select Adjust Speed */
-        /* Current unstable has full range speed */
-        if(g_current_stable_flag != OUTPUT_STABLE)
-        {
-            if(difference < g_iout_threshold_low)
-            {
-                adjust_speed = PWM_SPEED_STEP;
-                USART_PrintInfo("UP ");
-            }
-            else if(difference < g_iout_threshold_mid)
-            {
-                adjust_speed = PWM_SPEED_LOW;
-                USART_PrintInfo("INC_L ");
-            }
-            else if(difference <g_iout_threshold_high)
-            {
-                adjust_speed = PWM_SPEED_MID;
-                USART_PrintInfo("INC_M ");
-            }
-            else
-            {
-                adjust_speed = PWM_SPEED_HIGH;
-                USART_PrintInfo("INC_H ");
-            }
-        }
-        /* Current enter stable condition, only have two speed */
-        else
-        {
-            if(difference < g_iout_threshold_low)
-            {
-                adjust_speed = PWM_SPEED_STEP;
-                USART_PrintInfo("UP ");
-            }
-            else
-            {
-                adjust_speed = PWM_SPEED_LOW;
-                USART_PrintInfo("INC_L ");
-            }
-        }
-        
-        /* Choose Adjust Mode and Update PWM Duty */
-        if(adjust_speed == PWM_SPEED_STEP)
-        {
-            if(PWM_GetDuty(PWM_ID_CH_CTRL) <= g_max_pwm_duty)
-            {
-                /* Step adjust mode, use step up function for fine turning */
-                PWM_DutyStepUp(PWM_ID_CH_CTRL, 1);//Moon change 1
-            }
-            else
-            {
-                USART_PrintInfo("-MAX- ");
-            }
-        }
-        else
-        {
-            if(target_current < IOUT_DIVIDER_1_0) 
-            {
-                if(adjust_speed == PWM_SPEED_LOW)
-                {
-                    if(PWM_GetDuty(PWM_ID_CH_CTRL) <= g_max_pwm_duty)
-                    {
-                        PWM_DutyStepUp(PWM_ID_CH_CTRL, PWM_SPEED_L1);
-                    }
-                    else
-                    {
-                        USART_PrintInfo("-MAX- ");
-                    }
-                }
-                else 
-                {
-                    if(adjust_speed == PWM_SPEED_MID)
-                    {
-                      if(start_flag==0)
-                        pwm_duty = PWM_GetDuty(PWM_ID_CH_CTRL) + PWM_SPEED_L2;
-                      else
-                        pwm_duty = PWM_GetDuty(PWM_ID_CH_CTRL) + 1;
-                    }
-                    else
-                    {
-                      if(start_flag==0)
-                        pwm_duty = PWM_GetDuty(PWM_ID_CH_CTRL) + PWM_SPEED_L3;
-                      else
-                        pwm_duty = PWM_GetDuty(PWM_ID_CH_CTRL) + 1;
-                    }
-                    
-                    if(pwm_duty > g_max_pwm_duty)
-                    {
-                        pwm_duty = g_max_pwm_duty; 
-                        USART_PrintInfo("-MAX- ");
-                    }
-                    PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
-                }
-            }
-            else
-            {
-                /* Get current pwm duty cycle */
-                pwm_duty = PWM_GetDuty(PWM_ID_CH_CTRL);
-                
-                /* Calculate Next PWM duty */
-                if(adjust_speed<9)
-                  adjust_speed=4;
-                pwm_duty += adjust_speed;
-                if(pwm_duty > g_max_pwm_duty)  //if(pwm_duty > PWM_DUTY_FULL)
-                {
-                    /* Upper limit */
-                    pwm_duty = g_max_pwm_duty; //pwm_duty = PWM_DUTY_FULL;
-                    USART_PrintInfo("-MAX- ");
-                }
-                
-                /* Set new PWM duty */
-                PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
-            }
-        }
-        break;
-        
-    case POWER_STATE_DECREASE:
-        /* Clear OVP & OCP counter */
-        g_OVP_counter = 0;
-        g_OCP_counter = 0;
-
-        /* Over Current State */
-        if(g_iout_real > target_current)
-        {        
-            /* Calculate the difference between real value and target value */
-            difference = g_iout_real - target_current;
-            
-            /* Select Adjust Speed for Over-Current State */
-            /* Current unstable has full range speed */
-            if(g_current_stable_flag != OUTPUT_STABLE)
-            {
-                if(difference < g_iout_threshold_low)
-                {
-                    adjust_speed = PWM_SPEED_STEP;
-                    USART_PrintInfo("DOWN ");
-                }
-                else if(difference < g_iout_threshold_mid)
-                {
-                    adjust_speed = PWM_SPEED_LOW;
-                    USART_PrintInfo("DEC_L ");
-                }
-                else if(difference < g_iout_threshold_high)
-                {
-                    adjust_speed = PWM_SPEED_MID;
-                    USART_PrintInfo("DEC_M ");
-                }
-                else
-                {
-                    adjust_speed = PWM_SPEED_HIGH;
-                    USART_PrintInfo("DEC_H ");
-                }
-            }
-            /* Current enter stable condition, only have two speed */
-            else
-            {
-                if(difference < g_iout_threshold_low)
-                {
-                    adjust_speed = PWM_SPEED_STEP;
-                    USART_PrintInfo("DOWN ");
-                }
-                else
-                {
-                    adjust_speed = PWM_SPEED_LOW;
-                    USART_PrintInfo("DEC_L ");
-                }
-            }
-        }
-        /* Over Voltage State */
-        else
-        {            
-            /* Calculate the difference between real value and target value */
-            difference = g_uout_real - g_max_voltage;
-            
-            /* Select Adjust Speed for Over-Voltage State */
-            /* Over voltage always has full adjust speed */
-            if(difference < UOUT_THRESHOLD_LOW)
-            {
-                adjust_speed = PWM_SPEED_STEP;
-                USART_PrintInfo("DOWN ");
-            }
-            else if(difference < UOUT_THRESHOLD_MID)
-            {
-                adjust_speed = PWM_SPEED_LOW;
-                USART_PrintInfo("DEC_L ");
-            }
-            else if(difference < UOUT_THRESHOLD_HIGH)
-            {
-                adjust_speed = PWM_SPEED_MID;
-                USART_PrintInfo("DEC_M ");
-            }
-            else
-            {
-                adjust_speed = PWM_SPEED_HIGH;
-                USART_PrintInfo("DEC_H ");
-            }
-        }
-        
-        /* Choose Adjust Mode and Update PWM Duty */
-        if(adjust_speed == PWM_SPEED_STEP)
-        {
-            /* Step adjust mode, use step down function for fine turning */
-            PWM_DutyStepDown(PWM_ID_CH_CTRL, 1); //Moon change to 0
-        }
-        else
-        {
-            if(target_current < IOUT_DIVIDER_1_0) 
-            {
-                if(adjust_speed == PWM_SPEED_LOW)
-                {
-                    PWM_DutyStepDown(PWM_ID_CH_CTRL, PWM_SPEED_L1);
-                }
-                else 
-                {
-                    if(adjust_speed == PWM_SPEED_MID)
-                    {
-                        adjust_speed = PWM_SPEED_L2;
-                    }
-                    else
-                    {
-                      if(start_flag==0)
-                        adjust_speed = PWM_SPEED_L3;
-                      else
-                        adjust_speed = 1;
-                    }
-                    pwm_duty = PWM_GetDuty(PWM_ID_CH_CTRL);
-                    if(pwm_duty > adjust_speed)
-                    {
-                        pwm_duty -= adjust_speed;
-                    }
-                    else
-                    {
-                        /* Lower limit */
-                        pwm_duty = 0;
-                    }
-                    PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
-                }
-            }
-            else
-            {
-                /* Get current pwm duty cycle */
-                pwm_duty = PWM_GetDuty(PWM_ID_CH_CTRL);
-                
-                if(adjust_speed<9)
-                  adjust_speed=1;
-                /* Calculate Next PWM duty */
-                if(pwm_duty > adjust_speed)
-                {
-                    pwm_duty -= adjust_speed;
-                }
-                else
-                {
-                    /* Lower limit */
-                    pwm_duty = 0;
-                }
-                
-                /* Set new PWM duty */
-                PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
-            }
-        }
-        break;
-
-#ifdef ENABLE_LOOP_OVP_OCP        
-    case POWER_STATE_OCP:
-        /* Update OCP counter */
-        g_OCP_counter++;
-        
-        /* Trigger protection function if match the trigger condition */
-        if(g_OCP_counter >= OCP_OVP_TRIGGER_COUNTER)
-        {
-            PWM_EnterProtection();
-            USART_PrintInfo("OCP_Now ");
-        }
-        break;
-        
-    case POWER_STATE_OVP:
-        /* Update OVP counter */
-        g_OVP_counter++;
-        
-        /* Trigger protection function if match the trigger condition */
-        if(g_OVP_counter >= OCP_OVP_TRIGGER_COUNTER)
-        {
-            //PWM_EnterProtection();
-            USART_PrintInfo("OVP_Now ");
-        }      
-        break;
-#endif /* ENABLE_LOOP_OVP_OCP*/
-
-    case POWER_STATE_KEEP:
-    default:
-        /* Clear OVP & OCP counter */
-        g_OVP_counter = 0;
-        g_OCP_counter = 0;
-        
-        /* Keep PWM duty */
-        USART_PrintInfo("KEEP ");
-        
-        /* Output current enter stable condition */
-        g_current_stable_flag = OUTPUT_STABLE;
-        
-#ifdef MAX_DUTY_TOLERANCE
-        if(g_max_duty_enable == 0)
-        {
-            g_max_duty_enable = 1;
-            stable_keep = 1;
-            
-            /* Update max pwm duty */
-            g_max_pwm_duty = PWM_GetDuty(PWM_ID_CH_CTRL) + MAX_DUTY_TOLERANCE; /* max duty + tolerance */
-        }
-#else
-        g_max_pwm_duty = 1000;
-#endif
-        break;
-    }
+//    switch(g_control_loop_state)
+//    {
+//    case POWER_STATE_INCREASE:
+//        /* Clear OVP & OCP counter */
+//        g_OVP_counter = 0;
+//        g_OCP_counter = 0;
+//        
+//        /* Calculate the difference between real value and target value */
+//        difference = target_current - g_iout_real;
+//        
+//        /* Select Adjust Speed */
+//        /* Current unstable has full range speed */
+//        if(g_current_stable_flag != OUTPUT_STABLE)
+//        {
+//            if(difference < g_iout_threshold_low)
+//            {
+//                adjust_speed = PWM_SPEED_STEP;
+//                USART_PrintInfo("UP ");
+//            }
+//            else if(difference < g_iout_threshold_mid)
+//            {
+//                adjust_speed = PWM_SPEED_LOW;
+//                USART_PrintInfo("INC_L ");
+//            }
+//            else if(difference <g_iout_threshold_high)
+//            {
+//                adjust_speed = PWM_SPEED_MID;
+//                USART_PrintInfo("INC_M ");
+//            }
+//            else
+//            {
+//                adjust_speed = PWM_SPEED_HIGH;
+//                USART_PrintInfo("INC_H ");
+//            }
+//        }
+//        /* Current enter stable condition, only have two speed */
+//        else
+//        {
+//            if(difference < g_iout_threshold_low)
+//            {
+//                adjust_speed = PWM_SPEED_STEP;
+//                USART_PrintInfo("UP ");
+//            }
+//            else
+//            {
+//                adjust_speed = PWM_SPEED_LOW;
+//                USART_PrintInfo("INC_L ");
+//            }
+//        }
+//        
+//        /* Choose Adjust Mode and Update PWM Duty */
+//        if(adjust_speed == PWM_SPEED_STEP)
+//        {
+//            if(PWM_GetDuty(PWM_ID_CH_CTRL) <= g_max_pwm_duty)
+//            {
+//                /* Step adjust mode, use step up function for fine turning */
+//                PWM_DutyStepUp(PWM_ID_CH_CTRL, 1);//Moon change 1
+//            }
+//            else
+//            {
+//                USART_PrintInfo("-MAX- ");
+//            }
+//        }
+//        else
+//        {
+//            if(target_current < IOUT_DIVIDER_1_0) 
+//            {
+//                if(adjust_speed == PWM_SPEED_LOW)
+//                {
+//                    if(PWM_GetDuty(PWM_ID_CH_CTRL) <= g_max_pwm_duty)
+//                    {
+//                        PWM_DutyStepUp(PWM_ID_CH_CTRL, PWM_SPEED_L1);
+//                    }
+//                    else
+//                    {
+//                        USART_PrintInfo("-MAX- ");
+//                    }
+//                }
+//                else 
+//                {
+//                    if(adjust_speed == PWM_SPEED_MID)
+//                    {
+//                      if(start_flag==0)
+//                        pwm_duty = PWM_GetDuty(PWM_ID_CH_CTRL) + PWM_SPEED_L2;
+//                      else
+//                        pwm_duty = PWM_GetDuty(PWM_ID_CH_CTRL) + 1;
+//                    }
+//                    else
+//                    {
+//                      if(start_flag==0)
+//                        pwm_duty = PWM_GetDuty(PWM_ID_CH_CTRL) + PWM_SPEED_L3;
+//                      else
+//                        pwm_duty = PWM_GetDuty(PWM_ID_CH_CTRL) + 1;
+//                    }
+//                    
+//                    if(pwm_duty > g_max_pwm_duty)
+//                    {
+//                        pwm_duty = g_max_pwm_duty; 
+//                        USART_PrintInfo("-MAX- ");
+//                    }
+//                    PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
+//                }
+//            }
+//            else
+//            {
+//                /* Get current pwm duty cycle */
+//                pwm_duty = PWM_GetDuty(PWM_ID_CH_CTRL);
+//                
+//                /* Calculate Next PWM duty */
+//                if(adjust_speed<9)
+//                {
+//                  if(g_iout_real<200&&start_flag==0)
+//                  adjust_speed=3;
+//                  else
+//                    adjust_speed=1;
+//                }
+//                pwm_duty += adjust_speed;
+//                if(pwm_duty > g_max_pwm_duty)  //if(pwm_duty > PWM_DUTY_FULL)
+//                {
+//                    /* Upper limit */
+//                    pwm_duty = g_max_pwm_duty; //pwm_duty = PWM_DUTY_FULL;
+//                    USART_PrintInfo("-MAX- ");
+//                }
+//                
+//                /* Set new PWM duty */
+//                PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
+//            }
+//        }
+//        break;
+//        
+//    case POWER_STATE_DECREASE:
+//        /* Clear OVP & OCP counter */
+//        g_OVP_counter = 0;
+//        g_OCP_counter = 0;
+//
+//        /* Over Current State */
+//        if(g_iout_real > target_current)
+//        {        
+//            /* Calculate the difference between real value and target value */
+//            difference = g_iout_real - target_current;
+//            
+//            /* Select Adjust Speed for Over-Current State */
+//            /* Current unstable has full range speed */
+//            if(g_current_stable_flag != OUTPUT_STABLE)
+//            {
+//                if(difference < g_iout_threshold_low)
+//                {
+//                    adjust_speed = PWM_SPEED_STEP;
+//                    USART_PrintInfo("DOWN ");
+//                }
+//                else if(difference < g_iout_threshold_mid)
+//                {
+//                    adjust_speed = PWM_SPEED_LOW;
+//                    USART_PrintInfo("DEC_L ");
+//                }
+//                else if(difference < g_iout_threshold_high)
+//                {
+//                    adjust_speed = PWM_SPEED_MID;
+//                    USART_PrintInfo("DEC_M ");
+//                }
+//                else
+//                {
+//                    adjust_speed = PWM_SPEED_HIGH;
+//                    USART_PrintInfo("DEC_H ");
+//                }
+//            }
+//            /* Current enter stable condition, only have two speed */
+//            else
+//            {
+//                if(difference < g_iout_threshold_low)
+//                {
+//                    adjust_speed = PWM_SPEED_STEP;
+//                    USART_PrintInfo("DOWN ");
+//                }
+//                else
+//                {
+//                    adjust_speed = PWM_SPEED_LOW;
+//                    USART_PrintInfo("DEC_L ");
+//                }
+//            }
+//        }
+//        /* Over Voltage State */
+//        else
+//        {            
+//            /* Calculate the difference between real value and target value */
+//            difference = g_uout_real - g_max_voltage;
+//            
+//            /* Select Adjust Speed for Over-Voltage State */
+//            /* Over voltage always has full adjust speed */
+//            if(difference < UOUT_THRESHOLD_LOW)
+//            {
+//                adjust_speed = PWM_SPEED_STEP;
+//                USART_PrintInfo("DOWN ");
+//            }
+//            else if(difference < UOUT_THRESHOLD_MID)
+//            {
+//                adjust_speed = PWM_SPEED_LOW;
+//                USART_PrintInfo("DEC_L ");
+//            }
+//            else if(difference < UOUT_THRESHOLD_HIGH)
+//            {
+//                adjust_speed = PWM_SPEED_MID;
+//                USART_PrintInfo("DEC_M ");
+//            }
+//            else
+//            {
+//                adjust_speed = PWM_SPEED_HIGH;
+//                USART_PrintInfo("DEC_H ");
+//            }
+//        }
+//        
+//        /* Choose Adjust Mode and Update PWM Duty */
+//        if(adjust_speed == PWM_SPEED_STEP)
+//        {
+//            /* Step adjust mode, use step down function for fine turning */
+//            PWM_DutyStepDown(PWM_ID_CH_CTRL, 1); //Moon change to 0
+//        }
+//        else
+//        {
+//            if(target_current < IOUT_DIVIDER_1_0) 
+//            {
+//                if(adjust_speed == PWM_SPEED_LOW)
+//                {
+//                    PWM_DutyStepDown(PWM_ID_CH_CTRL, PWM_SPEED_L1);
+//                }
+//                else 
+//                {
+//                    if(adjust_speed == PWM_SPEED_MID)
+//                    {
+//                        adjust_speed = PWM_SPEED_L2;
+//                    }
+//                    else
+//                    {
+//                      if(0)//start_flag==0)
+//                        adjust_speed = PWM_SPEED_L3;
+//                      else
+//                        adjust_speed = 1;
+//                    }
+//                    pwm_duty = PWM_GetDuty(PWM_ID_CH_CTRL);
+//                    if(pwm_duty > adjust_speed)
+//                    {
+//                        pwm_duty -= adjust_speed;
+//                    }
+//                    else
+//                    {
+//                        /* Lower limit */
+//                        pwm_duty = 0;
+//                    }
+//                    PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
+//                }
+//            }
+//            else
+//            {
+//                /* Get current pwm duty cycle */
+//                pwm_duty = PWM_GetDuty(PWM_ID_CH_CTRL);
+//                
+//                if(adjust_speed<9||g_iout_real<200)
+//                  adjust_speed=1;
+//                /* Calculate Next PWM duty */
+//                if(pwm_duty > adjust_speed)
+//                {
+//                    pwm_duty -= adjust_speed;
+//                }
+//                else
+//                {
+//                    /* Lower limit */
+//                    pwm_duty = 0;
+//                }
+//                
+//                /* Set new PWM duty */
+//                PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
+//            }
+//        }
+//        break;
+//
+//#ifdef ENABLE_LOOP_OVP_OCP        
+//    case POWER_STATE_OCP:
+//        /* Update OCP counter */
+//        g_OCP_counter++;
+//        
+//        /* Trigger protection function if match the trigger condition */
+//        if(g_OCP_counter >= OCP_OVP_TRIGGER_COUNTER)
+//        {
+//            PWM_EnterProtection();
+//            USART_PrintInfo("OCP_Now ");
+//        }
+//        break;
+//        
+//    case POWER_STATE_OVP:
+//        /* Update OVP counter */
+//        g_OVP_counter++;
+//        
+//        /* Trigger protection function if match the trigger condition */
+//        if(g_OVP_counter >= OCP_OVP_TRIGGER_COUNTER)
+//        {
+//            //PWM_EnterProtection();
+//            USART_PrintInfo("OVP_Now ");
+//        }      
+//        break;
+//#endif /* ENABLE_LOOP_OVP_OCP*/
+//
+//    case POWER_STATE_KEEP:
+//    default:
+//        /* Clear OVP & OCP counter */
+//        g_OVP_counter = 0;
+//        g_OCP_counter = 0;
+//        
+//        /* Keep PWM duty */
+//        USART_PrintInfo("KEEP ");
+//        
+//        /* Output current enter stable condition */
+//        g_current_stable_flag = OUTPUT_STABLE;
+//        
+//#ifdef MAX_DUTY_TOLERANCE
+//        if(g_max_duty_enable == 0)
+//        {
+//            g_max_duty_enable = 1;
+//            stable_keep = 1;
+//            
+//            /* Update max pwm duty */
+//            g_max_pwm_duty = PWM_GetDuty(PWM_ID_CH_CTRL) + MAX_DUTY_TOLERANCE; /* max duty + tolerance */
+//        }
+//#else
+//        g_max_pwm_duty = 1000;
+//#endif
+//        break;
+//    }
     
-#ifdef ENABLE_OVP
+#ifdef NOENABLE_OVP //no software ovp function
     /*-------- OVP Hiccup Process, Add in 2016.08.25 ---------------------------*/
     /* Iout very low and Uout reach max voltage means it was open/overload state */
     if((g_uout_real >= (g_max_voltage -  (uint32_t)g_max_voltage * g_pwm_stable_uout / 1000)) && /* Uout reach max voltage */
