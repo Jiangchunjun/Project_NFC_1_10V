@@ -44,7 +44,7 @@
 //#define POWER_TASK_PERIOD_LOW   (5)        /* 5ms */
 
 /* 1-10V signal update dimming level period */
-#define ONE2TEN_UPDATE_TIME     (100)       /* 100ms */ //update time from 100 to 30ms
+#define ONE2TEN_UPDATE_TIME     (30)       /* 100ms */ //update time from 100 to 30ms
 
 /* Set real load voltage delay time */
 #define SET_LOAD_VOL_TIME       (200)       /* 200ms + 300ms(power init) = 0.5s */

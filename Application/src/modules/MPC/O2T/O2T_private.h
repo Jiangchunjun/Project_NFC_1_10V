@@ -49,7 +49,7 @@
 ///        Otherwise the user has to define these values himself.
 //------------------------------------------------------------------------------
 #ifdef MPC_O2T_DEFAULT_SETTINGS
-  #define MPC_O2T_CONFIG_ENABLED            0
+  #define MPC_O2T_CONFIG_ENABLED            1
   #define MPC_O2T_CONFIG_MINDIMLEVEL        3276
 #endif
 #ifdef MPC_O2T_DEFAULT_BOUNDARIES

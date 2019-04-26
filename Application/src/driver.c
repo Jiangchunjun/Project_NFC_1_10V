@@ -981,7 +981,7 @@ void nfc_eol_handle(void) //call every 500ms
         }
         if(eol_flag==3)
         {
-            if(time_cout++>=(60*2))//1min
+            if(time_cout++>=(60*10))//10min
             {
                 eol_flag=4;//finished eol handle
                 MemoryBank_Eol_UpdateStatus(0,1);//mem_bank_nfc.mem_bank_eol.Eol_status=0x01;

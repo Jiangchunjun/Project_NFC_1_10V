@@ -73,6 +73,19 @@
 #include "power_config_100w.h"
 #endif
 
+#ifdef OT_NFC_IP67_150W
+// validate multi device defines
+#ifdef device_type_is_defined
+#error "(parameter.h): ERROR - more than 1 device type is defined !!"
+#else
+#define device_type_is_defined
+#pragma message(":::::: (parameter.h): OTi PSE 50W is selected! ::::::")
+#endif
+
+
+
+#include "power_config_150w.h"
+#endif
 
 //******************************************************************************
 //************************* ULTRAFLAT ******************************************

@@ -73,6 +73,8 @@ acl_cred_slot_t;
 #define ACL_PERM_DIMM_PARM        (1L << 18)
 #define ACL_PERM_GENERAL_FEATURES (1L << 20)
 #define ACL_PERM_DIM2DARK         (1L << 21)
+#define ACL_PERM_O2T              (1L << 22)
+#define ACL_PERM_ASTRODIM         (1L << 23)
 
 /** \brief Permissions to access Valuable Data entities.
  *

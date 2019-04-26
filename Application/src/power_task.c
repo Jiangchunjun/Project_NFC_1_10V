@@ -883,8 +883,11 @@ void Power_ControlLoopTask(void)
     /* Iout compensation when disable DEBUG PRINT */
     g_iout_real = (uint32_t)(g_iout_real * IOUT_COMPENSATION + IOUT_OFFSET);
         /* Get stable vlaue for I_out Add by moon 2018.3.9*/   
+    
+    if(g_iout_real<0)
+      g_iout_real=1;
     temp1=g_iout_real;
-    temp2 += (((temp1<<10)- temp2)>>2);//2
+    temp2 += (((temp1<<10)- temp2)>>4);//2
     i_out_roll=temp2>>10;
     if(abs(i_out_roll-g_iout_real)<15)//10mA
     {
@@ -902,7 +905,7 @@ void Power_ControlLoopTask(void)
       }
     }
     if(current_minus_flag==1)
-      g_iout_real+=5;
+      g_iout_real+=0;
     /* Target current with dimming control */
     target_current = (uint16_t)((uint32_t)g_target_current * g_astro_dimming_level / POWER_MAX_DIMMING);
     /* Target current with constant lumen control */
@@ -917,7 +920,7 @@ void Power_ControlLoopTask(void)
         /* Update control loop current adjustment speed threshold */
 #endif    
     temp3=g_uout_real;
-    temp4 += (((temp3<<10)- temp4)>>4);
+    temp4 += (((temp3<<10)- temp4)>>3);
     u_out_roll=temp4>>10;
     if(abs(u_out_roll-g_uout_real)<10)
     {
@@ -1021,7 +1024,7 @@ void Power_ControlLoopTask(void)
             else
             {            
                 /* Keep PWM duty */
-                g_control_loop_state = POWER_STATE_KEEP;
+                //g_control_loop_state = POWER_STATE_KEEP;
             }
         }
         /* Output voltage exceed the max output voltage */
@@ -1040,18 +1043,18 @@ void Power_ControlLoopTask(void)
         #endif
             {
                 /* Output voltage exceed the upper limit,  PWM duty will decrease */
-                g_control_loop_state = POWER_STATE_DECREASE;
+                //g_control_loop_state = POWER_STATE_DECREASE;
             }
             else
             {
                 /* Keep PWM duty */
-                g_control_loop_state = POWER_STATE_KEEP;
+                //g_control_loop_state = POWER_STATE_KEEP;
             }
         }
         else
         {
             /* Output voltage reach the upper limit, keep the PWM duty */
-            g_control_loop_state = POWER_STATE_KEEP;
+            //g_control_loop_state = POWER_STATE_KEEP;
         }
     }
     /* Output current exceed the target */
@@ -1075,7 +1078,7 @@ void Power_ControlLoopTask(void)
         else     
         {
             /* Keep PWM duty */
-            g_control_loop_state = POWER_STATE_KEEP;
+            //g_control_loop_state = POWER_STATE_KEEP;
         }
     }
     else
@@ -1093,7 +1096,7 @@ void Power_ControlLoopTask(void)
     else
         test1=target_current-g_iout_real;
     //test1=abs((int16_t)(g_iout_real-target_current));
-    if (test1<2)//current tolerance when current
+    if (test1<5)//current tolerance when current
     {
         g_iout_real=target_current;
         g_control_loop_state = POWER_STATE_KEEP;
@@ -1116,7 +1119,7 @@ void Power_ControlLoopTask(void)
         
         if((target_current-g_iout_real)>500)
         {
-          pwm_duty+=20;
+          pwm_duty+=20;//20
           if(pwm_duty > g_max_pwm_duty)
           {
             pwm_duty = g_max_pwm_duty; 
@@ -1128,7 +1131,7 @@ void Power_ControlLoopTask(void)
         {
           if((target_current-g_iout_real)>200)
           {
-            pwm_duty+=8;//5
+            pwm_duty+=5;//5
             
             if(pwm_duty > g_max_pwm_duty)
             {
@@ -1142,7 +1145,7 @@ void Power_ControlLoopTask(void)
           {
             if((target_current-g_iout_real)>50)
             {
-              pwm_duty+=2;//3
+              pwm_duty+=3;//3
               
               if(pwm_duty > g_max_pwm_duty)
               {
@@ -1182,7 +1185,7 @@ void Power_ControlLoopTask(void)
         if((g_iout_real-target_current)>300)
         {
           if(pwm_duty>5)
-            pwm_duty-=3;
+            pwm_duty-=5;
           else
             pwm_duty=0;
           
@@ -1190,10 +1193,10 @@ void Power_ControlLoopTask(void)
         }
         else
         {
-          if((g_iout_real-target_current)>30)
+          if((g_iout_real-target_current)>100)
           {
-            if(pwm_duty>1)
-              pwm_duty-=1;
+            if(pwm_duty>2)
+              pwm_duty-=2;
             else
               pwm_duty=0;
             
@@ -1201,6 +1204,16 @@ void Power_ControlLoopTask(void)
           }
           else
           {
+            if((g_iout_real-target_current)>30)
+            {
+              if(pwm_duty>1)
+                pwm_duty-=1;
+              else
+                pwm_duty=0;
+              
+              PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
+            }
+            else
             PWM_DutyStepDown(PWM_ID_CH_CTRL, 1); //Moon change to 0
           }
         }
@@ -1648,7 +1661,7 @@ void Power_nfc_handle(void)
   {
     SWT_StartTimer(SWT_ID_NFC_HANDLE, NFC_HANDLE_TIME); 
     
-    if(count_time++>=1)
+    if(count_time++>=1)// run every 1s
     {
       g_nfc_time+=1;
       count_time=0;

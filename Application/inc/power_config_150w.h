@@ -12,6 +12,97 @@
 
 #if defined(OT_NFC_IP67_150W)
 
+// EAN
+#define GLOBAL_DEVICE_EAN                                   4062172060691
+#define GLOBAL_DMAT_NO                                      0x30010259UL
+#define GLOBAL_BASIC_CODE_STRING                            "AM27586 "
+//#define NFC_TIME_ADRRESS
+//#define FLASH_TIME_ADDRESS                                   0X10010010
+// DALI
+#define POWERon_DELAY_TIME_ms                                               (120)
+
+// ADC Mult Factor
+#define GLOBAL_ULINE1_ADC_FACTOR                            120804UL            // (3.45V/4096) * 1e6 * ((4700kOhm + 33kOhm) / 33kOhm) = 120.804
+
+// NVM SIZE
+#define GLOBAL_NVM_SIZE_KBYTE                               64
+
+// NFC enable
+#define GLOBAL_NFC_ENABLED                                  true
+
+/** Module BOOSTPFC */
+#define GLOBAL_BOOSTPFC_CHOKE                               CHOKE_D30000602
+#define GLOBAL_BOOSTPFC_INDUCTIVITY_uH                      1500
+#define GLOBAL_BOOSTPFC_VRAIL_OPER_AC                       VOLTS(400)
+#define GLOBAL_BOOSTPFC_VRAIL_OPER_DC                       VOLTS(400)
+#define GLOBAL_BOOSTPFC_VRAIL_VLINE_DELTA                   VOLTS(50)
+#define GLOBAL_BOOSTPFC_VRAIL_INCREASE_MAXVOLTS             VOLTS(430)
+
+
+/** Module CurrentSet */
+// Label values
+#define I_LED_MIN                                           150UL
+#define I_LED_MAX                                           700UL
+
+
+// [W]
+#define GLOBAL_MIN_POWER                                    20
+// [W]
+#define GLOBAL_MIN_POWER_EL                                 27
+
+
+//uA
+#define LEDSET_MAXCURRENT                                   I_LED_MAX*1000
+//uA
+#define LEDSET_MINCURRENT                                   I_LED_MIN*500
+//uA
+#define CURRENTSET_ABS_MINCURRENT_UA                        (1400)
+
+
+// Currentset Vin power reduction
+#define CURRENTSET_U_P_RED_VOLTAGE_LIMIT_AC                 VOLTS(277)
+#define CURRENTSET_U_P_RED_VOLTAGE_LIMIT_DC                 VOLTS(195)
+#define CURRENTSET_U_P_RED_VOLTAGE_LOW_AC                   VOLTS(248)
+#define CURRENTSET_U_P_RED_VOLTAGE_LOW_DC                   VOLTS(176)
+#define CURRENTSET_U_P_RED_VOLTAGE_FACTOR_AC                (15165UL)
+#define CURRENTSET_U_P_RED_VOLTAGE_FACTOR_DC                (23147UL)
+#define CURRENTSET_U_P_RED_VOLTAGE_FACTOR_AC_MAX            (0.6)
+#define CURRENTSET_U_P_RED_VOLTAGE_FACTOR_DC_MAX            (0.6)
+
+#define CURRENTSET_STABLE_TIME_ms                           (700)
+
+// Temperature [K] limit for thermal power reduction
+#define TEMP_LIMIT_NOM_K                                    96
+#define TEMP_DELTA_EL_K                                     30
+
+
+/** Module Kernel */
+///< [W] Max output power at the LED string
+#define GLOBAL_POWER_OUTPUT_MAX_W                           75
+
+// LEDset conversion data
+#if LEDSET_R_CORRECTION==0
+#warning ::::::::::::::::::::::::::: Using original LEDset resistor (wrong for MP) :::::::::::::::::::::::::::
+#define LEDSET_M                                            (30591)
+#define LEDSET_Q                                            (1783687)
+#define LEDSET_ADC_LIMIT                                    (15000)
+#define LEDSET_RESISTOR_SUM_OHM                             (2970.0)
+#else
+#define LEDSET_M                                            (32913)
+#define LEDSET_Q                                            (1900065)
+#define LEDSET_ADC_LIMIT                                    (15000)
+#define LEDSET_RESISTOR_SUM_OHM                             (3030.0)
+#endif
+
+// Power memory bank conversion data
+#define GPC_P_STANDBY                                       (15)    //theoretical Standby Power
+#define GPC_M                                               (9673)
+#define GPC_Q                                               (124)
+
+// Calibration
+#define CALIBRATION_VLED_CORRECTION                         (0)
+
+
 #ifndef _POWER_CONFIG_150W_H
 #define _POWER_CONFIG_150W_H
 

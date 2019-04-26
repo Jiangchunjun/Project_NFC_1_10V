@@ -645,7 +645,7 @@ const mpc_descriptor_t MpcLegacyAstro_pw1 = {
     .version        = MemoryBank_Astro_Version,
     .attributes     = MPC_ATTRIB_DALI_LOCKBYTE | MPC_ATTRIB_PASSWORD1_PROT,
     .payload_off    = 5,
-    .permissions    = 0,
+    .permissions    = ACL_PERM_ASTRODIM,
     .length         = MemoryBank_Astro_LastAddress - (MPC_STD_PAYLOAD_OFFSET - 1),
   },
   .tables_len       = -1, // indicator for legacy mpc

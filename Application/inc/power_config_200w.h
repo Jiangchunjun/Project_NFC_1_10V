@@ -229,8 +229,8 @@
 
 /*------------------ Compensation Coefficient  ---------------------*/
 /* Compensation Coefficient for calculate output current when disable DEBUG PRINT */
-#define IOUT_COMPENSATION       ((0.8685))      /* Output current has about 1% higher when disable DEBUG PRINT */
-#define IOUT_OFFSET             (0)         /* Iout offset value */
+#define IOUT_COMPENSATION       ((0.8645))      /* Output current has about 1% higher when disable DEBUG PRINT */
+#define IOUT_OFFSET             (6)         /* Iout offset value */
 
 /* Compensation coefficient for Uout detect */
 #define UOUT_COMPENSATION       1//(9.61571225E-01)    /* Make sure output power can reach max power */

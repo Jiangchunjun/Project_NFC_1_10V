@@ -108,8 +108,8 @@
 #define _POWER_CONFIG_100W_H
 
 /* Power Control Loop Task Period define, unit: ms */
-#define POWER_TASK_PERIOD       10//(12) 5      /* 12ms */
-#define POWER_TASK_PERIOD_LOW   7//(8)  3     /* 5ms */
+#define POWER_TASK_PERIOD       10//(12) 5 10     /* 12ms */
+#define POWER_TASK_PERIOD_LOW   7//(8)  3  7   /* 5ms */
 
 /*---------------- Device Specific Information ---------------------*/
 /* GTIN Number */
@@ -230,8 +230,8 @@
 
 /*------------------ Compensation Coefficient  ---------------------*/
 /* Compensation Coefficient for calculate output current when disable DEBUG PRINT */
-#define IOUT_COMPENSATION       (0.8664)//(1.01)      /* Output current has about 1% higher when disable DEBUG PRINT */
-#define IOUT_OFFSET             (0)       /* Iout offset value */
+#define IOUT_COMPENSATION       0.8664//(0.8528)//(0.8490)//(1.01)      /* Output current has about 1% higher when disable DEBUG PRINT */
+#define IOUT_OFFSET             (5.519)       /* Iout offset value */
 
 /* Compensation coefficient for Uout detect */
 #define UOUT_COMPENSATION       (1)    /* Make sure output power can reach max power */
@@ -272,7 +272,7 @@
 #define OCP_OVP_TRIGGER_COUNTER     (3)     /* exceed such times will active OCP/OVP protection */
 
 
-#define ADC_STEP_DIFFER_I       (400)//30
+#define ADC_STEP_DIFFER_I       (600)//30
 #define ADC_BUFFER_SIZE_IOUT    (40)//40
 
 /*ONE_TEN PARAMETERS SETTING*/

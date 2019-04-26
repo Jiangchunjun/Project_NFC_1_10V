@@ -95,7 +95,7 @@
 #define configMemoryBank_Astro_level3                                       50
 #define configMemoryBank_Astro_level4                                      100
 
-#define configMemoryBank_Eol_enable                                          1  // off
+#define configMemoryBank_Eol_enable                                          0  // off
 #define configMemoryBank_Eol_eol_time                                       50
 
 
