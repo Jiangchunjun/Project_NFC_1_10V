@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       22/Apr/2019  14:03:59
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       29/Apr/2019  13:48:48
 # Copyright 1999-2016 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -400,7 +400,7 @@ Warning[Pe223]: function "DaliBallast_Init" declared implicitly
     251                      g_target_current=MemoryBank_CSM_GetNominalCurrent(0);
                                               ^
 Warning[Pe223]: function "MemoryBank_CSM_GetNominalCurrent" declared implicitly
-    252                      Power_SetCurrent(g_target_current, SET_MODE_POWER_ON);
+    252                      Power_SetCurrent(g_target_current, SET_MODE_POWER_ON);//
     253                      System_CreateTask(SYS_TASK_LOOP);
     254                      
     255                      /* swtich to next state */

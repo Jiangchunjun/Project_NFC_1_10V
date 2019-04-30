@@ -79,7 +79,7 @@ void Power_TaskInit(void)
     g_control_loop_state = POWER_STATE_KEEP;
      
     /* Set to global variable */
-    Power_SetCurrent(g_target_current, SET_MODE_POWER_ON);
+    Power_SetCurrent(g_target_current, SET_MODE_NORMAL);//
     
     /* Start timer for set real load voltage */
     SWT_StartTimer(SWT_ID_SET_LOAD, SET_LOAD_VOL_TIME);
@@ -884,7 +884,7 @@ void Power_ControlLoopTask(void)
     g_iout_real = (uint32_t)(g_iout_real * IOUT_COMPENSATION + IOUT_OFFSET);
         /* Get stable vlaue for I_out Add by moon 2018.3.9*/   
     
-    if(g_iout_real<0)
+    if(g_iout_real<=0)
       g_iout_real=1;
     temp1=g_iout_real;
     temp2 += (((temp1<<10)- temp2)>>4);//2
@@ -893,19 +893,19 @@ void Power_ControlLoopTask(void)
     {
         g_iout_real=i_out_roll;
     }
-    if(g_iout_real<250&&current_minus_flag==0)
-    {
-      current_minus_flag=1;
-    }
-    else
-    {
-      if(g_iout_real>270&&g_iout_real==1)
-      {
-        current_minus_flag=0;
-      }
-    }
-    if(current_minus_flag==1)
-      g_iout_real+=0;
+//    if(g_iout_real<250&&current_minus_flag==0)
+//    {
+//      current_minus_flag=1;
+//    }
+//    else
+//    {
+//      if(g_iout_real>270&&g_iout_real==1)
+//      {
+//        current_minus_flag=0;
+//      }
+//    }
+//    if(current_minus_flag==1)
+//      g_iout_real+=0;
     /* Target current with dimming control */
     target_current = (uint16_t)((uint32_t)g_target_current * g_astro_dimming_level / POWER_MAX_DIMMING);
     /* Target current with constant lumen control */
@@ -1152,8 +1152,10 @@ void Power_ControlLoopTask(void)
                 pwm_duty = g_max_pwm_duty; 
                 USART_PrintInfo("-MAX- ");
               }
-              
-              PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
+              if(start_flag==0)
+                PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
+              else
+              PWM_DutyStepUp(PWM_ID_CH_CTRL, 20);
             }
             else
               if((target_current-g_iout_real)>30)
@@ -1165,8 +1167,10 @@ void Power_ControlLoopTask(void)
                   pwm_duty = g_max_pwm_duty; 
                   USART_PrintInfo("-MAX- ");
                 }
-                
-                PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
+                if(start_flag==0)
+                  PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
+                else
+                PWM_DutyStepUp(PWM_ID_CH_CTRL, 10);//
               }
               else 
                 PWM_DutyStepUp(PWM_ID_CH_CTRL, 1);//Moon change 1
@@ -1182,39 +1186,63 @@ void Power_ControlLoopTask(void)
         
         pwm_duty = PWM_GetDuty(PWM_ID_CH_CTRL);
         
-        if((g_iout_real-target_current)>300)
+        if((g_iout_real-target_current)>500)
         {
           if(pwm_duty>5)
-            pwm_duty-=5;
+            pwm_duty-=1;
           else
             pwm_duty=0;
           
-          PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
+          PWM_DutyStepDown(PWM_ID_CH_CTRL, 700);//PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
         }
         else
         {
-          if((g_iout_real-target_current)>100)
+          if((g_iout_real-target_current)>300)
           {
             if(pwm_duty>2)
-              pwm_duty-=2;
+              pwm_duty-=1;
             else
               pwm_duty=0;
             
-            PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
+           PWM_DutyStepDown(PWM_ID_CH_CTRL, 300);//PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
           }
           else
           {
-            if((g_iout_real-target_current)>30)
+            if((g_iout_real-target_current)>200)
             {
               if(pwm_duty>1)
                 pwm_duty-=1;
               else
                 pwm_duty=0;
               
-              PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
+             PWM_DutyStepDown(PWM_ID_CH_CTRL, 50); //PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
             }
             else
-            PWM_DutyStepDown(PWM_ID_CH_CTRL, 1); //Moon change to 0
+            {
+              if((g_iout_real-target_current)>150)
+              {
+                if(pwm_duty>1)
+                  pwm_duty-=1;
+                else
+                  pwm_duty=0;
+                
+                PWM_DutyStepDown(PWM_ID_CH_CTRL, 6); //PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
+              }
+              else
+              {
+                if((g_iout_real-target_current)>50)
+                {
+                  if(pwm_duty>1)
+                    pwm_duty-=1;
+                  else
+                    pwm_duty=0;
+                  
+                  PWM_DutyStepDown(PWM_ID_CH_CTRL, 3); //PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
+                }
+                else
+                  PWM_DutyStepDown(PWM_ID_CH_CTRL, 1); //Moon change to 0
+              }
+            }
           }
         }
         

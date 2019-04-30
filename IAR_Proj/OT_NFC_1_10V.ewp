@@ -2264,7 +2264,7 @@
           <state>ENABLE_ONE2TEN</state>
           <state>BYTEORDER_LITTLE_ENDIAN</state>
           <state>AVAILABLE_PORTS_NUMBER=3</state>
-          <state>FW_HIGH=01</state>
+          <state>FW_HIGH=03</state>
           <state>FW_LOW=02</state>
           <state>ENASTRO</state>
           <state>MPC_O2T_DEFAULT_SETTINGS</state>

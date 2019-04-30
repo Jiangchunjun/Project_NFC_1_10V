@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       22/Apr/2019  14:03:57
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       29/Apr/2019  13:32:34
 # Copyright 1999-2016 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -780,7 +780,7 @@ C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\
     645              .version        = MemoryBank_Astro_Version,
     646              .attributes     = MPC_ATTRIB_DALI_LOCKBYTE | MPC_ATTRIB_PASSWORD1_PROT,
     647              .payload_off    = 5,
-    648              .permissions    = 0,
+    648              .permissions    = ACL_PERM_ASTRODIM,
     649              .length         = MemoryBank_Astro_LastAddress - (MPC_STD_PAYLOAD_OFFSET - 1),
     650            },
     651            .tables_len       = -1, // indicator for legacy mpc

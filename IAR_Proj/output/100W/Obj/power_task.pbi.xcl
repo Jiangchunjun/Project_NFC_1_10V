@@ -136,7 +136,7 @@ C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Import\modules\NfcExt\M24LRx
 -I
 C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\NVM
 -I
-C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\NVM\driver_xmc1300\Application\src\modules\NVM\api
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\Application\src\modules\NVM\api
 -I
 C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\NVM\driver_api
 -I
@@ -221,7 +221,7 @@ C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\supp
 -DENABLE_ONE2TEN=1
 -DBYTEORDER_LITTLE_ENDIAN=1
 -DAVAILABLE_PORTS_NUMBER=3
--DFW_HIGH=01
+-DFW_HIGH=03
 -DFW_LOW=02
 -DMPC_O2T_DEFAULT_SETTINGS=1
 -DMPC_O2T_DEFAULT_BOUNDARIES=1

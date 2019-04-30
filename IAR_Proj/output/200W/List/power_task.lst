@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       22/Apr/2019  14:03:58
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       29/Apr/2019  13:32:35
 # Copyright 1999-2016 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -226,7 +226,7 @@ C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\power_task.c
      79              g_control_loop_state = POWER_STATE_KEEP;
      80               
      81              /* Set to global variable */
-     82              Power_SetCurrent(g_target_current, SET_MODE_POWER_ON);
+     82              Power_SetCurrent(g_target_current, SET_MODE_NORMAL);//
      83              
      84              /* Start timer for set real load voltage */
      85              SWT_StartTimer(SWT_ID_SET_LOAD, SET_LOAD_VOL_TIME);
@@ -987,13 +987,13 @@ Warning[Pe223]: function "O2T_GetMinDimLevel" declared implicitly
     831                  return;
     832              }
     833              
-    834              if(start_flag==0)
-    835              {
-    836                if(start_time++>4500/POWER_TASK_PERIOD)
-    837                {
-    838                  start_flag=1;
-    839                }
-    840              }
+    834          //    if(start_flag==0)
+    835          //    {
+    836          //      if(start_time++>4500/POWER_TASK_PERIOD)
+    837          //      {
+    838          //        start_flag=1;
+    839          //      }
+    840          //    }
     841              
     842              /*-------- Get Output Average Result from ADC Module -----------------------*/    
     843              /* Calculate average ADC */
@@ -1040,9 +1040,7 @@ Warning[Pe223]: function "O2T_GetMinDimLevel" declared implicitly
     884              g_iout_real = (uint32_t)(g_iout_real * IOUT_COMPENSATION + IOUT_OFFSET);
     885                  /* Get stable vlaue for I_out Add by moon 2018.3.9*/   
     886              
-    887              if(g_iout_real<0)
-                                   ^
-Warning[Pe186]: pointless comparison of unsigned integer with zero
+    887              if(g_iout_real<=0)
     888                g_iout_real=1;
     889              temp1=g_iout_real;
     890              temp2 += (((temp1<<10)- temp2)>>4);//2
@@ -1051,19 +1049,19 @@ Warning[Pe186]: pointless comparison of unsigned integer with zero
     893              {
     894                  g_iout_real=i_out_roll;
     895              }
-    896              if(g_iout_real<250&&current_minus_flag==0)
-    897              {
-    898                current_minus_flag=1;
-    899              }
-    900              else
-    901              {
-    902                if(g_iout_real>270&&g_iout_real==1)
-    903                {
-    904                  current_minus_flag=0;
-    905                }
-    906              }
-    907              if(current_minus_flag==1)
-    908                g_iout_real+=0;
+    896          //    if(g_iout_real<250&&current_minus_flag==0)
+    897          //    {
+    898          //      current_minus_flag=1;
+    899          //    }
+    900          //    else
+    901          //    {
+    902          //      if(g_iout_real>270&&g_iout_real==1)
+    903          //      {
+    904          //        current_minus_flag=0;
+    905          //      }
+    906          //    }
+    907          //    if(current_minus_flag==1)
+    908          //      g_iout_real+=0;
     909              /* Target current with dimming control */
     910              target_current = (uint16_t)((uint32_t)g_target_current * g_astro_dimming_level / POWER_MAX_DIMMING);
     911              /* Target current with constant lumen control */
@@ -1300,6 +1298,21 @@ Warning[Pe223]: function "sprintf" declared implicitly
                      ^
 "C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\power_task.c",806  Warning[Pe177]: 
           variable "delay" was declared but never referenced
+
+      static uint16_t start_time=0;
+                      ^
+"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\power_task.c",809  Warning[Pe177]: 
+          variable "start_time" was declared but never referenced
+
+      static uint8_t start_flag=0;
+                     ^
+"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\power_task.c",810  Warning[Pe177]: 
+          variable "start_flag" was declared but never referenced
+
+      static uint8_t current_minus_flag=0;
+                     ^
+"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\power_task.c",811  Warning[Pe177]: 
+          variable "current_minus_flag" was declared but never referenced
 
       uint16_t duty = 0;
                ^
@@ -1875,7 +1888,7 @@ Warning[Pe223]: function "AstroTimer" declared implicitly
    1661            {
    1662              SWT_StartTimer(SWT_ID_NFC_HANDLE, NFC_HANDLE_TIME); 
    1663              
-   1664              if(count_time++>=1)
+   1664              if(count_time++>=1)// run every 1s
    1665              {
    1666                g_nfc_time+=1;
    1667                count_time=0;
@@ -2069,7 +2082,7 @@ Warning[Pe223]: function "AstroTimer" declared implicitly
        4  ??DataTable9_9
       12  ?_0
        8  ?_1
-    1808  Power_ControlLoopTask
+    1702  Power_ControlLoopTask
        6  Power_GetAstroDimmingLevel
        6  Power_GetConstantLumenValue
      124  Power_GetControlInitDuty
@@ -2094,7 +2107,6 @@ Warning[Pe223]: function "AstroTimer" declared implicitly
      356  Power_UpdateOne2TenDimming
      120  Power_nfc_handle
        1  count_time
-       1  current_minus_flag
        4  dim_level_1_10
        1  g_OCP_counter
        1  g_OVP_counter
@@ -2130,8 +2142,6 @@ Warning[Pe223]: function "AstroTimer" declared implicitly
        1  s_flag_off
        4  s_min_level
        1  s_one_ten_update
-       1  start_flag
-       2  start_time
        2  target_current
        4  temp1
        4  temp1
@@ -2142,14 +2152,14 @@ Warning[Pe223]: function "AstroTimer" declared implicitly
        4  u_out_roll
 
  
-    91 bytes in section .bss
+    87 bytes in section .bss
     21 bytes in section .data
     20 bytes in section .rodata
- 3 838 bytes in section .text
+ 3 732 bytes in section .text
  
- 3 838 bytes of CODE  memory
+ 3 732 bytes of CODE  memory
     20 bytes of CONST memory
-   112 bytes of DATA  memory
+   108 bytes of DATA  memory
 
 Errors: none
-Warnings: 19
+Warnings: 21

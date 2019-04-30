@@ -129,7 +129,7 @@
 /* Two Order: Uout = B2x^2 + B1x + B0 = (B2x + B1)x + B0 */
 #define UOUT_PARAM_B2           (-6.92582935E-07)
 #define UOUT_PARAM_B1           (1.09252311E-01)
-#define UOUT_PARAM_B0           (-1.36569596E+00)
+#define UOUT_PARAM_B0           0//(-1.36569596E+00)
 
 /* OCP Current to PWM Duty(0.1%) Covertion Coefficient define */
 #define OCP_TO_DUTY_D2          (-3.68547087E-06)

@@ -249,7 +249,7 @@ void System_PowerOnTask(void)
           if(g_nfc_tag_read==4)
           {
             g_target_current=MemoryBank_CSM_GetNominalCurrent(0);
-            Power_SetCurrent(g_target_current, SET_MODE_POWER_ON);
+            Power_SetCurrent(g_target_current, SET_MODE_POWER_ON);//
             System_CreateTask(SYS_TASK_LOOP);
             
             /* swtich to next state */

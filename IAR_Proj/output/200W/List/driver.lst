@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       22/Apr/2019  14:03:55
+# IAR ANSI C/C++ Compiler V7.80.1.11864/W32 for ARM       29/Apr/2019  13:32:33
 # Copyright 1999-2016 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -1201,7 +1201,7 @@ Warning[Pe223]: function "MemoryBank_EOL_GetEOLtime" declared implicitly
     981                  }
     982                  if(eol_flag==3)
     983                  {
-    984                      if(time_cout++>=(60*2))//1min
+    984                      if(time_cout++>=(60*10))//10min
     985                      {
     986                          eol_flag=4;//finished eol handle
     987                          MemoryBank_Eol_UpdateStatus(0,1);//mem_bank_nfc.mem_bank_eol.Eol_status=0x01;
@@ -1520,7 +1520,7 @@ Warning[Pe223]: function "MemoryBank_Astro_GetValue" declared implicitly
        1  last_dim_level
        1  min_level_count
      718  nfc_ed_record
-     126  nfc_eol_handle
+     130  nfc_eol_handle
       74  nfc_flash_write
       64  nfc_nvm_time_write
      154  nfc_time_hanlde
@@ -1544,9 +1544,9 @@ Warning[Pe223]: function "MemoryBank_Astro_GetValue" declared implicitly
    308 bytes in section .bss
      6 bytes in section .data
      8 bytes in section .rodata
- 3 976 bytes in section .text
+ 3 980 bytes in section .text
  
- 3 976 bytes of CODE  memory
+ 3 980 bytes of CODE  memory
      8 bytes of CONST memory
    314 bytes of DATA  memory
 
