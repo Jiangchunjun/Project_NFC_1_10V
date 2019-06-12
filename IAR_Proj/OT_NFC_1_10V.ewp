@@ -2249,7 +2249,7 @@
           <state>NDEBUG</state>
           <state>ENABLT_WDT</state>
           <state>ENABLE_COMM</state>
-          <state>ENABLE_USART</state>
+          <state>ENABLE_USART1</state>
           <state>nDEBUG_PRINT</state>
           <state>nDEBUG_VERSION</state>
           <state>MODULE_I2C</state>
@@ -2446,6 +2446,7 @@
           <state>$PROJ_DIR$\..\Application\src\hwdrivers\XMC1300</state>
           <state>$PROJ_DIR$\..\Application\src\modules\NVM\api</state>
           <state>$PROJ_DIR$\..\Application\src\modules\supplymonitor</state>
+          <state>$PROJ_DIR$\..\Application\src\modules\MPC\TF</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>
@@ -4140,9 +4141,15 @@
       <name>Source</name>
       <file>
         <name>$PROJ_DIR$\..\Application\src\aes.c</name>
+        <excluded>
+          <configuration>100W</configuration>
+        </excluded>
       </file>
       <file>
         <name>$PROJ_DIR$\..\Application\src\comm_task.c</name>
+        <excluded>
+          <configuration>100W</configuration>
+        </excluded>
       </file>
       <file>
         <name>$PROJ_DIR$\..\Application\src\driver.c</name>
@@ -4164,6 +4171,9 @@
       </file>
       <file>
         <name>$PROJ_DIR$\..\Application\src\tag.c</name>
+        <excluded>
+          <configuration>100W</configuration>
+        </excluded>
       </file>
     </group>
   </group>
@@ -4590,6 +4600,15 @@
       </file>
       <file>
         <name>$PROJ_DIR$\..\Application\src\modules\MPC\O2T\O2T_private.h</name>
+      </file>
+    </group>
+    <group>
+      <name>TF</name>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\TF\MemoryBank_Tfm.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\TF\MemoryBank_Tfm.h</name>
       </file>
     </group>
   </group>

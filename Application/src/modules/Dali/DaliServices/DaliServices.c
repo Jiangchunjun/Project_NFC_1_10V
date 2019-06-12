@@ -486,10 +486,11 @@ void ErrorShutdown(char* str)
 uint32_t  ControllerUniqueID (void)
 
 {
-  static uint32_t ueser_id ;
-  
-    ueser_id=SCU_GENERAL->DBGROMID;
-    return SCU_GENERAL->IDCHIP;
+  return ( *(uint32_t*)0x10000FF0 ^
+           *(uint32_t*)0x10000FF4 ^
+           *(uint32_t*)0x10000FF8 ^
+           *(uint32_t*)0x10000FFC
+          );
 }
 
 uint32_t getFWRevRoot(void)

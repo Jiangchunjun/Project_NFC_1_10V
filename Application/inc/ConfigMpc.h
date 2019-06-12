@@ -62,8 +62,8 @@
 //#endif
 
 #define MPC_MAX_NUMBER                         50   // Highest membank number in the DALI address room
-#define MPC_COUNT                              10   // Number of Mpcs allocated
-#define MPC_NFC_INST                           10
+#define MPC_COUNT                              11  // Number of Mpcs allocated
+#define MPC_NFC_INST                           11
 
 #define MPCs_DALI   // Numbers fix, only to create and include the DALI membanks 0 and 1 and DALI parameter page(s)
 #define MPC_MSK_NUMBER                          2
@@ -71,6 +71,7 @@
 #define MPC_CLM_NUMBER                          4
 #define MPC_BIO_NUMBER                          6
 //#define MPC_EMERGENCY_NUMBER                   17
+#define MPC_TFM_NUMBER                         19    //new add TFM
 #define MPC_EOL_NUMBER                         21   // read-only in 1DIM
 #define MPC_ASTRO_NUMBER                       28
 #define MPC_INFO_NUMBER                        29

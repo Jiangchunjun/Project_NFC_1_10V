@@ -24,7 +24,7 @@
 
 /* OSRAM Communication Protocol -----------------------------------------------------------------*/
 /* Packet data size */
-#define COMM_PACKET_SIZE            USART_RX_BUFFER_SIZE /* 12 */
+#define COMM_PACKET_SIZE            12;//USART_RX_BUFFER_SIZE /* 12 */
 
 /*--------------------------------------*/
 /* StartByte, 1st byte */
@@ -106,7 +106,7 @@
 
 /* Global Variable ------------------------------------------------------------------------------*/
 uint8_t g_CommRxState;                  /* Data packet receive state */
-uint8_t g_CommBuff[COMM_PACKET_SIZE];
+uint8_t g_CommBuff[12];//COMM_PACKET_SIZE];
 
 uint8_t g_CommLock = COMM_UNLOCK;
 uint8_t g_Key[4];

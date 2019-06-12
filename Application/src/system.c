@@ -98,7 +98,7 @@ uint8_t System_CheckTask(uint32_t task_id)
 void System_PowerOnTask(void)
 {
     static uint8_t state = 0;       /* task state */
-    static uint32_t systick = 0;
+    static uint32_t systick = 0, unique_id=0;
     extern uint16_t g_one2ten_avg_adc,g_target_current;
     extern uint8_t g_nfc_tag_read;
     /* Check if task has been created */
@@ -200,7 +200,11 @@ void System_PowerOnTask(void)
             
             
             DaliBallast_Init(); 
-            
+            unique_id=ControllerUniqueID();
+            MemoryBank_Dali0_SetValue(11,ControllerUniqueID()>>24,0);
+            MemoryBank_Dali0_SetValue(12,ControllerUniqueID()>>16,0);
+            MemoryBank_Dali0_SetValue(13,ControllerUniqueID()>>8,0);
+            MemoryBank_Dali0_SetValue(14,ControllerUniqueID()&(0X0F),0);
             //nfc_ed_record(); 
             
 //            while(nfc_time_id()==0)

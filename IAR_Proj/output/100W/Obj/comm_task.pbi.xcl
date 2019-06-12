@@ -100,6 +100,8 @@ C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\
 -I
 C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\supplymonitor
 -I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\..\Application\src\modules\MPC\TF
+-I
 C:\Program Files (x86)\IAR Systems\IAR ARM 7.8\arm\inc
 -I
 C:\Program Files (x86)\IAR Systems\IAR ARM 7.8\arm\inc\c
@@ -136,7 +138,7 @@ C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Import\modules\NfcExt\M24LRx
 -I
 C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\NVM
 -I
-C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\NVM\driver_xmc1300\Application\src\modules\NVM\api
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\Acl\Application\src\modules\NVM\api
 -I
 C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\NVM\driver_api
 -I
@@ -201,12 +203,14 @@ C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\hwdrivers\XM
 C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\NVM\api
 -I
 C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\supplymonitor
+-I
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\TF
 -DXMC1301_T038x0064=1
 -DOT_NFC_IP67_100W=1
 -DNDEBUG=1
 -DENABLT_WDT=1
 -DENABLE_COMM=1
--DENABLE_USART=1
+-DENABLE_USART1=1
 -DnDEBUG_PRINT=1
 -DnDEBUG_VERSION=1
 -DMODULE_I2C=1

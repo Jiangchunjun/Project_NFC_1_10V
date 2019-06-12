@@ -5123,6 +5123,15 @@
         <name>$PROJ_DIR$\..\Application\src\modules\MPC\O2T\O2T_private.h</name>
       </file>
     </group>
+    <group>
+      <name>TF</name>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\TF\MemoryBank_Tfm.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Application\src\modules\MPC\TF\MemoryBank_Tfm.h</name>
+      </file>
+    </group>
   </group>
   <group>
     <name>NFC</name>

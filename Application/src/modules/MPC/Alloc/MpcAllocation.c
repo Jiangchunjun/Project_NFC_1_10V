@@ -72,6 +72,7 @@ const mpc_keydata_t * MpcKeydata[] =
     &(MpcLegacyClm.keydata),                  //  4
     &(MpcLegacyInfo.keydata),                 //  6
     &(MpcLegacyAstro.keydata),                 //  6
+    &(MpcLegacyTfm.keydata),
     &(MpcLegacyEol.keydata),
     &(O2T_Descriptor.keydata),
     &(MpcLegacyDali0.keydata),                //  9
@@ -86,12 +87,13 @@ static const uint8_t dali_mpc_mapping[MPC_MAX_NUMBER + 1] = {
     [MPC_CLM_NUMBER]              =  4,
     [MPC_INFO_NUMBER]             =  5,
     [MPC_ASTRO_NUMBER]            =  6,
-    [MPC_EOL_NUMBER]              =  7,
-    [MPC_O2T_NUMBER]              =  8,
+    [MPC_TFM_NUMBER]              =  7,
+    [MPC_EOL_NUMBER]              =  8,
+    [MPC_O2T_NUMBER]              =  9,
     //[MPC_TDC_NUMBER]              =  6,
 
-    [0]                           =  9,
-    [1]                           =  10,
+    [0]                           =  10,
+    [1]                           =  11,
     // No Dali mapping for the Dali-Pseudo-Mpc
 };
 

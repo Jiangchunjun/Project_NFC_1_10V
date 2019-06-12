@@ -986,6 +986,8 @@ void Power_ControlLoopTask(void)
     if(SWT_CheckTimer(SWT_ID_SET_LOAD) == SWT_STATUS_UP)
     {       
         /* Update minimum output current 10% POWER */
+      if(g_uout_real<40)
+        g_uout_real=40;
         g_min_current = (uint16_t)((uint32_t)OUTPUT_POWER * POWER_MIN_OUTPUT / g_uout_real / 100);
         
         /* Minimum current limit */

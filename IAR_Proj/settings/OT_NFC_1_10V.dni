@@ -120,7 +120,7 @@ TraceBufferSize=0x00000000
 TraceShowTime=0
 TraceShowTimeFreq=1000000
 [DebugChecksum]
-Checksum=-1731937969
+Checksum=178850324
 [CodeCoverage]
 Enabled=_ 0
 [Exceptions]
@@ -167,12 +167,16 @@ Fmt8=TypeMemoryBank_CSM-nom_cur_lo	4	0
 Fmt9=TypeMemoryBank_CSM-opMode	4	0
 Fmt10=TypeMemoryBank_CSM-protect_cur_hi	4	0
 Fmt11=TypeMemoryBank_CSM-protect_cur_lo	4	0
-Fmt12=TypeMemoryBank_Eol-eol_time	4	0
-Fmt13=mpcInfo_nvm_t-temperatureTimeIntegrator	4	0
-Fmt14=mpcInfo_t-readTemperatureTimeIntegrator	4	0
-Fmt15=nfc_mb_entity_t-data	4	0
-Fmt16=typeAstro_t-mode	4	0
-Fmt17=wpage_t-addr	4	0
+Fmt12=TypeMemoryBank_Clm-lockByte	4	0
+Fmt13=TypeMemoryBank_Eol-eol_time	4	0
+Fmt14=TypeMemoryBank_Tfm-tuningFactor	3	0
+Fmt15=TypeMemoryBank_Tfm-tuningFactorMax	3	0
+Fmt16=TypeMemoryBank_Tfm-tuningFactorMin	3	0
+Fmt17=mpcInfo_nvm_t-temperatureTimeIntegrator	4	0
+Fmt18=mpcInfo_t-readTemperatureTimeIntegrator	4	0
+Fmt19=nfc_mb_entity_t-data	4	0
+Fmt20=typeAstro_t-mode	4	0
+Fmt21=wpage_t-addr	4	0
 [array_types]
 Fmt0=uint8_t[1000]	4	0
 Fmt1=uint8_t[192]	4	0
@@ -196,22 +200,32 @@ Fmt10={W}42:NfcMpcTagStartAddr[2]	4	0
 Fmt11={W}42:g_nfc_time	3	0
 Fmt12={W}42:save	3	0
 Fmt13={W}42:ueser_id	4	0
-Fmt14={W}42:wpage.addr	4	0
+Fmt14={W}42:unique_id	4	0
+Fmt15={W}42:wpage.addr	4	0
 [Trace1]
 Enabled=0
 ShowSource=1
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[DriverProfiling]
+Enabled=0
+Mode=1
+Graph=0
+Symbiont=0
+Exclusions=
+[CallStackLog]
+Enabled=0
+[CallStackStripe]
+ShowTiming=1
 [Disassemble mode]
 mode=0
 [Breakpoints2]
-Bp0=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Application\src\main.c}.41.5" 0 0 1 "" 0 "" 0
-Count=1
+Count=0
 [Log file]
 LoggingEnabled=_ 0
 LogFile=_ ""
 Category=_ 0
-[TermIOLog]
-LoggingEnabled=_ 0
-LogFile=_ ""
 [Aliases]
 A0=_ "C:\C pan\Douglas_Workspace\Project\OT_NFC_IP67\Project_NFC_1_10V\Application\src\main.c" ""
 A1=_ "C:\C pan\Douglas_Workspace\Project\OT_NFC_IP67\Project_NFC_1_10V\Import\modules\I2cExt\api\i2c.c" ""
@@ -227,13 +241,3 @@ A10=_ "C:\Users\Dongyang.Xie\OSRAM\O05_MyPorject\OT_NFC_IP67\Project_NFC_1_10V\X
 A11=_ "C:\Users\Dongyang.Xie\OSRAM\O05_MyPorject\OT_NFC_IP67\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc1_flash.c" ""
 Count=12
 SuppressDialog=0
-[DriverProfiling]
-Enabled=0
-Mode=1
-Graph=0
-Symbiont=0
-Exclusions=
-[CallStackLog]
-Enabled=0
-[CallStackStripe]
-ShowTiming=1

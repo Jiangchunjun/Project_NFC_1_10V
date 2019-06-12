@@ -68,6 +68,13 @@
 #define POWER_MIN_OUTPUT        (10)       /* 10%*/
 #endif
 
+/****Define TF parameter *****************************************/
+
+#define  MPC_TFM_DEFAULT_ENABLE  0 // disable
+#define  MPC_TFM_DEFAULT_TUNING_FACTOR 100//
+#define  MPC_TFM_DEFAULT_TUNING_FACTOR_MIN 29//
+#define  MPC_TFM_DEFAULT_TUNING_FACTOR_MAX  100//
+#define  MPC_TFM_DEFAULT_REFERENCE_LUMEN_OUTPUT 10000//
 /*---------------- 1-10V Dimming Relative define ------------------*/
 /* 1-10V Dimming Range: 5% - 100% */
 #define ONE2TEN_LOWER_LIMIT     (1000)//500
