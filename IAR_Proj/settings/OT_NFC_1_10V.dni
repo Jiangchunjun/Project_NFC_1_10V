@@ -120,7 +120,7 @@ TraceBufferSize=0x00000000
 TraceShowTime=0
 TraceShowTimeFreq=1000000
 [DebugChecksum]
-Checksum=178850324
+Checksum=-2136376006
 [CodeCoverage]
 Enabled=_ 0
 [Exceptions]
@@ -205,27 +205,18 @@ Fmt15={W}42:wpage.addr	4	0
 [Trace1]
 Enabled=0
 ShowSource=1
-[TermIOLog]
-LoggingEnabled=_ 0
-LogFile=_ ""
-[DriverProfiling]
-Enabled=0
-Mode=1
-Graph=0
-Symbiont=0
-Exclusions=
-[CallStackLog]
-Enabled=0
-[CallStackStripe]
-ShowTiming=1
 [Disassemble mode]
 mode=0
 [Breakpoints2]
-Count=0
+Bp0=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Application\src\main.c}.41.5" 0 0 1 "" 0 "" 0
+Count=1
 [Log file]
 LoggingEnabled=_ 0
 LogFile=_ ""
 Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
 [Aliases]
 A0=_ "C:\C pan\Douglas_Workspace\Project\OT_NFC_IP67\Project_NFC_1_10V\Application\src\main.c" ""
 A1=_ "C:\C pan\Douglas_Workspace\Project\OT_NFC_IP67\Project_NFC_1_10V\Import\modules\I2cExt\api\i2c.c" ""
@@ -241,3 +232,13 @@ A10=_ "C:\Users\Dongyang.Xie\OSRAM\O05_MyPorject\OT_NFC_IP67\Project_NFC_1_10V\X
 A11=_ "C:\Users\Dongyang.Xie\OSRAM\O05_MyPorject\OT_NFC_IP67\Project_NFC_1_10V\XMC_Peripheral_Library\XMCLib\src\xmc1_flash.c" ""
 Count=12
 SuppressDialog=0
+[DriverProfiling]
+Enabled=0
+Mode=1
+Graph=0
+Symbiont=0
+Exclusions=
+[CallStackLog]
+Enabled=0
+[CallStackStripe]
+ShowTiming=1
