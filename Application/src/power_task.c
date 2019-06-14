@@ -915,12 +915,6 @@ void Power_ControlLoopTask(void)
 #ifdef ENABLE_ONE2TEN
     /* Target current with 1-10V dimming level */
     target_current = (uint16_t)((uint32_t)target_current * g_one2ten_dimming_level / POWER_MAX_DIMMING);
-    
-    if(MemoryBank_Tfm_GetEnable(0)==1)
-    {
-      target_current*=MemoryBank_Tfm_GetTuningFactor(0);
-      target_current/=100;
-    }
     //target_current=135;
     //target_current=g_set_current; //add test code moon
         /* Update control loop current adjustment speed threshold */
