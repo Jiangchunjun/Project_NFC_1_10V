@@ -1,4 +1,4 @@
-"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Driver\src\wdt.c"
+"C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\TF\MemoryBank_Tfm.c"
 -std=c99
 -ferror-limit=100
 -I
@@ -211,7 +211,7 @@ C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\
 -DENABLT_WDT=1
 -DENABLE_COMM=1
 -DENABLE_USART1=1
--DDEBUG_PRINT=1
+-DDEBUG_PRINT1=1
 -DnDEBUG_VERSION=1
 -DMODULE_I2C=1
 -DMODULE_M24LRxx=1

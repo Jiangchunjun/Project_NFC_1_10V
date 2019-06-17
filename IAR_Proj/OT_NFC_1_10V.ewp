@@ -1217,8 +1217,8 @@
           <state>NDEBUG</state>
           <state>ENABLT_WDT</state>
           <state>ENABLE_COMM</state>
-          <state>ENABLE_USART</state>
-          <state>DEBUG_PRINT</state>
+          <state>ENABLE_USART1</state>
+          <state>DEBUG_PRINT1</state>
           <state>nDEBUG_VERSION</state>
           <state>MODULE_I2C</state>
           <state>MODULE_M24LRxx</state>
@@ -1415,6 +1415,7 @@
           <state>$PROJ_DIR$\..\Application\src\hwdrivers\XMC1300</state>
           <state>$PROJ_DIR$\..\Application\src\modules\NVM\api</state>
           <state>$PROJ_DIR$\..\Application\src\modules\supplymonitor</state>
+          <state>$PROJ_DIR$\..\Application\src\modules\MPC\TF</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>
@@ -2466,7 +2467,7 @@
         </option>
         <option>
           <name>CCOptLevel</name>
-          <state>2</state>
+          <state>1</state>
         </option>
         <option>
           <name>CCOptStrategy</name>
@@ -2475,7 +2476,7 @@
         </option>
         <option>
           <name>CCOptLevelSlave</name>
-          <state>2</state>
+          <state>1</state>
         </option>
         <option>
           <name>CompilerMisraRules98</name>
@@ -4142,12 +4143,14 @@
       <file>
         <name>$PROJ_DIR$\..\Application\src\aes.c</name>
         <excluded>
+          <configuration>150W</configuration>
           <configuration>100W</configuration>
         </excluded>
       </file>
       <file>
         <name>$PROJ_DIR$\..\Application\src\comm_task.c</name>
         <excluded>
+          <configuration>150W</configuration>
           <configuration>100W</configuration>
         </excluded>
       </file>
@@ -4172,6 +4175,7 @@
       <file>
         <name>$PROJ_DIR$\..\Application\src\tag.c</name>
         <excluded>
+          <configuration>150W</configuration>
           <configuration>100W</configuration>
         </excluded>
       </file>

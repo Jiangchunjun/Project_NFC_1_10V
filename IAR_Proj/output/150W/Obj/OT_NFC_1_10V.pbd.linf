@@ -2,8 +2,6 @@ C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\150W\Obj\OT_
 C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\150W\Obj\Acl.pbi
 C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\150W\Obj\acmp.pbi
 C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\150W\Obj\adc.pbi
-C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\150W\Obj\aes.pbi
-C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\150W\Obj\comm_task.pbi
 C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\150W\Obj\crc.pbi
 C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\150W\Obj\crc16.pbi
 C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\150W\Obj\crc_driver_sw.pbi
@@ -23,6 +21,7 @@ C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\150W\Obj\Mem
 C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\150W\Obj\MemoryBank_Csm.pbi
 C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\150W\Obj\MemoryBank_Eol.pbi
 C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\150W\Obj\MemoryBank_Info.pbi
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\150W\Obj\MemoryBank_Tfm.pbi
 C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\150W\Obj\MemoryBanksGeneric.pbi
 C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\150W\Obj\Mpc.pbi
 C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\150W\Obj\MpcAllocation.pbi
@@ -42,7 +41,6 @@ C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\150W\Obj\Sup
 C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\150W\Obj\sw_timer.pbi
 C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\150W\Obj\system.pbi
 C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\150W\Obj\system_XMC1300.pbi
-C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\150W\Obj\tag.pbi
 C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\150W\Obj\tick.pbi
 C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\150W\Obj\usart.pbi
 C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\IAR_Proj\output\150W\Obj\wdt.pbi
