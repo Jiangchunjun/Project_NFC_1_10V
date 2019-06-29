@@ -380,7 +380,7 @@ void ADC_ReadResult(void)
     uint16_t        step_differ  = 0;
     static uint8_t  s_step_count_i = 0;
     static uint8_t  s_step_count_u = 0;
-    
+    extern uint8_t g_current_non_0_flag;
     /* Check adc enable flag */
     if(g_adc_enable_flag == ADC_SAMPLE_STOP)
     {
@@ -392,6 +392,11 @@ void ADC_ReadResult(void)
     /* Read result from register */
     g_sample_iout = XMC_VADC_GROUP_GetResult(g_group_identifier, ADC_RESULT_REG_IOUT);
     g_buffer_iout[g_buffer_index_iout] = g_sample_iout;
+    
+    if(g_sample_iout>0)
+    {
+        g_current_non_0_flag=1;
+    }
     
     /* Update output current buffer index */    
     g_buffer_index_iout++;

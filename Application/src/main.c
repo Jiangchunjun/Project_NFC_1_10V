@@ -40,8 +40,9 @@ int main(void)
     /* MCU Power On Initial */
     MCU_PowerOnInit();   
     
-    //AstroInit();    
-       P2_1_set_mode(OUTPUT_PP_GP);//update         
+    //AstroInit(); 
+    P2_1_enable_digital();
+       P2_1_set_mode(OUTPUT_PP_GP);//update       
     /*------------ Application Task Runtime Routine -------------------------*/
     while(1)
     {
@@ -72,7 +73,7 @@ int main(void)
         /* Feed watchdog */
         WDT_Feeds();
         
-        //__WFI();
+        __WFI();
     }
 }
 

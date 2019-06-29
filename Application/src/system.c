@@ -144,7 +144,7 @@ void System_PowerOnTask(void)
             /* enable eru for trigger OCP protection */
             //ERU_EnableOCP();
             
-            /* swtich to next state */
+            /* swtich to next state */;
             state++;
         }
         break;
@@ -225,7 +225,6 @@ void System_PowerOnTask(void)
             {
               g_nfc_tag_read=2;
             }
-            
             state++;            
         }
         break;
@@ -249,7 +248,7 @@ void System_PowerOnTask(void)
         if(systick >= SYS_CTRL_LOOP_START_DELAY)
         {           
             /* Create power control loop task */
-          
+           //P2_1_toggle();
           if(g_nfc_tag_read==4)
           {
             g_target_current=MemoryBank_CSM_GetNominalCurrent(0);

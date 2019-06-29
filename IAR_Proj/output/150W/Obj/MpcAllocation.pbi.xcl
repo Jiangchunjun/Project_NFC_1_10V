@@ -138,7 +138,7 @@ C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Import\modules\NfcExt\M24LRx
 -I
 C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\NVM
 -I
-C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Driver\src\Application\src\modules\NVM\api
+C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\I2C\Application\src\modules\NVM\api
 -I
 C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\NVM\driver_api
 -I
@@ -226,7 +226,7 @@ C:\C Pan\work\NFC 1-10\NFC2_1_10V\Project_NFC_1_10V\Application\src\modules\MPC\
 -DENABLE_LOOP_OVP_OCP1=1
 -DBYTEORDER_LITTLE_ENDIAN=1
 -DAVAILABLE_PORTS_NUMBER=3
--DFW_HIGH=03
+-DFW_HIGH=04
 -DFW_LOW=02
 -DMPC_O2T_DEFAULT_SETTINGS=1
 -DMPC_O2T_DEFAULT_BOUNDARIES=1

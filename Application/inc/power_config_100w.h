@@ -20,7 +20,7 @@
 //#define NFC_TIME_ADRRESS
 //#define FLASH_TIME_ADDRESS                                   0X10010010
 // DALI
-#define POWERon_DELAY_TIME_ms                                               (120)
+#define POWERon_DELAY_TIME_ms                                               (600)
 
 // ADC Mult Factor
 #define GLOBAL_ULINE1_ADC_FACTOR                            120804UL            // (3.45V/4096) * 1e6 * ((4700kOhm + 33kOhm) / 33kOhm) = 120.804

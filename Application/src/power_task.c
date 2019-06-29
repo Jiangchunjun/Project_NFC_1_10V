@@ -61,6 +61,7 @@ uint16_t g_one2ten_avg_adc = 0; /* 1-10V input average adc */
 uint16_t g_current_a=0;
 uint8_t s_flag_off=0;
 uint8_t s_one_ten_update=0;
+uint8_t g_current_non_0_flag=0;
 /* Function Declaration -------------------------------------------------------------------------*/
 
 /* Output Power Control Function Implement ------------------------------------------------------*/
@@ -791,7 +792,7 @@ uint16_t Power_GetOne2TenDimming(void)
 void Power_ControlLoopTask(void)
 {
     uint8_t i = 0;
-    static uint16_t target_current = 0;    /* target current with dimming */
+    static uint32_t target_current = 0;    /* target current with dimming */
     uint16_t difference = 0;        /* difference between real and target value */
     uint16_t pwm_duty = 0;
     uint16_t adjust_speed = 0;
@@ -838,7 +839,7 @@ void Power_ControlLoopTask(void)
         start_flag=1;
       }
     }
-    
+   // P2_1_toggle();
     /*-------- Get Output Average Result from ADC Module -----------------------*/    
     /* Calculate average ADC */
     ADC_CalculateAverage();
@@ -887,9 +888,9 @@ void Power_ControlLoopTask(void)
     if(g_iout_real<=0)
       g_iout_real=1;
     temp1=g_iout_real;
-    temp2 += (((temp1<<10)- temp2)>>4);//2
+    temp2 += (((temp1<<10)- temp2)>>7);//2
     i_out_roll=temp2>>10;
-    if(abs(i_out_roll-g_iout_real)<15)//10mA
+    if(abs(i_out_roll-g_iout_real)<5&&g_iout_real>60)//10mA
     {
         g_iout_real=i_out_roll;
     }
@@ -915,7 +916,12 @@ void Power_ControlLoopTask(void)
 #ifdef ENABLE_ONE2TEN
     /* Target current with 1-10V dimming level */
     target_current = (uint16_t)((uint32_t)target_current * g_one2ten_dimming_level / POWER_MAX_DIMMING);
-    //target_current=135;
+    if(MemoryBank_Tfm_GetEnable(0)==1)
+    {
+      target_current*=MemoryBank_Tfm_GetTuningFactor(0);
+      target_current/=100;
+    }
+    //target_current=300;
     //target_current=g_set_current; //add test code moon
         /* Update control loop current adjustment speed threshold */
 #endif    
@@ -1090,7 +1096,15 @@ void Power_ControlLoopTask(void)
         s_one_ten_update=0;
 
     }
-    
+    if(g_iout_real>target_current)
+    {
+      g_control_loop_state=POWER_STATE_DECREASE;
+    }
+    else
+      if(g_iout_real<target_current)
+      {
+        g_control_loop_state=POWER_STATE_INCREASE;
+      }
     
     /*Current tolerance 10mA****/ //Add by Moon 2018.3,9
     if(g_iout_real>target_current)
@@ -1098,7 +1112,7 @@ void Power_ControlLoopTask(void)
     else
         test1=target_current-g_iout_real;
     //test1=abs((int16_t)(g_iout_real-target_current));
-    if (test1<5)//current tolerance when current
+    if (test1<4)//current tolerance when current
     {
         g_iout_real=target_current;
         g_control_loop_state = POWER_STATE_KEEP;
@@ -1119,6 +1133,20 @@ void Power_ControlLoopTask(void)
         
         pwm_duty = PWM_GetDuty(PWM_ID_CH_CTRL);
         
+        if(g_current_non_0_flag==0&&target_current<500)
+        {
+           P2_1_toggle(); 
+          pwm_duty+=8;
+          if(pwm_duty > g_max_pwm_duty)
+          {
+            pwm_duty = g_max_pwm_duty; 
+            USART_PrintInfo("-MAX- ");
+          }
+          PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
+        }
+        else
+        {
+        
         if((target_current-g_iout_real)>500)
         {
           pwm_duty+=20;//20
@@ -1131,23 +1159,22 @@ void Power_ControlLoopTask(void)
         }
         else
         {
-          if((target_current-g_iout_real)>200)
-          {
-            pwm_duty+=5;//5
+          if((target_current-g_iout_real)>50)//200
+          {         
+             pwm_duty+=3;//5
             
             if(pwm_duty > g_max_pwm_duty)
             {
               pwm_duty = g_max_pwm_duty; 
               USART_PrintInfo("-MAX- ");
             }
-            
             PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
           }
           else
           {
-            if((target_current-g_iout_real)>50)
+            if((target_current-g_iout_real)>20)
             {
-              pwm_duty+=3;//3
+              pwm_duty+=1;//3
               
               if(pwm_duty > g_max_pwm_duty)
               {
@@ -1160,7 +1187,7 @@ void Power_ControlLoopTask(void)
               PWM_DutyStepUp(PWM_ID_CH_CTRL, 20);
             }
             else
-              if((target_current-g_iout_real)>30)
+              if((target_current-g_iout_real)>5)
               {
                 pwm_duty+=1;
                 
@@ -1172,11 +1199,12 @@ void Power_ControlLoopTask(void)
                 if(start_flag==0)
                   PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
                 else
-                PWM_DutyStepUp(PWM_ID_CH_CTRL, 10);//
+                PWM_DutyStepUp(PWM_ID_CH_CTRL, 3);//
               }
               else 
                 PWM_DutyStepUp(PWM_ID_CH_CTRL, 1);//Moon change 1
           }
+        }
         }
         
         
@@ -1190,8 +1218,8 @@ void Power_ControlLoopTask(void)
         
         if((g_iout_real-target_current)>500)
         {
-          if(pwm_duty>5)
-            pwm_duty-=1;
+          if(pwm_duty>20)
+            pwm_duty-=20;
           else
             pwm_duty=0;
           
@@ -1199,10 +1227,10 @@ void Power_ControlLoopTask(void)
         }
         else
         {
-          if((g_iout_real-target_current)>300)
+          if((g_iout_real-target_current)>150)
           {
-            if(pwm_duty>2)
-              pwm_duty-=1;
+            if(pwm_duty>3)
+              pwm_duty-=2;
             else
               pwm_duty=0;
             
@@ -1210,7 +1238,7 @@ void Power_ControlLoopTask(void)
           }
           else
           {
-            if((g_iout_real-target_current)>200)
+            if((g_iout_real-target_current)>40)
             {
               if(pwm_duty>1)
                 pwm_duty-=1;
@@ -1221,10 +1249,10 @@ void Power_ControlLoopTask(void)
             }
             else
             {
-              if((g_iout_real-target_current)>150)
+              if((g_iout_real-target_current)>30)
               {
-                if(pwm_duty>1)
-                  pwm_duty-=1;
+                if(pwm_duty>2)
+                  pwm_duty-=2;
                 else
                   pwm_duty=0;
                 
@@ -1232,14 +1260,14 @@ void Power_ControlLoopTask(void)
               }
               else
               {
-                if((g_iout_real-target_current)>50)
+                if((g_iout_real-target_current)>10)
                 {
                   if(pwm_duty>1)
                     pwm_duty-=1;
                   else
                     pwm_duty=0;
                   
-                  PWM_DutyStepDown(PWM_ID_CH_CTRL, 3); //PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
+                  PWM_DutyStepDown(PWM_ID_CH_CTRL, 2); //PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
                 }
                 else
                   PWM_DutyStepDown(PWM_ID_CH_CTRL, 1); //Moon change to 0

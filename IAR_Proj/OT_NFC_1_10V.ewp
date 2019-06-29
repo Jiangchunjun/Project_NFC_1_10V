@@ -1233,7 +1233,7 @@
           <state>ENABLE_LOOP_OVP_OCP1</state>
           <state>BYTEORDER_LITTLE_ENDIAN</state>
           <state>AVAILABLE_PORTS_NUMBER=3</state>
-          <state>FW_HIGH=03</state>
+          <state>FW_HIGH=04</state>
           <state>FW_LOW=02</state>
           <state>ENASTRO</state>
           <state>MPC_O2T_DEFAULT_SETTINGS</state>
