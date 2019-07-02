@@ -35,7 +35,9 @@
 
 int main(void)
 {      
-  extern uint8_t g_nfc_ini_flag;
+  extern uint8_t g_nfc_ini_flag,g_loop_run,g_current_non_0_flag;
+  extern Power_State_t g_control_loop_state;
+  extern uint16_t g_traget_judge_current,g_uout_real;
 
     /* MCU Power On Initial */
     MCU_PowerOnInit();   
@@ -47,7 +49,21 @@ int main(void)
     while(1)
     {
         
-      
+        if(g_current_non_0_flag==0)
+        {
+          if(PWM_GetProtectState() != PWM_STATE_PROTECT)
+          if(g_control_loop_state==POWER_STATE_INCREASE&&g_loop_run==1)
+          {
+              P2_1_toggle(); 
+              if(g_traget_judge_current>200)
+              {
+                 PWM_DutyStepUp(PWM_ID_CH_CTRL, 30);
+              }
+              else
+              PWM_DutyStepUp(PWM_ID_CH_CTRL, 5);             
+               
+          }
+        }
         System_PeriodTaskManagement();
         
         System_PowerOnTask();

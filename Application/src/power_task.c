@@ -62,6 +62,8 @@ uint16_t g_current_a=0;
 uint8_t s_flag_off=0;
 uint8_t s_one_ten_update=0;
 uint8_t g_current_non_0_flag=0;
+uint8_t g_loop_run=0;
+uint16_t g_traget_judge_current=0;
 /* Function Declaration -------------------------------------------------------------------------*/
 
 /* Output Power Control Function Implement ------------------------------------------------------*/
@@ -80,7 +82,7 @@ void Power_TaskInit(void)
     g_control_loop_state = POWER_STATE_KEEP;
      
     /* Set to global variable */
-    Power_SetCurrent(g_target_current, SET_MODE_NORMAL);//
+    Power_SetCurrent(g_target_current, SET_MODE_NORMAL);//g_target_current
     
     /* Start timer for set real load voltage */
     SWT_StartTimer(SWT_ID_SET_LOAD, SET_LOAD_VOL_TIME);
@@ -826,12 +828,13 @@ void Power_ControlLoopTask(void)
         return;
     }
     
+    
     /* Don't run control loop while in protect state */
     if(PWM_GetProtectState() == PWM_STATE_PROTECT)
     {
         return;
     }
-    
+    g_loop_run=1;
     if(start_flag==0)
     {
       if(start_time++>4500/POWER_TASK_PERIOD)
@@ -839,7 +842,7 @@ void Power_ControlLoopTask(void)
         start_flag=1;
       }
     }
-   // P2_1_toggle();
+    P2_1_toggle();
     /*-------- Get Output Average Result from ADC Module -----------------------*/    
     /* Calculate average ADC */
     ADC_CalculateAverage();
@@ -922,6 +925,7 @@ void Power_ControlLoopTask(void)
       target_current/=100;
     }
     //target_current=300;
+    g_traget_judge_current=target_current;
     //target_current=g_set_current; //add test code moon
         /* Update control loop current adjustment speed threshold */
 #endif    
@@ -1133,16 +1137,16 @@ void Power_ControlLoopTask(void)
         
         pwm_duty = PWM_GetDuty(PWM_ID_CH_CTRL);
         
-        if(g_current_non_0_flag==0&&target_current<500)
+        if(g_current_non_0_flag==0)
         {
-           P2_1_toggle(); 
-          pwm_duty+=8;
-          if(pwm_duty > g_max_pwm_duty)
-          {
-            pwm_duty = g_max_pwm_duty; 
-            USART_PrintInfo("-MAX- ");
-          }
-          PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
+//           P2_1_toggle(); 
+//          pwm_duty+=8;
+//          if(pwm_duty > g_max_pwm_duty)
+//          {
+//            pwm_duty = g_max_pwm_duty; 
+//            USART_PrintInfo("-MAX- ");
+//          }
+//          PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
         }
         else
         {
@@ -1168,7 +1172,8 @@ void Power_ControlLoopTask(void)
               pwm_duty = g_max_pwm_duty; 
               USART_PrintInfo("-MAX- ");
             }
-            PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
+            //PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
+            PWM_DutyStepUp(PWM_ID_CH_CTRL, 50);
           }
           else
           {
@@ -1181,10 +1186,10 @@ void Power_ControlLoopTask(void)
                 pwm_duty = g_max_pwm_duty; 
                 USART_PrintInfo("-MAX- ");
               }
-              if(start_flag==0)
+              if(0)//start_flag==0)
                 PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
               else
-              PWM_DutyStepUp(PWM_ID_CH_CTRL, 20);
+              PWM_DutyStepUp(PWM_ID_CH_CTRL, 30);
             }
             else
               if((target_current-g_iout_real)>5)
@@ -1196,7 +1201,7 @@ void Power_ControlLoopTask(void)
                   pwm_duty = g_max_pwm_duty; 
                   USART_PrintInfo("-MAX- ");
                 }
-                if(start_flag==0)
+                if(0)//start_flag==0)
                   PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
                 else
                 PWM_DutyStepUp(PWM_ID_CH_CTRL, 3);//
