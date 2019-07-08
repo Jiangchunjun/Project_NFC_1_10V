@@ -1228,33 +1228,33 @@ void Power_ControlLoopTask(void)
           else
             pwm_duty=0;
           
-          PWM_DutyStepDown(PWM_ID_CH_CTRL, 700);//PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
+          PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);//PWM_DutyStepDown(PWM_ID_CH_CTRL, 700);//
         }
         else
         {
-          if((g_iout_real-target_current)>150)
+          if((g_iout_real-target_current)>50)
           {
             if(pwm_duty>3)
               pwm_duty-=2;
             else
               pwm_duty=0;
             
-           PWM_DutyStepDown(PWM_ID_CH_CTRL, 300);//PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
+           PWM_DutyStepDown(PWM_ID_CH_CTRL, 50);//PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
           }
           else
           {
-            if((g_iout_real-target_current)>40)
+            if((g_iout_real-target_current)>30)//40
             {
               if(pwm_duty>1)
                 pwm_duty-=1;
               else
                 pwm_duty=0;
               
-             PWM_DutyStepDown(PWM_ID_CH_CTRL, 50); //PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
+             PWM_DutyStepDown(PWM_ID_CH_CTRL, 20); //PWM_SetDuty(PWM_ID_CH_CTRL, pwm_duty, PWM_MODE_LIMIT);
             }
             else
             {
-              if((g_iout_real-target_current)>30)
+              if((g_iout_real-target_current)>20)//30
               {
                 if(pwm_duty>2)
                   pwm_duty-=2;

@@ -120,7 +120,7 @@ TraceBufferSize=0x00000000
 TraceShowTime=0
 TraceShowTimeFreq=1000000
 [DebugChecksum]
-Checksum=-1930706232
+Checksum=-59504086
 [CodeCoverage]
 Enabled=_ 0
 [Exceptions]
@@ -175,8 +175,10 @@ Fmt16=TypeMemoryBank_Tfm-tuningFactorMin	3	0
 Fmt17=mpcInfo_nvm_t-temperatureTimeIntegrator	4	0
 Fmt18=mpcInfo_t-readTemperatureTimeIntegrator	4	0
 Fmt19=nfc_mb_entity_t-data	4	0
-Fmt20=typeAstro_t-mode	4	0
-Fmt21=wpage_t-addr	4	0
+Fmt20=struct <Unnamed 191>-ptr	4	0
+Fmt21=struct <Unnamed 79>-astro_fade	3	0
+Fmt22=typeAstro_t-mode	4	0
+Fmt23=wpage_t-addr	4	0
 [array_types]
 Fmt0=uint8_t[1000]	4	0
 Fmt1=uint8_t[192]	4	0
@@ -208,10 +210,11 @@ ShowSource=1
 [Disassemble mode]
 mode=0
 [Breakpoints2]
-Bp0=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Application\src\system.c}.126.13" 0 0 1 "" 0 "" 0
-Bp1=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Application\src\power_task.c}.85.5" 0 0 1 "" 0 "" 0
-Bp2=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Application\src\power_task.c}.278.5" 0 0 1 "" 0 "" 0
-Count=3
+Bp0=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Application\src\main.c}.43.5" 0 0 1 "" 0 "" 0
+Bp1=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Application\src\modules\NFC\nfc_module.c}.1863.8" 0 0 1 "" 0 "" 0
+Bp2=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Application\src\modules\NFC\nfc_module.c}.2462.17" 0 0 1 "" 0 "" 0
+Bp3=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Application\src\modules\NFC\nfc_module.c}.2324.9" 0 0 1 "" 0 "" 0
+Count=4
 [Log file]
 LoggingEnabled=_ 0
 LogFile=_ ""
